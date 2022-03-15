@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --colour0: #313030;
+  --colour1: #565656;
+  --colour3: #f6f5f5;
+
+  --nav-width: 15em;
+}
+
+body {
+  font-family: Roboto;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 1600px; /* guess - to be revised */
+}
+
+/************************* Header and footer ************************/
+
+#header {
+  display: grid;
+  grid-template-columns: 3rem auto 3rem;
+  grid-template-rows: 3rem;
+  ;
+  column-gap: 1rem;
+  color: white;
+  background-color: var(--colour0);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#header .col {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header .col:nth-child(1) {
+  text-align: left;
+}
+
+#header .col:nth-child(3) {
+  text-align: right;
+}
+
+#footer {
+  color: white;
+  background-color: var(--colour0);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/************************* Nav menu ************************/
+
+.sidenav {
+  height: 100%;
+  width: var(--nav-width);
+  position: fixed;
+  font-weight: 300;
+  z-index: 2; /* position over background-dimming overlay */
+  top: 0;
+  left: -250px;
+  background-color: var(--colour1);
+  overflow-x: hidden; /* disable horizontal scroll */
+  padding-top: 0px;
+  white-space: nowrap;
+  transition: left 0.5s;
+  box-shadow: 30x;
+}
+
+/* Menu links */
+.sidenav a {
+  padding: 16px 16px 16px 32px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  background-color: var(--colour0);
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.sidenav a:hover {
+  background-color: darkcyan;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  font-size: 36px;
+  padding-right: 32px;
+}
+
+/* Turn cursor into hand over clickable elements */
+#header .clickable {
+  cursor: pointer;
+}
+
+/* Dim background content and provide an alternative click zone for closing the nav */
+#overlay {
+  z-index: 1;
+  background-color: rgb(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: none;
+}
+
+/************************* Media queries ************************/
+
+
+@media (min-width: 320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+@media (min-width: 480px) {
+  /* smartphones, Android phones, landscape iPhone */
+}
+@media (min-width: 600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+@media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+  .sidenav {
+    position: static;
+    transition: none;
+  }
+
+  .sidenav .closebtn {
+    display: none;
+  }
+
+  #overlay {
+    display: none;
+  }
+
+  #header .col:nth-child(1) {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+}
