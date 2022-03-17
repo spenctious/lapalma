@@ -26,7 +26,7 @@ function addMenuItems() {
 
   let navbar = document.getElementById("navbar");
   navbar.appendChild(closeButton);
-  navbar.appendChild(createMenuItem("Browse walks", "#"));
+  navbar.appendChild(createMenuItem("Browse walks", "browse-routes.html"));
   navbar.appendChild(createMenuItem("GPS Apps", "#"));
   navbar.appendChild(createMenuItem("The trail network", "#"));
   navbar.appendChild(createMenuItem("Forecasts", "#"));
@@ -35,6 +35,7 @@ function addMenuItems() {
 
 function openNav() {
   document.getElementById("navbar").style.left = "0px";
+  document.getElementById("navbar").style.display = "block";
   document.getElementById("overlay").style.display = "block";
 }
 

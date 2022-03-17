@@ -1,0 +1,226 @@
+/************************* Route summary grid ************************/
+
+#routes-header {
+  background-color: var(--colour1);
+  font-size: 1.2rem;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 10px;
+}
+
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  gap: 5px;
+  justify-content: center;
+}
+
+/************************* Grid content: pic ************************/
+
+.route-pic {
+  flex: 1 0 50%;
+  position: relative;
+}
+
+.route-pic img {
+  width: 100%;
+  display: block; /* stops white space at bottom of image due to inline positioning */
+}
+
+.pic-label {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  color: white;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.route-id {
+  background-color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.route-varients {
+  color: yellow;
+  display: inline-block;
+  padding-right: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.starred {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+}
+
+.starred img {
+  height: 1.5rem;
+}
+
+/************************* Grid content: detail ************************/
+
+.route-detail {
+  background-color: white;
+  padding: 5px;
+  position: relative;
+  height: 7rem;
+}
+
+.favourite {
+  float: right;
+  height: 1.2rem;
+  padding-left: 1rem;
+  padding-bottom: 1.2rem;
+  padding-top: 0.2rem;
+}
+
+.route-detail .title {
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  height: 2rem;
+  margin-bottom: 0.3rem;
+  overflow: hidden;
+}
+
+.route-detail .description {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+}
+
+.metrics {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: inherit;
+}
+
+.route-metric {
+  float: left;
+  padding-right: 0.8rem;
+  vertical-align: bottom;
+}
+
+.route-metric img {
+  height: 1rem;
+}
+
+.route-metric p {
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.icon {
+  border: 1px solid grey;
+  border-radius: 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  padding: 0.5rem;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/************************* Media queries ************************/
+
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (min-width: 370px) and (max-width: 480px) {
+  /* Slightly larger screens support side-by side layout */
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  .routes-grid {
+    grid-template-columns: minmax(100%, 400px);
+  }
+  
+  .route {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .route-pic {
+    flex: 50%;
+  }
+  .route-detail {
+    flex: 50%;
+    height: auto;
+  }
+}
+
+/* smartphones, Android phones, landscape iPhone */
+@media (min-width: 480px) {
+  /**/
+
+}
+@media (min-width: 600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+@media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+  /* Add navigation to the page grid */
+  .sidenav {
+    position: static;
+    transition: none;
+  }
+
+  .sidenav .closebtn {
+    display: none;
+  }
+
+  #overlay {
+    display: none;
+  }
+
+  #header .col:nth-child(1) {
+    visibility: hidden;
+  }
+
+  #navbar {
+    display: block;
+    width: auto;
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+
+  #main-content {
+    grid-column: 4 / span 9;
+    grid-row: 2;
+  }
+}
+
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  #navbar {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  #main-content {
+    grid-column: 3 / span 7;
+    grid-row: 2;
+  }
+
+  #filter {
+    grid-column: 10 / span 3;
+    grid-row: 2;
+    display: block;
+    width: auto;
+  }
+}
