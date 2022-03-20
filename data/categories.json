@@ -1,0 +1,355 @@
+{
+  "walkType": [
+    [
+      "circular",
+      {
+        "text": "Circular",
+        "hoverText": "",
+        "filterText": "",
+        "description": "Start and end are the same.",
+        "icon": "circular"
+      }
+    ],
+    [
+      "linear",
+      {
+        "text": "Point-to-point",
+        "hoverText": "",
+        "filterText": "",
+        "description": "Requires a bus or taxi ride to complete the loop.",
+        "icon": "linear"
+      }
+    ],
+    [
+      "return",
+      {
+        "text": "There-and-back",
+        "hoverText": "",
+        "filterText": "",
+        "description": "Route that follows the same path on the return.",
+        "icon": "return"
+      }
+    ]
+  ],
+
+  "duration": [
+    [
+      "stroll",
+      {
+        "text": "Stroll",
+        "description": "A short walk usually under 2 hours duration.",
+        "icon": "duration1"
+      }
+    ],
+    [
+      "half",
+      {
+        "text": "Half day",
+        "description": "Reasonably fit walkers can fit a walk of this duration into half a day although combining two short day walks generally makes for a long day.",
+        "icon": "duration2"
+      }
+    ],
+    [
+      "full",
+      {
+        "text": "Full day",
+        "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
+        "icon": "duration3"
+      }
+    ],
+    [
+      "long",
+      {
+        "text": "Long day",
+        "description": "In winter these require an early start if you're not to risk running out of daylight.",
+        "icon": "duration4"
+      }
+    ]
+  ],
+
+  "effort": [
+    [
+      "easy",
+      {
+        "text": "Easy",
+        "filterIncludeText": "Easy walks",
+        "description": "Gentle gradients or only short steep bits and not very long overall.",
+        "icon": "effort1"
+      }
+    ],
+    [
+      "moderate",
+      {
+        "text": "Moderate",
+        "filterIncludeText": "Shorter walks",
+        "description": "Requires some effort with some climbing involved but not overly long or tiring.",
+        "icon": "effort2"
+      }
+    ],
+    [
+      "strenuous",
+      {
+        "text": "Strenuous",
+        "filterIncludeText": "Strenuous walks",
+        "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
+        "icon": "effort3"
+      }
+    ],
+    [
+      "hard",
+      {
+        "text": "Hard",
+        "filterIncludeText": "Very tiring walks",
+        "description": "Long, with a fair amount of steep climbing. You may want a rest day after one of these.",
+        "icon": "effort4"
+      }
+    ],
+    [
+      "extreme",
+      {
+        "text": "Extreme",
+        "filterIncludeText": "Extreme walks",
+        "description": "Only achievable by extremely fit walkers. Most people will need to split such a walk into two or more stages.",
+        "icon": "effort5"
+      }
+    ]
+  ],
+
+  "basics": [
+    [
+      "refreshments",
+      {
+        "text": "Refreshments",
+        "filterIncludeText": "With refreshments",
+        "description": "Food and drink along the way.",
+        "icon": "refreshments"
+      }
+    ],
+    [
+      "waymarked",
+      {
+        "text": "Waymarked",
+        "filterIncludeText": "On waymarked trails",
+        "description": "The route stays entirely (or very nearly) on waymarked trails.",
+        "icon": "signpost"
+      }
+    ],
+    [
+      "car",
+      {
+        "text": "Car",
+        "filterIncludeText": "Fully ccessible by car",
+        "description": "Accessible by car.",
+        "icon": "car"
+      }
+    ],
+    [
+      "bus",
+      {
+        "text": "Bus",
+        "filterIncludeText": "Fully accessible by bus",
+        "description": "Accessible by bus.",
+        "icon": "bus"
+      }
+    ]
+  ],
+
+  "interest": [
+    [
+      "views",
+      {
+        "text": "Viewpoints",
+        "filterIncludeText": "With viewpoints",
+        "description": "Has viewpoints (miradors) along the way.",
+        "strong": "Spectacular",
+        "icon": "viewpoint.svg"
+      }
+    ],
+    [
+      "port",
+      {
+        "text": "Port",
+        "filterIncludeText": "With a port",
+        "description": "Visits a small port or harbour on the way.",
+        "strong": "Special interest",
+        "icon": "anchor.svg"
+      }
+    ],
+    [
+      "poi",
+      {
+        "text": "Points of Interest",
+        "filterIncludeText": "With points of interest",
+        "description": "Walk passes points of interest.",
+        "strong": "Special interest",
+        "icon": "pin.svg"
+      }
+    ],
+    [
+      "peaks",
+      {
+        "text": "Mountain peaks",
+        "filterIncludeText": "With mountain/volcano peaks",
+        "description": "Passes near or over volcanic or mointain peaks.",
+        "strong": "Special interest",
+        "icon": "peak.svg"
+      }
+    ],
+    [
+      "archeological",
+      {
+        "text": "Archeological",
+        "filterIncludeText": "With archeological interest",
+        "description": "Passes sites of archeological interest, mostly rock carvings.",
+        "strong": "Good examples",
+        "icon": "ancient.svg"
+      }
+    ],
+    [
+      "scenic",
+      {
+        "text": "Scenic",
+        "filterIncludeText": "Particularly scenic",
+        "description": "Contains photogenic scenery or areas of particular beauty.",
+        "strong": "Spectacular",
+        "icon": "camera.svg"
+      }
+    ]
+  ],
+
+  "terrain": [
+    [
+      "volcanic",
+      {
+        "text": "Volcanic",
+        "filterIncludeText": "With volcanic interest",
+        "description": "Passes over notable volcanic terrain: lava flows, picon or volcanic peaks.",
+        "strong": "Spectacular",
+        "icon": "volcano.svg"
+      }
+    ],
+    [
+      "pine",
+      {
+        "text": "Pine forest",
+        "filterIncludeText": "Only walks with pine forest",
+        "description": "Passes through significant Canary Pine forest.",
+        "strong": "Good example",
+        "icon": "forest.svg"
+      }
+    ],
+    [
+      "laurisilva",
+      {
+        "text": "Laurisilva forest",
+        "filterIncludeText": "With laurisilva forest",
+        "description": "Passes through laurisilva forest.",
+        "strong": "Good example",
+        "icon": "leaves.svg"
+      }
+    ],
+    [
+      "dragon",
+      {
+        "text": "Dragon trees",
+        "filterIncludeText": "With dragon trees",
+        "description": "Passes through a dragon tree grove or past spectacular examples.",
+        "strong": "Good examples",
+        "icon": "dragontree.svg"
+      }
+    ],
+    [
+      "coastal",
+      {
+        "text": "Coastal path",
+        "filterIncludeText": "Along coastal paths",
+        "description": "Usually along cliff tops, occasionally down to the sea, often with deep barrancos.",
+        "strong": "Spectacular",
+        "icon": "waves.svg"
+      }
+    ],
+    [
+      "riverbed",
+      {
+        "text": "Riverbed",
+        "filterIncludeText": "With river beds",
+        "description": "Route follows part of the way along a dried-up riverbed.",
+        "strong": "Impressive",
+        "icon": "river.svg"
+      }
+    ]
+  ],
+
+  "warnings": [
+    [
+      "slippery",
+      {
+        "text": "Slippery in places",
+        "filterExcludeText": "Very slippery paths",
+        "description": "Occasional hazardous conditions underfoot.",
+        "strong": "High risk",
+        "icon": "slippery.svg"
+      }
+    ],
+    [
+      "vertigo",
+      {
+        "text": "Vertigo risk",
+        "filterExcludeText": "High vertigo risk",
+        "description": "Vertigo risk: exposed peaks or paths near steep drops.",
+        "strong": "High risk",
+        "icon": "dizzy.svg"
+      }
+    ],
+    [
+      "weather",
+      {
+        "text": "Weather dependent",
+        "filterExcludeText": "Highly weather dependent",
+        "description": "Requires favourable weather conditions: check the forecasts.",
+        "strong": "Highly dependent",
+        "icon": "weather.svg"
+      }
+    ],
+    [
+      "gps",
+      {
+        "text": "Unreliable GPS signal",
+        "filterExcludeText": "Very unreliable GPS",
+        "description": "The route passes through areas where the GPS signal may become weak or loat.",
+        "strong": "High risk",
+        "icon": "satellite.svg"
+      }
+    ],
+    [
+      "mountain",
+      {
+        "text": "Mountain walk",
+        "filterExcludeText": "High altitude",
+        "description": "High altitude mountain conditions can be expected: prepare accordingly.",
+        "strong": "Remote",
+        "icon": "mountain.svg"
+      }
+    ],
+    [
+      "rockfall",
+      {
+        "text": "Rockfall",
+        "filterExcludeText": "High risk of rockfall",
+        "description": "Possibility of rockfall from overhanging rocks",
+        "strong": "High risk",
+        "icon": "rockfall.svg"
+      }
+    ],
+    [
+      "danger",
+      {
+        "text": "Danger",
+        "filterExcludeText": "Unusually risky",
+        "description": "Risk of death or injury.",
+        "strong": "High risk",
+        "icon": "warning.svg"
+      }
+    ]
+  ]
+}
