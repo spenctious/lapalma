@@ -42,27 +42,30 @@
               "to": "end"
             }
           ],
-          "warnings": [
-            { "type": "slippery", "strong": "false", "notes": "" },
-            { "type": "vertigo", "strong": "false", "notes": "" },
-            { "type": "danger", "strong": "false", "notes": "" }
-          ]
+          "warnings": {
+            "slippery": { "strong": "false", "notes": "" },
+            "vertigo": { "strong": "false", "notes": "" },
+            "danger": { "strong": "false", "notes": "" }
+          }
         }
       ],
 
       "POI": ["", ""],
 
-      "terrain": [{ "type": "riverbed", "strong": "false" }],
+      "terrain": {
+        "riverbed": { "strong": "false" }
+      },
 
-      "interest": [{ "type": "views", "strong": "false" }],
+      "interest": {
+        "views": { "strong": "false" }
+      },
 
-      "warnings": [
-        {
-          "type": "vertigo",
+      "warnings": {
+        "vertigo": {
           "strong": "false",
           "notes": "Minor risk along safe fenced bit of path after the mills."
         }
-      ]
+      }
     },
     {
       "id": "02",
@@ -134,15 +137,19 @@
 
       "POI": ["", ""],
 
-      "terrain": [{ "type": "riverbed", "strong": "false" }],
+      "terrain": {
+        "riverbed": { "strong": "false" }
+      },
 
-      "interest": [{ "type": "views", "strong": "false" }],
+      "interest": {
+        "views": { "strong": "false" }
+      },
 
-      "warnings": [
-        { "type": "slippery", "strong": "false", "notes": "" },
-        { "type": "vertigo", "strong": "false", "notes": "" },
-        { "type": "danger", "strong": "false", "notes": "" }
-      ]
+      "warnings": {
+        "slippery": { "strong": "false", "notes": "" },
+        "vertigo": { "strong": "false", "notes": "" },
+        "danger": { "strong": "false", "notes": "" }
+      }
     },
     {
       "id": "03",
@@ -216,29 +223,11 @@
 
       "POI": ["", ""],
 
-      "terrain": [
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" }
-      ],
+      "terrain": {},
 
-      "interest": [
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" }
-      ],
+      "interest": {},
 
-      "warnings": [
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" }
-      ]
+      "warnings": {}
     },
     {
       "id": "04",
@@ -312,29 +301,11 @@
 
       "POI": ["", ""],
 
-      "terrain": [
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" }
-      ],
+      "terrain": {},
 
-      "interest": [
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" }
-      ],
+      "interest": {},
 
-      "warnings": [
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" }
-      ]
+      "warnings": {}
     },
     {
       "id": "05",
@@ -382,29 +353,11 @@
 
       "POI": ["", ""],
 
-      "terrain": [
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" }
-      ],
+      "terrain": {},
 
-      "interest": [
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" },
-        { "type": "", "strong": "false" }
-      ],
+      "interest": {},
 
-      "warnings": [
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" },
-        { "type": "", "strong": "false", "notes": "" }
-      ]
+      "warnings": {}
     },
     {
       "id": "06",
@@ -474,20 +427,21 @@
 
       "POI": ["", ""],
 
-      "terrain": [{ "type": "laurisilva", "strong": "true" }],
+      "terrain": {
+        "laurisilva": {"strong": "true" }
+      },
 
-      "interest": [
-        { "type": "scenic", "strong": "true" },
-        { "type": "views", "strong": "false" }
-      ],
+      "interest": {
+        "scenic": { "strong": "true" },
+        "views": {"strong": "false" }
+      },
 
-      "warnings": [
-        {
-          "type": "slippery",
+      "warnings": {
+        "slippery": {
           "strong": "false",
           "notes": "Muddy and/or clay underfoot."
         }
-      ]
+      }
     },
     {
       "id": "07",
@@ -536,11 +490,15 @@
 
       "POI": ["", ""],
 
-      "terrain": [],
+      "terrain": {
+      },
 
-      "interest": [{ "type": "views", "strong": "true" }],
+      "interest": {
+        "views": {"strong": "true" }
+      },
 
-      "warnings": []
+      "warnings": {
+      }
     },
     {
       "id": "08",
@@ -566,11 +524,17 @@
 
       "POI": ["", ""],
 
-      "terrain": [{ "type": "laurisilver", "strong": "false" }],
+      "terrain": { 
+        "laurisilver": {"strong": "false" }
+      },
 
-      "interest": [{ "type": "views", "strong": "false" }],
+      "interest": {
+        "views": {"strong": "false" }
+      },
 
-      "warnings": [{ "type": "slippery", "strong": "false", "notes": "" }]
+      "warnings": {
+        "slippery": {"strong": "false", "notes": "" }
+      }
     },
     {
       "id": "09",
@@ -645,38 +609,39 @@
 
       "POI": ["", ""],
 
-      "terrain": [{ "type": "riverbed", "strong": "false" }],
-      "interest": [
-        { "type": "views", "strong": "false" },
-        { "type": "scenic", "strong": "false" }
-      ],
-      "warnings": [
-        {
-          "type": "gps",
+      "terrain": {
+        "riverbed": {"strong": "false" }
+      },
+
+      "interest": {
+        "views": { "strong": "false" },
+        "scenic": {"strong": "false" }
+      },
+
+      "warnings": {
+        "gps": {
           "strong": "false",
           "notes": "Loss of GPS signal in tunnels is of no account - there's only one path."
         },
-        {
-          "type": "slippery",
+        "slippery": {
           "strong": "false",
           "notes": "Tunnels will be wet and slippery."
         },
-        {
-          "type": "vertigo",
+        "vertigo": {
           "strong": "false",
           "notes": "Some risk along high gallery path."
         },
-        {
-          "type": "danger",
-          "strong": "false",
-          "notes": "Risk of claustrophobia and clouting your head in the tunnels."
-        },
-        {
-          "type": "danger",
-          "strong": "false",
-          "notes": "Some large boulders to descend down in the river bed."
-        }
-      ]
+        "danger": [
+          {
+            "strong": "false",
+            "notes": "Risk of claustrophobia and clouting your head in the tunnels."
+          },
+          {
+            "strong": "false",
+            "notes": "Some large boulders to descend down in the river bed."
+          }
+        ]
+      }
     },
     {
       "id": "10",

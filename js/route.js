@@ -4,7 +4,7 @@ var categories;
 var locations;
 var routes;
 var filters = new Array();
-var walkTypes, duration, effort, basics, interest, terrain,warnings;
+var walkTypes, duration, effort, basics, interest, terrain, warnings;
 
 var gridContent;
 var reloadData = true;
@@ -41,7 +41,7 @@ async function loadData() {
     interest = new Map(categories.interest);
     terrain = new Map(categories.terrain);
     warnings = new Map(categories.warnings);
-    
+
     populateRoutesGrid();
   } catch (error) {
     console.log('Request failed', error);
@@ -121,45 +121,64 @@ function populateRoutesGrid() {
   }
 }
 
-function getCategoryObject( category, name ) {
+// Possible toggle state cycles
+const offOnly = ["off", "only"];          // positive attributes to be ruled in
+const offNo = ["off", "no"];              // undesirable attributes to be ruled out
+const offOnlyNo = ["off", "only", "no"];  // neutral attributes to be ruled in or out
 
+// Handles filter state of walk attributes
+class Toggle {
+  #currentState;
+  #states;
+
+  // Takes an array of states
+  constructor(states) {
+    this.#states = states;
+    this.#currentState = 0;
+  }
+
+  // Move to the next toggle state which 'wraps around' back to 0
+  toggle() {
+    this.#currentState = ++this.#currentState % this.#states.length;
+    return this.#currentState;
+  }
 }
 
 function populateFilterGrid() {
   // row 1
-  filters.add(new Filter( "filter01", walkType.get("circular"), true));
-  filters.add(new Filter( "filter02", interest.get("archological"), true));
-  filters.add(new Filter( "filter03", terrain.get("dragon"), true));
-  filters.add(new Filter( "filter04", warnings.get("gps"), false));
+  filters.add(new Filter("filter01", (route) => route.walkType == "circular", walkType.get("circular"), new Toggle(offOnly)));
+  filters.add(new Filter("filter02", (route) => "archological" in route.interest, interest.get("archological"), new Toggle(offOnly)));
+  filters.add(new Filter("filter03", (route) => "dragon" in route.terrain, terrain.get("dragon"), new Toggle(offOnlyNo)));
+  filters.add(new Filter("filter04", (route) => "gps" in route.warnings, warnings.get("gps"), new Toggle(offNo)));
 
   // row 2
-  filters.add(new Filter( "filter05", basics.get("car"), true));
-  filters.add(new Filter( "filter06", interest.get("peaks"), true));
-  filters.add(new Filter( "filter07", terrain.get("volcanic"), true));
-  filters.add(new Filter( "filter08", warnings.get("steep"), false));
+  filters.add(new Filter("filter05", (route) => route.accessCar == true, basics.get("car"), new Toggle(offOnly)));
+  filters.add(new Filter("filter06", (route) => "peaks" in route.interest, interest.get("peaks"), new Toggle(offOnly)));
+  filters.add(new Filter("filter07", (route) => "volcanic" in route.terrain, terrain.get("volcanic"), new Toggle(offOnlyNo)));
+  filters.add(new Filter("filter08", (route) => "steep" in route.warnings, warnings.get("steep"), new Toggle(offNo)));
 
   // row 3
-  filters.add(new Filter( "filter09", basics.get("bus"), true));
-  filters.add(new Filter( "filter10", interest.get("poi"), true));
-  filters.add(new Filter( "filter11", terrain.get("laurisilva"), true));
-  filters.add(new Filter( "filter12", warnings.get("slippery"), false));
+  filters.add(new Filter("filter09", (route) => route.accessBus == true, basics.get("bus"), new Toggle(offOnly)));
+  filters.add(new Filter("filter10", (route) => "poi" in route.interest, interest.get("poi"), new Toggle(offOnly)));
+  filters.add(new Filter("filter11", (route) => "laurisilva" in route.terrain, terrain.get("laurisilva"), new Toggle(offOnlyNo)));
+  filters.add(new Filter("filter12", (route) => "slippery" in route.warnings, warnings.get("slippery"), new Toggle(offNo)));
 
   // row 4
-  filters.add(new Filter( "filter13", duration.get("half"), true));
-  filters.add(new Filter( "filter14", interest.get("ports"), true));
-  filters.add(new Filter( "filter15", terrain.get("coastal"), true));
-  filters.add(new Filter( "filter16", warnings.get("vertigo"), false));
+  filters.add(new Filter("filter13", (route) => route.duration == "stroll" || route.duration == "half", duration.get("half"), new Toggle(offOnlyNo)));
+  filters.add(new Filter("filter14", (route) => "ports" in route.interest, interest.get("ports"), new Toggle(offOnly)));
+  filters.add(new Filter("filter15", (route) => "coastal" in route.terrain, terrain.get("coastal"), new Toggle(offOnlyNo)));
+  filters.add(new Filter("filter16", (route) => "vertigo" in route.warnings, warnings.get("vertigo"), new Toggle(offNo)));
 
   // row 5
-  filters.add(new Filter( "filter17", basics.get("waymarked"), true));
-  filters.add(new Filter( "filter18", interest.get("scenic"), true));
-  filters.add(new Filter( "filter19", terrain.get("pine"), true));
-  filters.add(new Filter( "filter20", warnings.get("weather"), false));
+  filters.add(new Filter("filter17", (route) => route.waymarked == true, basics.get("waymarked"), new Toggle(offOnly)));
+  filters.add(new Filter("filter18", (route) => "scenic" in route.interest, interest.get("scenic"), new Toggle(offOnly)));
+  filters.add(new Filter("filter19", (route) => "pine" in route.terrain, terrain.get("pine"), new Toggle(offOnlyNo)));
+  filters.add(new Filter("filter20", (route) => "weather" in route.warnings, warnings.get("weather"), new Toggle(offNo)));
 
   let filterGrid = "";
-  filters.forEach( filter => {
-    filterGrid += 
-    `<div id="${filter.getId()}" onClick="${filter.toggle()}" class="">
+  filters.forEach(filter => {
+    filterGrid +=
+      `<div id="${filter.getId()}" onClick="${filter.toggle()}" class="">
       <img></img>
     <div>`
   });
@@ -169,12 +188,14 @@ class Filter {
 
   #id;
   #category;
-  #include;
+  #toggle;
+  #filter;
 
-  constructor (id, category, include) {
+  constructor(id, filter, category, toggle) {
     this.#id = id;
     this.#category = category;
-    this.#include = include;
+    this.#toggle = toggle;
+    this.#filter = filter;
   }
 
   getId() {
@@ -186,7 +207,8 @@ class Filter {
   }
 
   toggle() {
-
+    let newState = this.#toggle.toggle();
+    // act on new state
   }
 }
 
