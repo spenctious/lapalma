@@ -159,10 +159,10 @@ class Filter {
 
   // Basic categories
   static isCircular(route) { return route.walkType == "circular"; }
-  static isAccessibleByCar(route) { return route.accessCar == true; }
-  static isAccessibleByBus(route) { return route.accessBus == true; }
+  static isAccessibleByCar(route) { return route.accessCar == "true"; }
+  static isAccessibleByBus(route) { return route.accessBus == "true"; }
   static isShortWalk(route) { return route.duration == "stroll" || route.duration == "half"; }
-  static isWaymarked(route) { return route.waymarked == true; }
+  static isWaymarked(route) { return route.waymarked == "true"; }
 
   // Features
   static hasArcheologicalInterest(route) { return "archeological" in route.interest; }
@@ -257,7 +257,9 @@ function populateFilterGrid() {
   filters.forEach(filter => {
     filterGrid +=
       `<div id="${filter.getId()}" onClick="toggleFilter('${filter.getId()}')" class="icon">
-        <img src="/img/icons/${filter.getIcon()}" alt="" />
+      <img src="/img/icons/${filter.getIcon()}" class="icon-img" alt="" />
+      <img id="${filter.getId() + "cross"}" class="filter-status" src="/img/icons/red-cross.svg" style="display: none;" alt="" />
+      <img id="${filter.getId() + "tick"}" class="filter-status" src="/img/icons/green-tick.svg" style="display: none;" alt="" />
       </div>`;
   });
 
@@ -288,17 +290,22 @@ class CategoryFilter {
 
   #updateScreenStatus() {
     let clickedIcon = document.getElementById(this.#id);
+    let tick = document.getElementById(this.#id + "tick");
+    let cross = document.getElementById(this.#id + "cross");
     switch (this.#toggleState) {
       case OFF:
-        clickedIcon.style.backgroundColor = "";
+        tick.style.display = "none";
+        cross.style.display = "none";
         break;
 
       case ONLY:
-        clickedIcon.style.backgroundColor = "green";
+        tick.style.display = "block";
+        cross.style.display = "none";
         break;
 
       case NO:
-        clickedIcon.style.backgroundColor = "red";
+        tick.style.display = "none";
+        cross.style.display = "block";
         break;
     }
   }
