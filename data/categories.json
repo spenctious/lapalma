@@ -7,7 +7,7 @@
         "hoverText": "",
         "filterText": "",
         "description": "Start and end are the same.",
-        "icon": "circular"
+        "icon": "circular.svg"
       }
     ],
     [
@@ -17,7 +17,7 @@
         "hoverText": "",
         "filterText": "",
         "description": "Requires a bus or taxi ride to complete the loop.",
-        "icon": "linear"
+        "icon": "linear.svg"
       }
     ],
     [
@@ -27,7 +27,7 @@
         "hoverText": "",
         "filterText": "",
         "description": "Route that follows the same path on the return.",
-        "icon": "return"
+        "icon": "return.svg"
       }
     ]
   ],
@@ -38,7 +38,7 @@
       {
         "text": "Stroll",
         "description": "A short walk usually under 2 hours duration.",
-        "icon": "duration1"
+        "icon": "duration1.svg"
       }
     ],
     [
@@ -46,7 +46,7 @@
       {
         "text": "Half day",
         "description": "Reasonably fit walkers can fit a walk of this duration into half a day although combining two short day walks generally makes for a long day.",
-        "icon": "duration2"
+        "icon": "duration2.svg"
       }
     ],
     [
@@ -54,7 +54,7 @@
       {
         "text": "Full day",
         "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
-        "icon": "duration3"
+        "icon": "duration3.svg"
       }
     ],
     [
@@ -62,7 +62,7 @@
       {
         "text": "Long day",
         "description": "In winter these require an early start if you're not to risk running out of daylight.",
-        "icon": "duration4"
+        "icon": "duration4.svg"
       }
     ]
   ],
@@ -74,7 +74,7 @@
         "text": "Easy",
         "filterIncludeText": "Easy walks",
         "description": "Gentle gradients or only short steep bits and not very long overall.",
-        "icon": "effort1"
+        "icon": "effort1.svg"
       }
     ],
     [
@@ -83,7 +83,7 @@
         "text": "Moderate",
         "filterIncludeText": "Shorter walks",
         "description": "Requires some effort with some climbing involved but not overly long or tiring.",
-        "icon": "effort2"
+        "icon": "effort2.svg"
       }
     ],
     [
@@ -92,7 +92,7 @@
         "text": "Strenuous",
         "filterIncludeText": "Strenuous walks",
         "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
-        "icon": "effort3"
+        "icon": "effort3.svg"
       }
     ],
     [
@@ -101,7 +101,7 @@
         "text": "Hard",
         "filterIncludeText": "Very tiring walks",
         "description": "Long, with a fair amount of steep climbing. You may want a rest day after one of these.",
-        "icon": "effort4"
+        "icon": "effort4.svg"
       }
     ],
     [
@@ -110,7 +110,7 @@
         "text": "Extreme",
         "filterIncludeText": "Extreme walks",
         "description": "Only achievable by extremely fit walkers. Most people will need to split such a walk into two or more stages.",
-        "icon": "effort5"
+        "icon": "effort5.svg"
       }
     ]
   ],
@@ -122,7 +122,7 @@
         "text": "Refreshments",
         "filterIncludeText": "With refreshments",
         "description": "Food and drink along the way.",
-        "icon": "refreshments"
+        "icon": "refreshments.svg"
       }
     ],
     [
@@ -131,7 +131,7 @@
         "text": "Waymarked",
         "filterIncludeText": "On waymarked trails",
         "description": "The route stays entirely (or very nearly) on waymarked trails.",
-        "icon": "signpost"
+        "icon": "signpost.svg"
       }
     ],
     [
@@ -140,7 +140,7 @@
         "text": "Car",
         "filterIncludeText": "Fully ccessible by car",
         "description": "Accessible by car.",
-        "icon": "car"
+        "icon": "car.svg"
       }
     ],
     [
@@ -149,7 +149,7 @@
         "text": "Bus",
         "filterIncludeText": "Fully accessible by bus",
         "description": "Accessible by bus.",
-        "icon": "bus"
+        "icon": "bus.svg"
       }
     ]
   ],
@@ -292,6 +292,16 @@
       }
     ],
     [
+      "steep",
+      {
+        "text": "Steep",
+        "filterExcludeText": "Very steep paths",
+        "description": "Steep sections, can be hard on the knees when descending.",
+        "strong": "Sustained or exceptional",
+        "icon": "steep.svg"
+      }
+    ],
+    [
       "vertigo",
       {
         "text": "Vertigo risk",
@@ -318,7 +328,7 @@
         "filterExcludeText": "Very unreliable GPS",
         "description": "The route passes through areas where the GPS signal may become weak or loat.",
         "strong": "High risk",
-        "icon": "satellite.svg"
+        "icon": "signal.svg"
       }
     ],
     [

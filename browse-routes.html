@@ -18,6 +18,8 @@
     <div id="overlay" onclick="closeNav()"></div>
     <div id="container">
       <div id="wrapper">
+
+        <!-- Title bar -->
         <div id="header">
           <div class="col clickable" onclick="openNav()">&#9776;</div>
           <div class="col">Browse walks</div>
@@ -27,13 +29,34 @@
             </a>
           </div>
         </div>
+
+        <!-- Navigation is populated in code -->
         <nav id="navbar" class="sidenav"></nav>
-        <div id="filter">Filter options go here</div>
+
+        <!-- Filter panel -->
+        <div id="filter">
+          <div id="active-filter-box"></div>
+          <div id="general-filters">
+            <h3>Favourites & Starred</h3>
+            <div id="general-filter-grid"></div>
+          </div>
+          <div id="category-filters">
+            <h3>Features & Warnings</h3>
+            <div id="category-filter-grid"></div>
+          </div>
+          <div id="location-filters">
+            <h3>Locations</h3>
+            <div id="location-filter-grid"></div>
+          </div>
+        </div>
+
+        <!-- Filtered grid of walks -->
         <div id="main-content">
           <div id="routes-header">Routes header</div>
           <div id="routes-grid">
           </div>
         </div>
+
         <div id="footer">Copyright &copy; Robert Anstey 2022</div>
       </div>
     </div>

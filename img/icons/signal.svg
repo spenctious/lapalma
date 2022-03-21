@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="313.622px" height="306.18px" viewBox="0 0 313.622 306.18" xml:space="preserve">
+<font horiz-adv-x="1000">
+<!-- Copyright 1992, 1994, 1997, 2000, 2004 Adobe Systems Incorporated. All rights reserved. Protected by U.S. Patents D454,582. Myriad is either a registered trademark or a trademark of Adobe Systems Incorporated in the United States and/or other countries. -->
+<font-face font-family="MyriadPro-Bold" units-per-em="1000" underline-position="-100" underline-thickness="50"/>
+<missing-glyph horiz-adv-x="500" d="M0,0l500,0l0,700l-500,0M250,395l-170,255l340,0M280,350l170,255l0,-510M80,50l170,255l170,-255M50,605l170,-255l-170,-255z"/>
+<glyph unicode="?" horiz-adv-x="445" d="M271,219l0,18C270,282 286,321 322,362C360,404 408,454 408,530C408,613 347,686 215,686C144,686 85,666 48,645l34,-109C108,554 148,566 181,566C231,565 254,541 254,506C254,473 228,440 196,401C151,348 134,296 137,245l1,-26M201,-11C256,-11 291,28 291,80C290,134 255,171 201,171C149,171 112,134 112,80C112,28 148,-11 201,-11z"/>
+</font>
+
+	<g>
+	<g>
+		<path d="M185.549,178.431c-26.228,26.493-36.033,59.312-21.904,73.298l94.978-95.941
+			C244.492,141.8,211.776,151.938,185.549,178.431z"/>
+		<rect x="37.558" y="185.059" transform="matrix(-0.7035 0.7107 -0.7107 -0.7035 295.8152 291.7032)" width="99" height="45"/>
+		<rect x="164.184" y="57.137" transform="matrix(-0.7035 0.7107 -0.7107 -0.7035 420.6088 -16.2029)" width="99" height="45"/>
+		<rect x="124.674" y="95.434" transform="matrix(-0.7035 0.7107 -0.7107 -0.7035 350.5157 134.6317)" width="45" height="90"/>
+		<rect x="119.212" y="161.483" transform="matrix(-0.7035 0.7107 -0.7107 -0.7035 336.3712 191.6374)" width="18" height="9"/>
+		<rect x="163.531" y="116.711" transform="matrix(-0.7035 0.7107 -0.7107 -0.7035 380.0508 83.8669)" width="18" height="9"/>
+		<circle cx="223.914" cy="216.411" r="9"/>
+		<path fill="none" stroke="#000000" stroke-width="15" d="M217.859,248.135c20.954-0.106,37.823-17.146,37.718-38.1"/>
+		<path fill="none" stroke="#000000" stroke-width="15" d="M217.986,273.407c34.923-0.177,63.039-28.578,62.862-63.5"/>
+		<path fill="none" stroke="#000000" stroke-width="15" d="M218.114,298.68c48.894-0.246,88.255-40.01,88.008-88.901"/>
+	</g>
+	<rect x="0" y="-5.274" fill="none" width="111.616" height="188.385"/>
+	<text transform="matrix(1 0 0 1 2.441406e-004 165.1235)" font-family="'MyriadPro-Bold'" font-size="240">?</text>
+</g>
+</svg>
