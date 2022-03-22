@@ -9,6 +9,8 @@ var walkType, duration, effort, basics, interest, terrain, warnings;
 var gridContent;
 var reloadData = true;
 
+var favourites = new Set();
+
 async function loadData() {
   try {
     if (reloadData || sessionStorage.getItem("dataLoaded") === null) {
@@ -96,7 +98,9 @@ function populateRoutesGrid() {
         <div class="route-detail">
           <div class="title">
             <img
+              id="favourite${routeId}"
               class="favourite"
+              onClick="toggleFavourite('${routeId}')"
               src="/img/icons/heart-empty.svg"
               alt=""
             />
@@ -128,9 +132,9 @@ const ONLY = "only";
 const NO = "no";
 
 // Possible toggle state cycles
-const offOnly = [OFF, ONLY];        // positive attributes to be ruled in
-const offNo = [OFF, NO];            // undesirable attributes to be ruled out
-const offOnlyNo = [OFF, ONLY, NO];  // neutral attributes to be ruled in or out
+const INCLUDE = [OFF, ONLY]; // positive attributes to be ruled in
+const EXCLUDE = [OFF, NO];  // undesirable attributes to be ruled out
+const INCLUDE_EXCLUDE = [OFF, ONLY, NO]; // neutral attributes to be ruled in or out
 
 // Handles filter state of walk attributes
 class Toggle {
@@ -156,6 +160,9 @@ class Toggle {
 }
 
 class Filter {
+  // Favourites and starred
+  static isStarred(route) { return route.starred == "true"; }
+  static isFavourite(route) { return favourites.has(route.id); }
 
   // Basic categories
   static isCircular(route) { return route.walkType == "circular"; }
@@ -187,19 +194,22 @@ class Filter {
 
   // Reset all filters and update the walks grid accordingly
   static clearAllFilters() {
-    filters.forEach( filter => {
+    filters.forEach(filter => {
       filter.clear();
     });
     this.filterRoutes();
   }
 
   // Hide routes that don't fit the current filters
+  // Update count of filters and matches
   static filterRoutes() {
-    routes.routes.forEach( route => {
+    let matchesCount = 0;
+
+    routes.routes.forEach(route => {
       // Assume a route is included until proven otherwise
-      // Once one filter rules a route out, look no further
+      // Once a filter rules a route out, look no further
       let included = true;
-      filters.every( currentFilter => {
+      filters.every(currentFilter => {
         switch (currentFilter.getToggleState()) {
           case ONLY:
             included = currentFilter.applyFilter(route);
@@ -209,61 +219,126 @@ class Filter {
             break;
         }
         return included;
-      })
-      document.getElementById("route" + route.id).style.display = included ? "block" : "none";
-    })
+      });
+
+      // hide filtered out routes and update count of how many are matched
+      let routeDiv = document.getElementById("route" + route.id);
+      if (included) {
+        routeDiv.style.display = "block";
+        matchesCount++;
+      }
+      else {
+        routeDiv.style.display = "none";
+      }
+    });
+
+    // update number of matches
+    let matchCountText = document.getElementById("match-count");
+    switch (matchesCount) {
+      case 0:
+        matchCountText.innerHTML = "No matches";
+        break;
+      case 1:
+        matchCountText.innerHTML = "1 match";
+        break;
+      default:
+        matchCountText.innerHTML = matchesCount + " matches";
+        break;
+    }
+
+    // count how many filters are applied and update accordingly
+    let filtersCount = 0
+    filters.forEach(filter => {
+      if (filter.getToggleState() != OFF) ++filtersCount;
+    });
+    let filterCountText = document.getElementById("filter-count");
+    switch (filtersCount) {
+      case 0:
+        filterCountText.innerHTML = "No filters";
+        filterCountText.className = "no-filters";
+        break;
+      case 1:
+        filterCountText.innerHTML = "1 filter";
+        filterCountText.className = "filters-applied";
+        break;
+      default:
+        filterCountText.innerHTML = filtersCount + " filters";
+        filterCountText.className = "filters-applied";
+        break;
+    }
   }
 }
 
 function populateFilterGrid() {
+  // favorites and starred
+  filters.push(new CategoryFilter("general", "starred", Filter.isStarred, basics.get("starred"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("general", "favourite", Filter.isFavourite, basics.get("favourite"), new Toggle(INCLUDE)));
+
   // row 1
-  filters.push(new CategoryFilter("filter01", Filter.isCircular, walkType.get("circular"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter02", Filter.hasArcheologicalInterest, interest.get("archeological"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter03", Filter.hasDragonTrees, terrain.get("dragon"), new Toggle(offOnlyNo)));
-  filters.push(new CategoryFilter("filter04", Filter.hasUnreliableGPS, warnings.get("gps"), new Toggle(offNo)));
+  filters.push(new CategoryFilter("features", "filter01", Filter.isCircular, walkType.get("circular"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter02", Filter.hasArcheologicalInterest, interest.get("archeological"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter03", Filter.hasDragonTrees, terrain.get("dragon"), new Toggle(INCLUDE_EXCLUDE)));
+  filters.push(new CategoryFilter("features", "filter04", Filter.hasUnreliableGPS, warnings.get("gps"), new Toggle(EXCLUDE)));
 
   // row 2
-  filters.push(new CategoryFilter("filter05", Filter.isAccessibleByCar, basics.get("car"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter06", Filter.hasPeaks, interest.get("peaks"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter07", Filter.isVolcanic, terrain.get("volcanic"), new Toggle(offOnlyNo)));
-  filters.push(new CategoryFilter("filter08", Filter.isSteep, warnings.get("steep"), new Toggle(offNo)));
+  filters.push(new CategoryFilter("features", "filter05", Filter.isAccessibleByCar, basics.get("car"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter06", Filter.hasPeaks, interest.get("peaks"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter07", Filter.isVolcanic, terrain.get("volcanic"), new Toggle(INCLUDE_EXCLUDE)));
+  filters.push(new CategoryFilter("features", "filter08", Filter.isSteep, warnings.get("steep"), new Toggle(EXCLUDE)));
 
   // row 3
-  filters.push(new CategoryFilter("filter09", Filter.isAccessibleByBus, basics.get("bus"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter10", Filter.hasPointsOfInterest, interest.get("poi"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter11", Filter.passesThroughLaurisilvaForest, terrain.get("laurisilva"), new Toggle(offOnlyNo)));
-  filters.push(new CategoryFilter("filter12", Filter.isSlippery, warnings.get("slippery"), new Toggle(offNo)));
+  filters.push(new CategoryFilter("features", "filter09", Filter.isAccessibleByBus, basics.get("bus"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter10", Filter.hasPointsOfInterest, interest.get("poi"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter11", Filter.passesThroughLaurisilvaForest, terrain.get("laurisilva"), new Toggle(INCLUDE_EXCLUDE)));
+  filters.push(new CategoryFilter("features", "filter12", Filter.isSlippery, warnings.get("slippery"), new Toggle(EXCLUDE)));
 
   // row 4
-  filters.push(new CategoryFilter("filter13", Filter.isShortWalk, duration.get("half"), new Toggle(offOnlyNo)));
-  filters.push(new CategoryFilter("filter14", Filter.hasPort, interest.get("port"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter15", Filter.isCoastalWalk, terrain.get("coastal"), new Toggle(offOnlyNo)));
-  filters.push(new CategoryFilter("filter16", Filter.isVertigoInducing, warnings.get("vertigo"), new Toggle(offNo)));
+  filters.push(new CategoryFilter("features", "filter13", Filter.isShortWalk, duration.get("half"), new Toggle(INCLUDE_EXCLUDE)));
+  filters.push(new CategoryFilter("features", "filter14", Filter.hasPort, interest.get("port"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter15", Filter.isCoastalWalk, terrain.get("coastal"), new Toggle(INCLUDE_EXCLUDE)));
+  filters.push(new CategoryFilter("features", "filter16", Filter.isVertigoInducing, warnings.get("vertigo"), new Toggle(EXCLUDE)));
 
   // row 5
-  filters.push(new CategoryFilter("filter17", Filter.isWaymarked, basics.get("waymarked"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter18", Filter.isScenic, interest.get("scenic"), new Toggle(offOnly)));
-  filters.push(new CategoryFilter("filter19", Filter.passesThroughPineForest, terrain.get("pine"), new Toggle(offOnlyNo)));
-  filters.push(new CategoryFilter("filter20", Filter.isWeatherDependent, warnings.get("weather"), new Toggle(offNo)));
+  filters.push(new CategoryFilter("features", "filter17", Filter.isWaymarked, basics.get("waymarked"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter18", Filter.isScenic, interest.get("scenic"), new Toggle(INCLUDE)));
+  filters.push(new CategoryFilter("features", "filter19", Filter.passesThroughPineForest, terrain.get("pine"), new Toggle(INCLUDE_EXCLUDE)));
+  filters.push(new CategoryFilter("features", "filter20", Filter.isWeatherDependent, warnings.get("weather"), new Toggle(EXCLUDE)));
 
-  let filterGrid = `
+  let generalFilterGrid = "";
+  let categoryFilterGrid = `
     <div class="feature-heading">Basic</div>
     <div class="feature-heading">Interest</div>
     <div class="feature-heading">Terrain</div>
     <div class="feature-heading">Warnings</div>`;
+  let locationFilterGrid = "";
 
   // The foreach algorithm iterates through in ascending index order so items should fall
-  // correctly in their appropriate columns
+  // correctly in their appropriate columns in the grid
   filters.forEach(filter => {
-    filterGrid +=
+    let categoryIcon =
       `<div id="${filter.getId()}" onClick="toggleFilter('${filter.getId()}')" class="icon">
       <img src="/img/icons/${filter.getIcon()}" class="icon-img" alt="" />
       <img id="${filter.getId() + "cross"}" class="filter-status" src="/img/icons/red-cross.svg" style="display: none;" alt="" />
       <img id="${filter.getId() + "tick"}" class="filter-status" src="/img/icons/green-tick.svg" style="display: none;" alt="" />
       </div>`;
+
+    // Add the icon to the appropriate grid area
+    switch (filter.getGridArea()) {
+      case "general":
+        generalFilterGrid += categoryIcon;
+        break;
+      case "features":
+        categoryFilterGrid += categoryIcon;
+        break;
+      case "location":
+        locationFilterGrid += categoryIcon;
+        break;
+    }
   });
 
-  document.getElementById("category-filter-grid").innerHTML = filterGrid;
+  document.getElementById("general-filter-grid").innerHTML = generalFilterGrid;
+  document.getElementById("category-filter-grid").innerHTML = categoryFilterGrid;
+  document.getElementById("location-filter-grid").innerHTML = locationFilterGrid;
 }
 
 // Click handler for filters
@@ -273,6 +348,18 @@ function toggleFilter(filterId) {
   Filter.filterRoutes();
 }
 
+// click handler for favourites icon
+function toggleFavourite(routeId){
+  let iconId = "favourite" + routeId;
+  if (favourites.has(routeId)) {
+    favourites.delete(routeId);
+    document.getElementById(iconId).src = "/img/icons/heart-empty.svg";
+  } else {
+    favourites.add(routeId);
+    document.getElementById(iconId).src = "/img/icons/heart-full-black.svg";
+  }
+}
+
 class CategoryFilter {
 
   #id;
@@ -280,16 +367,18 @@ class CategoryFilter {
   #toggle;
   #filter;
   #toggleState;
+  #gridArea;
 
-  constructor(id, filter, category, toggle) {
+  constructor(gridArea, id, filter, category, toggle) {
     this.#id = id;
     this.#category = category;
     this.#toggle = toggle;
     this.#filter = filter;
+    this.#toggleState = OFF;
+    this.#gridArea = gridArea;
   }
 
   #updateScreenStatus() {
-    let clickedIcon = document.getElementById(this.#id);
     let tick = document.getElementById(this.#id + "tick");
     let cross = document.getElementById(this.#id + "cross");
     switch (this.#toggleState) {
@@ -310,6 +399,10 @@ class CategoryFilter {
     }
   }
 
+  getGridArea() {
+    return this.#gridArea;
+  }
+
   getId() {
     return this.#id;
   }
@@ -324,7 +417,7 @@ class CategoryFilter {
   }
 
   toggle() {
-    this.#toggleState  = this.#toggle.toggle();
+    this.#toggleState = this.#toggle.toggle();
     this.#updateScreenStatus();
   }
 

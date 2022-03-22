@@ -135,6 +135,27 @@
       }
     ],
     [
+      "starred",
+      {
+        "text": "Starred",
+        "filterIncludeText": "Outstanding",
+        "description": "A walk of outstanding quality, a classic.",
+        "icon": "star-black.svg"
+      }
+    ],
+    [
+      "favourite",
+      {
+        "text": "Favourite",
+        "filterIncludeText": "Favourite",
+        "description": "Saved as a favourite by the user.",
+        "icon": "heart-full-black.svg",
+        "filterIcon": "heart-full-black.svg",
+        "selectedIcon": "heart-full-black.svg",
+        "unselectedIcon": "heart-empty.svg"
+      }
+    ],
+    [
       "car",
       {
         "text": "Car",

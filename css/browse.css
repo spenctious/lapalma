@@ -1,8 +1,10 @@
 /************************* Route summary grid ************************/
 
 #routes-header {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
   background-color: var(--colour1);
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
   padding: 0.5rem;
   margin-top: 0.2rem;
@@ -14,6 +16,22 @@
   grid-template-columns: repeat(auto-fill, 260px);
   gap: 5px;
   justify-content: center;
+}
+
+.no-filters {
+  color: var(--colour3);
+}
+
+.filters-applied {
+  background-color: yellow;
+  color: black;
+  padding: 5px;
+}
+
+#filter-button {
+  border: 1px solid white;
+  text-align: center;
+
 }
 
 /************************* Grid content: pic ************************/
@@ -132,7 +150,20 @@
   object-fit: contain;
 } */
 
+
 /************************* Filter grid ************************/
+
+#general-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 3rem);
+  column-gap: 2rem;
+
+  justify-content: center;
+  justify-items: center;
+  background-color: white;
+  padding: 0.5rem;
+
+}
 
 #category-filter-grid {
   display: grid;
