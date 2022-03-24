@@ -1,11 +1,22 @@
 {
+  "walkLocations": 
+  {
+    "text": "Locations",
+    "hoverText": "",
+    "filterIncludeText": "Specified locations",
+    "filterExcludeText": "Specified locations",
+    "description": "Areas",
+    "icon": "location.svg"
+},
+
   "walkType": [
     [
       "circular",
       {
         "text": "Circular",
         "hoverText": "",
-        "filterText": "",
+        "filterIncludeText": "Circular walks",
+        "filterExcludeText": "",
         "description": "Start and end are the same.",
         "icon": "circular.svg"
       }
@@ -15,7 +26,8 @@
       {
         "text": "Point-to-point",
         "hoverText": "",
-        "filterText": "",
+        "filterIncludeText": "Point-to-point walks",
+        "filterExcludeText": "",
         "description": "Requires a bus or taxi ride to complete the loop.",
         "icon": "linear.svg"
       }
@@ -25,7 +37,8 @@
       {
         "text": "There-and-back",
         "hoverText": "",
-        "filterText": "",
+        "filterIncludeText": "There-and-back walks",
+        "filterExcludeText": "",
         "description": "Route that follows the same path on the return.",
         "icon": "return.svg"
       }
@@ -37,6 +50,8 @@
       "stroll",
       {
         "text": "Stroll",
+        "filterIncludeText": "Strolls under 2h",
+        "filterExcludeText": "",
         "description": "A short walk usually under 2 hours duration.",
         "icon": "duration1.svg"
       }
@@ -45,6 +60,8 @@
       "half",
       {
         "text": "Half day",
+        "filterIncludeText": "Short walks",
+        "filterExcludeText": "",
         "description": "Reasonably fit walkers can fit a walk of this duration into half a day although combining two short day walks generally makes for a long day.",
         "icon": "duration2.svg"
       }
@@ -53,6 +70,8 @@
       "full",
       {
         "text": "Full day",
+        "filterIncludeText": "Longer walks",
+        "filterExcludeText": "",
         "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
         "icon": "duration3.svg"
       }
@@ -61,6 +80,8 @@
       "long",
       {
         "text": "Long day",
+        "filterIncludeText": "Very long walks",
+        "filterExcludeText": "",
         "description": "In winter these require an early start if you're not to risk running out of daylight.",
         "icon": "duration4.svg"
       }
@@ -73,6 +94,7 @@
       {
         "text": "Easy",
         "filterIncludeText": "Easy walks",
+        "filterExcludeText": "",
         "description": "Gentle gradients or only short steep bits and not very long overall.",
         "icon": "effort1.svg"
       }
@@ -81,7 +103,8 @@
       "moderate",
       {
         "text": "Moderate",
-        "filterIncludeText": "Shorter walks",
+        "filterIncludeText": "Moderate walks",
+        "filterExcludeText": "",
         "description": "Requires some effort with some climbing involved but not overly long or tiring.",
         "icon": "effort2.svg"
       }
@@ -91,6 +114,7 @@
       {
         "text": "Strenuous",
         "filterIncludeText": "Strenuous walks",
+        "filterExcludeText": "",
         "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
         "icon": "effort3.svg"
       }
@@ -100,6 +124,7 @@
       {
         "text": "Hard",
         "filterIncludeText": "Very tiring walks",
+        "filterExcludeText": "",
         "description": "Long, with a fair amount of steep climbing. You may want a rest day after one of these.",
         "icon": "effort4.svg"
       }
@@ -109,6 +134,7 @@
       {
         "text": "Extreme",
         "filterIncludeText": "Extreme walks",
+        "filterExcludeText": "",
         "description": "Only achievable by extremely fit walkers. Most people will need to split such a walk into two or more stages.",
         "icon": "effort5.svg"
       }
@@ -121,6 +147,7 @@
       {
         "text": "Refreshments",
         "filterIncludeText": "With refreshments",
+        "filterExcludeText": "",
         "description": "Food and drink along the way.",
         "icon": "refreshments.svg"
       }
@@ -130,6 +157,7 @@
       {
         "text": "Waymarked",
         "filterIncludeText": "On waymarked trails",
+        "filterExcludeText": "",
         "description": "The route stays entirely (or very nearly) on waymarked trails.",
         "icon": "signpost.svg"
       }
@@ -139,6 +167,7 @@
       {
         "text": "Starred",
         "filterIncludeText": "Outstanding",
+        "filterExcludeText": "",
         "description": "A walk of outstanding quality, a classic.",
         "icon": "star-black.svg"
       }
@@ -148,6 +177,7 @@
       {
         "text": "Favourite",
         "filterIncludeText": "Favourite",
+        "filterExcludeText": "",
         "description": "Saved as a favourite by the user.",
         "icon": "heart-full-black.svg",
         "filterIcon": "heart-full-black.svg",
@@ -159,7 +189,8 @@
       "car",
       {
         "text": "Car",
-        "filterIncludeText": "Fully ccessible by car",
+        "filterIncludeText": "Fully accessible by car",
+        "filterExcludeText": "",
         "description": "Accessible by car.",
         "icon": "car.svg"
       }
@@ -169,6 +200,7 @@
       {
         "text": "Bus",
         "filterIncludeText": "Fully accessible by bus",
+        "filterExcludeText": "",
         "description": "Accessible by bus.",
         "icon": "bus.svg"
       }
@@ -181,6 +213,7 @@
       {
         "text": "Viewpoints",
         "filterIncludeText": "With viewpoints",
+        "filterExcludeText": "",
         "description": "Has viewpoints (miradors) along the way.",
         "strong": "Spectacular",
         "icon": "viewpoint.svg"
@@ -191,6 +224,7 @@
       {
         "text": "Port",
         "filterIncludeText": "With a port",
+        "filterExcludeText": "",
         "description": "Visits a small port or harbour on the way.",
         "strong": "Special interest",
         "icon": "anchor.svg"
@@ -201,6 +235,7 @@
       {
         "text": "Points of Interest",
         "filterIncludeText": "With points of interest",
+        "filterExcludeText": "",
         "description": "Walk passes points of interest.",
         "strong": "Special interest",
         "icon": "pin.svg"
@@ -211,6 +246,7 @@
       {
         "text": "Mountain peaks",
         "filterIncludeText": "With mountain/volcano peaks",
+        "filterExcludeText": "",
         "description": "Passes near or over volcanic or mointain peaks.",
         "strong": "Special interest",
         "icon": "peak.svg"
@@ -221,6 +257,7 @@
       {
         "text": "Archeological",
         "filterIncludeText": "With archeological interest",
+        "filterExcludeText": "",
         "description": "Passes sites of archeological interest, mostly rock carvings.",
         "strong": "Good examples",
         "icon": "ancient.svg"
@@ -230,7 +267,8 @@
       "scenic",
       {
         "text": "Scenic",
-        "filterIncludeText": "Particularly scenic",
+        "filterIncludeText": "Particularly scenic routes",
+        "filterExcludeText": "",
         "description": "Contains photogenic scenery or areas of particular beauty.",
         "strong": "Spectacular",
         "icon": "camera.svg"
@@ -244,6 +282,7 @@
       {
         "text": "Volcanic",
         "filterIncludeText": "With volcanic interest",
+        "filterExcludeText": "No volcanic routes",
         "description": "Passes over notable volcanic terrain: lava flows, picon or volcanic peaks.",
         "strong": "Spectacular",
         "icon": "volcano.svg"
@@ -254,6 +293,7 @@
       {
         "text": "Pine forest",
         "filterIncludeText": "Only walks with pine forest",
+        "filterExcludeText": "Pine forest routes",
         "description": "Passes through significant Canary Pine forest.",
         "strong": "Good example",
         "icon": "forest.svg"
@@ -264,6 +304,7 @@
       {
         "text": "Laurisilva forest",
         "filterIncludeText": "With laurisilva forest",
+        "filterExcludeText": "Laurisilva forest",
         "description": "Passes through laurisilva forest.",
         "strong": "Good example",
         "icon": "leaves.svg"
@@ -274,6 +315,7 @@
       {
         "text": "Dragon trees",
         "filterIncludeText": "With dragon trees",
+        "filterExcludeText": "Dragon tree routes",
         "description": "Passes through a dragon tree grove or past spectacular examples.",
         "strong": "Good examples",
         "icon": "dragontree.svg"
@@ -284,6 +326,7 @@
       {
         "text": "Coastal path",
         "filterIncludeText": "Along coastal paths",
+        "filterExcludeText": "Coastal paths",
         "description": "Usually along cliff tops, occasionally down to the sea, often with deep barrancos.",
         "strong": "Spectacular",
         "icon": "waves.svg"
@@ -294,6 +337,7 @@
       {
         "text": "Riverbed",
         "filterIncludeText": "With river beds",
+        "filterExcludeText": "River beds",
         "description": "Route follows part of the way along a dried-up riverbed.",
         "strong": "Impressive",
         "icon": "river.svg"
@@ -306,6 +350,7 @@
       "slippery",
       {
         "text": "Slippery in places",
+        "filterIncludeText": "",
         "filterExcludeText": "Very slippery paths",
         "description": "Occasional hazardous conditions underfoot.",
         "strong": "High risk",
@@ -316,6 +361,7 @@
       "steep",
       {
         "text": "Steep",
+        "filterIncludeText": "",
         "filterExcludeText": "Very steep paths",
         "description": "Steep sections, can be hard on the knees when descending.",
         "strong": "Sustained or exceptional",
@@ -326,6 +372,7 @@
       "vertigo",
       {
         "text": "Vertigo risk",
+        "filterIncludeText": "",
         "filterExcludeText": "High vertigo risk",
         "description": "Vertigo risk: exposed peaks or paths near steep drops.",
         "strong": "High risk",
@@ -336,6 +383,7 @@
       "weather",
       {
         "text": "Weather dependent",
+        "filterIncludeText": "",
         "filterExcludeText": "Highly weather dependent",
         "description": "Requires favourable weather conditions: check the forecasts.",
         "strong": "Highly dependent",
@@ -346,6 +394,7 @@
       "gps",
       {
         "text": "Unreliable GPS signal",
+        "filterIncludeText": "",
         "filterExcludeText": "Very unreliable GPS",
         "description": "The route passes through areas where the GPS signal may become weak or loat.",
         "strong": "High risk",
@@ -356,6 +405,7 @@
       "mountain",
       {
         "text": "Mountain walk",
+        "filterIncludeText": "",
         "filterExcludeText": "High altitude",
         "description": "High altitude mountain conditions can be expected: prepare accordingly.",
         "strong": "Remote",
@@ -366,6 +416,7 @@
       "rockfall",
       {
         "text": "Rockfall",
+        "filterIncludeText": "",
         "filterExcludeText": "High risk of rockfall",
         "description": "Possibility of rockfall from overhanging rocks",
         "strong": "High risk",
@@ -376,6 +427,7 @@
       "danger",
       {
         "text": "Danger",
+        "filterIncludeText": "",
         "filterExcludeText": "Unusually risky",
         "description": "Risk of death or injury.",
         "strong": "High risk",

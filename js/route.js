@@ -4,12 +4,32 @@ var categories;
 var locations;
 var routes;
 var filters = new Array();
+var areaFilters;
+var locationFilters = new Array();
 var walkType, duration, effort, basics, interest, terrain, warnings;
+var locationMap;
+
+var locationAreas = new Map(
+  [
+    ["north", new Set()],
+    ["west", new Set()],
+    ["central", new Set()],
+    ["east", new Set()],
+    ["south", new Set()]
+  ]
+);
 
 var gridContent;
 var reloadData = true;
 
 var favourites = new Set();
+
+/************************* Data loading ************************/
+
+// Wait for everything to finish loading before trying to populate grid
+window.onload = function () {
+  loadData();//.then(populateRoutesGrid());
+};
 
 async function loadData() {
   try {
@@ -43,13 +63,26 @@ async function loadData() {
     interest = new Map(categories.interest);
     terrain = new Map(categories.terrain);
     warnings = new Map(categories.warnings);
+    locationMap = new Map(locations.locations);
+
+    // Create area location sets from location data
+    locationMap.forEach( (locationDetail, locationName) => {
+      locationDetail.areas.forEach( area => {
+        let areaSet = locationAreas.get(area);
+        areaSet.add(locationName);
+      })
+    });
 
     populateRoutesGrid();
-    populateFilterGrid();
+    populateGeneralGrid();
+    populateCategoriesGrid();
+    populateLocationGrid();
   } catch (error) {
     console.log('Request failed', error);
   }
 }
+
+/************************* Routes grid ************************/
 
 function populateRoutesGrid() {
   gridContent = "";
@@ -126,10 +159,55 @@ function populateRoutesGrid() {
   }
 }
 
+/************************* Filter logic ************************/
+
+class ActiveFilters {
+
+  static #activeFilters = new Map();
+  static emptyMessage = "<span class='emptyStateText'>Tap an icon to add a filter. Tap multiple times to cycle through options.</span>";
+
+  static updateCurrentFilterGrid() {
+    let currentFilterGrid = document.getElementById("current-filter-grid");
+    if (this.#activeFilters.size == 0) {
+      currentFilterGrid.innerHTML = this.emptyMessage;
+    } else {
+      let gridContent = "";
+      this.#activeFilters.forEach(filter => {
+        gridContent += `
+          <div class="active-filter-${filter.getToggleState()}"  onClick="clearFilter('${filter.getId()}')">
+            <div>${filter.getToggleState()}</div>
+            <div>${filter.getFilterText()}</div>
+            <div class="close-cross">&times;</div>
+          </div>`
+      });
+      currentFilterGrid.innerHTML = gridContent;
+    }
+  }
+
+  static add(filter) {
+    this.#activeFilters.set(filter.getId(), filter);
+    this.updateCurrentFilterGrid();
+  }
+
+  static remove(filterId) {
+    this.#activeFilters.delete(filterId);
+    this.updateCurrentFilterGrid();
+  }
+
+  static clear() {
+    this.#activeFilters.clear();
+    this.updateCurrentFilterGrid();
+  }
+
+  static getActiveFilterCount() {
+    return this.#activeFilters.length;
+  }
+}
+
 // Toggle states
-const OFF = "off";
-const ONLY = "only";
-const NO = "no";
+const OFF = "OFF";
+const ONLY = "ONLY";
+const NO = "NO";
 
 // Possible toggle state cycles
 const INCLUDE = [OFF, ONLY]; // positive attributes to be ruled in
@@ -157,9 +235,150 @@ class Toggle {
     this.#currentState = 0;
     return this.#states[0];
   }
+
+  toggleOn() {
+    this.#currentState = 1;
+    return this.#currentState;
+  }
 }
 
+class CategoryFilter {
+
+  #id;
+  #category;
+  #toggle;
+  #filter;
+  #toggleState;
+
+  constructor(id, filter, category, toggle) {
+    this.#id = id;
+    this.#category = category;
+    this.#toggle = toggle;
+    this.#filter = filter;
+    this.#toggleState = OFF;
+  }
+
+  #updateScreenStatus() {
+    let tick = document.getElementById(this.#id + "tick");
+    let cross = document.getElementById(this.#id + "cross");
+    switch (this.#toggleState) {
+      case OFF:
+        tick.style.display = "none";
+        cross.style.display = "none";
+        break;
+
+      case ONLY:
+        tick.style.display = "block";
+        cross.style.display = "none";
+        break;
+
+      case NO:
+        tick.style.display = "none";
+        cross.style.display = "block";
+        break;
+    }
+  }
+
+  getId() {
+    return this.#id;
+  }
+
+  getIcon() {
+    return this.#category.icon;
+  }
+
+  getFilterText() {
+    return this.#toggleState == ONLY ? this.#category.filterIncludeText : this.#category.filterExcludeText;
+  }
+
+  clear() {
+    this.#toggleState = this.#toggle.reset();
+    this.#updateScreenStatus();
+  }
+
+  toggle() {
+    this.#toggleState = this.#toggle.toggle();
+    this.#updateScreenStatus();
+  }
+
+  reset() {
+    this.#toggleState = this.#toggle.reset();
+    this.#updateScreenStatus();
+  }
+
+  getToggleState() {
+    return this.#toggleState;
+  }
+
+  applyFilter(route) {
+    return this.#filter(route);
+  }
+}
+
+class AreaFilter {
+  #id;
+  #area;
+  #buttonText;
+  #toggle;
+  #toggleState;
+
+  constructor(id, area, buttonText, toggle) {
+    this.#id = id;
+    this.#area = area;
+    this.#buttonText = buttonText;
+    this.#toggle = toggle;
+    this.#toggleState = OFF;
+  }
+
+  getId() {
+    return this.#id;
+  }
+
+  getText() {
+    return this.#buttonText;
+  }
+
+  getArea() {
+    return this.#area;
+  }
+
+  toggle() {
+    this.#toggleState = this.#toggle.toggle();
+    this.#updateScreenStatus();
+  }
+
+  toggleOn() {
+    this.#toggleState = this.#toggle.toggleOn();
+    this.#updateScreenStatus();
+  }
+
+  getToggleState() {
+    return this.#toggleState;
+  }
+
+  clear() {
+    this.#toggleState = this.#toggle.reset();
+    this.#updateScreenStatus();
+  }
+
+  reset() {
+    this.#toggleState = this.#toggle.reset();
+    this.#updateScreenStatus();
+  }
+
+  #updateScreenStatus() {
+    let locationButton = document.getElementById(this.#id);
+    if (this.#toggleState == OFF) {
+      locationButton.className = "filter-button"
+    } else {
+      locationButton.className = "filter-button-on"
+    }
+  }
+}
+
+// Static methods for filtering routes
 class Filter {
+
   // Favourites and starred
   static isStarred(route) { return route.starred == "true"; }
   static isFavourite(route) { return favourites.has(route.id); }
@@ -185,12 +404,27 @@ class Filter {
   static isCoastalWalk(route) { return "coastal" in route.terrain; }
   static passesThroughPineForest(route) { return "pine" in route.terrain; }
 
-  // Warnings
+  // Warnings - mostly these only activate when strong
   static hasUnreliableGPS(route) { return "gps" in route.warnings; }
-  static isSteep(route) { return "steep" in route.warnings; }
-  static isSlippery(route) { return "slippery" in route.warnings; }
-  static isVertigoInducing(route) { return "vertigo" in route.warnings; }
+  static isSteep(route) { return "steep" in route.warnings && route.warnings.steep.strong == "true"; }
+  static isSlippery(route) { return "slippery" in route.warnings && route.warnings.slippery.strong == "true"; }
+  static isVertigoInducing(route) { return "vertigo" in route.warnings && route.warnings.vertigo.strong == "true"; }
   static isWeatherDependent(route) { return "weather" in route.warnings; }
+
+  // Location
+  static isInLocationSet(route) {
+    // loop through area selectors and see if location is in any selected area
+    let included = false;
+    areaFilters.every( filter => {
+      if (filter.getToggleState() != OFF) {
+        let area = locationAreas.get(filter.getArea());
+        included = area.has(route.start) || area.has(route.end);
+      }
+      return !included;
+    })
+    // see if route start or end is in set
+    return included;
+  }
 
   // Reset all filters and update the walks grid accordingly
   static clearAllFilters() {
@@ -206,9 +440,8 @@ class Filter {
     let matchesCount = 0;
 
     routes.routes.forEach(route => {
-      // Assume a route is included until proven otherwise
-      // Once a filter rules a route out, look no further
       let included = true;
+      // Keep applying active filters until one of them rules a route out
       filters.every(currentFilter => {
         switch (currentFilter.getToggleState()) {
           case ONLY:
@@ -269,87 +502,136 @@ class Filter {
   }
 }
 
-function populateFilterGrid() {
-  // favorites and starred
-  filters.push(new CategoryFilter("general", "starred", Filter.isStarred, basics.get("starred"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("general", "favourite", Filter.isFavourite, basics.get("favourite"), new Toggle(INCLUDE)));
+/************************* Populate filter grids ************************/
 
-  // row 1
-  filters.push(new CategoryFilter("features", "filter01", Filter.isCircular, walkType.get("circular"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter02", Filter.hasArcheologicalInterest, interest.get("archeological"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter03", Filter.hasDragonTrees, terrain.get("dragon"), new Toggle(INCLUDE_EXCLUDE)));
-  filters.push(new CategoryFilter("features", "filter04", Filter.hasUnreliableGPS, warnings.get("gps"), new Toggle(EXCLUDE)));
+// Builds the HTML for a filter icon with tick and cross overlays
+function getCategoryIconHtml(filter) {
+  let id = filter.getId();
+  let icon = filter.getIcon();
+  let categoryIconHtml =
+    `<div id="${filter.getId()}" onClick="toggleFilter('${filter.getId()}')" class="icon">
+    <img src="/img/icons/${filter.getIcon()}" class="icon-img" alt="" />
+    <img id="${filter.getId() + "cross"}" class="filter-status" src="/img/icons/red-cross.svg" style="display: none;" alt="" />
+    <img id="${filter.getId() + "tick"}" class="filter-status" src="/img/icons/green-tick.svg" style="display: none;" alt="" />
+  </div>`;
+  return categoryIconHtml;
+}
 
-  // row 2
-  filters.push(new CategoryFilter("features", "filter05", Filter.isAccessibleByCar, basics.get("car"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter06", Filter.hasPeaks, interest.get("peaks"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter07", Filter.isVolcanic, terrain.get("volcanic"), new Toggle(INCLUDE_EXCLUDE)));
-  filters.push(new CategoryFilter("features", "filter08", Filter.isSteep, warnings.get("steep"), new Toggle(EXCLUDE)));
+function populateLocationGrid() {
+  areaFilters = [
+    new AreaFilter("area01", "north", "North", new Toggle(INCLUDE)),
+    new AreaFilter("area02", "west", "West", new Toggle(INCLUDE)),
+    new AreaFilter("area03", "central", "Central", new Toggle(INCLUDE)),
+    new AreaFilter("area04", "east", "East", new Toggle(INCLUDE)),
+    new AreaFilter("area05", "south", "South", new Toggle(INCLUDE))
+  ];
 
-  // row 3
-  filters.push(new CategoryFilter("features", "filter09", Filter.isAccessibleByBus, basics.get("bus"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter10", Filter.hasPointsOfInterest, interest.get("poi"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter11", Filter.passesThroughLaurisilvaForest, terrain.get("laurisilva"), new Toggle(INCLUDE_EXCLUDE)));
-  filters.push(new CategoryFilter("features", "filter12", Filter.isSlippery, warnings.get("slippery"), new Toggle(EXCLUDE)));
+  let locationFilter = new CategoryFilter("location", Filter.isInLocationSet, categories.walkLocations, new Toggle(INCLUDE));
+  filters = filters.concat(locationFilter);
 
-  // row 4
-  filters.push(new CategoryFilter("features", "filter13", Filter.isShortWalk, duration.get("half"), new Toggle(INCLUDE_EXCLUDE)));
-  filters.push(new CategoryFilter("features", "filter14", Filter.hasPort, interest.get("port"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter15", Filter.isCoastalWalk, terrain.get("coastal"), new Toggle(INCLUDE_EXCLUDE)));
-  filters.push(new CategoryFilter("features", "filter16", Filter.isVertigoInducing, warnings.get("vertigo"), new Toggle(EXCLUDE)));
+  let locationFilterGrid = getCategoryIconHtml(locationFilter);
+  locationFilterGrid += "<div>Filter will apply to selected areas below.</div>";
+  locationFilterGrid += `<div id="location-area-grid">`;
+  areaFilters.forEach(filter => {
+    locationFilterGrid += `
+      <div id="${filter.getId()}" onClick="toggleLocationFilter('${filter.getId()}')" class="filter-button">${filter.getText()}</div>`;
+  })
+  locationFilterGrid += `<div id="all-locations" class="text-button" onClick="selectAllLocations()">Select All</div>`;
+  locationFilterGrid += `<div id="all-locations" class="text-button" onClick="selectNoLocations()">Select None</div>`;
+  locationFilterGrid += `</div>`;
 
-  // row 5
-  filters.push(new CategoryFilter("features", "filter17", Filter.isWaymarked, basics.get("waymarked"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter18", Filter.isScenic, interest.get("scenic"), new Toggle(INCLUDE)));
-  filters.push(new CategoryFilter("features", "filter19", Filter.passesThroughPineForest, terrain.get("pine"), new Toggle(INCLUDE_EXCLUDE)));
-  filters.push(new CategoryFilter("features", "filter20", Filter.isWeatherDependent, warnings.get("weather"), new Toggle(EXCLUDE)));
+  document.getElementById("location-filter-grid").innerHTML = locationFilterGrid;
+}
 
-  let generalFilterGrid = "";
+function populateGeneralGrid() {
+  let generalFilters = [
+    new CategoryFilter("starred", Filter.isStarred, basics.get("starred"), new Toggle(INCLUDE)),
+    new CategoryFilter("favourite", Filter.isFavourite, basics.get("favourite"), new Toggle(INCLUDE))
+  ];
+
+  // add to complete list of filters
+  filters = filters.concat(generalFilters);
+
+  // build general filters grid
+  let generalFilterGrid = `
+  <div class="text-button" onClick="clearFavourites()">Clear favourites</div>`;
+  generalFilterGrid += getCategoryIconHtml(generalFilters[0]);
+  generalFilterGrid += getCategoryIconHtml(generalFilters[1]);
+  document.getElementById("general-filter-grid").innerHTML = generalFilterGrid;
+}
+
+function populateCategoriesGrid() {
+  let categoryFilters = [
+    // row 1
+    new CategoryFilter("filter01", Filter.isCircular, walkType.get("circular"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter02", Filter.hasArcheologicalInterest, interest.get("archeological"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter03", Filter.hasDragonTrees, terrain.get("dragon"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter04", Filter.hasUnreliableGPS, warnings.get("gps"), new Toggle(EXCLUDE)),
+
+    // row 2
+    new CategoryFilter("filter05", Filter.isAccessibleByCar, basics.get("car"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter06", Filter.hasPeaks, interest.get("peaks"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter07", Filter.isVolcanic, terrain.get("volcanic"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter08", Filter.isSteep, warnings.get("steep"), new Toggle(EXCLUDE)),
+
+    // row 3
+    new CategoryFilter("filter09", Filter.isAccessibleByBus, basics.get("bus"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter10", Filter.hasPointsOfInterest, interest.get("poi"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter11", Filter.passesThroughLaurisilvaForest, terrain.get("laurisilva"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter12", Filter.isSlippery, warnings.get("slippery"), new Toggle(EXCLUDE)),
+
+    // row 4
+    new CategoryFilter("filter13", Filter.isShortWalk, duration.get("half"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter14", Filter.hasPort, interest.get("port"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter15", Filter.isCoastalWalk, terrain.get("coastal"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter16", Filter.isVertigoInducing, warnings.get("vertigo"), new Toggle(EXCLUDE)),
+
+    // row 5
+    new CategoryFilter("filter17", Filter.isWaymarked, basics.get("waymarked"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter18", Filter.isScenic, interest.get("scenic"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter19", Filter.passesThroughPineForest, terrain.get("pine"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter20", Filter.isWeatherDependent, warnings.get("weather"), new Toggle(EXCLUDE)),
+  ];
+
+  // add to complete list of filters
+  filters = filters.concat(categoryFilters);
+
+  // build filter icon grid
   let categoryFilterGrid = `
     <div class="feature-heading">Basic</div>
     <div class="feature-heading">Interest</div>
     <div class="feature-heading">Terrain</div>
     <div class="feature-heading">Warnings</div>`;
-  let locationFilterGrid = "";
-
-  // The foreach algorithm iterates through in ascending index order so items should fall
-  // correctly in their appropriate columns in the grid
-  filters.forEach(filter => {
-    let categoryIcon =
-      `<div id="${filter.getId()}" onClick="toggleFilter('${filter.getId()}')" class="icon">
-      <img src="/img/icons/${filter.getIcon()}" class="icon-img" alt="" />
-      <img id="${filter.getId() + "cross"}" class="filter-status" src="/img/icons/red-cross.svg" style="display: none;" alt="" />
-      <img id="${filter.getId() + "tick"}" class="filter-status" src="/img/icons/green-tick.svg" style="display: none;" alt="" />
-      </div>`;
-
-    // Add the icon to the appropriate grid area
-    switch (filter.getGridArea()) {
-      case "general":
-        generalFilterGrid += categoryIcon;
-        break;
-      case "features":
-        categoryFilterGrid += categoryIcon;
-        break;
-      case "location":
-        locationFilterGrid += categoryIcon;
-        break;
-    }
+  categoryFilters.forEach(filter => {
+    categoryFilterGrid += getCategoryIconHtml(filter);
   });
-
-  document.getElementById("general-filter-grid").innerHTML = generalFilterGrid;
   document.getElementById("category-filter-grid").innerHTML = categoryFilterGrid;
-  document.getElementById("location-filter-grid").innerHTML = locationFilterGrid;
 }
+
+/************************* Click handlers ************************/
 
 // Click handler for filters
 function toggleFilter(filterId) {
   let selectedFilter = filters.find(f => f.getId() == filterId);
   selectedFilter.toggle();
+  if (selectedFilter.getToggleState() == OFF) {
+    ActiveFilters.remove(selectedFilter.getId());
+  }
+  else {
+    ActiveFilters.add(selectedFilter);
+  }
+  Filter.filterRoutes();
+}
+
+function clearFilter(filterId) {
+  let selectedFilter = filters.find(f => f.getId() == filterId);
+  selectedFilter.reset();
+  ActiveFilters.remove(selectedFilter.getId());
   Filter.filterRoutes();
 }
 
 // click handler for favourites icon
-function toggleFavourite(routeId){
+function toggleFavourite(routeId) {
   let iconId = "favourite" + routeId;
   if (favourites.has(routeId)) {
     favourites.delete(routeId);
@@ -360,77 +642,27 @@ function toggleFavourite(routeId){
   }
 }
 
-class CategoryFilter {
-
-  #id;
-  #category;
-  #toggle;
-  #filter;
-  #toggleState;
-  #gridArea;
-
-  constructor(gridArea, id, filter, category, toggle) {
-    this.#id = id;
-    this.#category = category;
-    this.#toggle = toggle;
-    this.#filter = filter;
-    this.#toggleState = OFF;
-    this.#gridArea = gridArea;
-  }
-
-  #updateScreenStatus() {
-    let tick = document.getElementById(this.#id + "tick");
-    let cross = document.getElementById(this.#id + "cross");
-    switch (this.#toggleState) {
-      case OFF:
-        tick.style.display = "none";
-        cross.style.display = "none";
-        break;
-
-      case ONLY:
-        tick.style.display = "block";
-        cross.style.display = "none";
-        break;
-
-      case NO:
-        tick.style.display = "none";
-        cross.style.display = "block";
-        break;
-    }
-  }
-
-  getGridArea() {
-    return this.#gridArea;
-  }
-
-  getId() {
-    return this.#id;
-  }
-
-  getIcon() {
-    return this.#category.icon;
-  }
-
-  clear() {
-    this.#toggleState = this.#toggle.reset();
-    this.#updateScreenStatus();
-  }
-
-  toggle() {
-    this.#toggleState = this.#toggle.toggle();
-    this.#updateScreenStatus();
-  }
-
-  getToggleState() {
-    return this.#toggleState;
-  }
-
-  applyFilter(route) {
-    return this.#filter(route);
-  }
+function clearFavourites() {
+  favourites.clear();
+  // reset icons
+  routes.routes.forEach(route => {
+    document.getElementById("favourite" + route.id).src = "/img/icons/heart-empty.svg";
+  });
 }
 
-// Wait for everything to finish loading before trying to populate grid
-window.onload = function () {
-  loadData();//.then(populateRoutesGrid());
-};
+function toggleLocationFilter(locationId) {
+  let selectedFilter = areaFilters.find(f => f.getId() == locationId);
+  selectedFilter.toggle();
+}
+
+function selectAllLocations() {
+  areaFilters.forEach( filter => {
+    filter.toggleOn();
+  })
+}
+
+function selectNoLocations() {
+  areaFilters.forEach( filter => {
+    filter.reset();
+  })
+}
