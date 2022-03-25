@@ -66,8 +66,8 @@ async function loadData() {
     locationMap = new Map(locations.locations);
 
     // Create area location sets from location data
-    locationMap.forEach( (locationDetail, locationName) => {
-      locationDetail.areas.forEach( area => {
+    locationMap.forEach((locationDetail, locationName) => {
+      locationDetail.areas.forEach(area => {
         let areaSet = locationAreas.get(area);
         areaSet.add(locationName);
       })
@@ -77,6 +77,10 @@ async function loadData() {
     populateGeneralGrid();
     populateCategoriesGrid();
     populateLocationGrid();
+
+    document.getElementById("filter").addEventListener("click", filterClickHandler);
+    document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
+
   } catch (error) {
     console.log('Request failed', error);
   }
@@ -133,7 +137,6 @@ function populateRoutesGrid() {
             <img
               id="favourite${routeId}"
               class="favourite"
-              onClick="toggleFavourite('${routeId}')"
               src="/img/icons/heart-empty.svg"
               alt=""
             />
@@ -174,10 +177,10 @@ class ActiveFilters {
       let gridContent = "";
       this.#activeFilters.forEach(filter => {
         gridContent += `
-          <div class="active-filter-${filter.getToggleState()}"  onClick="clearFilter('${filter.getId()}')">
+          <div class="active-filter-${filter.getToggleState()}">
             <div>${filter.getToggleState()}</div>
             <div>${filter.getFilterText()}</div>
-            <div class="close-cross">&times;</div>
+            <div id="active-${filter.getId()}" class="close-cross">&times;</div>
           </div>`
       });
       currentFilterGrid.innerHTML = gridContent;
@@ -195,7 +198,7 @@ class ActiveFilters {
   }
 
   static clear() {
-    this.#activeFilters.forEach( filter => {
+    this.#activeFilters.forEach(filter => {
       filter.reset();
     })
     this.#activeFilters.clear();
@@ -252,6 +255,7 @@ class CategoryFilter {
   #toggle;
   #filter;
   #toggleState;
+  #isDisabled;
 
   constructor(id, filter, category, toggle) {
     this.#id = id;
@@ -259,26 +263,31 @@ class CategoryFilter {
     this.#toggle = toggle;
     this.#filter = filter;
     this.#toggleState = OFF;
+    this.#isDisabled = false;
   }
 
   #updateScreenStatus() {
-    let tick = document.getElementById(this.#id + "tick");
-    let cross = document.getElementById(this.#id + "cross");
-    switch (this.#toggleState) {
-      case OFF:
-        tick.style.display = "none";
-        cross.style.display = "none";
-        break;
+    if (this.#isDisabled) {
+      // grey-out
+    } else {
+      let tick = document.getElementById(this.#id + "tick");
+      let cross = document.getElementById(this.#id + "cross");
+      switch (this.#toggleState) {
+        case OFF:
+          tick.style.display = "none";
+          cross.style.display = "none";
+          break;
 
-      case ONLY:
-        tick.style.display = "block";
-        cross.style.display = "none";
-        break;
+        case ONLY:
+          tick.style.display = "block";
+          cross.style.display = "none";
+          break;
 
-      case NO:
-        tick.style.display = "none";
-        cross.style.display = "block";
-        break;
+        case NO:
+          tick.style.display = "none";
+          cross.style.display = "block";
+          break;
+      }
     }
   }
 
@@ -316,7 +325,17 @@ class CategoryFilter {
   applyFilter(route) {
     return this.#filter(route);
   }
+
+  // Disabling a filter also turns it off
+  disable(isDisabled) {
+    this.#isDisabled = isDisabled;
+    if (isDisabled) {
+      this.reset();
+    }
+  }
 }
+
+
 
 class AreaFilter {
   #id;
@@ -418,7 +437,7 @@ class Filter {
   static isInLocationSet(route) {
     // loop through area selectors and see if location is in any selected area
     let included = false;
-    areaFilters.every( filter => {
+    areaFilters.every(filter => {
       if (filter.getToggleState() != OFF) {
         let area = locationAreas.get(filter.getArea());
         included = area.has(route.start) || area.has(route.end);
@@ -512,7 +531,7 @@ function getCategoryIconHtml(filter) {
   let id = filter.getId();
   let icon = filter.getIcon();
   let categoryIconHtml =
-    `<div id="${filter.getId()}" onClick="toggleFilter('${filter.getId()}')" class="icon">
+    `<div id="${filter.getId()}" class="icon">
     <img src="/img/icons/${filter.getIcon()}" class="icon-img" alt="" />
     <img id="${filter.getId() + "cross"}" class="filter-status" src="/img/icons/red-cross.svg" style="display: none;" alt="" />
     <img id="${filter.getId() + "tick"}" class="filter-status" src="/img/icons/green-tick.svg" style="display: none;" alt="" />
@@ -539,8 +558,8 @@ function populateLocationGrid() {
     locationFilterGrid += `
       <div id="${filter.getId()}" onClick="toggleLocationFilter('${filter.getId()}')" class="filter-button">${filter.getText()}</div>`;
   })
-  locationFilterGrid += `<div id="all-locations" class="text-button" onClick="selectAllLocations()">Select All</div>`;
-  locationFilterGrid += `<div id="all-locations" class="text-button" onClick="selectNoLocations()">Select None</div>`;
+  locationFilterGrid += `<div id="all-locations" class="text-button">Select All</div>`;
+  locationFilterGrid += `<div id="no-locations" class="text-button">Select None</div>`;
   locationFilterGrid += `</div>`;
 
   document.getElementById("location-filter-grid").innerHTML = locationFilterGrid;
@@ -557,7 +576,7 @@ function populateGeneralGrid() {
 
   // build general filters grid
   let generalFilterGrid = `
-  <div class="text-button" onClick="clearFavourites()">Clear favourites</div>`;
+  <div id="clear-favourites" class="text-button">Clear favourites</div>`;
   generalFilterGrid += getCategoryIconHtml(generalFilters[0]);
   generalFilterGrid += getCategoryIconHtml(generalFilters[1]);
   document.getElementById("general-filter-grid").innerHTML = generalFilterGrid;
@@ -613,64 +632,91 @@ function populateCategoriesGrid() {
 
 /************************* Click handlers ************************/
 
-// Click handler for filters
-function toggleFilter(filterId) {
-  let selectedFilter = filters.find(f => f.getId() == filterId);
-  selectedFilter.toggle();
-  if (selectedFilter.getToggleState() == OFF) {
+function filterClickHandler(event) {
+  let elementId = event.target.closest("div").id;
+
+  // text button to clear all filters
+  if (elementId == "clear-all-filters") {
+    ActiveFilters.clear();
+    Filter.filterRoutes();
+    return;
+  }
+
+  // text button to select all location areas
+  if (elementId == "all-locations") {
+    areaFilters.forEach(filter => {
+      filter.toggleOn();
+    })
+    return;
+  }
+
+  // text button to deselect all location areas
+  if (elementId == "no-locations") {
+    areaFilters.forEach(filter => {
+      filter.reset();
+    })
+    return;
+  }
+
+  // favourites clear all text button
+  if (elementId == "clear-favourites") {
+    favourites.clear();
+    routes.routes.forEach(route => {
+      document.getElementById("favourite" + route.id).src = "/img/icons/heart-empty.svg";
+    })
+    return;
+  }
+
+  // close button to clear active filter
+  if (elementId.startsWith("active-filter")) {
+    let filterId = elementId.replace("active-",""); // strip prefix to get the filter name
+    let selectedFilter = filters.find(f => f.getId() == filterId);
+    selectedFilter.reset();
     ActiveFilters.remove(selectedFilter.getId());
+    Filter.filterRoutes();
+    return;
+  }
+
+  // icon buttons to toggle filters
+  if (elementId.startsWith("filter")) {
+    let selectedFilter = filters.find(f => f.getId() == elementId);
+    selectedFilter.toggle();
+    if (selectedFilter.getToggleState() == OFF) {
+      ActiveFilters.remove(selectedFilter.getId());
+    }
+    else {
+      ActiveFilters.add(selectedFilter);
+    }
+    Filter.filterRoutes();
+    return;
+  }
+
+  // buttons to toggle selected areas for the location filter
+  if (elementId.startsWith("area")) {
+    let selectedFilter = areaFilters.find(f => f.getId() == elementId);
+    selectedFilter.toggle();
+    return;
+  }
+}
+
+function routesGridClickHandler(event) {
+  let elementId = event.target.id;
+  let routeId = event.target.closest("#routes-grid > div").id;
+
+  if (elementId.startsWith("favourite")) {
+    // favourites icon clicked - toggle it
+    if (favourites.has(routeId)) {
+      favourites.delete(routeId);
+      event.target.src = "/img/icons/heart-empty.svg";
+    } else {
+      favourites.add(routeId);
+      event.target.src = "/img/icons/heart-full-black.svg";
+    }
   }
   else {
-    ActiveFilters.add(selectedFilter);
-  }
-  Filter.filterRoutes();
-}
-
-function clearFilter(filterId) {
-  let selectedFilter = filters.find(f => f.getId() == filterId);
-  selectedFilter.reset();
-  ActiveFilters.remove(selectedFilter.getId());
-  Filter.filterRoutes();
-}
-
-// click handler for favourites icon
-function toggleFavourite(routeId) {
-  let iconId = "favourite" + routeId;
-  if (favourites.has(routeId)) {
-    favourites.delete(routeId);
-    document.getElementById(iconId).src = "/img/icons/heart-empty.svg";
-  } else {
-    favourites.add(routeId);
-    document.getElementById(iconId).src = "/img/icons/heart-full-black.svg";
+    // route clicked - open route detail page
+    console.log("route clicked");
   }
 }
 
-function clearFavourites() {
-  favourites.clear();
-  // reset icons
-  routes.routes.forEach(route => {
-    document.getElementById("favourite" + route.id).src = "/img/icons/heart-empty.svg";
-  });
-}
 
-function toggleLocationFilter(locationId) {
-  let selectedFilter = areaFilters.find(f => f.getId() == locationId);
-  selectedFilter.toggle();
-}
-
-function selectAllLocations() {
-  areaFilters.forEach( filter => {
-    filter.toggleOn();
-  })
-}
-
-function selectNoLocations() {
-  areaFilters.forEach( filter => {
-    filter.reset();
-  })
-}
-
-function clearAllFilters() {
-  ActiveFilters.clear();
-  Filter.filterRoutes();
-}
