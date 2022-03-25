@@ -195,6 +195,9 @@ class ActiveFilters {
   }
 
   static clear() {
+    this.#activeFilters.forEach( filter => {
+      filter.reset();
+    })
     this.#activeFilters.clear();
     this.updateCurrentFilterGrid();
   }
@@ -665,4 +668,9 @@ function selectNoLocations() {
   areaFilters.forEach( filter => {
     filter.reset();
   })
+}
+
+function clearAllFilters() {
+  ActiveFilters.clear();
+  Filter.filterRoutes();
 }
