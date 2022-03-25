@@ -548,7 +548,7 @@ function populateLocationGrid() {
     new AreaFilter("area05", "south", "South", new Toggle(INCLUDE))
   ];
 
-  let locationFilter = new CategoryFilter("location", Filter.isInLocationSet, categories.walkLocations, new Toggle(INCLUDE));
+  let locationFilter = new CategoryFilter("filter23", Filter.isInLocationSet, categories.walkLocations, new Toggle(INCLUDE));
   filters = filters.concat(locationFilter);
 
   let locationFilterGrid = getCategoryIconHtml(locationFilter);
@@ -556,7 +556,7 @@ function populateLocationGrid() {
   locationFilterGrid += `<div id="location-area-grid">`;
   areaFilters.forEach(filter => {
     locationFilterGrid += `
-      <div id="${filter.getId()}" onClick="toggleLocationFilter('${filter.getId()}')" class="filter-button">${filter.getText()}</div>`;
+      <div id="${filter.getId()}" class="filter-button">${filter.getText()}</div>`;
   })
   locationFilterGrid += `<div id="all-locations" class="text-button">Select All</div>`;
   locationFilterGrid += `<div id="no-locations" class="text-button">Select None</div>`;
@@ -567,8 +567,8 @@ function populateLocationGrid() {
 
 function populateGeneralGrid() {
   let generalFilters = [
-    new CategoryFilter("starred", Filter.isStarred, basics.get("starred"), new Toggle(INCLUDE)),
-    new CategoryFilter("favourite", Filter.isFavourite, basics.get("favourite"), new Toggle(INCLUDE))
+    new CategoryFilter("filter21", Filter.isStarred, basics.get("starred"), new Toggle(INCLUDE)),
+    new CategoryFilter("filter22", Filter.isFavourite, basics.get("favourite"), new Toggle(INCLUDE))
   ];
 
   // add to complete list of filters
@@ -633,6 +633,8 @@ function populateCategoriesGrid() {
 /************************* Click handlers ************************/
 
 function filterClickHandler(event) {
+  console.log( event.target);
+  console.log(event.target.closest("div").id);
   let elementId = event.target.closest("div").id;
 
   // text button to clear all filters
