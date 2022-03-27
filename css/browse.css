@@ -166,7 +166,7 @@
   margin-bottom: 0.5rem;
 }
 
-#current-filter-grid {
+#active-filter-grid {
   background-color: white;
   font-size: 0.8rem;
   font-weight: bold;
@@ -180,6 +180,18 @@
   align-items: center;
   line-height: 1.2rem;
   height: 100%;
+}
+
+#location-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2rem;
+  height: 100%;
+  background-color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .active-filter-ONLY,

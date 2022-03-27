@@ -7,7 +7,7 @@
     "filterExcludeText": "Specified locations",
     "description": "Areas",
     "icon": "location.svg"
-},
+  },
 
   "walkType": [
     [
@@ -186,7 +186,7 @@
       }
     ],
     [
-      "car",
+      "accessCar",
       {
         "text": "Car",
         "filterIncludeText": "Fully accessible by car",
@@ -196,7 +196,7 @@
       }
     ],
     [
-      "bus",
+      "accessBus",
       {
         "text": "Bus",
         "filterIncludeText": "Fully accessible by bus",
