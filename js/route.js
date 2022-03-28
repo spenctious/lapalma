@@ -14,10 +14,10 @@ var warnings;
 var locationMap;
 
 // Additional data
-var favourites
+var favourites;
 
 // For diagnostics
-var reloadData = true;
+var reloadData = false;
 
 // Object handling filter panel and filters within
 var filterSet;
@@ -32,8 +32,8 @@ window.onload = function () {
 
 async function loadData() {
   try {
-    if (reloadData || sessionStorage.getItem("dataLoaded") === null) {
-      // read data from local source
+    if (reloadData || localStorage.getItem("dataLoaded") === null) {
+      // read data from JSON files
       const result1 = await fetch('/data/categories.json');
       categories = await result1.json();
       const result2 = await fetch('/data/locations.json');
@@ -41,17 +41,17 @@ async function loadData() {
       const result3 = await fetch('/data/routes.json');
       routes = await result3.json();
 
-      // save it in session for other pages to use
-      sessionStorage.setItem("categories", JSON.stringify(categories));
-      sessionStorage.setItem("locations", JSON.stringify(locations));
-      sessionStorage.setItem("routes", JSON.stringify(routes));
-      sessionStorage.setItem("dataLoaded", "true");
+      // save it in local storage for other pages to use
+      localStorage.setItem("categories", JSON.stringify(categories));
+      localStorage.setItem("locations", JSON.stringify(locations));
+      localStorage.setItem("routes", JSON.stringify(routes));
+      localStorage.setItem("dataLoaded", "true");
     }
     else {
-      // read the data from session if we have it
-      categories = JSON.parse(sessionStorage.categories);
-      locations = JSON.parse(sessionStorage.locations);
-      routes = JSON.parse(sessionStorage.routes);
+      // read the data from local storage if we have it
+      categories = JSON.parse(localStorage.categories);
+      locations = JSON.parse(localStorage.locations);
+      routes = JSON.parse(localStorage.routes);
     }
     initialize();
   } catch (error) {
@@ -615,7 +615,7 @@ class Location extends Filter {
   isInSelectedAreas(location) {
     let included = false;
     for (let area of this.#locationAreas.values()) {
-      if (area.toggle.state != OFF) {
+      if (!area.toggle.state.isOff) {
         included = area.locations.has(location);
         if (included) break; // no need to look any further
       }
@@ -736,8 +736,8 @@ class FilterSet {
   }
 
   get locationFilterMessage() {
-    if (this.#locationFilter.allAreasSelected) return "Deselect one or more areas to apply filter.";
-    if (this.#locationFilter.noAreasSelected) return "Select one or more areas to apply filter.";
+    if (this.#locationFilter.allAreasSelected) return "Remove one or more areas to apply filter.";
+    if (this.#locationFilter.noAreasSelected) return "Add one or more areas to apply filter.";
     return "";
   }
 
