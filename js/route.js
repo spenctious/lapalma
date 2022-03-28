@@ -70,6 +70,7 @@ function initialize() {
   warnings = new Map(categories.warnings);
   locationMap = new Map(locations.locations);
 
+  favourites = new Set();
   filterSet = new FilterSet();
 
   filterSet.populateFilterPanel();
@@ -147,8 +148,8 @@ function routesGridClickHandler(event) {
     }
   }
   else {
-    // route clicked - open route detail page
-    console.log("route clicked");
+    // route clicked - open route detail page for the specified route
+    window.location.href = `./route-detail.html?route=${routeIndex}`;
   }
 }
 

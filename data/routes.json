@@ -42,30 +42,33 @@
               "to": "end"
             }
           ],
-          "warnings": {
-            "slippery": { "strong": "false", "notes": "" },
-            "vertigo": { "strong": "false", "notes": "" },
-            "danger": { "strong": "false", "notes": "" }
-          }
+
+          "warnings": [
+            [ "slippery", "normal" ],
+            [ "vertigo", "normal" ]
+          ]
         }
       ],
 
       "POI": ["", ""],
 
-      "terrain": {
-        "riverbed": { "strong": "false" }
-      },
+      "terrain": [
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {
-        "views": { "strong": "false" }
-      },
+      "interest": [
+        [ "views", "normal" ]
+      ],
 
-      "warnings": {
-        "vertigo": {
-          "strong": "false",
-          "notes": "Minor risk along safe fenced bit of path after the mills."
-        }
-      }
+      "warnings": [
+        [ "vertigo", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Minor risk along safe fenced bit of path after the mills." ]
+      ],
+
+      "dangers": []
     },
     {
       "id": "02",
@@ -137,19 +140,22 @@
 
       "POI": ["", ""],
 
-      "terrain": {
-        "riverbed": { "strong": "false" }
-      },
+      "terrain": [
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {
-        "views": { "strong": "false" }
-      },
+      "interest": [
+        [ "views", "normal" ]
+      ],
 
-      "warnings": {
-        "slippery": { "strong": "false", "notes": "" },
-        "vertigo": { "strong": "false", "notes": "" },
-        "danger": { "strong": "false", "notes": "" }
-      }
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "vertigo", "normal" ]
+      ],
+
+      "notes": [],
+
+      "dangers": []
     },
     {
       "id": "03",
@@ -223,11 +229,45 @@
 
       "POI": ["", ""],
 
-      "terrain": {},
+      "terrain": [
+        [ "volcanic", "normal" ],
+        [ "pine", "normal" ],
+        [ "laurisilva", "normal" ],
+        [ "dragon", "normal" ],
+        [ "coastal", "normal" ],
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {},
+      "interest": [
+        [ "views", "strong" ],
+        [ "port", "strong" ],
+        [ "poi", "strong" ],
+        [ "peaks", "normal" ],
+        [ "archeological", "strong" ],
+        [ "scenic", "strong" ]
+      ],
 
-      "warnings": {}
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "steep", "normal" ],
+        [ "vertigo", "normal" ],
+        [ "weather", "strong" ],
+        [ "gps", "normal" ],
+        [ "mountain", "normal" ],
+        [ "rockfall", "normal" ],
+        [ "danger", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Loose material on barranco descents." ],
+        [ "vertigo", "Mild exposure along the cliffs." ]
+      ],
+
+      "dangers": [
+        "Risk of claustrophobia and clouting your head in the tunnels.",
+        "Some large boulders to descend down in the river bed."
+      ]
+
     },
     {
       "id": "04",
@@ -301,11 +341,39 @@
 
       "POI": ["", ""],
 
-      "terrain": {},
+      "terrain": [
+        [ "volcanic", "normal" ],
+        [ "pine", "normal" ],
+        [ "laurisilva", "normal" ],
+        [ "dragon", "normal" ],
+        [ "coastal", "normal" ],
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {},
+      "interest": [
+        [ "views", "normal" ],
+        [ "port", "normal" ],
+        [ "poi", "normal" ],
+        [ "peaks", "normal" ],
+        [ "archeological", "normal" ],
+        [ "scenic", "normal" ]
+      ],
 
-      "warnings": {}
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "steep", "normal" ],
+        [ "vertigo", "normal" ],
+        [ "weather", "normal" ],
+        [ "gps", "normal" ],
+        [ "mountain", "normal" ],
+        [ "rockfall", "normal" ],
+        [ "danger", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Loose material on barranco descents." ],
+        [ "vertigo", "Mild exposure along the cliffs." ]
+      ]
     },
     {
       "id": "05",
@@ -353,11 +421,39 @@
 
       "POI": ["", ""],
 
-      "terrain": {},
+      "terrain": [
+        [ "volcanic", "normal" ],
+        [ "pine", "normal" ],
+        [ "laurisilva", "normal" ],
+        [ "dragon", "normal" ],
+        [ "coastal", "normal" ],
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {},
+      "interest": [
+        [ "views", "normal" ],
+        [ "port", "normal" ],
+        [ "poi", "normal" ],
+        [ "peaks", "normal" ],
+        [ "archeological", "normal" ],
+        [ "scenic", "normal" ]
+      ],
 
-      "warnings": {}
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "steep", "normal" ],
+        [ "vertigo", "normal" ],
+        [ "weather", "normal" ],
+        [ "gps", "normal" ],
+        [ "mountain", "normal" ],
+        [ "rockfall", "normal" ],
+        [ "danger", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Loose material on barranco descents." ],
+        [ "vertigo", "Mild exposure along the cliffs." ]
+      ]
     },
     {
       "id": "06",
@@ -427,21 +523,22 @@
 
       "POI": ["", ""],
 
-      "terrain": {
-        "laurisilva": {"strong": "true" }
-      },
+      "terrain": [
+        [ "laurisilva", "strong" ]
+      ],
 
-      "interest": {
-        "scenic": { "strong": "true" },
-        "views": {"strong": "false" }
-      },
+      "interest": [
+        [ "views", "normal" ],
+        [ "scenic", "strong" ]
+      ],
 
-      "warnings": {
-        "slippery": {
-          "strong": "false",
-          "notes": "Muddy and/or clay underfoot."
-        }
-      }
+      "warnings": [
+        [ "slippery", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Muddy and/or clay underfoot." ]
+      ]
     },
     {
       "id": "07",
@@ -490,15 +587,34 @@
 
       "POI": ["", ""],
 
-      "terrain": {
-      },
+      "terrain": [
+        [ "volcanic", "normal" ],
+        [ "pine", "normal" ],
+        [ "laurisilva", "normal" ],
+        [ "dragon", "normal" ],
+        [ "coastal", "normal" ],
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {
-        "views": {"strong": "true" }
-      },
+      "interest": [
+        [ "views", "strong" ]
+      ],
 
-      "warnings": {
-      }
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "steep", "normal" ],
+        [ "vertigo", "normal" ],
+        [ "weather", "normal" ],
+        [ "gps", "normal" ],
+        [ "mountain", "normal" ],
+        [ "rockfall", "normal" ],
+        [ "danger", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Loose material on barranco descents." ],
+        [ "vertigo", "Mild exposure along the cliffs." ]
+      ]
     },
     {
       "id": "08",
@@ -524,17 +640,17 @@
 
       "POI": ["", ""],
 
-      "terrain": { 
-        "laurisilver": {"strong": "false" }
-      },
+      "terrain": [
+        [ "laurisilva", "normal" ]
+      ],
 
-      "interest": {
-        "views": {"strong": "false" }
-      },
+      "interest": [
+        [ "views", "normal" ]
+      ],
 
-      "warnings": {
-        "slippery": {"strong": "false", "notes": "" }
-      }
+      "warnings": [
+        [ "slippery", "normal" ]
+      ]
     },
     {
       "id": "09",
@@ -609,39 +725,32 @@
 
       "POI": ["", ""],
 
-      "terrain": {
-        "riverbed": {"strong": "false" }
-      },
+      "terrain": [
+        [ "riverbed", "normal" ]
+      ],
 
-      "interest": {
-        "views": { "strong": "false" },
-        "scenic": {"strong": "false" }
-      },
+      "interest": [
+        [ "views", "normal" ],
+        [ "scenic", "normal" ]
+      ],
 
-      "warnings": {
-        "gps": {
-          "strong": "false",
-          "notes": "Loss of GPS signal in tunnels is of no account - there's only one path."
-        },
-        "slippery": {
-          "strong": "false",
-          "notes": "Tunnels will be wet and slippery."
-        },
-        "vertigo": {
-          "strong": "false",
-          "notes": "Some risk along high gallery path."
-        },
-        "danger": [
-          {
-            "strong": "false",
-            "notes": "Risk of claustrophobia and clouting your head in the tunnels."
-          },
-          {
-            "strong": "false",
-            "notes": "Some large boulders to descend down in the river bed."
-          }
-        ]
-      }
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "vertigo", "normal" ],
+        [ "gps", "normal" ],
+        [ "danger", "normal" ]
+      ],
+
+      "notes": [
+        [ "gps", "Loss of GPS signal in tunnels is of no account - there's only one path." ],
+        [ "slippery", "Tunnels will be wet and slippery." ],
+        [ "vertigo", "Some risk along high gallery path." ]
+      ],
+
+      "dangers": [
+        "Risk of claustrophobia and clouting your head in the tunnels.",
+        "Some large boulders to descend down in the river bed."
+      ]
     },
     {
       "id": "10",
@@ -705,26 +814,23 @@
       "POI": ["", ""],
 
       "terrain": [
-        { "type": "dragon", "strong": "false" },
-        { "type": "coastal", "strong": "true" }
+        [ "dragon", "normal" ],
+        [ "coastal", "normal" ]
       ],
 
       "interest": [
-        { "type": "scenic", "strong": "true" },
-        { "type": "views", "strong": "false" }
+        [ "views", "normal" ],
+        [ "scenic", "strong" ]
       ],
 
       "warnings": [
-        {
-          "type": "slippery",
-          "strong": "false",
-          "notes": "Loose material on barranco descents."
-        },
-        {
-          "type": "vertigo",
-          "strong": "false",
-          "notes": "Mild exposure along the cliffs."
-        }
+        [ "slippery", "normal" ],
+        [ "vertigo", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Loose material on barranco descents." ],
+        [ "vertigo", "Mild exposure along the cliffs." ]
       ]
     }
   ]

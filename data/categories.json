@@ -9,6 +9,16 @@
     "icon": "location.svg"
   },
 
+  "danger":
+  {
+    "text": "Danger",
+    "filterIncludeText": "",
+    "filterExcludeText": "Unusually risky",
+    "description": "Risk of death or injury.",
+    "strong": "High risk",
+    "icon": "warning.svg"
+  },
+
   "walkType": [
     [
       "circular",
@@ -421,17 +431,6 @@
         "description": "Possibility of rockfall from overhanging rocks",
         "strong": "High risk",
         "icon": "rockfall.svg"
-      }
-    ],
-    [
-      "danger",
-      {
-        "text": "Danger",
-        "filterIncludeText": "",
-        "filterExcludeText": "Unusually risky",
-        "description": "Risk of death or injury.",
-        "strong": "High risk",
-        "icon": "warning.svg"
       }
     ]
   ]

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse walks</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+
+    <script src="js/common.js"></script>
+    <script src="js/detail.js"></script>
+  </head>
+
+  <body>
+    <div id="overlay" onclick="closeNav()"></div>
+    <div id="container">
+      <div id="wrapper">
+        <!-- Title bar -->
+        <div id="header">
+          <div class="col clickable" onclick="openNav()">&#9776;</div>
+          <div class="col">Walk details</div>
+          <div class="col clickable">
+            <a href="/settings.html">
+              <img src="/img/icons/gear-fill-white.svg" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation is populated in code -->
+        <nav id="navbar" class="sidenav"></nav>
+
+        <div id="basics-detail-grid">
+          <h3>Basics</h3>
+          <div id="basics-grid">
+            <!-- content inserted by populateBasicsGrid() -->
+          </div>
+          <h3>Access</h3>
+          <div id="access-grid">
+            <!-- content inserted by populateAccessGrid() -->
+          </div>
+          <h3>Trail</h3>
+          <div id="trail-grid">
+            <!-- content inserted by populateTrailGrid() -->
+          </div>
+        </div>
+        <div id="features-and-warnings">
+          <h3>Features</h3>
+          <div id="features-grid">
+            <!-- content inserted by populateFeaturesGrid() -->
+          </div>
+          <h3>Warnings</h3>
+          <div id="warnings-grid">
+            <!-- content inserted by populateWarningsGrid() -->
+          </div>
+        </div>
+
+        <div id="footer">Copyright &copy; Robert Anstey 2022</div>
+      </div>
+    </div>
+  </body>
+</html>
