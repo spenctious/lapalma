@@ -9,7 +9,7 @@
         "bus": {
           "notes": "",
           "routes": ["100", "120"],
-          "stop-name": "Barlovento"
+          "stop": "Barlovento"
         },
         "notes": "Bus interchange."
       }
@@ -23,7 +23,7 @@
         "bus": {
           "notes": "",
           "routes": ["120"],
-          "stop-name": "Franceses"
+          "stop": "Franceses"
         },
         "notes": ""
       }
@@ -37,7 +37,7 @@
         "bus": {
           "notes": "",
           "routes": ["100"],
-          "stop-name": "Los Sauces"
+          "stop": "Los Sauces"
         },
         "notes": ""
       }
@@ -52,7 +52,7 @@
         "bus": {
           "notes": "",
           "routes": [""],
-          "stop-name": ""
+          "stop": ""
         },
         "notes": ""
       }
@@ -66,7 +66,7 @@
         "bus": {
           "notes": "",
           "routes": [""],
-          "stop-name": ""
+          "stop": ""
         },
         "notes": ""
       }
@@ -92,7 +92,7 @@
             "11",
             "2"
           ],
-          "stop-name": "Santa Cruz"
+          "stop": "Santa Cruz"
         },
         "notes": "Bus interchange"
       }

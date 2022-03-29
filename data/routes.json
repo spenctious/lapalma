@@ -90,53 +90,8 @@
       "town": "San Pedro de Breña Alta",
       "routeFile": "LP02 Mirador and waterways",
       "refreshments": "Bars and restaurants at the start and end points and on the way at Velhoco and Las Nieves.",
-
-      "start": {
-        "name": "San Pedro de Breña Alta",
-        "location": {
-          "latitude": "",
-          "longitude": ""
-        },
-        "parking": {
-          "notes": "Breña Alta: car park at the rear of Plaza de Bujaz. Santa Cruz: park near Barco de la Virgen or on Avenida Marítima.",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        },
-        "bus": {
-          "notes": "",
-          "route": "35",
-          "stopName": "San Pedro de Breña Alta",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        }
-      },
-
-      "end": {
-        "name": "Santa Cruz de La Palma",
-        "location": {
-          "latitude": "",
-          "longitude": ""
-        },
-        "parking": {
-          "notes": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        },
-        "bus": {
-          "route": "",
-          "stopName": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        }
-      },
+      "start": "Barlovento",
+      "end": "Franceses",
 
       "POI": ["", ""],
 
@@ -177,53 +132,8 @@
       "town": "San Pedro  de Breña Alta",
       "routeFile": "LP03 Woods and springs",
       "refreshments": "Bars and restaurants in San Pedro de Breña Alta.",
-
-      "start": {
-        "name": "",
-        "location": {
-          "latitude": "",
-          "longitude": ""
-        },
-        "parking": {
-          "notes": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        },
-        "bus": {
-          "notes": "",
-          "route": "300",
-          "stopName": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        }
-      },
-
-      "end": {
-        "name": "",
-        "location": {
-          "latitude": "",
-          "longitude": ""
-        },
-        "parking": {
-          "notes": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        },
-        "bus": {
-          "route": "",
-          "stopName": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        }
-      },
+      "start": "Barlovento",
+      "end": "Franceses",
 
       "variants": ["", ""],
 
@@ -289,53 +199,8 @@
       "town": "Santa Cruz de La Palma",
       "routeFile": "LP04 Barranco de Mediera",
       "refreshments": "Bar/Restaurant at Las Nieves.",
-
-      "start": {
-        "name": "",
-        "location": {
-          "latitude": "",
-          "longitude": ""
-        },
-        "parking": {
-          "notes": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        },
-        "bus": {
-          "notes": "",
-          "route": "33",
-          "stopName": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        }
-      },
-
-      "end": {
-        "name": "",
-        "location": {
-          "latitude": "",
-          "longitude": ""
-        },
-        "parking": {
-          "notes": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        },
-        "bus": {
-          "route": "",
-          "stopName": "",
-          "location": {
-            "latitude": "",
-            "longitude": ""
-          }
-        }
-      },
+      "start": "Barlovento",
+      "end": "Franceses",
 
       "variants": ["", ""],
 
@@ -396,26 +261,8 @@
       "town": "Puntallana",
       "routeFile": "LP05 Puntallana to Los Sauces",
       "refreshments": "Bars, café, restaurant in Puntallana. Bar & restaurant in San Andrés. Bars, cafés, restaurants in Los Sauces.",
-
-      "start": {
-        "name": "Puntallana",
-        "parking": "Puntallana: Mercadillo or down Calle Llano San Juan opposite towards town, first left.",
-        "bus": {
-          "notes": "",
-          "routes": ["100"],
-          "stopName": "Puntallana"
-        }
-      },
-
-      "end": {
-        "name": "Los Sauces",
-        "parking": "Multiple small places, try Calle Vicente San Juan round the back of the big church.",
-        "bus": {
-          "notes": "",
-          "routes": ["100"],
-          "stopName": "Los Sauces"
-        }
-      },
+      "start": "Barlovento",
+      "end": "Franceses",
 
       "variants": ["", ""],
 
@@ -476,16 +323,8 @@
       "town": "La Galga",
       "routeFile": "LP06 Cubo de la Galga",
       "refreshments": "None en route. Restaurant on PR LP 5 intersection with LP-1 road (walk 6b).",
-
-      "start": {
-        "name": "Cubo de la Galga",
-        "parking": "Small car park at the trail head.",
-        "bus": {
-          "notes": "The stop is in a brief gap between tunnels.",
-          "routes": ["100"],
-          "stopName": "Cubo de la Galga"
-        }
-      },
+      "start": "Barlovento",
+      "end": "Franceses",
 
       "variants": [
         {

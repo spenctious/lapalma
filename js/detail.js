@@ -18,6 +18,7 @@ var locationMap;
 // Additional data
 var favourites;
 var route;
+var trailStatus = new Map();
 
 // For diagnostics
 var reloadData = true;
@@ -58,6 +59,10 @@ async function loadData() {
   }
 }
 
+async function getTrailStatuses() {
+
+}
+
 function initialize() {
   walkType = new Map(categories.walkType);
   duration = new Map(categories.duration);
@@ -80,11 +85,14 @@ function initialize() {
   populateWarningsGrid();
   populateBasicsGrid();
   populateAccessGrid();
+  populateTrailGrid();
 }
 
-function populateBasicsGrid() {
+/************************* Grid populating functions ************************/
 
-}
+// N.B. The looping algorithms used ensure the order of entries is ddefined in the 
+// category data to save having to ensure consistency through route data which would 
+// be harder to maintain and reorder if required.
 
 function populateFeaturesGrid() {
   let featuresContent = "";
@@ -111,9 +119,10 @@ function populateFeaturesGrid() {
 function populateWarningsGrid() {
   let warningsContent = "";
   for (let [warningName, warningDetail] of warnings.entries()) {
-    let description = warningDetail.description; // default generic text
+    let description = warningDetail.description;
     let routeWarnings = new Map(route.warnings);
 
+    // overwrite the default generic description if there is a more specific note
     if ("notes" in route) {
       let routeNotes = new Map(route.notes);
       if (routeNotes.has(warningName)) {
@@ -121,11 +130,14 @@ function populateWarningsGrid() {
       }
     }
 
+    // if the route has the specified warning, add it
     let strongIndicator = "";
     if (routeWarnings.has(warningName)) {
+      // add a label if the warning is strongly indicated
       if (routeWarnings.get(warningName) == "strong") {
         strongIndicator = `<span class="strong-indicator">${warningDetail.strong}</span><br />`;
       }
+
       warningsContent += `
         <div class="icon">
           <img src="/img/icons/${warningDetail.icon}" class="icon-img" alt="" />
@@ -137,7 +149,7 @@ function populateWarningsGrid() {
     }
   }
 
-  // If there are dangers
+  // If there are dangers list them
   if ("dangers" in route) {
     let routeDangersContent = "";
     route.dangers.forEach(danger => routeDangersContent += `<p>${danger}</p>`);
@@ -169,15 +181,15 @@ function populateBasicsGrid() {
   // type
   let t = walkType.get(route.walkType);
   let typeText = t.text;
-  let typeIcon =  `/img/icons/${t.icon}`;
+  let typeIcon = `/img/icons/${t.icon}`;
   let typeDescription = t.description;
 
   // refreshments
   let r = basics.get("refreshments");
   let refreshmentsText = r.text;
-  let refreshmentsIcon =  `/img/icons/${r.icon}`;
+  let refreshmentsIcon = `/img/icons/${r.icon}`;
   let refreshmentsDescription = r.description;
-  
+
   let basicsContent = `
     <div class="route-metric">
       <p>${durationText}</p>
@@ -210,14 +222,94 @@ function populateBasicsGrid() {
       ${refreshmentsDescription}
     </div>`;
 
-    document.getElementById("basics-grid").innerHTML = basicsContent;
+  document.getElementById("basics-grid").innerHTML = basicsContent;
 }
 
 function populateAccessGrid() {
-  let accessContent = `
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>`;
-  document.getElementById("access-grid").innerHTML = accessContent;
+  let accessContent = "";
 
+  // car
+  if (route.accessCar == "true"){
+    let c = basics.get("accessCar");
+    accessContent += `
+      <div class="icon">
+        <img src="/img/icons/${c.icon}" class="icon-img" alt="" />
+      </div>
+      <div class="item-description">
+        <h4>${c.text}</h4>
+        ${c.description}
+      </div>`;
+  }
+
+  // bus
+  if (route.accessBus == "true") {
+    let b = basics.get("accessBus");
+    accessContent += `
+    <div class="icon">
+      <img src="/img/icons/${b.icon}" class="icon-img" alt="" />
+    </div>
+    <div class="item-description">
+      <h4>${b.text}</h4>
+      ${b.description}
+    </div>`;
+  }
+
+  // start and end points
+  accessContent += getLocationHtml(route.start, "Start");
+  accessContent += getLocationHtml(route.end, "End");
+
+  document.getElementById("access-grid").innerHTML = accessContent;
+}
+
+// Helper function - same code for start and end point location data
+function getLocationHtml(location, label) {
+  let startName = location;
+  let s = locationMap.get(startName);
+  let startCar = "parking" in s ? s.parking : "Inaccessible by car";
+  let startBus = "Inaccessible by bus";
+  if ("bus" in s) {
+    startBus = `Bus stop: ${s.bus.stop}<br />`;
+    s.bus.routes.forEach( busRoute => startBus += `<span class="bus-route">${busRoute}</span>`);
+  }
+  return `
+    <div>
+      <h4>${label}</h4>
+    </div>
+    <div class="item-description">
+      <h4>${startName}</h4>
+      <p>${startCar}</p>
+      <p>${startBus}</p>
+    </div>`;
+}
+
+function populateTrailGrid() {
+  let trailContent = "";
+  let w = basics.get("waymarked");
+
+  // waymarked
+  if (route.waymarked == "true") {
+    trailContent += `
+    <div class="icon">
+      <img src="/img/icons/${w.icon}" class="icon-img" alt="" />
+    </div>
+    <div class="item-description">
+      <h4>${w.text}</h4>
+      ${w.description}
+    </div>`;
+  }
+
+  // official trail status
+  trailContent += `
+    <div>
+      <h4>Status</h4>
+    </div>
+    <div class="item-description">
+      <h4>Official paths</h4>
+      <div id="status-query-results>
+        <img src="/img/icons/loading-spinner.gif" class="spinner" width="103" height="103" alt="" />
+      </div>
+      <p>Note: Walks may also traverse paths not part of the official trail network.</p>
+    </div>`;
+
+  document.getElementById("trail-grid").innerHTML = trailContent;
 }
