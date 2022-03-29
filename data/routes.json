@@ -22,6 +22,7 @@
       "refreshments": "Bar/Restaurants along LP-101 and at Las Nieves.",
       "start": "Plaza de España",
       "end": "Plaza de España",
+      "paths": [""],
 
       "variants": [
         {
@@ -92,6 +93,7 @@
       "refreshments": "Bars and restaurants at the start and end points and on the way at Velhoco and Las Nieves.",
       "start": "Barlovento",
       "end": "Franceses",
+      "paths": [""],
 
       "POI": ["", ""],
 
@@ -134,6 +136,7 @@
       "refreshments": "Bars and restaurants in San Pedro de Breña Alta.",
       "start": "Barlovento",
       "end": "Franceses",
+      "paths": ["PR LP 19"],
 
       "variants": ["", ""],
 
@@ -201,6 +204,7 @@
       "refreshments": "Bar/Restaurant at Las Nieves.",
       "start": "Barlovento",
       "end": "Franceses",
+      "paths": [""],
 
       "variants": ["", ""],
 
@@ -263,6 +267,7 @@
       "refreshments": "Bars, café, restaurant in Puntallana. Bar & restaurant in San Andrés. Bars, cafés, restaurants in Los Sauces.",
       "start": "Barlovento",
       "end": "Franceses",
+      "paths": [""],
 
       "variants": ["", ""],
 
@@ -325,6 +330,7 @@
       "refreshments": "None en route. Restaurant on PR LP 5 intersection with LP-1 road (walk 6b).",
       "start": "Barlovento",
       "end": "Franceses",
+      "paths": [""],
 
       "variants": [
         {
@@ -400,16 +406,9 @@
       "town": "Los Sauces",
       "routeFile": "LP07 Los Tilos Bridge",
       "refreshments": "Bars, cafés, restaurants in Los Sauces.",
-
-      "start": {
-        "name": "Los Sauces",
-        "parking": "Parking at both ends of the bridge.",
-        "bus": {
-          "notes": "Easy walk from town or get off nearer the bridge.",
-          "routes": ["100"],
-          "stopName": "Los Sauces"
-        }
-      },
+      "start": "Barlovento",
+      "end": "Franceses",
+      "paths": [""],
 
       "variants": [
         {
@@ -476,6 +475,7 @@
       "refreshments": "Bars, cafés, restaurants in Los Sauces. Bar/restaurant at Laguna de Barlovento.",
       "start": "Los Sauces",
       "end": "Los Sauces",
+      "paths": [""],
 
       "POI": ["", ""],
 
@@ -513,6 +513,7 @@
       "refreshments": "Bar, café, restaurant Los Tilos Visitor Centre.",
       "start": "Casa del Monte",
       "end": "Los Tilos Taxi Hut.",
+      "paths": [""],
 
       "variants": [
         {
@@ -612,6 +613,7 @@
       "refreshments": "Bars, cafés, restaurants in Barlovento. Bar/shop and bar in Gallegos.",
       "start": "Barlovento",
       "end": "Franceses",
+      "paths": [""],
 
       "variants": [
         {

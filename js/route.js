@@ -1,78 +1,17 @@
-// The raw data in JSON format
-var categories;
-var locations;
-var routes;
-
-// Maps generated from data segments
-var walkType;
-var duration;
-var effort;
-var basics;
-var interest;
-var terrain;
-var warnings;
-var locationMap;
-
-// Additional data
-var favourites;
-
-// For diagnostics
-var reloadData = false;
+"use strict";
 
 // Object handling filter panel and filters within
 var filterSet;
 
-
-/************************* Data loading and initialization ************************/
+/************************* Initialization ************************/
 
 // Wait for everything to finish loading before trying to populate grid
 window.onload = function () {
-  loadData();//.then(populateRoutesGrid());
+  loadDataThen(initialize);
 };
 
-async function loadData() {
-  try {
-    if (reloadData || localStorage.getItem("dataLoaded") === null) {
-      // read data from JSON files
-      const result1 = await fetch('/data/categories.json');
-      categories = await result1.json();
-      const result2 = await fetch('/data/locations.json');
-      locations = await result2.json();
-      const result3 = await fetch('/data/routes.json');
-      routes = await result3.json();
-
-      // save it in local storage for other pages to use
-      localStorage.setItem("categories", JSON.stringify(categories));
-      localStorage.setItem("locations", JSON.stringify(locations));
-      localStorage.setItem("routes", JSON.stringify(routes));
-      localStorage.setItem("dataLoaded", "true");
-    }
-    else {
-      // read the data from local storage if we have it
-      categories = JSON.parse(localStorage.categories);
-      locations = JSON.parse(localStorage.locations);
-      routes = JSON.parse(localStorage.routes);
-    }
-    initialize();
-  } catch (error) {
-    console.log('Request failed', error);
-  }
-}
-
 function initialize() {
-  // unpack categories into maps
-  walkType = new Map(categories.walkType);
-  duration = new Map(categories.duration);
-  effort = new Map(categories.effort);
-  basics = new Map(categories.basics);
-  interest = new Map(categories.interest);
-  terrain = new Map(categories.terrain);
-  warnings = new Map(categories.warnings);
-  locationMap = new Map(locations.locations);
-
-  favourites = new Set();
   filterSet = new FilterSet();
-
   filterSet.populateFilterPanel();
   populateRoutesGrid();
 
@@ -80,7 +19,6 @@ function initialize() {
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
 }
-
 
 /************************* Click handlers ************************/
 

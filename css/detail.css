@@ -67,3 +67,27 @@ h4 {
   height: 0.8rem;
 }
 
+.trail-open,
+.trail-closed,
+.trail-unknown {
+  color: white;
+  padding: 4px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.trail-open {
+  background-color: green;
+}
+
+.trail-closed {
+  background-color: red;
+}
+
+.trail-unknown {
+  background-color: orange;
+}
+
+.trail-status {
+  float: right;
+}
