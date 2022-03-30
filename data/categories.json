@@ -1,6 +1,5 @@
 {
-  "walkLocations": 
-  {
+  "walkLocations": {
     "text": "Locations",
     "hoverText": "",
     "filterIncludeText": "Specified locations",
@@ -9,8 +8,7 @@
     "icon": "location.svg"
   },
 
-  "danger":
-  {
+  "danger": {
     "text": "Danger",
     "filterIncludeText": "",
     "filterExcludeText": "Unusually risky",
@@ -350,7 +348,7 @@
         "filterExcludeText": "River beds",
         "description": "Route follows part of the way along a dried-up riverbed.",
         "strong": "Impressive",
-        "icon": "river.svg"
+        "icon": "riverbed.svg"
       }
     ]
   ],

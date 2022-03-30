@@ -143,10 +143,10 @@
       "POI": ["", ""],
 
       "terrain": [
-        [ "volcanic", "normal" ],
+        [ "volcanic", "strong" ],
         [ "pine", "normal" ],
         [ "laurisilva", "normal" ],
-        [ "dragon", "normal" ],
+        [ "dragon", "strong" ],
         [ "coastal", "normal" ],
         [ "riverbed", "normal" ]
       ],
@@ -177,8 +177,16 @@
       ],
 
       "dangers": [
-        "Risk of claustrophobia and clouting your head in the tunnels.",
-        "Some large boulders to descend down in the river bed."
+        { 
+          "danger": "Claustrophobia",
+          "description": "Risk of claustrophobia and clouting your head in the tunnels.", 
+          "strength": "strong"
+        },
+        {
+          "danger": "Knee strain",
+          "description": "Some large boulders to descend down in the river bed.",
+          "strength": "normal"
+        }
       ]
 
     },

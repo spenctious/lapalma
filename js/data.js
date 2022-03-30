@@ -28,7 +28,7 @@ var dataSources = [
 ];
 
 // For diagnostics and development
-var forceReload = false;
+var forceReload = true;
 
 /************************* Data loading setup ************************/
 
