@@ -51,7 +51,7 @@
         }
       ],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "riverbed", "normal" ]
@@ -95,7 +95,7 @@
       "end": "Franceses",
       "paths": [""],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "riverbed", "normal" ]
@@ -140,7 +140,7 @@
 
       "variants": ["", ""],
 
-      "POI": ["", ""],
+      "poi": ["test1", "test2"],
 
       "terrain": [
         [ "volcanic", "strong" ],
@@ -216,7 +216,7 @@
 
       "variants": ["", ""],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "volcanic", "normal" ],
@@ -279,7 +279,7 @@
 
       "variants": ["", ""],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "volcanic", "normal" ],
@@ -374,7 +374,7 @@
         }
       ],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "laurisilva", "strong" ]
@@ -431,7 +431,7 @@
         }
       ],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "volcanic", "normal" ],
@@ -485,7 +485,7 @@
       "end": "Los Sauces",
       "paths": [""],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "laurisilva", "normal" ]
@@ -571,7 +571,7 @@
         }
       ],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "riverbed", "normal" ]
@@ -660,7 +660,7 @@
         }
       ],
 
-      "POI": ["", ""],
+      "poi": ["", ""],
 
       "terrain": [
         [ "dragon", "normal" ],

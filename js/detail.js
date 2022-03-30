@@ -188,7 +188,12 @@ function populateFeaturesAndWarnings() {
 
   // poi
   if (routeInterest.has("poi")) {
-    featuresContent += getFeatureOrWarningHtml("poi", FEATURE);
+    let poiList = "";
+    route.poi.forEach( poiName => {
+      let p = poi.get(poiName);
+      poiList += `<p><a href="./poi.html?poi=${p.id}">${p.name}</a></p>`;
+    });
+    featuresContent += getFeatureOrWarningHtml("poi", FEATURE, poiList);
     featureIcons.push(interest.get("poi").icon);
   }
 
@@ -232,7 +237,8 @@ function populateFeaturesAndWarnings() {
 
   // weather
   if (routeWarnings.has("weather")) {
-    warningsContent += getFeatureOrWarningHtml("weather", WARNING);
+    let weatherLink = `<p><a href="./weather.html"></a><p>`;
+    warningsContent += getFeatureOrWarningHtml("weather", WARNING, weatherLink);
     warningIcons.push(warnings.get("weather").icon);
   }
 
@@ -294,6 +300,12 @@ function populateFeaturesAndWarnings() {
   document.getElementById("features-and-warnings-summary").innerHTML = summaryContent;
 }
 
+function populateRouteDatail() {
+  
+}
+
+/************************* Helper functions ************************/
+
 function getSummaryIconsContent(iconArray) {
   let iconsContent = "";
   for (let i = 0; i < 5; i++) {
@@ -303,7 +315,7 @@ function getSummaryIconsContent(iconArray) {
     } else {
       if (i == 4 && iconArray.length > 5) {
         // too many - indicate how many more
-        iconsContent += `<div>+${iconArray.length - 5}</div>`;
+        iconsContent += `<div>+${iconArray.length - 4}</div>`;
       }
       else {
         // add icon
@@ -314,7 +326,7 @@ function getSummaryIconsContent(iconArray) {
   return iconsContent;
 }
 
-function getFeatureOrWarningHtml(itemName, isFeature) {
+function getFeatureOrWarningHtml(itemName, isFeature, additionalContent) {
   // feature or warning?
   let itemDetail = isFeature ? interest.get(itemName) : warnings.get(itemName);
   let routeCategory = isFeature ? routeInterest : routeWarnings;
@@ -333,7 +345,7 @@ function getFeatureOrWarningHtml(itemName, isFeature) {
     strongIndicator = `<span class="strong-indicator">${itemDetail.strong}</span><br />`;
   }
 
-  return getFeatureHtml(itemDetail.icon, itemDetail.text, description, strongIndicator);
+  return getFeatureHtml(itemDetail.icon, itemDetail.text, description, strongIndicator, additionalContent);
 }
 
 function getSummaryIcon(icon) {
@@ -356,8 +368,6 @@ function getFeatureHtml(icon, text, description, strongIndicator = "", additiona
     </div>`;
 }
 
-
-// Helper function - same code for start and end point location data
 function getLocationHtml(location, label) {
   let startName = location;
   let s = locationMap.get(startName);

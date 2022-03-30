@@ -5,6 +5,7 @@ var categories;
 var locations;
 var routes;
 var trailStatuses;
+var pointsOfInterest;
 
 // Maps generated from data segments
 var walkType;
@@ -16,6 +17,7 @@ var terrain;
 var warnings;
 var locationMap;
 var statuses;
+var poi;
 
 // Additional data
 var favourites;
@@ -24,7 +26,8 @@ var dataSources = [
   "/data/categories.json",
   "/data/locations.json",
   "/data/routes.json",
-  "/data/trail-statuses.json"
+  "/data/trail-statuses.json",
+  "/data/POI.json",
 ];
 
 // For diagnostics and development
@@ -64,6 +67,7 @@ async function loadDataThen(afterDataIsLoaded) {
   locations = await responses[1];
   routes = await responses[2];
   trailStatuses = await responses[3];
+  pointsOfInterest = await responses[4];
 
   // create maps for the data components
   walkType = new Map(categories.walkType);
@@ -75,6 +79,7 @@ async function loadDataThen(afterDataIsLoaded) {
   warnings = new Map(categories.warnings);
   locationMap = new Map(locations.locations);
   statuses = new Map(trailStatuses);
+  poi = new Map(pointsOfInterest);
 
   // retrieve favourites or create them new if missing
   if (localStorage.getItem("favourites") === null) {

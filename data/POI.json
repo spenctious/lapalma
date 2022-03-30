@@ -1,0 +1,36 @@
+[
+  [
+    "test1",
+    {
+      "id": "01",
+      "name": "test1",
+      "tags": "museum",
+      "description": "lorem ipsum 2",
+      "entryCost": "FREE",
+      "tel": "2323452525",
+      "openingTimes": 
+        [
+          { "when": "Mon-Fri", "times": "08:00 - 17:00" },
+          { "when": "Sat", "times": "10:00 - 16:00" },
+          { "when": "Sun & Hol", "times": "CLOSED" }
+        ]
+    }
+  ],
+  [
+    "test2",
+    {
+      "id": "02",
+      "name": "test2",
+      "tags": "information",
+      "description": "lorem impsum 2",
+      "entryCost": "€6",
+      "tel": "02030 3040320",
+      "openingTimes": 
+        [
+          { "when": "Mon-Fri", "times": "08:00 - 17:00" },
+          { "when": "Sat", "times": "10:00 - 16:00" },
+          { "when": "Sun & Hol", "times": "CLOSED" }
+        ]
+    }
+  ]
+]
