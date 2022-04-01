@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP19a Las Tricias to Cuevas de Buraca.gpx</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 19a from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Opposite Las Tricias tourist information office</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow SL VG 55 down the road. The way alternates between short sections of road and path shortcuts which are signed with blazes but not signposts.                </description>       
+				<LookAt>
+					<longitude>-17.962909</longitude>
+					<latitude>28.780575</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.962909,28.780575,794.19                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 GR 130, LP-114</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GR 130 down the road.                </description>       
+				<LookAt>
+					<longitude>-17.966561</longitude>
+					<latitude>28.783153</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.966561,28.783153,726.003723                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 GR 130, Calle el Polvillo</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - To the caves: continue on the GR 130, path. From the caves: follow the GPS track along the Calle de Polvillo road.                </description>       
+				<LookAt>
+					<longitude>-17.971375</longitude>
+					<latitude>28.785786</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.971375,28.785786,667                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 GR 130, path, Calle el Polvillo</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - To the caves: keep on the GR 130, ignore track to the left. From the caves: follow Calle el Polvillo.                </description>       
+				<LookAt>
+					<longitude>-17.972687</longitude>
+					<latitude>28.786564</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.972687,28.786564,636.115906                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 GR 130 Variente Buracas</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GR 130 Variente Buracas straight on. The main GR 130 route heads towards Santo Domingo and links up with the variant path further on.                </description>       
+				<LookAt>
+					<longitude>-17.973787</longitude>
+					<latitude>28.789613</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.973787,28.789613,567.189758                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Handmade sign R. T. Traviesa</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - To the caves: continue on following the sign to the caves. From the caves: follow the GPS track along the diverging path signed R. T. Traviesa to meet the road which you follow up and round.                </description>       
+				<LookAt>
+					<longitude>-17.977085</longitude>
+					<latitude>28.792727</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.977085,28.792727,446.722656                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Caboco de Buracas</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Poor GPS signal. Multiple smaller caves to explore before the main cave.                </description>       
+				<LookAt>
+					<longitude>-17.975647</longitude>
+					<latitude>28.792783</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.975647,28.792783,437.453644                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Museo de Interpretación del Gofio (MIGO)</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Hours: Monday to Saturday 10:00 - 18:00, Sundays 10:00 - 16:00, Holidays 10:30 - 14:30.                </description>       
+				<LookAt>
+					<longitude>-17.976006</longitude>
+					<latitude>28.789054</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.976006,28.789054,582.765442                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 New Barranco de Izcagua path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.975168</longitude>
+					<latitude>28.788287</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.975168,28.788287,568.931458                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 Path leading from bend</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the red dirt path uphill.                </description>       
+				<LookAt>
+					<longitude>-17.974693</longitude>
+					<latitude>28.788047</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.974693,28.788047,582.750488                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>11 Path, Calle el Polvillo diverges</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the path.                </description>       
+				<LookAt>
+					<longitude>-17.969989</longitude>
+					<latitude>28.782643</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.969989,28.782643,704.764587                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>12 Path crossroad</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Carry straight on up the steps following the path by the wall.                </description>       
+				<LookAt>
+					<longitude>-17.966393</longitude>
+					<latitude>28.781364</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.966393,28.781364,753.625549                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Las Tricias to Cuevas de Buraca</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.962909,28.780575,800.92
+-17.962971,28.780795,784.09
+-17.963231,28.781023,790.82
+-17.963285,28.781107,793.22
+-17.963392,28.781186,791.30
+-17.963425,28.781272,789.86
+-17.963947,28.781863,784.09
+-17.964039,28.781911,784.09
+-17.964248,28.781962,781.69
+-17.964461,28.782050,777.36
+-17.964730,28.782234,770.63
+-17.964844,28.782398,765.83
+-17.965103,28.782499,759.58
+-17.965225,28.782517,757.66
+-17.965379,28.782660,754.77
+-17.965479,28.782723,754.29
+-17.965599,28.782701,754.77
+-17.966033,28.783016,739.87
+-17.966366,28.783125,730.26
+-17.966616,28.783114,732.18
+-17.966758,28.783292,729.78
+-17.967022,28.783464,724.97
+-17.967552,28.783641,721.13
+-17.967958,28.783807,717.76
+-17.968389,28.783955,713.44
+-17.968500,28.783972,711.99
+-17.968681,28.784050,709.59
+-17.969151,28.784436,699.98
+-17.969398,28.784737,691.81
+-17.969758,28.785556,673.54
+-17.969879,28.785627,671.62
+-17.969918,28.785596,671.14
+-17.969957,28.785679,668.73
+-17.970037,28.785754,666.33
+-17.970382,28.785852,666.81
+-17.971130,28.785842,671.14
+-17.971375,28.785786,672.58
+-17.971590,28.785780,667.77
+-17.971654,28.785750,666.81
+-17.971810,28.785758,665.37
+-17.971974,28.785872,658.64
+-17.972414,28.786246,647.10
+-17.972518,28.786290,643.74
+-17.972617,28.786285,642.30
+-17.972767,28.786418,639.41
+-17.972739,28.786494,638.45
+-17.972682,28.786563,636.05
+-17.972728,28.786693,630.28
+-17.972735,28.786787,629.32
+-17.972669,28.786956,623.55
+-17.972670,28.787059,620.67
+-17.972634,28.787151,619.71
+-17.972672,28.787322,616.34
+-17.972628,28.787394,615.86
+-17.972676,28.787442,614.42
+-17.972685,28.787526,613.94
+-17.972815,28.787691,607.21
+-17.972833,28.787790,604.33
+-17.972988,28.788071,600.00
+-17.972975,28.788176,599.04
+-17.973171,28.788596,592.31
+-17.973281,28.788892,588.95
+-17.973365,28.788963,586.06
+-17.973402,28.789074,582.22
+-17.973630,28.789349,571.16
+-17.973723,28.789549,573.08
+-17.973777,28.789616,567.80
+-17.973780,28.789684,566.35
+-17.973927,28.790125,550.49
+-17.974211,28.790635,536.55
+-17.974317,28.790720,532.71
+-17.974997,28.791121,517.81
+-17.975076,28.791404,510.12
+-17.975082,28.791505,507.71
+-17.975120,28.791589,506.75
+-17.975081,28.791781,500.98
+-17.975139,28.791864,498.58
+-17.975268,28.792153,490.89
+-17.975333,28.792240,488.97
+-17.975459,28.792272,486.56
+-17.975575,28.792273,484.16
+-17.975647,28.792247,480.80
+-17.975969,28.792310,475.03
+-17.976084,28.792309,472.14
+-17.976302,28.792261,468.78
+-17.976400,28.792279,466.38
+-17.976549,28.792432,462.05
+-17.976720,28.792710,455.32
+-17.976830,28.792757,454.36
+-17.976983,28.792694,447.63
+-17.977085,28.792727,445.23
+-17.977228,28.792863,441.38
+-17.977142,28.792917,438.02
+-17.976916,28.792981,434.65
+-17.976828,28.793045,434.65
+-17.976744,28.793009,434.65
+-17.976682,28.792806,431.77
+-17.976611,28.792723,430.81
+-17.976411,28.792610,434.65
+-17.976236,28.792576,438.50
+-17.976028,28.792631,439.94
+-17.975916,28.792542,435.61
+-17.975932,28.792594,441.86
+-17.976001,28.792631,446.19
+-17.976006,28.792528,449.55
+-17.975921,28.792509,445.71
+-17.975719,28.792538,438.02
+-17.975699,28.792592,439.46
+-17.975687,28.792572,440.42
+-17.975670,28.792633,441.86
+-17.975710,28.792683,437.06
+-17.975642,28.792792,437.54
+-17.975722,28.792803,430.81
+-17.975624,28.792817,424.56
+-17.975532,28.792886,425.52
+-17.975512,28.792786,428.40
+-17.975545,28.792715,429.85
+-17.975643,28.792779,441.86
+-17.975446,28.792773,445.23
+-17.975641,28.792960,448.11
+-17.975791,28.792904,461.57
+-17.975796,28.792968,452.92
+-17.975684,28.792927,459.17
+-17.975590,28.792965,458.69
+-17.975570,28.792905,453.88
+-17.975530,28.792884,451.48
+-17.975585,28.792923,448.11
+-17.975699,28.792917,445.23
+-17.975740,28.792838,440.42
+-17.976027,28.792703,436.10
+-17.976125,28.792676,433.69
+-17.976315,28.792672,431.77
+-17.976407,28.792696,430.33
+-17.976562,28.792800,431.29
+-17.976592,28.792886,435.61
+-17.976591,28.792977,443.31
+-17.976620,28.793075,447.63
+-17.976787,28.793085,444.27
+-17.977146,28.792961,436.10
+-17.977244,28.792901,434.65
+-17.977257,28.792808,436.58
+-17.977113,28.792677,442.34
+-17.977020,28.792472,441.38
+-17.976948,28.792383,440.42
+-17.976881,28.792182,444.27
+-17.976910,28.791993,441.38
+-17.976989,28.791934,440.90
+-17.977081,28.791955,441.38
+-17.977254,28.792051,445.71
+-17.977404,28.792064,444.75
+-17.977415,28.791966,442.34
+-17.977250,28.791689,447.15
+-17.976934,28.791294,456.76
+-17.976662,28.791179,454.36
+-17.976587,28.791121,457.24
+-17.976329,28.791052,462.05
+-17.976287,28.791013,463.97
+-17.976352,28.791073,466.86
+-17.976554,28.791157,473.59
+-17.976802,28.791214,479.84
+-17.976937,28.791211,480.80
+-17.977206,28.791127,482.24
+-17.977447,28.790989,482.72
+-17.977651,28.790910,482.72
+-17.977656,28.790808,484.64
+-17.977545,28.790770,488.01
+-17.976953,28.790707,493.29
+-17.976757,28.790641,495.22
+-17.976214,28.790256,504.35
+-17.976006,28.790150,510.12
+-17.975728,28.789927,518.77
+-17.975233,28.789702,535.59
+-17.975219,28.789669,536.07
+-17.975362,28.789746,531.27
+-17.975767,28.789856,540.40
+-17.975883,28.789812,539.44
+-17.976140,28.789897,546.17
+-17.976401,28.789941,546.17
+-17.976760,28.789927,546.17
+-17.976857,28.789876,546.17
+-17.976920,28.789762,550.97
+-17.976982,28.789699,550.01
+-17.977084,28.789509,551.93
+-17.977107,28.789282,558.18
+-17.976542,28.789036,568.76
+-17.976182,28.788796,574.04
+-17.975631,28.788619,574.53
+-17.975535,28.788641,575.01
+-17.975573,28.788836,578.85
+-17.975636,28.788908,580.29
+-17.976015,28.789074,578.85
+-17.976054,28.789155,579.33
+-17.976279,28.789276,576.93
+-17.976164,28.789205,574.53
+-17.976254,28.789218,574.04
+-17.976278,28.789183,573.08
+-17.976218,28.789151,573.08
+-17.976203,28.789181,557.70
+-17.975911,28.788998,576.93
+-17.975703,28.788909,575.49
+-17.975591,28.788745,573.56
+-17.975528,28.788569,572.12
+-17.975367,28.788432,574.53
+-17.975235,28.788283,575.97
+-17.975178,28.788329,576.93
+-17.975016,28.788190,578.85
+-17.974850,28.788093,580.77
+-17.974738,28.788054,582.22
+-17.974666,28.788051,584.14
+-17.974551,28.788000,587.02
+-17.974162,28.787708,600.00
+-17.974057,28.787603,604.81
+-17.973720,28.787350,616.82
+-17.973568,28.787149,624.03
+-17.973525,28.786958,628.84
+-17.973430,28.786779,626.92
+-17.973019,28.786595,632.20
+-17.972711,28.786533,637.01
+-17.972737,28.786483,639.89
+-17.972692,28.786404,641.34
+-17.972398,28.786249,649.03
+-17.972322,28.786168,651.43
+-17.971953,28.785884,661.52
+-17.971768,28.785786,663.45
+-17.971650,28.785786,663.93
+-17.971423,28.785745,666.81
+-17.970835,28.785413,676.42
+-17.970671,28.785273,677.39
+-17.970695,28.785177,678.35
+-17.970870,28.785067,679.79
+-17.970951,28.784991,680.27
+-17.971045,28.784812,681.23
+-17.971109,28.784552,682.19
+-17.971094,28.784457,682.19
+-17.971044,28.784376,680.75
+-17.970884,28.784252,678.35
+-17.970779,28.784202,679.31
+-17.970564,28.784164,680.27
+-17.970214,28.784204,681.23
+-17.970122,28.784113,681.23
+-17.970163,28.784009,682.67
+-17.970467,28.783737,687.48
+-17.970556,28.783598,689.88
+-17.970527,28.783519,689.88
+-17.970440,28.783449,690.36
+-17.970212,28.783331,694.69
+-17.970186,28.783224,694.69
+-17.970336,28.783097,697.09
+-17.970371,28.783005,697.57
+-17.970371,28.782904,696.13
+-17.970299,28.782809,695.17
+-17.970332,28.782714,694.69
+-17.970431,28.782668,696.13
+-17.970471,28.782584,698.53
+-17.970367,28.782523,700.46
+-17.970025,28.782631,704.30
+-17.969915,28.782635,706.71
+-17.969887,28.782548,707.67
+-17.969785,28.782493,709.59
+-17.969602,28.782341,712.95
+-17.969596,28.782241,712.95
+-17.969620,28.782142,712.95
+-17.969593,28.781966,711.99
+-17.969386,28.781999,716.80
+-17.969275,28.781970,717.76
+-17.969094,28.781844,716.80
+-17.968882,28.781776,719.68
+-17.968436,28.781527,725.45
+-17.968275,28.781393,726.89
+-17.968056,28.781353,729.78
+-17.967624,28.781393,731.70
+-17.967385,28.781480,734.58
+-17.967262,28.781502,734.58
+-17.967150,28.781490,734.58
+-17.967020,28.781529,736.99
+-17.966748,28.781520,743.24
+-17.966546,28.781405,747.08
+-17.966406,28.781399,749.49
+-17.966368,28.781340,746.12
+-17.966249,28.781281,745.16
+-17.965918,28.780974,751.41
+-17.965814,28.780923,754.77
+-17.965640,28.780793,757.18
+-17.965435,28.780695,763.42
+-17.965300,28.780545,766.79
+-17.964911,28.780316,771.60
+-17.964810,28.780347,774.48
+-17.964721,28.780413,774.96
+-17.964619,28.780414,778.81
+-17.964221,28.780249,785.53
+-17.964111,28.780254,786.98
+-17.964000,28.780302,785.05
+-17.963556,28.780354,784.09
+-17.963435,28.780329,784.57
+-17.963362,28.780474,787.94
+-17.963391,28.780509,789.86
+-17.963404,28.780632,793.71
+-17.963319,28.780697,795.15
+-17.963218,28.780697,795.63
+-17.963137,28.780632,794.19
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.9702825</longitude>            
+			<latitude>28.786667</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>940</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

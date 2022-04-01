@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP28b Pista de Valencia to El Paso</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 28b from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Pista de Valencia Car Park</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.854269</longitude>
+					<latitude>28.678029</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.854269,28.678029,1141.015869                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the unsigned path leading down from a tight bend.                </description>       
+				<LookAt>
+					<longitude>-17.855893</longitude>
+					<latitude>28.676457</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.855893,28.676457,1120.350586                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 PR LP 13.3</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GPS route to the end. Cross over the descending path (PR LP 13.3) and take the upper path when it splits. If GPS fails take tracks heading down as they nearly all meet up with a road eventually.                </description>       
+				<LookAt>
+					<longitude>-17.857033</longitude>
+					<latitude>28.675432</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.857033,28.675432,1093.880371                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 Sharp turn</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.861746</longitude>
+					<latitude>28.673152</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.861746,28.673152,1029.740234                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.863929</longitude>
+					<latitude>28.673801</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.863929,28.673801,1051.952759                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Track</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.870014</longitude>
+					<latitude>28.671731</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.870014,28.671731,974.020691                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Path forks</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Keep right, don't go down.                </description>       
+				<LookAt>
+					<longitude>-17.869519</longitude>
+					<latitude>28.664693</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.869519,28.664693,877.301086                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Path forks</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.870960</longitude>
+					<latitude>28.665783</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.870960,28.665783,878.052307                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.874120</longitude>
+					<latitude>28.664142</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.874120,28.664142,863.544495                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 Plaza, El Paso</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.880762</longitude>
+					<latitude>28.652517</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.880762,28.652517,661.905518                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Pista de Valencia to El Paso</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.854033,28.678034,1147.47
+-17.854418,28.677986,1143.14
+-17.854651,28.678054,1143.63
+-17.854883,28.678385,1145.55
+-17.854950,28.678581,1151.32
+-17.855154,28.678776,1150.84
+-17.855278,28.678786,1153.24
+-17.855361,28.678669,1151.32
+-17.855414,28.678444,1145.55
+-17.855491,28.678362,1139.30
+-17.855687,28.677878,1120.55
+-17.855685,28.677175,1119.59
+-17.856022,28.676783,1119.59
+-17.856036,28.676666,1119.11
+-17.855881,28.676463,1123.44
+-17.856019,28.676386,1119.59
+-17.855945,28.676306,1115.27
+-17.855439,28.676023,1109.50
+-17.855401,28.675928,1108.54
+-17.855067,28.675915,1104.21
+-17.854955,28.675708,1100.37
+-17.854965,28.675587,1097.00
+-17.855126,28.675252,1091.71
+-17.855222,28.675196,1090.27
+-17.855866,28.675402,1098.44
+-17.856268,28.675775,1100.85
+-17.856647,28.675460,1089.79
+-17.856863,28.675461,1092.68
+-17.857288,28.675385,1097.00
+-17.858024,28.675817,1109.02
+-17.858004,28.676180,1105.17
+-17.858107,28.676557,1104.21
+-17.858521,28.677118,1117.19
+-17.858620,28.677147,1122.48
+-17.858740,28.677095,1127.28
+-17.858881,28.676785,1122.00
+-17.859423,28.676541,1102.77
+-17.859913,28.676038,1092.68
+-17.860127,28.675883,1090.27
+-17.860245,28.675382,1087.39
+-17.860233,28.675273,1086.43
+-17.860308,28.675180,1083.54
+-17.860411,28.675162,1084.02
+-17.860522,28.675062,1082.58
+-17.860697,28.674742,1078.74
+-17.860881,28.673989,1053.26
+-17.860999,28.673948,1052.30
+-17.861351,28.673943,1051.34
+-17.861531,28.673799,1045.09
+-17.861592,28.673686,1041.73
+-17.861592,28.673555,1036.44
+-17.861738,28.673165,1029.23
+-17.861767,28.673204,1032.59
+-17.861682,28.673401,1037.88
+-17.861674,28.673729,1039.80
+-17.861354,28.674686,1042.21
+-17.861395,28.674848,1046.53
+-17.861502,28.674964,1047.01
+-17.861590,28.674934,1047.97
+-17.861767,28.674724,1039.80
+-17.861973,28.674602,1035.48
+-17.862293,28.674490,1038.84
+-17.862621,28.674107,1042.21
+-17.863113,28.674038,1048.94
+-17.863877,28.673853,1050.86
+-17.864068,28.672881,1034.04
+-17.864145,28.672828,1030.19
+-17.864448,28.672993,1027.31
+-17.864615,28.673156,1028.75
+-17.864657,28.673258,1032.59
+-17.864804,28.673246,1031.63
+-17.864911,28.673137,1028.27
+-17.864932,28.672904,1021.06
+-17.865027,28.672699,1008.08
+-17.864966,28.671943,991.26
+-17.865059,28.671369,977.32
+-17.864913,28.671028,964.82
+-17.864919,28.670922,960.49
+-17.865014,28.670844,961.94
+-17.865297,28.671266,958.57
+-17.865460,28.671913,937.42
+-17.865579,28.671917,936.94
+-17.865864,28.671418,941.75
+-17.865857,28.671267,944.63
+-17.866063,28.671010,949.44
+-17.866410,28.670796,957.13
+-17.866491,28.670846,959.53
+-17.866728,28.670749,960.01
+-17.866952,28.670769,963.86
+-17.867077,28.671024,970.11
+-17.867167,28.671108,971.55
+-17.867267,28.671533,975.88
+-17.867537,28.672035,983.09
+-17.867666,28.671989,983.57
+-17.867761,28.671891,982.60
+-17.867890,28.671851,982.60
+-17.868019,28.671868,983.09
+-17.868274,28.671772,981.64
+-17.868497,28.671816,981.64
+-17.868745,28.671733,977.32
+-17.868861,28.671741,976.84
+-17.869125,28.671968,973.47
+-17.869207,28.672169,972.51
+-17.869356,28.672182,972.99
+-17.869502,28.672134,972.03
+-17.869740,28.672203,972.51
+-17.870020,28.672221,968.67
+-17.870150,28.672183,966.74
+-17.870207,28.672099,967.70
+-17.870186,28.671984,968.67
+-17.869755,28.671372,985.49
+-17.869661,28.671084,988.85
+-17.869449,28.670816,985.49
+-17.869418,28.670407,981.16
+-17.869333,28.670163,978.28
+-17.869261,28.669594,971.07
+-17.869364,28.669288,963.38
+-17.869357,28.669156,962.90
+-17.869034,28.668648,956.17
+-17.868931,28.668557,957.61
+-17.868745,28.668021,954.73
+-17.868707,28.667669,950.40
+-17.868755,28.666884,937.42
+-17.868526,28.666797,938.86
+-17.868421,28.666822,939.83
+-17.868134,28.667007,938.38
+-17.868053,28.667115,935.98
+-17.867966,28.667096,935.98
+-17.867975,28.666464,924.93
+-17.868046,28.666265,920.12
+-17.868058,28.665502,914.83
+-17.868100,28.665417,913.87
+-17.868540,28.665062,908.10
+-17.868600,28.664835,907.62
+-17.868385,28.664208,901.37
+-17.868252,28.664044,897.53
+-17.868221,28.663828,891.28
+-17.868330,28.663855,890.80
+-17.868671,28.664066,887.91
+-17.868956,28.664392,885.51
+-17.869194,28.664522,880.71
+-17.869355,28.664666,878.30
+-17.869550,28.664736,874.46
+-17.869655,28.665012,874.46
+-17.869734,28.665075,874.94
+-17.869984,28.665090,876.86
+-17.870149,28.664975,874.94
+-17.870258,28.664953,873.98
+-17.870461,28.665028,879.26
+-17.870747,28.665384,885.99
+-17.870794,28.665682,883.59
+-17.870963,28.665793,878.30
+-17.871616,28.665512,875.90
+-17.871843,28.665535,879.74
+-17.871983,28.665496,878.78
+-17.872196,28.665285,876.38
+-17.872450,28.665310,874.94
+-17.872520,28.665240,873.01
+-17.872556,28.665003,870.13
+-17.872920,28.664497,870.13
+-17.873019,28.664450,869.65
+-17.873335,28.664437,868.69
+-17.873705,28.664330,868.21
+-17.873788,28.664215,864.84
+-17.873970,28.664106,862.92
+-17.874107,28.664123,864.84
+-17.874195,28.663936,860.04
+-17.874197,28.663717,856.67
+-17.874114,28.663420,850.42
+-17.874239,28.662920,842.73
+-17.873957,28.662411,826.39
+-17.874092,28.661705,813.41
+-17.874065,28.661506,809.09
+-17.874417,28.660906,793.71
+-17.874498,28.660556,783.13
+-17.874459,28.660346,778.32
+-17.875099,28.659432,757.66
+-17.875306,28.659370,754.29
+-17.875393,28.659301,752.37
+-17.875390,28.659177,751.41
+-17.875452,28.659101,749.97
+-17.875686,28.659067,746.60
+-17.876051,28.658777,737.95
+-17.876324,28.658407,732.18
+-17.877285,28.657522,709.11
+-17.877402,28.657354,706.71
+-17.878235,28.657097,694.21
+-17.878576,28.656829,687.00
+-17.878700,28.656651,684.12
+-17.879376,28.656072,661.04
+-17.879784,28.655375,655.28
+-17.879771,28.655297,654.31
+-17.880051,28.654672,659.60
+-17.880044,28.654457,660.56
+-17.880264,28.653344,651.43
+-17.880240,28.653222,652.39
+-17.880384,28.652938,663.93
+-17.880360,28.652836,666.81
+-17.880501,28.652524,669.70
+-17.880762,28.652518,662.01
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.8673975</longitude>            
+			<latitude>28.6656455</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>1817</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

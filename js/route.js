@@ -2,6 +2,7 @@
 
 // Object handling filter panel and filters within
 var filterSet;
+var allRoutes;
 
 /************************* Initialization ************************/
 
@@ -11,6 +12,9 @@ window.onload = function () {
 };
 
 function initialize() {
+  allRoutes = new Array();
+  routes.routes.forEach( route => allRoutes.push(new Route(route)));
+
   filterSet = new FilterSet();
   filterSet.populateFilterPanel();
   populateRoutesGrid();
@@ -84,6 +88,7 @@ function routesGridClickHandler(event) {
       favourites.add(routeIndex);
       event.target.src = "/img/icons/heart-full-black.svg";
     }
+    updateFavourites();
   }
   else {
     // route clicked - open route detail page for the specified route
@@ -96,48 +101,28 @@ function routesGridClickHandler(event) {
 function populateRoutesGrid() {
   let gridContent = "";
 
-  for (let i = 0; i < routes.routes.length; i++) {
-    let currentRoute = routes.routes[i];
-
-    // title image
-    let titleImageUrl = `/img/route${currentRoute.id}-400x300.jpg`;
-    let routeId = currentRoute.id;
-
+  allRoutes.forEach( route => {
     // number of route varients, if any
     let routeVarients = "";
-    if ('variants' in currentRoute) {
-      let routeVarientCount = currentRoute.variants.length;
+    if ('variants' in route) {
+      let routeVarientCount = route.variants.length;
       routeVarients = `<span class="route-varients">
         ${routeVarientCount} variation${routeVarientCount > 1 ? "s" : ""}</span>`;
     }
 
     // starred
     let starred = "";
-    if (currentRoute.starred == "true") {
-      starred = `<div class="starred"><img src="/img/icons/star.svg" alt="" /></div>`;
+    if (route.starred.isSet) {
+      starred = `<div class="starred"><img src="/img/icons/${route.starred.icon}" alt="" /></div>`;
     }
-
-    // title
-    let routeTitle = currentRoute.name;
-    let routeShortDescription = currentRoute.shortDescription;
-
-    // duration
-    let d = duration.get(currentRoute.duration);
-    let durationText = d.text;
-    let durationIconUrl = `/img/icons/${d.icon}`;
-
-    // effort
-    let e = effort.get(currentRoute.effort);
-    let effortText = e.text;
-    let effortIconUrl = `/img/icons/${e.icon}`;
 
     // build html content
     gridContent += `
-        <div id="route${routeId}" class="route">
+        <div id="route${route.id}" class="route">
           <div class="route-pic">
-            <img src="${titleImageUrl}" alt="" />
+            <img src="/img/route${route.id}-400x300.jpg" alt="" />
             <div class="pic-label">
-              <span class="route-id">${routeId}</span>
+              <span class="route-id">${route.id}</span>
               ${routeVarients}
             </div>
             ${starred}
@@ -145,30 +130,30 @@ function populateRoutesGrid() {
           <div class="route-detail">
             <div class="title">
               <img
-                id="favourite${routeId}"
+                id="favourite${route.id}"
                 class="favourite"
                 src="/img/icons/heart-empty.svg"
                 alt=""
               />
-              ${routeTitle}
+              ${route.name}
             </div>
             <div class="description">
-              ${routeShortDescription}
+              ${route.shortDescription}
             </div>
             <div class="metrics">
               <div class="route-metric">
-                <p>${durationText}</p>
-                <img src="${durationIconUrl}" alt="" />
+                <p>${route.duration.text}</p>
+                <img src="/img/icons/${route.duration.icon}" alt="" />
               </div>
               <div class="route-metric">
-                <p>${effortText}</p>
-                <img src="${effortIconUrl}" alt="" />
+                <p>${route.effort.text}</p>
+                <img src="/img/icons/${route.effort.icon}" alt="" />
               </div>
             </div>
           </div>
         </div>`;
-  }
-  document.getElementById("routes-grid").innerHTML = gridContent;
+      })
+      document.getElementById("routes-grid").innerHTML = gridContent;
 };
 
 // Hide routes that don't fit the current filters
@@ -177,7 +162,7 @@ function filterRoutes() {
   let matchesCount = 0;
 
   // hide filtered out routes and update count of how many are matched
-  routes.routes.forEach(route => {
+  allRoutes.forEach(route => {
     let included = filterSet.applyActiveFilters(route);
     let routeDiv = document.getElementById("route" + route.id);
     if (included) {
@@ -473,7 +458,7 @@ class Location extends Filter {
     );
     // loop through the locations and sort then into area buckets
     // n.b. locations can fall into more than one area
-    locationMap.forEach((locationDetail, locationName) => {
+    locations.forEach((locationDetail, locationName) => {
       locationDetail.areas.forEach(area => {
         let areaSet = this.#locationAreas.get(area).locations;
         areaSet.add(locationName);

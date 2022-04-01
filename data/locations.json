@@ -1,101 +1,100 @@
-{
-  "locations": [
-    [
-      "Barlovento",
-      {
-        "areas": ["north", "east"],
-        "province": "Barlovento",
-        "parking": "Plenty of street parking in Barlovento. Car park near tourist information office.",
-        "bus": {
-          "notes": "",
-          "routes": ["100", "120"],
-          "stop": "Barlovento"
-        },
-        "notes": "Bus interchange."
-      }
-    ],
-    [
-      "Franceses",
-      {
-        "areas": ["north"],
-        "province": "",
-        "parking": "Very restricted narrow streets with practically no parking options.",
-        "bus": {
-          "notes": "",
-          "routes": ["120"],
-          "stop": "Franceses"
-        },
-        "notes": ""
-      }
-    ],
-    [
-      "Los Sauces",
-      {
-        "areas": ["east"],
-        "province": "San Andrés y Sauces",
-        "parking": "Multiple small places, try Calle Vicente San Juan round the back of the big church.",
-        "bus": {
-          "notes": "",
-          "routes": ["100"],
-          "stop": "Los Sauces"
-        },
-        "notes": ""
-      }
-    ],
-    [
-      "Casa del Monte",
-      {
-        "areas": ["east"],
-        "province": "",
-        "parking": "None",
-        "taxi": "4WD taxis carrying 8 passengers run from the taxi hut near the finish to Casa del Monte. Book in advance.",
-        "bus": {
-          "notes": "",
-          "routes": [""],
-          "stop": ""
-        },
-        "notes": ""
-      }
-    ],
-    [
-      "Los Tilos Taxi Hut",
-      {
-        "areas": ["east"],
-        "province": "San Andrés y Sauces",
-        "parking": "Some parking by the hut, more up the road.",
-        "bus": {
-          "notes": "",
-          "routes": [""],
-          "stop": ""
-        },
-        "notes": ""
-      }
-    ],
-    [
-      "Santa Cruz de La Palma",
-      {
-        "areas": ["east"],
-        "province": "Santa Cruz de La Palma",
-        "parking": "Park near Barco de la Virgen or on Avenida Marítima and walk to the start.",
-        "bus": {
-          "notes": "",
-          "routes": [
-            "500",
-            "300",
-            "201",
-            "200",
-            "100",
-            "35",
-            "33",
-            "20",
-            "12",
-            "11",
-            "2"
-          ],
-          "stop": "Santa Cruz"
-        },
-        "notes": "Bus interchange"
-      }
-    ]
+[
+  [
+    "Barlovento",
+    {
+      "areas": ["north", "east"],
+      "province": "Barlovento",
+      "parking": "Plenty of street parking in Barlovento. Car park near tourist information office.",
+      "bus": {
+        "notes": "",
+        "routes": ["100", "120"],
+        "stop": "Barlovento"
+      },
+      "notes": "Bus interchange."
+    }
+  ],
+  [
+    "Franceses",
+    {
+      "areas": ["north"],
+      "province": "",
+      "parking": "Very restricted narrow streets with practically no parking options.",
+      "bus": {
+        "notes": "",
+        "routes": ["120"],
+        "stop": "Franceses"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Los Sauces",
+    {
+      "areas": ["east"],
+      "province": "San Andrés y Sauces",
+      "parking": "Multiple small places, try Calle Vicente San Juan round the back of the big church.",
+      "bus": {
+        "notes": "",
+        "routes": ["100"],
+        "stop": "Los Sauces"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Casa del Monte",
+    {
+      "areas": ["east"],
+      "province": "",
+      "parking": "None",
+      "taxi": "4WD taxis carrying 8 passengers run from the taxi hut near the finish to Casa del Monte. Book in advance.",
+      "bus": {
+        "notes": "",
+        "routes": [""],
+        "stop": ""
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Los Tilos Taxi Hut",
+    {
+      "areas": ["east"],
+      "province": "San Andrés y Sauces",
+      "parking": "Some parking by the hut, more up the road.",
+      "bus": {
+        "notes": "",
+        "routes": [""],
+        "stop": ""
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Santa Cruz de La Palma",
+    {
+      "areas": ["east"],
+      "province": "Santa Cruz de La Palma",
+      "parking": "Park near Barco de la Virgen or on Avenida Marítima and walk to the start.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "500",
+          "300",
+          "201",
+          "200",
+          "100",
+          "35",
+          "33",
+          "20",
+          "12",
+          "11",
+          "2"
+        ],
+        "stop": "Santa Cruz"
+      },
+      "notes": "Bus interchange"
+    }
   ]
-}
+]
+

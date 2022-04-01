@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP22b Torre del Time to Mirador El Time</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 22b from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Torre del Time</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GR 131 down until the ridgeline track diverges (a little way past the PR LP 10 turnoff).                </description>       
+				<LookAt>
+					<longitude>-17.924209</longitude>
+					<latitude>28.692852</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.924209,28.692852,1162.755249                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Turnoff for paragliding platform</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Optional: a short side trip to a jumping-off point for paragliders with better views than the Mirador del Time.                </description>       
+				<LookAt>
+					<longitude>-17.924940</longitude>
+					<latitude>28.692110</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.924940,28.692110,1140.143799                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 PR LP 10</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Stay on the GR 131. Walk 22 diverges at this point.                </description>       
+				<LookAt>
+					<longitude>-17.927076</longitude>
+					<latitude>28.688864</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.927076,28.688864,1036.087158                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 Ridgeline trail</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the ridgeline path. The GR 131 diverges. From here on the trail sticks mainly to the ridge. It's unsigned but easy to follow. If the way becomes unclear, cautiously explore the options but take care near the ridge - don't force it. The path is obvious enough once you pick it up.                </description>       
+				<LookAt>
+					<longitude>-17.9274650384</longitude>
+					<latitude>28.6879884638</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.9274650384,28.6879884638,999.43                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Cave</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.936271</longitude>
+					<latitude>28.675566</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.936271,28.675566,742.565796                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Refugio El Time</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Locked, unshaded bench and table, no water.                </description>       
+				<LookAt>
+					<longitude>-17.936956</longitude>
+					<latitude>28.674713</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.936956,28.674713,744.828003                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Mirador de las Cabezadas</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.936751</longitude>
+					<latitude>28.674558</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.936751,28.674558,752.166260                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Petroglyphs</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.936850</longitude>
+					<latitude>28.674256</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.936850,28.674256,755.350342                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Radio masts</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.938145</longitude>
+					<latitude>28.673386</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.938145,28.673386,726.109741                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 Water tank</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The path goes round the tank away from the ridge.                </description>       
+				<LookAt>
+					<longitude>-17.939643</longitude>
+					<latitude>28.671275</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.939643,28.671275,681.829956                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>11 GR 131</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The path joins the GR 131 which is then followed to the end.                </description>       
+				<LookAt>
+					<longitude>-17.940346</longitude>
+					<latitude>28.669816</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.940346,28.669816,635.841431                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>12 GR 130</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Stay on the GR 131.                </description>       
+				<LookAt>
+					<longitude>-17.941119</longitude>
+					<latitude>28.668042</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.941119,28.668042,593.395569                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>13 Mirador El Time</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Bus 110 or pick up walk 23 and descend to the port.                </description>       
+				<LookAt>
+					<longitude>-17.942451</longitude>
+					<latitude>28.663476</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.942451,28.663476,516.871521                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Torre del Time to Mirador El Time</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.924164,28.692833,1159.97
+-17.924200,28.692798,1159.97
+-17.924275,28.692814,1159.49
+-17.924367,28.692787,1157.56
+-17.924469,28.692815,1156.60
+-17.924578,28.692797,1155.16
+-17.924667,28.692742,1153.24
+-17.924946,28.692304,1142.18
+-17.924888,28.692109,1140.26
+-17.924930,28.692116,1140.26
+-17.925060,28.691913,1135.45
+-17.925207,28.691763,1134.01
+-17.925225,28.691669,1133.05
+-17.925208,28.691663,1134.97
+-17.924932,28.691988,1137.86
+-17.924944,28.692085,1141.22
+-17.925237,28.692190,1135.94
+-17.925350,28.692201,1134.01
+-17.925456,28.692169,1130.65
+-17.925526,28.692098,1127.76
+-17.925687,28.691835,1117.67
+-17.925764,28.691764,1117.19
+-17.925956,28.691668,1113.34
+-17.926113,28.691525,1110.46
+-17.926116,28.691417,1109.02
+-17.926009,28.691138,1102.77
+-17.926028,28.691044,1099.89
+-17.926243,28.690869,1096.52
+-17.926303,28.690787,1097.48
+-17.926400,28.690713,1093.64
+-17.926453,28.690769,1092.20
+-17.926508,28.690702,1091.71
+-17.926528,28.690635,1088.83
+-17.926633,28.690494,1083.06
+-17.926660,28.690399,1079.22
+-17.926582,28.690321,1077.29
+-17.926554,28.689872,1065.28
+-17.926587,28.689780,1061.43
+-17.926551,28.689698,1061.43
+-17.926557,28.689579,1059.51
+-17.926689,28.689215,1048.94
+-17.926997,28.688909,1038.36
+-17.927264,28.688732,1028.75
+-17.927340,28.688545,1021.06
+-17.927307,28.688241,1010.48
+-17.927648,28.687731,997.99
+-17.927643,28.687637,999.43
+-17.927725,28.687361,992.70
+-17.927727,28.687177,999.43
+-17.927784,28.687095,1000.87
+-17.927741,28.686920,1002.31
+-17.927646,28.686893,1006.64
+-17.927732,28.686857,1006.16
+-17.927811,28.686681,998.95
+-17.927815,28.686580,996.54
+-17.927906,28.686227,995.58
+-17.928047,28.686113,992.70
+-17.928218,28.685828,991.26
+-17.928280,28.685516,987.41
+-17.928260,28.685384,982.60
+-17.928345,28.685313,980.20
+-17.928471,28.685104,969.63
+-17.928454,28.685026,967.70
+-17.928720,28.684973,961.46
+-17.929139,28.684726,946.07
+-17.929280,28.684603,939.35
+-17.929752,28.684333,924.45
+-17.929988,28.684240,919.16
+-17.930129,28.684087,916.75
+-17.930186,28.683963,912.43
+-17.930497,28.683654,897.53
+-17.930514,28.683518,892.72
+-17.930720,28.683313,883.59
+-17.930764,28.683185,880.22
+-17.930992,28.682899,866.77
+-17.930978,28.682862,863.40
+-17.931176,28.682745,858.11
+-17.931211,28.682450,853.79
+-17.931370,28.682174,847.06
+-17.931452,28.682110,846.10
+-17.931495,28.681996,842.73
+-17.931807,28.681751,832.16
+-17.931994,28.681679,826.87
+-17.932130,28.681517,821.58
+-17.932215,28.681354,819.66
+-17.932498,28.681178,816.78
+-17.932574,28.681102,816.30
+-17.932716,28.680815,815.34
+-17.932787,28.680615,815.82
+-17.933150,28.680443,811.97
+-17.933388,28.680155,806.20
+-17.933563,28.680062,803.80
+-17.933723,28.679777,798.03
+-17.934066,28.679503,797.55
+-17.934218,28.679349,797.07
+-17.934369,28.679093,795.15
+-17.934429,28.678644,797.55
+-17.934647,28.678405,794.67
+-17.934830,28.678310,791.30
+-17.934986,28.678066,789.38
+-17.934977,28.677975,790.34
+-17.935081,28.677695,786.98
+-17.935163,28.677628,786.02
+-17.935110,28.677419,788.90
+-17.935126,28.677327,787.94
+-17.935080,28.677145,791.30
+-17.935173,28.676956,787.94
+-17.935211,28.676675,787.46
+-17.935311,28.676510,786.50
+-17.935347,28.676295,783.61
+-17.935540,28.676205,775.44
+-17.936022,28.675742,754.77
+-17.936172,28.675686,749.49
+-17.936256,28.675587,745.64
+-17.936344,28.675559,739.87
+-17.936499,28.675428,739.87
+-17.936754,28.675046,739.39
+-17.936725,28.674959,739.87
+-17.936820,28.674784,744.20
+-17.936809,28.674595,751.41
+-17.936764,28.674551,751.89
+-17.936910,28.674356,754.29
+-17.936908,28.674273,754.29
+-17.936862,28.674270,758.14
+-17.937017,28.674170,752.37
+-17.937212,28.674108,747.56
+-17.937600,28.673849,739.39
+-17.937716,28.673813,736.03
+-17.937879,28.673662,734.10
+-17.937978,28.673604,731.22
+-17.938177,28.673358,728.34
+-17.938221,28.673265,724.97
+-17.938388,28.673173,721.61
+-17.938500,28.672995,721.61
+-17.938581,28.672970,720.16
+-17.938731,28.672825,715.36
+-17.938841,28.672787,712.47
+-17.938895,28.672692,709.59
+-17.939088,28.672496,704.30
+-17.939273,28.672371,698.05
+-17.939346,28.672287,694.69
+-17.939349,28.672176,693.73
+-17.939418,28.672088,690.36
+-17.939451,28.671678,689.40
+-17.939566,28.671463,684.60
+-17.939586,28.671373,684.12
+-17.939651,28.671253,680.75
+-17.939630,28.671243,681.23
+-17.939675,28.671379,677.87
+-17.939784,28.671349,675.46
+-17.939842,28.671306,673.06
+-17.939961,28.671340,667.29
+-17.940101,28.671326,663.93
+-17.940105,28.671232,663.93
+-17.940049,28.671046,662.01
+-17.940104,28.670992,657.68
+-17.940195,28.670991,651.91
+-17.940292,28.670856,647.10
+-17.940297,28.670736,645.66
+-17.940348,28.670633,643.26
+-17.940396,28.670304,638.93
+-17.940343,28.670102,638.93
+-17.940358,28.669882,636.05
+-17.940325,28.669803,632.20
+-17.940434,28.669630,631.72
+-17.940462,28.669432,630.76
+-17.940451,28.669360,633.17
+-17.940546,28.669182,631.72
+-17.940730,28.669090,625.96
+-17.940803,28.669001,624.03
+-17.940907,28.669011,620.19
+-17.940905,28.668845,620.19
+-17.940869,28.668771,618.75
+-17.940875,28.668513,609.13
+-17.940980,28.668259,601.92
+-17.941101,28.668144,597.12
+-17.941120,28.668039,591.83
+-17.941164,28.667962,591.83
+-17.941213,28.667765,591.83
+-17.941356,28.667479,591.83
+-17.941442,28.667399,591.83
+-17.941760,28.666977,589.43
+-17.941843,28.666679,588.46
+-17.941782,28.666397,586.54
+-17.941771,28.666214,580.77
+-17.941718,28.666001,577.89
+-17.941704,28.665795,575.49
+-17.941542,28.665415,569.24
+-17.941532,28.665321,566.35
+-17.941613,28.665155,558.18
+-17.941665,28.664956,551.45
+-17.941775,28.664778,544.24
+-17.941806,28.664670,541.36
+-17.941799,28.664557,539.44
+-17.941828,28.664454,537.03
+-17.941922,28.664404,533.19
+-17.942365,28.664306,519.25
+-17.942471,28.664257,516.37
+-17.942511,28.664164,515.40
+-17.942538,28.663956,515.88
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.933351</longitude>            
+			<latitude>28.678164</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>1729</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP06b Cubo La Galga to the coast</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 6b from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 PR LP 5, Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Stay on PR LP 5 heading down on the path then continue straight down on the tracks and road.                </description>       
+				<LookAt>
+					<longitude>-17.772538</longitude>
+					<latitude>28.760094</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.772538,28.760094,620.934143                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 LP-1, Restaurante Casa Asterio</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The way continues straight ahead between the restaurant and the Casa Margarita on the right.                </description>       
+				<LookAt>
+					<longitude>-17.764209</longitude>
+					<latitude>28.763614</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.764209,28.763614,432.705994                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - From here to the coast the way is a little crumbly under foot and vertiginous in places.                </description>       
+				<LookAt>
+					<longitude>-17.758803</longitude>
+					<latitude>28.765131</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.758803,28.765131,365.625183                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 GR 130</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - PR LP 5 ends. Follow the GR 130 north. Optional: turn south and follow the GR 130 to Puntallana (walk 5) for an alternative linear walk.                </description>       
+				<LookAt>
+					<longitude>-17.750159</longitude>
+					<latitude>28.766797</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.750159,28.766797,171.597015                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 PR LP 5.1</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow PR LP 5.1 up the track. The GR 130 diverges.                </description>       
+				<LookAt>
+					<longitude>-17.751585</longitude>
+					<latitude>28.772032</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.751585,28.772032,228.494949                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Stay on PR LP 5.1 as it heads up the path away from the concrete track.                </description>       
+				<LookAt>
+					<longitude>-17.754060</longitude>
+					<latitude>28.769438</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.754060,28.769438,283.398193                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Road</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Carry straight on.                </description>       
+				<LookAt>
+					<longitude>-17.758694</longitude>
+					<latitude>28.769156</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.758694,28.769156,385.482147                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Turnoff for Mirador de San Bartolo</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Optional diversion to a lookout point with extensive views.                </description>       
+				<LookAt>
+					<longitude>-17.760618</longitude>
+					<latitude>28.769225</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.760618,28.769225,402.065308                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Bar/café</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - There is also a small shop next door.                </description>       
+				<LookAt>
+					<longitude>-17.761384</longitude>
+					<latitude>28.769045</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.761384,28.769045,400.566040                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 LP-1</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Keep on PR LP 5.1 heading straight up.                </description>       
+				<LookAt>
+					<longitude>-17.762372</longitude>
+					<latitude>28.768019</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.762372,28.768019,404.346619                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>11 Road</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the sign for Punto de Informatión.                </description>       
+				<LookAt>
+					<longitude>-17.767219</longitude>
+					<latitude>28.764998</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.767219,28.764998,484.230408                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>12 Covered culvert path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Reconnects with walk 6. The track from here on is the same as walk 6 and heads back to the car park.                </description>       
+				<LookAt>
+					<longitude>-17.767532</longitude>
+					<latitude>28.765041</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.767532,28.765041,487.264526                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>13 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Leave the covered culvert and head down the path.                </description>       
+				<LookAt>
+					<longitude>-17.768422</longitude>
+					<latitude>28.765292</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.768422,28.765292,485.726837                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>14 Track</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Head back down to the car park.                </description>       
+				<LookAt>
+					<longitude>-17.771768</longitude>
+					<latitude>28.766032</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.771768,28.766032,382.849060                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>15 Car park, bus stop, information hut, LP-1</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.769728</longitude>
+					<latitude>28.766994</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.769728,28.766994,341.031769                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Cubo La Galga to the coast</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.772536,28.760093,620.67
+-17.772490,28.760071,620.19
+-17.772416,28.760069,618.26
+-17.772331,28.760106,615.38
+-17.772217,28.760182,610.57
+-17.771999,28.760295,603.36
+-17.771736,28.760503,595.19
+-17.771393,28.760632,587.02
+-17.771169,28.760687,583.66
+-17.770982,28.760837,578.85
+-17.770787,28.761093,575.01
+-17.770643,28.761476,566.83
+-17.770590,28.761553,564.91
+-17.770317,28.761693,556.26
+-17.770120,28.761759,553.38
+-17.769654,28.762041,539.44
+-17.769452,28.762100,533.19
+-17.769047,28.762323,525.98
+-17.768939,28.762355,520.69
+-17.768847,28.762416,519.73
+-17.768605,28.762636,521.65
+-17.768521,28.762691,518.77
+-17.768086,28.762735,504.83
+-17.767846,28.762782,499.06
+-17.767711,28.762788,494.74
+-17.767589,28.762832,492.81
+-17.767381,28.762948,486.56
+-17.767280,28.762977,482.72
+-17.767068,28.763077,479.84
+-17.766943,28.763118,479.35
+-17.766228,28.763259,466.38
+-17.766107,28.763261,464.93
+-17.765986,28.763310,462.05
+-17.765788,28.763441,455.32
+-17.765673,28.763497,452.92
+-17.765194,28.763602,443.79
+-17.764822,28.763662,439.46
+-17.764702,28.763697,437.06
+-17.764354,28.763666,437.54
+-17.764258,28.763612,431.77
+-17.764138,28.763634,433.69
+-17.764025,28.763603,434.65
+-17.763793,28.763682,431.77
+-17.763669,28.763687,429.37
+-17.763486,28.763817,430.33
+-17.763121,28.764171,425.04
+-17.762569,28.764409,419.27
+-17.762396,28.764534,422.16
+-17.762302,28.764559,421.68
+-17.762188,28.764567,417.83
+-17.762060,28.764609,416.87
+-17.761721,28.764642,409.66
+-17.761026,28.764812,395.24
+-17.760904,28.764818,394.28
+-17.760446,28.764732,393.32
+-17.760344,28.764695,392.84
+-17.760125,28.764656,391.39
+-17.759886,28.764663,392.36
+-17.759772,28.764693,389.47
+-17.759564,28.764783,383.70
+-17.759462,28.764771,381.78
+-17.759201,28.764603,382.26
+-17.759136,28.764531,377.94
+-17.759145,28.764354,371.69
+-17.759073,28.764296,369.28
+-17.758966,28.764319,367.36
+-17.758896,28.764379,368.32
+-17.758845,28.764478,367.84
+-17.758816,28.764587,365.44
+-17.758795,28.764797,364.48
+-17.758819,28.764903,363.04
+-17.758772,28.765164,365.92
+-17.758677,28.765197,364.00
+-17.758652,28.765228,361.59
+-17.758589,28.765249,360.15
+-17.758518,28.765245,355.83
+-17.758428,28.765293,351.02
+-17.758446,28.765542,343.81
+-17.758357,28.765573,339.96
+-17.758249,28.765566,335.64
+-17.758160,28.765538,332.27
+-17.758075,28.765489,329.39
+-17.757968,28.765354,324.58
+-17.757952,28.765261,324.10
+-17.757865,28.765208,323.62
+-17.757833,28.765140,324.58
+-17.757617,28.765122,322.66
+-17.757587,28.765068,322.18
+-17.757453,28.765075,321.22
+-17.757362,28.765139,319.30
+-17.757258,28.765069,319.78
+-17.757118,28.765016,319.30
+-17.756987,28.765008,319.30
+-17.756906,28.764938,319.30
+-17.756798,28.764890,319.30
+-17.756671,28.764925,318.33
+-17.756532,28.765008,318.81
+-17.756315,28.765022,312.57
+-17.756150,28.765061,308.72
+-17.756075,28.765171,303.43
+-17.755966,28.765198,301.99
+-17.755749,28.765217,297.18
+-17.755536,28.765335,292.38
+-17.755366,28.765467,289.97
+-17.755161,28.765417,286.61
+-17.755034,28.765456,286.13
+-17.754923,28.765516,283.25
+-17.754843,28.765507,284.69
+-17.754776,28.765525,283.25
+-17.754521,28.765500,278.92
+-17.754204,28.765669,269.31
+-17.754082,28.765667,266.42
+-17.753879,28.765771,262.58
+-17.753786,28.765839,260.65
+-17.753650,28.765977,257.29
+-17.753643,28.766076,255.37
+-17.753671,28.766175,255.37
+-17.753637,28.766282,256.81
+-17.753584,28.766359,256.81
+-17.753019,28.766831,238.06
+-17.752963,28.766927,235.66
+-17.752880,28.766981,233.74
+-17.752605,28.766958,225.09
+-17.752280,28.766952,215.47
+-17.752144,28.766913,214.51
+-17.752067,28.766857,213.07
+-17.751929,28.766846,211.63
+-17.751794,28.766813,208.26
+-17.751677,28.766825,207.30
+-17.751603,28.766742,207.30
+-17.751508,28.766684,205.86
+-17.751261,28.766673,202.01
+-17.751187,28.766652,198.17
+-17.751146,28.766683,195.77
+-17.750809,28.766794,183.75
+-17.750666,28.766760,179.90
+-17.750311,28.766779,174.14
+-17.750131,28.766815,170.29
+-17.750049,28.766857,169.81
+-17.750004,28.766934,169.33
+-17.750057,28.766994,173.66
+-17.750115,28.766935,175.58
+-17.750222,28.766926,179.42
+-17.750428,28.766960,187.11
+-17.750411,28.767003,188.56
+-17.750426,28.767056,191.44
+-17.750529,28.767102,196.73
+-17.750668,28.767368,206.82
+-17.750708,28.767540,211.63
+-17.750776,28.767621,213.07
+-17.750922,28.767599,218.36
+-17.751099,28.767725,224.12
+-17.751255,28.767883,227.01
+-17.751261,28.767967,228.93
+-17.751168,28.768146,230.85
+-17.751145,28.768251,231.81
+-17.751176,28.768365,233.26
+-17.751170,28.768682,234.22
+-17.751023,28.769039,224.61
+-17.751019,28.769146,223.64
+-17.750816,28.769535,217.40
+-17.750757,28.769958,216.91
+-17.750750,28.770157,215.95
+-17.750800,28.770293,220.76
+-17.750908,28.770351,216.91
+-17.751047,28.770384,217.40
+-17.751134,28.770472,219.32
+-17.751131,28.770576,219.80
+-17.750953,28.770791,212.11
+-17.750872,28.770998,203.94
+-17.750893,28.771097,204.42
+-17.751089,28.771346,209.22
+-17.751471,28.771736,217.40
+-17.751591,28.772026,227.01
+-17.751694,28.772015,228.45
+-17.751794,28.771961,229.41
+-17.752068,28.771677,234.70
+-17.752326,28.771476,242.39
+-17.752462,28.771322,243.35
+-17.752559,28.771163,244.79
+-17.752711,28.771019,247.20
+-17.752808,28.770831,248.64
+-17.752957,28.770620,262.10
+-17.752913,28.770526,261.62
+-17.752757,28.770373,262.58
+-17.752497,28.770189,264.98
+-17.752435,28.770112,265.46
+-17.752449,28.769922,266.42
+-17.752495,28.769833,266.42
+-17.752562,28.769763,265.94
+-17.752653,28.769714,266.90
+-17.752755,28.769685,267.38
+-17.752847,28.769639,267.86
+-17.753028,28.769587,271.23
+-17.753133,28.769530,272.19
+-17.753699,28.769433,277.00
+-17.754124,28.769427,284.69
+-17.754583,28.769457,297.18
+-17.754596,28.769518,297.67
+-17.754681,28.769571,302.95
+-17.754765,28.769649,308.72
+-17.754841,28.769665,309.68
+-17.755039,28.769812,322.66
+-17.755149,28.769812,326.02
+-17.755302,28.769851,331.31
+-17.755253,28.769928,332.27
+-17.755308,28.769995,336.60
+-17.755423,28.770022,342.37
+-17.755526,28.770020,346.21
+-17.755962,28.770160,351.50
+-17.756198,28.770158,358.71
+-17.756313,28.770172,362.55
+-17.756415,28.770136,367.36
+-17.756510,28.770145,369.76
+-17.756929,28.769961,381.30
+-17.756986,28.769900,385.15
+-17.757144,28.769824,389.47
+-17.757328,28.769703,394.76
+-17.757568,28.769576,392.84
+-17.757786,28.769544,394.28
+-17.758121,28.769453,391.87
+-17.758544,28.769259,384.66
+-17.758878,28.769014,387.55
+-17.758979,28.768963,387.55
+-17.759205,28.768894,388.51
+-17.759435,28.768888,390.91
+-17.759751,28.768933,393.32
+-17.760351,28.769188,400.05
+-17.760579,28.769239,401.49
+-17.760634,28.769217,402.45
+-17.760802,28.769360,402.45
+-17.760910,28.769404,401.97
+-17.761007,28.769359,401.49
+-17.761183,28.769234,401.97
+-17.761420,28.768995,401.97
+-17.761475,28.768906,400.05
+-17.761652,28.768711,398.60
+-17.761710,28.768611,397.64
+-17.761865,28.768450,399.57
+-17.762030,28.768327,399.57
+-17.762410,28.767961,405.33
+-17.762436,28.767872,404.85
+-17.762473,28.767823,404.85
+-17.762645,28.767726,407.74
+-17.763279,28.767119,421.19
+-17.763558,28.766930,424.08
+-17.763921,28.766717,430.33
+-17.764108,28.766625,434.17
+-17.764461,28.766405,439.94
+-17.764949,28.766140,443.31
+-17.765156,28.766061,444.75
+-17.765844,28.765682,451.96
+-17.765946,28.765639,453.88
+-17.766356,28.765409,464.93
+-17.766863,28.765192,472.63
+-17.767271,28.764969,486.56
+-17.767378,28.764980,485.12
+-17.768236,28.765274,486.56
+-17.768359,28.765296,486.08
+-17.768456,28.765281,488.01
+-17.768540,28.765350,486.56
+-17.768685,28.765397,481.28
+-17.768965,28.765397,473.11
+-17.769087,28.765453,470.22
+-17.769200,28.765449,465.42
+-17.769156,28.765442,468.30
+-17.769152,28.765475,473.11
+-17.769253,28.765536,471.18
+-17.769361,28.765633,468.78
+-17.769399,28.765738,464.93
+-17.769533,28.765826,460.61
+-17.769658,28.765819,457.24
+-17.769796,28.765757,451.96
+-17.769847,28.765690,449.55
+-17.769960,28.765625,444.75
+-17.770261,28.765523,434.17
+-17.770407,28.765455,430.81
+-17.770537,28.765440,432.73
+-17.771047,28.765526,426.48
+-17.771211,28.765597,418.31
+-17.771307,28.765682,415.43
+-17.771390,28.765934,404.37
+-17.771555,28.766075,395.24
+-17.771616,28.766093,390.91
+-17.771652,28.766002,385.15
+-17.771876,28.766066,382.74
+-17.771951,28.765985,380.82
+-17.771880,28.766017,379.86
+-17.771838,28.766112,378.90
+-17.771759,28.766191,377.94
+-17.771412,28.766363,377.45
+-17.771280,28.766380,374.09
+-17.771150,28.766539,366.40
+-17.771012,28.766613,360.15
+-17.770852,28.766666,353.42
+-17.770600,28.766679,340.44
+-17.770460,28.766707,336.60
+-17.770163,28.766625,332.75
+-17.770010,28.766708,331.79
+-17.769729,28.766992,340.92
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.761271</longitude>            
+			<latitude>28.7660505</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>1191</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

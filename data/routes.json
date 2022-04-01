@@ -20,9 +20,10 @@
       "town": "Santa Cruz de La Palma",
       "routeFile": "LP01 Sugar mills of Santa Cruz",
       "refreshments": "Bar/Restaurants along LP-101 and at Las Nieves.",
-      "start": "Plaza de España",
-      "end": "Plaza de España",
+      "start": "Barlovento",
+      "end": "Franceses",
       "paths": [""],
+      "imageCount": "3",
 
       "variants": [
         {
@@ -34,20 +35,10 @@
           "effort": "hard",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Plaza de España",
-          "end": "Plaza de España",
-          "route": [
-            {
-              "routeFile": "LP01a Santa Cruz highlights",
-              "from": "start",
-              "to": "end"
-            }
-          ],
-
-          "warnings": [
-            [ "slippery", "normal" ],
-            [ "vertigo", "normal" ]
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
 
@@ -67,9 +58,8 @@
 
       "notes": [
         [ "vertigo", "Minor risk along safe fenced bit of path after the mills." ]
-      ],
+      ]
 
-      "dangers": []
     },
     {
       "id": "02",
@@ -110,9 +100,7 @@
         [ "vertigo", "normal" ]
       ],
 
-      "notes": [],
-
-      "dangers": []
+      "notes": []
     },
     {
       "id": "03",
@@ -138,7 +126,23 @@
       "end": "Franceses",
       "paths": ["PR LP 19"],
 
-      "variants": ["", ""],
+      "variants": [
+        {
+          "id": "LP01a",
+          "name": "Santa Cruz highlights",
+          "description": "A fairly long and strenuous circuit taking in the best bits around Santa Cruz including a great viewpoint, a canal path through semi rural areas, the church at Las Nieves, a dry riverbed descent, and watermills.",
+          "walkType": "circular",
+          "duration": "full",
+          "effort": "hard",
+          "waymarked": "true",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
+        }
+      ],
 
       "poi": ["test1", "test2"],
 
@@ -167,26 +171,12 @@
         [ "weather", "strong" ],
         [ "gps", "normal" ],
         [ "mountain", "normal" ],
-        [ "rockfall", "normal" ],
-        [ "danger", "normal" ]
+        [ "rockfall", "normal" ]
       ],
 
       "notes": [
         [ "slippery", "Loose material on barranco descents." ],
         [ "vertigo", "Mild exposure along the cliffs." ]
-      ],
-
-      "dangers": [
-        { 
-          "danger": "Claustrophobia",
-          "description": "Risk of claustrophobia and clouting your head in the tunnels.", 
-          "strength": "strong"
-        },
-        {
-          "danger": "Knee strain",
-          "description": "Some large boulders to descend down in the river bed.",
-          "strength": "normal"
-        }
       ]
 
     },
@@ -213,8 +203,6 @@
       "start": "Barlovento",
       "end": "Franceses",
       "paths": [""],
-
-      "variants": ["", ""],
 
       "poi": ["", ""],
 
@@ -243,8 +231,7 @@
         [ "weather", "normal" ],
         [ "gps", "normal" ],
         [ "mountain", "normal" ],
-        [ "rockfall", "normal" ],
-        [ "danger", "normal" ]
+        [ "rockfall", "normal" ]
       ],
 
       "notes": [
@@ -277,8 +264,6 @@
       "end": "Franceses",
       "paths": [""],
 
-      "variants": ["", ""],
-
       "poi": ["", ""],
 
       "terrain": [
@@ -306,8 +291,7 @@
         [ "weather", "normal" ],
         [ "gps", "normal" ],
         [ "mountain", "normal" ],
-        [ "rockfall", "normal" ],
-        [ "danger", "normal" ]
+        [ "rockfall", "normal" ]
       ],
 
       "notes": [
@@ -350,9 +334,10 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "true",
-          "route": [
-            { "routeFile": "LP06 Cubo de la Galga", "from": "01", "to": "04" }
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         },
         {
           "id": "06b",
@@ -363,14 +348,10 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "true",
-          "route": [
-            { "routeFile": "LP06 Cubo de la Galga", "from": "01", "to": "07" },
-            {
-              "routeFile": "LP06b Cubo La Galga coastal extension",
-              "from": "",
-              "to": ""
-            }
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
 
@@ -427,7 +408,11 @@
           "duration": "stroll",
           "effort": "easy",
           "accessCar": "true",
-          "accessBus": "true"
+          "accessBus": "true",
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
 
@@ -453,8 +438,7 @@
         [ "weather", "normal" ],
         [ "gps", "normal" ],
         [ "mountain", "normal" ],
-        [ "rockfall", "normal" ],
-        [ "danger", "normal" ]
+        [ "rockfall", "normal" ]
       ],
 
       "notes": [
@@ -481,8 +465,8 @@
       "town": "Los Sauces",
       "routeFile": "LP08 La Laguna",
       "refreshments": "Bars, cafés, restaurants in Los Sauces. Bar/restaurant at Laguna de Barlovento.",
-      "start": "Los Sauces",
-      "end": "Los Sauces",
+      "start": "Barlovento",
+      "end": "Franceses",
       "paths": [""],
 
       "poi": ["", ""],
@@ -519,8 +503,8 @@
       "town": "Los Sauces",
       "routeFile": "LP09 Marcos y Cordero Springs",
       "refreshments": "Bar, café, restaurant Los Tilos Visitor Centre.",
-      "start": "Casa del Monte",
-      "end": "Los Tilos Taxi Hut.",
+      "start": "Barlovento",
+      "end": "Franceses",
       "paths": [""],
 
       "variants": [
@@ -533,13 +517,10 @@
           "effort": "moderate",
           "accessCar": "true",
           "accessBus": "false",
-          "route": [
-            {
-              "routeFile": "LP09 Marcos y Cordero Springs",
-              "from": "11",
-              "to": "10"
-            }
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         },
         {
           "id": "09b",
@@ -550,13 +531,10 @@
           "effort": "strenuous",
           "accessCar": "true",
           "accessBus": "false",
-          "route": [
-            {
-              "routeFile": "LP09 Marcos y Cordero Springs",
-              "from": "11",
-              "to": "7"
-            }
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         },
         {
           "id": "09c",
@@ -567,7 +545,10 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "false",
-          "route": []
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
 
@@ -585,20 +566,15 @@
       "warnings": [
         [ "slippery", "normal" ],
         [ "vertigo", "normal" ],
-        [ "gps", "normal" ],
-        [ "danger", "normal" ]
+        [ "gps", "normal" ]
       ],
 
       "notes": [
         [ "gps", "Loss of GPS signal in tunnels is of no account - there's only one path." ],
         [ "slippery", "Tunnels will be wet and slippery." ],
         [ "vertigo", "Some risk along high gallery path." ]
-      ],
-
-      "dangers": [
-        "Risk of claustrophobia and clouting your head in the tunnels.",
-        "Some large boulders to descend down in the river bed."
       ]
+
     },
     {
       "id": "10",
@@ -633,13 +609,10 @@
           "effort": "easy",
           "accessCar": "false",
           "accessBus": "true",
-          "route": [
-            {
-              "routeFile": "LP10 Barlovento to Franceses",
-              "from": "start",
-              "to": "06"
-            }
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         },
         {
           "id": "10b",
@@ -650,13 +623,10 @@
           "effort": "moderate",
           "accessCar": "true",
           "accessBus": "true",
-          "route": [
-            {
-              "routeFile": "LP10 Barlovento to Franceses",
-              "from": "start",
-              "to": "06"
-            }
-          ]
+          "start": "Barlovento",
+          "end": "Franceses",
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
 

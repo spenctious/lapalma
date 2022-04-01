@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP24c Pico de la Nieve</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 24c from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 LP-4, Car Park, PR LP 3</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - If driving you can head up the track and park at Waypoint 02, otherwise go up the road a little (on PR LP 4) to pick up PR LP 3 and follow it to the summit.                </description>       
+				<LookAt>
+					<longitude>-17.8222709</longitude>
+					<latitude>28.7332255</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8222709,28.7332255,1898.9                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Parking</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Stay on the PR LP 3 path unless you're heading down and want a change of route, in which case you can follow the track.                </description>       
+				<LookAt>
+					<longitude>-17.8290167</longitude>
+					<latitude>28.7328515</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8290167,28.7328515,2021.4                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 Cross</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Keep on PR LP 3, right path.                </description>       
+				<LookAt>
+					<longitude>-17.8308492</longitude>
+					<latitude>28.7302274</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8308492,28.7302274,2086.1                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 GR 131</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Keep on PR LP 3/GR 131 heading north until you meet the turnoff for the peak.                </description>       
+				<LookAt>
+					<longitude>-17.8354332</longitude>
+					<latitude>28.7288243</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8354332,28.7288243,2202.2                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Path to Pico de la Nieve</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.834913</longitude>
+					<latitude>28.7296748</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.834913,28.7296748,2219.0                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Pico de la Nieve</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Head back down retracing your route to Waypoint 04 then keep going south on the GR 131.                </description>       
+				<LookAt>
+					<longitude>-17.8356815</longitude>
+					<latitude>28.729816</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8356815,28.729816,2225.0                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Track to car park</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Heading out to La Erita: ignore the turning and carry on the GR 131. Heading back: follow the path heading down back to the car park.                </description>       
+				<LookAt>
+					<longitude>-17.8348216</longitude>
+					<latitude>28.7267434</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8348216,28.7267434,2126.9                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Path to La Erita</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The GR 131 is the lower path which bypasses the site.                </description>       
+				<LookAt>
+					<longitude>-17.8380537</longitude>
+					<latitude>28.7231855</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8380537,28.7231855,2101.9                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 La Erita</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - You can climb up the mound on to Pico La Sabina for great views.                </description>       
+				<LookAt>
+					<longitude>-17.8376781</longitude>
+					<latitude>28.7222752</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8376781,28.7222752,2123.1                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>LP24c Pico de la Nieve</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.822187,28.733158,1899.33
+-17.822369,28.733252,1899.28
+-17.822460,28.733351,1897.29
+-17.822675,28.733449,1901.00
+-17.822900,28.733567,1905.05
+-17.822992,28.733628,1905.96
+-17.823254,28.733708,1910.68
+-17.823421,28.733718,1915.23
+-17.823410,28.733511,1922.67
+-17.823490,28.733403,1927.42
+-17.823807,28.733299,1932.28
+-17.824097,28.733337,1934.49
+-17.824413,28.733497,1937.30
+-17.824751,28.733609,1944.52
+-17.825218,28.733689,1950.73
+-17.825636,28.733661,1956.63
+-17.826076,28.733525,1962.26
+-17.826452,28.733440,1967.11
+-17.826784,28.733548,1971.96
+-17.827262,28.733619,1979.27
+-17.827514,28.733769,1980.04
+-17.827830,28.733586,1990.77
+-17.827986,28.733529,1995.65
+-17.828297,28.733595,2002.53
+-17.828501,28.733497,2010.15
+-17.828538,28.733097,2016.65
+-17.828474,28.732810,2015.62
+-17.828613,28.732758,2015.31
+-17.828737,28.732899,2017.78
+-17.828941,28.732998,2020.85
+-17.829000,28.732838,2020.91
+-17.829268,28.732706,2025.93
+-17.829681,28.732579,2034.91
+-17.829869,28.732476,2037.93
+-17.830099,28.732297,2040.18
+-17.830325,28.732057,2039.05
+-17.830588,28.731676,2035.26
+-17.830668,28.731427,2036.76
+-17.830572,28.731248,2034.22
+-17.830233,28.731178,2031.45
+-17.829965,28.731036,2039.75
+-17.829896,28.730862,2045.61
+-17.830207,28.730853,2045.18
+-17.830030,28.730646,2053.27
+-17.830266,28.730613,2056.76
+-17.830480,28.730575,2061.90
+-17.830357,28.730383,2067.37
+-17.830486,28.730255,2073.28
+-17.830813,28.730378,2078.33
+-17.830872,28.730223,2087.12
+-17.831097,28.730312,2093.79
+-17.831092,28.730124,2097.03
+-17.831167,28.730039,2099.32
+-17.831446,28.730147,2103.46
+-17.831510,28.729997,2103.27
+-17.831746,28.730082,2107.41
+-17.831800,28.729870,2108.12
+-17.832025,28.729987,2116.03
+-17.832149,28.729691,2120.43
+-17.832342,28.729446,2128.74
+-17.832690,28.729362,2140.26
+-17.832749,28.729540,2145.64
+-17.832830,28.729851,2149.08
+-17.833146,28.729969,2155.19
+-17.833259,28.729809,2160.03
+-17.833420,28.729724,2166.06
+-17.833651,28.729606,2175.21
+-17.833833,28.729258,2178.91
+-17.834053,28.729014,2181.99
+-17.834546,28.728854,2195.60
+-17.835088,28.728816,2200.76
+-17.835421,28.728844,2203.40
+-17.835126,28.728990,2208.34
+-17.834815,28.729018,2206.66
+-17.834632,28.729244,2209.25
+-17.834627,28.729432,2211.13
+-17.834729,28.729611,2215.31
+-17.834944,28.729668,2219.43
+-17.835153,28.729616,2221.50
+-17.835394,28.729635,2222.81
+-17.835598,28.729700,2224.08
+-17.835668,28.729795,2224.91
+-17.835485,28.729705,2224.33
+-17.835410,28.729658,2223.23
+-17.835306,28.729639,2223.05
+-17.835212,28.729637,2222.37
+-17.835130,28.729632,2221.43
+-17.835035,28.729659,2220.70
+-17.834947,28.729645,2219.28
+-17.834823,28.729620,2216.95
+-17.834728,28.729564,2214.95
+-17.834659,28.729454,2212.25
+-17.834599,28.729357,2209.50
+-17.834650,28.729248,2209.79
+-17.834742,28.729136,2210.11
+-17.834805,28.729062,2208.13
+-17.835037,28.729014,2208.66
+-17.835307,28.728928,2207.59
+-17.835480,28.728857,2203.72
+-17.835571,28.728834,2201.07
+-17.835610,28.728748,2194.52
+-17.835586,28.728686,2192.13
+-17.835676,28.728625,2185.40
+-17.835664,28.728577,2183.10
+-17.835681,28.728537,2180.10
+-17.835390,28.728484,2182.06
+-17.835481,28.728268,2170.07
+-17.835545,28.728023,2161.21
+-17.835492,28.727882,2157.36
+-17.835540,28.727661,2155.23
+-17.835460,28.727379,2151.66
+-17.835368,28.727233,2148.98
+-17.835256,28.726951,2144.48
+-17.835358,28.726701,2140.68
+-17.835116,28.726706,2135.78
+-17.834778,28.726715,2124.79
+-17.834939,28.726588,2127.08
+-17.835218,28.726430,2127.45
+-17.835486,28.726171,2120.30
+-17.835690,28.725936,2109.56
+-17.836114,28.725818,2112.06
+-17.836570,28.725686,2106.60
+-17.836790,28.725461,2096.20
+-17.837166,28.725202,2086.49
+-17.837369,28.724948,2083.02
+-17.837637,28.724802,2086.18
+-17.837799,28.724369,2099.22
+-17.837868,28.724035,2107.98
+-17.837900,28.723716,2104.57
+-17.837949,28.723405,2102.38
+-17.838024,28.723142,2101.83
+-17.837943,28.722864,2110.74
+-17.837799,28.722568,2116.97
+-17.837777,28.722389,2120.40
+-17.837713,28.722285,2122.76
+-17.837734,28.722436,2119.30
+-17.837777,28.722648,2116.39
+-17.837868,28.722822,2112.94
+-17.837922,28.723029,2104.05
+-17.837949,28.723198,2102.18
+-17.837895,28.723438,2101.68
+-17.837890,28.723607,2102.21
+-17.837922,28.723828,2107.99
+-17.837916,28.724068,2111.25
+-17.837847,28.724341,2102.14
+-17.837777,28.724666,2091.99
+-17.837578,28.724896,2085.28
+-17.837294,28.725122,2084.53
+-17.837015,28.725357,2090.19
+-17.836801,28.725503,2097.86
+-17.836645,28.725663,2106.73
+-17.836307,28.725799,2110.03
+-17.835900,28.725922,2112.87
+-17.835556,28.725983,2109.71
+-17.835406,28.726181,2119.44
+-17.835261,28.726312,2123.10
+-17.835132,28.726402,2124.39
+-17.834880,28.726571,2124.79
+-17.834725,28.726750,2123.29
+-17.834735,28.726910,2126.06
+-17.834762,28.727164,2125.47
+-17.834768,28.727408,2124.24
+-17.834671,28.727545,2121.62
+-17.834322,28.727601,2113.14
+-17.833984,28.727700,2110.00
+-17.833705,28.727681,2101.55
+-17.833437,28.727752,2098.24
+-17.833335,28.727883,2103.90
+-17.832997,28.727978,2098.03
+-17.832579,28.728133,2092.48
+-17.832209,28.728335,2094.59
+-17.832021,28.728514,2096.96
+-17.831978,28.728744,2104.20
+-17.832150,28.728956,2113.49
+-17.831855,28.729116,2103.28
+-17.831522,28.729295,2085.36
+-17.831227,28.729624,2090.61
+-17.831082,28.729807,2094.18
+-17.830878,28.730057,2091.67
+-17.830798,28.730249,2083.49
+-17.830717,28.730377,2075.44
+-17.830508,28.730315,2071.96
+-17.830342,28.730447,2064.83
+-17.830417,28.730640,2057.60
+-17.830192,28.730673,2053.29
+-17.830288,28.730875,2043.37
+-17.829977,28.730908,2045.34
+-17.829832,28.730936,2041.60
+-17.830122,28.731190,2032.52
+-17.830508,28.731289,2031.85
+-17.830573,28.731482,2032.55
+-17.830455,28.731717,2031.66
+-17.830353,28.731905,2034.26
+-17.830160,28.732164,2037.53
+-17.829902,28.732399,2036.50
+-17.829553,28.732672,2034.58
+-17.829269,28.732766,2027.72
+-17.829006,28.732931,2021.87
+-17.828931,28.732799,2019.08
+-17.828990,28.732691,2017.60
+-17.829419,28.732569,2026.68
+-17.829704,28.732399,2028.86
+-17.830101,28.731910,2026.66
+-17.830224,28.731661,2024.23
+-17.830122,28.731482,2024.70
+-17.829741,28.731506,2018.11
+-17.829333,28.731454,2006.03
+-17.829103,28.731270,2006.97
+-17.829006,28.730950,2011.45
+-17.828856,28.730743,2006.38
+-17.828867,28.730438,2006.84
+-17.828679,28.730137,1999.33
+-17.828373,28.730057,1988.27
+-17.828062,28.729864,1980.73
+-17.827949,28.729591,1978.72
+-17.827842,28.729182,1978.95
+-17.827772,28.728801,1975.36
+-17.827606,28.728735,1968.71
+-17.827536,28.728975,1971.10
+-17.827510,28.729403,1970.18
+-17.827552,28.729798,1964.45
+-17.827563,28.730024,1959.71
+-17.827746,28.730306,1962.39
+-17.827858,28.730438,1963.44
+-17.827810,28.730696,1958.65
+-17.827869,28.731012,1963.70
+-17.828035,28.731251,1972.88
+-17.827853,28.731426,1969.70
+-17.827472,28.731364,1958.13
+-17.827037,28.731256,1948.25
+-17.826490,28.731200,1940.19
+-17.826099,28.731129,1938.26
+-17.825739,28.731167,1931.57
+-17.825739,28.731538,1939.58
+-17.825535,28.731764,1937.89
+-17.825176,28.731981,1929.38
+-17.825155,28.732296,1932.10
+-17.824677,28.732470,1927.28
+-17.824312,28.732357,1924.37
+-17.823948,28.732117,1921.39
+-17.823406,28.732023,1913.90
+-17.822918,28.732009,1909.17
+-17.822424,28.731858,1900.32
+-17.822134,28.731929,1899.70
+-17.821931,28.732329,1901.22
+-17.821941,28.732517,1901.92
+-17.822108,28.732733,1903.51
+-17.822161,28.732931,1902.47
+-17.822140,28.733081,1900.28
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.8299921</longitude>            
+			<latitude>28.7280223</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>940</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

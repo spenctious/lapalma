@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP14 Bosque Dragos El Palmar</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 14 from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Plaza Santo Domingo</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Head to the barranco and follow PR LP 9.3, GR 130                </description>       
+				<LookAt>
+					<longitude>-17.944611</longitude>
+					<latitude>28.830743</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.944611,28.830743,392.103607                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Path, sign for Dragos Salvatierra</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.943747</longitude>
+					<latitude>28.830872</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.943747,28.830872,368.508820                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 GR 130 diverges</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Continue on PR LP 9.3 passing through the short tunnel. The dragon trees start to appear about half way up.                </description>       
+				<LookAt>
+					<longitude>-17.937061</longitude>
+					<latitude>28.837166</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.937061,28.837166,317.105530                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 Casa Shangri-La and path behind</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - PR LP 9.3 diverges. Follow the GPS track along the unmarked path to the dragon trees. An alternative to following the path behind the house all the way round and up the other side of the valley is to return to this point after the last dragon tree and continue on up PR LP 9.3. Once you emerge on the road turn right and you will reconnect with the route.                </description>       
+				<LookAt>
+					<longitude>-17.935266</longitude>
+					<latitude>28.833296</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.935266,28.833296,432.318176                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Calle Salvatierra</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.934762</longitude>
+					<latitude>28.829827</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.934762,28.829827,518.541199                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 House with oranges, sign to Santo Domingo</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.933328</longitude>
+					<latitude>28.828798</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.933328,28.828798,540.811584                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 PR LP 9</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow PR LP 9 to the end.                </description>       
+				<LookAt>
+					<longitude>-17.934912</longitude>
+					<latitude>28.826425</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.934912,28.826425,572.804565                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Fuente la Huerta </name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The river bed can be followed downstream a little as an alternative to the road.                </description>       
+				<LookAt>
+					<longitude>-17.935324</longitude>
+					<latitude>28.825185</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.935324,28.825185,566.738647                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 SL VG 51</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.936251</longitude>
+					<latitude>28.826897</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.936251,28.826897,551.000854                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Bosque Dragos El Palmar</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.944590,28.830766,388.99
+-17.944497,28.830801,365.92
+-17.944193,28.830983,362.55
+-17.943976,28.830951,365.44
+-17.943748,28.830869,373.61
+-17.943752,28.830848,374.57
+-17.943524,28.830864,366.40
+-17.943372,28.830852,362.07
+-17.943291,28.830891,361.59
+-17.943284,28.831028,359.67
+-17.943168,28.831098,355.34
+-17.942997,28.831155,350.06
+-17.942909,28.831285,346.69
+-17.942825,28.831503,339.00
+-17.942697,28.831707,333.23
+-17.942515,28.831705,327.47
+-17.942435,28.831625,320.74
+-17.942414,28.831727,317.85
+-17.942427,28.831841,316.89
+-17.942317,28.831802,317.85
+-17.942290,28.831926,322.66
+-17.942357,28.832112,325.54
+-17.942467,28.832137,328.43
+-17.942748,28.832111,331.31
+-17.942863,28.832115,329.87
+-17.942958,28.832061,329.87
+-17.943072,28.832087,327.47
+-17.943214,28.832094,324.58
+-17.943404,28.832003,323.62
+-17.943635,28.832081,327.47
+-17.943740,28.832140,327.95
+-17.943708,28.832120,328.43
+-17.943471,28.832080,327.95
+-17.943334,28.832088,331.79
+-17.943467,28.832192,339.00
+-17.943594,28.832223,342.37
+-17.943532,28.832233,345.73
+-17.943358,28.832395,351.98
+-17.943265,28.832448,355.83
+-17.943143,28.832446,358.71
+-17.942921,28.832406,361.59
+-17.942814,28.832436,363.52
+-17.942652,28.832705,366.88
+-17.942599,28.832863,367.84
+-17.942467,28.833029,365.92
+-17.942241,28.833382,362.55
+-17.942226,28.833484,361.59
+-17.942169,28.833587,360.15
+-17.942153,28.833687,358.71
+-17.942159,28.833788,359.67
+-17.942136,28.833894,359.19
+-17.942025,28.834043,361.11
+-17.941998,28.834145,357.27
+-17.941910,28.834242,355.34
+-17.941705,28.834378,351.98
+-17.941631,28.834456,351.98
+-17.941537,28.834786,352.46
+-17.941492,28.834883,352.46
+-17.941301,28.835142,351.02
+-17.940786,28.835643,343.33
+-17.940593,28.835949,339.00
+-17.940448,28.836121,337.56
+-17.940201,28.836229,331.79
+-17.939973,28.836365,328.91
+-17.939876,28.836443,328.43
+-17.939649,28.836700,327.95
+-17.939482,28.836845,328.43
+-17.939139,28.837015,329.39
+-17.938905,28.837073,335.16
+-17.938518,28.837079,331.31
+-17.938089,28.837122,326.99
+-17.937994,28.837161,327.95
+-17.937911,28.837146,324.10
+-17.937456,28.837136,320.26
+-17.937234,28.837199,315.93
+-17.937117,28.837174,315.45
+-17.937000,28.837125,317.85
+-17.936804,28.836951,315.45
+-17.936732,28.836839,319.78
+-17.936824,28.836612,329.39
+-17.936792,28.836504,333.71
+-17.936850,28.836418,335.64
+-17.936903,28.836184,338.04
+-17.936788,28.835744,347.65
+-17.936786,28.835666,349.10
+-17.936819,28.835481,351.02
+-17.936795,28.835289,352.46
+-17.936742,28.835077,352.94
+-17.936637,28.834844,356.79
+-17.936512,28.834678,370.24
+-17.936391,28.834564,372.65
+-17.936306,28.834430,379.86
+-17.936279,28.834344,382.26
+-17.936266,28.834199,388.99
+-17.936211,28.834158,391.39
+-17.936099,28.834011,394.28
+-17.935844,28.833775,407.26
+-17.935815,28.833771,408.22
+-17.935662,28.833671,414.95
+-17.935273,28.833308,431.29
+-17.935301,28.833058,429.85
+-17.935120,28.832789,427.44
+-17.935107,28.832738,427.44
+-17.934979,28.832551,426.96
+-17.934949,28.832426,431.29
+-17.935001,28.832296,429.85
+-17.935149,28.832236,428.89
+-17.935308,28.832449,425.04
+-17.935408,28.832520,425.52
+-17.935486,28.832477,428.40
+-17.935497,28.832408,432.73
+-17.935815,28.832483,438.02
+-17.935985,28.832501,445.23
+-17.935803,28.832295,451.00
+-17.935725,28.832241,452.92
+-17.935674,28.832165,455.80
+-17.935533,28.832043,459.65
+-17.935399,28.831828,463.97
+-17.935312,28.831734,466.38
+-17.934938,28.831239,485.60
+-17.934837,28.831030,490.89
+-17.934808,28.830905,490.89
+-17.934815,28.830685,494.26
+-17.934891,28.830291,500.98
+-17.934761,28.829934,508.19
+-17.934757,28.829815,522.13
+-17.934661,28.829709,525.98
+-17.934398,28.829353,537.99
+-17.934211,28.829213,542.32
+-17.934021,28.829040,544.72
+-17.933910,28.828978,546.17
+-17.933662,28.828902,544.24
+-17.933332,28.828762,544.72
+-17.933428,28.828752,544.72
+-17.933524,28.828802,547.13
+-17.933630,28.828818,549.05
+-17.933734,28.828796,550.97
+-17.933904,28.828678,553.86
+-17.934218,28.828264,557.22
+-17.934628,28.827780,559.14
+-17.934809,28.827626,563.95
+-17.934876,28.827543,565.39
+-17.934921,28.827443,566.83
+-17.934923,28.827337,568.76
+-17.934796,28.826728,575.49
+-17.934928,28.826429,575.97
+-17.934926,28.826353,574.53
+-17.934985,28.826115,576.93
+-17.935233,28.825656,576.93
+-17.935293,28.825450,575.01
+-17.935309,28.825249,571.16
+-17.935367,28.825179,560.11
+-17.935545,28.825301,555.30
+-17.935713,28.825569,556.26
+-17.935794,28.826416,551.45
+-17.935987,28.826808,549.53
+-17.936078,28.826876,550.49
+-17.936183,28.826908,550.01
+-17.936259,28.826895,551.45
+-17.936349,28.826927,550.97
+-17.936603,28.827097,546.17
+-17.936853,28.827310,540.40
+-17.937112,28.827662,531.27
+-17.937322,28.827727,524.54
+-17.937415,28.827791,519.73
+-17.937528,28.827802,517.33
+-17.937635,28.827834,513.96
+-17.937915,28.827975,508.19
+-17.938115,28.828042,505.79
+-17.938498,28.828279,492.81
+-17.938655,28.828458,486.08
+-17.938907,28.828610,479.84
+-17.939342,28.828907,467.82
+-17.939732,28.829064,458.69
+-17.940032,28.829211,448.11
+-17.940333,28.829329,440.90
+-17.940430,28.829384,438.98
+-17.940491,28.829459,438.02
+-17.940539,28.829556,435.61
+-17.940712,28.829685,429.85
+-17.941093,28.829904,420.71
+-17.941300,28.829997,414.95
+-17.941417,28.829991,412.06
+-17.941483,28.829905,411.58
+-17.941575,28.829838,410.62
+-17.941834,28.829829,409.18
+-17.941932,28.829786,407.26
+-17.942023,28.829708,405.81
+-17.942136,28.829657,405.33
+-17.942364,28.829617,401.49
+-17.942592,28.829555,396.20
+-17.942707,28.829573,391.39
+-17.943260,28.829823,389.95
+-17.943444,28.829926,389.47
+-17.943793,28.830226,384.18
+-17.943935,28.830386,379.38
+-17.944023,28.830457,376.97
+-17.944165,28.830516,376.49
+-17.944392,28.830775,369.76
+-17.944500,28.830779,367.36
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.9389695</longitude>            
+			<latitude>28.831189</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>803</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

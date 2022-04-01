@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP28a Pista de Valencia to Centro de Visitantes</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 28a from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Pista de Valencia Car Park</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.854269</longitude>
+					<latitude>28.678029</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.854269,28.678029,1141.015869                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the unsigned path leading down from a tight bend.                </description>       
+				<LookAt>
+					<longitude>-17.855893</longitude>
+					<latitude>28.676457</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.855893,28.676457,1120.350586                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 PR LP 13.3</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow PR LP 13.3. The path crossroads in the woods is not signed but the path heading straight down is PR LP 13.3.                </description>       
+				<LookAt>
+					<longitude>-17.857033</longitude>
+					<latitude>28.675432</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.857033,28.675432,1093.880371                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 LP-302</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.858302</longitude>
+					<latitude>28.666266</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.858302,28.666266,918.515076                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Calle Barrial del Medio</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - LP 13.3 diverges. Follow the GPS track down. PR LP 13.3 will take you back to the visitor centre by way of a fairly uninteresting road section. The tracked way is more interesting.                </description>       
+				<LookAt>
+					<longitude>-17.858444</longitude>
+					<latitude>28.665503</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.858444,28.665503,900.497070                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Calle Virgen del Pino</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.856672</longitude>
+					<latitude>28.661081</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.856672,28.661081,822.837769                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Calle la Rosa</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.858024</longitude>
+					<latitude>28.660672</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.858024,28.660672,816.772278                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 PR LP 1</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.858001</longitude>
+					<latitude>28.659716</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.858001,28.659716,815.351562                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Side road to some houses</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - PR LP 1 diverges. At the end of the cul-de-sac (keep left) a final bit of path is reached.                </description>       
+				<LookAt>
+					<longitude>-17.858216</longitude>
+					<latitude>28.658696</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.858216,28.658696,818.382935                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 PR LP 13.3, LP-302</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.852301</longitude>
+					<latitude>28.656929</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.852301,28.656929,844.552856                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>11 Centro de Visitantes car park and taxi pick-up point</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Open every day from 09:00 - 18:30.                </description>       
+				<LookAt>
+					<longitude>-17.853149</longitude>
+					<latitude>28.654606</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.853149,28.654606,850.048218                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Pista de Valencia to Centro de Visitantes</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.854033,28.678034,1147.47
+-17.854305,28.678008,1147.47
+-17.854418,28.677986,1143.14
+-17.854546,28.678007,1142.66
+-17.854651,28.678054,1143.63
+-17.854711,28.678126,1144.11
+-17.854817,28.678300,1145.55
+-17.854883,28.678385,1145.55
+-17.854925,28.678472,1151.32
+-17.854950,28.678581,1151.32
+-17.855035,28.678687,1151.32
+-17.855154,28.678776,1150.84
+-17.855278,28.678786,1153.24
+-17.855361,28.678669,1151.32
+-17.855414,28.678444,1145.55
+-17.855491,28.678362,1139.30
+-17.855564,28.678172,1128.73
+-17.855611,28.678076,1124.40
+-17.855687,28.677878,1120.55
+-17.855710,28.677766,1119.11
+-17.855714,28.677546,1120.55
+-17.855680,28.677427,1123.92
+-17.855673,28.677313,1123.44
+-17.855685,28.677175,1119.59
+-17.855741,28.677083,1116.71
+-17.855872,28.676946,1117.19
+-17.855956,28.676872,1118.63
+-17.856022,28.676783,1119.59
+-17.856036,28.676666,1119.11
+-17.855955,28.676532,1120.55
+-17.855881,28.676463,1123.44
+-17.855961,28.676439,1122.48
+-17.856019,28.676386,1119.59
+-17.855945,28.676306,1115.27
+-17.855439,28.676023,1109.50
+-17.855401,28.675928,1108.54
+-17.855067,28.675915,1104.21
+-17.854955,28.675708,1100.37
+-17.854965,28.675587,1097.00
+-17.855062,28.675362,1095.08
+-17.855126,28.675252,1091.71
+-17.855222,28.675196,1090.27
+-17.855324,28.675208,1089.79
+-17.855440,28.675243,1091.71
+-17.855558,28.675304,1093.16
+-17.855866,28.675402,1098.44
+-17.855989,28.675503,1099.40
+-17.856074,28.675596,1100.85
+-17.856268,28.675775,1100.85
+-17.856379,28.675706,1096.52
+-17.856451,28.675611,1092.20
+-17.856560,28.675501,1090.27
+-17.856647,28.675460,1089.79
+-17.856749,28.675455,1090.75
+-17.856863,28.675461,1092.68
+-17.857053,28.675409,1096.04
+-17.857069,28.675415,1082.58
+-17.857118,28.675250,1076.81
+-17.857149,28.674987,1068.16
+-17.857229,28.674706,1069.12
+-17.857308,28.674304,1072.01
+-17.857299,28.674183,1065.76
+-17.857245,28.673906,1055.67
+-17.857229,28.673420,1037.40
+-17.857216,28.673347,1038.36
+-17.857305,28.672807,1024.42
+-17.857291,28.672581,1021.06
+-17.857306,28.672481,1019.13
+-17.857270,28.672347,1012.89
+-17.857273,28.672224,1010.00
+-17.857306,28.672114,1005.68
+-17.857347,28.672023,1003.75
+-17.857460,28.671827,1002.31
+-17.857584,28.671642,1002.31
+-17.857685,28.671431,1001.35
+-17.857740,28.671343,1000.87
+-17.857830,28.671158,1001.83
+-17.858121,28.670725,994.14
+-17.858177,28.670608,990.30
+-17.858249,28.670496,987.41
+-17.858437,28.670250,985.01
+-17.858540,28.670059,981.16
+-17.858599,28.669976,979.72
+-17.858699,28.669800,975.88
+-17.858749,28.669551,972.03
+-17.858754,28.669457,969.63
+-17.858744,28.669329,967.22
+-17.858674,28.669165,966.74
+-17.858599,28.668953,966.74
+-17.858586,28.668862,967.22
+-17.858553,28.668749,965.30
+-17.858537,28.668635,963.86
+-17.858492,28.668473,958.57
+-17.858387,28.668204,955.21
+-17.858295,28.667844,947.04
+-17.858292,28.667709,948.00
+-17.858252,28.667344,941.27
+-17.858311,28.666995,935.50
+-17.858311,28.666903,933.10
+-17.858331,28.666818,934.06
+-17.858307,28.666700,931.65
+-17.858312,28.666579,929.25
+-17.858296,28.666274,918.68
+-17.858303,28.666147,915.79
+-17.858347,28.665921,910.03
+-17.858452,28.665616,903.30
+-17.858451,28.665479,898.97
+-17.858382,28.665020,893.68
+-17.858382,28.664716,889.84
+-17.858410,28.664656,886.95
+-17.858420,28.664558,885.51
+-17.858402,28.664448,884.07
+-17.858307,28.664248,880.71
+-17.858252,28.664159,878.30
+-17.858216,28.664059,877.34
+-17.857997,28.663583,870.13
+-17.857948,28.663500,869.17
+-17.857960,28.663542,867.25
+-17.857865,28.663365,866.29
+-17.857809,28.663165,864.84
+-17.857798,28.663056,864.84
+-17.857766,28.662981,861.48
+-17.857671,28.662911,861.00
+-17.857427,28.662666,861.48
+-17.857321,28.662476,863.88
+-17.857228,28.662418,859.56
+-17.857144,28.662351,856.67
+-17.857068,28.662273,853.79
+-17.856895,28.662135,848.98
+-17.856770,28.661994,844.66
+-17.856700,28.661815,840.81
+-17.856654,28.661723,838.89
+-17.856651,28.661624,836.48
+-17.856672,28.661421,831.68
+-17.856667,28.661317,828.79
+-17.856693,28.661042,820.14
+-17.857403,28.660862,821.10
+-17.857607,28.660791,821.58
+-17.857829,28.660733,820.62
+-17.857922,28.660697,819.66
+-17.858040,28.660668,815.82
+-17.858110,28.660609,815.82
+-17.858079,28.660521,812.45
+-17.858052,28.660317,811.97
+-17.858052,28.660221,812.93
+-17.858034,28.660129,812.93
+-17.858017,28.659927,813.89
+-17.858020,28.659836,814.85
+-17.858006,28.659735,815.34
+-17.857968,28.659655,812.93
+-17.857969,28.659542,813.89
+-17.857920,28.659136,816.30
+-17.857938,28.658934,816.78
+-17.857997,28.658862,817.74
+-17.858171,28.658756,819.18
+-17.858230,28.658674,816.78
+-17.858202,28.658682,819.66
+-17.858003,28.658422,824.47
+-17.857950,28.658332,826.87
+-17.857871,28.658258,826.87
+-17.857754,28.658241,825.91
+-17.857630,28.658237,823.99
+-17.857511,28.658205,823.03
+-17.856707,28.658061,823.51
+-17.856574,28.658050,824.47
+-17.856357,28.657975,825.43
+-17.856238,28.657944,827.35
+-17.855962,28.657899,823.99
+-17.855712,28.657908,824.95
+-17.855593,28.657922,823.99
+-17.855352,28.657905,822.06
+-17.855250,28.657885,821.58
+-17.855026,28.657803,823.03
+-17.854914,28.657771,823.99
+-17.854812,28.657730,826.87
+-17.854686,28.657734,830.24
+-17.854398,28.657903,828.79
+-17.854296,28.657893,828.79
+-17.854103,28.657799,828.31
+-17.853991,28.657780,828.31
+-17.853882,28.657738,827.83
+-17.853789,28.657689,829.27
+-17.853686,28.657649,829.76
+-17.853562,28.657616,830.72
+-17.853324,28.657572,829.27
+-17.853245,28.657510,831.68
+-17.852860,28.657253,838.41
+-17.852656,28.657133,840.81
+-17.852467,28.657007,841.29
+-17.852349,28.656959,842.73
+-17.852262,28.656911,842.25
+-17.852333,28.656718,842.25
+-17.852327,28.656611,844.18
+-17.852386,28.656432,844.18
+-17.852732,28.655740,848.50
+-17.852844,28.655477,848.98
+-17.853011,28.655131,850.42
+-17.853143,28.654755,850.42
+-17.853149,28.654653,849.94
+-17.853137,28.654556,850.90
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.855508</longitude>            
+			<latitude>28.666671</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>1284</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

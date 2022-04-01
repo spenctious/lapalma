@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP07 Los Tilos Bridge</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 7 from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Las Lomadas, South car park</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the pedestrianised section of LP-105 road until the bridge/turning then come back on the other side of the barranco.                </description>       
+				<LookAt>
+					<longitude>-17.770833</longitude>
+					<latitude>28.796686</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.770833,28.796686,256.223389                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Concrete track</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Walk 7a: Follow the concrete track that goes down and under bridge and then climb out on other side. The track meets the GR 130 going up a road which you can follow to Los Sauces or take the next left to get to the far end of the bridge.                </description>       
+				<LookAt>
+					<longitude>-17.777146</longitude>
+					<latitude>28.798301</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.777146,28.798301,216.856552                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 LP-105 diverges</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - LP-105 continues to the Los Tilos visitor centre.                </description>       
+				<LookAt>
+					<longitude>-17.780717</longitude>
+					<latitude>28.797128</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.780717,28.797128,202.895233                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 North car park</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.772579</longitude>
+					<latitude>28.800623</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.772579,28.800623,275.886505                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Los Tilos Bridge</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.770864,28.796693,250.56
+-17.771008,28.796640,260.17
+-17.771069,28.796561,258.73
+-17.771245,28.796493,257.77
+-17.771270,28.796572,260.17
+-17.771222,28.796759,263.54
+-17.771233,28.796866,265.46
+-17.771265,28.796970,264.98
+-17.771311,28.797057,264.98
+-17.771417,28.797111,266.90
+-17.771540,28.797121,266.42
+-17.771988,28.797095,260.17
+-17.772112,28.797095,259.21
+-17.772233,28.797136,258.25
+-17.772338,28.797187,257.77
+-17.772449,28.797219,258.73
+-17.772547,28.797267,258.73
+-17.772644,28.797305,258.73
+-17.772757,28.797323,257.29
+-17.772857,28.797324,254.89
+-17.772967,28.797319,253.44
+-17.773076,28.797306,252.48
+-17.773192,28.797297,251.04
+-17.773311,28.797302,250.08
+-17.773535,28.797378,248.16
+-17.773832,28.797495,246.72
+-17.773938,28.797531,246.72
+-17.774044,28.797556,245.75
+-17.774158,28.797551,244.31
+-17.774274,28.797552,242.39
+-17.774509,28.797519,239.51
+-17.774632,28.797511,237.58
+-17.774738,28.797494,237.58
+-17.774848,28.797481,236.62
+-17.775199,28.797422,231.81
+-17.775308,28.797407,231.33
+-17.775425,28.797415,230.85
+-17.775648,28.797455,229.89
+-17.775761,28.797485,228.45
+-17.775895,28.797514,227.97
+-17.776241,28.797651,227.97
+-17.776439,28.797744,227.97
+-17.776530,28.797799,227.97
+-17.776635,28.797837,226.05
+-17.776819,28.797965,223.64
+-17.776901,28.798030,222.68
+-17.776994,28.798061,222.20
+-17.777128,28.798236,221.24
+-17.777133,28.798295,217.88
+-17.777199,28.798350,216.43
+-17.777276,28.798427,216.91
+-17.777360,28.798497,217.88
+-17.777485,28.798536,216.43
+-17.777614,28.798542,214.51
+-17.777736,28.798518,212.11
+-17.777958,28.798495,209.22
+-17.778184,28.798447,206.82
+-17.778290,28.798414,205.38
+-17.778405,28.798370,204.90
+-17.778607,28.798274,203.94
+-17.778714,28.798250,203.46
+-17.778949,28.798218,205.86
+-17.779035,28.798189,206.34
+-17.779261,28.798128,206.34
+-17.779498,28.798075,207.78
+-17.779613,28.798044,207.30
+-17.779712,28.798009,207.30
+-17.779817,28.797981,207.78
+-17.779923,28.797946,206.82
+-17.780031,28.797904,206.34
+-17.780132,28.797839,206.34
+-17.780219,28.797777,204.90
+-17.780295,28.797697,202.98
+-17.780354,28.797607,201.53
+-17.780404,28.797511,201.05
+-17.780442,28.797413,200.09
+-17.780484,28.797323,199.13
+-17.780538,28.797242,199.61
+-17.780614,28.797168,199.61
+-17.780812,28.797103,207.78
+-17.780926,28.797177,217.88
+-17.780958,28.797234,220.76
+-17.780943,28.797321,221.24
+-17.780873,28.797407,221.24
+-17.780814,28.797490,220.76
+-17.780771,28.797602,221.72
+-17.780745,28.797703,222.68
+-17.780753,28.797816,223.16
+-17.780741,28.798026,221.72
+-17.780706,28.798123,221.72
+-17.780655,28.798200,225.09
+-17.780584,28.798266,226.53
+-17.780532,28.798339,227.01
+-17.780451,28.798391,227.49
+-17.780363,28.798425,228.45
+-17.780177,28.798539,230.37
+-17.779996,28.798665,232.30
+-17.779714,28.798830,235.18
+-17.779621,28.798879,237.10
+-17.779540,28.798944,240.95
+-17.779430,28.799084,237.58
+-17.779353,28.799154,238.06
+-17.779267,28.799217,239.99
+-17.779193,28.799260,241.43
+-17.778935,28.799482,244.31
+-17.778873,28.799560,242.39
+-17.778797,28.799638,240.95
+-17.778625,28.799786,242.39
+-17.778459,28.799913,245.27
+-17.778431,28.799976,245.75
+-17.778444,28.799953,243.35
+-17.778351,28.800018,244.79
+-17.778252,28.800063,246.23
+-17.778143,28.800089,247.68
+-17.778037,28.800095,247.68
+-17.777820,28.800156,252.00
+-17.777706,28.800177,254.41
+-17.777578,28.800183,254.89
+-17.777462,28.800176,255.37
+-17.777348,28.800152,255.85
+-17.777135,28.800128,257.29
+-17.777029,28.800103,257.77
+-17.776914,28.800086,257.77
+-17.776702,28.800017,258.73
+-17.776613,28.799968,259.21
+-17.776505,28.799916,259.69
+-17.776421,28.799889,260.17
+-17.776294,28.799859,261.14
+-17.776078,28.799830,262.10
+-17.775884,28.799761,264.02
+-17.775790,28.799748,265.46
+-17.775593,28.799780,264.98
+-17.775502,28.799814,264.02
+-17.775405,28.799867,263.54
+-17.775201,28.799964,264.50
+-17.775084,28.799985,265.46
+-17.774991,28.799983,265.94
+-17.774765,28.800004,267.86
+-17.774535,28.800053,269.31
+-17.774338,28.800133,271.23
+-17.774262,28.800172,271.71
+-17.774153,28.800201,273.15
+-17.774031,28.800178,274.11
+-17.773921,28.800165,274.11
+-17.773822,28.800142,274.11
+-17.773711,28.800107,274.59
+-17.773606,28.800097,274.59
+-17.773504,28.800109,274.59
+-17.773449,28.800123,273.63
+-17.773337,28.800130,273.15
+-17.773233,28.800102,273.63
+-17.773128,28.800066,273.63
+-17.773066,28.800072,273.63
+-17.772947,28.800073,274.11
+-17.772734,28.800129,275.07
+-17.772691,28.800211,273.63
+-17.772671,28.800145,275.07
+-17.772640,28.800256,275.56
+-17.772557,28.800202,275.07
+-17.772592,28.800273,276.04
+-17.772565,28.800377,276.52
+-17.772561,28.800489,277.00
+-17.772570,28.800595,276.52
+-17.772596,28.800667,275.56
+-17.772598,28.800768,275.07
+-17.772594,28.800877,276.04
+-17.772513,28.800892,276.52
+-17.772434,28.800832,276.52
+-17.772369,28.800746,274.11
+-17.772291,28.800676,271.71
+-17.772214,28.800597,268.35
+-17.772073,28.800432,267.86
+-17.772004,28.800337,268.83
+-17.771903,28.800143,266.42
+-17.771828,28.799943,266.42
+-17.771797,28.799837,267.86
+-17.771758,28.799741,269.31
+-17.771713,28.799645,269.31
+-17.771640,28.799564,269.31
+-17.771626,28.799446,268.83
+-17.771602,28.799323,269.31
+-17.771582,28.799179,266.90
+-17.771548,28.799071,268.83
+-17.771459,28.798974,268.83
+-17.771450,28.798855,271.71
+-17.771421,28.798742,272.19
+-17.771394,28.798614,272.19
+-17.771312,28.798545,267.86
+-17.771296,28.798430,268.83
+-17.771244,28.798195,267.38
+-17.771212,28.798082,269.31
+-17.771133,28.797856,267.38
+-17.771100,28.797737,266.90
+-17.771062,28.797621,265.94
+-17.771016,28.797506,265.94
+-17.770983,28.797395,265.46
+-17.770864,28.797065,268.83
+-17.770820,28.796953,267.86
+-17.770805,28.796834,267.38
+-17.770867,28.796767,265.94
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.7758815</longitude>            
+			<latitude>28.7986925</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>512</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

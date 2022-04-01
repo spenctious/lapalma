@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP15 Caldera de Agua</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 15 from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Parque Cultural La Zarza y La Zarcita, PR LP 9.2</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow PR LP 9.2 under the tunnel. Museum hours: summer (Jun 15 to Change of time October) 11:00 - 19:00, winter 11:00 - 17:00. Closed Mondays.                </description>       
+				<LookAt>
+					<longitude>-17.907426</longitude>
+					<latitude>28.805555</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907426,28.805555,983.920654                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Track</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The path briefly joins a short section of track carrying straight on before the steps down to the river bed are reached.                </description>       
+				<LookAt>
+					<longitude>-17.907207</longitude>
+					<latitude>28.809112</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907207,28.809112,945.128479                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 Caldera</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.907647</longitude>
+					<latitude>28.809327</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907647,28.809327,956.254578                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 Caboco La Catedral</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.907596</longitude>
+					<latitude>28.812635</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907596,28.812635,922.231262                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Caldera de Agua</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.907773</longitude>
+					<latitude>28.813958</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907773,28.813958,883.752930                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - PR LP 9.2 diverges. Follow the path up the hill out of the river bed. Note that GPS will be unreliable until you emerge from the river bed. Optional: continue down a little way to Fuente de La Caldera del Agua before heading back.                </description>       
+				<LookAt>
+					<longitude>-17.907580</longitude>
+					<latitude>28.814224</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907580,28.814224,887.43                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Fuente de La Caldera del Agua</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Turn back and pick up the path heading up away from the river bed.                </description>       
+				<LookAt>
+					<longitude>-17.907515</longitude>
+					<latitude>28.814408</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907515,28.814408,886.186523                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Calle San Antonio</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.907400</longitude>
+					<latitude>28.816786</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.907400,28.816786,923.530945                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Junction</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Head towards the building.                </description>       
+				<LookAt>
+					<longitude>-17.908020</longitude>
+					<latitude>28.817247</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.908020,28.817247,928.077026                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 Calle Juan Adalid</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.912412</longitude>
+					<latitude>28.817578</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.912412,28.817578,949.443298                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>11 San Antonio recreational area, roundabout</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow PR LP 9 to the end. Water is available in the BBQ shelters.                </description>       
+				<LookAt>
+					<longitude>-17.916854</longitude>
+					<latitude>28.815151</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.916854,28.815151,928.297852                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>12 Experimental farm</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.911083</longitude>
+					<latitude>28.811749</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.911083,28.811749,962.671204                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>13 LP-1</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.908721</longitude>
+					<latitude>28.808038</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.908721,28.808038,993.372620                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Caldera de Agua</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.907458,28.805561,981.16
+-17.907426,28.805673,976.84
+-17.907423,28.805715,982.60
+-17.907007,28.806534,981.16
+-17.906983,28.806687,978.76
+-17.906937,28.806823,982.12
+-17.906917,28.807006,986.45
+-17.907045,28.807165,983.09
+-17.907220,28.807228,979.72
+-17.907335,28.807330,981.16
+-17.907470,28.807947,987.89
+-17.907487,28.808101,988.37
+-17.907445,28.808170,982.60
+-17.907411,28.808493,972.03
+-17.907271,28.808688,967.22
+-17.907147,28.808828,962.42
+-17.907134,28.809050,956.65
+-17.907209,28.809145,952.32
+-17.907333,28.809182,952.32
+-17.907516,28.809206,952.32
+-17.907570,28.809257,955.69
+-17.907648,28.809396,957.13
+-17.907668,28.809369,957.61
+-17.907634,28.809326,956.17
+-17.907556,28.809323,956.17
+-17.907512,28.809457,956.17
+-17.907473,28.809665,955.21
+-17.907460,28.809865,951.36
+-17.907353,28.809978,948.96
+-17.907287,28.810203,939.83
+-17.907313,28.810370,936.94
+-17.907324,28.810552,935.50
+-17.907405,28.810783,936.94
+-17.907563,28.810999,937.42
+-17.907688,28.811097,937.42
+-17.908096,28.811468,931.17
+-17.908211,28.811508,926.37
+-17.908204,28.811463,931.17
+-17.908208,28.811522,931.17
+-17.908126,28.811739,929.73
+-17.908033,28.811824,924.93
+-17.907922,28.811852,923.00
+-17.907798,28.811913,922.04
+-17.907665,28.812037,919.64
+-17.907652,28.812206,918.20
+-17.907597,28.812327,922.04
+-17.907445,28.812591,924.45
+-17.907424,28.812754,920.12
+-17.907675,28.812627,912.91
+-17.907683,28.812581,916.75
+-17.907585,28.812579,917.72
+-17.907509,28.812563,919.16
+-17.907505,28.812613,917.72
+-17.907592,28.812632,923.00
+-17.907643,28.812699,926.37
+-17.907659,28.812811,924.45
+-17.907692,28.812898,923.48
+-17.907736,28.813291,917.24
+-17.907734,28.813390,913.87
+-17.907606,28.813523,911.47
+-17.907537,28.813648,907.62
+-17.907447,28.813775,906.66
+-17.907415,28.813899,906.18
+-17.907264,28.813984,903.30
+-17.907089,28.814048,901.85
+-17.907032,28.814109,897.53
+-17.907035,28.814215,892.24
+-17.907108,28.814243,887.43
+-17.907309,28.814130,876.38
+-17.907487,28.814054,874.94
+-17.907633,28.814036,878.30
+-17.907625,28.814027,877.82
+-17.907721,28.813971,884.07
+-17.907737,28.813920,884.55
+-17.907608,28.814009,882.63
+-17.907580,28.814224,887.43
+-17.907470,28.814446,883.59
+-17.907535,28.814273,894.16
+-17.907529,28.814183,897.05
+-17.907556,28.814209,894.64
+-17.907539,28.814501,893.68
+-17.907465,28.814549,900.41
+-17.907388,28.814666,910.99
+-17.907271,28.814785,917.72
+-17.907205,28.814935,903.78
+-17.907179,28.815285,872.05
+-17.907099,28.815719,883.59
+-17.907036,28.815968,898.97
+-17.907088,28.816183,908.10
+-17.907120,28.816393,914.83
+-17.907314,28.816650,922.04
+-17.907478,28.816845,925.41
+-17.907546,28.816884,925.89
+-17.907825,28.817102,927.81
+-17.907898,28.817184,928.77
+-17.907983,28.817255,929.73
+-17.907998,28.817320,927.81
+-17.907991,28.817520,929.73
+-17.908017,28.817624,931.65
+-17.908072,28.817725,932.14
+-17.908175,28.818116,932.62
+-17.908275,28.818197,929.73
+-17.908627,28.818238,927.33
+-17.908745,28.818285,927.81
+-17.908866,28.818288,929.25
+-17.909099,28.818261,938.38
+-17.909251,28.818284,941.75
+-17.909596,28.818291,948.00
+-17.909840,28.818370,953.28
+-17.910443,28.818251,941.27
+-17.910898,28.817970,934.54
+-17.911370,28.817815,937.90
+-17.911555,28.817822,938.38
+-17.911695,28.817809,940.79
+-17.911949,28.817702,938.86
+-17.912334,28.817635,948.00
+-17.912484,28.817512,942.23
+-17.912621,28.817455,937.90
+-17.912750,28.817417,935.98
+-17.912851,28.817448,931.65
+-17.913046,28.817564,929.25
+-17.913252,28.817594,932.14
+-17.913380,28.817589,937.90
+-17.913546,28.817508,937.42
+-17.913773,28.817374,930.69
+-17.913991,28.817304,925.89
+-17.914758,28.816806,929.25
+-17.915120,28.816546,928.77
+-17.915221,28.816491,928.77
+-17.915503,28.816302,929.73
+-17.915749,28.816097,929.73
+-17.915840,28.816063,929.25
+-17.915943,28.816097,928.29
+-17.916034,28.816093,929.25
+-17.916383,28.815845,929.73
+-17.916482,28.815791,930.69
+-17.916548,28.815705,931.17
+-17.916475,28.815526,933.58
+-17.916485,28.815413,935.02
+-17.916542,28.815318,933.10
+-17.916672,28.815265,929.25
+-17.916670,28.815082,926.85
+-17.916578,28.815026,925.41
+-17.916442,28.814872,924.45
+-17.916385,28.814788,925.41
+-17.916294,28.814728,924.45
+-17.916178,28.814689,923.48
+-17.916053,28.814682,923.48
+-17.915927,28.814647,924.93
+-17.915863,28.814590,927.33
+-17.915812,28.814511,930.21
+-17.915735,28.814335,928.77
+-17.915575,28.814163,930.21
+-17.915490,28.814088,931.65
+-17.915381,28.814027,932.62
+-17.915150,28.813959,931.65
+-17.915080,28.813887,932.14
+-17.914956,28.813815,933.58
+-17.914711,28.813743,931.65
+-17.914397,28.813594,930.21
+-17.914162,28.813531,931.17
+-17.914064,28.813487,932.14
+-17.913948,28.813457,932.62
+-17.913812,28.813442,935.02
+-17.913684,28.813454,937.42
+-17.913570,28.813430,937.90
+-17.913411,28.813303,940.31
+-17.913349,28.813230,941.75
+-17.913221,28.813155,944.63
+-17.913098,28.813098,949.44
+-17.912993,28.813015,952.80
+-17.912830,28.812827,953.28
+-17.912766,28.812732,955.69
+-17.912595,28.812570,957.13
+-17.912442,28.812539,952.80
+-17.912259,28.812412,954.73
+-17.912190,28.812321,957.13
+-17.911946,28.812097,963.38
+-17.911877,28.812013,965.30
+-17.911790,28.811935,966.26
+-17.911673,28.811873,967.22
+-17.911536,28.811817,961.46
+-17.911426,28.811755,959.05
+-17.911310,28.811705,957.61
+-17.911176,28.811704,958.57
+-17.911086,28.811754,964.82
+-17.911106,28.811726,964.34
+-17.911058,28.811652,964.34
+-17.910952,28.811646,961.94
+-17.910841,28.811595,958.09
+-17.910702,28.811431,958.09
+-17.910536,28.811294,959.53
+-17.910378,28.811141,963.86
+-17.910319,28.810762,959.53
+-17.910238,28.810519,953.77
+-17.910141,28.810434,950.40
+-17.910006,28.810409,949.92
+-17.909879,28.810431,953.28
+-17.909752,28.810479,957.13
+-17.909643,28.810548,958.57
+-17.909442,28.810723,955.21
+-17.909348,28.810776,952.32
+-17.909280,28.810868,952.80
+-17.909179,28.811070,961.94
+-17.909076,28.811076,963.38
+-17.908998,28.811026,964.82
+-17.908913,28.810988,967.70
+-17.908760,28.810845,970.59
+-17.908578,28.810696,975.39
+-17.908481,28.810631,978.28
+-17.908420,28.810541,979.24
+-17.908357,28.810502,975.88
+-17.908305,28.810193,975.39
+-17.908323,28.810096,976.84
+-17.908360,28.809995,977.80
+-17.908428,28.809696,982.12
+-17.908493,28.809519,983.57
+-17.908558,28.809422,985.97
+-17.908820,28.809210,988.85
+-17.908879,28.809147,987.89
+-17.908836,28.808702,990.30
+-17.908813,28.808607,990.78
+-17.908769,28.808576,991.26
+-17.908712,28.808254,991.74
+-17.908739,28.808143,993.18
+-17.908737,28.808024,993.18
+-17.908659,28.807972,992.70
+-17.908472,28.807879,990.30
+-17.908275,28.807656,987.41
+-17.908089,28.807308,985.49
+-17.908014,28.807123,985.01
+-17.907825,28.806780,981.64
+-17.907744,28.806641,977.32
+-17.907699,28.806441,978.76
+-17.907621,28.806136,979.72
+-17.907616,28.805948,983.57
+-17.907506,28.805746,981.16
+-17.907467,28.805584,982.60
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.9118855</longitude>            
+			<latitude>28.8119625</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>799</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

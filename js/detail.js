@@ -6,6 +6,7 @@ var routeWarnings;
 var routeTerrain;
 var routeNotes;
 
+var thisRoute;
 
 // Wait for the page to load and the data to be read before trying to populate
 // elements of the page
@@ -23,12 +24,15 @@ function initialize() {
 
   // initialize maps for the current route data
   route = routes.routes.find(r => r.id == routeId);
-  routeInterest = new Map(route.interest);
-  routeWarnings = new Map(route.warnings);
-  routeTerrain = new Map(route.terrain);
-  routeNotes = new Map(route.notes);
+  // routeInterest = new Map(route.interest);
+  // routeWarnings = new Map(route.warnings);
+  // routeTerrain = new Map(route.terrain);
+  // routeNotes = new Map(route.notes);
+
+  thisRoute = new Route(route);
 
   // populate the various components with the current route data
+  populateRouteDatail();
   populateFeaturesAndWarnings();
   populateBasics();
 }
@@ -40,109 +44,41 @@ function initialize() {
 // be harder to maintain and reorder if required.
 
 function populateBasics() {
+  // summary grid
+  // n.b. divs in the summary grid are explicitly positioned in CSS
+  let summaryContent = "";
+  summaryContent += `<div class="summary-heading">Basics</div>`;
+  summaryContent += `<div><img src="/img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
+  summaryContent += getMetricIcon(thisRoute.duration);
+  summaryContent += getMetricIcon(thisRoute.effort);
+  summaryContent += getSummaryIcon(thisRoute.walkType.icon);
+  if (thisRoute.accessCar.isPossible) summaryContent += getSummaryIcon(thisRoute.accessCar.icon);
+  if (thisRoute.accessBus.isPossible) summaryContent += getSummaryIcon(thisRoute.accessBus.icon);
+  document.getElementById("basics-summary").innerHTML = summaryContent;
+
+  // basic stats
   let basicsContent = "";
+  basicsContent += getMetricsHtml(thisRoute.duration);
+  basicsContent += `<div><h4>Distance</h4>${thisRoute.lengthKm}km (${thisRoute.lengthMiles} miles)</div>`;
+  basicsContent += getMetricsHtml(thisRoute.effort);
+  basicsContent += `<div><h4>Effort</h4>${thisRoute.effort.description}</div>`;
+  basicsContent += getFeatureHtml(thisRoute.walkType);
+  basicsContent += getFeatureHtml(thisRoute.refreshments);
+  document.getElementById("basics-grid").innerHTML = basicsContent;
+
+  // access
   let accessContent = "";
-  let terrainContent = "";
+  if (thisRoute.isCarAccessible) accessContent += getFeatureHtml(thisRoute.accessCar);
+  if (thisRoute.isBusAccessible) accessContent += getFeatureHtml(thisRoute.accessBus);
+  accessContent += getLocationHtml(thisRoute.start, "Start");
+  accessContent += getLocationHtml(thisRoute.end, "End");
+  document.getElementById("access-grid").innerHTML = accessContent;
+
+  // trail status - waymarked and official trail statuses for each included path
   let trailContent = "";
-
-  // N.B. Divs in the summary grid are explicitly positioned in CSS
-  let summaryContent = `
-    <div class="summary-heading">
-      Basics
-    </div>
-    <div>
-      <img src="/img/icons/chevron-down.svg" class="icon-img" alt="" />
-    </div>`;
-
-  // duration
-  let d = duration.get(route.duration);
-  summaryContent += `
-    <div class="route-metric">
-      <img src="/img/icons/${d.icon}" alt="" />
-    </div>`;
-  basicsContent += `
-    <div class="route-metric">
-      <p>${d.text}</p>
-      <img src="/img/icons/${d.icon}" alt="" />
-    </div>
-    <div>
-      <h4>Distance</h4>
-      ${route.lengthKm}km (${route.lengthMiles} miles)
-    </div>`;
-
-  // effort
-  let e = effort.get(route.effort);
-  summaryContent += `
-    <div class="route-metric">
-      <img src="/img/icons/${e.icon}" alt="" />
-    </div>`;
-  basicsContent += `
-    <div class="route-metric">
-      <p>${e.text}</p>
-      <img src="/img/icons/${e.icon}" alt="" />
-    </div>
-    <div>
-      <h4>Effort</h4>
-      ${e.description}
-    </div>`;
-
-  // type
-  let t = walkType.get(route.walkType);
-  summaryContent += getSummaryIcon(t.icon);
-  basicsContent += getFeatureHtml(t.icon, t.text, t.description);
-
-  // refreshments
-  let r = basics.get("refreshments");
-  basicsContent += getFeatureHtml(r.icon, r.text, r.description);
-
-  // car
-  if (route.accessCar == "true") {
-    let c = basics.get("accessCar");
-    summaryContent += getSummaryIcon(c.icon);
-    accessContent += getFeatureHtml(c.icon, c.text, c.description);
-  }
-
-  // bus
-  if (route.accessBus == "true") {
-    let b = basics.get("accessBus");
-    summaryContent += getSummaryIcon(b.icon);
-    accessContent += getFeatureHtml(b.icon, b.text, b.description);
-  }
-
-  // start and end points
-  accessContent += getLocationHtml(route.start, "Start");
-  accessContent += getLocationHtml(route.end, "End");
-
-  // waymarked
-  if (route.waymarked == "true") {
-    let w = basics.get("waymarked");
-    trailContent += getFeatureHtml(w.icon, w.text, w.description);
-  }
-
-  // terrain
-  routeTerrain.forEach( (terrainQuality, terrainType) => {
-    let t = terrain.get(terrainType);
-
-    let strongIndicator = "";
-    if (terrainQuality == "strong") {
-      strongIndicator = `<span class="strong-indicator">${t.strong}</span><br />`;
-    }
-  
-    terrainContent += getFeatureHtml( t.icon, t.text, t.description, strongIndicator);
-  })
-
-  // official trail status
+  if (thisRoute.waymarking.isComplete) trailContent += getFeatureHtml(thisRoute.waymarking);
   let trailStatusContent = "";
-  route.paths.forEach(path => {
-    let status = statuses.get(path);
-    trailStatusContent += `
-      <div class="trail-${status}">
-        <p>
-          <span class="trail-name">${path}</span>
-          <span class="trail-status">${status.toUpperCase()}</span>
-        </p>
-      </div>`;
-  })
+  thisRoute.paths.forEach(path => trailStatusContent += getTrailStatusHtml(statuses.get(path), path));
   trailContent += `
       <div>
         <h4>Status</h4>
@@ -154,190 +90,174 @@ function populateBasics() {
         </div>
         <p>Note: Walks may also traverse paths not part of the official trail network.</p>
       </div>`;
-
-
-  document.getElementById("basics-summary").innerHTML = summaryContent;
-  document.getElementById("basics-grid").innerHTML = basicsContent;
-  document.getElementById("access-grid").innerHTML = accessContent;
-  document.getElementById("terrain-grid").innerHTML = terrainContent;
   document.getElementById("trail-grid").innerHTML = trailContent;
+
+  // terrain
+  let terrainContent = "";
+  thisRoute.terrain.forEach(thisTerrain => {
+    terrainContent += getFeatureHtml(thisTerrain, getStrongHtml(thisTerrain.isStrong, thisTerrain.strong));
+  })
+  document.getElementById("terrain-grid").innerHTML = terrainContent;
 }
 
 function populateFeaturesAndWarnings() {
-  const FEATURE = true;
-  const WARNING = false;
-  let featuresContent = "";
-  let warningsContent = "";
-  let dangersContent = "";
-
-  // N.B. Divs in the summary grid are explicitly positioned in CSS
-  let featureIcons = new Array();
-  let warningIcons = new Array();
-
-  // views
-  if (routeInterest.has("views")) {
-    featuresContent += getFeatureOrWarningHtml("views", FEATURE);
-    featureIcons.push(interest.get("views").icon);
-  }
-
-  // port
-  if (routeInterest.has("port")) {
-    featuresContent += getFeatureOrWarningHtml("port", FEATURE);
-    featureIcons.push(interest.get("port").icon);
-  }
-
-  // poi
-  if (routeInterest.has("poi")) {
-    let poiList = "";
-    route.poi.forEach( poiName => {
-      let p = poi.get(poiName);
-      poiList += `<p><a href="./poi.html?poi=${p.id}">${p.name}</a></p>`;
-    });
-    featuresContent += getFeatureOrWarningHtml("poi", FEATURE, poiList);
-    featureIcons.push(interest.get("poi").icon);
-  }
-
-  // peaks
-  if (routeInterest.has("peaks")) {
-    featuresContent += getFeatureOrWarningHtml("peaks", FEATURE);
-    featureIcons.push(interest.get("peaks").icon);
-  }
-
-  // archeological
-  if (routeInterest.has("archeological")) {
-    featuresContent += getFeatureOrWarningHtml("archeological", FEATURE);
-    featureIcons.push(interest.get("archeological").icon);
-  }
-
-  // scenic
-  if (routeInterest.has("scenic")) {
-    featuresContent += getFeatureOrWarningHtml("scenic", FEATURE);
-    featureIcons.push(interest.get("scenic").icon);
-  }
-
-  /** warnings */
-
-  // slippery
-  if (routeWarnings.has("slippery")) {
-    warningsContent += getFeatureOrWarningHtml("slippery", WARNING);
-    warningIcons.push(warnings.get("slippery").icon);
-  }
-
-  // steep
-  if (routeWarnings.has("steep")) {
-    warningsContent += getFeatureOrWarningHtml("steep", WARNING);
-    warningIcons.push(warnings.get("steep").icon);
-  }
-
-  // vertigo
-  if (routeWarnings.has("vertigo")) {
-    warningsContent += getFeatureOrWarningHtml("vertigo", WARNING);
-    warningIcons.push(warnings.get("vertigo").icon);
-  }
-
-  // weather
-  if (routeWarnings.has("weather")) {
-    let weatherLink = `<p><a href="./weather.html"></a><p>`;
-    warningsContent += getFeatureOrWarningHtml("weather", WARNING, weatherLink);
-    warningIcons.push(warnings.get("weather").icon);
-  }
-
-  // gps
-  if (routeWarnings.has("gps")) {
-    warningsContent += getFeatureOrWarningHtml("gps", WARNING);
-    warningIcons.push(warnings.get("gps").icon);
-  }
-
-  // mountain
-  if (routeWarnings.has("mountain")) {
-    warningsContent += getFeatureOrWarningHtml("mountain", WARNING);
-    warningIcons.push(warnings.get("mountain").icon);
-  }
-
-  // rockfall
-  if (routeWarnings.has("rockfall")) {
-    warningsContent += getFeatureOrWarningHtml("rockfall", WARNING);
-    warningIcons.push(warnings.get("rockfall").icon);
-  }
-
+  // summary
   let summaryContent = `
-  <div class="summary-heading">Features</div>
-  <div class="summary-heading">Warnings</div>
-  <div>
-    <img src="/img/icons/chevron-down.svg" class="icon-img" alt="" />
-  </div>`;
-  summaryContent += getSummaryIconsContent(featureIcons);
-  summaryContent += getSummaryIconsContent(warningIcons);
+    <div class="summary-heading">Features</div>
+    <div class="summary-heading">Warnings</div>
+    <div>
+      <img src="/img/icons/chevron-down.svg" class="icon-img" alt="" />
+    </div>`;
+  summaryContent += getSummaryIconsContent(thisRoute.featuresInDisplayOrder);
+  summaryContent += getSummaryIconsContent(thisRoute.warningsInDisplayOrder);
+  document.getElementById("features-and-warnings-summary").innerHTML = summaryContent;
+
+  // features
+  let featuresContent = "";
+  thisRoute.featuresInDisplayOrder.forEach( feature => {
+    // handle special cases with additional content
+    let additionalContent = "";
+    switch (feature.type) {
+      case "poi":
+        thisRoute.poi.forEach( placeOfInterest => {
+          additionalContent += `<p><a href="./poi.html?poi=${placeOfInterest.id}">${placeOfInterest.name}</a></p>`;
+        });
+      break;
+    }
+    featuresContent += getFeatureHtml(feature, additionalContent);
+  });
+  document.getElementById("features-grid").innerHTML = featuresContent;
+
+  // warnings
+  let warningsContent = "";
+  thisRoute.warningsInDisplayOrder.forEach( warning => {
+    warningsContent += getFeatureHtml(warning);
+  });
+  document.getElementById("warnings-grid").innerHTML = warningsContent;
 
   // dangers
-  if ("dangers" in route) {
-    let dangersList = "";
-    route.dangers.forEach(d => {
-      let strongIndicator = "";
-      if (d.strength == "strong") {
-        strongIndicator = `<span class="strong-indicator">${categories.danger.strong}</span><br />`;
-      }
-    
-      dangersList += `
-        <p>${strongIndicator}</p>
-        <h4>${d.danger}</h4>
-        <p>${d.description}</p>`;
-    });
-    dangersContent += `
-      <div class="icon">
-        <img src="/img/icons/${categories.danger.icon}" class="icon-img" alt="" />
+  let dangersContent = "";
+  let dangersList = "";
+  thisRoute.dangers.forEach( danger => {
+    dangersList += `
+      <p>${getStrongHtml(danger.isStrong, danger.strong)}</p>
+      <h4>${danger.name}</h4>
+      <p>${danger.description}</p>`;
+  });
+  dangersContent += `
+    <div class="icon">
+      <img src="/img/icons/${categories.danger.icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
       ${dangersList}
     </div>`;
-
-    getFeatureHtml(categories.danger.icon, categories.danger.text, "", dangersList);
-  }
-
-  document.getElementById("features-grid").innerHTML = featuresContent;
-  document.getElementById("warnings-grid").innerHTML = warningsContent;
   document.getElementById("dangers-grid").innerHTML = dangersContent;
-  document.getElementById("features-and-warnings-summary").innerHTML = summaryContent;
 }
 
 function populateRouteDatail() {
-  
+
+  // route title with srarred and favourite icons
+  let starredIcon = "";
+  if (thisRoute.starred.isSet) starredIcon = 
+    `<div class="starred"><img src="/img/icons/${thisRoute.starred.icon}" alt="" /></div>`;
+  let favouriteIcon = "";
+  if (favourites.size > 0 && favourites.has(thisRoute.id)) favouriteIcon = 
+    `<img class="favourite" src="/img/icons/heart-empty.svg" alt="" />`;
+  let titleContent = `
+    <h1>
+      <span class="title-id">${thisRoute.id}</span>
+      ${thisRoute.name}
+      <span "title-starred">${starredIcon}</span>
+      <span class="title-favourite">${favouriteIcon}</span>
+    </div>
+    `;
+    document.getElementById("detail-title").innerHTML = titleContent;
+
+  // variants (if any)
+  let variantsContent = "";
+  if (thisRoute.hasVariants) {
+    thisRoute.variants.forEach(variant => variantsContent += getVatiantContent(variant));
+  }
+
+  // main body of detail
+  let bodyContent = `
+    <div>
+      <div>${getDownloadButton(thisRoute.routeFile)}</div>
+      <h2>Description</h2>
+      <p>${thisRoute.description}</p>
+      ${variantsContent}
+    </div>`;
+  document.getElementById("detail-body").innerHTML = bodyContent;
+}
+
+function getVatiantContent(variant) {
+  // title
+  let title = `<h2><span class="variant-title-id">${variant.id}</span>${variant.name}</h2>`;
+
+  // summary
+  let variantSummary = "";
+  variantSummary += `<div class="route-metric"><img src="/img/icons/${variant.duration.icon}" alt="" /></div>`;
+  variantSummary += `<div class="route-metric"><img src="/img/icons/${variant.effort.icon}" alt="" /></div>`;
+  variantSummary += getSummaryIcon(variant.walkType.icon);
+  if (variant.accessCar.isPossible) variantSummary += getSummaryIcon(variant.accessCar.icon);
+  if (variant.accessBus.isPossible) variantSummary += getSummaryIcon(variant.accessBus.icon);
+
+  // download content - only some variants will have additional files associated with them
+  let downloadContent = variant.hasRouteFile ? `<div>${getDownloadButton(variant.routeFile)}</div>` : "";
+
+  // directions - expand format to HTML
+  let directions = "";
+  if (variant.hasRouteDirections) {
+    directions = "<p>" + variant.directions + "</p>";
+    directions = directions.replaceAll("[", `<span class="route-id">`);
+    directions = directions.replaceAll("]", `</span>`);
+    directions = directions.replaceAll("(", `<span class="route-waypoints">`);
+    directions = directions.replaceAll(")", `</span>`);
+  }
+
+  return `
+    <div class="variant">
+      <p>${title}</p>
+      <div class="icon-summary">${variantSummary}</div>
+      <p>${downloadContent}</p>
+      ${directions}
+      <p>${variant.description}</p>
+    </div> `;
 }
 
 /************************* Helper functions ************************/
 
-function getSummaryIconsContent(iconArray) {
+function getDownloadButton(fileName, isPrimary = true) {
+  let downloadPath = routeFormat == "gpx" ? "/data/gpx/" : "/data/kml";
+  let downloadTarget = downloadPath + fileName + "." + routeFormat;
+  return `
+    <span class="download-link ${isPrimary ? 'primary' : 'secondary'}">
+      <img src="/img/icons/download.svg" alt="" />
+      <a href="${downloadTarget}" download>Download route (${routeFormat.toUpperCase()} format)</a>
+    </span>`;
+}
+
+function getSummaryIconsContent(itemList) {
   let iconsContent = "";
   for (let i = 0; i < 5; i++) {
-    if (i > iconArray.length) {
+    if (i > itemList.length) {
       // not enough icons to fill the grid - add blanks
       iconsContent += `<div></div>`;
     } else {
-      if (i == 4 && iconArray.length > 5) {
+      if (i == 4 && itemList.length > 5) {
         // too many - indicate how many more
-        iconsContent += `<div>+${iconArray.length - 4}</div>`;
+        iconsContent += `<div>+${itemList.length - 4}</div>`;
       }
       else {
         // add icon
-        iconsContent += getSummaryIcon(iconArray[i]);
+        iconsContent += getSummaryIcon(itemList[i].icon);
       }
     }
   }
   return iconsContent;
 }
 
-function getFeatureOrWarningHtml(itemName, isFeature, additionalContent) {
-  // feature or warning?
-  let itemDetail = isFeature ? interest.get(itemName) : warnings.get(itemName);
-  let routeCategory = isFeature ? routeInterest : routeWarnings;
-
-  // overwrite the default generic description if there is a more specific note
-  let description = itemDetail.description;
-  if ("notes" in route) {
-    if (routeNotes.has(itemName)) {
-      description = routeNotes.get(itemName);
-    }
-  }
+function getFeatureOrWarningHtml(feature, additionalContent) {
 
   // add label if item is marked as strong
   let strongIndicator = "";
@@ -348,6 +268,25 @@ function getFeatureOrWarningHtml(itemName, isFeature, additionalContent) {
   return getFeatureHtml(itemDetail.icon, itemDetail.text, description, strongIndicator, additionalContent);
 }
 
+function getStrongHtml(isStrong, strongText) {
+  return isStrong ? `<span class="strong-indicator">${strongText}</span><br />` : "";
+}
+
+function getMetricsHtml(metric) {
+  return `
+    <div class="route-metric">
+      <p>${metric.text}</p>
+      <img src="/img/icons/${metric.icon}" alt="" />
+    </div>`;
+}
+
+function getMetricIcon(metric) {
+  return `
+    <div class="route-metric">
+      <img src="/img/icons/${metric.icon}" alt="" />
+    </div>`;
+}
+
 function getSummaryIcon(icon) {
   return `
     <div class="summary-icon">
@@ -355,34 +294,42 @@ function getSummaryIcon(icon) {
     </div>`;
 }
 
-function getFeatureHtml(icon, text, description, strongIndicator = "", additionalContent = "") {
-  return`
+function getTrailStatusHtml(trailStatus, trailName) {
+  return `
+    <div class="trail-${trailStatus}">
+      <p>
+        <span class="trail-name">${trailName}</span>
+        <span class="trail-status">${trailStatus.toUpperCase()}</span>
+      </p>
+    </div>`;
+}
+
+function getFeatureHtml(feature, additionalContent = "") {
+  return `
     <div class="icon">
-      <img src="/img/icons/${icon}" class="icon-img" alt="" />
+      <img src="/img/icons/${feature.icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
-      ${strongIndicator}
-      <h4>${text}</h4>
-      ${description}
+      ${getStrongHtml(feature.isStrong, feature.strong)}
+      <h4>${feature.text}</h4>
+      ${feature.description}
       ${additionalContent}
     </div>`;
 }
 
 function getLocationHtml(location, label) {
-  let startName = location;
-  let s = locationMap.get(startName);
-  let startCar = "parking" in s ? s.parking : "Inaccessible by car";
+  let startCar = "parking" in location ? location.parking : "Inaccessible by car";
   let startBus = "Inaccessible by bus";
-  if ("bus" in s) {
-    startBus = `Bus stop: ${s.bus.stop}<br />`;
-    s.bus.routes.forEach(busRoute => startBus += `<span class="bus-route">${busRoute}</span>`);
+  if ("bus" in location) {
+    startBus = `Bus stop: ${location.bus.stop}<br />`;
+    location.bus.routes.forEach(busRoute => startBus += `<span class="bus-route">${busRoute}</span>`);
   }
   return `
     <div>
       <h4>${label}</h4>
     </div>
     <div class="item-description">
-      <h4>${startName}</h4>
+      <h4>${location.name}</h4>
       <p>${startCar}</p>
       <p>${startBus}</p>
     </div>`;

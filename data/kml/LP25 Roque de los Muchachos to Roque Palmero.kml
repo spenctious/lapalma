@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP25 Roque de los Muchachos to Roque Palmero</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 25 from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Roque de los Muchachos car park and information kiosk</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the crowd up to the peak then out along the well-paved path to the viewpoint.                </description>       
+				<LookAt>
+					<longitude>-17.885120</longitude>
+					<latitude>28.754419</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.885120,28.754419,2427.139648                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Mirador</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - You can go further out if you wish to a second viewpoint which will be worth it if the caldera is cloud free. Coming back keep left and you'll be on the right side for the GR 131.                </description>       
+				<LookAt>
+					<longitude>-17.882414</longitude>
+					<latitude>28.752675</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.882414,28.752675,2407.122559                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 GR 131</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GR 131.                </description>       
+				<LookAt>
+					<longitude>-17.885039</longitude>
+					<latitude>28.754207</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.885039,28.754207,2429.009277                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 Observatories access road</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.886570</longitude>
+					<latitude>28.753924</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.886570,28.753924,2387.339600                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 GR 131, PR LP 11, Parking</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Alternative start point. Stay on the GR 131.                </description>       
+				<LookAt>
+					<longitude>-17.890329</longitude>
+					<latitude>28.752233</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.890329,28.752233,2359.473389                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 Barranco de Marangaño</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.894597</longitude>
+					<latitude>28.747937</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.894597,28.747937,2293.359619                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 Degollada de Las Palomas</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.900103</longitude>
+					<latitude>28.740920</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.900103,28.740920,2220.758301                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Path to Roque Palmero</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.900441</longitude>
+					<latitude>28.738585</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.900441,28.738585,2243.647705                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Roque Palmero</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.898361</longitude>
+					<latitude>28.737619</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.898361,28.737619,2309.799805                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Roque de los Muchachos to Roque Palmero</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.885120,28.754420,2426.99
+-17.885056,28.754352,2426.99
+-17.884856,28.754346,2430.83
+-17.884649,28.753915,2425.54
+-17.884366,28.753605,2418.81
+-17.884347,28.753660,2416.41
+-17.884272,28.753644,2415.45
+-17.883765,28.753268,2405.36
+-17.883504,28.753195,2401.51
+-17.883038,28.752857,2397.67
+-17.882633,28.752704,2402.95
+-17.882595,28.752643,2401.51
+-17.882667,28.752628,2398.63
+-17.882598,28.752517,2393.82
+-17.882647,28.752619,2395.74
+-17.882575,28.752638,2400.55
+-17.882555,28.752697,2402.47
+-17.882428,28.752694,2407.28
+-17.882654,28.752720,2402.47
+-17.883314,28.753069,2394.78
+-17.883578,28.753261,2398.63
+-17.883684,28.753277,2400.55
+-17.883915,28.753481,2403.91
+-17.884389,28.753705,2415.93
+-17.884860,28.754113,2433.23
+-17.885050,28.754209,2428.91
+-17.885471,28.754175,2419.78
+-17.885700,28.754012,2411.60
+-17.885726,28.753815,2410.64
+-17.885988,28.753784,2404.88
+-17.886168,28.753872,2399.59
+-17.886510,28.753897,2389.97
+-17.888172,28.753817,2379.88
+-17.888389,28.753772,2376.52
+-17.888544,28.753834,2377.96
+-17.888818,28.753732,2375.55
+-17.889770,28.753155,2370.75
+-17.889978,28.752880,2369.31
+-17.889948,28.752702,2366.42
+-17.890025,28.752330,2359.69
+-17.890102,28.752252,2360.17
+-17.890299,28.752246,2359.21
+-17.890565,28.751950,2358.25
+-17.890556,28.751562,2354.41
+-17.890471,28.751268,2356.81
+-17.890458,28.750650,2345.75
+-17.890655,28.750436,2345.27
+-17.891202,28.750388,2348.16
+-17.891424,28.750425,2346.23
+-17.891651,28.750374,2346.23
+-17.891906,28.750187,2341.91
+-17.892132,28.749852,2332.30
+-17.892401,28.749679,2327.97
+-17.892605,28.749629,2323.16
+-17.893437,28.749894,2325.09
+-17.893728,28.749892,2323.16
+-17.893824,28.749833,2321.24
+-17.893795,28.749651,2321.24
+-17.893911,28.748859,2315.47
+-17.893966,28.748751,2313.07
+-17.894118,28.748620,2309.22
+-17.894248,28.748359,2306.82
+-17.894320,28.748312,2305.38
+-17.894398,28.748135,2297.69
+-17.894683,28.747851,2296.73
+-17.894879,28.747878,2297.21
+-17.894987,28.747841,2297.69
+-17.895730,28.747840,2309.22
+-17.895748,28.747660,2315.47
+-17.896045,28.747510,2317.88
+-17.896238,28.747199,2305.38
+-17.896358,28.746898,2300.09
+-17.896332,28.746680,2293.36
+-17.896367,28.746670,2290.96
+-17.896274,28.746512,2288.56
+-17.896377,28.746153,2287.59
+-17.896342,28.745953,2287.11
+-17.896442,28.745681,2288.08
+-17.896606,28.745433,2288.08
+-17.896914,28.745156,2289.52
+-17.897234,28.745049,2287.11
+-17.897458,28.744723,2286.63
+-17.897489,28.744313,2273.66
+-17.897900,28.743800,2263.08
+-17.898159,28.743538,2260.20
+-17.898483,28.743402,2256.35
+-17.898906,28.743056,2258.75
+-17.899315,28.742897,2259.72
+-17.899456,28.742742,2259.24
+-17.899599,28.742278,2249.62
+-17.900059,28.741805,2241.93
+-17.900284,28.741485,2236.64
+-17.900224,28.741346,2230.40
+-17.900223,28.741191,2227.03
+-17.900071,28.740870,2216.94
+-17.900063,28.740108,2223.67
+-17.900211,28.739646,2235.68
+-17.900158,28.739239,2234.72
+-17.900390,28.738907,2241.45
+-17.900431,28.738610,2241.93
+-17.900116,28.738403,2255.87
+-17.900111,28.738360,2259.24
+-17.899774,28.738254,2270.77
+-17.899678,28.738051,2276.54
+-17.899470,28.738027,2281.83
+-17.898983,28.737758,2295.77
+-17.898501,28.737587,2307.30
+-17.898390,28.737594,2308.74
+-17.898366,28.737633,2311.63
+-17.898477,28.737626,2308.26
+-17.898567,28.737686,2305.86
+-17.898987,28.737777,2296.73
+-17.899409,28.738036,2285.19
+-17.899606,28.738048,2277.02
+-17.899677,28.738094,2275.58
+-17.899784,28.738299,2269.33
+-17.900022,28.738362,2260.20
+-17.900286,28.738542,2250.58
+-17.900283,28.738730,2246.74
+-17.900345,28.738823,2244.33
+-17.900290,28.738996,2240.01
+-17.900138,28.739193,2235.20
+-17.900121,28.739522,2236.64
+-17.900162,28.739619,2236.64
+-17.899977,28.740306,2221.26
+-17.900063,28.740923,2214.53
+-17.900174,28.741195,2220.30
+-17.900130,28.741269,2223.67
+-17.900190,28.741442,2228.95
+-17.899965,28.741868,2233.76
+-17.899575,28.742276,2241.93
+-17.899571,28.742433,2248.66
+-17.899500,28.742505,2250.58
+-17.899366,28.742856,2257.31
+-17.898868,28.743078,2258.27
+-17.898448,28.743420,2253.95
+-17.898162,28.743534,2256.35
+-17.897498,28.744196,2262.60
+-17.897419,28.744362,2267.89
+-17.897479,28.744550,2277.02
+-17.897427,28.744719,2285.67
+-17.897230,28.744984,2286.63
+-17.896839,28.745133,2284.71
+-17.896659,28.745264,2284.71
+-17.896335,28.745702,2279.42
+-17.896256,28.746012,2277.98
+-17.896287,28.746099,2277.98
+-17.896242,28.746513,2282.31
+-17.896349,28.746662,2286.15
+-17.896303,28.746653,2288.56
+-17.896339,28.746818,2296.25
+-17.896020,28.747506,2317.88
+-17.895930,28.747508,2318.36
+-17.895723,28.747677,2313.55
+-17.895705,28.747811,2308.74
+-17.895314,28.747839,2298.65
+-17.895018,28.747810,2295.77
+-17.894687,28.747874,2294.32
+-17.894273,28.748192,2299.61
+-17.894263,28.748291,2302.01
+-17.894038,28.748599,2309.22
+-17.893876,28.748730,2312.59
+-17.893758,28.749207,2322.20
+-17.893790,28.749317,2325.09
+-17.893730,28.749586,2324.12
+-17.893774,28.749770,2322.20
+-17.893744,28.749859,2319.80
+-17.893555,28.749882,2316.43
+-17.893400,28.749800,2320.28
+-17.893294,28.749824,2319.80
+-17.892674,28.749601,2322.68
+-17.892562,28.749601,2324.61
+-17.892236,28.749722,2327.01
+-17.891681,28.750293,2339.02
+-17.891511,28.750388,2342.39
+-17.891187,28.750369,2346.23
+-17.890614,28.750422,2345.75
+-17.890366,28.750646,2346.72
+-17.890327,28.750974,2345.27
+-17.890381,28.751069,2344.79
+-17.890348,28.751168,2343.83
+-17.890485,28.751657,2344.31
+-17.890439,28.752031,2348.64
+-17.890289,28.752153,2354.41
+-17.890086,28.752191,2356.81
+-17.890018,28.752274,2356.81
+-17.889883,28.752954,2372.67
+-17.889654,28.753167,2374.11
+-17.888612,28.753777,2375.55
+-17.886680,28.753893,2388.05
+-17.885991,28.753767,2400.55
+-17.885712,28.753783,2407.76
+-17.885688,28.753968,2409.20
+-17.885512,28.754054,2410.16
+-17.885495,28.754152,2412.57
+-17.885413,28.754182,2415.45
+-17.885104,28.754144,2422.18
+-17.885028,28.754213,2424.58
+-17.885068,28.754391,2426.99
+-17.885029,28.754443,2426.50
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.8914275</longitude>            
+			<latitude>28.746015</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>1192</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

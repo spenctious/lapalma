@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP37 Volcan San Antonio</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 37 from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 GR 131, Trail</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GR 131. Centro de Visitantes del San Antonio hours: 09:00 - 18:00.                </description>       
+				<LookAt>
+					<longitude>-17.847918</longitude>
+					<latitude>28.487787</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.847918,28.487787,644.501648                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Track, SL FU 112 joins</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.852747</longitude>
+					<latitude>28.486278</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.852747,28.486278,508.484375                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 Petroglyphs trail</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - GR 131 diverges. Follow the GPS track on an unmarked trail leading down shortly after an information board.                </description>       
+				<LookAt>
+					<longitude>-17.853020</longitude>
+					<latitude>28.480430</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.853020,28.480430,467.215027                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>04 Roque Teneguía, Petroglyphs</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The trail continues opposite the petroglyphs, eventually meets a covered waterway.                </description>       
+				<LookAt>
+					<longitude>-17.856113</longitude>
+					<latitude>28.480966</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.856113,28.480966,417.328796                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>05 Red pipe opposite a tank, trail leaves culvert</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - The trail descends from the waterway to a track which meets up with the main route further on.                </description>       
+				<LookAt>
+					<longitude>-17.854332</longitude>
+					<latitude>28.477776</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.854332,28.477776,397.768738                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>06 GR 131, Volcan Teneguia summit path</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the GR 131. Optional: turn right to head up to Teneguia.                </description>       
+				<LookAt>
+					<longitude>-17.852527</longitude>
+					<latitude>28.476375</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.852527,28.476375,387.453613                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>07 SL FU 112</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - GR 131 diverges. Follow SL FU 112.                </description>       
+				<LookAt>
+					<longitude>-17.846290</longitude>
+					<latitude>28.478624</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.846290,28.478624,421.757660                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>08 Trail</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - SL FU 112 diverges. Follow the GPS trail to end.                </description>       
+				<LookAt>
+					<longitude>-17.842420</longitude>
+					<latitude>28.478327</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.842420,28.478327,414.332977                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>09 Track/trail</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.840895</longitude>
+					<latitude>28.479397</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.840895,28.479397,413.687439                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>10 Track</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.841585</longitude>
+					<latitude>28.486017</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.841585,28.486017,559.591431                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>11 Road</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.846596</longitude>
+					<latitude>28.487066</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.846596,28.487066,645.447144                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>12 Calle Los Volcanes, Centro de Visitantes del San Antonio barrier</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.847871</longitude>
+					<latitude>28.487206</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.847871,28.487206,642.399902                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Volcan San Antonio</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.847929,28.487787,641.82
+-17.848426,28.487410,628.84
+-17.848497,28.487330,628.84
+-17.848776,28.487173,621.63
+-17.849131,28.487105,611.06
+-17.849241,28.487031,609.13
+-17.849324,28.486936,611.54
+-17.849310,28.486746,609.13
+-17.849350,28.486651,612.02
+-17.849424,28.486652,612.98
+-17.849547,28.486707,610.57
+-17.849652,28.486666,609.13
+-17.849879,28.486434,600.96
+-17.849993,28.486426,598.56
+-17.850442,28.486506,587.50
+-17.850665,28.486483,579.81
+-17.850887,28.486495,575.01
+-17.850920,28.486552,573.08
+-17.851275,28.486521,563.95
+-17.851457,28.486435,556.26
+-17.851661,28.486429,547.13
+-17.851809,28.486373,542.32
+-17.851967,28.486401,534.63
+-17.852460,28.486331,514.92
+-17.852585,28.486381,509.64
+-17.852684,28.486359,507.71
+-17.853047,28.485834,506.27
+-17.853215,28.485663,506.75
+-17.853490,28.485224,504.35
+-17.853553,28.485042,503.39
+-17.853615,28.484958,501.95
+-17.853746,28.484489,499.06
+-17.853813,28.484341,500.02
+-17.853860,28.484130,498.10
+-17.853941,28.483095,491.85
+-17.853912,28.482463,488.97
+-17.853852,28.482147,486.08
+-17.853799,28.482042,488.01
+-17.853802,28.481974,488.01
+-17.853762,28.481905,488.49
+-17.853760,28.481810,487.05
+-17.853645,28.481522,484.64
+-17.853624,28.481412,482.24
+-17.853572,28.481360,480.32
+-17.853549,28.481136,473.11
+-17.853483,28.480922,469.74
+-17.853388,28.480756,470.22
+-17.853008,28.480440,466.38
+-17.853010,28.480407,465.42
+-17.853336,28.480517,460.13
+-17.853561,28.480554,458.21
+-17.853675,28.480535,458.21
+-17.853880,28.480425,455.80
+-17.854101,28.480359,454.36
+-17.854214,28.480357,452.92
+-17.854422,28.480408,449.55
+-17.854620,28.480362,447.63
+-17.854619,28.480437,445.71
+-17.854549,28.480505,443.79
+-17.854852,28.480652,437.06
+-17.855175,28.480734,430.81
+-17.855280,28.480739,429.37
+-17.855349,28.480802,427.44
+-17.855376,28.480878,424.56
+-17.855328,28.481061,420.23
+-17.855357,28.481146,418.31
+-17.855475,28.481195,418.31
+-17.855812,28.481120,415.91
+-17.856072,28.480933,414.95
+-17.856137,28.480934,416.39
+-17.856069,28.481028,418.31
+-17.856117,28.480867,416.87
+-17.855982,28.480732,420.71
+-17.855886,28.480719,423.12
+-17.855845,28.480631,424.56
+-17.855777,28.480559,422.64
+-17.855779,28.480460,421.19
+-17.855656,28.480193,418.79
+-17.855606,28.480021,416.87
+-17.855560,28.479944,421.68
+-17.855585,28.479852,418.31
+-17.855571,28.479764,416.87
+-17.855591,28.479676,413.98
+-17.855558,28.479594,414.95
+-17.855533,28.479392,409.18
+-17.855560,28.479286,407.74
+-17.855535,28.479218,405.81
+-17.855442,28.479156,407.26
+-17.855396,28.479068,406.77
+-17.855344,28.478873,403.89
+-17.855233,28.478738,400.05
+-17.855271,28.478638,397.64
+-17.855094,28.478503,397.16
+-17.854902,28.478408,399.08
+-17.854803,28.478246,401.01
+-17.854716,28.478189,403.41
+-17.854496,28.477975,404.37
+-17.854374,28.477817,402.45
+-17.854303,28.477761,400.05
+-17.854337,28.477772,396.68
+-17.854402,28.477722,394.28
+-17.854426,28.477608,391.87
+-17.854349,28.477199,393.80
+-17.854263,28.476998,393.32
+-17.854060,28.476765,390.91
+-17.853958,28.476710,389.47
+-17.853733,28.476663,386.59
+-17.853543,28.476559,386.11
+-17.853124,28.476401,384.18
+-17.852824,28.476332,387.55
+-17.852599,28.476332,386.11
+-17.852283,28.476407,386.59
+-17.852115,28.476534,387.55
+-17.851630,28.476795,392.84
+-17.851005,28.477010,398.12
+-17.850643,28.477260,400.53
+-17.850323,28.477654,398.60
+-17.849897,28.477956,401.01
+-17.849796,28.477979,400.53
+-17.849245,28.477884,402.45
+-17.848934,28.477767,404.85
+-17.848759,28.477674,405.33
+-17.848644,28.477640,406.29
+-17.848430,28.477638,407.26
+-17.847822,28.477861,410.62
+-17.847521,28.477994,413.02
+-17.846662,28.478431,418.31
+-17.846357,28.478531,419.75
+-17.846242,28.478616,422.64
+-17.846136,28.478572,422.16
+-17.846057,28.478500,422.64
+-17.845760,28.478358,420.71
+-17.845160,28.478205,415.91
+-17.844862,28.478042,415.91
+-17.844760,28.478008,416.39
+-17.844403,28.478011,414.95
+-17.843735,28.478135,413.98
+-17.843419,28.478222,411.10
+-17.843200,28.478239,410.62
+-17.842666,28.478231,414.95
+-17.842423,28.478336,415.43
+-17.841918,28.478729,411.58
+-17.840978,28.479295,411.10
+-17.840894,28.479365,411.58
+-17.840909,28.480025,413.02
+-17.840809,28.480608,419.75
+-17.840696,28.481096,424.08
+-17.840678,28.481292,426.48
+-17.840717,28.481490,428.40
+-17.840751,28.481900,434.17
+-17.840625,28.482481,445.23
+-17.840608,28.482693,450.03
+-17.840683,28.483086,458.21
+-17.840597,28.483394,467.34
+-17.840629,28.483894,483.20
+-17.840536,28.484200,489.93
+-17.840383,28.484527,501.46
+-17.840355,28.484676,505.79
+-17.840366,28.484981,513.00
+-17.840441,28.485131,517.81
+-17.840877,28.485320,532.23
+-17.840975,28.485390,534.15
+-17.841043,28.485473,535.59
+-17.841142,28.485539,537.51
+-17.841361,28.485758,546.17
+-17.841536,28.486006,551.93
+-17.841594,28.485986,561.07
+-17.841489,28.485301,566.83
+-17.841482,28.485117,566.83
+-17.841559,28.485033,566.35
+-17.842242,28.484541,575.01
+-17.842423,28.484434,577.89
+-17.842997,28.484199,584.62
+-17.843416,28.484096,589.43
+-17.844270,28.483974,596.64
+-17.844928,28.483979,601.44
+-17.845046,28.483958,602.40
+-17.845742,28.483664,608.65
+-17.845847,28.483662,609.13
+-17.846053,28.483711,610.57
+-17.846270,28.483648,612.50
+-17.846373,28.483668,612.50
+-17.846455,28.483719,612.50
+-17.846622,28.483945,616.34
+-17.846687,28.484124,618.75
+-17.846744,28.484591,624.03
+-17.846799,28.484683,624.99
+-17.846960,28.484812,626.92
+-17.846975,28.484893,628.84
+-17.846950,28.485094,629.80
+-17.847011,28.485498,629.80
+-17.846899,28.486002,630.76
+-17.846694,28.486569,635.57
+-17.846610,28.486743,638.45
+-17.846556,28.487037,641.34
+-17.846638,28.487105,646.14
+-17.846856,28.487166,646.14
+-17.847636,28.487276,642.78
+-17.847744,28.487272,642.78
+-17.847858,28.487231,641.82
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.848246</longitude>            
+			<latitude>28.482056</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>928</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>

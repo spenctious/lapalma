@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
+     xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>LP26b Playa de Taburiente to Mirador Cascada de La Fondada</name>
+
+		<atom:link href="http://www.redfootguides.com"/>
+		<atom:author>
+			<atom:name>Robert Anstey</atom:name>
+		</atom:author>
+
+		<description>
+			<![CDATA[<br/><p>Walk 26b from 'La Palma for walkers' by Robert Anstey. A Redfoot Walking Guide.</p><p><br/>Converted using <b><a href='http://gpx2kml.com' title='Go to gpx2kml.com'>gpx2kml.com</a></b></p><br/>]]>
+		</description>
+		<visibility>1</visibility>
+		<open>1</open>
+
+		<Style id="red">
+			<LineStyle>
+				<color>C81400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_red">
+			<LineStyle>
+				<color>961400FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="green">
+			<LineStyle>
+				<color>C878FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_green">
+			<LineStyle>
+				<color>9678FF00</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="blue">
+			<LineStyle>
+				<color>C8FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_blue">
+			<LineStyle>
+				<color>96FF7800</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="cyan">
+			<LineStyle>
+				<color>C8F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_cyan">
+			<LineStyle>
+				<color>96F0FF14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="orange">
+			<LineStyle>
+				<color>C81478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_orange">
+			<LineStyle>
+				<color>961478FF</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_green">
+			<LineStyle>
+				<color>C8008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_green">
+			<LineStyle>
+				<color>96008C14</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="purple">
+			<LineStyle>
+				<color>C8FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_purple">
+			<LineStyle>
+				<color>96FF7878</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="pink">
+			<LineStyle>
+				<color>C8A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_pink">
+			<LineStyle>
+				<color>96A078F0</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="brown">
+			<LineStyle>
+				<color>C8143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_brown">
+			<LineStyle>
+				<color>96143C96</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="dark_blue">
+			<LineStyle>
+				<color>C8F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+		<Style id="route_dark_blue">
+			<LineStyle>
+				<color>96F01414</color>
+				<width>4</width>
+			</LineStyle>
+		</Style>
+
+
+		<Folder>
+			<name>Waypoints</name>
+			<description>A list of waypoints</description>
+			<visibility>1</visibility>
+			<open>0</open>
+
+
+			<Placemark>
+				<name>01 Playa de Taburiente</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Follow the signs to Cascada de La Fondada/ Hoyo Verde.                </description>       
+				<LookAt>
+					<longitude>-17.8765077</longitude>
+					<latitude>28.7248601</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8765077,28.7248601,776.6                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>02 Roque del Hus viewpoint</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                    No info available                </description>       
+				<LookAt>
+					<longitude>-17.8764685</longitude>
+					<latitude>28.7296515</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.8764685,28.7296515,919.2                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+
+			<Placemark>
+				<name>03 Mirador Cascada de La Fondada</name>                      
+				<visibility>1</visibility>            
+				<open>0</open>                        
+
+				<description>
+                     - Descend back the same way.                </description>       
+				<LookAt>
+					<longitude>-17.87789</longitude>
+					<latitude>28.7354016</latitude>
+					<range>500</range>
+					<tilt>45</tilt>
+					<heading>0</heading>
+				</LookAt>
+				<Point>
+					<coordinates>
+                        -17.87789,28.7354016,1114.0                        
+					</coordinates>
+				</Point>
+			</Placemark>
+
+			<name>Tracks</name>
+			<description>A list of tracks</description>
+			<visibility>1</visibility>            
+			<open>0</open>
+
+			<Placemark>
+				<visibility>0</visibility>            
+				<open>0</open> 
+				<styleUrl>#red</styleUrl>
+				<name>Playa de Taburiente to Mirador Cascada de La Fondada</name>
+				<description>Track no. 1</description>
+				<LineString>
+					<extrude>true</extrude>
+					<tessellate>true</tessellate>
+					<altitudeMode>clampToGround</altitudeMode> 
+					<coordinates>
+-17.876506,28.724843,776.48
+-17.876375,28.725034,770.68
+-17.876267,28.725187,768.08
+-17.876222,28.725441,766.91
+-17.876152,28.725645,767.77
+-17.876010,28.725857,769.74
+-17.876029,28.726137,776.70
+-17.876109,28.726431,786.87
+-17.876138,28.726668,799.35
+-17.876071,28.726948,806.14
+-17.876037,28.727205,814.12
+-17.876065,28.727504,827.80
+-17.876135,28.727864,843.94
+-17.876194,28.728210,861.19
+-17.876191,28.728541,871.20
+-17.876228,28.728826,882.53
+-17.876266,28.729132,897.91
+-17.876344,28.729391,911.76
+-17.876443,28.729630,918.72
+-17.876454,28.729982,921.73
+-17.876400,28.730313,928.37
+-17.876261,28.730593,934.78
+-17.876086,28.730866,944.16
+-17.875920,28.731118,953.02
+-17.875781,28.731341,956.73
+-17.875877,28.731645,959.87
+-17.876044,28.731950,962.41
+-17.876060,28.732268,969.47
+-17.876167,28.732498,980.55
+-17.876266,28.732743,985.71
+-17.876552,28.732936,1002.81
+-17.876812,28.733190,1018.69
+-17.877115,28.733307,1034.79
+-17.877303,28.733451,1045.95
+-17.877604,28.733580,1061.14
+-17.877842,28.733733,1070.74
+-17.877993,28.733902,1074.13
+-17.878164,28.734114,1084.82
+-17.878282,28.734387,1095.19
+-17.878245,28.734791,1108.95
+-17.878135,28.735064,1115.58
+-17.878049,28.735226,1118.66
+-17.877928,28.735391,1115.44
+-17.878041,28.735168,1117.15
+-17.878137,28.734958,1113.22
+-17.878213,28.734758,1108.56
+-17.878242,28.734523,1099.92
+-17.878242,28.734340,1093.49
+-17.878169,28.734053,1082.88
+-17.878097,28.733921,1077.02
+-17.877971,28.733780,1074.69
+-17.877706,28.733592,1065.39
+-17.877410,28.733465,1051.21
+-17.877268,28.733371,1042.95
+-17.876989,28.733293,1028.95
+-17.876788,28.733119,1016.16
+-17.876611,28.732950,1005.54
+-17.876316,28.732743,987.30
+-17.876150,28.732548,980.48
+-17.876037,28.732348,971.68
+-17.876018,28.732108,964.80
+-17.875879,28.731722,959.49
+-17.875817,28.731541,958.92
+-17.875761,28.731414,957.78
+-17.875806,28.731148,950.48
+-17.876018,28.730868,942.30
+-17.876198,28.730621,935.09
+-17.876280,28.730462,930.20
+-17.876398,28.730186,924.99
+-17.876414,28.729871,920.06
+-17.876409,28.729598,917.95
+-17.876280,28.729236,902.80
+-17.876272,28.728928,889.06
+-17.876227,28.728535,872.80
+-17.876221,28.728326,866.88
+-17.876143,28.727775,840.95
+-17.876081,28.727241,817.50
+-17.876102,28.726909,806.31
+-17.876151,28.726702,801.11
+-17.876154,28.726526,793.71
+-17.876095,28.726239,780.70
+-17.875977,28.725950,771.31
+-17.876092,28.725646,766.65
+-17.876199,28.725340,766.30
+-17.876317,28.725020,769.43
+-17.876478,28.724825,775.17
+					</coordinates>
+				</LineString>
+			</Placemark>
+
+		</Folder>
+
+		<LookAt>
+			<longitude>-17.87702155</longitude>            
+			<latitude>28.7301132</latitude>             
+			<altitude>0</altitude>               
+			<heading>0</heading>               
+			<tilt>45</tilt>
+			<range>557</range>                    
+			<altitudeMode>clampToGround</altitudeMode> 
+		</LookAt>
+	</Document>
+</kml>
