@@ -13,16 +13,15 @@
       "duration": "half",
       "effort": "strenuous",
       "waymarked": "true",
-      "accessCar": "true",
-      "accessBus": "true",
-      "accessNotes": "Walk from the start from your transport drop-off.",
+      "accessCar": "false",
+      "accessBus": "false",
       "province": "Santa Cruz de La Palma",
       "town": "Santa Cruz de La Palma",
       "routeFile": "LP01 Sugar mills of Santa Cruz",
       "refreshments": "Bar/Restaurants along LP-101 and at Las Nieves.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
+      "paths": ["PR LP 02"],
       "imageCount": "3",
 
       "variants": [
@@ -42,8 +41,6 @@
         }
       ],
 
-      "poi": ["", ""],
-
       "terrain": [
         [ "riverbed", "normal" ]
       ],
@@ -53,11 +50,15 @@
       ],
 
       "warnings": [
-        [ "vertigo", "normal" ]
+        [ "vertigo", "strong" ]
       ],
 
       "notes": [
         [ "vertigo", "Minor risk along safe fenced bit of path after the mills." ]
+      ],
+
+      "dangers": [
+        { "name": "Tunnels", "description": "Risk of clouting head", "strength": "strong" }
       ]
 
     },
@@ -76,16 +77,13 @@
       "waymarked": "false",
       "accessCar": "true",
       "accessBus": "true",
-      "accessOther": "",
       "province": "Santa Cruz de La Palma",
       "town": "San Pedro de Breña Alta",
       "routeFile": "LP02 Mirador and waterways",
       "refreshments": "Bars and restaurants at the start and end points and on the way at Velhoco and Las Nieves.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
-
-      "poi": ["", ""],
+      "paths": ["PR LP 02"],
 
       "terrain": [
         [ "riverbed", "normal" ]
@@ -98,9 +96,7 @@
       "warnings": [
         [ "slippery", "normal" ],
         [ "vertigo", "normal" ]
-      ],
-
-      "notes": []
+      ]
     },
     {
       "id": "03",
@@ -117,7 +113,6 @@
       "waymarked": "true",
       "accessCar": "true",
       "accessBus": "true",
-      "accessOther": "",
       "province": "Santa Cruz de La Palma",
       "town": "San Pedro  de Breña Alta",
       "routeFile": "LP03 Woods and springs",
@@ -195,16 +190,13 @@
       "waymarked": "true",
       "accessCar": "true",
       "accessBus": "true",
-      "accessOther": "",
       "province": "Santa Cruz de La Palma",
       "town": "Santa Cruz de La Palma",
       "routeFile": "LP04 Barranco de Mediera",
       "refreshments": "Bar/Restaurant at Las Nieves.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
-
-      "poi": ["", ""],
+      "paths": ["PR LP 02"],
 
       "terrain": [
         [ "volcanic", "normal" ],
@@ -254,17 +246,13 @@
       "waymarked": "true",
       "accessCar": "false",
       "accessBus": "true",
-      "accessTaxi": "",
-      "accessTour": "",
       "province": "Puntallana",
       "town": "Puntallana",
       "routeFile": "LP05 Puntallana to Los Sauces",
       "refreshments": "Bars, café, restaurant in Puntallana. Bar & restaurant in San Andrés. Bars, cafés, restaurants in Los Sauces.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
-
-      "poi": ["", ""],
+      "paths": ["PR LP 02"],
 
       "terrain": [
         [ "volcanic", "normal" ],
@@ -314,15 +302,13 @@
       "waymarked": "false",
       "accessCar": "true",
       "accessBus": "true",
-      "accessTaxi": "",
-      "accessTour": "",
       "province": "Puntallana",
       "town": "La Galga",
       "routeFile": "LP06 Cubo de la Galga",
       "refreshments": "None en route. Restaurant on PR LP 5 intersection with LP-1 road (walk 6b).",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
+      "paths": ["PR LP 02"],
 
       "variants": [
         {
@@ -354,8 +340,6 @@
           "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
-
-      "poi": ["", ""],
 
       "terrain": [
         [ "laurisilva", "strong" ]
@@ -389,15 +373,13 @@
       "waymarked": "false",
       "accessCar": "true",
       "accessBus": "true",
-      "accessTaxi": "",
-      "accessTour": "",
       "province": "San Andrés y Sauces",
       "town": "Los Sauces",
       "routeFile": "LP07 Los Tilos Bridge",
       "refreshments": "Bars, cafés, restaurants in Los Sauces.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
+      "paths": ["PR LP 02"],
 
       "variants": [
         {
@@ -415,8 +397,6 @@
           "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
-
-      "poi": ["", ""],
 
       "terrain": [
         [ "volcanic", "normal" ],
@@ -467,9 +447,7 @@
       "refreshments": "Bars, cafés, restaurants in Los Sauces. Bar/restaurant at Laguna de Barlovento.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
-
-      "poi": ["", ""],
+      "paths": ["PR LP 02"],
 
       "terrain": [
         [ "laurisilva", "normal" ]
@@ -496,16 +474,16 @@
       "duration": "full",
       "effort": "strenuous",
       "waymarked": "true",
-      "accessCar": "no",
-      "accessBus": "no",
-      "accessTour": "Natour run tours with multiple pickup points.",
+      "accessCar": "false",
+      "accessBus": "false",
+      "accessOther": "Natour run tours with multiple pickup points.",
       "province": "San Andrés y Sauces",
       "town": "Los Sauces",
       "routeFile": "LP09 Marcos y Cordero Springs",
       "refreshments": "Bar, café, restaurant Los Tilos Visitor Centre.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
+      "paths": ["PR LP 02"],
 
       "variants": [
         {
@@ -552,8 +530,6 @@
         }
       ],
 
-      "poi": ["", ""],
-
       "terrain": [
         [ "riverbed", "normal" ]
       ],
@@ -590,14 +566,14 @@
       "effort": "strenuous",
       "waymarked": "true",
       "accessCar": "false",
-      "accessBus": "true",
+      "accessBus": "false",
       "province": "Barlovento",
       "town": "Barlovento",
       "routeFile": "LP10 Barlovento to Franceses.gpx",
       "refreshments": "Bars, cafés, restaurants in Barlovento. Bar/shop and bar in Gallegos.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": [""],
+      "paths": ["PR LP 02"],
 
       "variants": [
         {
@@ -629,8 +605,6 @@
           "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
-
-      "poi": ["", ""],
 
       "terrain": [
         [ "dragon", "normal" ],

@@ -177,7 +177,8 @@
         "filterIncludeText": "Outstanding",
         "filterExcludeText": "",
         "description": "A walk of outstanding quality, a classic.",
-        "icon": "star-black.svg"
+        "filterIcon": "star-black.svg",
+        "icon": "star.svg"
       }
     ],
     [

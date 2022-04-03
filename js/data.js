@@ -1,31 +1,10 @@
 "use strict";
 
-// The raw data in JSON format
-var categories;
-var locations;
-var routes;
-var trailStatuses;
-var pointsOfInterest;
-
-// Maps generated from data segments
-var walkType;
-var duration;
-var effort;
-var basics;
-var interest;
-var terrain;
-var warnings;
-var locations;
-var statuses;
-var poi;
-
-// Additional data
 var favourites;
 var routeFormat;
-
 var laPalmaData;
 
-var dataSources = [
+const dataSources = [
   "/data/categories.json",
   "/data/locations.json",
   "/data/routes.json",
@@ -35,6 +14,7 @@ var dataSources = [
 
 // For diagnostics and development
 var forceReload = true;
+var performIntegrityCheck = false;
 
 /************************* Data loading setup ************************/
 
@@ -66,23 +46,13 @@ async function loadDataThen(afterDataIsLoaded) {
   }
 
   // distribute the returned data
-  categories = await responses[0];
-  locations = await responses[1];
-  routes = await responses[2];
-  trailStatuses = await responses[3];
-  pointsOfInterest = await responses[4];
+  let categories = await responses[0];
+  let locations = await responses[1];
+  let routes = await responses[2];
+  let trailStatuses = await responses[3];
+  let pointsOfInterest = await responses[4];
 
-  // create maps for the data components
-  walkType = new Map(categories.walkType);
-  duration = new Map(categories.duration);
-  effort = new Map(categories.effort);
-  basics = new Map(categories.basics);
-  interest = new Map(categories.interest);
-  terrain = new Map(categories.terrain);
-  warnings = new Map(categories.warnings);
-  locations = new Map(locations);
-  statuses = new Map(trailStatuses);
-  poi = new Map(pointsOfInterest);
+  laPalmaData = new Data(categories, locations, routes, trailStatuses, pointsOfInterest);
 
   // retrieve favourites or create them new if missing
   let storedFavourites = localStorage.getItem("favourites");
@@ -112,264 +82,344 @@ function updateRouteFormat() {
   localStorage.setItem("routeFormat", routeFormat);
 }
 
-// class Data {
-//   // raw data
-//   #routes;
-//   #categories;
-//   #locations;
-//   #trailStatuses;
-//   #pointsOfInterest;
+/************************************* Wrapper for raw data *******************************/
 
-//   // extracted maps and objects
-//   #walkType;
-//   #duration;
-//   #effort;
-//   #basics;
-//   #interest;
-//   #terrain;
-//   #warnings;
-//   #walkLocations;
-//   #danger;
-//   #locations;
-//   #statuses;
-//   #poi;
+class Data {
+  #routeCollection;
 
-//   // constructed
-//   #allRoutes;
+  constructor(categories, locations, routes, trailStatuses, pointsOfInterest) {
+    // raw data
+    this.categories = categories;
+    this.locations = locations;
+    this.trailStatuses = trailStatuses;
+    this.pointsOfInterest = pointsOfInterest;
 
-//   constructor(routes, categories, locations, pointsOfInterest, trailStatuses) {
-//     this.#routes = routes;
-//     this.#categories = categories;
-//     this.#locations = locations;
-//     this.#pointsOfInterest = pointsOfInterest;
-//     this.#trailStatuses = trailStatuses;
+    // extracted maps from categories data
+    this.walkType = new Map(categories.walkType);
+    this.duration = new Map(categories.duration);
+    this.effort = new Map(categories.effort);
+    this.basics = new Map(categories.basics);
+    this.interest = new Map(categories.interest);
+    this.terrain = new Map(categories.terrain);
+    this.warnings = new Map(categories.warnings);
+    this.locations = new Map(locations);
 
-//     this.#allRoutes = new Array();
-//     routes.forEach( route => this.#allRoutes.push(new Route(route)));
+    // extracted maps from other sources
+    this.statuses = new Map(trailStatuses);
+    this.poi = new Map(pointsOfInterest);
 
-//     this.#walkType = new Map(categories.walkType);
-//     this.#duration = new Map(categories.duration);
-//     this.#effort = new Map(categories.effort);
-//     this.#basics = new Map(categories.basics);
-//     this.#interest = new Map(categories.interest);
-//     this.#terrain = new Map(categories.terrain);
-//     this.#warnings = new Map(categories.warnings);
-//     this.#walkLocations = categories.get("walkLocations");
-//     this.#danger = categories.get("danger");  
-//     this.#locations = new Map(locations.locations);
-//     this.#statuses = new Map(trailStatuses);
-//     this.#poi = new Map(pointsOfInterest);
-//   }
-
-//   get routes() { return this.#allRoutes; }
-//   getRoute(id) { return this.#routes.find( route => route.id == id); }
-// }
-
-// Common between variants and routes
-class BasicRoute {
-  #route;
-  #accessCar;
-  #accessBus;
-  #walkTypeDetails;
-  #durationDetails;
-  #effortDetails;
-  #startDetails;
-  #endDetails;
-
-  constructor(route) {
-    this.#route = route;
-
-    // lookups
-    this.#accessCar = basics.get("accessCar");
-    this.#accessCar.isPossible = this.#route.accessCar == "true" ? true : false;
-
-    this.#accessBus = basics.get("accessBus");
-    this.#accessBus.isPossible = this.#route.accessBus == "true" ? true : false;
-
-    this.#walkTypeDetails = walkType.get(route.walkType);
-    this.#walkTypeDetails.type = this.#route.walkType;
-
-    this.#durationDetails = duration.get(route.duration);
-    this.#durationDetails.type = this.#route.duration;
-
-    this.#effortDetails = effort.get(route.effort);
-    this.#effortDetails.type = this.#route.effort;
-
-    this.#startDetails = locations.get(route.start);
-    this.#startDetails.name = route.start;
-
-    this.#endDetails = locations.get(route.end);
-    this.#endDetails.name = route.end;
-  }
-
-  // simple accessors
-  get id() { return this.#route.id; }
-  get name() { return this.#route.name; }
-  get description() { return this.#route.description; }
-  get routeFile() { return this.#route.routeFile; }
-  get walkType() { return this.#walkTypeDetails; }
-  get duration() { return this.#durationDetails; }
-  get effort() { return this.#effortDetails; }
-  get start() { return this.#startDetails; }
-  get end() { return this.#endDetails; }
-  get accessCar() { return this.#accessCar; }
-  get accessBus() { return this.#accessBus; }
-  get directions() { return this.#route.routeDirections; }
-
-  // true/false attributes
-  // get isWaymarked() { return this.#route.waymarked == "true"; }
-  get hasRouteFile() { return "routeFile" in this.#route; }
-  get hasRouteDirections() { return "routeDirections" in this.#route; }
-}
-
-// Extra information in the full route
-class Route extends BasicRoute {
-  #route;
-  #notes;
-  #refreshmentsData;
-  #waymarkingData;
-  #starredData;
-  #terrainData;
-  #interestData;
-  #warningsData;
-  #dangersData;
-  #variantsData;
-  #poiData;
-
-  constructor(route) {
-    super(route);
-    this.#route = route;
-    this.#notes = new Map(route.notes);
-
-    // refreshments
-    this.#refreshmentsData = basics.get("refreshments");
-    this.#refreshmentsData.text = route.refreshments;
-
-    // waymarked
-    this.#waymarkingData = basics.get("waymarked");
-    this.#waymarkingData.isComplete = this.#route.isWaymarked == "true";
-
-    // starred
-    this.#starredData = basics.get("starred");
-    this.#starredData.isSet = route.isStarred == "true";
-
-    // interests
-    let routeInterest = new Map(route.interest);
-    this.#interestData = new Array();
-    routeInterest.forEach((strength, interestType) => {
-      let interestDetail = interest.get(interestType);
-      // if there is a note for this type, override the default description with it
-      if (this.#notes.has(interestType)) {
-        interestDetail.description = this.#notes.get(interestType);
-      }
-      // add properties
-      interestDetail.type = interestType;
-      interestDetail.isFeature = true;
-      interestDetail.isStrong = strength == "strong" ? true : false;
-      // add to list
-      this.#interestData.push(interestDetail);
-    });
-
-    // warnings
-    let routeWarnings = new Map(route.warnings);
-    this.#warningsData = new Array();
-    routeWarnings.forEach((strength, warningType) => {
-      let warningDetail = warnings.get(warningType);
-      // if there is a note for this type, override the default description with it
-      if (this.#notes.has(warningType)) {
-        warningDetail.description = this.#notes.get(warningType);
-      }
-      // add properties
-      warningDetail.type = warningType;
-      warningDetail.isFeature = false;
-      warningDetail.isStrong = strength == "strong" ? true : false;
-      // add to list
-      this.#warningsData.push(warningDetail);
-    });
-
-    // terrain
-    let routeTerrain = new Map(this.#route.terrain);
-    this.#terrainData = new Array();
-    routeTerrain.forEach((strength, terrainType) => {
-      let terrainDetail = terrain.get(terrainType);
-      // add properties
-      terrainDetail.type = terrainType;
-      terrainDetail.isStrong = strength == "strong" ? true : false;
-      // add to list
-      this.#terrainData.push(terrainDetail);
-    });
-
-    // dangers
-    this.#dangersData = new Array();
-    if ("dangers" in this.#route) {
-      this.#route.dangers.forEach(danger => {
-        this.#dangersData.push(
-          {
-            name: danger.danger,
-            description: danger.description,
-            isStrong: danger.strength == "strong" ? true : false
-          }
-        )
-      });
-    }
-
-    // variants
-    this.#variantsData = new Array();
-    if ("variants" in this.#route) {
-      this.#route.variants.forEach(variant => {
-        this.#variantsData.push(new BasicRoute(variant));
-      })
-    }
-
-    // poi
-    this.#poiData = new Array();
-    this.#route.poi.forEach(poiName => {
-      this.#poiData.push(poi.get(poiName));
+    // map of routes created from raw route data
+    this.#routeCollection = new Map();
+    routes.routes.forEach(route => {
+      if (performIntegrityCheck) this.integrityCheck(route);
+      this.#routeCollection.set(route.id, this.getRoute(route));
     })
   }
 
-  // simple accessors
-  get lengthKm() { return this.#route.lengthKm; }
-  get lengthMiles() { return this.#route.lengthMiles; }
-  get walkingTime() { return this.#route.walkingTime; }
-  get shortDescription() { return this.#route.shortDescription; }
-  get paths() { return this.#route.paths; }
-  get hasVariants() { return "variants" in this.#route; }
-  get variants() { return this.#variantsData; }
-  get starred() { return this.#starredData; }
-  get hasRouteDirections() { return false; }
-  get waymarking() { return this.#waymarkingData; }
+  get routes() { return this.#routeCollection; }
 
-  // optional attributes - return empty string if missing
-  get accessOther() { return "accessOther" in this.#route ? this.#route.accessOther : ""; }
+  // creates a route object derrived from the raw route data but with reference lookups
+  // resolved, data in more digestible formats, and additional helper properties
+  getRoute(route) {
+    let notes = "notes" in route ? new Map(route.notes) : new Map();
+    return {
+      id: route.id,
+      name: route.name,
+      lengthKm: route.lengthKm,
+      lengthMiles: route.lengthMiles,
+      walkingTime: route.walkingTime,
+      shortDescription: route.shortDescription,
+      description: route.description,
 
-  // accessors to derrived data
-  get refreshments() { return this.#refreshmentsData; }
-  get terrain() { return this.#terrainData; }
-  get features() { return this.#interestData; }
-  get warnings() { return this.#warningsData; }
-  get dangers() { return this.#dangersData; }
-  get poi() { return this.#poiData; }
+      isStarred: route.starred == "true",
+      starredAttributes: this.basics.get("starred"),
 
-  get featuresInDisplayOrder() {
-    let orderedFeatures = new Array();
-    interest.forEach((value, key) => {
-      let foundFeature = this.features.find(f => f.type == key);
-      if (foundFeature !== undefined) {
-        orderedFeatures.push(foundFeature);
-      }
-    });
-    return orderedFeatures;
+      walkType: route.walkType,
+      walkTypeAttributes: this.walkType.get(route.walkType),
+
+      duration: route.duration,
+      durationAttributes: this.duration.get(route.duration),
+      isShort: route.duration == "stroll" || route.duration == "half",
+
+      effort: route.effort,
+      effortAttributes: this.effort.get(route.effort),
+
+      isCompletelyWaymarked: route.waymarked == "true",
+      waymarkedAttributes: this.basics.get("waymarked"),
+
+      isAccessibleByCar: route.accessCar == "true",
+      accessCarAttributes: this.basics.get("accessCar"),
+
+      isAccessibleByBus: route.accessBus == "true",
+      accessBusAttributes: this.basics.get("accessBus"),
+
+      routeFile: route.routeFile,
+
+      refreshments: route.refreshments,
+      refreshmentsAttributes: this.basics.get("refreshments"),
+
+      start: route.start,
+      startAttributes: this.locations.get(route.start),
+
+      end: route.end,
+      endAttributes: this.locations.get(route.end),
+
+      paths: this.getPathsMap(route),
+      hasPaths: "paths" in route,
+
+      variants: this.getVariantsArray(route),
+      hasVariants: "variants" in route,
+
+      terrain: this.getListMap(route.terrain, this.terrain, notes),
+      interest: this.getListMap(route.interest, this.interest, notes),
+      warnings: this.getListMap(route.warnings, this.warnings, notes),
+
+      poi: this.getPoiMap(route),
+      hasPoi: "poi" in route,
+
+      dangers: "dangers" in route ? new Array(route.dangers) : new Array(),
+      hasDangers: "dangers" in route
+    }
   }
 
-  get warningsInDisplayOrder() {
-    let orderedWarnings = new Array();
-    warnings.forEach((value, key) => {
-      let foundWarning = this.warnings.find(f => f.type == key);
-      if (foundWarning !== undefined) {
-        orderedWarnings.push(foundWarning);
-      }
-    });
-    return orderedWarnings;
+  // returns a POI map with the POI reference resolved and the POI id as the key
+  getPoiMap(route) {
+    let poiMap = new Map();
+    if ("poi" in route) {
+      route.poi.forEach(poiKey => {
+        let poiAttributes = this.poi.get(poiKey);
+        poiMap.set(poiAttributes.id, poiAttributes);
+      })
+    }
+    return poiMap;
   }
+
+  // returns a paths map with the path as key and the current path status as value
+  getPathsMap(route) {
+    let paths = new Map();
+    if ("paths" in route) {
+      route.paths.forEach(path => {
+        paths.set(path, this.statuses.get(path));
+      })
+    }
+    return paths;
+  }
+
+  // returns an array of new variant objects with references resolved and helper properties
+  getVariantsArray(route) {
+    let variants = new Array();
+    if ("variants" in route) {
+      route.variants.forEach(variant => {
+        variants.push({
+          id: variant.id,
+          name: variant.name,
+          description: variant.description,
+
+          walkType: variant.warningType,
+          walkTypeAttributes: this.walkType.get(variant.walkType),
+
+          duration: variant.duration,
+          durationAttributes: this.duration.get(variant.duration),
+
+          effort: variant.effort,
+          effortAttributes: this.effort.get(variant.effort),
+
+          accessCar: variant.accessCar == "true",
+          accessCarAttributes: this.basics.get("accessCar"),
+
+          accessBus: variant.accessBus == "true",
+          accessBusAttributes: this.basics.get("accessBus"),
+
+          start: variant.start,
+          startAttributes: this.locations.get(variant.start),
+
+          end: variant.end,
+          endAttributes: this.locations.get(variant.end),
+
+          routeFile: "routeFile" in variant ? variant.routeFile : "",
+          hasRouteFile: "routeFile" in variant,
+
+          routeDirections: "routeDirections" in variant ? variant.routeDirections : "",
+          hasRouteDirections: "routeDirections" in variant
+        })
+      })
+    }
+    return variants;
+  }
+
+  // returns a map from the base data in which the entries are added in the order they
+  // appear in the lookup map which ensures a consistent order in the map regardless of
+  // the order of items in the JSON data.
+  getListMap(baseMapData, lookup, notes) {
+    let baseData = new Map(baseMapData);
+    let listMap = new Map();
+    lookup.forEach((attributes, name) => {
+      if (baseData.has(name)) {
+        // if there is a note for this type, override the default description with it
+        let noteModifiedDescription = attributes.description;
+        if (notes.has(name)) {
+          noteModifiedDescription = notes.get(name);
+        }
+
+        listMap.set(
+          name,
+          {
+            isStrong: baseData.get(name) == "strong",
+            noteModifiedDescription: noteModifiedDescription,
+            text: attributes.text,
+            filterIncludeText: attributes.filterIncludeText,
+            filterExcludeText: attributes.filterExcludeText,
+            description: attributes.description,
+            strongTag: attributes.strong,
+            icon: attributes.icon
+          })
+      }
+    })
+    return listMap;
+  }
+
+  /*************** raw data integrity checking  ****************************/
+
+  // checks the incoming route data for missing fields, wrong types and (in some cases) wrong values
+  integrityCheck(route) {
+    // mandatory fields
+    console.assert("id" in route, `id is a required field`);
+    console.assert(typeof route.id == "string", `id must be a string`);
+    console.assert(route.id != "", `id must not be empty`);
+
+    this.requiredNonEmptyString(route, "name", route.id);
+    this.requiredNonEmptyString(route, "lengthKm", route.lengthKm);
+    this.requiredNonEmptyString(route, "lengthMiles", route.lengthMiles);
+    this.requiredNonEmptyString(route, "walkingTime", route.walkingTime);
+    this.requiredNonEmptyString(route, "shortDescription", route.shortDescription);
+    this.requiredNonEmptyString(route, "description", route.description);
+    this.requiredNonEmptyString(route, "province", route.province); //?
+    this.requiredNonEmptyString(route, "town", route.town); //?
+    this.requiredNonEmptyString(route, "routeFile", route.routeFile);
+    this.requiredNonEmptyString(route, "refreshments", route.refreshments);
+
+    if ("accessOther" in route) {
+      console.assert(typeof route.accessOther == "string", `route ${route.id}: accessOther must be a string`);
+      console.assert(route.accessOther != "", `route ${route.id}: accessOther must not be empty`);
+    }
+
+    this.requiredNonEmptyString(route, "starred", route.starred);
+    this.requiredBoolean(route, "starred", route.starred);
+
+    this.requiredNonEmptyString(route, "duration", route.duration);
+    console.assert(duration.has(route.duration), `route ${route.id}: ${route.duration} is not a listed duration type`);
+
+    this.requiredNonEmptyString(route, "effort", route.effort);
+    console.assert(effort.has(route.effort), `route ${route.id}: ${route.effort} is not a listed effort type`);
+
+    this.requiredNonEmptyString(route, "waymarked", route.waymarked);
+    this.requiredBoolean(route, "accessBus", route.accessBus);
+
+    this.requiredNonEmptyString(route, "accessCar", route.accessCar);
+    this.requiredBoolean(route, "accessCar", route.accessCar);
+
+    this.requiredNonEmptyString(route, "accessBus", route.accessBus);
+    this.requiredBoolean(route, "accessBus", route.accessBus);
+
+    this.requiredNonEmptyString(route, "start", route.start);
+    console.assert(locations.has(route.start), `route ${route.id}: ${route.start} is not a listed location`);
+
+    this.requiredNonEmptyString(route, "end", route.end);
+    console.assert(locations.has(route.end), `route ${route.id}: ${route.end} is not a listed location`);
+
+    if ("paths" in route) {
+      console.assert(Array.isArray(route.paths), `route ${route.id}: paths field must be array`);
+      console.assert(route.paths.length > 0, `route ${route.id}: paths cannot be empty`);
+    }
+
+    if ("poi" in route) {
+      console.assert(Array.isArray(route.poi), `route ${route.id}: poi field must be an array`);
+      console.assert(route.poi.length > 0, `route ${route.id}: poi cannot be empty`);
+      route.poi.forEach(routePoi => {
+        console.assert(routePoi != "", `route ${route.id}: poi must not be empty`);
+        console.assert(poi.has(routePoi), `route ${route.id}: ${routePoi} is not a listed POI`);
+      });
+    }
+
+    console.assert("terrain" in route, `route ${route.id}: terrain is a required field`);
+    console.assert(Array.isArray(route.terrain), `route ${route.id}: terrain field must be an array`);
+    console.assert(route.terrain.length > 0, `route ${route.id}: terrain cannot be empty`);
+    route.terrain.forEach(routeTerrain => {
+      let terrainType = routeTerrain[0];
+      let terrainValue = routeTerrain[1];
+      console.assert(terrain.has(terrainType), `route ${route.id}: ${terrainType} is not a listed terrain`);
+      console.assert(terrainValue == "normal" || terrainValue == "strong", `route ${route.id}: ${terrainValue} is not a valid terrain value`);
+    });
+
+    console.assert("interest" in route, `route ${route.id}: interest is a required field`);
+    console.assert(Array.isArray(route.interest), `route ${route.id}: interest field must be an array`);
+    console.assert(route.interest.length > 0, `route ${route.id}: interest cannot be empty`);
+    route.interest.forEach(routeInterest => {
+      let interestType = routeInterest[0];
+      let interestValue = routeInterest[1];
+      console.assert(interest.has(interestType), `route ${route.id}: ${interestType} is not a listed interest`);
+      console.assert(interestValue == "normal" || interestValue == "strong", `route ${route.id}: ${interestValue} is not a valid interest value`);
+    });
+
+    console.assert("warnings" in route, `route ${route.id}: warnings is a required field`);
+    console.assert(Array.isArray(route.warnings), `route ${route.id}: warnings field must be an array`);
+    console.assert(route.warnings.length > 0, `route ${route.id}: warnings cannot be empty`);
+    route.warnings.forEach(routeWarning => {
+      let warningType = routeWarning[0];
+      let warningValue = routeWarning[1];
+      console.assert(warnings.has(warningType), `route ${route.id}: ${warningType} is not a listed warning`);
+      console.assert(warningValue == "normal" || warningValue == "strong", `route ${route.id}: ${warningValue} is not a valid warning value`);
+    });
+
+    if ("notes" in route) {
+      console.assert(Array.isArray(route.notes), `route ${route.id}: notes field must be an array`);
+      console.assert(route.notes.length > 0, `route ${route.id}: notes cannot be empty`);
+      route.notes.forEach(routeNote => {
+        let noteField = routeNote[0];
+        let i = route.interest.find(x => x[0] == noteField);
+        let w = route.warnings.find(x => x[0] == noteField);
+        console.assert(i !== undefined || w !== undefined, `route ${route.id}: ${noteField} does not relate to a feature or warning`);
+      });
+    }
+
+    if ("variants" in route) {
+      console.assert(Array.isArray(route.variants), `route ${route.id}: variants field must be an array`);
+      route.variants.forEach(variant => {
+        this.requiredNonEmptyString(route, "id", variant.id);
+        this.requiredNonEmptyString(route, "name", variant.id);
+        this.requiredNonEmptyString(route, "description", variant.description);
+
+        if ("routeFile" in variant) {
+          console.assert(typeof variant.routeFile == "string", `route ${route.id}: routeFile must be a string`);
+          console.assert(variant.routeFile != "", `route ${route.id}: routeFile must not be empty`);
+        }
+
+        this.requiredNonEmptyString(route, "start", variant.start);
+        console.assert(locations.has(variant.start), `variant ${variant.id}: ${variant.start} is not a listed location`);
+
+        this.requiredNonEmptyString(route, "end", variant.end);
+        console.assert(locations.has(variant.end), `variant ${variant.id}: ${variant.end} is not a listed location`);
+
+        if ("routeDirections" in variant) {
+          console.assert(typeof variant.routeDirections == "string", `variant ${variant.id}: routeDirections must be a string`);
+          console.assert(variant.routeDirections != "", `variant ${variant.id}: routeDirections must not be empty`);
+        }
+      })
+    }
+  }
+
+  // checks field is either 'true' or 'false'
+  requiredBoolean(route, fieldName, field) {
+    console.assert(field == "true" || field == "false", `route ${route.id}: ${fieldName} must be 'true' or 'false'`);
+  }
+
+  // checks field exists and is a string and is not empty
+  requiredNonEmptyString(route, fieldName, field) {
+    console.assert(fieldName in route, `route ${route.id}: ${fieldName} is a required field`);
+    if (fieldName in route) {
+      console.assert(typeof field == "string", `route ${route.id}: ${fieldName} must be a string`);
+      console.assert(field != "", `route ${route.id}: ${fieldName} must not be empty`);
+    }
+  }
+
 }
