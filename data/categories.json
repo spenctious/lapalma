@@ -71,6 +71,7 @@
         "filterIncludeText": "Short walks",
         "filterExcludeText": "",
         "description": "Reasonably fit walkers can fit a walk of this duration into half a day although combining two short day walks generally makes for a long day.",
+        "filterIcon": "short-walk.svg",
         "icon": "duration2.svg"
       }
     ],

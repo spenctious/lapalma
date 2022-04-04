@@ -430,12 +430,10 @@ class Terrain extends Filter {
 }
 
 class Warning extends Filter {
-  // #strong;
   #specificWarning;
 
   constructor(specificWarning, strong) {
     super(laPalmaData.warnings.get(specificWarning), new Toggle(EXCLUDE));
-    // this.#strong = strong;
     this.#specificWarning = specificWarning;
   }
 
