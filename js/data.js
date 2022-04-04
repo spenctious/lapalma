@@ -16,6 +16,10 @@ const dataSources = [
 var forceReload = true;
 var performIntegrityCheck = false;
 
+// URL paramater names - defining here ensures consistency
+const URL_PARAM_ROUTE = "route";
+const URL_PARAM_COLLECTION = "collection";
+
 /************************* Data loading setup ************************/
 
 // Reads the data from the various JSON data sources in parallel

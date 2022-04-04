@@ -1,7 +1,10 @@
 "use strict";
 
-// Object handling filter panel and filters within
+// object handling filter panel and filters within
 var filterSet;
+
+// selection status - values will be "in" or "out"
+var selectedRoutes;
 
 /************************* Initialization ************************/
 
@@ -11,6 +14,11 @@ window.onload = function () {
 };
 
 function initialize() {
+
+  // initially all routes are included (in numeric order)
+  selectedRoutes = new Map();
+  laPalmaData.routes.forEach(route => selectedRoutes[route.id] = "in");
+  
   filterSet = new FilterSet();
   filterSet.populateFilterPanel();
   populateRoutesGrid();
@@ -18,6 +26,29 @@ function initialize() {
   // add event listeners on the routes grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
+}
+
+/************************* URL parameter handling ************************/
+
+// note: should not be possible to call unless there is at least one route not filtered out
+function getDetailPageQueryString(selectedRouteIndex) {
+  // get route ids for all routes not filtered out
+  let collection = "";
+  selectedRoutes.forEach((value, key) => {
+    if (value == "in") collection += key + ",";
+  });
+  if (collection.endsWith(',')) collection = collection.slice(0, -1); // strip trailing comma
+
+  return `?${URL_PARAM_ROUTE}=${selectedRouteIndex}&${URL_PARAM_COLLECTION}=${collection}`;
+}
+
+function updateUrlWithFilters() {
+  let param = "";
+  if (filterSet.activeFilterCount > 0) {
+    filterSet.activeFilters.forEach( filter => {
+      param += filter.name;
+    })
+  }
 }
 
 /************************* Click handlers ************************/
@@ -86,7 +117,7 @@ function routesGridClickHandler(event) {
   }
   else {
     // route clicked - open route detail page for the specified route
-    window.location.href = `./route-detail.html?route=${routeIndex}`;
+    window.location.href = `./route-detail.html${getDetailPageQueryString(routeIndex)}`;
   }
 }
 
@@ -153,7 +184,7 @@ function populateRoutesGrid() {
 // Hide routes that don't fit the current filters
 // Update count of filters and matches
 function filterRoutes() {
-  let matchesCount = 0;
+  let matched = 0;
 
   // hide filtered out routes and update count of how many are matched
   laPalmaData.routes.forEach(route => {
@@ -161,16 +192,18 @@ function filterRoutes() {
     let routeDiv = document.getElementById("route" + route.id);
     if (included) {
       routeDiv.style.display = "block";
-      matchesCount++;
+      selectedRoutes.set(route.id, "in");
+      ++matched;
     }
     else {
       routeDiv.style.display = "none";
+      selectedRoutes.set(route.id, "out");
     }
   });
 
   // update match count
   let matchCountText = document.getElementById("match-count");
-  switch (matchesCount) {
+  switch (matched) {
     case 0:
       matchCountText.innerHTML = "No matches";
       break;
@@ -178,7 +211,7 @@ function filterRoutes() {
       matchCountText.innerHTML = "1 match";
       break;
     default:
-      matchCountText.innerHTML = matchesCount + " matches";
+      matchCountText.innerHTML = matched + " matches";
       break;
   }
 
@@ -265,8 +298,10 @@ class Filter {
   #index;
   #category;
   #toggleControl;
+  #name;
 
-  constructor(category, toggle) {
+  constructor(name, category, toggle) {
+    this.#name = name;
     this.#category = category;
     this.#toggleControl = toggle;
   }
@@ -286,6 +321,7 @@ class Filter {
   }
 
   // getters and setters
+  get name() { return this.#name; }
   set index(index) { this.#index = index; }
   get index() { return this.#index; }
   get id() { return "filter" + this.#index; }
@@ -331,8 +367,8 @@ class Filter {
 /**** Derived filter classes - actual filters ****/
 
 class Starred extends Filter {
-  constructor() {
-    super(laPalmaData.basics.get("starred"), new Toggle(INCLUDE))
+  constructor(name) {
+    super(name, laPalmaData.basics.get("starred"), new Toggle(INCLUDE))
   }
 
   apply(route) {
@@ -341,8 +377,8 @@ class Starred extends Filter {
 }
 
 class Favourite extends Filter {
-  constructor() {
-    super(laPalmaData.basics.get("favourite"), new Toggle(INCLUDE))
+  constructor(name) {
+    super(name, laPalmaData.basics.get("favourite"), new Toggle(INCLUDE))
   }
 
   apply(route) {
@@ -351,8 +387,8 @@ class Favourite extends Filter {
 }
 
 class ShortWalk extends Filter {
-  constructor() {
-    super(laPalmaData.duration.get("half"), new Toggle(INCLUDE));
+  constructor(name) {
+    super(name, laPalmaData.duration.get("half"), new Toggle(INCLUDE));
   }
 
   apply(route) {
@@ -361,8 +397,8 @@ class ShortWalk extends Filter {
 }
 
 class AccessCar extends Filter {
-  constructor() {
-    super(laPalmaData.basics.get("accessCar"), new Toggle(INCLUDE));
+  constructor(name) {
+    super(name, laPalmaData.basics.get("accessCar"), new Toggle(INCLUDE));
   }
 
   apply(route) {
@@ -371,8 +407,8 @@ class AccessCar extends Filter {
 }
 
 class AccessBus extends Filter {
-  constructor() {
-    super(laPalmaData.basics.get("accessBus"), new Toggle(INCLUDE));
+  constructor(name) {
+    super(name, laPalmaData.basics.get("accessBus"), new Toggle(INCLUDE));
   }
 
   apply(route) {
@@ -382,8 +418,8 @@ class AccessBus extends Filter {
 }
 
 class Waymarked extends Filter {
-  constructor() {
-    super(laPalmaData.basics.get("waymarked"), new Toggle(INCLUDE));
+  constructor(name) {
+    super(name, laPalmaData.basics.get("waymarked"), new Toggle(INCLUDE));
   }
 
   apply(route) {
@@ -395,7 +431,7 @@ class WalkType extends Filter {
   #specificType;
 
   constructor(specificType) {
-    super(laPalmaData.walkType.get(specificType), new Toggle(INCLUDE));
+    super(specificType, laPalmaData.walkType.get(specificType), new Toggle(INCLUDE));
     this.#specificType = specificType;
   }
 
@@ -408,7 +444,7 @@ class Interest extends Filter {
   #specificInterest;
 
   constructor(specificInterest) {
-    super(laPalmaData.interest.get(specificInterest), new Toggle(INCLUDE));
+    super(specificInterest, laPalmaData.interest.get(specificInterest), new Toggle(INCLUDE));
     this.#specificInterest = specificInterest;
   }
 
@@ -420,7 +456,7 @@ class Interest extends Filter {
 class Terrain extends Filter {
   #specificTerrain;
   constructor(specificTerrain) {
-    super(laPalmaData.terrain.get(specificTerrain), new Toggle(INCLUDE));
+    super(specificTerrain, laPalmaData.terrain.get(specificTerrain), new Toggle(INCLUDE));
     this.#specificTerrain = specificTerrain;
   }
 
@@ -433,7 +469,7 @@ class Warning extends Filter {
   #specificWarning;
 
   constructor(specificWarning, strong) {
-    super(laPalmaData.warnings.get(specificWarning), new Toggle(EXCLUDE));
+    super(specificWarning, laPalmaData.warnings.get(specificWarning), new Toggle(EXCLUDE));
     this.#specificWarning = specificWarning;
   }
 
@@ -450,8 +486,8 @@ class Location extends Filter {
   #allAreasOff;
   #allAreasOn;
 
-  constructor() {
-    super(laPalmaData.categories.walkLocations, new Toggle(INCLUDE));
+  constructor(name) {
+    super(name, laPalmaData.categories.walkLocations, new Toggle(INCLUDE));
 
     this.#allAreasOff = true;
     this.#allAreasOn = false;
@@ -477,6 +513,10 @@ class Location extends Filter {
   }
 
   /*** Accessors ***/
+
+  get name() {
+    return super.name(); // to do: add locations
+  }
 
   // Returns the HTML for the area selector buttons
   get locationSelectorsHtml() {
@@ -558,10 +598,10 @@ class Location extends Filter {
   }
 }
 
-//
+/************************* FilterSet ************************/
+
 // Handles the filter panel as a whole updating the active filter panel, locations grid,
 // favourites and routes grid according to the user selections
-//
 class FilterSet {
   #allFilters;
   #filterIndex;
@@ -579,29 +619,29 @@ class FilterSet {
     // Filters added in order they are laid out in HTML
     this.#allFilters = new Array();
     this.#filterIndex = 0;
-    this.addGeneralFilter(new Starred());
-    this.addGeneralFilter(new Favourite());
+    this.addGeneralFilter(new Starred("starred"));
+    this.addGeneralFilter(new Favourite("favourites"));
     this.addCategoryFilter(new WalkType("circular"));
     this.addCategoryFilter(new Interest("archeological"));
     this.addCategoryFilter(new Terrain("dragon"));
     this.addCategoryFilter(new Warning("gps", false));
-    this.addCategoryFilter(new AccessCar());
+    this.addCategoryFilter(new AccessCar("car"));
     this.addCategoryFilter(new Interest("peaks"));
     this.addCategoryFilter(new Terrain("volcanic"));
     this.addCategoryFilter(new Warning("steep", true));
-    this.addCategoryFilter(new AccessBus());
+    this.addCategoryFilter(new AccessBus("bus"));
     this.addCategoryFilter(new Interest("poi"));
     this.addCategoryFilter(new Terrain("laurisilva"));
     this.addCategoryFilter(new Warning("slippery", true));
-    this.addCategoryFilter(new ShortWalk());
+    this.addCategoryFilter(new ShortWalk("short"));
     this.addCategoryFilter(new Interest("port"));
     this.addCategoryFilter(new Terrain("coastal"));
     this.addCategoryFilter(new Warning("vertigo", true));
-    this.addCategoryFilter(new Waymarked());
+    this.addCategoryFilter(new Waymarked("waymarked"));
     this.addCategoryFilter(new Interest("scenic"));
     this.addCategoryFilter(new Terrain("pine"));
     this.addCategoryFilter(new Warning("weather", false));
-    this.addLocationFilter(new Location());
+    this.addLocationFilter(new Location("location"));
 
     this.#activeFilterList = new Set();
 
@@ -665,6 +705,10 @@ class FilterSet {
 
   /*** Accessors ***/
 
+  get activeFilters() {
+    return this.#activeFilterList;
+  }
+
   get activeFilterCount() {
     return this.#activeFilterList.size;
   }
@@ -710,6 +754,7 @@ class FilterSet {
 
   /*** Filter application ***/
 
+  // check whether a particular route is filtered out or not
   applyActiveFilters(route) {
     let included = true;
     // Keep applying active filters until one of them rules a route out

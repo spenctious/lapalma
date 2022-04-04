@@ -1,6 +1,10 @@
 "use strict";
 
 var route;
+var routeId;
+var collectionParam;
+var collection;
+var collectionIndex;
 
 // Wait for the page to load and the data to be read before trying to populate
 // elements of the page
@@ -14,15 +18,59 @@ function initialize() {
   // get the specific route matching the URL parameter
   let QueryString = window.location.search;
   let urlParams = new URLSearchParams(QueryString);
-  let routeId = urlParams.get("route");
 
   // get the data for the specific route
+  routeId = urlParams.get(URL_PARAM_ROUTE);
   route = laPalmaData.routes.get(routeId);
+  document.getElementById("current").innerHTML = "Walk " + routeId;
+
+  // get the list of routes selected by the current filters (if any)
+  collectionParam = urlParams.get(URL_PARAM_COLLECTION);
+  collection = collectionParam.split(',');
+  collectionIndex = collection.findIndex(item => item == routeId);
+  updateNavButtons();
 
   // populate the various components with the current route data
   populateRouteDatail();
   populateFeaturesAndWarnings();
   populateBasics();
+
+  // add event listeners for the specified areas
+  document.getElementById("collection-nav").addEventListener("click", navClickHandler);
+}
+
+function updateNavButtons() {
+  // single route - no vavigation
+  if (collection.length == 0) {
+    document.getElementById("prev").style.display = "none";
+    document.getElementById("next").style.display = "none";
+    return;
+  }
+
+  // start of list - previous becomes jump to last
+  let prev = collectionIndex == 0 ? "Last" : "&lsaquo;";
+  document.getElementById("prev").innerHTML = prev;
+
+  // end of list - next becomes jump to first
+  let next = collectionIndex == collection.length - 1 ? "First" : "&rsaquo;";
+  document.getElementById("next").innerHTML = next;
+}
+
+/************************* Click handlers ************************/
+
+function navClickHandler(event) {
+  let elementId = event.target.id;
+  let lastIndex = collection.length - 1;
+  
+  if (elementId == "next") {
+    routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
+    window.location.href = `./route-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+  }
+
+  if (elementId == "prev") {
+    routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
+    window.location.href = `./route-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+  }
 }
 
 /************************* Grid populating functions ************************/
