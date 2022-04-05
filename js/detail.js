@@ -22,7 +22,7 @@ function initialize() {
   // get the data for the specific route
   routeId = urlParams.get(URL_PARAM_ROUTE);
   route = laPalmaData.routes.get(routeId);
-  document.getElementById("current").innerHTML = "Walk " + routeId;
+  document.getElementById("title").innerHTML = "Walk " + routeId;
 
   // get the list of routes selected by the current filters (if any)
   collectionParam = urlParams.get(URL_PARAM_COLLECTION);
@@ -40,18 +40,20 @@ function initialize() {
 }
 
 function updateNavButtons() {
-  // single route - no vavigation
+  document.getElementById("current").innerHTML = `${collectionIndex + 1} of ${collection.length}`;
+
+  // single route - no navigation
   if (collection.length == 0) {
     document.getElementById("prev").style.display = "none";
     document.getElementById("next").style.display = "none";
     return;
   }
 
-  // start of list - previous becomes jump to last
+  // if at start of list previous button becomes jump to last
   let prev = collectionIndex == 0 ? "Last" : "&lsaquo;";
   document.getElementById("prev").innerHTML = prev;
 
-  // end of list - next becomes jump to first
+  // if at end of list next button becomes jump to first
   let next = collectionIndex == collection.length - 1 ? "First" : "&rsaquo;";
   document.getElementById("next").innerHTML = next;
 }

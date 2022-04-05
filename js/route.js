@@ -17,7 +17,8 @@ function initialize() {
 
   // initially all routes are included (in numeric order)
   selectedRoutes = new Map();
-  laPalmaData.routes.forEach(route => selectedRoutes[route.id] = "in");
+  laPalmaData.routes.forEach(route => selectedRoutes.set(route.id, "in"));
+  console.log(selectedRoutes);
   
   filterSet = new FilterSet();
   filterSet.populateFilterPanel();
@@ -26,11 +27,17 @@ function initialize() {
   // add event listeners on the routes grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
+
+  // if any filters were previously applied, reapply them
+  if (history.state != null) {
+    filterSet.updateActiveFilters(history.state);
+  }
 }
 
 /************************* URL parameter handling ************************/
 
-// note: should not be possible to call unless there is at least one route not filtered out
+// note: should not be possible to call this method unless there is at least one route 
+// not filtered out 
 function getDetailPageQueryString(selectedRouteIndex) {
   // get route ids for all routes not filtered out
   let collection = "";
@@ -42,12 +49,20 @@ function getDetailPageQueryString(selectedRouteIndex) {
   return `?${URL_PARAM_ROUTE}=${selectedRouteIndex}&${URL_PARAM_COLLECTION}=${collection}`;
 }
 
+// filtering keeps us on the same page so we need to update the URL to reflect the current filter
+// state so we can restore it when we return back to the page from the detail page
 function updateUrlWithFilters() {
-  let param = "";
+  let filterParams = "";
   if (filterSet.activeFilterCount > 0) {
     filterSet.activeFilters.forEach( filter => {
-      param += filter.name;
-    })
+      filterParams += `filter=${filterSet.getFilterName(filter)}&`;
+    });
+    if (filterParams.endsWith('&')) filterParams = filterParams.slice(0, -1); // strip trailing &
+    window.history.replaceState(filterSet.activeFilters, "", `./browse-routes.html?${filterParams}`);
+  }
+  else {
+    // clear any previous filters
+    window.history.replaceState(filterSet.activeFilters, "", `./browse-routes.html`);
   }
 }
 
@@ -709,6 +724,10 @@ class FilterSet {
     return this.#activeFilterList;
   }
 
+  getFilterName(filterId) {
+    return this.#allFilters[filterId].name;
+  }
+
   get activeFilterCount() {
     return this.#activeFilterList.size;
   }
@@ -721,10 +740,22 @@ class FilterSet {
 
   /*** Update methods ***/
 
+  // restore previously set filters
+  updateActiveFilters(filtersToApply) {
+    this.#activeFilterList = filtersToApply;
+    if (filtersToApply.size > 0) {
+      filtersToApply.forEach( filter => {
+        this.#allFilters[filter].toggle();
+      });
+      this.updateGrids();
+    }
+  }
+
   updateGrids() {
     this.updateActiveFilterGrid();
     this.updateLocationMessage();
     filterRoutes();
+    updateUrlWithFilters();
   }
 
   updateLocationMessage() {
