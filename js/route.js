@@ -18,7 +18,6 @@ function initialize() {
   // initially all routes are included (in numeric order)
   selectedRoutes = new Map();
   laPalmaData.routes.forEach(route => selectedRoutes.set(route.id, "in"));
-  console.log(selectedRoutes);
   
   filterSet = new FilterSet();
   filterSet.populateFilterPanel();
@@ -28,9 +27,10 @@ function initialize() {
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
 
-  // if any filters were previously applied, reapply them
-  if (history.state != null) {
-    filterSet.updateActiveFilters(history.state);
+  // restore filter state
+  let retrievedState = window.history.state;
+  if (retrievedState != null && retrievedState != {}) {
+    filterSet.restoreState(retrievedState);
   }
 }
 
@@ -47,23 +47,6 @@ function getDetailPageQueryString(selectedRouteIndex) {
   if (collection.endsWith(',')) collection = collection.slice(0, -1); // strip trailing comma
 
   return `?${URL_PARAM_ROUTE}=${selectedRouteIndex}&${URL_PARAM_COLLECTION}=${collection}`;
-}
-
-// filtering keeps us on the same page so we need to update the URL to reflect the current filter
-// state so we can restore it when we return back to the page from the detail page
-function updateUrlWithFilters() {
-  let filterParams = "";
-  if (filterSet.activeFilterCount > 0) {
-    filterSet.activeFilters.forEach( filter => {
-      filterParams += `filter=${filterSet.getFilterName(filter)}&`;
-    });
-    if (filterParams.endsWith('&')) filterParams = filterParams.slice(0, -1); // strip trailing &
-    window.history.replaceState(filterSet.activeFilters, "", `./browse-routes.html?${filterParams}`);
-  }
-  else {
-    // clear any previous filters
-    window.history.replaceState(filterSet.activeFilters, "", `./browse-routes.html`);
-  }
 }
 
 /************************* Click handlers ************************/
@@ -132,6 +115,14 @@ function routesGridClickHandler(event) {
   }
   else {
     // route clicked - open route detail page for the specified route
+
+    // save filter settings if a filter has been set, otherwise clear
+    if (filterSet.activeFilterCount > 0) {
+      window.history.replaceState(filterSet.getState(), "");
+    } else {
+      window.history.replaceState({}, "");
+    }
+
     window.location.href = `./route-detail.html${getDetailPageQueryString(routeIndex)}`;
   }
 }
@@ -287,6 +278,11 @@ class Toggle {
       this.#currentState = ++this.#currentState % this.#states.length;
     }
     else {
+      console.assert(
+        !isNaN(targetState) && 
+        targetState >= 0 && 
+        targetState < this.#states.length, 
+        `invalid targetState: ${targetState}`);
       this.#currentState = targetState;
     }
   }
@@ -427,7 +423,6 @@ class AccessBus extends Filter {
   }
 
   apply(route) {
-    console.log(route.accessBus);
     return route.isAccessibleByBus;
   }
 }
@@ -500,6 +495,7 @@ class Location extends Filter {
   #locationAreas;
   #allAreasOff;
   #allAreasOn;
+  #areas;
 
   constructor(name) {
     super(name, laPalmaData.categories.walkLocations, new Toggle(INCLUDE));
@@ -517,6 +513,7 @@ class Location extends Filter {
         ["south", { buttonName: "South", toggle: new Toggle(OFF_ON), locations: new Set() }],
       ]
     );
+
     // loop through the locations and sort then into area buckets
     // n.b. locations can fall into more than one area
     laPalmaData.locations.forEach((locationDetail, locationName) => {
@@ -529,8 +526,25 @@ class Location extends Filter {
 
   /*** Accessors ***/
 
+  get activeLocationAreas() { 
+    // return this.#locationAreas;
+    let activeAreas = new Array();
+    this.#locationAreas.forEach((area, areaName) => {
+      if (!area.toggle.isOff) {
+        activeAreas.push(areaName);
+      }
+    }) 
+    return activeAreas;
+  }
+
+  set activeLocationAreas(restoredActiveAreas) {
+    restoredActiveAreas.forEach(areaName => {
+      this.setLocationSelector(areaName, STATE_ON)
+    });
+  }
+
   get name() {
-    return super.name(); // to do: add locations
+    return super.name;
   }
 
   // Returns the HTML for the area selector buttons
@@ -666,6 +680,24 @@ class FilterSet {
 
   /*** Initialization ***/
 
+  // return the current state of the filters
+  getState() {
+    return { 
+      activeFilters: this.#activeFilterList,
+      locationAreas: this.#locationFilter.activeLocationAreas
+    }
+  }
+
+  // return filters to their previous state
+  restoreState(state) {
+    this.#activeFilterList = state.activeFilters;
+    this.#locationFilter.activeLocationAreas = state.locationAreas;
+    this.#activeFilterList.forEach(filter => {
+      this.#allFilters[filter].toggle();
+    })
+    this.updateGrids();
+  }
+
   // Add a filter to the collection and assign the collection index as the id
   addFilter(filter) {
     filter.index = this.#filterIndex++;
@@ -720,14 +752,6 @@ class FilterSet {
 
   /*** Accessors ***/
 
-  get activeFilters() {
-    return this.#activeFilterList;
-  }
-
-  getFilterName(filterId) {
-    return this.#allFilters[filterId].name;
-  }
-
   get activeFilterCount() {
     return this.#activeFilterList.size;
   }
@@ -740,22 +764,10 @@ class FilterSet {
 
   /*** Update methods ***/
 
-  // restore previously set filters
-  updateActiveFilters(filtersToApply) {
-    this.#activeFilterList = filtersToApply;
-    if (filtersToApply.size > 0) {
-      filtersToApply.forEach( filter => {
-        this.#allFilters[filter].toggle();
-      });
-      this.updateGrids();
-    }
-  }
-
   updateGrids() {
     this.updateActiveFilterGrid();
     this.updateLocationMessage();
     filterRoutes();
-    updateUrlWithFilters();
   }
 
   updateLocationMessage() {
