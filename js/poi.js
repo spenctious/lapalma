@@ -22,38 +22,37 @@ function populatePoiGrid() {
 
     // build html content
     gridContent += `
-        <div id="poi${poi.id}" class="route">
-          <div class="route-pic">
-            <img src="/img/poi${poi.id}-400x300.jpg" width="400", height="300" alt="" />
-            <div class="pic-label">
-              <span class="route-id">${poi.id}</span>
-            </div>
+      <div id="poi${poi.id}" class="route">
+        <div class="route-pic">
+          <img src="/img/poi${poi.id}-400x300.jpg" width="400", height="300" alt="" />
+          <div class="pic-label">
+            <span class="route-id">${poi.id}</span>
           </div>
-          <div class="route-detail">
-            <div class="tags">
-              ${getTagsHtml(poi.tags)}
-            </div>
-            <div class="title">
-              ${poi.name}
-            </div>
-            ${openingTimes}
-            ${entryCost}
-            <div class="description">
-              ${poi.description}
-            </div>
-            ${relatedRoutes}
-          </div>
-        </div>`;
-      })
-      document.getElementById("poi-grid").innerHTML = gridContent;
+        </div>
+        <div class="route-detail">
+          ${getTagsHtml(poi.tags)}
+          <h3 class="title">
+            ${poi.name}
+          </h3>
+          <p class="description">
+            ${poi.description}
+          </p>
+          ${openingTimes}
+          ${entryCost}
+          ${relatedRoutes}
+        </div>
+      </div>`;
+    })
+
+    document.getElementById("poi-grid").innerHTML = gridContent;
 }
 
 function getTagsHtml(tags) {
-  let content = `<div class="tags">`;
+  let content = `<p class="tags">`;
   tags.forEach( tag => {
     content += `<span class="poi-tag">${tag}</span>`;
   })
-  content += `</div>`;
+  content += `</p>`;
   return content;
 }
 
@@ -71,13 +70,13 @@ function getOpeningTimesHtml(openingTimes) {
 }
 
 function getEntryCostHtml(entryCost) {
-  return `<div class="fees">${entryCost}</div>`;
+  return `<p class="fees">${entryCost}</p>`;
 }
 
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-    <div class="related-routes">
-      <a class="link-button" href="./route-detail.html?route=${poi[0]}&${collectionUrlParameter}>Related walks</a>
-    </span>`;
+    <p class="related-routes">
+      <a class="link-button" href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">Related walks</a>
+    </p>`;
 }

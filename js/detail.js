@@ -43,7 +43,7 @@ function updateNavButtons() {
   document.getElementById("current").innerHTML = `${collectionIndex + 1} of ${collection.length}`;
 
   // single route - no navigation
-  if (collection.length == 0) {
+  if (collection.length < 2) {
     document.getElementById("prev").style.display = "none";
     document.getElementById("next").style.display = "none";
     return;

@@ -85,6 +85,8 @@
       "end": "Franceses",
       "paths": ["PR LP 02"],
 
+      "poi": ["test1", "test2"],
+
       "terrain": [
         [ "riverbed", "normal" ]
       ],
