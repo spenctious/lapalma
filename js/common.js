@@ -29,7 +29,7 @@ function addMenuItems() {
   navbar.appendChild(createMenuItem("GPS Apps", "#"));
   navbar.appendChild(createMenuItem("The trail network", "#"));
   navbar.appendChild(createMenuItem("Forecasts", "#"));
-  navbar.appendChild(createMenuItem("Points of interest", "#"));
+  navbar.appendChild(createMenuItem("Points of interest", "browse-poi.html"));
 }
 
 function openNav() {

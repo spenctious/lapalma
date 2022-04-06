@@ -17,6 +17,18 @@
     "icon": "warning.svg"
   },
 
+  "poiTags": [
+    "museum", 
+    "information", 
+    "camping", 
+    "nature", 
+    "building", 
+    "archeological", 
+    "transport", 
+    "refreshments",
+    "recreation"
+  ],
+
   "walkType": [
     [
       "circular",

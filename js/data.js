@@ -90,6 +90,7 @@ function updateRouteFormat() {
 
 class Data {
   #routeCollection;
+  #poiCollection;
 
   constructor(categories, locations, routes, trailStatuses, pointsOfInterest) {
     // raw data
@@ -110,7 +111,13 @@ class Data {
 
     // extracted maps from other sources
     this.statuses = new Map(trailStatuses);
-    this.poi = new Map(pointsOfInterest);
+    this.poiMap = new Map(pointsOfInterest);
+
+    // map of POI created from raw data
+    this.#poiCollection = new Map();
+    this.poiMap.forEach((poiData, key) => {
+      this.#poiCollection.set(key, this.getPoi(poiData));
+    })
 
     // map of routes created from raw route data
     this.#routeCollection = new Map();
@@ -118,9 +125,20 @@ class Data {
       if (performIntegrityCheck) this.integrityCheck(route);
       this.#routeCollection.set(route.id, this.getRoute(route));
     })
+
+    // relate routes back to POIs
+    this.#poiCollection.forEach(poi => {
+      this.#routeCollection.forEach(route => {
+        if (route.hasPoi && route.poi.has(poi.id)) {
+          poi.relatedWalks.push(poi.id);
+          poi.hasRelatedWalks = true;
+        }
+      });
+    })
   }
 
   get routes() { return this.#routeCollection; }
+  get poi() { return this.#poiCollection; }
 
   // creates a route object derrived from the raw route data but with reference lookups
   // resolved, data in more digestible formats, and additional helper properties
@@ -186,12 +204,34 @@ class Data {
     }
   }
 
+  // creates a POI object derrived from the raw poi data but with reference lookups
+  // resolved and derrived data added
+  getPoi(poi) {
+    return {
+      id: poi.id,
+      name: poi.name,
+      tags: poi.tags,
+      description: poi.description,
+      entryCost: poi.entryCost,
+      
+      tel: poi.tel,
+      hasTel: "tel" in poi,
+
+      location: poi.location,
+      locationAttributes: this.locations.get(poi.location),
+
+      openingTimes: poi.openingTimes,
+      relatedWalks: new Array(),
+      hasRelatedWalks: false
+    }
+  }
+
   // returns a POI map with the POI reference resolved and the POI id as the key
   getPoiMap(route) {
     let poiMap = new Map();
     if ("poi" in route) {
       route.poi.forEach(poiKey => {
-        let poiAttributes = this.poi.get(poiKey);
+        let poiAttributes = this.#poiCollection.get(poiKey);
         poiMap.set(poiAttributes.id, poiAttributes);
       })
     }
