@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/browse.css" />
+    <link rel="stylesheet" href="css/poi.css" />
 
     <script src="js/common.js"></script>
     <script src="js/data.js"></script>
@@ -39,8 +39,14 @@
             <div id="clear-all-filters" class="clearButton">Clear All</div>
             <div class="close-cross">&times;</div>
           </div>
+          <div id="active-filter-box">
+            <h3>Current filters</h3>
+            <div id="active-filter-grid">
+              <!-- content inserted by populateFilterPanel() -->
+            </div>
+          </div>
         </div>
-        
+
         <!-- Filtered grid of points of interest -->
         <div id="main-content">
           <div id="poi-header">

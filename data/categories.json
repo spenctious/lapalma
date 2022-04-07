@@ -17,16 +17,17 @@
     "icon": "warning.svg"
   },
 
-  "poiTags": [
-    "museum", 
-    "information", 
-    "camping", 
-    "nature", 
-    "building", 
-    "archeological", 
-    "transport", 
-    "refreshments",
-    "recreation"
+  "poiCategories": [
+    { "id": "museum", "label": "Museum", "description": "Museum or visitor centre" },
+    { "id": "info", "label": "Information", "description": "Information point" },
+    { "id": "camping", "label": "Camping", "description": "Campsite or hiker hut" },
+    { "id": "nature", "label": "Nature",  "description": "Natural wonder" },
+    { "id": "building", "label": "Archetecture",  "description": "Archetecturally significant building" },
+    { "id": "archeo", "label": "Archeological",  "description": "Archeologically significant site" },
+    { "id": "transport", "label": "Transport",  "description": "Transport hub or station" },
+    { "id": "refreshments", "label": "Refreshments",  "description": "Serves food and/or drink" },
+    { "id": "recreation", "label": "Recreation",  "description": "Picnic sites, play areas etc." },
+    { "id": "tourism", "label": "Tourism",  "description": "Other sites of tourist interest" }
   ],
 
   "walkType": [

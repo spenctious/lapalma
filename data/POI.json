@@ -22,7 +22,7 @@
     {
       "id": "02",
       "name": "test2",
-      "tags": ["information"],
+      "tags": ["info"],
       "description": "lorem impsum 2",
       "entryCost": "€6",
       "tel": "02030 3040320",
