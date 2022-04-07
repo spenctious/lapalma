@@ -34,5 +34,24 @@
           { "when": "Sun & Hol", "times": "CLOSED" }
         ]
     }
+  ],
+  [
+    "glasshouse",
+    {
+      "id": "03",
+      "name": "The 'Glass House' tourist information centre",
+      "tags": ["info"],
+      "description": "Located in a traffic roundabout conveniently situated near the port and bus terminal at the south end of Calle O'Daly. Lots of good information from friendly (generally) multi-lingual staff. Small bar situated right next door.",
+      "entryCost": "FREE",
+      "tel": "(0034) 922.412.106",
+      "email": "oitaridane@lapalmacit.com",
+      "location": "Plaza de la Constitución",
+      "openingTimes": 
+        [
+          { "when": "All week", "times": "08:30 - 19:30" },
+          { "when": "Hol", "times": "CLOSED" }
+        ]
+    }
   ]
+
 ]

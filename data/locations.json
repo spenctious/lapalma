@@ -1,5 +1,20 @@
 [
   [
+    "Plaza de la Constitución",
+    {
+      "areas": ["east"],
+      "province": "tbd",
+      "parking": "tbd",
+      "coordinates": "28.680835499593634, -17.766584895929874",
+      "bus": {
+        "notes": "tbd",
+        "routes": ["100", "120"],
+        "stop": "tbd"
+      },
+      "notes": "Bus interchange."
+    }
+  ],
+  [
     "Barlovento",
     {
       "areas": ["north", "east"],
