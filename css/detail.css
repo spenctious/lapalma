@@ -158,6 +158,15 @@ h4 {
   padding-right: 0.3rem;
 }
 
+.starred img,
+.favourite img {
+  height: 1.2rem;
+}
+
+.favourite {
+  float: right;
+}
+
 .route-metric {
   float: left;
   padding-right: 0.8rem;

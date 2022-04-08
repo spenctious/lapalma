@@ -203,16 +203,16 @@ function populateRouteDatail() {
   // route title with srarred and favourite icons
   let starredIcon = "";
   if (route.isStarred) starredIcon =
-    `<div class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></div>`;
+    `<span class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
   let favouriteIcon = "";
   if (favourites.size > 0 && favourites.has(route.id)) favouriteIcon =
-    `<img class="favourite" src="/img/icons/heart-empty.svg" alt="" />`;
+    `<span class="favourite"><img src="/img/icons/heart-empty.svg" alt="" /></span>`;
   let titleContent = `
     <h1>
       <span class="title-id">${route.id}</span>
       ${route.name}
-      <span "title-starred">${starredIcon}</span>
-      <span class="title-favourite">${favouriteIcon}</span>
+      ${starredIcon}
+      ${favouriteIcon}
     </div>
     `;
   document.getElementById("detail-title").innerHTML = titleContent;
@@ -243,8 +243,8 @@ function getVatiantContent(variant) {
   variantSummary += `<div class="route-metric"><img src="/img/icons/${variant.durationAttributes.icon}" alt="" /></div>`;
   variantSummary += `<div class="route-metric"><img src="/img/icons/${variant.effortAttributes.icon}" alt="" /></div>`;
   variantSummary += getSummaryIconHtml(variant.walkTypeAttributes.icon);
-  if (variant.accessCar.isPossible) variantSummary += getSummaryIconHtml(variant.accessCarAttributes.icon);
-  if (variant.accessBus.isPossible) variantSummary += getSummaryIconHtml(variant.accessBusAttributes.icon);
+  if (variant.isAccessibleByCar) variantSummary += getSummaryIconHtml(variant.accessCarAttributes.icon);
+  if (variant.isAccessibleByBus) variantSummary += getSummaryIconHtml(variant.accessBusAttributes.icon);
 
   // download content - only some variants will have additional files associated with them
   let downloadContent = variant.hasRouteFile ? `<div>${getDownloadButton(variant.routeFile)}</div>` : "";
