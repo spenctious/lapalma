@@ -189,6 +189,8 @@ class Data {
       paths: this.getPathsMap(route),
       hasPaths: "paths" in route,
 
+      images: route.images,
+
       variants: this.getVariantsArray(route),
       hasVariants: "variants" in route,
 
@@ -375,6 +377,15 @@ class Data {
     if ("paths" in route) {
       console.assert(Array.isArray(route.paths), `route ${route.id}: paths field must be array`);
       console.assert(route.paths.length > 0, `route ${route.id}: paths cannot be empty`);
+    }
+
+    console.assert("images" in route, `images is a required field`);
+  
+    if (Array.isArray(route.images)) {
+      console.assert(route.images.length > 0, "there must be at least one image");
+    }
+    else {
+      console.log("images must be an array");
     }
 
     if ("poi" in route) {

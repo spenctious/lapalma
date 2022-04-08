@@ -22,7 +22,10 @@
       "start": "Barlovento",
       "end": "Franceses",
       "paths": ["PR LP 02"],
-      "imageCount": "3",
+      
+      "images": [
+        { "id": "01", "caption": "Sugar mills" }
+      ],
 
       "variants": [
         {
@@ -85,6 +88,10 @@
       "end": "Franceses",
       "paths": ["PR LP 02"],
 
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
+
       "poi": ["test1", "test2"],
 
       "terrain": [
@@ -122,6 +129,10 @@
       "start": "Barlovento",
       "end": "Franceses",
       "paths": ["PR LP 19"],
+
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
 
       "variants": [
         {
@@ -200,6 +211,10 @@
       "end": "Franceses",
       "paths": ["PR LP 02"],
 
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
+
       "terrain": [
         [ "volcanic", "normal" ],
         [ "pine", "normal" ],
@@ -256,6 +271,10 @@
       "end": "Franceses",
       "paths": ["PR LP 02"],
 
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
+
       "terrain": [
         [ "volcanic", "normal" ],
         [ "pine", "normal" ],
@@ -311,6 +330,10 @@
       "start": "Barlovento",
       "end": "Franceses",
       "paths": ["PR LP 02"],
+
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
 
       "variants": [
         {
@@ -383,6 +406,10 @@
       "end": "Franceses",
       "paths": ["PR LP 02"],
 
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
+
       "variants": [
         {
           "id": "07a",
@@ -451,6 +478,10 @@
       "end": "Franceses",
       "paths": ["PR LP 02"],
 
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
+
       "terrain": [
         [ "laurisilva", "normal" ]
       ],
@@ -486,6 +517,10 @@
       "start": "Barlovento",
       "end": "Franceses",
       "paths": ["PR LP 02"],
+
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
 
       "variants": [
         {
@@ -576,6 +611,10 @@
       "start": "Barlovento",
       "end": "Franceses",
       "paths": ["PR LP 02"],
+
+      "images": [
+        { "id": "01", "caption": "" }
+      ],
 
       "variants": [
         {
