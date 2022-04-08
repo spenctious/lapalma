@@ -89,7 +89,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "View over Santa Cruz from Mirador de la Concepción," }
       ],
 
       "poi": ["test1", "test2"],
@@ -131,7 +131,7 @@
       "paths": ["PR LP 19"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "One of the small shrines along the Camino de las Fuentes" }
       ],
 
       "variants": [
@@ -212,7 +212,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Gallery tunnel" }
       ],
 
       "terrain": [
@@ -272,7 +272,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Cliff view along the GR130" }
       ],
 
       "terrain": [
@@ -332,7 +332,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Small viaduct in the laurisilva forest." }
       ],
 
       "variants": [
@@ -407,7 +407,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Los Tilos Bridge" }
       ],
 
       "variants": [
@@ -479,7 +479,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Sunny glade in the laurisilva forest." }
       ],
 
       "terrain": [
@@ -519,7 +519,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Marcos y Cordero Springs" }
       ],
 
       "variants": [
@@ -613,7 +613,7 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "" }
+        { "id": "01", "caption": "Fine coastal views and dragon trees on the approach to Gallegos." }
       ],
 
       "variants": [
