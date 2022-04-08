@@ -196,9 +196,7 @@ function filterRoutes() {
   // hide filtered out routes and update count of how many are matched
   laPalmaData.routes.forEach(route => {
     let routeIncluded = filterSet.applyActiveFilters(route);
-    let variantIncluded = filterSet.checkVariants(route);
-    // console.log(route.id + " included: " + included);
-    // console.log(route.id + " variantIncluded: " + variantIncluded);
+    let variantIncluded = routeIncluded ? false : filterSet.checkVariants(route);
     let routeDiv = document.getElementById("route" + route.id);
     let variantMatchDiv = document.getElementById("variant-match" + route.id);
 
