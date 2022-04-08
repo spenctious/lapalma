@@ -157,6 +157,7 @@ function populateRoutesGrid() {
               ${routeVarients}
             </div>
             ${starred}
+            <div class="variant-match" id="variant-match${route.id}">Variation matches</div>
           </div>
           <div class="route-detail">
             <div class="title">
@@ -194,15 +195,23 @@ function filterRoutes() {
 
   // hide filtered out routes and update count of how many are matched
   laPalmaData.routes.forEach(route => {
-    let included = filterSet.applyActiveFilters(route);
+    let routeIncluded = filterSet.applyActiveFilters(route);
+    let variantIncluded = filterSet.checkVariants(route);
+    // console.log(route.id + " included: " + included);
+    // console.log(route.id + " variantIncluded: " + variantIncluded);
     let routeDiv = document.getElementById("route" + route.id);
-    if (included) {
+    let variantMatchDiv = document.getElementById("variant-match" + route.id);
+
+    // show routes that match and flag up those that only match variants
+    if (routeIncluded || variantIncluded) {
       routeDiv.style.display = "block";
+      variantMatchDiv.style.display = !routeIncluded && variantIncluded ? "block" : "none";
       selectedRoutes.set(route.id, "in");
       ++matched;
     }
     else {
       routeDiv.style.display = "none";
+      variantMatchDiv.style.display = "none";
       selectedRoutes.set(route.id, "out");
     }
   });
@@ -633,6 +642,7 @@ class Location extends Filter {
 // favourites and routes grid according to the user selections
 class FilterSet {
   #allFilters;
+  #variantFilters;
   #filterIndex;
   #locationFilter;
   #activeFilterList;
@@ -647,22 +657,23 @@ class FilterSet {
 
     // Filters added in order they are laid out in HTML
     this.#allFilters = new Array();
+    this.#variantFilters = new Array();
     this.#filterIndex = 0;
     this.addGeneralFilter(new Starred("starred"));
     this.addGeneralFilter(new Favourite("favourites"));
-    this.addCategoryFilter(new WalkType("circular"));
+    this.addCategoryFilter(new WalkType("circular"), true); // variant filter
     this.addCategoryFilter(new Interest("archeological"));
     this.addCategoryFilter(new Terrain("dragon"));
     this.addCategoryFilter(new Warning("gps", false));
-    this.addCategoryFilter(new AccessCar("car"));
+    this.addCategoryFilter(new AccessCar("car"), true); // variant filter
     this.addCategoryFilter(new Interest("peaks"));
     this.addCategoryFilter(new Terrain("volcanic"));
     this.addCategoryFilter(new Warning("steep", true));
-    this.addCategoryFilter(new AccessBus("bus"));
+    this.addCategoryFilter(new AccessBus("bus"), true); // variant filter
     this.addCategoryFilter(new Interest("poi"));
     this.addCategoryFilter(new Terrain("laurisilva"));
     this.addCategoryFilter(new Warning("slippery", true));
-    this.addCategoryFilter(new ShortWalk("short"));
+    this.addCategoryFilter(new ShortWalk("short"), true); // variant filter
     this.addCategoryFilter(new Interest("port"));
     this.addCategoryFilter(new Terrain("coastal"));
     this.addCategoryFilter(new Warning("vertigo", true));
@@ -699,6 +710,7 @@ class FilterSet {
   }
 
   // Add a filter to the collection and assign the collection index as the id
+  // Add the filter to the list to be applied to variants if so indicated
   addFilter(filter) {
     filter.index = this.#filterIndex++;
     this.#allFilters.push(filter);
@@ -710,9 +722,10 @@ class FilterSet {
     this.#generalFiltersHtml += filter.html;
   }
 
-  addCategoryFilter(filter) {
+  addCategoryFilter(filter, variantFilter = false) {
     this.addFilter(filter);
     this.#categoryFiltersHtml += filter.html;
+    if (variantFilter) this.#variantFilters.push(filter);
   }
 
   addLocationFilter(filter) {
@@ -797,11 +810,13 @@ class FilterSet {
 
   /*** Filter application ***/
 
-  // check whether a particular route is filtered out or not
-  applyActiveFilters(route) {
+  // Check whether a particular route is filtered out or not
+  // If flagged as a variant, only check the list of variant filters
+  applyActiveFilters(route, variants = false) {
     let included = true;
+    let filters = variants ? this.#variantFilters : this.#allFilters;
     // Keep applying active filters until one of them rules a route out
-    this.#allFilters.every(filter => {
+    filters.every(filter => {
       switch (filter.state) {
         case ONLY:
           included = filter.apply(route);
@@ -812,6 +827,18 @@ class FilterSet {
       }
       return included;
     });
+    return included;
+  }
+
+  // If any variant matches the route is included
+  checkVariants(route) {
+    let included = false;
+    if (route.hasVariants) {
+      route.variants.every(variant => {
+        if (this.applyActiveFilters(variant, true)) included = true;
+        return included;
+      })
+    }
     return included;
   }
 

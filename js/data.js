@@ -264,14 +264,15 @@ class Data {
 
           duration: variant.duration,
           durationAttributes: this.duration.get(variant.duration),
+          isShort: variant.duration == "stroll" || variant.duration == "half",
 
           effort: variant.effort,
           effortAttributes: this.effort.get(variant.effort),
 
-          accessCar: variant.accessCar == "true",
+          isAccessibleByCar: variant.accessCar == "true",
           accessCarAttributes: this.basics.get("accessCar"),
 
-          accessBus: variant.accessBus == "true",
+          isAccessibleByBus: variant.accessBus == "true",
           accessBusAttributes: this.basics.get("accessBus"),
 
           start: variant.start,

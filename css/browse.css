@@ -74,6 +74,21 @@
   height: 1.5rem;
 }
 
+.variant-match {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  background-color: red;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: none;
+}
+
 /************************* Grid content: detail ************************/
 
 .route-detail {
