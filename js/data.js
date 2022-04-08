@@ -353,6 +353,9 @@ class Data {
     this.requiredNonEmptyString(route, "starred", route.starred);
     this.requiredBoolean(route, "starred", route.starred);
 
+    this.requiredNonEmptyString(route, "walkType", route.walkType);
+    console.assert(walkType.has(route.walkType), `route ${route.id}: ${route.walkType} is not a listed walkType type`);
+
     this.requiredNonEmptyString(route, "duration", route.duration);
     console.assert(duration.has(route.duration), `route ${route.id}: ${route.duration} is not a listed duration type`);
 
@@ -379,13 +382,13 @@ class Data {
       console.assert(route.paths.length > 0, `route ${route.id}: paths cannot be empty`);
     }
 
-    console.assert("images" in route, `images is a required field`);
+    console.assert("images" in route, `route ${route.id}: images is a required field`);
   
     if (Array.isArray(route.images)) {
-      console.assert(route.images.length > 0, "there must be at least one image");
+      console.assert(route.images.length > 0, `route ${route.id}: there must be at least one image`);
     }
     else {
-      console.log("images must be an array");
+      console.log(`route ${route.id}: images must be an array`);
     }
 
     if ("poi" in route) {
@@ -445,6 +448,18 @@ class Data {
         this.requiredNonEmptyString(route, "name", variant.id);
         this.requiredNonEmptyString(route, "description", variant.description);
 
+        this.requiredNonEmptyString(route, "duration", variant.duration);
+        console.assert(duration.has(variant.duration), `variant ${variant.id}: ${variant.duration} is not a listed duration type`);
+    
+        this.requiredNonEmptyString(route, "effort", variant.effort);
+        console.assert(effort.has(variant.effort), `variant ${variant.id}: ${variant.effort} is not a listed effort type`);
+    
+        this.requiredNonEmptyString(route, "accessCar", variant.accessCar);
+        this.requiredBoolean(route, "accessCar", variant.accessCar);
+    
+        this.requiredNonEmptyString(route, "accessBus", variant.accessBus);
+        this.requiredBoolean(route, "accessBus", variant.accessBus);
+    
         if ("routeFile" in variant) {
           console.assert(typeof variant.routeFile == "string", `route ${route.id}: routeFile must be a string`);
           console.assert(variant.routeFile != "", `route ${route.id}: routeFile must not be empty`);
