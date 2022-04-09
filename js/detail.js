@@ -28,7 +28,14 @@ function initialize() {
   collectionParam = urlParams.get(URL_PARAM_COLLECTION);
   collection = collectionParam.split(',');
   collectionIndex = collection.findIndex(item => item == routeId);
-  updateNavButtons();
+
+  // update the navigation bar - no need for nav buttons for single route collections
+  document.getElementById("current").innerHTML = `${collectionIndex + 1} of ${collection.length}`;
+  if (collection.length < 2) {
+    document.getElementById("prev").style.display = "none";
+    document.getElementById("next").style.display = "none";
+    return;
+  }
 
   // populate the various components with the current route data
   populateRouteDatail();
@@ -36,31 +43,12 @@ function initialize() {
   populateBasics();
 
   // add event listeners for the specified areas
-  document.getElementById("collection-nav").addEventListener("click", navClickHandler);
-}
-
-function updateNavButtons() {
-  document.getElementById("current").innerHTML = `${collectionIndex + 1} of ${collection.length}`;
-
-  // single route - no navigation
-  if (collection.length < 2) {
-    document.getElementById("prev").style.display = "none";
-    document.getElementById("next").style.display = "none";
-    return;
-  }
-
-  // if at start of list previous button becomes jump to last
-  let prev = collectionIndex == 0 ? "Last" : "&lsaquo;";
-  document.getElementById("prev").innerHTML = prev;
-
-  // if at end of list next button becomes jump to first
-  let next = collectionIndex == collection.length - 1 ? "First" : "&rsaquo;";
-  document.getElementById("next").innerHTML = next;
+  document.getElementById("wrapper").addEventListener("click", mainClickHandler);
 }
 
 /************************* Click handlers ************************/
 
-function navClickHandler(event) {
+function mainClickHandler(event) {
   let elementId = event.target.id;
   let lastIndex = collection.length - 1;
   
@@ -72,6 +60,30 @@ function navClickHandler(event) {
   if (elementId == "prev") {
     routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
     window.location.href = `./route-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+  }
+
+  if (event.target.closest("#basics-summary") != null) {
+    document.getElementById("basics-detail-grid").style.display = "block";
+    document.getElementById("basics-summary").style.display = "none";
+    return;
+  }
+
+  if (elementId == "basics-title") {
+    document.getElementById("basics-detail-grid").style.display = "none";
+    document.getElementById("basics-summary").style.display = "grid";
+    return;
+  }
+
+  if (event.target.closest("#features-and-warnings-summary") != null) {
+    document.getElementById("features-and-warnings").style.display = "grid";
+    document.getElementById("features-and-warnings-summary").style.display = "none";
+    return;
+  }
+
+  if (elementId == "features-title") {
+    document.getElementById("features-and-warnings").style.display = "none";
+    document.getElementById("features-and-warnings-summary").style.display = "grid";
+    return;
   }
 }
 

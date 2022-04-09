@@ -201,7 +201,7 @@ class Data {
       poi: this.getPoiMap(route),
       hasPoi: "poi" in route,
 
-      dangers: "dangers" in route ? new Array(route.dangers) : new Array(),
+      dangers: "dangers" in route ? route.dangers : new Array(),
       hasDangers: "dangers" in route
     }
   }
