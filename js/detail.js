@@ -220,7 +220,7 @@ function populateRouteDatail() {
   // variants (if any)
   let variantsContent = "";
   if (route.hasVariants) {
-    route.variants.forEach(variant => variantsContent += getVatiantContent(variant));
+    route.variants.forEach(variant => variantsContent += getVariantContent(variant));
   }
 
   // main body of detail
@@ -234,7 +234,7 @@ function populateRouteDatail() {
   document.getElementById("detail-body").innerHTML = bodyContent;
 }
 
-function getVatiantContent(variant) {
+function getVariantContent(variant) {
   // title
   let title = `<h2><span class="variant-title-id">${variant.id}</span>${variant.name}</h2>`;
 
