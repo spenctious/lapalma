@@ -181,7 +181,7 @@ function populateFeaturesAndWarnings() {
   if (route.hasDangers) {
     route.dangers.forEach(danger => {
       dangersList += `
-        <p>${getStrongHtml(danger.strength == "strong", categories.danger.strong)}</p>
+        <p>${getStrongHtml(danger.strength == "strong", laPalmaData.categories.danger.strong)}</p>
         <h4>${danger.name}</h4>
         <p>${danger.description}</p>`;
     });
