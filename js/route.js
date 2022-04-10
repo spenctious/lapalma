@@ -815,10 +815,10 @@ class FilterSet {
     this.#allFilters.forEach(filter => {
       if (!this.#activeFilterList.has(filter.index.toString())) {
         if (limitReached) {
-          console.log("disabling " + filter.name);
+          // console.log("disabling " + filter.name);
         }
         else {
-          console.log("enabling " + filter.name);
+          // console.log("enabling " + filter.name);
         }
       }
     })
