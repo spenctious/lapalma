@@ -1,5 +1,7 @@
 "use strict";
 
+const MAX_FILTERS = 3;
+
 // object handling filter panel and filters within
 var filterSet;
 
@@ -778,6 +780,7 @@ class FilterSet {
   updateGrids() {
     this.updateActiveFilterGrid();
     this.updateLocationMessage();
+    this.updateFilterIcons();
     filterRoutes();
   }
 
@@ -804,6 +807,21 @@ class FilterSet {
       });
     }
     document.getElementById("active-filter-grid").innerHTML = activeFilterGridContents;
+  }
+
+  // disables unused filter icons if the maximum number of filters is already set
+  updateFilterIcons() {
+    let limitReached = this.#activeFilterList.size == MAX_FILTERS;
+    this.#allFilters.forEach(filter => {
+      if (!this.#activeFilterList.has(filter.index.toString())) {
+        if (limitReached) {
+          console.log("disabling " + filter.name);
+        }
+        else {
+          console.log("enabling " + filter.name);
+        }
+      }
+    })
   }
 
   /*** Filter application ***/
@@ -842,6 +860,14 @@ class FilterSet {
 
   /*** Respond to click events ***/
 
+  // Returns true if the filter limit has not been reached or the filter is already selected
+  filterIsSelectable(filter) {
+    let activeFilterClicked = this.#activeFilterList.has(filter.index.toString());
+    let limitReached = this.#activeFilterList.size == MAX_FILTERS;
+
+    return !limitReached || activeFilterClicked;
+  }
+
   // Deletion cross on an active filter clicked - remove filter
   deleteActiveFilter(elementId) {
     let activeFilterId = elementId.replace("active-filter", "");
@@ -857,14 +883,16 @@ class FilterSet {
   toggle(elementId) {
     let filterId = elementId.replace("filter", ""); // strip prefix to get the filter name
     let selectedFilter = this.#allFilters[filterId];
-    selectedFilter.toggle();
 
-    if (selectedFilter.isOff) {
-      this.#activeFilterList.delete(filterId);
-    } else {
-      this.#activeFilterList.add(filterId);
+    if (this.filterIsSelectable(selectedFilter)) {
+        selectedFilter.toggle();
+      if (selectedFilter.isOff) {
+        this.#activeFilterList.delete(filterId);
+      } else {
+        this.#activeFilterList.add(filterId);
+      }
+      this.updateGrids();
     }
-    this.updateGrids();
   }
 
   // Turn everything off and empty active filter list
@@ -888,18 +916,24 @@ class FilterSet {
   /*** Respond to location area click events ***/
 
   selectAllLocations() {
-    this.#locationFilter.selectAllLocations();
-    this.updateLocationFilter();
+    if (this.filterIsSelectable(this.#locationFilter)) {
+      this.#locationFilter.selectAllLocations();
+      this.updateLocationFilter();
+    }
   }
 
   clearAllLocations() {
-    this.#locationFilter.clearAllLocations();
-    this.updateLocationFilter();
+    if (this.filterIsSelectable(this.#locationFilter)) {
+      this.#locationFilter.clearAllLocations();
+      this.updateLocationFilter();
+    }
   }
 
   toggleLocationSelector(elementId) {
-    this.#locationFilter.toggleLocationSelector(elementId);
-    this.updateLocationFilter();
+    if (this.filterIsSelectable(this.#locationFilter)) {
+      this.#locationFilter.toggleLocationSelector(elementId);
+      this.updateLocationFilter();
+    }
   }
 
   // Changing the area selection automatically turns the filter on
