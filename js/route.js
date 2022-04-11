@@ -319,11 +319,13 @@ class Filter {
   #category;
   #toggleControl;
   #name;
+  #isEnabled;
 
   constructor(name, category, toggle) {
     this.#name = name;
     this.#category = category;
     this.#toggleControl = toggle;
+    this.#isEnabled = true;
   }
 
   toggle(targetState) {
@@ -341,6 +343,12 @@ class Filter {
   }
 
   // getters and setters
+  set enabled(state) {
+    this.#isEnabled = state;
+    this.#updateScreenStatus();
+  }
+  get enabled() { return this.#isEnabled; }
+
   get name() { return this.#name; }
   set index(index) { this.#index = index; }
   get index() { return this.#index; }
@@ -354,32 +362,36 @@ class Filter {
 
   get html() {
     let filterHtml =
-      `<div id="${this.id}" class="icon">
+    `<div id="${this.id}" class="icon">
       <img src="/img/icons/${this.icon}" class="icon-img" alt="" />
-      <img id="${this.id + "cross"}" class="filter-status" src="/img/icons/red-cross.svg" style="display: none;" alt="" />
-      <img id="${this.id + "tick"}" class="filter-status" src="/img/icons/green-tick.svg" style="display: none;" alt="" />
     </div>`;
     return filterHtml;
   }
 
+  enableInactive(setEnabled) {
+    if (this.state == OFF) {
+      this.enabled = setEnabled;
+    }
+  }
+
   #updateScreenStatus() {
-    let tick = document.getElementById(this.id + "tick");
-    let cross = document.getElementById(this.id + "cross");
-    switch (this.#toggleControl.state) {
-      case OFF:
-        tick.style.display = "none";
-        cross.style.display = "none";
-        break;
+    let icon = document.getElementById(this.id);
+    if (this.enabled) {
+      switch (this.#toggleControl.state) {
+        case OFF:
+          icon.className = "icon";
+          break;
 
-      case ONLY:
-        tick.style.display = "block";
-        cross.style.display = "none";
-        break;
+        case ONLY:
+          icon.classList.add("included");
+          break;
 
-      case NO:
-        tick.style.display = "none";
-        cross.style.display = "block";
-        break;
+        case NO:
+          icon.classList.add("excluded");
+          break;
+      }
+    } else {
+      icon.classList.add("disabled");
     }
   }
 }
@@ -813,14 +825,7 @@ class FilterSet {
   updateFilterIcons() {
     let limitReached = this.#activeFilterList.size == MAX_FILTERS;
     this.#allFilters.forEach(filter => {
-      if (!this.#activeFilterList.has(filter.index.toString())) {
-        if (limitReached) {
-          // console.log("disabling " + filter.name);
-        }
-        else {
-          // console.log("enabling " + filter.name);
-        }
-      }
+      filter.enableInactive(!limitReached);
     })
   }
 
@@ -884,7 +889,7 @@ class FilterSet {
     let filterId = elementId.replace("filter", ""); // strip prefix to get the filter name
     let selectedFilter = this.#allFilters[filterId];
 
-    if (this.filterIsSelectable(selectedFilter)) {
+    if (selectedFilter.enabled) {
         selectedFilter.toggle();
       if (selectedFilter.isOff) {
         this.#activeFilterList.delete(filterId);

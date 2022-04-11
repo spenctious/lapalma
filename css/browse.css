@@ -345,10 +345,31 @@
   padding: 0.5rem;
 }
 
+.disabled {
+  opacity: 0.5;
+}
+
+.disabled > img {
+  opacity: 0.5;
+}
+
 .icon-img {
   width: 100%;
   height:100%;
   object-fit: contain;
+}
+
+.included > img,
+.excluded > img {
+  filter: invert(100%);
+}
+
+.included {
+  background-color: green;
+}
+
+.excluded {
+  background-color: red;
 }
 
 .filter-status {
