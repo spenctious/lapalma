@@ -912,7 +912,7 @@ class FilterSet {
   // Deletes favourites and updates the routes grid accordingly before refreshing filter result
   clearFavourites() {
     favourites.clear();
-    routes.routes.forEach(route => {
+    laPalmaData.routes.forEach(route => {
       document.getElementById("favourite" + route.id).src = "/img/icons/heart-empty.svg";
     })
     this.updateGrids();
