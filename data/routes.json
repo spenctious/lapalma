@@ -24,7 +24,9 @@
       "paths": ["PR LP 02"],
       
       "images": [
-        { "id": "01", "caption": "Sugar mills" }
+        { "id": "01", "caption": "Sugar mills near Santa Cruz" },
+        { "id": "02", "caption": "Iglesia de El Salvador, Plaza de España" },
+        { "id": "03", "caption": "Steep climb past colourful houses" }
       ],
 
       "variants": [
@@ -89,7 +91,11 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "View over Santa Cruz from Mirador de la Concepción," }
+        { "id": "01", "caption": "View over Santa Cruz from Mirador de la Concepción" },
+        { "id": "02", "caption": "Canal de Breña, covered waterway" },
+        { "id": "03", "caption": "Barranco de las Nieves (dried river bed)" },
+        { "id": "04", "caption": "Castillo de La Virgen, at the walk finish" },
+        { "id": "05", "caption": "Museo Naval (ship museum), at the walk finish" }
       ],
 
       "poi": ["test1", "test2"],
@@ -131,7 +137,9 @@
       "paths": ["PR LP 19"],
 
       "images": [
-        { "id": "01", "caption": "One of the small shrines along the Camino de las Fuentes" }
+        { "id": "01", "caption": "One of the small shrines along the Camino de las Fuentes" },
+        { "id": "02", "caption": "Ancient washing basins near the walk start" },
+        { "id": "03", "caption": "Chestnut forest with many other species mixed in" }
       ],
 
       "variants": [
@@ -212,7 +220,10 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Gallery tunnel" }
+        { "id": "01", "caption": "Gallery tunnel" },
+        { "id": "02", "caption": "The gallery path has partial protection from the steep drops" },
+        { "id": "03", "caption": "View into the valley from up high" },
+        { "id": "04", "caption": "View over Santa Cruz on the descent" }
       ],
 
       "terrain": [
@@ -272,7 +283,9 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Cliff view along the GR130" }
+        { "id": "01", "caption": "Cliff view along the GR130" },
+        { "id": "02", "caption": "Jacaranda tree at the Fuente de San Juan" },
+        { "id": "03", "caption": "The only place where the GR130 actually meets the sea" }
       ],
 
       "terrain": [
@@ -332,7 +345,10 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Small viaduct in the laurisilva forest." }
+        { "id": "01", "caption": "Small viaduct in the laurisilva forest." },
+        { "id": "02", "caption": "Deep in the laurisilva forest" },
+        { "id": "03", "caption": "Mirador Somada Alta" },
+        { "id": "04", "caption": "Caves along the PR LP 5 variant route" }
       ],
 
       "variants": [
@@ -407,7 +423,8 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Los Tilos Bridge" }
+        { "id": "01", "caption": "Los Tilos Bridge" },
+        { "id": "02", "caption": "Nuestra Senora de Montserrat (church), Los Sauces" }
       ],
 
       "variants": [
@@ -479,7 +496,9 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Sunny glade in the laurisilva forest." }
+        { "id": "01", "caption": "Sunny glade in the laurisilva forest." },
+        { "id": "02", "caption": "Mirador de las Barandas" },
+        { "id": "03", "caption": "Looking up the Los Tilos valley" }
       ],
 
       "terrain": [
@@ -519,7 +538,11 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Marcos y Cordero Springs" }
+        { "id": "01", "caption": "Marcos y Cordero Springs" },
+        { "id": "02", "caption": "Narrow gallery path approaching the tunnels" },
+        { "id": "03", "caption": "Springs after the tunnels" },
+        { "id": "04", "caption": "Cascada De Los Tilos (walk 9c)" },
+        { "id": "05", "caption": "Some big boulders to negotiate on the descent" }
       ],
 
       "variants": [
@@ -613,7 +636,9 @@
       "paths": ["PR LP 02"],
 
       "images": [
-        { "id": "01", "caption": "Fine coastal views and dragon trees on the approach to Gallegos." }
+        { "id": "01", "caption": "La Tosca has a small dragon tree grove" },
+        { "id": "02", "caption": "The approach to Gallegos" },
+        { "id": "03", "caption": "Branch route leading to the sea" }
       ],
 
       "variants": [
