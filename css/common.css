@@ -5,8 +5,14 @@
   --colour0: #313030;
   --colour1: #565656;
   --colour3: #f6f5f5;
+  --colour-light-bkg: #fefefe;
+  --included-back-colour: #00802b;
+  --excluded-back-colour: #e60000;
+  --highlight-back-colour: #ffff00;
+  --highlight-colour: black;
 
-  --nav-width: 15em;
+  --nav-width: 250px;
+  --filter-panel-width: 15.5rem;
 }
 
 html, body {
@@ -66,14 +72,31 @@ html, body {
   font-weight: 300;
   z-index: 2; /* position over background-dimming overlay */
   top: 0;
-  left: -250px;
+  left: 0px;
+  transform: translateX(-100%);
+  transition: transform 250ms ease-in-out;
   background-color: var(--colour1);
   overflow-x: hidden; /* disable horizontal scroll */
   padding-top: 0px;
   white-space: nowrap;
-  transition: left 0.5s;
-  display: none;
 }
+
+.filter-panel {
+  height: 100%;
+  width: var(--filter-panel-width);
+  position: fixed;
+  z-index: 2; /* position over background-dimming overlay */
+  top: 0;
+  left: 100%;
+  /* transform: translateX(-100%); */
+  transition: transform 250ms ease-in-out;
+  background-color: var(--colour3);
+  overflow-x: hidden; /* disable horizontal scroll */
+  padding-top: 0px;
+  white-space: nowrap;
+  background-color: white;
+}
+
 
 /* Menu links */
 .sidenav a {
@@ -116,14 +139,7 @@ html, body {
 
 #wrapper {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 1fr;
   column-gap: 20px;
-}
-
-/* Initially navbar and filter are slide-out components, not part of the grid */
-#header, 
-#main-content, 
-#footer {
-  grid-column: 1 / span 12;
 }
 

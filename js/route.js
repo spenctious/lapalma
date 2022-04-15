@@ -29,9 +29,9 @@ function initialize() {
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
 
-  // restore filter state
+  // restore filter state if set
   let retrievedState = window.history.state;
-  if (retrievedState != null && retrievedState != {}) {
+  if (retrievedState != undefined && retrievedState != null && JSON.stringify(retrievedState) != '{}') {
     filterSet.restoreState(retrievedState);
   }
 }
@@ -673,27 +673,39 @@ class FilterSet {
     this.#filterIndex = 0;
     this.addGeneralFilter(new Starred("starred"));
     this.addGeneralFilter(new Favourite("favourites"));
+
+    this.startCategory("Basic");
     this.addCategoryFilter(new WalkType("circular"), true); // variant filter
-    this.addCategoryFilter(new Interest("archeological"));
-    this.addCategoryFilter(new Terrain("dragon"));
-    this.addCategoryFilter(new Warning("gps", false));
     this.addCategoryFilter(new AccessCar("car"), true); // variant filter
-    this.addCategoryFilter(new Interest("peaks"));
-    this.addCategoryFilter(new Terrain("volcanic"));
-    this.addCategoryFilter(new Warning("steep", true));
     this.addCategoryFilter(new AccessBus("bus"), true); // variant filter
-    this.addCategoryFilter(new Interest("poi"));
-    this.addCategoryFilter(new Terrain("laurisilva"));
-    this.addCategoryFilter(new Warning("slippery", true));
     this.addCategoryFilter(new ShortWalk("short"), true); // variant filter
-    this.addCategoryFilter(new Interest("port"));
-    this.addCategoryFilter(new Terrain("coastal"));
-    this.addCategoryFilter(new Warning("vertigo", true));
     this.addCategoryFilter(new Waymarked("waymarked"));
+    this.endCategory();
+
+    this.startCategory("Interest");
+    this.addCategoryFilter(new Interest("archeological"));
+    this.addCategoryFilter(new Interest("peaks"));
+    this.addCategoryFilter(new Interest("poi"));
+    this.addCategoryFilter(new Interest("port"));
     this.addCategoryFilter(new Interest("scenic"));
+    this.endCategory();
+
+    this.startCategory("Terrain");
+    this.addCategoryFilter(new Terrain("dragon"));
+    this.addCategoryFilter(new Terrain("volcanic"));
+    this.addCategoryFilter(new Terrain("laurisilva"));
+    this.addCategoryFilter(new Terrain("coastal"));
     this.addCategoryFilter(new Terrain("pine"));
+    this.endCategory();
+
+    this.startCategory("Warnings");
+    this.addCategoryFilter(new Warning("gps", false));
+    this.addCategoryFilter(new Warning("steep", true));
+    this.addCategoryFilter(new Warning("slippery", true));
+    this.addCategoryFilter(new Warning("vertigo", true));
     this.addCategoryFilter(new Warning("weather", false));
     this.addLocationFilter(new Location("location"));
+    this.endCategory();
 
     this.#activeFilterList = new Set();
 
@@ -740,6 +752,14 @@ class FilterSet {
     if (variantFilter) this.#variantFilters.push(filter);
   }
 
+  startCategory(label) {
+    this.#categoryFiltersHtml += `<div class="feature-heading">${label}</div><div class="filter-row">`;
+  }
+
+  endCategory() {
+    this.#categoryFiltersHtml += `</div>`;
+  }
+
   addLocationFilter(filter) {
     this.addFilter(filter);
     this.#locationFilterHtml = filter.html;
@@ -749,18 +769,12 @@ class FilterSet {
   // Add grid content to the filter panel
   populateFilterPanel() {
     // general filters
-    let generalFilterGridContent = `<div id="clear-favourites" class="text-button">Clear favourites</div>`;
-    generalFilterGridContent += this.#generalFiltersHtml;
+    let generalFilterGridContent = this.#generalFiltersHtml;
+    generalFilterGridContent += `<div id="clear-favourites" class="text-button">Clear favourites</div>`;
     document.getElementById("general-filter-grid").innerHTML = generalFilterGridContent;
 
     // category filters
-    let categoryFilterGridContent = `
-    <div class="feature-heading">Basic</div>
-    <div class="feature-heading">Interest</div>
-    <div class="feature-heading">Terrain</div>
-    <div class="feature-heading">Warnings</div>`;
-    categoryFilterGridContent += this.#categoryFiltersHtml;
-    document.getElementById("category-filter-grid").innerHTML = categoryFilterGridContent;
+    document.getElementById("category-filter-grid").innerHTML = this.#categoryFiltersHtml;
 
     // location filters
     let locationFilterGridContent = this.#locationFilterHtml;
@@ -782,8 +796,8 @@ class FilterSet {
   }
 
   get locationFilterMessage() {
-    if (this.#locationFilter.allAreasSelected) return "Remove one or more areas to apply filter.";
-    if (this.#locationFilter.noAreasSelected) return "Add one or more areas to apply filter.";
+    if (this.#locationFilter.allAreasSelected) return "Remove one or more areas<br/> to apply filter.";
+    if (this.#locationFilter.noAreasSelected) return "Add one or more areas<br/> to apply filter.";
     return "";
   }
 
@@ -811,7 +825,7 @@ class FilterSet {
       this.#activeFilterList.forEach(filterId => {
         let filter = this.#allFilters[filterId];
         activeFilterGridContents += `
-          <div class="active-filter-${filter.state}">
+          <div class="active-filter state-${filter.state}">
             <div>${filter.state}</div>
             <div>${filter.text}</div>
             <div id="active-${filter.id}" class="close-cross">&times;</div>

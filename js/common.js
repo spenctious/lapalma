@@ -33,13 +33,21 @@ function addMenuItems() {
 }
 
 function openNav() {
-  document.getElementById("navbar").style.left = "0px";
-  document.getElementById("navbar").style.display = "block";
+  document.getElementById("navbar").style.transform = "translateX(0)";
   document.getElementById("overlay").style.display = "block";
 }
 
-/* Set the width of the side navigation to 0 */
 function closeNav() {
-  document.getElementById("navbar").style.left = "-250px";
+  document.getElementById("navbar").style.transform = "translateX(-100%)";
   document.getElementById("overlay").style.display = "none";
+}
+
+function openFilterPanel() {
+  document.getElementById("filter").style.transform = "translateX(-100%)";
+  // document.getElementById("overlay").style.display = "block";
+}
+
+function closeFilterPanel() {
+  document.getElementById("filter").style.transform = "translateX(0)";
+  // document.getElementById("overlay").style.display = "none";
 }
