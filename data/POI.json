@@ -48,10 +48,62 @@
       "location": "Plaza de la Constitución",
       "openingTimes": 
         [
-          { "when": "All week", "times": "08:30 - 19:30" },
+          { "when": "Daily", "times": "08:30 - 19:30" },
           { "when": "Hol", "times": "CLOSED" }
         ]
     }
+  ],
+  [
+    "san antonio",
+    {
+      "id": "00",
+      "name": "Volcán San Antonio Visitor Centre",
+      "tags": ["museum", "info", "refreshments"],
+      "description": "Good geological exhibition, cafe & toilets. Also the place to arrange camel rides.",
+      "entryCost": "5€ (inc. parking)",
+      "tel": "(+34) 691 593 584",
+      "location": "Los Canarios",
+      "openingTimes": 
+        [
+          { "when": "Daily", "times": "09:00 – 17:30" },
+          { "when": "Daily (Jul - Sep)", "times": "10:00 – 18:30" }
+        ]
+    }
+  ],
+  [
+    "lighthouse museum",
+    {
+      "id": "00",
+      "name": "Centro de Interpretación de la Reserva Marina",
+      "tags": ["museum"],
+      "description": "The old lighthouse with attached (not very good) museum.",
+      "entryCost": "2€",
+      "tel": "(+34) 922 480 223",
+      "email": "reservasmarinas@mapya.es",
+      "location": "Faro de Fuencaliente",
+      "openingTimes": 
+        [
+          { "when": "Tue to Sat", "times": "09:00 - 17:00" },
+          { "when": "Wed to Sun (Jul - Sep)", "times": "10:00 - 18:00" }
+        ]
+    }
+  ],
+  [
+    "salinas",
+    {
+      "id": "00",
+      "name": "Salinas de Fuencaliente",
+      "tags": ["museum", "refreshments"],
+      "description": "Interesting self-guided tour around family-run salt pans. One of the island's main visitor attractions.",
+      "entryCost": "FREE",
+      "tel": "(+34) 922 411 523 and 922 696 002",
+      "email": "info@salinasdefuencaliente.com",
+      "web": "https://salinasdefuencaliente.es/",
+      "location": "Faro de Fuencaliente",
+      "openingTimes": 
+        [
+          { "when": "Daily", "times": "09.00 - 19.00" }
+        ]
+    }
   ]
-
 ]

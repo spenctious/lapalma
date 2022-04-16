@@ -691,6 +691,64 @@
         [ "slippery", "Loose material on barranco descents." ],
         [ "vertigo", "Mild exposure along the cliffs." ]
       ]
+    },
+    {
+      "id": "38",
+      "name": "Volcan Teneguia to the lighthouses",
+      "lengthKm": "7.6",
+      "lengthMiles": "4.7",
+      "walkingTime": "02:00",
+      "shortDescription": "Volcanic descent with peak-bagging opportunity.",
+      "description": "After circling Volcán San Antonio and climbing Volcán Teneguia (optional) the path descends through a volcanic wasteland to the lighthouses, salt pans and sea at the southern tip of the island.",
+      "starred": "false",
+      "walkType": "linear",
+      "duration": "half",
+      "effort": "moderate",
+      "waymarked": "false",
+      "accessCar": "false",
+      "accessBus": "true",
+      "province": "Fuencaliente",
+      "town": "Los Canarios",
+      "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
+      "refreshments": "Bars/cafés/restaurants and shops in Los Canarios. Café in the visitor centre, restaurant near the access road. Restaurant by the salt pans in Faro de Fuencaliente.",
+      "start": "Volcán San Antonio",
+      "end": "Faro de Fuencaliente",
+      "paths": ["GR 131 Etapa 3"],
+      
+      "images": [
+        { "id": "01", "caption": "New Faro de Fuencaliente with the old lighthouse (now a museum) behind" },
+        { "id": "02", "caption": "Climbing Volcán de Teneguía" },
+        { "id": "03", "caption": "Final crater rim walk to summit of Volcán de Teneguía" },
+        { "id": "04", "caption": "Descending from Volcán de Teneguía to the lighthouses" },
+        { "id": "05", "caption": "Salt pans next to the lighthouse" }
+      ],
+
+      "poi": ["san antonio", "lighthouse museum", "salinas"],
+
+      "terrain": [
+        [ "volcanic", "strong" ]
+      ],
+
+      "interest": [
+        [ "port", "normal" ],
+        [ "poi", "strong" ],
+        [ "scenic", "normal" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "strong" ],
+        [ "steep", "strong" ],
+        [ "weather", "normal" ]
+      ],
+
+      "notes": [
+        [ "waymarked", "Marked paths except for a shortcut and the obvious route up Teneguia" ],
+        [ "vertigo", "Volcán Teneguía is a moderate vertigo risk and unsafe in high winds." ],
+        [ "steep", "Some scrambling needed when ascending Volcán Teneguía" ],
+        [ "weather", "Volcán Teneguía should be avoided in strong winds or poor visibility" ]
+      ]
     }
+
   ]
 }

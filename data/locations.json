@@ -110,6 +110,58 @@
       },
       "notes": "Bus interchange"
     }
+  ],
+  [
+    "Faro de Fuencaliente",
+    {
+      "areas": ["south"],
+      "province": "Fuencaliente",
+      "parking": "Free (sizable) car park",
+      "bus": {
+        "notes": "Route 23 stops at Hotel Princess and Volcan San Antonio (on request).",
+        "routes": [
+          "23"
+        ],
+        "stop": "Faro de Fuencaliente"
+      },
+      "notes": "There is a small beach near the lighthouses."
+    }
+  ],
+  [
+    "Los Canarios",
+    {
+      "areas": ["south"],
+      "province": "Fuencaliente",
+      "parking": "",
+      "bus": {
+        "notes": "Route 23 stops at Hotel Princess and Volcan San Antonio (request).",
+        "routes": [
+          "210",
+          "201",
+          "200",
+          "23"
+        ],
+        "stop": "Faro de Fuencaliente"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Volcán San Antonio",
+    {
+      "areas": ["south"],
+      "province": "Fuencaliente",
+      "parking": "Some free spaces before the entrance or in the carpark if you have a visitor centre ticket.",
+      "bus": {
+        "notes": "The visitor centre is a request stop",
+        "routes": [
+          "23"
+        ],
+        "stop": "Volcán San Antonio"
+      },
+      "notes": "The volcano is a short walk down from Los Canarios"
+    }
   ]
+
 ]
 
