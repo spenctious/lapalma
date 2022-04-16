@@ -14,7 +14,7 @@
 #routes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 260px);
-  gap: 5px;
+  gap: 0.5rem;
   justify-content: center;
 }
 
@@ -26,6 +26,10 @@
   background-color: yellow;
   color: black;
   padding: 5px;
+}
+
+.route {
+  border: 1px solid lightgray;
 }
 
 /************************* Grid content: pic ************************/
@@ -93,7 +97,7 @@
 
 .route-detail {
   background-color: white;
-  padding: 5px;
+  padding: 0.5rem;
   position: relative;
   height: 7rem;
 }
@@ -101,25 +105,25 @@
 .favourite {
   float: right;
   height: 1.2rem;
-  padding-left: 1rem;
-  padding-bottom: 1.2rem;
-  padding-top: 0.2rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+  cursor: pointer;
+  opacity: 0.5; /* tone down the icon */
 }
 
 .route-detail .title {
   font-weight: bold;
   font-size: 0.8rem;
   line-height: 1rem;
-  height: 2rem;
-  margin-bottom: 0.3rem;
-  overflow: hidden;
+  overflow: visible;
+  margin-bottom: 0.5rem;
 }
 
 .route-detail .description {
   font-size: 0.8rem;
   line-height: 1rem;
   height: 2rem;
-  margin-bottom: 0.2rem;
   overflow: hidden;
 }
 
@@ -360,6 +364,7 @@
   display: block;
   padding: 0.3rem;
   background-color: white;
+  box-shadow: 0 0 3px 0px lightgrey;
 }
 
 .disabled {

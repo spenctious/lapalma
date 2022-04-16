@@ -322,7 +322,7 @@ function getSummaryIconsContent(itemsMap) {
 
 // tags where some property is marked as strong
 function getStrongHtml(isStrong, strongText) {
-  return isStrong ? `<span class="strong-indicator">${strongText}</span><br />` : "";
+  return isStrong ? `<span class="strong-indicator">${strongText}</span>` : "";
 }
 
 // duration or effort icons with text label
