@@ -98,8 +98,6 @@
         { "id": "05", "caption": "Museo Naval (ship museum), at the walk finish" }
       ],
 
-      "poi": ["test1", "test2"],
-
       "terrain": [
         [ "riverbed", "normal" ]
       ],
@@ -159,8 +157,6 @@
           "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
-
-      "poi": ["test1", "test2"],
 
       "terrain": [
         [ "volcanic", "strong" ],
@@ -693,6 +689,73 @@
       ]
     },
     {
+      "id": "37",
+      "name": "Volcan San Antonio",
+      "lengthKm": "5.9",
+      "lengthMiles": "3.7",
+      "walkingTime": "01:30",
+      "shortDescription": "A simple walk around Volcán San Antonio.",
+      "description": "An easy circuit of the volcano if you want something more than just the summit climb. Takes in some faint petroglyphs on the way.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "stroll",
+      "effort": "easy",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Fuencaliente",
+      "town": "Los Canarios",
+      "routeFile": "LP37 Volcan San Antonio.gpx",
+      "refreshments": "Café in the visitor centre and a restaurant near the access road.",
+      "start": "Volcán San Antonio",
+      "end": "Volcán San Antonio",
+      "paths": ["GR 131 Etapa 3"],
+      
+      "images": [
+        { "id": "01", "caption": "Centro de Visitantes del San Antonio" },
+        { "id": "02", "caption": "Volcán de San Antonio" },
+        { "id": "03", "caption": "Path round crest of Volcán de San Antonio" }      ],
+
+      "variants": [
+        {
+          "id": "37a",
+          "name": "Walk 38 with Volcán Teneguía summit",
+          "description": "Add-on to climb the peak",
+          "walkType": "circular",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Volcán San Antonio",
+          "end": "Volcán San Antonio",
+          "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
+          "routeDirections": "At [37](06) side trip [38](09 to 12 and back)"
+        }
+      ],
+	  
+      "poi": ["san antonio"],
+
+      "terrain": [
+        [ "volcanic", "strong" ]
+      ],
+
+      "interest": [
+        [ "poi", "normal" ],
+        [ "scenic", "normal" ],
+        [ "peaks", "normal" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "strong" ],
+        [ "weather", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Although protected, Volcán San Antonio is a moderate vertigo risk." ],
+        [ "weather", "Volcán San Antonio rim should be avoided in strong winds or poor visibility" ]
+      ]
+    },
+    {
       "id": "38",
       "name": "Volcan Teneguia to the lighthouses",
       "lengthKm": "7.6",
@@ -749,6 +812,5 @@
         [ "weather", "Volcán Teneguía should be avoided in strong winds or poor visibility" ]
       ]
     }
-
   ]
 }

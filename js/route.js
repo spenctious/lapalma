@@ -795,11 +795,11 @@ class FilterSet {
     return this.#activeFilterList.size;
   }
 
-  get locationFilterMessage() {
-    if (this.#locationFilter.allAreasSelected) return "Remove one or more areas<br/> to apply filter.";
-    if (this.#locationFilter.noAreasSelected) return "Add one or more areas<br/> to apply filter.";
-    return "";
-  }
+  // get locationFilterMessage() {
+  //   if (this.#locationFilter.allAreasSelected) return "Remove one or more areas<br/> to enable filter.";
+  //   if (this.#locationFilter.noAreasSelected) return "Add one or more areas<br/> to enable filter.";
+  //   return "";
+  // }
 
   /*** Update methods ***/
 
@@ -811,7 +811,17 @@ class FilterSet {
   }
 
   updateLocationMessage() {
-    document.getElementById("location-message").innerHTML = this.locationFilterMessage;
+    let message = "";
+    if (this.#locationFilter.allAreasSelected) {
+      message = "Remove one or more areas<br/> to enable filter.";
+      this.#locationFilter.enabled = false;
+    } else if (this.#locationFilter.noAreasSelected) {
+      message = "Add one or more areas<br/> to enable filter.";
+      this.#locationFilter.enabled = false;
+    } else {
+      this.#locationFilter.enabled = true;
+    }
+    document.getElementById("location-message").innerHTML = message;
   }
 
   // Redraws active filter grid replacing old contents

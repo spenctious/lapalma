@@ -1,44 +1,8 @@
 [
   [
-    "test1",
-    {
-      "id": "01",
-      "name": "test1",
-      "tags": ["museum"],
-      "description": "lorem ipsum 2",
-      "entryCost": "FREE",
-      "tel": "2323452525",
-      "location": "Barlovento",
-      "openingTimes": 
-        [
-          { "when": "Mon-Fri", "times": "08:00 - 17:00" },
-          { "when": "Sat", "times": "10:00 - 16:00" },
-          { "when": "Sun & Hol", "times": "CLOSED" }
-        ]
-    }
-  ],
-  [
-    "test2",
-    {
-      "id": "02",
-      "name": "test2",
-      "tags": ["info"],
-      "description": "lorem impsum 2",
-      "entryCost": "€6",
-      "tel": "02030 3040320",
-      "location": "Barlovento",
-      "openingTimes": 
-        [
-          { "when": "Mon-Fri", "times": "08:00 - 17:00" },
-          { "when": "Sat", "times": "10:00 - 16:00" },
-          { "when": "Sun & Hol", "times": "CLOSED" }
-        ]
-    }
-  ],
-  [
     "glasshouse",
     {
-      "id": "03",
+      "id": "01",
       "name": "The 'Glass House' tourist information centre",
       "tags": ["info"],
       "description": "Located in a traffic roundabout conveniently situated near the port and bus terminal at the south end of Calle O'Daly. Lots of good information from friendly (generally) multi-lingual staff. Small bar situated right next door.",
@@ -56,7 +20,7 @@
   [
     "san antonio",
     {
-      "id": "00",
+      "id": "02",
       "name": "Volcán San Antonio Visitor Centre",
       "tags": ["museum", "info", "refreshments"],
       "description": "Good geological exhibition, cafe & toilets. Also the place to arrange camel rides.",
@@ -73,7 +37,7 @@
   [
     "lighthouse museum",
     {
-      "id": "00",
+      "id": "03",
       "name": "Centro de Interpretación de la Reserva Marina",
       "tags": ["museum"],
       "description": "The old lighthouse with attached (not very good) museum.",
@@ -91,7 +55,7 @@
   [
     "salinas",
     {
-      "id": "00",
+      "id": "04",
       "name": "Salinas de Fuencaliente",
       "tags": ["museum", "refreshments"],
       "description": "Interesting self-guided tour around family-run salt pans. One of the island's main visitor attractions.",
