@@ -319,13 +319,13 @@ class Filter {
   #category;
   #toggleControl;
   #name;
-  #isEnabled;
+  isEnabled;
 
   constructor(name, category, toggle) {
     this.#name = name;
     this.#category = category;
     this.#toggleControl = toggle;
-    this.#isEnabled = true;
+    this.isEnabled = true;
   }
 
   toggle(targetState) {
@@ -344,10 +344,10 @@ class Filter {
 
   // getters and setters
   set enabled(state) {
-    this.#isEnabled = state;
+    this.isEnabled = state;
     this.#updateScreenStatus();
   }
-  get enabled() { return this.#isEnabled; }
+  get enabled() { return this.isEnabled; }
 
   get name() { return this.#name; }
   set index(index) { this.#index = index; }
@@ -362,7 +362,7 @@ class Filter {
 
   get html() {
     let filterHtml =
-    `<div id="${this.id}" class="icon">
+    `<div id="${this.id}" class="icon ${this.enabled ? '' : ' disabled'}">
       <img src="/img/icons/${this.icon}" class="icon-img" alt="" />
     </div>`;
     return filterHtml;
@@ -383,15 +383,17 @@ class Filter {
           break;
 
         case ONLY:
-          icon.classList.add("included");
+          // icon.classList.add("included");
+          icon.className = "icon included";
           break;
 
         case NO:
-          icon.classList.add("excluded");
+          // icon.classList.add("excluded");
+          icon.className = "icon excluded";
           break;
       }
     } else {
-      icon.classList.add("disabled");
+      icon.className = "icon disabled";
     }
   }
 }
@@ -523,6 +525,7 @@ class Location extends Filter {
 
     this.#allAreasOff = true;
     this.#allAreasOn = false;
+    super.isEnabled = false;
 
     // create and populate location area sets
     this.#locationAreas = new Map(
