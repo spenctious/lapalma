@@ -548,6 +548,11 @@ class Location extends Filter {
     });
   }
 
+  // only enable if valid
+  enableInactive(setEnabled) {
+    if (!this.#allAreasOff && !this.#allAreasOn) super.enableInactive(setEnabled);
+  }
+
   /*** Accessors ***/
 
   get activeLocationAreas() { 
