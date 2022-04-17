@@ -214,7 +214,9 @@ class Data {
       name: poi.name,
       tags: poi.tags,
       description: poi.description,
+
       entryCost: poi.entryCost,
+      hasEntryCost: "entryCost" in poi,
       
       tel: poi.tel,
       hasTel: "tel" in poi,
@@ -223,6 +225,8 @@ class Data {
       locationAttributes: this.locations.get(poi.location),
 
       openingTimes: poi.openingTimes,
+      hasOpeningTimes: "openingTimes" in poi,
+
       relatedWalks: new Array(),
       hasRelatedWalks: false
     }

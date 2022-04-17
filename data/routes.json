@@ -689,6 +689,124 @@
       ]
     },
     {
+      "id": "35",
+      "name": "Pico Birigoyo circuit",
+      "lengthKm": "13",
+      "lengthMiles": "6.2",
+      "walkingTime": "03:35",
+      "shortDescription": "The 'real' volcano route over the peaks.",
+      "description": "This walk takes the high line along the volcanic peaks. It’s an alternative to the first part of the Volcano Route which follows a lower line not climbing the peaks. Spectacular views but very windy. Finishes by looping back through pleasant easy tracks.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "moderate",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "El Paso",
+      "town": "",
+      "routeFile": "LP35 Pico Birigoyo circuit.gpx",
+      "refreshments": "Mobile kiosk at Refugio El Pilar serves drinks and snacks.",
+      "start": "Refugio El Pilar",
+      "end": "Refugio El Pilar",
+      "paths": ["GR 131 Etapa 3", "SL VM 125", "PR LP 16"],
+      
+      "images": [
+        { "id": "01", "caption": "Approaching the peak of Volcan Birigoyo" },
+        { "id": "02", "caption": "Montaña la Barquita" },
+        { "id": "03", "caption": "Towards Montaña la Barquita" },
+        { "id": "04", "caption": "Near Pico Nambroque" }
+      ],
+
+      "poi": ["Refugio El Pilar"],
+
+      "terrain": [
+        [ "volcanic", "strong" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "strong" ],
+        [ "slippery", "strong" ],
+        [ "weather", "strong" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Pico Birigoyo ascent is very exposed and vertigo inducing" ],
+        [ "slippery", "Some loose material when descending steep paths off the volcanos."],
+        [ "weather", "Strong winds are a major hazard climbing Pico Birigoyo" ]
+      ]
+    },
+    {
+      "id": "36",
+      "name": "Volcán de Martín",
+      "lengthKm": "8.8",
+      "lengthMiles": "5.4",
+      "walkingTime": "02:15",
+      "shortDescription": "Colourful volcanic landscapes and wide ranging views.",
+      "description": "Starting from Área Recreativa Fuente Los Roques the walk goes through some lovely volcanic landscapes before climbing the volcano and descending by way of a lava field. Great views all along. The start requires a car to get to but you can also walk the last bit of the Volcano Route in reverse to reach the trail.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "moderate",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "false",
+      "province": "Fuencaliente",
+      "town": "Los Canarios",
+      "routeFile": "LP36 Volcan Martin.gpx",
+      "refreshments": "Bars, cafés and restaurants in Los Canarios",
+      "start": "Área Recreativa Fuente Los Roques",
+      "end": "Área Recreativa Fuente Los Roques",
+      "paths": ["GR 131 Etapa 3", "SL FU 110", "SL FU 111"],
+      
+      "images": [
+        { "id": "01", "caption": "Ascending Volcán de Martín" },
+        { "id": "02", "caption": "View from Volcán de Martín" },
+        { "id": "03", "caption": "Picon (black pea-gravel) path at the base of Volcán de Martín" },
+        { "id": "04", "caption": "Natural Bugloss rockery on SL FU 110" }      ],
+
+      "variants": [
+        {
+          "id": "36a",
+          "name": "Walk up from Los Canarios",
+          "description": "Access for non-drivers by walking up from Los Canarios.",
+          "walkType": "circular",
+          "duration": "full",
+          "effort": "strenuous",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Los Canarios",
+          "end": "Los Canarios",
+          "routeFile": "LP34 The Volcano Route.gpx",
+          "routeDirections": "[34](22 to 18) then [36](02 loop)"
+        }
+      ],
+	  
+      "terrain": [
+        [ "volcanic", "strong" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "strong" ],
+        [ "weather", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "The ascent up Volcán de Martín is exposed." ],
+        [ "weather", "Avoid climbing Volcán de Martín in high winds or poor visibility." ]
+      ]
+    },
+    {
       "id": "37",
       "name": "Volcan San Antonio",
       "lengthKm": "5.9",

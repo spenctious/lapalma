@@ -161,6 +161,24 @@
       },
       "notes": "The volcano is a short walk down from Los Canarios"
     }
+  ],
+  [
+    "Área Recreativa Fuente Los Roques",
+    {
+      "areas": ["south"],
+      "province": "Fuencaliente",
+      "parking": "Plenty of spaces at the recreation area.",
+      "notes": "Accessed from a froestry path off the LP-2 road. Enquire at Los Canarios information centre for track conditions."
+    }
+  ],
+  [
+    "Refugio El Pilar",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Multiple nearby parking spots.",
+      "notes": "Taxis run from Centro de Visitante."
+    }
   ]
 
 ]

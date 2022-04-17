@@ -69,5 +69,16 @@
           { "when": "Daily", "times": "09.00 - 19.00" }
         ]
     }
+  ],
+  [
+    "Refugio El Pilar",
+    {
+      "id": "05",
+      "name": "Refugio El Pilar",
+      "tags": ["info", "camping", "refreshments", "recreation"],
+      "description": "A hub for walks in the Cumbre Vieja. Toilets, BBQ pits, play area, campsite, water and a small mobile kiosk selling drinks and snacks.",
+      "location": "Refugio El Pilar"
+    }
   ]
+
 ]

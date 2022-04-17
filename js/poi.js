@@ -142,8 +142,8 @@ function populatePoiGrid() {
 
   laPalmaData.poi.forEach(poi => {
 
-    let entryCost = "entryCost" in poi ? getEntryCostHtml(poi.entryCost) : "";
-    let openingTimes = "openingTimes" in poi ? getOpeningTimesHtml(poi.openingTimes) : "";
+    let entryCost = poi.hasEntryCost in poi ? getEntryCostHtml(poi.entryCost) : "";
+    let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
     let relatedRoutes = poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
 
     // build html content
