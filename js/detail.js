@@ -95,12 +95,11 @@ function mainClickHandler(event) {
 
 function populateBasics() {
   // summary grid
-  // n.b. divs in the summary grid are explicitly positioned in CSS
   let summaryContent = "";
   summaryContent += `<div class="summary-heading">Basics</div>`;
   summaryContent += `<div><img src="/img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
-  summaryContent += getMetricIconHtml(route.durationAttributes.icon);
-  summaryContent += getMetricIconHtml(route.effortAttributes.icon);
+  summaryContent += getMetricsHtml(route.durationAttributes);
+  summaryContent += getMetricsHtml(route.effortAttributes);
   summaryContent += getSummaryIconHtml(route.walkTypeAttributes.icon);
   if (route.isAccessibleByCar) summaryContent += getSummaryIconHtml(route.accessCarAttributes.icon);
   if (route.isAccessibleByBus) summaryContent += getSummaryIconHtml(route.accessBusAttributes.icon);
@@ -153,8 +152,7 @@ function populateBasics() {
 function populateFeaturesAndWarnings() {
   // summary
   let summaryContent = `
-    <div class="summary-heading">Features</div>
-    <div class="summary-heading">Warnings</div>
+    <div class="summary-heading">Features and Warnings</div>
     <div>
       <img src="/img/icons/chevron-down.svg" class="icon-img" alt="" />
     </div>`;
@@ -293,30 +291,10 @@ function getDownloadButton(fileName, isPrimary = true) {
     </span>`;
 }
 
-// list of icons up to a limit of 5 icons
-// if there are more than 5 icons the last is replaced with a count of the number of additional icons
-// if there are less than 5 icons, dummy divs are added to pad things out
+// list of icons
 function getSummaryIconsContent(itemsMap) {
   let iconsContent = "";
-  let i = 1;
-  itemsMap.forEach(attributes => {
-    if (i == 5 && itemsMap.size > 5) {
-      // too many - indicate how many more
-      iconsContent += `<div>+${itemsMap.size - 4}</div>`;
-    }
-    else {
-      // limit 5 icons
-      if (i < 6) {
-        // add icon
-        iconsContent += getSummaryIconHtml(attributes.icon);
-      }
-    }
-    ++i;
-  })
-
-  // pad out with blanks if there are not enough icons
-  while (i++ < 6) iconsContent += `<div></div>`;
-
+  itemsMap.forEach(attributes => iconsContent += getSummaryIconHtml(attributes.icon));
   return iconsContent;
 }
 
