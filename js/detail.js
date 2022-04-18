@@ -63,13 +63,13 @@ function mainClickHandler(event) {
   }
 
   if (event.target.closest("#basics-summary") != null) {
-    document.getElementById("basics-detail-grid").style.display = "block";
+    document.getElementById("basics-detail").style.display = "block";
     document.getElementById("basics-summary").style.display = "none";
     return;
   }
 
-  if (elementId == "basics-title") {
-    document.getElementById("basics-detail-grid").style.display = "none";
+  if (event.target.closest("#basics-title")) {
+    document.getElementById("basics-detail").style.display = "none";
     document.getElementById("basics-summary").style.display = "grid";
     return;
   }
@@ -80,7 +80,7 @@ function mainClickHandler(event) {
     return;
   }
 
-  if (elementId == "features-title") {
+  if (event.target.closest("#features-title")) {
     document.getElementById("features-and-warnings").style.display = "none";
     document.getElementById("features-and-warnings-summary").style.display = "grid";
     return;
@@ -108,9 +108,15 @@ function populateBasics() {
   // basic stats
   let basicsContent = "";
   basicsContent += getMetricsHtml(route.durationAttributes);
-  basicsContent += `<div><h4>Distance</h4>${route.lengthKm}km (${route.lengthMiles} miles)</div>`;
+  basicsContent += `
+    <div class="item-description">
+      <h4>Distance</h4>
+      <p>${route.lengthKm}km (${route.lengthMiles} miles)</p>
+      <h4>Walking time</h4>
+      <p>${route.walkingTime}</p>
+    </div>`;
   basicsContent += getMetricsHtml(route.effortAttributes);
-  basicsContent += `<div><h4>Effort</h4>${route.effortAttributes.description}</div>`;
+  basicsContent += `<div class="item-description"><h4>Effort</h4>${route.effortAttributes.description}</div>`;
   basicsContent += getFeatureHtml(route.walkTypeAttributes);
   basicsContent += getFeatureHtml(route.refreshmentsAttributes);
   document.getElementById("basics-grid").innerHTML = basicsContent;
@@ -347,8 +353,10 @@ function getFeatureHtml(feature, additionalContent = "") {
       <img src="/img/icons/${feature.icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
-      ${getStrongHtml(feature.isStrong, feature.strongTag)}
-      <h4>${feature.text}</h4>
+      <h4>
+        ${feature.text}
+        ${getStrongHtml(feature.isStrong, feature.strongTag)}
+      </h4>
       ${feature.description}
       ${additionalContent}
     </div>`;
@@ -368,11 +376,13 @@ function getAttributeHtml(attributes) {
 
 // location details
 function getLocationHtml(locationName, locationAttributes, label) {
-  let startCar = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
-  let startBus = "Inaccessible by bus";
+  let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
+  let busHtml = "Inaccessible by bus";
   if ("bus" in locationAttributes) {
-    startBus = `Bus stop: ${locationAttributes.bus.stop}<br />`;
-    locationAttributes.bus.routes.forEach(busRoute => startBus += `<span class="bus-route">${busRoute}</span>`);
+    busHtml = `Bus stop: ${locationAttributes.bus.stop}`;
+    busHtml += `<p>Routes: `;
+    locationAttributes.bus.routes.forEach(busRoute => busHtml += `<span class="bus-route">${busRoute}</span>`);
+    busHtml += `</p>`;
   }
   return `
     <div>
@@ -380,7 +390,7 @@ function getLocationHtml(locationName, locationAttributes, label) {
     </div>
     <div class="item-description">
       <h4>${locationName}</h4>
-      <p>${startCar}</p>
-      <p>${startBus}</p>
+      <p>${carHtml}</p>
+      <p>${busHtml}</p>
     </div>`;
 }

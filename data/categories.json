@@ -271,7 +271,7 @@
         "filterIncludeText": "With mountain/volcano peaks",
         "filterExcludeText": "",
         "description": "Passes near or over volcanic or mointain peaks.",
-        "strong": "Special interest",
+        "strong": "Great",
         "icon": "peak.svg"
       }
     ],
@@ -372,11 +372,11 @@
     [
       "slippery",
       {
-        "text": "Slippery in places",
+        "text": "Risk of slipping",
         "filterIncludeText": "",
         "filterExcludeText": "Very slippery paths",
         "description": "Occasional hazardous conditions underfoot.",
-        "strong": "High risk",
+        "strong": "High",
         "icon": "slippery.svg"
       }
     ],
@@ -387,7 +387,7 @@
         "filterIncludeText": "",
         "filterExcludeText": "Very steep paths",
         "description": "Steep sections, can be hard on the knees when descending.",
-        "strong": "Sustained or exceptional",
+        "strong": "Very",
         "icon": "steep.svg"
       }
     ],
@@ -398,7 +398,7 @@
         "filterIncludeText": "",
         "filterExcludeText": "High vertigo risk",
         "description": "Vertigo risk: exposed peaks or paths near steep drops.",
-        "strong": "High risk",
+        "strong": "High",
         "icon": "dizzy.svg"
       }
     ],
@@ -409,18 +409,18 @@
         "filterIncludeText": "",
         "filterExcludeText": "Highly weather dependent",
         "description": "Requires favourable weather conditions: check the forecasts.",
-        "strong": "Highly dependent",
+        "strong": "Highly",
         "icon": "weather.svg"
       }
     ],
     [
       "gps",
       {
-        "text": "Unreliable GPS signal",
+        "text": "Unreliable GPS",
         "filterIncludeText": "",
         "filterExcludeText": "Very unreliable GPS",
         "description": "The route passes through areas where the GPS signal may become weak or loat.",
-        "strong": "High risk",
+        "strong": "Very",
         "icon": "signal.svg"
       }
     ],
@@ -438,11 +438,11 @@
     [
       "rockfall",
       {
-        "text": "Rockfall",
+        "text": "Risk of rockfall",
         "filterIncludeText": "",
         "filterExcludeText": "High risk of rockfall",
         "description": "Possibility of rockfall from overhanging rocks",
-        "strong": "High risk",
+        "strong": "High",
         "icon": "rockfall.svg"
       }
     ]
