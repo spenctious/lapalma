@@ -179,7 +179,38 @@
       "parking": "Multiple nearby parking spots.",
       "notes": "Taxis run from Centro de Visitante."
     }
+  ],
+  [
+    "Jedy",
+    {
+      "areas": ["west", "south"],
+      "province": "El Paso",
+      "parking": "Parking spots up Calle Campanario and more further on up the track.",
+      "bus": {
+        "notes": "Stop next to Bar Jedy",
+        "routes": [
+          "210"
+        ],
+        "stop": "Jedy"
+      },
+      "notes": "Small village but with tiny shop and Pizzeria Evangelina"
+    }
+  ],
+  [
+    "San Nicolás",
+    {
+      "areas": ["west", "south"],
+      "province": "El Paso",
+      "parking": "Some parking by the church, more up Calle Tamanca by the Virgen de Fátima shrine.",
+      "bus": {
+        "notes": "Stop is opposite the El Americano bar",
+        "routes": [
+          "210"
+        ],
+        "stop": "San Nicolás"
+      },
+      "notes": "You can walk to Centro de Interpretación del tubo volcánico Cueva de Las Palomas from here."
+    }
   ]
-
 ]
 

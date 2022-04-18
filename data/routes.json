@@ -689,6 +689,206 @@
       ]
     },
     {
+      "id": "32",
+      "name": "Lavas de San Juan",
+      "lengthKm": "10",
+      "lengthMiles": "6.2",
+      "walkingTime": "03:00",
+      "shortDescription": "",
+      "description": "An exploration of one of the most dramatic lava fields on the island with a scarily big (but well protected) hole to peer down into as well.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "moderate",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "El Paso",
+      "town": "San Nicolás",
+      "routeFile": "LP32 Lavas de San Juan.gpx",
+      "refreshments": "Bars/cafés in San Nicholas.",
+      "start": "San Nicolás",
+      "end": "San Nicolás",
+      "paths": ["PR LP 14.1", "SL EP 107"],
+      
+      "images": [
+        { "id": "01", "caption": "Lavas de San Juan" },
+        { "id": "02", "caption": "Looking to the Cumbre Vieja from PR LP 14.1" },
+        { "id": "03", "caption": "Poppy lined PR LP 14.1 path" }
+      ],
+
+      "terrain": [
+        [ "volcanic", "strong" ],
+        [ "pine", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "The first part of the walk is prone to erosion" ]
+      ],
+
+      "dangers": [
+        { "name": "Trip hazard", "description": "The lava field can cause nasty injuries if you trip.", "strength": "normal" }
+      ]
+    },
+    {
+      "id": "33",
+      "name": "Montaña Marcos",
+      "lengthKm": "10",
+      "lengthMiles": "6.2",
+      "walkingTime": "02:55",
+      "shortDescription": "Peak with views and good pine forest.",
+      "description": "A climb up to an interesting peak with good views and a nice easy section through the forest. If you’re lucky you may see paragliders taking off from a platform part way up.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "moderate",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "El Paso",
+      "town": "Jedy",
+      "routeFile": "LP33 Montana Marcos.gpx",
+      "refreshments": "Bar/café, pizza parlour, and a small shop in Jedy",
+      "start": "Jedy",
+      "end": "Jedy",
+      "paths": ["PR LP 15"],
+      
+      "images": [
+        { "id": "01", "caption": "Unsigned but cairned path across the forest slope" },
+        { "id": "02", "caption": "View from Montaña Marcos" },
+        { "id": "03", "caption": "Montaña Marcos from near Jedy" }
+      ],
+
+      "variants": [
+        {
+          "id": "33a",
+          "name": "Link with walk 32 to make a big loop",
+          "description": "To combine the walks without doing them individually you can use a short linking section of track that cuts out the less interesting descent from Montaña Marcos and joins the San Nicholas walk somewhere near hoyo Grande. To complete the circuit a short easy section of the GR 130 is followed linking San Nicholas to Jedy.",
+          "walkType": "circular",
+          "duration": "long",
+          "effort": "strenuous",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Jedy",
+          "end": "Jedy",
+          "routeFile": "LP32 Lavas de San Juan.gpx",
+          "routeDirections": "[33](01 to 14), short linking track to [32](04 to end) then GR 130 back to Jedy"
+        }
+      ],
+	  
+      "terrain": [
+        [ "volcanic", "normal" ],
+        [ "pine", "strong" ]
+      ],
+
+      "interest": [
+        [ "scenic", "normal" ],
+        [ "peaks", "normal" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ],
+        [ "slippery", "strong" ],
+        [ "weather", "normal" ],
+        [ "gps", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Scree slope to negotiate, more had work than falling risk" ],
+        [ "weather", "Careful on the peak in high winds or poor visibility" ],
+        [ "gps", "Much of the route is off marked trails so GPS will be need. Signal strength is generally good though." ]
+      ]
+    },
+    {
+      "id": "34",
+      "name": "The Volcano Route",
+      "lengthKm": "18.3",
+      "lengthMiles": "11.3",
+      "walkingTime": "04:10",
+      "shortDescription": "Long but rewarding descent down the Cumbre Vieja.",
+      "description": "The classic hike along the volcanic spine of the island with multiple peak-bagging opportunities on the way. Great views all along and varied scenery ending in a descent through pine forest.",
+      "starred": "true",
+      "walkType": "linear",
+      "duration": "long",
+      "effort": "hard",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "false",
+      "province": "El Paso",
+      "town": "Refugio El Pilar",
+      "routeFile": "LP34 The Volcano Route.gpx",
+      "refreshments": "Mobile kiosk at the start. Bars, cafés, restaurants and shops in Los Canarios.",
+      "start": "Refugio El Pilar",
+      "end": "Los Canarios",
+      "paths": ["GR 131 Etapa 3"],
+      
+      "images": [
+        { "id": "01", "caption": "View of the Caldera over the Aridane plain" },
+        { "id": "02", "caption": "Skirting Pico Birigoyo" },
+        { "id": "03", "caption": "The Malforda lava field and Volcán El Duraznero" },
+        { "id": "04", "caption": "Hoyo Negro" },
+        { "id": "05", "caption": "View of Tenerife from near Volcán de Martín" }
+      ],
+
+      "variants": [
+        {
+          "id": "34a",
+          "name": "To Pico Nambroque and back",
+          "description": "After Pico Nambroque it's probably not much more effort to complete the whole walk rather than return to refugio El Pilar. If you are just looking to avoid an expensive taxi ride back then you can go as far as deseada before returning",
+          "walkType": "linear",
+          "duration": "full",
+          "effort": "strenuous",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "Refugio El Pilar",
+          "end": "Refugio El Pilar",
+          "routeDirections": "[34](01 to 09) and back"
+        },
+        {
+          "id": "34b",
+          "name": "Continue down to the sea",
+          "description": "Fit walkers can complete the route 'properly' by finishing at the lighthouses.",
+          "walkType": "linear",
+          "duration": "long",
+          "effort": "hard",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "Refugio El Pilar",
+          "end": "Faro de Fuencaliente",
+          "routeDirections": "[00](00 to 00) then [00]"
+        }
+      ],
+	  
+      "poi": ["Refugio El Pilar"],
+
+      "terrain": [
+        [ "volcanic", "strong" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ],
+        [ "weather", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Vertigo is only likely to be an issue if you climb the peaks" ],
+        [ "weather", "Avoid the route in strong winds or poor visibility" ]
+      ]
+    },
+    {
       "id": "35",
       "name": "Pico Birigoyo circuit",
       "lengthKm": "13",
