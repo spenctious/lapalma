@@ -154,7 +154,7 @@ function populateBasics() {
   // terrain
   let terrainContent = "";
   route.terrain.forEach(attributes => {
-    terrainContent += getFeatureHtml(attributes, getStrongHtml(attributes.isStrong, attributes.strongTag));
+    terrainContent += getFeatureHtml(attributes);
   })
   document.getElementById("terrain-grid").innerHTML = terrainContent;
 }
