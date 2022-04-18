@@ -125,8 +125,12 @@ function populateBasics() {
   let accessContent = "";
   if (route.isAccessibleByCar) accessContent += getAttributeHtml(route.accessCarAttributes);
   if (route.isAccessibleByBus) accessContent += getAttributeHtml(route.accessBusAttributes);
-  accessContent += getLocationHtml(route.start, route.startAttributes, "Start");
-  accessContent += getLocationHtml(route.end, route.endAttributes, "End");
+  if (route.start == route.end) {
+    accessContent += getLocationHtml(route.start, route.startAttributes, "Start /<br/>End");
+  } else {
+    accessContent += getLocationHtml(route.start, route.startAttributes, "Start");
+    accessContent += getLocationHtml(route.end, route.endAttributes, "End");
+  }
   document.getElementById("access-grid").innerHTML = accessContent;
 
   // trail status - waymarked and official trail statuses for each included path
