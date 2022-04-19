@@ -96,5 +96,24 @@
           { "when": "Daily", "times": "09:00 - 18:00" }
         ]
     }
+  ],
+  [
+    "The Cumbrecita",
+    {
+      "id": "07",
+      "name": "The Cumbrecita",
+      "tags": ["info", "nature", "transport"],
+      "description": "A saddle pint between Pico Bejenado and the Caldera with multiple viewpoints on a short easy circuit.",
+      "entryCost": "FREE",
+      "tel": "(+34) 922922280",
+      "email": "informacion.taburiente@gobiernodecanarias.org",
+      "web": {"name": "Car park booking", "link": "https://www.reservasparquesnacionales.es/real/ParquesNac/usu/html/detalle-actividad-oapn.aspx?ii=6ENG&cen=4&act=5"},
+      "location": "The Cumbrecita",
+      "openingTimes": 
+        [
+          { "when": "Daily", "times": "08:30 - 16:00" },
+          { "when": "Free access", "times": "Other times" }
+        ]
+    }
   ]
 ]

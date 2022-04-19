@@ -261,6 +261,15 @@
       "parking": "A couple of spaces where the tarmac ends, more at the notice board further up the track.",
       "notes": "Taxi from Centro de Visitantes to the end of the tarmac."
     }
+  ],
+  [
+    "The Cumbrecita",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Two small car parks.",
+      "notes": "Book in advance on the official website or come out of hours. Barrier on the approach road."
+    }
   ]
 ]
 

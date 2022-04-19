@@ -769,6 +769,108 @@
       ]
     },
     {
+      "id": "27",
+      "name": "La Cumbrecita",
+      "lengthKm": "19.6",
+      "lengthMiles": "12.2",
+      "walkingTime": "04:45",
+      "shortDescription": "",
+      "description": "A lengthy though undemanding forest climb to the Cumbrecita viewpoints with a couple of good miradors on the way. After a circuit of the Cumbrecita viewpoints the way descends rather more easily on the road with opportunities to get off the road on to forest paths.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP27 La Cumbrecita.gpx",
+      "refreshments": "None",
+      "start": "Centro de Visitantes",
+      "end": "Centro de Visitantes",
+      "paths": ["PL LP 13.3", "PR LP 01.1", "PR LP 01"],
+      
+      "images": [
+        { "id": "01", "caption": "Vista Cumbre Vieja" },
+        { "id": "02", "caption": "Path connecting the Cumbrecita to Pico Bejenado" }
+      ],
+
+      "variants": [
+        {
+          "id": "27a",
+          "name": "Just the La Cumbrecita viewpoints by car",
+          "description": "good option if you're having a day off 'proper' walking but still want to stretch your legs. You need to book your parking slot in advance or arrive out of hours.",
+          "walkType": "circular",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "The Cumbrecita",
+          "end": "The Cumbrecita",
+          "routeDirections": "[27](10 to 16)"
+        },
+        {
+          "id": "27b",
+          "name": "Taxi up then walk down",
+          "description": "Taking a taxi to the top, completing a summit circuit, and then walking down the forest route is a popular choice.",
+          "walkType": "linear",
+          "duration": "full",
+          "effort": "moderate",
+          "accessCar": "false",
+          "accessBus": "false",
+          "start": "The Cumbrecita",
+          "end": "Centro de Visitantes",
+          "routeDirections": "[27](10 to 16) then [27](10 to 01)"
+        },
+        {
+          "id": "27c",
+          "name": "Side trip to Pico Bejenado",
+          "description": "If you are driving up to La Cumbrecita then you can make a proper walk of it by tacking on a side trip to Pico Bejenado. Allow enough time with some to spare when booking your parking permit.",
+          "walkType": "return",
+          "duration": "full",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "The Cumbrecita",
+          "end": "The Cumbrecita",
+          "routeFile": "LP27d To Pico Bejenado and return to the visitor centre.gpx",
+          "routeDirections": "[27d](01 to 11 then back to 07)"
+        },
+        {
+          "id": "27d",
+          "name": "To Pico Bejenado & return to the visitor centre",
+          "description": "Taxi to the start, Cumbracita circuit, Pico Bejenado, and long walk down to the visitor centre.",
+          "walkType": "linear",
+          "duration": "full",
+          "effort": "strenuous",
+          "accessCar": "false",
+          "accessBus": "false",
+          "start": "The Cumbrecita",
+          "end": "Centro de Visitantes",
+          "routeFile": "LP27d To Pico Bejenado and return to the visitor centre.gpx",
+          "routeDirections": "[27d] all the way"
+        }
+      ],
+	  
+      "poi": ["The Cumbrecita"],
+
+      "terrain": [
+        [ "pine", "strong" ]
+      ],
+
+      "interest": [
+        [ "views", "strong" ],
+        [ "poi", "normal" ],
+        [ "peaks", "strong" ],
+        [ "scenic", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ]
+      ]
+    },
+    {
       "id": "29",
       "name": "Llano de Jable",
       "lengthKm": "9.4",
