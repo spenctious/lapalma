@@ -99,17 +99,17 @@
   background-color: white;
   padding: 0.5rem;
   position: relative;
-  height: 7rem;
+  height: 8rem;
 }
 
 .favourite {
   float: right;
-  height: 1.2rem;
+  height: 1rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
   margin-top: 0.2rem;
   cursor: pointer;
-  opacity: 0.5; /* tone down the icon */
+  opacity: 0.8; /* tone down the icon */
 }
 
 .route-detail .title {
@@ -123,8 +123,8 @@
 .route-detail .description {
   font-size: 0.8rem;
   line-height: 1rem;
-  height: 2rem;
-  overflow: hidden;
+  height: 3rem;
+  /* clear: both; */
 }
 
 .metrics {
