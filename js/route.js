@@ -803,11 +803,11 @@ class FilterSet {
     return this.#activeFilterList.size;
   }
 
-  // get locationFilterMessage() {
-  //   if (this.#locationFilter.allAreasSelected) return "Remove one or more areas<br/> to enable filter.";
-  //   if (this.#locationFilter.noAreasSelected) return "Add one or more areas<br/> to enable filter.";
-  //   return "";
-  // }
+  get locationFilterMessage() {
+    if (this.#locationFilter.allAreasSelected) return "Remove one or more areas<br/> to enable filter.";
+    if (this.#locationFilter.noAreasSelected) return "Add one or more areas<br/> to enable filter.";
+    return "";
+  }
 
   /*** Update methods ***/
 
