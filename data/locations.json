@@ -294,8 +294,24 @@
     {
       "areas": ["central"],
       "province": "El Paso",
-      "parking": "None",
       "notes": ""
+    }
+  ],
+  [
+    "Roque de los Muchachos",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Fairly small and busy car park.",
+      "notes": "Three viewpoints can be accessed from a path leading from the car park."
+    }
+  ],
+  [
+    "Roque Palmero",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "notes": "Viewpoint accessed up a steep slippery slope."
     }
   ]
 ]

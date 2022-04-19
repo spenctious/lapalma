@@ -689,6 +689,65 @@
       ]
     },
     {
+      "id": "25",
+      "name": "Roque de los Muchachos to Roque Palmero",
+      "lengthKm": "7.3",
+      "lengthMiles": "4.5",
+      "walkingTime": "02:10",
+      "shortDescription": "Explore away from the crowds along the Caldera crest.",
+      "description": "A walk from the main (crowded) viewing point along the Caldera rim down to another much less visited viewpoint.",
+      "starred": "false",
+      "walkType": "return",
+      "duration": "stroll",
+      "effort": "moderate",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "false",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP25 Roque de los Muchachos to Roque Palmero.gpx",
+      "refreshments": "None",
+      "start": "Roque de los Muchachos",
+      "end": "Roque Palmero",
+      "paths": ["GR 131 Etapa 1"],
+      
+      "images": [
+        { "id": "01", "caption": "One of the many telescopes at the summit" },
+        { "id": "02", "caption": "Telescope cluster as seen from the GR131 path" },
+        { "id": "03", "caption": "The GR131 heading towards Puerto de Tazacorte" },
+        { "id": "04", "caption": "View from Roque Palmero" }
+      ],
+
+      "poi": ["muchachos", "observatory"],
+
+      "terrain": [
+        [ "mountain", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ],
+        [ "views", "strong" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "strong" ],
+        [ "vertigo", "normal" ],
+        [ "weather", "strong" ]
+      ],
+
+      "notes": [
+        [ "weather", "Expect strong winds and cold. Avoid in poor weather." ]
+      ],
+
+      "dangers": [
+        { "name": "High altitude", "description": "Come prepared for mountainous conditions", "strength": "normal" },
+        { "name": "Winter ice", "description": "Slippery conditions and obscured trail markers", "strength": "normal" },
+        { "name": "Precipitous", "description": "Avoid in poor visibility", "strength": "normal" },
+        { "name": "Remote", "description": "No phone signal or easy way off the mountain", "strength": "normal" }
+      ]
+    },
+    {
       "id": "26",
       "name": "Barranco de las Angustias",
       "lengthKm": "15.1",

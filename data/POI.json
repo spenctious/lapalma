@@ -139,6 +139,26 @@
       "description": "Beach-like area on the Rio de Taburiente with nearby picnic area, campsite and visitor centre.",
       "location": "Playa de Taburiente"
     }
+  ],
+  [
+    "muchachos",
+    {
+      "id": "10",
+      "name": "Roque de los Muchachos",
+      "tags": ["nature", "info"],
+      "description": "The highest point on the island at 2307.7m",
+      "location": "Roque de los Muchachos"
+    }
+  ],
+  [
+    "observatory",
+    {
+      "id": "11",
+      "name": "Observatorio del Roque de los Muchachos",
+      "tags": ["building", "tourism"],
+      "description": "Collection of some 17 telescopes. Daytime visits and stargazing tours can be arranged.",
+      "location": "Roque de los Muchachos"
+    }
   ]
 
 ]

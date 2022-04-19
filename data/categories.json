@@ -365,6 +365,17 @@
         "strong": "Impressive",
         "icon": "riverbed.svg"
       }
+    ],
+    [
+      "mountain",
+      {
+        "text": "Mountain walk",
+        "filterIncludeText": "With mountains",
+        "filterExcludeText": "Mountains",
+        "description": "High altitude mountain path, rocky and exposed.",
+        "strong": "Remote",
+        "icon": "mountain.svg"
+      }
     ]
   ],
 
@@ -422,17 +433,6 @@
         "description": "The route passes through areas where the GPS signal may become weak or loat.",
         "strong": "Very",
         "icon": "signal.svg"
-      }
-    ],
-    [
-      "mountain",
-      {
-        "text": "Mountain walk",
-        "filterIncludeText": "",
-        "filterExcludeText": "High altitude",
-        "description": "High altitude mountain conditions can be expected: prepare accordingly.",
-        "strong": "Remote",
-        "icon": "mountain.svg"
       }
     ],
     [
