@@ -220,7 +220,7 @@ function populateFeaturesAndWarnings() {
 }
 
 function populateRouteDatail() {
-  // route title with srarred and favourite icons
+  // route title with starred and favourite icons
   let starredIcon = "";
   if (route.isStarred) starredIcon =
     `<span class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
@@ -245,12 +245,10 @@ function populateRouteDatail() {
 
   // main body of detail
   let bodyContent = `
-    <div>
-      <div>${getDownloadButton(route.routeFile)}</div>
-      <h2>Description</h2>
-      <p>${route.description}</p>
-      ${variantsContent}
-    </div>`;
+    <div>${getDownloadButtons(route.routeFile)}</div>
+    <h2>Description</h2>
+    <p>${route.description}</p>
+    ${variantsContent}`;
   document.getElementById("detail-body").innerHTML = bodyContent;
 }
 
@@ -260,30 +258,30 @@ function getVariantContent(variant) {
 
   // summary
   let variantSummary = "";
-  variantSummary += `<div class="route-metric"><img src="/img/icons/${variant.durationAttributes.icon}" alt="" /></div>`;
-  variantSummary += `<div class="route-metric"><img src="/img/icons/${variant.effortAttributes.icon}" alt="" /></div>`;
+  variantSummary += getMetricsHtml(variant.durationAttributes);
+  variantSummary += getMetricsHtml(variant.effortAttributes);
   variantSummary += getSummaryIconHtml(variant.walkTypeAttributes.icon);
   if (variant.isAccessibleByCar) variantSummary += getSummaryIconHtml(variant.accessCarAttributes.icon);
   if (variant.isAccessibleByBus) variantSummary += getSummaryIconHtml(variant.accessBusAttributes.icon);
 
   // download content - only some variants will have additional files associated with them
-  let downloadContent = variant.hasRouteFile ? `<div>${getDownloadButton(variant.routeFile)}</div>` : "";
+  let downloadContent = variant.hasRouteFile ? `<div class="downloads">${getDownloadButtons(variant.routeFile)}</div>` : "";
 
   // directions - expand format to HTML
   let directions = "";
   if (variant.hasRouteDirections) {
     directions = "<p>" + variant.routeDirections + "</p>";
-    directions = directions.replaceAll("[", `<span class="route-id">`);
-    directions = directions.replaceAll("]", `</span>`);
-    directions = directions.replaceAll("(", `<span class="route-waypoints">`);
+    directions = directions.replaceAll("[", `Route <span class="route-id">`);
+    directions = directions.replaceAll("]", ` </span>`);
+    directions = directions.replaceAll("(", `waypoint <span class="route-waypoints">`);
     directions = directions.replaceAll(")", `</span>`);
   }
 
   return `
     <div class="variant">
-      <p>${title}</p>
+      ${title}
       <div class="icon-summary">${variantSummary}</div>
-      <p>${downloadContent}</p>
+      ${downloadContent}
       ${directions}
       <p>${variant.description}</p>
     </div> `;
@@ -291,13 +289,14 @@ function getVariantContent(variant) {
 
 /************************* HTML helper functions ************************/
 
-function getDownloadButton(fileName, isPrimary = true) {
-  let downloadPath = routeFormat == "gpx" ? "/data/gpx/" : "/data/kml";
-  let downloadTarget = downloadPath + fileName + "." + routeFormat;
+function getDownloadButtons(fileName) {
   return `
-    <span class="download-link ${isPrimary ? 'primary' : 'secondary'}">
-      <img src="/img/icons/download.svg" alt="" />
-      <a href="${downloadTarget}" download>Download route (${routeFormat.toUpperCase()} format)</a>
+    <span class="download-link primary">
+      <a href="/data/gpx/${fileName}.gpx" download>Download route GPX</a>
+    </span>
+    &nbsp;
+    <span class="download-link secondary">
+      <a href="/data/kml/${fileName}.kml" download>Download route KML</a>
     </span>`;
 }
 
@@ -361,7 +360,7 @@ function getFeatureHtml(feature, additionalContent = "") {
         ${feature.text}
         ${getStrongHtml(feature.isStrong, feature.strongTag)}
       </h4>
-      ${feature.description}
+      ${feature.noteModifiedDescription}
       ${additionalContent}
     </div>`;
 }
