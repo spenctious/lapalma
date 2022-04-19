@@ -13,7 +13,7 @@
 
 #routes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 260px);
+  grid-template-columns: repeat(auto-fill, 250px);
   gap: 0.5rem;
   justify-content: center;
 }
