@@ -243,6 +243,24 @@
       },
       "notes": "Has an attractive plaza and some good restaurants."
     }
+  ],
+  [
+    "Tacande",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Parking spot by a wall at the start along Calle Cuesta de la Juliana.",
+      "notes": "Tacande is within walking distance of El Paso"
+    }
+  ],
+  [
+    "Pista de Valencia",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "A couple of spaces where the tarmac ends, more at the notice board further up the track.",
+      "notes": "Taxi from Centro de Visitantes to the end of the tarmac."
+    }
   ]
 ]
 

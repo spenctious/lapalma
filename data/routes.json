@@ -689,6 +689,134 @@
       ]
     },
     {
+      "id": "28",
+      "name": "Pico Bejenado circuit",
+      "lengthKm": "12.2",
+      "lengthMiles": "7.6",
+      "walkingTime": "03:20",
+      "shortDescription": "Climb to the island's only true peak with far reaching views into the Caldera.",
+      "description": "A very picturesque circuit of the big volcano linking to La Cumbrecita. The views from on top are worth the sometimes steep climb but the whole circuit is a pleasant walk.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "false",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP28 Pico Bejenado circuit.gpx",
+      "refreshments": "None",
+      "start": "Pista de Valencia",
+      "end": "Pista de Valencia",
+      "paths": ["PR LP 13.3"],
+      
+      "images": [
+        { "id": "01", "caption": "view from Pico Bejenado looking towards Puerto Tazacorte" },
+        { "id": "02", "caption": "Caldera de Taburiente" },
+        { "id": "03", "caption": "Climbing to Pico Bejenado" },
+        { "id": "04", "caption": "Descending from Roque de Los Cuervos" }
+      ],
+
+      "variants": [
+        {
+          "id": "28a",
+          "name": "Taxi up then descend to the visitor centre",
+          "description": "Taking a taxi to the start from the visitor centre lets you extend the walk by walking back down on PR LP 13.3",
+          "walkType": "linear",
+          "duration": "long",
+          "effort": "strenuous",
+          "accessCar": "false",
+          "accessBus": "false",
+          "start": "Pista de Valencia",
+          "end": "Centro de Visitantes",
+          "routeFile": "LP28a Pista de Valencia to Centro de Visitantes.gpx",
+          "routeDirections": "[28] then [28a]"
+        },
+        {
+          "id": "28b",
+          "name": "Taxi up then descend to El Paso",
+          "description": "Forest descent opening out to abandoned terraces and meadows near El Paso.",
+          "walkType": "linear",
+          "duration": "long",
+          "effort": "strenuous",
+          "accessCar": "false",
+          "accessBus": "false",
+          "start": "Pista de Valencia",
+          "end": "El Paso",
+          "routeFile": "LP28b Pista de Valencia to El Paso.gpx",
+          "routeDirections": "[28] then [28b]"
+        }
+      ],
+	  
+      "terrain": [
+        [ "pine", "strong" ]
+      ],
+
+      "interest": [
+        [ "views", "strong" ],
+        [ "scenic", "strong" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ],
+        [ "gps", "normal" ]
+      ],
+
+      "notes": [
+        [ "gps", "Variant descents are on unmarked paths." ]
+      ]
+    },
+    {
+      "id": "29",
+      "name": "Llano de Jable",
+      "lengthKm": "9.4",
+      "lengthMiles": "5.8",
+      "walkingTime": "02:40",
+      "shortDescription": "An attractive open volcanic plane, a lava field and country lanes on this varied walk.",
+      "description": "A fairly lengthy forest climb to a lovely open area of volcanic sand and good views followed by an interesting descent through a lava field and an unsigned wander through country lanes.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "false",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP29 Llano de Jable.gpx",
+      "refreshments": "None",
+      "start": "Tacande",
+      "end": "Tacande",
+      "paths": ["SL EP 101", "PR LP 14"],
+      
+      "images": [
+        { "id": "01", "caption": "In the plains south of El Paso" },
+        { "id": "02", "caption": "Llanos de Jable" },
+        { "id": "03", "caption": "Crossing a lava field on PR LP 14" },
+        { "id": "04", "caption": "Bikers at the foot of Montaña Quemada (Volcán Tacande)" }
+      ],
+
+      "terrain": [
+        [ "volcanic", "strong" ],
+        [ "pine", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        [ "steep", "normal" ],
+        [ "gps", "normal" ]
+      ],
+
+      "notes": [
+        [ "gps", "The country lanes are unmarked and would be hard to navigate without GPS." ]
+      ]
+    },
+    {
       "id": "30",
       "name": "Trans Cumbre",
       "lengthKm": "11",
