@@ -79,6 +79,22 @@
       "description": "A hub for walks in the Cumbre Vieja. Toilets, BBQ pits, play area, campsite, water and a small mobile kiosk selling drinks and snacks.",
       "location": "Refugio El Pilar"
     }
+  ],
+  [
+    "Centro de Visitantes",
+    {
+      "id": "06",
+      "name": "Centro de Visitantes Caldera de Taburiente",
+      "tags": ["info", "transport", "museum", "building"],
+      "description": "The main visitor centre ideally situated for many walks. Has an exhibition, garden with rare plants, toilets, and a well-informed information desk.",
+      "entryCost": "FREE",
+      "tel": "(+34) 922 922 280",
+      "email": "infcalde.cmayot@gobiernodecanarias.org",
+      "location": "Centro de Visitantes",
+      "openingTimes": 
+        [
+          { "when": "Daily", "times": "09:00 - 18:00" }
+        ]
+    }
   ]
-
 ]

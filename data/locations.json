@@ -211,6 +211,38 @@
       },
       "notes": "You can walk to Centro de Interpretación del tubo volcánico Cueva de Las Palomas from here."
     }
+  ],
+  [
+    "Centro de Visitantes",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Large car park at the rear, some parking in the front.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "300"
+        ],
+        "stop": "Centro de Visitantes"
+      },
+      "notes": "On the LP-3 road about half way between El Paso and the Cumbre Nueva tunnel."
+    }
+  ],
+  [
+    "San Pedro de Breña Alta",
+    {
+      "areas": ["east"],
+      "province": "Breña Alta",
+      "parking": "Car park at the rear of Plaza de Bujaz",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "35"
+        ],
+        "stop": "San Pedro"
+      },
+      "notes": "Has an attractive plaza and some good restaurants."
+    }
   ]
 ]
 

@@ -689,6 +689,119 @@
       ]
     },
     {
+      "id": "30",
+      "name": "Trans Cumbre",
+      "lengthKm": "11",
+      "lengthMiles": "6.8",
+      "walkingTime": "03:20",
+      "shortDescription": "Historic route over the Cumbre with views of both sides from the top.",
+      "description": "A transverse crossing of the Cumbre Nueva passing from country lanes to pine forest, clouds (probably), then dark and mossy cobbles and paths to a more open wooded final stretch.",
+      "starred": "false",
+      "walkType": "linear",
+      "duration": "half",
+      "effort": "strenuous",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP30 Trans Cumbre.gpx",
+      "refreshments": "Bars, restaurants, cafés, shops in Breña Alta",
+      "start": "Centro de Visitantes",
+      "end": "San Pedro de Breña Alta",
+      "paths": ["PR LP 01"],
+
+      "images": [
+        { "id": "01", "caption": "Where PR LP1 and the GR131 meet on the Cumbre Nueva" },
+        { "id": "02", "caption": "Small shrine in the forest on PR LP 1" },
+        { "id": "03", "caption": "Ermita de la Virgen del Pino" }
+      ],
+
+      "terrain": [
+        [ "laurisilva", "normal" ],
+        [ "pine", "normal" ]
+      ],
+
+      "interest": [
+        [ "views", "normal" ]
+      ],
+
+      "warnings": [
+        [ "steep", "strong" ],
+        [ "slippery", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Cobbled sections are rather treacherous when wet." ],
+        [ "steep", "The climb up to the Cumbra Nueva is a long staircase, hard on the knees." ]
+      ]
+    },
+    {
+      "id": "31",
+      "name": "Cumbre Nueva loop",
+      "lengthKm": "17.1",
+      "lengthMiles": "10.6",
+      "walkingTime": "04:40",
+      "shortDescription": "Long circuit that rewards with some fine views on a clear day.",
+      "description": "A big circuit climbing up to Refugio El Pilar, traversing the Cumbre Nueva, then descending steeply down back to the start.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP31 Cumbre Nueva loop.gpx",
+      "refreshments": "Possible snack from kiosk at Refugio El Pilar",
+      "start": "Centro de Visitantes",
+      "end": "Centro de Visitantes",
+      "paths": ["PR LP 13.3", "PR LP 01.1", "PR LP 01", "GR 131 Etapa 2", "PR LP 14" ],
+      
+      "images": [
+        { "id": "01", "caption": "Fayal-brezal (myrtl-heather) on the Cumbre Nueva" },
+        { "id": "02", "caption": "Radio mast along the GR131" },
+        { "id": "03", "caption": "View of the Caldera from the Cumbre Nueva" },
+        { "id": "04", "caption": "Country lane around Tacande" }
+      ],
+
+      "variants": [
+        {
+          "id": "31a",
+          "name": "El Pilar to Reventon Pass",
+          "description": "With a car you can walk the Cumbre Nueva on its own following the forestry path in one direction and the GR 131 in the other.",
+          "walkType": "return",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "Refugio El Pilar",
+          "end": "Refugio El Pilar",
+          "routeDirections": "[31](09 to 13) and back"
+        }
+      ],
+	  
+      "terrain": [
+        [ "pine", "normal" ],
+        [ "volcanic", "normal" ]
+      ],
+
+      "interest": [
+        [ "views", "normal" ],
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        [ "steep", "strong" ],
+        [ "weather", "normal" ]
+      ],
+
+      "notes": [
+        [ "steep", "The climb up to the Cumbra Nueva is a long staircase, hard on the knees." ]
+      ]
+    },
+    {
       "id": "32",
       "name": "Lavas de San Juan",
       "lengthKm": "10",
