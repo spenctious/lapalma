@@ -136,7 +136,7 @@
       "id": "09",
       "name": "Playa de Taburiente",
       "tags": ["nature"],
-      "description": "Beach-like area on the Rio de Taburiente with nearby picnic area, campsite and visitor centre.",
+      "description": "Pebble beach-like area at the far end of the Caldera",
       "location": "Playa de Taburiente"
     }
   ],
@@ -158,6 +158,21 @@
       "tags": ["building", "tourism"],
       "description": "Collection of some 17 telescopes. Daytime visits and stargazing tours can be arranged.",
       "location": "Roque de los Muchachos"
+    }
+  ],
+  [
+    "refugio",
+    {
+      "id": "12",
+      "name": "Refugio Punta de Los Roques",
+      "tags": ["camping", "nature"],
+      "description": "La Palma's only functioning hiker hut sleeping 16. No toilets, probably no water.",
+      "entryCost": "FREE",
+      "location": "Punta de Los Roques",
+      "openingTimes": 
+        [
+          { "when": "Daily", "times": "Always open, no booking" }
+        ]
     }
   ]
 

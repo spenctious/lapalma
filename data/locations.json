@@ -294,7 +294,7 @@
     {
       "areas": ["central"],
       "province": "El Paso",
-      "notes": ""
+      "notes": "Beach-like area on the Rio de Taburiente"
     }
   ],
   [
@@ -312,6 +312,14 @@
       "areas": ["central"],
       "province": "El Paso",
       "notes": "Viewpoint accessed up a steep slippery slope."
+    }
+  ],
+  [
+    "Punta de Los Roques",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "notes": "Spectacular viewpoint where the Caldera meets into the Cumbre Nueva"
     }
   ]
 ]
