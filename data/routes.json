@@ -689,83 +689,86 @@
       ]
     },
     {
-      "id": "28",
-      "name": "Pico Bejenado circuit",
-      "lengthKm": "12.2",
-      "lengthMiles": "7.6",
-      "walkingTime": "03:20",
-      "shortDescription": "Climb to the island's only true peak with far reaching views into the Caldera.",
-      "description": "A very picturesque circuit of the big volcano linking to La Cumbrecita. The views from on top are worth the sometimes steep climb but the whole circuit is a pleasant walk.",
+      "id": "26",
+      "name": "Barranco de las Angustias",
+      "lengthKm": "15.1",
+      "lengthMiles": "9.4",
+      "walkingTime": "04:10",
+      "shortDescription": "Spectacular hike through the Caldera interior returning along the river bed.",
+      "description": "A classic hike through the largest barranco on the island. A shared taxi is needed to get to start viewpoint then it’s an easy forest walk down to the river and ‘beach’. The return route is rather more strenuous but still mostly downhill following the river bed or the higher-level path that continually crosses it.",
       "starred": "true",
-      "walkType": "circular",
-      "duration": "full",
+      "walkType": "linear",
+      "duration": "long",
       "effort": "strenuous",
-      "waymarked": "false",
+      "waymarked": "true",
       "accessCar": "true",
       "accessBus": "false",
       "province": "El Paso",
-      "town": "El Paso",
-      "routeFile": "LP28 Pico Bejenado circuit.gpx",
+      "town": "Los Llanos",
+      "routeFile": "LP26 Barranco de las Angustias.gpx",
       "refreshments": "None",
-      "start": "Pista de Valencia",
-      "end": "Pista de Valencia",
-      "paths": ["PR LP 13.3"],
+      "start": "Los Brecitos",
+      "end": "La Viña car park",
+      "paths": ["PR LP 13"],
       
       "images": [
-        { "id": "01", "caption": "view from Pico Bejenado looking towards Puerto Tazacorte" },
-        { "id": "02", "caption": "Caldera de Taburiente" },
-        { "id": "03", "caption": "Climbing to Pico Bejenado" },
-        { "id": "04", "caption": "Descending from Roque de Los Cuervos" }
+        { "id": "01", "caption": "Looking north-east from Playa de Taburiente" },
+        { "id": "02", "caption": "View from Mirador Los Brecitos" },
+        { "id": "03", "caption": "Descending to the riverbed" },
+        { "id": "04", "caption": "Path soon after the campsite" },
+        { "id": "05", "caption": "Cascada de Colores" },
+        { "id": "06", "caption": "Near Dos Agua" }
       ],
 
       "variants": [
         {
-          "id": "28a",
-          "name": "Taxi up then descend to the visitor centre",
-          "description": "Taking a taxi to the start from the visitor centre lets you extend the walk by walking back down on PR LP 13.3",
-          "walkType": "linear",
-          "duration": "long",
+          "id": "26a",
+          "name": "To Cascada de Colores and back",
+          "description": "The walk up to the Cascada de Colores and back is a worthwhile alternative to the main walk. For variety you can follow the river all the way up and take the path on the way down when it offers an alternative.",
+          "walkType": "return",
+          "duration": "full",
           "effort": "strenuous",
-          "accessCar": "false",
+          "accessCar": "true",
           "accessBus": "false",
-          "start": "Pista de Valencia",
-          "end": "Centro de Visitantes",
-          "routeFile": "LP28a Pista de Valencia to Centro de Visitantes.gpx",
-          "routeDirections": "[28] then [28a]"
+          "start": "La Viña car park",
+          "end": "La Viña car park",
+          "routeDirections": "[26](17 to 11) and back"
         },
         {
-          "id": "28b",
-          "name": "Taxi up then descend to El Paso",
-          "description": "Forest descent opening out to abandoned terraces and meadows near El Paso.",
-          "walkType": "linear",
-          "duration": "long",
+          "id": "26b",
+          "name": "Playa de Taburiente to Mirador Cascada de La Fondada",
+          "description": "Add-on walk to a waterfall for the very fit or those camping.",
+          "walkType": "return",
+          "duration": "stroll",
           "effort": "strenuous",
           "accessCar": "false",
           "accessBus": "false",
-          "start": "Pista de Valencia",
-          "end": "El Paso",
-          "routeFile": "LP28b Pista de Valencia to El Paso.gpx",
-          "routeDirections": "[28] then [28b]"
+          "start": "Playa de Taburiente",
+          "end": "Playa de Taburiente",
+          "routeFile": "LP26b Playa de Taburiente to Mirador Cascada de La Fondada.gpx",
+          "routeDirections": "26b"
         }
       ],
 	  
+      "poi": ["Caldera campsite", "Playa de Taburiente"],
+
       "terrain": [
-        [ "pine", "strong" ]
+        [ "pine", "normal" ],
+        [ "riverbed", "strong" ]
       ],
 
       "interest": [
         [ "views", "strong" ],
-        [ "scenic", "strong" ],
-        [ "peaks", "strong" ]
+        [ "poi", "normal" ],
+        [ "scenic", "strong" ]
       ],
 
       "warnings": [
-        [ "vertigo", "normal" ],
-        [ "gps", "normal" ]
+        [ "weather", "strong" ]
       ],
 
       "notes": [
-        [ "gps", "Variant descents are on unmarked paths." ]
+        [ "weather", "The park will be closed in bad weather or if bad weather is expected." ]
       ]
     },
     {
@@ -774,7 +777,7 @@
       "lengthKm": "19.6",
       "lengthMiles": "12.2",
       "walkingTime": "04:45",
-      "shortDescription": "",
+      "shortDescription": "Forest climb to the saddle point between the Calsera and Pico Bejenado.",
       "description": "A lengthy though undemanding forest climb to the Cumbrecita viewpoints with a couple of good miradors on the way. After a circuit of the Cumbrecita viewpoints the way descends rather more easily on the road with opportunities to get off the road on to forest paths.",
       "starred": "false",
       "walkType": "circular",
@@ -868,6 +871,86 @@
 
       "warnings": [
         [ "vertigo", "normal" ]
+      ]
+    },
+    {
+      "id": "28",
+      "name": "Pico Bejenado circuit",
+      "lengthKm": "12.2",
+      "lengthMiles": "7.6",
+      "walkingTime": "03:20",
+      "shortDescription": "Climb to the island's only true peak with far reaching views into the Caldera.",
+      "description": "A very picturesque circuit of the big volcano linking to La Cumbrecita. The views from on top are worth the sometimes steep climb but the whole circuit is a pleasant walk.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "false",
+      "province": "El Paso",
+      "town": "El Paso",
+      "routeFile": "LP28 Pico Bejenado circuit.gpx",
+      "refreshments": "None",
+      "start": "Pista de Valencia",
+      "end": "Pista de Valencia",
+      "paths": ["PR LP 13.3"],
+      
+      "images": [
+        { "id": "01", "caption": "view from Pico Bejenado looking towards Puerto Tazacorte" },
+        { "id": "02", "caption": "Caldera de Taburiente" },
+        { "id": "03", "caption": "Climbing to Pico Bejenado" },
+        { "id": "04", "caption": "Descending from Roque de Los Cuervos" }
+      ],
+
+      "variants": [
+        {
+          "id": "28a",
+          "name": "Taxi up then descend to the visitor centre",
+          "description": "Taking a taxi to the start from the visitor centre lets you extend the walk by walking back down on PR LP 13.3",
+          "walkType": "linear",
+          "duration": "long",
+          "effort": "strenuous",
+          "accessCar": "false",
+          "accessBus": "false",
+          "start": "Pista de Valencia",
+          "end": "Centro de Visitantes",
+          "routeFile": "LP28a Pista de Valencia to Centro de Visitantes.gpx",
+          "routeDirections": "[28] then [28a]"
+        },
+        {
+          "id": "28b",
+          "name": "Taxi up then descend to El Paso",
+          "description": "Forest descent opening out to abandoned terraces and meadows near El Paso.",
+          "walkType": "linear",
+          "duration": "long",
+          "effort": "strenuous",
+          "accessCar": "false",
+          "accessBus": "false",
+          "start": "Pista de Valencia",
+          "end": "El Paso",
+          "routeFile": "LP28b Pista de Valencia to El Paso.gpx",
+          "routeDirections": "[28] then [28b]"
+        }
+      ],
+	  
+      "terrain": [
+        [ "pine", "strong" ]
+      ],
+
+      "interest": [
+        [ "views", "strong" ],
+        [ "scenic", "strong" ],
+        [ "peaks", "strong" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ],
+        [ "gps", "normal" ]
+      ],
+
+      "notes": [
+        [ "gps", "Variant descents are on unmarked paths." ]
       ]
     },
     {

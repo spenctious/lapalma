@@ -270,6 +270,33 @@
       "parking": "Two small car parks.",
       "notes": "Book in advance on the official website or come out of hours. Barrier on the approach road."
     }
+  ],
+  [
+    "Los Brecitos",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Small car park at the mirador.",
+      "notes": "The road from La Viña car park is wether dependent, and very narrow. Take a taxi."
+    }
+  ],
+  [
+    "La Viña car park",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "Ample spaces unless it's the holidays",
+      "notes": "Shared taxis from La Viña car park run from 8:00 to 13:00 (12:00 autumn/winter) and charge 51€ per car seating 4 people"
+    }
+  ],
+  [
+    "Playa de Taburiente",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "None",
+      "notes": ""
+    }
   ]
 ]
 

@@ -115,5 +115,30 @@
           { "when": "Free access", "times": "Other times" }
         ]
     }
+  ],
+  [
+    "Caldera campsite",
+    {
+      "id": "08",
+      "name": "Camping Caldera de Taburiente",
+      "tags": ["info", "nature", "camping"],
+      "description": "Basic campsite in the heart of the Caldera ideal for exploring. No facilities except toilets and water.",
+      "entryCost": "FREE",
+      "tel": "(+34) 922922280",
+      "email": "informacion.taburiente@gobiernodecanarias.org",
+      "web": {"name": "Booking", "link": "https://www.reservasparquesnacionales.es/real/ParquesNac/usu/html/detalle-actividad-oapn.aspx?cen=4&act=2"},
+      "location": "Playa de Taburiente"
+    }
+  ],
+  [
+    "Playa de Taburiente",
+    {
+      "id": "09",
+      "name": "Playa de Taburiente",
+      "tags": ["nature"],
+      "description": "Beach-like area on the Rio de Taburiente with nearby picnic area, campsite and visitor centre.",
+      "location": "Playa de Taburiente"
+    }
   ]
+
 ]
