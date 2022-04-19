@@ -863,7 +863,8 @@
           "accessBus": "false",
           "start": "Refugio El Pilar",
           "end": "Faro de Fuencaliente",
-          "routeDirections": "[00](00 to 00) then [00]"
+          "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
+          "routeDirections": "[34] then [38]"
         }
       ],
 	  
@@ -1092,7 +1093,7 @@
       "town": "Los Canarios",
       "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
       "refreshments": "Bars/cafés/restaurants and shops in Los Canarios. Café in the visitor centre, restaurant near the access road. Restaurant by the salt pans in Faro de Fuencaliente.",
-      "start": "Volcán San Antonio",
+      "start": "Los Canarios",
       "end": "Faro de Fuencaliente",
       "paths": ["GR 131 Etapa 3"],
       
