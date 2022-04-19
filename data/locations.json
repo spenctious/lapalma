@@ -321,6 +321,23 @@
       "province": "El Paso",
       "notes": "Spectacular viewpoint where the Caldera meets into the Cumbre Nueva"
     }
+  ],
+  [
+    "Pico de La Cruz",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "notes": "Roadside parking spots near the PR LP 07/GR 131 intersection"
+    }
+  ],
+  [
+    "Pico de la Nieve",
+    {
+      "areas": ["central"],
+      "province": "El Paso",
+      "notes": "Parking spot just off the LP-4 road where the PR LP 03 path intersects."
+    }
   ]
+
 ]
 
