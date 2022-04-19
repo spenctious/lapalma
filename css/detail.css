@@ -76,8 +76,7 @@
 }
 
 #basics-detail,
-#features-and-warnings,
-#detail-body {
+#features-and-warnings {
   grid-column: 1;
   display: none;
   margin: 0.5rem;
@@ -102,6 +101,15 @@
   grid-column: 1;
   padding: 0.5rem;
   background-color: white;
+}
+
+.icon-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 3rem) repeat(3, 1.5rem);
+  grid-template-rows: 1.5rem;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  grid-column: 1;
 }
 
 #basics-summary > div:nth-child(1) { grid-column: 1 / 9; grid-row: 1; } /* title */
@@ -139,6 +147,11 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 h3 {
   font-weight: bold;
   margin-top: 1rem;
@@ -158,13 +171,13 @@ h4 {
 }
 
 #detail-body {
-  width: 30rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 0.5rem;
+  grid-column: 1;
 }
 
-#detail-body p {
-  font-size: 1rem;
+#detail-body > p {
+  font-size: 0.8rem;
+  line-height: 120%;
 }
 
 #detail-body h2 {
@@ -173,12 +186,19 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
-.title-id {
+.title-id,
+.variant-title-id {
   background-color: black;
   color: white;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
+  margin-right: 0.3rem;
 }
+
+.variant-title-id {
+  color: yellow;
+}
+
 
 .starred img,
 .favourite img {
@@ -194,9 +214,9 @@ h4 {
   vertical-align: bottom;
 }
 
-.route-metric p {
+.route-metric > p {
   font-size: 0.6rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 
 .route-metric img {
@@ -241,13 +261,13 @@ h4 {
 
 .download-link {
   border-radius: 6px;
-  height: 2rem;
-  padding: 6px;
+  padding: 10px;
   font-size: 0.8rem;
+  display: inline-block;
 }
 
 .primary {
-  background-color: cornflowerblue;
+  background-color: var(--colour1);
 }
 
 .primary a { 
@@ -256,11 +276,28 @@ h4 {
   font-weight: bold;
 }
 
-.secondary {
-  border: 1px solid grey;
+.downloads {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .secondary {
-  background-color: grey;
+  border: 1px solid var(--colour1);
 }
 
+.secondary a { 
+  color: var(--colour1); 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.variant {
+  border-top: 1px solid lightgray;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.variant > p {
+  font-size: 0.8rem;
+}
