@@ -689,12 +689,62 @@
       ]
     },
     {
+      "id": "15",
+      "name": "Caldera de Agua",
+      "lengthKm": "5.2",
+      "lengthMiles": "3.2",
+      "walkingTime": "01:30",
+      "shortDescription": "Dark and mysterious laurisilva forest walk with picnic/BBQ opportunities.",
+      "description": "A visit to the museum at La Zarza goes well with this little circuit that descends through deep dark laurisilva forest encountering several mini calderas on the way. The path exits the forest and completes the loop by way of a large recreation ground with good BBQ facilities.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "stroll",
+      "effort": "easy",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Garafia",
+      "town": "La Zarza",
+      "routeFile": "LP15 Caldera de Agua.gpx",
+      "refreshments": "Restaurant at La Mata. Bar/café in Llano Negro bus station. Picnic/BBQ facilities at San Antonio del Monte recreational area.",
+      "start": "La Zarza",
+      "end": "La Zarza",
+      "paths": ["PR LP 09.2", "PR LP 09"],
+      
+      "images": [
+        { "id": "01", "caption": "Dried-up waterfall" },
+        { "id": "02", "caption": "Descending to the riverbed" },
+        { "id": "03", "caption": "Fuente de la Caldera del Agua" }
+      ],
+
+      "poi": ["La Zarza"],
+
+      "terrain": [
+        [ "laurisilva", "strong" ]
+      ],
+
+      "interest": [
+        [ "archeological", "strong" ],
+        [ "poi", "normal" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "strong" ],
+        [ "gps", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Muddy and cobbled sections on the descent are slippery when wet." ],
+        [ "gps", "Signal will be reduced or lost in the barranco." ]
+      ]
+    },
+    {
       "id": "16",
       "name": "Laurisilva forest loop",
       "lengthKm": "12.1",
       "lengthMiles": "7.5",
       "walkingTime": "03:25",
-      "shortDescription": "",
+      "shortDescription": "A longer version of walk 15 that goes down to the coast.",
       "description": "A long descent through some of the finest laurisilva< forest on the island to the coast where there are spectacular views before a return on a different but parallel path.",
       "starred": "false",
       "walkType": "circular",
