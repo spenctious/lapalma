@@ -203,5 +203,84 @@
       "description": "Timy hamlet officially known as Porís de Candelaria built into a cave setting with a swimming spot.",
       "location": "Porís de Candelaria"
     }
+  ],
+  [
+    "mercadillo",
+    {
+      "id": "16",
+      "name": "Mercadillo del Agricultor y Artensanal",
+      "tags": ["tourism", "recreation", "refreshments"],
+      "description": "Popular local market selling foods and handmade objects. Bar nearby.",
+      "entryCost": "FREE",
+      "tel": "+34 922 49 30 77",
+      "location": "Area Recreativa El Fayal",
+      "openingTimes": 
+        [
+          { "when": "Saturdays", "times": "13:00 - 19:00" },
+          { "when": "Sundays", "times": "09:00 - 13:00" }
+        ]
+    }
+  ],
+  [
+    "Miradores flotantes Izcagua",
+    {
+      "id": "17",
+      "name": "Miradores flotantes Izcagua",
+      "tags": ["nature", "tourism"],
+      "description": "Series of daringly cantilivered glass-bottomed miragors overlooking the Barranco de Izcagua.",
+      "entryCost": "FREE",
+      "location": "Area Recreativa El Fayal"
+    }
+  ],
+  [
+    "Cuevas de Buracas",
+    {
+      "id": "18",
+      "name": "Cuevas de Buracas",
+      "tags": ["archeo"],
+      "description": "Historic caves with one staging a recreation of how the ancient Guanches may have lived.",
+      "location": ""
+    }
+  ],
+  [
+    "Molino de Buracas",
+    {
+      "id": "19",
+      "name": "Molino de Buracas y Museo de Interpretación del Gofio (MIGO)",
+      "tags": ["museum", "building"],
+      "description": "Historic grain mill and attached museum dedicated to gofio, the local roasted grain flour.",
+      "entryCost": "2.50€",
+      "tel": "(+34) 922 400 277 - 695 350 395",
+      "email": "migo@garafia.org",
+      "web": { "name": "", "link": "http://www.garafia.es/museo-de-interpretacion-del-gofio/"},
+      "location": "",
+      "openingTimes": 
+        [
+          { "when": "Mon - Sat", "times": "10:00 - 18:00" },
+          { "when": "Sundays", "times": "10:00 - 16:00" },
+          { "when": "Holidays", "times": "10:00 - 14:30" }
+        ]
+    }
+  ],
+  [
+    "Los Dragos de Buracas",
+    {
+      "id": "20",
+      "name": "Los Dragos de Buracas",
+      "tags": ["nature"],
+      "description": "The most impressive dragon tree speciment on the island.",
+      "location": "Los Dragos de Buracas"
+    }
+  ],
+  [
+    "Mirador de los Dragos",
+    {
+      "id": "21",
+      "name": "Mirador de los Dragos",
+      "tags": ["nature"],
+      "description": "Famous leaning dragon tree and secondary miragor further on.",
+      "location": "El Roque"
+    }
   ]
+
 ]

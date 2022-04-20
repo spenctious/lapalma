@@ -689,6 +689,206 @@
       ]
     },
     {
+      "id": "17",
+      "name": "Around Puntagorda",
+      "lengthKm": "5.2",
+      "lengthMiles": "3.2",
+      "walkingTime": "01:30",
+      "shortDescription": "Varied and beautiful walk around the semi-rural bits of Puntagorda.",
+      "description": "A delightful circuit around Puntagorda with great variety taking in an iconic dragon tree, giant vegetation, and lovely views of the semi-rural countryside.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "moderate",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Puntagorda",
+      "town": "Puntagorda",
+      "routeFile": "LP17 Around Puntagorda.gpx",
+      "refreshments": "Bars, cafés, restaurants in Puntagorda.",
+      "start": "Puntagorda tourist information centre",
+      "end": "Puntagorda tourist information centre",
+      "paths": ["GR 130 Etapa 4", "PR LP 11.1"],
+      
+      "images": [
+        { "id": "01", "caption": "Iglesia San Mauro de Abad" },
+        { "id": "02", "caption": "Looking across the lower reaches of Puntagorda" },
+        { "id": "03", "caption": "PR LP 11.1 near El Roque" },
+        { "id": "04", "caption": "Mirador de los Dragos" }
+      ],
+
+      "variants": [
+        {
+          "id": "17a",
+          "name": "Miradors and barranco slope",
+          "description": "From El roque you could visit the two miradors and then explore as far as the end of the pine forest zone before returning the same way.",
+          "walkType": "return",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "El Roque",
+          "end": "El Roque",
+          "routeDirections": "[17](05 to 08) and back"
+        }
+      ],
+	  
+      "poi": ["Mirador de los Dragos"],
+
+      "terrain": [
+        [ "coastal", "normal" ],
+        [ "dragon", "strong" ]
+      ],
+
+      "interest": [
+        [ "views", "normal" ],
+        [ "poi", "normal" ],
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        []
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Puerto de Puntagorda",
+      "lengthKm": "10.1",
+      "lengthMiles": "6.3",
+      "walkingTime": "03:15",
+      "shortDescription": "A walk to a local port through the local countryside.",
+      "description": "The port makes an attractive destination but this walk is mostly about getting there and back by way of the semi-wild coastal slopes experiencing something of the local life on the way.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "half",
+      "effort": "strenuous",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Puntagorda",
+      "town": "Puntagorda",
+      "routeFile": "LP18 Puerto de Puntagorda.gpx",
+      "refreshments": "Bars, cafes, restaurants in Puntagorda.",
+      "start": "Puntagorda tourist information centre",
+      "end": "Puntagorda tourist information centre",
+      "paths": ["PR LP 11.2"],
+      
+      "images": [
+        { "id": "01", "caption": "Puerto de Puntagorda" },
+        { "id": "02", "caption": "Approaching the port along PR LP 11.2" },
+        { "id": "03", "caption": "Descending to the slipway" },
+        { "id": "04", "caption": "Cave house in the cliffs" }
+      ],
+
+      "terrain": [
+        [ "coastal", "normal" ]
+      ],
+
+      "interest": [
+        [ "port", "normal" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Minimal risk." ]
+      ]
+    },
+    {
+      "id": "19",
+      "name": "El Pinar to Cuevas de Buraca",
+      "lengthKm": "13.5",
+      "lengthMiles": "8.4",
+      "walkingTime": "04:00",
+      "shortDescription": "Dragon trees, beautiful countryside, caves and a spectacular barranco.",
+      "description": "The traditional walk from near Las Tricias to Cuevas de Buraca but with an exploration of the impressive Barranco de Izcegua thrown in to make a long varied walk.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Puntagorda",
+      "town": "El Pinar",
+      "routeFile": "LP19 El Pinar to Cuevas de Buraca.gpx",
+      "refreshments": "Bar and market at the start on weekends. Bars, restaurants, cafe, shops in El Pinar. Restaurant in Las Tricias. Cafe near the caves.",
+      "start": "Area Recreativa El Fayal",
+      "end": "Area Recreativa El Fayal",
+      "paths": ["PR LP 11.1", "GR 130 Etapa 4"],
+      
+      "images": [
+        { "id": "01", "caption": "Approaching Las Tricias" },
+        { "id": "02", "caption": "One of the best dragon trees on the island - on the GR130 path" },
+        { "id": "03", "caption": "Free-range chickens along the GR130" },
+        { "id": "04", "caption": "Cuevas de Buracas" },
+        { "id": "05", "caption": "Barranco de Izcegua" }
+      ],
+
+      "variants": [
+        {
+          "id": "19a",
+          "name": "Las Tricias to Cuevas de Buraca",
+          "description": "The traditional easy circuit around Las Tricias to the caves passing one of the most famous and photogenic dragon tree groves on the way and a Gofio museum on the return leg.",
+          "walkType": "circular",
+          "duration": "half",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Las Tricias",
+          "end": "Las Tricias",
+          "routeFile": "LP19a Las Tricias to Cuevas de Buraca.gpx",
+          "routeDirections": "[19a]"
+        },
+        {
+          "id": "19b",
+          "name": "Barranco de Izcegua",
+          "description": "An exploration of the impressive Barranco de Izcegua between Puntagorda and Las Tricias made possible by a newly constructed path.",
+          "walkType": "circular",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Area Recreativa El Fayal",
+          "end": "Area Recreativa El Fayal",
+          "routeFile": "LP19b Barranco de Izcegua.gpx",
+          "routeDirections": "[19b]"
+        }
+      ],
+	  
+      "poi": ["mercadillo", "Miradores flotantes Izcagua", "Cuevas de Buracas", "Molino de Buracas"],
+
+      "terrain": [
+        [ "pine", "normal" ],
+        [ "dragon", "strong" ]
+      ],
+
+      "interest": [
+        [ "views", "strong" ],
+        [ "poi", "strong" ],
+        [ "archeological", "strong" ],
+        [ "scenic", "strong" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "steep", "normal" ],
+        [ "vertigo", "strong" ],
+        [ "gps", "normal" ],
+        [ "rockfall", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "The descent into the barranco could be dizzying for some." ],
+        [ "gps", "Signal is likely to be lost in the barranco but as there is but one path..." ],
+        [ "rockfall", "Slight chance of rockfall in the barranco." ],
+        [ "slippery", "Sections of the barranco descent have loose material." ]
+      ]
+    },
+    {
       "id": "20",
       "name": "Tinizara to Tijarafe",
       "lengthKm": "6.2",

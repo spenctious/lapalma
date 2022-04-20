@@ -505,6 +505,97 @@
       },
       "notes": ""
     }
+  ],
+  [
+    "El Pinar",
+    {
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "Street parking",
+      "bus": {
+        "notes": "You can walk to Puntagorda just up the road.",
+        "routes": [
+          "110",
+          "120"
+        ],
+        "stop": "El Pinar"
+      },
+      "notes": "Self-contained village and bus interchange."
+    }
+  ],
+  [
+    "Area Recreativa El Fayal",
+    {
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "Plentiful, except at the weekends and holidays when there is a market.",
+      "bus": {
+        "notes": "Get off at the bus interchange point and walk down SL PG 61.",
+        "routes": [
+          "120",
+          "110"
+        ],
+        "stop": "El Pinar"
+      },
+      "notes": "Recreation area with nearby market. Short walk from El Pinar."
+    }
+  ],
+  [
+    "Puntagorda tourist information centre",
+    {
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "Adequate street parking nearby.",
+      "bus": {
+        "notes": "Bus interchange is at El Pinar, one stop further on.",
+        "routes": [
+          "110"
+        ],
+        "stop": "Puntagorda"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "El Roque",
+    {
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "Small parking spot by a noticeboard.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "El Roque"
+      },
+      "notes": "Nearby miradors and picnic area."
+    }
+  ],
+  [
+    "Los Dragos de Buracas",
+    {
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "None",
+      "notes": "Only accessible by foot. On the GR 130 path between Las Tricias and Cuevas de Buracas."
+    }
+  ],
+  [
+    "Las Tricias",
+    {
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "A couple of small car parks.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "120"
+        ],
+        "stop": "Las Tricias"
+      },
+      "notes": "Tiny place but with restaurants and an tourist information centre."
+    }
   ]
 ]
 
