@@ -301,6 +301,15 @@
           { "when": "Mondays", "times": "CLOSED" }
         ]
     }
+  ],
+  [
+    "Puerto de Garafía",
+    {
+      "id": "23",
+      "name": "Puerto de Garafía",
+      "tags": ["nature", "tourism"],
+      "description": "Beautiful port at the end of a rich coastal zone, a haven for birds. Ideal for watching the sun go down.",
+      "location": "Puerto de Garafía"
+    }
   ]
-
 ]

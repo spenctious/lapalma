@@ -689,6 +689,284 @@
       ]
     },
     {
+      "id": "11",
+      "name": "Franceses to Santo Domingo",
+      "lengthKm": "18.4",
+      "lengthMiles": "11.4",
+      "walkingTime": "05:35",
+      "shortDescription": "Superb coastal scenery and two very impressive barrancos to cross.",
+      "description": "One of the best stretches of coast on the island. There are a couple of large barrancos at the start that are full of interest but will take time to traverse.",
+      "starred": "true",
+      "walkType": "linear",
+      "duration": "long",
+      "effort": "strenuous",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Garafia",
+      "town": "Franceses",
+      "routeFile": "LP11 Franceses to Santo Domingo.gpx",
+      "refreshments": "Bar in El Tablado. Bars, cafés and restaurants in Santo Domingo.",
+      "start": "Franceses",
+      "end": "Santo Domingo de Garafía",
+      "paths": ["GR 130 Etapa 3"],
+      
+      "images": [
+        { "id": "01", "caption": "Unspoilt coastal scenery east of Garafia" },
+        { "id": "02", "caption": "Barranco de los Hombres, approaching El Tablado" },
+        { "id": "03", "caption": "Wind turbines near Juan Adalid" }
+      ],
+
+      "variants": [
+        {
+          "id": "11a",
+          "name": "Only as far as Don Pedro",
+          "description": "If the whole walk seems too long you could call it a day early and get a taxi from don Pedro",
+          "walkType": "linear",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Franceses",
+          "end": "Don Pedro",
+          "routeDirections": "[11](01 to 09)"
+        },
+        {
+          "id": "11b",
+          "name": "One barranco only",
+          "description": "You can choose to walk either barranco and get a look into the other without walking it.",
+          "walkType": "return",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "El Tablado",
+          "end": "El Tablado",
+          "routeDirections": "[11](05 to 01 and back) or [11](05 to 07 and back)"
+        }
+      ],
+	  
+      "terrain": [
+        [ "coastal", "strong" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ],
+        [ "views", "strong" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "strong" ],
+        [ "vertigo", "normal" ],
+        [ "steep", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Loose material on barranco paths" ],
+        [ "vertigo", "Open coastal paths entering the barrancos" ],
+        [ "steep", "Big barrancos - may be tough on the knees" ]
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Big northern loop",
+      "lengthKm": "22.2",
+      "lengthMiles": "13.8",
+      "walkingTime": "06:20",
+      "shortDescription": "Some of the best coastal scenery and laurasilva forest on the island.",
+      "description": "A long and very rewarding walk that needs an early start in the winter. The first section is a steep climb up to the La Zarza museum. You then descend into fabulous laurisilva forest before emerging on the coast for the final very scenic leg.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "long",
+      "effort": "hard",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Garafia",
+      "town": "Santo Domingo de Garafía",
+      "routeFile": "LP12 Big northern loop.gpx",
+      "refreshments": "Bars, cafés, restaurants in Santo Domingo. Restaurant in La Mata.",
+      "start": "Santo Domingo de Garafía",
+      "end": "Santo Domingo de Garafía",
+      "paths": ["GR 130 Etapa 3", "PR LP 09.2", "PR LP 09"],
+      
+      "images": [
+        { "id": "01", "caption": "Mirador on the path heading up to La Zarza" },
+        { "id": "02", "caption": "Great dragon tree on path PL LP 9.3 approaching Garafia" },
+        { "id": "03", "caption": "A seeming dead-end in the Barranco de Fagundo" }
+      ],
+
+      "variants": [
+        {
+          "id": "12a",
+          "name": "Cut out the climb",
+          "description": "The walk can be made more manageable by taking the bus to La Zarza.",
+          "walkType": "linear",
+          "duration": "full",
+          "effort": "strenuous",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "La Zarza",
+          "end": "Santo Domingo de Garafía",
+          "routeDirections": "[12](11 to the end)"
+        }
+      ],
+	  
+      "poi": ["La Zarza"],
+
+      "terrain": [
+        [ "laurisilva", "strong" ],
+        [ "coastal", "strong" ],
+        [ "pine", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "normal" ],
+        [ "archeological", "normal" ],
+        [ "poi", "normal" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "steep", "normal" ],
+        [ "gps", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Cobbles, clay paths, mud and loose material in places." ],
+        [ "steep", "The climb is not too bad but it's tiring in a long walk." ],
+        [ "gps", "Signal is weak or lost in the barranco." ]
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Puerto de Garafia",
+      "lengthKm": "15.4",
+      "lengthMiles": "9.6",
+      "walkingTime": "04:30",
+      "shortDescription": "A beautiful and varied walk that is full of interest with refreshments on the way.",
+      "description": "A rather long but richly rewarding loop in three stages. The first leg is steeply up through pine forest to Llano Negro, then down through mixed landscapes to the attractive port and finally the coastal section leading back in to town.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Garafia",
+      "town": "Santo Domingo de Garafía",
+      "routeFile": "LP13 Puerto de Garafia.gpx",
+      "refreshments": "",
+      "start": "Santo Domingo de Garafía",
+      "end": "Santo Domingo de Garafía",
+      "paths": ["SL VG 51", "PR LP 09", "PR LP 09.3"],
+      
+      "images": [
+        { "id": "01", "caption": "Puerto de Garafia" },
+        { "id": "02", "caption": "Geodesic dome dwelling just off the path to the port" },
+        { "id": "03", "caption": "Fisherman shacks at the port" },
+        { "id": "04", "caption": "Ancient Guanches petroglyphs between the port and Garafia" },
+        { "id": "05", "caption": "Farmland on the approach to Llano Negro" }
+      ],
+
+      "variants": [
+        {
+          "id": "13a",
+          "name": "Cut out the climb",
+          "description": "The walk can be downgraded to a moderate effort level by taking the bus to Llano Negro and starting from there.",
+          "walkType": "linear",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Llano Negro",
+          "end": "Santo Domingo de Garafía",
+          "routeDirections": "[13](06 to the end)"
+        },
+        {
+          "id": "13b",
+          "name": "Sunset stroll to the port",
+          "description": "Enjoy the port at its best by taking a slow late afternoon stroll down. Stay for the sunset but remember to bring a torch (and perhaps insect repellent).",
+          "walkType": "return",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "bus",
+          "start": "Santo Domingo de Garafía",
+          "end": "Santo Domingo de Garafía",
+          "routeDirections": "[13](End to 11 and back)"
+        }
+      ],
+	  
+      "poi": ["Puerto de Garafía"],
+
+      "terrain": [
+        [ "pine", "strong" ],
+        [ "coastal", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "strong" ],
+        [ "archeological", "normal" ],
+        [ "poi", "normal" ],
+        [ "port", "normal" ],
+        [ "views", "normal" ]
+      ],
+
+      "warnings": [
+        [ "steep", "normal" ],
+        [ "vertigo", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Brief and slight vertigo risk when rounding the headland to get to the port." ]
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Bosque Dragos El Palmar",
+      "lengthKm": "5.1",
+      "lengthMiles": "3.2",
+      "walkingTime": "01:30",
+      "shortDescription": "Lovely little circuit to an impressive dragon tree grove.",
+      "description": "A very pleasant short walk along some attractive coast to a little known dragon tree grove. The descent is down a steep cobbled track.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "stroll",
+      "effort": "easy",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Garafia",
+      "town": "Santo Domingo de Garafía",
+      "routeFile": "LP14 Bosque Dragos El Palmar.gpx",
+      "refreshments": "Bars/cafés/restaurants in Santo Domingo.",
+      "start": "Santo Domingo de Garafía",
+      "end": "Santo Domingo de Garafía",
+      "paths": ["PR LP 09.3", "PR LP 09"],
+      
+      "images": [
+        { "id": "01", "caption": "Isolated house in a dragon tree grove" }
+      ],
+
+      "terrain": [
+        [ "dragon", "normal" ],
+        [ "coastal", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Cobbled path can be very slippery when wet" ]
+      ]
+    },
+    {
       "id": "15",
       "name": "Caldera de Agua",
       "lengthKm": "5.2",

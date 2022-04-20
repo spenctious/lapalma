@@ -637,6 +637,49 @@
       },
       "notes": ""
     }
+  ],
+  [
+    "Llano Negro",
+    {
+      "areas": ["north", "west"],
+      "province": "Garafia",
+      "parking": "By the tourist information centre and various street options.",
+      "bus": {
+        "notes": "Cafe/bar at the bus stop",
+        "routes": [
+          "120"
+        ],
+        "stop": "Llano Negro"
+      },
+      "notes": "Tiny place but has a shop, har and tourist information centre."
+    }
+  ],
+  [
+    "Puerto de Garafía",
+    {
+      "areas": ["north", "west"],
+      "province": "Garafia",
+      "parking": "Quite a large car park and a few spots on the approach road.",
+      "notes": "Popular with locals. Petroglyphs on the walk down."
+    }
+  ],
+  [
+    "Don Pedro",
+    {
+      "areas": ["north"],
+      "province": "Garafia",
+      "parking": "Not really.",
+      "notes": "Taxi about 20€ to Santo domingo and 15€ to La Zarza"
+    }
+  ],
+  [
+    "El Tablado",
+    {
+      "areas": ["north"],
+      "province": "Garafia",
+      "parking": "Small, limited street parking on very narrow roads",
+      "notes": ""
+    }
   ]
 ]
 
