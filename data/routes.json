@@ -689,6 +689,89 @@
       ]
     },
     {
+      "id": "16",
+      "name": "Laurisilva forest loop",
+      "lengthKm": "12.1",
+      "lengthMiles": "7.5",
+      "walkingTime": "03:25",
+      "shortDescription": "",
+      "description": "A long descent through some of the finest laurisilva< forest on the island to the coast where there are spectacular views before a return on a different but parallel path.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Garafia",
+      "town": "La Zarza",
+      "routeFile": "LP16 Larisilva forest loop.gpx",
+      "refreshments": "Restaurant at La Mata. Bar/cafe in Llano Negro bus station.",
+      "start": "La Zarza",
+      "end": "La Zarza",
+      "paths": ["PR LP 09.2"],
+      
+      "images": [
+        { "id": "01", "caption": "Ascending from the Mirador de la Calzada" },
+        { "id": "02", "caption": "Last of the barranco views before heading into the forest" },
+        { "id": "03", "caption": "Entering the laurisilva forest" }
+      ],
+
+      "variants": [
+        {
+          "id": "16a",
+          "name": "Half the walk",
+          "description": "For a shorter version that keeps all the good bits of the Caldera de Agua but looses the coast and barranco views it's possible to take a shortcut on a well signed small road about half way down.",
+          "walkType": "circular",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "La Zarza",
+          "end": "La Zarza",
+          "routeDirections": "[16](01 to 10) then short signed shortcut, then [16](20 to the end)"
+        },
+        {
+          "id": "16b",
+          "name": "Double barranco fi nish in Franceses",
+          "description": "An alternative finish is to keep on the GR 130 after Mirador la Calzada and walk the two spectacular barrancos to Franceses and catch the bus back.",
+          "walkType": "linear",
+          "duration": "full",
+          "effort": "strenuous",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "La Zarza",
+          "end": "Franceses",
+          "routeFile": "LP11 Franceses to Santo Domingo.gpx",
+          "routeDirections": "[16](01 to 15) then [11](08 to 01)"
+        }
+      ],
+	  
+      "poi": ["La Zarza"],
+
+      "terrain": [
+        [ "laurisilva", "strong" ],
+        [ "coastal", "normal" ]
+      ],
+
+      "interest": [
+        [ "views", "normal" ],
+        [ "poi", "normal" ],
+        [ "archeological", "strong" ],
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "strong" ],
+        [ "gps", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Muddy and cobbled sections on the descent are slippery when wet." ],
+        [ "gps", "Signal will be reduced or lost in the barranco." ]
+      ]
+    },
+    {
       "id": "17",
       "name": "Around Puntagorda",
       "lengthKm": "5.2",

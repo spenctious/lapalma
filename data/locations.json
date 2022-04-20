@@ -596,6 +596,47 @@
       },
       "notes": "Tiny place but with restaurants and an tourist information centre."
     }
+  ],
+  [
+    "La Zarza",
+    {
+      "areas": ["north", "west"],
+      "province": "Garafia",
+      "parking": "At the museum (included in ticket price or free on Mondays when the museum is closed) or roadside a little way down.",
+      "bus": {
+        "notes": "Request stop",
+        "routes": [
+          "120"
+        ],
+        "stop": "La Zarza"
+      },
+      "notes": "Look for the big stone head statue by the side of the road."
+    }
+  ],
+  [
+    "San Antonio",
+    {
+      "areas": ["north", "west"],
+      "province": "Garafia",
+      "parking": "In the recreational area.",
+      "notes": "Picnic area, campsite, church and agricultural centre. Usually very busy or nearly empty."
+    }
+  ],
+  [
+    "Santo Domingo de Garafía",
+    {
+      "areas": ["north", "west"],
+      "province": "Garafia",
+      "parking": "By the stadium or along Calle Nueva.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "120"
+        ],
+        "stop": "Santo Domingo"
+      },
+      "notes": ""
+    }
   ]
 ]
 

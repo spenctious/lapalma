@@ -281,6 +281,26 @@
       "description": "Famous leaning dragon tree and secondary miragor further on.",
       "location": "El Roque"
     }
+  ],
+  [
+    "La Zarza",
+    {
+      "id": "22",
+      "name": "Parque Cultural La Zarza y La Zarcita",
+      "tags": ["museum", "archeo", "info"],
+      "description": "",
+      "entryCost": "3€ - includes parking",
+      "tel": "(+34) 922 69 50 05",
+      "email": "",
+      "web": { "name": "Official site", "link": "https://garafialonatural.com/item/parque-cultural-la-zarza/"},
+      "location": "La Zarza",
+      "openingTimes": 
+        [
+          { "when": "Winter", "times": "11:00 - 17:00" },
+          { "when": "Summer", "times": "11:00 - 19:00" },
+          { "when": "Mondays", "times": "CLOSED" }
+        ]
+    }
   ]
 
 ]
