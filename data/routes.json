@@ -689,6 +689,170 @@
       ]
     },
     {
+      "id": "22",
+      "name": "Torre del Time",
+      "lengthKm": "14",
+      "lengthMiles": "8.7",
+      "walkingTime": "04:00",
+      "shortDescription": "Interesting but steep climb to the Barranco de las Angustias edge.",
+      "description": "A walk with a lot of steep climbing on a path rich in plants to reach the edge of the island’s largest barranco for great views. The way back takes a pretty forest path after visiting the tower.",
+      "starred": "false",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Tijarafe",
+      "town": "El Jesus",
+      "routeFile": "LP22b Torre del Time to Mirador El Time.gpx",
+      "refreshments": "Cervecería Isla Verde",
+      "start": "Fuente del Toro",
+      "end": "Fuente del Toro",
+      "paths": ["SL TJ 71", "PR LP 10", "GR 131 Etapa 1", "GR 130 Etapa 5"],
+      
+      "images": [
+        { "id": "01", "caption": "Barranco de las Angustias" },
+        { "id": "02", "caption": "Terraced vines on the north side of the barranco Angustias" }
+      ],
+
+      "variants": [
+        {
+          "id": "22a",
+          "name": "Shorter, easier option if you have a car",
+          "description": "Walk 22 with the initial climb subtracted.",
+          "walkType": "circular",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "El Pinar parking spot",
+          "end": "El Pinar parking spot",
+          "routeDirections": "[22](07 to loop)"
+        },
+        {
+          "id": "22b",
+          "name": "Descend to Mirador El Time",
+          "description": "A great stretch of (unmarked) linking path with stupendous views but for good weather only.",
+          "walkType": "linear",
+          "duration": "full",
+          "effort": "strenuous",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Fuente del Toro",
+          "end": "Mirador El Time",
+          "routeFile": "LP22b Torre del Time to Mirador El Time.gpx",
+          "routeDirections": "[22](01 to 11) then [22b]"
+        }
+      ],
+	  
+      "poi": ["Torre del Time"],
+
+      "terrain": [
+        [ "pine", "normal" ]
+      ],
+
+      "interest": [
+        [ "views", "strong" ]
+      ],
+
+      "warnings": [
+        [ "steep", "strong" ],
+        [ "weather", "strong" ]
+      ],
+
+      "notes": [
+        [ "views", "The 23b variant path has the best views." ],
+        [ "weather", "The 23b variant path goes close the the barranco edge so avoid in poor weather." ]
+      ],
+
+      "dangers": [
+        { "name": "Dogs", "description": "Yappy loose dogs on the initial climb.", "strength": "normal" }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Mirador El Time",
+      "lengthKm": "8.9",
+      "lengthMiles": "5.5",
+      "walkingTime": "02:40",
+      "shortDescription": "Crossing the Barranco de las Angustias with views all the way.",
+      "description": "After descending to the dry river bed there’s a steep climb up the opposite side but it’s perhaps not as bad as it looks. The mirador café provides refreshments then it’s down to another mirador with views of Puerto de Tazacorte followed by a steep but easy walk down to the beach.",
+      "starred": "false",
+      "walkType": "linear",
+      "duration": "half",
+      "effort": "strenuous",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Los Llanos",
+      "town": "Los Llanos",
+      "routeFile": "LP23 Mirador El Time.gpx",
+      "refreshments": "Restaurant at Argual Abajo. Bar/café at Mirador El Time. Multiple bars, restaurants, cafés, shop in Puerto de Tazacorte.",
+      "start": "Argual Abajo",
+      "end": "Puerto de Tazacorte",
+      "paths": ["GR 130 Etapa 6", "GR 131 Etapa 1"],
+      
+      "images": [
+        { "id": "01", "caption": "Los Llanos as seen from Miradoe El Time" },
+        { "id": "02", "caption": "Puerto de Tazacorte from Miradoe de la Punta" },
+        { "id": "03", "caption": "Los Llanos from Argual Abajo" },
+        { "id": "04", "caption": "Where the GR130 and GR131 cross over" },
+        { "id": "05", "caption": "Barranco de las Angustias from near the GR131 cross-over point" }
+      ],
+
+      "variants": [
+        {
+          "id": "23a",
+          "name": "Puerto de Tazacorte to the cliff top",
+          "description": "You can easily make the climb to the viewing platform at the top from the beach – people do it in fl ip-fl ops – and it's a nice leg-stretcher if you're having a lazy beach day",
+          "walkType": "return",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Puerto de Tazacorte",
+          "end": "Puerto de Tazacorte",
+          "routeDirections": "[23](13 to 11) and back"
+        },
+        {
+          "id": "23b",
+          "name": "Descend from Mirador El Time",
+          "description": "Leave the car in the port and take the bus to the mirador and walk down.",
+          "walkType": "linear",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Mirador El Time",
+          "end": "Puerto de Tazacorte",
+          "routeDirections": "[23](10 to 13)"
+        }
+      ],
+	  
+      "poi": ["Mirador El Time"],
+
+      "terrain": [
+        [ "coastal", "normal" ],
+        [ "riverbed", "normal" ]
+      ],
+
+      "interest": [
+        [ "views", "strong" ],
+        [ "poi", "normal" ],
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        [ "vertigo", "normal" ],
+        [ "steep", "normal" ]
+      ],
+
+      "notes": [
+        [ "vertigo", "Although perfectly safe, the point where the cliff path rounds the headland may cause brief vertigo." ]
+      ]
+    },
+    {
       "id": "24.1",
       "name": "Roque de Muchachos to Refugio",
       "lengthKm": "14.3",

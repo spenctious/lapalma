@@ -337,7 +337,117 @@
       "province": "El Paso",
       "notes": "Parking spot just off the LP-4 road where the PR LP 03 path intersects."
     }
+  ],  
+  [
+    "Argual Abajo",
+    {
+      "areas": ["west", "central"],
+      "province": "Los Llanos de Aridane",
+      "parking": "Plentiful parking but gets busy on market days.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "200"
+        ],
+        "stop": "Argual Abajo"
+      },
+      "notes": "Popular flea market in the plaza on Sundays."
+    }
+  ],
+  [
+    "Los Llanos de Aridane",
+    {
+      "areas": ["west", "central"],
+      "province": "Los Llanos de Aridane",
+      "parking": "Car park near the bus station and elsewhere.",
+      "bus": {
+        "notes": "Bus station has some grotty toilets",
+        "routes": [
+          "5",
+          "8",
+          "24",
+          "27",
+          "300",
+          "110"
+        ],
+        "stop": "Los Llanos"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Mirador El Time",
+    {
+      "areas": ["west", "central"],
+      "province": "Los Llanos de Aridane",
+      "parking": "Limited parking for restaurant patrons only",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "Mirador El Time"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Puerto de Tazacorte",
+    {
+      "areas": ["west", "central"],
+      "province": "Los Llanos de Aridane",
+      "parking": "Beachfront places fill up fast but there's a carpark further up Calle Taburiente.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "27", 
+          "110"
+        ],
+        "stop": "Mirador El Time"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "El Jesus",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "Cervecería Isla Verde bar carpark",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "El Jesus"
+      },
+      "notes": "Tiny place. Have a drink at the bar if you're parking there."
+    }
+  ],
+  [
+    "Fuente del Toro",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "A couple of places directly in front and a car park opposite.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "Fuente del Toro"
+      },
+      "notes": "Recreational area with water just a short walk from El Jesus."
+    }
+  ],
+  [
+    "El Pinar parking spot",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "Layby by the wall with space for several cars",
+      "notes": ""
+    }
   ]
-
 ]
 
