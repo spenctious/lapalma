@@ -448,6 +448,63 @@
       "parking": "Layby by the wall with space for several cars",
       "notes": ""
     }
+  ],
+  [
+    "Tijarafe",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "Street parking, more by the sports stadium.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "Tijarafe"
+      },
+      "notes": "Iglesia Nuestra Senora de la Candelaria is worth a visit."
+    }
+  ],
+  [
+    "Tinizara",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "Next to Bar Garome.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "Tijarafe"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Porís de Candelaria parking",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "Two sizable parking spots at the end of Camino La Ermita.",
+      "notes": "Viewpoint between the parking spots."
+    }
+  ],
+  [
+    "El Jesús",
+    {
+      "areas": ["west"],
+      "province": "Tijarafe",
+      "parking": "Some spots near the church and bar.",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "110"
+        ],
+        "stop": "El Jesús"
+      },
+      "notes": ""
+    }
   ]
 ]
 

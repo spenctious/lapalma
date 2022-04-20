@@ -689,6 +689,153 @@
       ]
     },
     {
+      "id": "20",
+      "name": "Tinizara to Tijarafe",
+      "lengthKm": "6.2",
+      "lengthMiles": "3.9",
+      "walkingTime": "01:40",
+      "shortDescription": "A gentle stroll through semi-domestic countryside.",
+      "description": "A popular and easy walk through pretty and varied countryside. Unchallenging but full of interest. Waypoint 06 ends the walk.",
+      "starred": "false",
+      "walkType": "linear",
+      "duration": "stroll",
+      "effort": "easy",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Tinizara",
+      "town": "Tijarafe",
+      "routeFile": "LP20 Tinizara to Tijarafe.gpx",
+      "refreshments": "Bar/café in Tinizara. Bars, cafés, restaurants, shops in Tijarafe. Bar/café in El Jesus.",
+      "start": "Tinizara",
+      "end": "Tijarafe",
+      "paths": ["GR 130 Etapa 5"],
+      
+      "images": [
+        { "id": "01", "caption": "Open views along the west coast" },
+        { "id": "02", "caption": "Cobbled camino section of the GR130" }
+      ],
+
+      "variants": [
+        {
+          "id": "20a",
+          "name": "Extending to El Jesús via Barranco del Jurado",
+          "description": "The barranco is a good one and worth walking, perhaps after lunch in Tijarafe and then taking the bus to El Jesús to walk it in reverse.",
+          "walkType": "linear",
+          "duration": "half",
+          "effort": "moderate",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Tinizara",
+          "end": "El Jesús",
+          "routeDirections": "[20]"
+        }
+      ],
+	  
+      "terrain": [
+        [ "coastal", "normal" ]
+      ],
+
+      "interest": [
+        [ "scenic", "normal" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "normal" ],
+        [ "rockfall", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Cobbled sections can be slippery when wet." ]
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Pirates Bay",
+      "lengthKm": "11.6",
+      "lengthMiles": "7.2",
+      "walkingTime": "03:45",
+      "shortDescription": "Walk to an astonishing tiny cave community through an impressive barranco.",
+      "description": "A fairly long descent through the Barranco del Jurado and exposed cliff paths to a nice little beach community then up and over to Pirate’s Bay which is an astonishing hidden hamlet.",
+      "starred": "true",
+      "walkType": "circular",
+      "duration": "full",
+      "effort": "strenuous",
+      "waymarked": "true",
+      "accessCar": "true",
+      "accessBus": "true",
+      "province": "Tijarafe",
+      "town": "Tijarafe",
+      "routeFile": "LP21 Pirates Bay.gpx",
+      "refreshments": "Bars, cafés, restaurants in Tijirafe.",
+      "start": "Tijarafe",
+      "end": "Tijarafe",
+      "paths": ["PR LP 12.2"],
+      
+      "images": [
+        { "id": "01", "caption": "Small community in the 'Pirates' Bay" },
+        { "id": "02", "caption": "Sheltered pool suitable for swimming" },
+        { "id": "03", "caption": "Tricky descent to the beach" },
+        { "id": "04", "caption": "Playa del Jorado" },
+        { "id": "05", "caption": "Inside the small self-contained community" }
+      ],
+
+      "variants": [
+        {
+          "id": "21a",
+          "name": "Combine with walk 20 for a big day",
+          "description": "Walk 20 ends where this walk starts so combining them makes sense for those looking for a full day of walking.",
+          "walkType": "linear",
+          "duration": "long",
+          "effort": "hard",
+          "accessCar": "true",
+          "accessBus": "true",
+          "start": "Tinizara",
+          "end": "Tijarafe",
+          "routeFile": "LP20 Tinizara to Tijarafe.gpx",
+          "routeDirections": "[20](01 to 08) then [21](03 to 13)"
+        },
+        {
+          "id": "21b",
+          "name": "Drive there and walk to Playa del Jurado",
+          "description": "You can drive down to near the Porís de Candelaria, park up, and visit Pirates' Bay before walking the comparatively short distance over to the Playa del Jurado and back.",
+          "walkType": "return",
+          "duration": "stroll",
+          "effort": "easy",
+          "accessCar": "true",
+          "accessBus": "false",
+          "start": "Porís de Candelaria parking",
+          "end": "Porís de Candelaria parking",
+          "routeDirections": "[21](09 to 06) and back"
+        }
+      ],
+	  
+      "poi": ["Porís de Candelaria"],
+
+      "terrain": [
+        [ "coastal", "normal" ]
+      ],
+
+      "interest": [
+        [ "views", "normal" ],
+        [ "port", "strong" ]
+      ],
+
+      "warnings": [
+        [ "slippery", "strong" ],
+        [ "vertigo", "strong" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Descent to Playa Jurdando is tricky. The walk in reverse would make it easier." ],
+        [ "vertigo", "Descent to Playa Jurdando on the cliff edge highly likely to cause problems." ]
+      ],
+
+      "dangers": [
+        { "name": "Cliff", "description": "The cliff path goes near the edge and is slippery with loose material.", "strength": "" }
+      ]
+    },
+    {
       "id": "22",
       "name": "Torre del Time",
       "lengthKm": "14",

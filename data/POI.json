@@ -193,6 +193,15 @@
       "tags": ["building"],
       "description": "Fire watch tower with viewpoint. Better views can be had further down the trail."
     }
+  ],
+  [
+    "Porís de Candelaria",
+    {
+      "id": "15",
+      "name": "Pirate's Bay",
+      "tags": ["building"],
+      "description": "Timy hamlet officially known as Porís de Candelaria built into a cave setting with a swimming spot.",
+      "location": "Porís de Candelaria"
+    }
   ]
-
 ]
