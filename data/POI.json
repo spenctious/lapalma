@@ -311,5 +311,56 @@
       "description": "Beautiful port at the end of a rich coastal zone, a haven for birds. Ideal for watching the sun go down.",
       "location": "Puerto de Garafía"
     }
+  ],
+  [
+    "Barranco de la Madera",
+    {
+      "id": "24",
+      "name": "Barranco de la Madera",
+      "tags": ["nature"],
+      "description": "High narrow gallery path with tunnels, some in poor condition.",
+      "location": "Barranco de la Madera"
+    }
+  ],
+  [
+    "Las Nieves",
+    {
+      "id": "25",
+      "name": "Las Nieves",
+      "tags": ["nature", "tourism"],
+      "description": "Santuario de Nuestra Señora de Las Nieves church and bar/restaurant. Popular place.",
+      "location": "Las Nieves"
+    }
+  ],
+  [
+    "Las Fuentes",
+    {
+      "id": "26",
+      "name": "Las Fuentes de Las Breñas",
+      "tags": ["nature"],
+      "description": "A series of natural springs (many now waterless), some decorated with small shrines.",
+      "location": "Las Fuentes de Las Breñas"
+    }
+  ],
+  [
+    "Mirador de la Concepción",
+    {
+      "id": "27",
+      "name": "Mirador de la Concepción",
+      "tags": ["nature", "tourism"],
+      "description": "Crater rim providing exceptional views over Santa Cruz. A slightly unsafe dirt path leads out to a radio mast and on for more views.",
+      "location": "Mirador de la Concepción"
+    }
+  ],
+  [
+    "Los Molinos",
+    {
+      "id": "28",
+      "name": "Los Molinos",
+      "tags": ["building"],
+      "description": "Historic water-driven sugar mills.",
+      "location": "Los Molinos"
+    }
   ]
+
 ]

@@ -119,9 +119,7 @@
       "parking": "Free (sizable) car park",
       "bus": {
         "notes": "Route 23 stops at Hotel Princess and Volcan San Antonio (on request).",
-        "routes": [
-          "23"
-        ],
+        "routes": ["23"],
         "stop": "Faro de Fuencaliente"
       },
       "notes": "There is a small beach near the lighthouses."
@@ -135,12 +133,7 @@
       "parking": "",
       "bus": {
         "notes": "Route 23 stops at Hotel Princess and Volcan San Antonio (request).",
-        "routes": [
-          "210",
-          "201",
-          "200",
-          "23"
-        ],
+        "routes": ["210", "201", "200", "23"],
         "stop": "Faro de Fuencaliente"
       },
       "notes": ""
@@ -154,9 +147,7 @@
       "parking": "Some free spaces before the entrance or in the carpark if you have a visitor centre ticket.",
       "bus": {
         "notes": "The visitor centre is a request stop",
-        "routes": [
-          "23"
-        ],
+        "routes": ["23"],
         "stop": "Volcán San Antonio"
       },
       "notes": "The volcano is a short walk down from Los Canarios"
@@ -188,9 +179,7 @@
       "parking": "Parking spots up Calle Campanario and more further on up the track.",
       "bus": {
         "notes": "Stop next to Bar Jedy",
-        "routes": [
-          "210"
-        ],
+        "routes": ["210"],
         "stop": "Jedy"
       },
       "notes": "Small village but with tiny shop and Pizzeria Evangelina"
@@ -204,9 +193,7 @@
       "parking": "Some parking by the church, more up Calle Tamanca by the Virgen de Fátima shrine.",
       "bus": {
         "notes": "Stop is opposite the El Americano bar",
-        "routes": [
-          "210"
-        ],
+        "routes": ["210"],
         "stop": "San Nicolás"
       },
       "notes": "You can walk to Centro de Interpretación del tubo volcánico Cueva de Las Palomas from here."
@@ -220,9 +207,7 @@
       "parking": "Large car park at the rear, some parking in the front.",
       "bus": {
         "notes": "",
-        "routes": [
-          "300"
-        ],
+        "routes": ["300"],
         "stop": "Centro de Visitantes"
       },
       "notes": "On the LP-3 road about half way between El Paso and the Cumbre Nueva tunnel."
@@ -236,9 +221,7 @@
       "parking": "Car park at the rear of Plaza de Bujaz",
       "bus": {
         "notes": "",
-        "routes": [
-          "35"
-        ],
+        "routes": ["35"],
         "stop": "San Pedro"
       },
       "notes": "Has an attractive plaza and some good restaurants."
@@ -337,7 +320,7 @@
       "province": "El Paso",
       "notes": "Parking spot just off the LP-4 road where the PR LP 03 path intersects."
     }
-  ],  
+  ],
   [
     "Argual Abajo",
     {
@@ -346,9 +329,7 @@
       "parking": "Plentiful parking but gets busy on market days.",
       "bus": {
         "notes": "",
-        "routes": [
-          "200"
-        ],
+        "routes": ["200"],
         "stop": "Argual Abajo"
       },
       "notes": "Popular flea market in the plaza on Sundays."
@@ -362,14 +343,7 @@
       "parking": "Car park near the bus station and elsewhere.",
       "bus": {
         "notes": "Bus station has some grotty toilets",
-        "routes": [
-          "5",
-          "8",
-          "24",
-          "27",
-          "300",
-          "110"
-        ],
+        "routes": ["5", "8", "24", "27", "300", "110"],
         "stop": "Los Llanos"
       },
       "notes": ""
@@ -383,9 +357,7 @@
       "parking": "Limited parking for restaurant patrons only",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "Mirador El Time"
       },
       "notes": ""
@@ -399,10 +371,7 @@
       "parking": "Beachfront places fill up fast but there's a carpark further up Calle Taburiente.",
       "bus": {
         "notes": "",
-        "routes": [
-          "27", 
-          "110"
-        ],
+        "routes": ["27", "110"],
         "stop": "Mirador El Time"
       },
       "notes": ""
@@ -416,9 +385,7 @@
       "parking": "Cervecería Isla Verde bar carpark",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "El Jesus"
       },
       "notes": "Tiny place. Have a drink at the bar if you're parking there."
@@ -432,9 +399,7 @@
       "parking": "A couple of places directly in front and a car park opposite.",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "Fuente del Toro"
       },
       "notes": "Recreational area with water just a short walk from El Jesus."
@@ -457,9 +422,7 @@
       "parking": "Street parking, more by the sports stadium.",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "Tijarafe"
       },
       "notes": "Iglesia Nuestra Senora de la Candelaria is worth a visit."
@@ -473,9 +436,7 @@
       "parking": "Next to Bar Garome.",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "Tijarafe"
       },
       "notes": ""
@@ -498,9 +459,7 @@
       "parking": "Some spots near the church and bar.",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "El Jesús"
       },
       "notes": ""
@@ -514,10 +473,7 @@
       "parking": "Street parking",
       "bus": {
         "notes": "You can walk to Puntagorda just up the road.",
-        "routes": [
-          "110",
-          "120"
-        ],
+        "routes": ["110", "120"],
         "stop": "El Pinar"
       },
       "notes": "Self-contained village and bus interchange."
@@ -531,10 +487,7 @@
       "parking": "Plentiful, except at the weekends and holidays when there is a market.",
       "bus": {
         "notes": "Get off at the bus interchange point and walk down SL PG 61.",
-        "routes": [
-          "120",
-          "110"
-        ],
+        "routes": ["120", "110"],
         "stop": "El Pinar"
       },
       "notes": "Recreation area with nearby market. Short walk from El Pinar."
@@ -548,9 +501,7 @@
       "parking": "Adequate street parking nearby.",
       "bus": {
         "notes": "Bus interchange is at El Pinar, one stop further on.",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "Puntagorda"
       },
       "notes": ""
@@ -564,9 +515,7 @@
       "parking": "Small parking spot by a noticeboard.",
       "bus": {
         "notes": "",
-        "routes": [
-          "110"
-        ],
+        "routes": ["110"],
         "stop": "El Roque"
       },
       "notes": "Nearby miradors and picnic area."
@@ -589,9 +538,7 @@
       "parking": "A couple of small car parks.",
       "bus": {
         "notes": "",
-        "routes": [
-          "120"
-        ],
+        "routes": ["120"],
         "stop": "Las Tricias"
       },
       "notes": "Tiny place but with restaurants and an tourist information centre."
@@ -605,9 +552,7 @@
       "parking": "At the museum (included in ticket price or free on Mondays when the museum is closed) or roadside a little way down.",
       "bus": {
         "notes": "Request stop",
-        "routes": [
-          "120"
-        ],
+        "routes": ["120"],
         "stop": "La Zarza"
       },
       "notes": "Look for the big stone head statue by the side of the road."
@@ -630,9 +575,7 @@
       "parking": "By the stadium or along Calle Nueva.",
       "bus": {
         "notes": "",
-        "routes": [
-          "120"
-        ],
+        "routes": ["120"],
         "stop": "Santo Domingo"
       },
       "notes": ""
@@ -646,9 +589,7 @@
       "parking": "By the tourist information centre and various street options.",
       "bus": {
         "notes": "Cafe/bar at the bus stop",
-        "routes": [
-          "120"
-        ],
+        "routes": ["120"],
         "stop": "Llano Negro"
       },
       "notes": "Tiny place but has a shop, har and tourist information centre."
@@ -680,6 +621,94 @@
       "parking": "Small, limited street parking on very narrow roads",
       "notes": ""
     }
+  ],
+  [
+    "Barranco de la Madera",
+    {
+      "areas": ["east"],
+      "province": "Santa Cruz de la Palma",
+      "parking": "None",
+      "notes": "Tunnels and precipitous path on the south side of the barranco"
+    }
+  ],
+  [
+    "Las Nieves",
+    {
+      "areas": ["east"],
+      "province": "Santa Cruz de la Palma",
+      "parking": "Two car parks.",
+      "bus": {
+        "notes": "Bus stop almost directly in front of the church.",
+        "routes": ["33"],
+        "stop": "Santuario de Las Nieves"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Las Fuentes de Las Breñas",
+    {
+      "areas": ["east"],
+      "province": "Breña Alta",
+      "notes": "Access by foot only"
+    }
+  ],
+  [
+    "Plaza la Alameda",
+    {
+      "areas": ["east"],
+      "province": "Santa Cruz de La Palma",
+      "parking": "Along the Avenida de las Nieves opposite.",
+      "bus": {
+        "notes": "Walk through the town to the bus station. If that's too far, any bus along Avenida Marítima will get you there.",
+        "routes": [
+          "500",
+          "300",
+          "201",
+          "200",
+          "100",
+          "35",
+          "33",
+          "20",
+          "12",
+          "11",
+          "2"
+        ],
+        "stop": "Santa Cruz"
+      },
+      "notes": "Ship museum, restaurants etc."
+    }
+  ],
+  [
+    "Mirador de la Concepción",
+    {
+      "areas": ["east"],
+      "province": "Santa Cruz de La Palma",
+      "parking": "Some parking at the viewpoint.",
+      "bus": {
+        "notes": "Stop is opposit the blue building. Walk up to the viewpoint.",
+        "routes": [
+          "35"
+        ],
+        "stop": "Mirador Concepción"
+      },
+      "notes": ""
+    }
+  ],
+  [
+    "Los Molinos",
+    {
+      "areas": ["east"],
+      "province": "Santa Cruz de La Palma",
+      "parking": "None",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "201"
+        ],
+        "stop": "El Molino"
+      },
+      "notes": "Ascend via a staircase to the mills."
+    }
   ]
 ]
-

@@ -12,16 +12,16 @@
       "walkType": "circular",
       "duration": "half",
       "effort": "strenuous",
-      "waymarked": "true",
-      "accessCar": "false",
-      "accessBus": "false",
+      "waymarked": "false",
+      "accessCar": "true",
+      "accessBus": "true",
       "province": "Santa Cruz de La Palma",
       "town": "Santa Cruz de La Palma",
-      "routeFile": "LP01 Sugar mills of Santa Cruz",
+      "routeFile": "LP01 Sugar mills of Santa Cruz.gpx",
       "refreshments": "Bar/Restaurants along LP-101 and at Las Nieves.",
-      "start": "Barlovento",
-      "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "start": "Plaza de la Constitución",
+      "end": "Plaza de la Constitución",
+      "paths": ["PR LP 01", "PR LP 02.2"],
       
       "images": [
         { "id": "01", "caption": "Sugar mills near Santa Cruz" },
@@ -36,36 +36,39 @@
           "description": "A fairly long and strenuous circuit taking in the best bits around Santa Cruz including a great viewpoint, a canal path through semi rural areas, the church at Las Nieves, a dry riverbed descent, and watermills.",
           "walkType": "circular",
           "duration": "full",
-          "effort": "hard",
+          "effort": "strenuous",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Barlovento",
-          "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "start": "Plaza de la Constitución",
+          "end": "Plaza de la Constitución",
+          "routeFile": "LP01a Santa Cruz highlights.gpx",
+          "routeDirections": "[01a]"
         }
       ],
 
+      "poi": ["Los Molinos"],
+
       "terrain": [
-        [ "riverbed", "normal" ]
+        ["urban", "strong"]
       ],
 
       "interest": [
+        [ "poi", "strong" ],
         [ "views", "normal" ]
       ],
 
       "warnings": [
-        [ "vertigo", "strong" ]
+        [ "steep", "strong" ]
       ],
 
       "notes": [
-        [ "vertigo", "Minor risk along safe fenced bit of path after the mills." ]
+        [ "steep", "Quite a lot of climbing on steep tarmac, hard on the ankles." ],
+        [ "views", "Lots of good views over Santa Cruz and the mills from afar." ]
       ],
 
       "dangers": [
-        { "name": "Tunnels", "description": "Risk of clouting head", "strength": "strong" }
+        { "name": "Dogs", "description": "Some vicious seeming dogs on the route, hopefully chained up.", "strength": "normal" }
       ]
-
     },
     {
       "id": "02",
@@ -86,9 +89,11 @@
       "town": "San Pedro de Breña Alta",
       "routeFile": "LP02 Mirador and waterways",
       "refreshments": "Bars and restaurants at the start and end points and on the way at Velhoco and Las Nieves.",
-      "start": "Barlovento",
-      "end": "Franceses",
+      "start": "San Pedro de Breña Alta",
+      "end": "Plaza la Alameda",
       "paths": ["PR LP 02"],
+
+      "poi": ["Mirador de la Concepción"],
 
       "images": [
         { "id": "01", "caption": "View over Santa Cruz from Mirador de la Concepción" },
@@ -99,16 +104,25 @@
       ],
 
       "terrain": [
-        [ "riverbed", "normal" ]
+        [ "riverbed", "strong" ]
       ],
 
       "interest": [
-        [ "views", "normal" ]
+        [ "views", "strong" ]
       ],
 
       "warnings": [
         [ "slippery", "normal" ],
         [ "vertigo", "normal" ]
+      ],
+
+      "notes": [
+        [ "slippery", "Some muddy sections in the woods" ],
+        [ "vertigo", "The Mirador de la Concepción track can get vertiginous." ]
+      ],
+
+      "dangers": [
+        { "name": "Canal", "description": "Vegetation can obscure missing or broken tiles covering the canal.", "strength": "normal" }
       ]
     },
     {
@@ -130,8 +144,8 @@
       "town": "San Pedro  de Breña Alta",
       "routeFile": "LP03 Woods and springs",
       "refreshments": "Bars and restaurants in San Pedro de Breña Alta.",
-      "start": "Barlovento",
-      "end": "Franceses",
+      "start": "San Pedro de Breña Alta",
+      "end": "San Pedro de Breña Alta",
       "paths": ["PR LP 19"],
 
       "images": [
@@ -142,55 +156,40 @@
 
       "variants": [
         {
-          "id": "LP01a",
-          "name": "Santa Cruz highlights",
-          "description": "A fairly long and strenuous circuit taking in the best bits around Santa Cruz including a great viewpoint, a canal path through semi rural areas, the church at Las Nieves, a dry riverbed descent, and watermills.",
-          "walkType": "circular",
+          "id": "3a",
+          "name": "Descend to Santa Cruz",
+          "description": "Walk 2 picks up where this walk leaves off so if you do this walk in the morning then after a lunch in the plaza you can finish the day by walking down to Santa Cruz initially following walk 2 then taking whichever route takes your fancy.",
+          "walkType": "linear",
           "duration": "full",
-          "effort": "hard",
+          "effort": "strenuous",
           "waymarked": "true",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Barlovento",
-          "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "start": "San Pedro de Breña Alta",
+          "end": "Santa Cruz de la Palma",
+          "routeFile": "LP02 Mirador and waterways.gpx",
+          "routeDirections": "[03] then [02]"
         }
       ],
 
+      "poi": ["Las Fuentes"],
+
       "terrain": [
-        [ "volcanic", "strong" ],
-        [ "pine", "normal" ],
-        [ "laurisilva", "normal" ],
-        [ "dragon", "strong" ],
-        [ "coastal", "normal" ],
-        [ "riverbed", "normal" ]
+        [ "pine", "normal" ]
       ],
 
       "interest": [
-        [ "views", "strong" ],
-        [ "port", "strong" ],
-        [ "poi", "strong" ],
-        [ "peaks", "normal" ],
-        [ "archeological", "strong" ],
-        [ "scenic", "strong" ]
+        [ "poi", "normal" ]
       ],
 
       "warnings": [
-        [ "slippery", "normal" ],
-        [ "steep", "normal" ],
-        [ "vertigo", "normal" ],
-        [ "weather", "strong" ],
-        [ "gps", "normal" ],
-        [ "mountain", "normal" ],
-        [ "rockfall", "normal" ]
+        [ "slippery", "normal" ]
       ],
 
       "notes": [
-        [ "slippery", "Loose material on barranco descents." ],
-        [ "vertigo", "Mild exposure along the cliffs." ]
+        [ "slippery", "Some muddy sections in the woods" ],
+        [ "pine", "The forest is mixed with chestnut and even some palms amongst the pine." ]
       ]
-
     },
     {
       "id": "04",
@@ -198,7 +197,7 @@
       "lengthKm": "13.0",
       "lengthMiles": "8.1",
       "walkingTime": "03:30",
-      "shortDescription": "Daring walk through tunnels along precipitous cliff edge.",
+      "shortDescription": "Daring walk through tunnels along a precipitous cliff edge.",
       "description": "An adventurous <i>barranco</i> walk. The route climbs up the steep-sided <i>barranco</i> before turning round and returning on a spectacular and highly vertiginous route high up the rock face passing through tunnels and along a narrow gallery path with a sheer drop to the side before gradually becoming a more normal forest descent along switchbacks.",
       "starred": "false",
       "walkType": "circular",
@@ -211,9 +210,11 @@
       "town": "Santa Cruz de La Palma",
       "routeFile": "LP04 Barranco de Mediera",
       "refreshments": "Bar/Restaurant at Las Nieves.",
-      "start": "Barlovento",
-      "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "start": "Las Nieves",
+      "end": "Las Nieves",
+      "paths": ["PR LP 02.3"],
+
+      "poi": ["Las Nieves", "Barranco de la Madera"],
 
       "images": [
         { "id": "01", "caption": "Gallery tunnel" },
@@ -223,37 +224,34 @@
       ],
 
       "terrain": [
-        [ "volcanic", "normal" ],
-        [ "pine", "normal" ],
-        [ "laurisilva", "normal" ],
-        [ "dragon", "normal" ],
-        [ "coastal", "normal" ],
         [ "riverbed", "normal" ]
       ],
 
       "interest": [
         [ "views", "normal" ],
-        [ "port", "normal" ],
         [ "poi", "normal" ],
-        [ "peaks", "normal" ],
-        [ "archeological", "normal" ],
-        [ "scenic", "normal" ]
+        [ "poi", "normal" ]
       ],
 
       "warnings": [
         [ "slippery", "normal" ],
-        [ "steep", "normal" ],
-        [ "vertigo", "normal" ],
-        [ "weather", "normal" ],
-        [ "gps", "normal" ],
-        [ "mountain", "normal" ],
+        [ "vertigo", "strong" ],
+        [ "gps", "strong" ],
         [ "rockfall", "normal" ]
       ],
 
       "notes": [
-        [ "slippery", "Loose material on barranco descents." ],
-        [ "vertigo", "Mild exposure along the cliffs." ]
+        [ "slippery", "Loose material, particularly on the descent." ],
+        [ "vertigo", "Very high risk of vertigo on the gallery path." ],
+        [ "gps", "No signal deep in the barranco. No phone signal either." ],
+        [ "rockfall", "The tunnels are in a state of gradual collapse." ]
+      ],
+      
+      "dangers": [
+        { "name": "Path", "description": "Narrow crumbling precipitous path. There have been many injuries and even deaths.", "strength": "strong" },
+        { "name": "Tunnels", "description": "Risk of clouting head", "strength": "normal" }
       ]
+
     },
     {
       "id": "05",
@@ -276,7 +274,7 @@
       "refreshments": "Bars, café, restaurant in Puntallana. Bar & restaurant in San Andrés. Bars, cafés, restaurants in Los Sauces.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "paths": ["GR 130 Etapa 1"],
 
       "images": [
         { "id": "01", "caption": "Cliff view along the GR130" },
@@ -285,36 +283,20 @@
       ],
 
       "terrain": [
-        [ "volcanic", "normal" ],
-        [ "pine", "normal" ],
-        [ "laurisilva", "normal" ],
-        [ "dragon", "normal" ],
-        [ "coastal", "normal" ],
-        [ "riverbed", "normal" ]
+        [ "coastal", "normal" ]
       ],
 
       "interest": [
         [ "views", "normal" ],
-        [ "port", "normal" ],
-        [ "poi", "normal" ],
-        [ "peaks", "normal" ],
-        [ "archeological", "normal" ],
         [ "scenic", "normal" ]
       ],
 
       "warnings": [
-        [ "slippery", "normal" ],
-        [ "steep", "normal" ],
-        [ "vertigo", "normal" ],
-        [ "weather", "normal" ],
-        [ "gps", "normal" ],
-        [ "mountain", "normal" ],
-        [ "rockfall", "normal" ]
+        [ "steep", "normal" ]
       ],
 
       "notes": [
-        [ "slippery", "Loose material on barranco descents." ],
-        [ "vertigo", "Mild exposure along the cliffs." ]
+        [ "steep", "The climb up to Los Sauces can be a bit of a strain." ]
       ]
     },
     {
@@ -324,7 +306,7 @@
       "lengthMiles": "4.6",
       "walkingTime": "02:05",
       "shortDescription": "Popular walk through laurisilva forest with a self-guided nature trail for kids.",
-      "description": "An easily accessed circuit through <i>laurisilva</i> jungle of high quality. The first part along easier tracks is a self-guided walk for which a free guide is available at the start and is suitable for children.",
+      "description": "An easily accessed circuit through laurisilva jungle of high quality. The first part along easier tracks is a self-guided walk for which a free guide is available at the start and is suitable for children.",
       "starred": "false",
       "walkType": "circular",
       "duration": "half",
@@ -338,7 +320,7 @@
       "refreshments": "None en route. Restaurant on PR LP 5 intersection with LP-1 road (walk 6b).",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "paths": ["PR LP 05", "PR LP 05.1"],
 
       "images": [
         { "id": "01", "caption": "Small viaduct in the laurisilva forest." },
@@ -416,7 +398,7 @@
       "refreshments": "Bars, cafés, restaurants in Los Sauces.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "paths": [],
 
       "images": [
         { "id": "01", "caption": "Los Tilos Bridge" },
@@ -441,11 +423,6 @@
       ],
 
       "terrain": [
-        [ "volcanic", "normal" ],
-        [ "pine", "normal" ],
-        [ "laurisilva", "normal" ],
-        [ "dragon", "normal" ],
-        [ "coastal", "normal" ],
         [ "riverbed", "normal" ]
       ],
 
@@ -454,18 +431,7 @@
       ],
 
       "warnings": [
-        [ "slippery", "normal" ],
-        [ "steep", "normal" ],
-        [ "vertigo", "normal" ],
-        [ "weather", "normal" ],
-        [ "gps", "normal" ],
-        [ "mountain", "normal" ],
-        [ "rockfall", "normal" ]
-      ],
-
-      "notes": [
-        [ "slippery", "Loose material on barranco descents." ],
-        [ "vertigo", "Mild exposure along the cliffs." ]
+        []
       ]
     },
     {
@@ -475,7 +441,7 @@
       "lengthMiles": "9.6",
       "walkingTime": "04:10",
       "shortDescription": "Laurisilva forest walk with well-regarded restaurant stop by the disappointing lagoon.",
-      "description": "A steep climb leads into the protected <i>laurisilva</i> forest before descending to the rather dull lagoon. From there the way descends back to the road and traverses a couple of <i>barranco</i>s before circling back to the town.",
+      "description": "A steep climb leads into the protected laurisilva forest before descending to the rather dull lagoon. From there the way descends back to the road and traverses a couple of <i>barranco</i>s before circling back to the town.",
       "starred": "false",
       "walkType": "circular",
       "duration": "full",
@@ -489,7 +455,7 @@
       "refreshments": "Bars, cafés, restaurants in Los Sauces. Bar/restaurant at Laguna de Barlovento.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "paths": ["PR LP 07", "PR LP 07.1", "GR 130 Etapa 2"],
 
       "images": [
         { "id": "01", "caption": "Sunny glade in the laurisilva forest." },
@@ -531,7 +497,7 @@
       "refreshments": "Bar, café, restaurant Los Tilos Visitor Centre.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "paths": ["PR LP 06"],
 
       "images": [
         { "id": "01", "caption": "Marcos y Cordero Springs" },
@@ -614,8 +580,8 @@
       "lengthKm": "11.4",
       "lengthMiles": "7.1",
       "walkingTime": "03:20",
-      "shortDescription": "Beautiful coastal walk with some large <em>barrancos</em>.",
-      "description": "<p>Long acknowledged as one of the most attractive sections of path on the island, this classic walk is a succession of wonderful far-reaching views along the coast punctuated by explorations into the barrancos and wanderings through the scattered villages and small farms on the way. It's a fairly short and easy walk as far as Gallegos but the final barranco to Franceses is something else again and will consume about a third of your time.",
+      "shortDescription": "Beautiful coastal walk with some large barrancos.",
+      "description": "Long acknowledged as one of the most attractive sections of path on the island, this classic walk is a succession of wonderful far-reaching views along the coast punctuated by explorations into the barrancos and wanderings through the scattered villages and small farms on the way. It's a fairly short and easy walk as far as Gallegos but the final barranco to Franceses is something else again and will consume about a third of your time.",
       "starred": "false",
       "walkType": "linear",
       "duration": "full",
@@ -629,7 +595,7 @@
       "refreshments": "Bars, cafés, restaurants in Barlovento. Bar/shop and bar in Gallegos.",
       "start": "Barlovento",
       "end": "Franceses",
-      "paths": ["PR LP 02"],
+      "paths": ["SL BL 41", "GR 130 Etapa 3"],
 
       "images": [
         { "id": "01", "caption": "La Tosca has a small dragon tree grove" },
