@@ -376,6 +376,17 @@
         "strong": "Remote",
         "icon": "mountain.svg"
       }
+    ],
+    [
+      "urban",
+      {
+        "text": "Urban",
+        "filterIncludeText": "With urban areas",
+        "filterExcludeText": "Urban areas",
+        "description": "Goes through built-up areas.",
+        "strong": "Attractive",
+        "icon": "urban.svg"
+      }
     ]
   ],
 
