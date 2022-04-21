@@ -197,15 +197,14 @@ function filterRoutes() {
 
   // hide filtered out routes and update count of how many are matched
   laPalmaData.routes.forEach(route => {
-    let routeIncluded = filterSet.applyActiveFilters(route);
-    let variantIncluded = routeIncluded ? false : filterSet.checkVariants(route);
+    let included = filterSet.applyActiveFilters(route);
     let routeDiv = document.getElementById("route" + route.id);
     let variantMatchDiv = document.getElementById("variant-match" + route.id);
 
     // show routes that match and flag up those that only match variants
-    if (routeIncluded || variantIncluded) {
+    if (included.route || included.variants) {
       routeDiv.style.display = "block";
-      variantMatchDiv.style.display = !routeIncluded && variantIncluded ? "block" : "none";
+      variantMatchDiv.style.display = !included.route && included.variants ? "block" : "none";
       selectedRoutes.set(route.id, "in");
       ++matched;
     }
@@ -320,12 +319,14 @@ class Filter {
   #toggleControl;
   #name;
   isEnabled;
+  #isVariantDefined;
 
-  constructor(name, category, toggle) {
+  constructor(name, category, toggle, isVariantDefined = false) {
     this.#name = name;
     this.#category = category;
     this.#toggleControl = toggle;
     this.isEnabled = true;
+    this.#isVariantDefined = isVariantDefined;
   }
 
   toggle(targetState) {
@@ -341,6 +342,8 @@ class Filter {
   get isOff() {
     return this.#toggleControl.isOff;
   }
+
+  get isVariantDefined() { return this.#isVariantDefined; }
 
   // getters and setters
   set enabled(state) {
@@ -422,7 +425,7 @@ class Favourite extends Filter {
 
 class ShortWalk extends Filter {
   constructor(name) {
-    super(name, laPalmaData.duration.get("half"), new Toggle(INCLUDE));
+    super(name, laPalmaData.duration.get("half"), new Toggle(INCLUDE), true);
   }
 
   apply(route) {
@@ -432,7 +435,7 @@ class ShortWalk extends Filter {
 
 class AccessCar extends Filter {
   constructor(name) {
-    super(name, laPalmaData.basics.get("accessCar"), new Toggle(INCLUDE));
+    super(name, laPalmaData.basics.get("accessCar"), new Toggle(INCLUDE), true);
   }
 
   apply(route) {
@@ -442,7 +445,7 @@ class AccessCar extends Filter {
 
 class AccessBus extends Filter {
   constructor(name) {
-    super(name, laPalmaData.basics.get("accessBus"), new Toggle(INCLUDE));
+    super(name, laPalmaData.basics.get("accessBus"), new Toggle(INCLUDE), true);
   }
 
   apply(route) {
@@ -464,7 +467,7 @@ class WalkType extends Filter {
   #specificType;
 
   constructor(specificType) {
-    super(specificType, laPalmaData.walkType.get(specificType), new Toggle(INCLUDE));
+    super(specificType, laPalmaData.walkType.get(specificType), new Toggle(INCLUDE), true);
     this.#specificType = specificType;
   }
 
@@ -662,7 +665,6 @@ class Location extends Filter {
 // favourites and routes grid according to the user selections
 class FilterSet {
   #allFilters;
-  #variantFilters;
   #filterIndex;
   #locationFilter;
   #activeFilterList;
@@ -677,16 +679,15 @@ class FilterSet {
 
     // Filters added in order they are laid out in HTML
     this.#allFilters = new Array();
-    this.#variantFilters = new Array();
     this.#filterIndex = 0;
     this.addGeneralFilter(new Starred("starred"));
     this.addGeneralFilter(new Favourite("favourites"));
 
     this.startCategory("Basic");
-    this.addCategoryFilter(new WalkType("circular"), true); // variant filter
-    this.addCategoryFilter(new AccessCar("car"), true); // variant filter
-    this.addCategoryFilter(new AccessBus("bus"), true); // variant filter
-    this.addCategoryFilter(new ShortWalk("short"), true); // variant filter
+    this.addCategoryFilter(new WalkType("circular"));
+    this.addCategoryFilter(new AccessCar("car"));
+    this.addCategoryFilter(new AccessBus("bus"));
+    this.addCategoryFilter(new ShortWalk("short"));
     this.addCategoryFilter(new Waymarked("waymarked"));
     this.endCategory();
 
@@ -754,10 +755,9 @@ class FilterSet {
     this.#generalFiltersHtml += filter.html;
   }
 
-  addCategoryFilter(filter, variantFilter = false) {
+  addCategoryFilter(filter) {
     this.addFilter(filter);
     this.#categoryFiltersHtml += filter.html;
-    if (variantFilter) this.#variantFilters.push(filter);
   }
 
   startCategory(label) {
@@ -863,23 +863,73 @@ class FilterSet {
 
   /*** Filter application ***/
 
-  // Check whether a particular route is filtered out or not
-  // If flagged as a variant, only check the list of variant filters
-  applyActiveFilters(route, variants = false) {
-    let included = true;
-    let filters = variants ? this.#variantFilters : this.#allFilters;
-    // Keep applying active filters until one of them rules a route out
-    filters.every(filter => {
-      switch (filter.state) {
-        case ONLY:
-          included = filter.apply(route);
-          break;
-        case NO:
-          included = !filter.apply(route);
-          break;
+  // variant filters are assumed to inherit their parent walk's attributes
+  applyActiveFilters(route) {
+    let matchesMainFilters = true;
+    let matchesVariantFilters = true;
+
+    // check the route to see if its filtered out or not
+    this.#activeFilterList.forEach(filterId => {
+      let filter = this.#allFilters[filterId];
+      // record whether the route failed matching main or variant filters
+      if (!this.routeIsIncluded(filter, route)) {
+        if (filter.isVariantDefined) {
+          matchesVariantFilters = false;
+        } else {
+          matchesMainFilters = false;
+        }
       }
-      return included;
     });
+
+    // if there is no match on the main filters there's no match on the variants 
+    // either so we don't need to check
+    if (!matchesMainFilters) {
+      return {route: false, variants: false}; 
+    }
+
+    // if the main route matches completely, no need to check variants
+    if (matchesMainFilters && matchesVariantFilters) {
+      return {route: true, variants: undefined}; 
+    }
+
+    // matched on the main filters but not the variant filters - 
+    // see if one or more variants match
+
+    // no match if there are no variants
+    if (!route.hasVariants) {
+      return {route: true, variants: false}; 
+    }
+
+    // check the variants, if any matches then there is no need to check the others
+    let matchingVariantFound = false;
+    for (let i = 0; i < route.variants.length; i++) {
+      let included = true;
+      this.#activeFilterList.forEach(filterId => {
+        let filter = this.#allFilters[filterId];
+        if (filter.isVariantDefined) {
+          included = this.routeIsIncluded(filter, route.variants[i]);
+        }
+      });
+      if (included) {
+        matchingVariantFound = true;
+        break;
+      }
+    }
+
+    return {route: false, variants: matchingVariantFound}; 
+  }
+
+  // check if a route is filtered out by the given filter or not
+  routeIsIncluded(filter, route) {
+    let included = true;
+    switch (filter.state) {
+      case ONLY:
+        included = filter.apply(route);
+        break;
+      case NO:
+        included = !filter.apply(route);
+        break;
+    }
     return included;
   }
 
@@ -892,7 +942,6 @@ class FilterSet {
         return included;
       })
     }
-    return included;
   }
 
   /*** Respond to click events ***/
