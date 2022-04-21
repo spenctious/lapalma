@@ -19,8 +19,8 @@
       "town": "Santa Cruz de La Palma",
       "routeFile": "LP01 Sugar mills of Santa Cruz.gpx",
       "refreshments": "Bar/Restaurants along LP-101 and at Las Nieves.",
-      "start": "Plaza de la Constitución",
-      "end": "Plaza de la Constitución",
+      "start": "Plaza de España",
+      "end": "Plaza de España",
       "paths": ["PR LP 01", "PR LP 02.2"],
       
       "images": [
@@ -39,8 +39,8 @@
           "effort": "strenuous",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Plaza de la Constitución",
-          "end": "Plaza de la Constitución",
+          "start": "Plaza de España",
+          "end": "Plaza de España",
           "routeFile": "LP01a Santa Cruz highlights.gpx",
           "routeDirections": "[01a]"
         }
@@ -1283,7 +1283,7 @@
       "province": "Tinizara",
       "town": "Tijarafe",
       "routeFile": "LP20 Tinizara to Tijarafe.gpx",
-      "refreshments": "Bar/café in Tinizara. Bars, cafés, restaurants, shops in Tijarafe. Bar/café in El Jesus.",
+      "refreshments": "Bar/café in Tinizara. Bars, cafés, restaurants, shops in Tijarafe. Bar/café in El Jesús.",
       "start": "Tinizara",
       "end": "Tijarafe",
       "paths": ["GR 130 Etapa 5"],
@@ -1428,7 +1428,7 @@
       "accessCar": "true",
       "accessBus": "true",
       "province": "Tijarafe",
-      "town": "El Jesus",
+      "town": "El Jesús",
       "routeFile": "LP22b Torre del Time to Mirador El Time.gpx",
       "refreshments": "Cervecería Isla Verde",
       "start": "Fuente del Toro",
@@ -1630,8 +1630,8 @@
           "effort": "moderate",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Pico de La Cruz",
-          "end": "Pico de La Cruz",
+          "start": "Pico de La Cruz access",
+          "end": "Pico de La Cruz access",
           "routeDirections": "To Pico de la Nieve: [24.1](08 to 11) and back, to Mirador de los Andenes [24.1](08 to 02) and back"
         },
         {
@@ -1643,8 +1643,8 @@
           "effort": "moderate",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Pico de la Nieve",
-          "end": "Pico de la Nieve",
+          "start": "Pico de la Nieve access",
+          "end": "Pico de la Nieve access",
           "routeFile": "LP24c Pico de la Nieve.gpx",
           "routeDirections": "[24c]"
         },
@@ -1657,7 +1657,7 @@
           "effort": "strenuous",
           "accessCar": "false",
           "accessBus": "false",
-          "start": "Pico de la Nieve",
+          "start": "Pico de la Nieve access",
           "end": "Centro de Visitantes",
           "routeDirections": "[24c](01 to 09) then [24.1](016 to the Refugio) then [24.2]"
         }

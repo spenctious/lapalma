@@ -1,15 +1,27 @@
 [
   [
-    "Plaza de la Constitución",
+    "Plaza de España",
     {
+      "coordinates": "28.683344, -17.764885",
       "areas": ["east"],
-      "province": "tbd",
-      "parking": "tbd",
-      "coordinates": "28.680835499593634, -17.766584895929874",
+      "province": "Santa Cruz de La Palma",
+      "parking": "Avenida Marítima and walk up.",
       "bus": {
-        "notes": "tbd",
-        "routes": ["100", "120"],
-        "stop": "tbd"
+        "notes": "Walk up along Calle O'Daly (Antigua Calle Real)",
+        "routes": [
+          "500",
+          "300",
+          "201",
+          "200",
+          "100",
+          "35",
+          "33",
+          "20",
+          "12",
+          "11",
+          "2"
+        ],
+        "stop": "Santa Cruz"
       },
       "notes": "Bus interchange."
     }
@@ -17,6 +29,7 @@
   [
     "Barlovento",
     {
+      "coordinates": "28.8292902, -17.8026554",
       "areas": ["north", "east"],
       "province": "Barlovento",
       "parking": "Plenty of street parking in Barlovento. Car park near tourist information office.",
@@ -31,8 +44,9 @@
   [
     "Franceses",
     {
+      "coordinates": "28.8276444, -17.8584303",
       "areas": ["north"],
-      "province": "",
+      "province": "Garafia",
       "parking": "Very restricted narrow streets with practically no parking options.",
       "bus": {
         "notes": "",
@@ -45,6 +59,7 @@
   [
     "Los Sauces",
     {
+      "coordinates": "28.8042792, -17.7740214",
       "areas": ["east"],
       "province": "San Andrés y Sauces",
       "parking": "Multiple small places, try Calle Vicente San Juan round the back of the big church.",
@@ -59,35 +74,28 @@
   [
     "Casa del Monte",
     {
+      "coordinates": "28.7728393, -17.8119770",
       "areas": ["east"],
-      "province": "",
+      "province": "San Andrés y Sauces",
       "parking": "None",
       "taxi": "4WD taxis carrying 8 passengers run from the taxi hut near the finish to Casa del Monte. Book in advance.",
-      "bus": {
-        "notes": "",
-        "routes": [""],
-        "stop": ""
-      },
       "notes": ""
     }
   ],
   [
     "Los Tilos Taxi Hut",
     {
+      "coordinates": "28.791469, -17.799369",
       "areas": ["east"],
       "province": "San Andrés y Sauces",
       "parking": "Some parking by the hut, more up the road.",
-      "bus": {
-        "notes": "",
-        "routes": [""],
-        "stop": ""
-      },
       "notes": ""
     }
   ],
   [
     "Santa Cruz de La Palma",
     {
+      "coordinates": "28.6802200, -17.7678751",
       "areas": ["east"],
       "province": "Santa Cruz de La Palma",
       "parking": "Park near Barco de la Virgen or on Avenida Marítima and walk to the start.",
@@ -114,6 +122,7 @@
   [
     "Faro de Fuencaliente",
     {
+      "coordinates": "28.4557788, -17.8433515",
       "areas": ["south"],
       "province": "Fuencaliente",
       "parking": "Free (sizable) car park",
@@ -128,9 +137,10 @@
   [
     "Los Canarios",
     {
+      "coordinates": "28.4937164, -17.8432433",
       "areas": ["south"],
       "province": "Fuencaliente",
-      "parking": "",
+      "parking": "Street parking",
       "bus": {
         "notes": "Route 23 stops at Hotel Princess and Volcan San Antonio (request).",
         "routes": ["210", "201", "200", "23"],
@@ -142,6 +152,7 @@
   [
     "Volcán San Antonio",
     {
+      "coordinates": "28.4868275, -17.8482200",
       "areas": ["south"],
       "province": "Fuencaliente",
       "parking": "Some free spaces before the entrance or in the carpark if you have a visitor centre ticket.",
@@ -156,6 +167,7 @@
   [
     "Área Recreativa Fuente Los Roques",
     {
+      "coordinates": "28.5192449, -17.8332198",
       "areas": ["south"],
       "province": "Fuencaliente",
       "parking": "Plenty of spaces at the recreation area.",
@@ -165,6 +177,7 @@
   [
     "Refugio El Pilar",
     {
+      "coordinates": "28.6141510, -17.8364938",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Multiple nearby parking spots.",
@@ -174,6 +187,7 @@
   [
     "Jedy",
     {
+      "coordinates": "28.5848845, -17.8804854",
       "areas": ["west", "south"],
       "province": "El Paso",
       "parking": "Parking spots up Calle Campanario and more further on up the track.",
@@ -188,6 +202,7 @@
   [
     "San Nicolás",
     {
+      "coordinates": "28.6019165, -17.8810096",
       "areas": ["west", "south"],
       "province": "El Paso",
       "parking": "Some parking by the church, more up Calle Tamanca by the Virgen de Fátima shrine.",
@@ -202,6 +217,7 @@
   [
     "Centro de Visitantes",
     {
+      "coordinates": "28.6536583, -17.8523442",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Large car park at the rear, some parking in the front.",
@@ -216,6 +232,7 @@
   [
     "San Pedro de Breña Alta",
     {
+      "coordinates": "28.6626920, -17.7876961",
       "areas": ["east"],
       "province": "Breña Alta",
       "parking": "Car park at the rear of Plaza de Bujaz",
@@ -230,6 +247,7 @@
   [
     "Tacande",
     {
+      "coordinates": "28.638888, -17.870569",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Parking spot by a wall at the start along Calle Cuesta de la Juliana.",
@@ -239,6 +257,7 @@
   [
     "Pista de Valencia",
     {
+      "coordinates": "28.6779783, -17.8542550",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "A couple of spaces where the tarmac ends, more at the notice board further up the track.",
@@ -248,6 +267,7 @@
   [
     "The Cumbrecita",
     {
+      "coordinates": "28.697891, -17.856689",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Two small car parks.",
@@ -257,6 +277,7 @@
   [
     "Los Brecitos",
     {
+      "coordinates": "28.7116170, -17.9006417",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Small car park at the mirador.",
@@ -266,6 +287,7 @@
   [
     "La Viña car park",
     {
+      "coordinates": "28.6851919, -17.9101267",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Ample spaces unless it's the holidays",
@@ -275,6 +297,7 @@
   [
     "Playa de Taburiente",
     {
+      "coordinates": "28.7245816, -17.8761318",
       "areas": ["central"],
       "province": "El Paso",
       "notes": "Beach-like area on the Rio de Taburiente"
@@ -283,6 +306,7 @@
   [
     "Roque de los Muchachos",
     {
+      "coordinates": "28.7542290, -17.8848850",
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Fairly small and busy car park.",
@@ -292,6 +316,7 @@
   [
     "Roque Palmero",
     {
+      "coordinates": "28.7376283, -17.8983106",
       "areas": ["central"],
       "province": "El Paso",
       "notes": "Viewpoint accessed up a steep slippery slope."
@@ -300,22 +325,25 @@
   [
     "Punta de Los Roques",
     {
+      "coordinates": "28.7037229, -17.8460191",
       "areas": ["central"],
       "province": "El Paso",
       "notes": "Spectacular viewpoint where the Caldera meets into the Cumbre Nueva"
     }
   ],
   [
-    "Pico de La Cruz",
+    "Pico de La Cruz access",
     {
+      "coordinates": "28.757245, -17.855835",
       "areas": ["central"],
       "province": "El Paso",
       "notes": "Roadside parking spots near the PR LP 07/GR 131 intersection"
     }
   ],
   [
-    "Pico de la Nieve",
+    "Pico de la Nieve access",
     {
+      "coordinates": "28.7330989, -17.8220377",
       "areas": ["central"],
       "province": "El Paso",
       "notes": "Parking spot just off the LP-4 road where the PR LP 03 path intersects."
@@ -324,6 +352,7 @@
   [
     "Argual Abajo",
     {
+      "coordinates": "28.6545488, -17.9277700",
       "areas": ["west", "central"],
       "province": "Los Llanos de Aridane",
       "parking": "Plentiful parking but gets busy on market days.",
@@ -338,6 +367,7 @@
   [
     "Los Llanos de Aridane",
     {
+      "coordinates": "28.6606121, -17.9160221",
       "areas": ["west", "central"],
       "province": "Los Llanos de Aridane",
       "parking": "Car park near the bus station and elsewhere.",
@@ -352,6 +382,7 @@
   [
     "Mirador El Time",
     {
+      "coordinates": "28.6635192, -17.9423483",
       "areas": ["west", "central"],
       "province": "Los Llanos de Aridane",
       "parking": "Limited parking for restaurant patrons only",
@@ -366,6 +397,7 @@
   [
     "Puerto de Tazacorte",
     {
+      "coordinates": "28.6512531, -17.9455746",
       "areas": ["west", "central"],
       "province": "Los Llanos de Aridane",
       "parking": "Beachfront places fill up fast but there's a carpark further up Calle Taburiente.",
@@ -378,22 +410,24 @@
     }
   ],
   [
-    "El Jesus",
+    "El Jesús",
     {
+      "coordinates": "28.7012502, -17.9510069",
       "areas": ["west"],
       "province": "Tijarafe",
-      "parking": "Cervecería Isla Verde bar carpark",
+      "parking": "Cervecería Isla Verde bar carpark.",
       "bus": {
         "notes": "",
         "routes": ["110"],
-        "stop": "El Jesus"
+        "stop": "El Jesús"
       },
-      "notes": "Tiny place. Have a drink at the bar if you're parking there."
+      "notes": ""
     }
   ],
   [
     "Fuente del Toro",
     {
+      "coordinates": "28.699341, -17.949601",
       "areas": ["west"],
       "province": "Tijarafe",
       "parking": "A couple of places directly in front and a car park opposite.",
@@ -408,6 +442,7 @@
   [
     "El Pinar parking spot",
     {
+      "coordinates": "28.7050387, -17.9317414",
       "areas": ["west"],
       "province": "Tijarafe",
       "parking": "Layby by the wall with space for several cars",
@@ -417,6 +452,7 @@
   [
     "Tijarafe",
     {
+      "coordinates": "28.7109740, -17.9557638",
       "areas": ["west"],
       "province": "Tijarafe",
       "parking": "Street parking, more by the sports stadium.",
@@ -431,6 +467,7 @@
   [
     "Tinizara",
     {
+      "coordinates": "28.7448278, -17.9685826",
       "areas": ["west"],
       "province": "Tijarafe",
       "parking": "Next to Bar Garome.",
@@ -445,6 +482,7 @@
   [
     "Porís de Candelaria parking",
     {
+      "coordinates": "28.703121, -17.972400",
       "areas": ["west"],
       "province": "Tijarafe",
       "parking": "Two sizable parking spots at the end of Camino La Ermita.",
@@ -452,22 +490,9 @@
     }
   ],
   [
-    "El Jesús",
-    {
-      "areas": ["west"],
-      "province": "Tijarafe",
-      "parking": "Some spots near the church and bar.",
-      "bus": {
-        "notes": "",
-        "routes": ["110"],
-        "stop": "El Jesús"
-      },
-      "notes": ""
-    }
-  ],
-  [
     "El Pinar",
     {
+      "coordinates": "28.7749625, -17.9784660",
       "areas": ["west", "north"],
       "province": "Puntagorda",
       "parking": "Street parking",
@@ -482,6 +507,7 @@
   [
     "Area Recreativa El Fayal",
     {
+      "coordinates": "28.7786781, -17.9730375",
       "areas": ["west", "north"],
       "province": "Puntagorda",
       "parking": "Plentiful, except at the weekends and holidays when there is a market.",
@@ -496,6 +522,7 @@
   [
     "Puntagorda tourist information centre",
     {
+      "coordinates": "28.7656891, -17.9796817",
       "areas": ["west", "north"],
       "province": "Puntagorda",
       "parking": "Adequate street parking nearby.",
@@ -510,6 +537,7 @@
   [
     "El Roque",
     {
+      "coordinates": "28.7569841, -17.9743529",
       "areas": ["west", "north"],
       "province": "Puntagorda",
       "parking": "Small parking spot by a noticeboard.",
@@ -524,6 +552,7 @@
   [
     "Los Dragos de Buracas",
     {
+      "coordinates": "28.7909686, -17.9749067",
       "areas": ["west", "north"],
       "province": "Puntagorda",
       "parking": "None",
@@ -533,6 +562,7 @@
   [
     "Las Tricias",
     {
+      "coordinates": "28.7806456, -17.9632330",
       "areas": ["west", "north"],
       "province": "Puntagorda",
       "parking": "A couple of small car parks.",
@@ -547,6 +577,7 @@
   [
     "La Zarza",
     {
+      "coordinates": "28.805497, -17.907429",
       "areas": ["north", "west"],
       "province": "Garafia",
       "parking": "At the museum (included in ticket price or free on Mondays when the museum is closed) or roadside a little way down.",
@@ -561,6 +592,7 @@
   [
     "San Antonio",
     {
+      "coordinates": "28.8176374, -17.9185695",
       "areas": ["north", "west"],
       "province": "Garafia",
       "parking": "In the recreational area.",
@@ -570,6 +602,7 @@
   [
     "Santo Domingo de Garafía",
     {
+      "coordinates": "28.8306369, -17.9444152",
       "areas": ["north", "west"],
       "province": "Garafia",
       "parking": "By the stadium or along Calle Nueva.",
@@ -584,6 +617,7 @@
   [
     "Llano Negro",
     {
+      "coordinates": "28.8057332, -17.9237615",
       "areas": ["north", "west"],
       "province": "Garafia",
       "parking": "By the tourist information centre and various street options.",
@@ -598,6 +632,7 @@
   [
     "Puerto de Garafía",
     {
+      "coordinates": "28.8271300, -17.9673507",
       "areas": ["north", "west"],
       "province": "Garafia",
       "parking": "Quite a large car park and a few spots on the approach road.",
@@ -607,6 +642,7 @@
   [
     "Don Pedro",
     {
+      "coordinates": "28.8340335, -17.8950127",
       "areas": ["north"],
       "province": "Garafia",
       "parking": "Not really.",
@@ -616,6 +652,7 @@
   [
     "El Tablado",
     {
+      "coordinates": "28.8334823, -17.8773042",
       "areas": ["north"],
       "province": "Garafia",
       "parking": "Small, limited street parking on very narrow roads",
@@ -625,6 +662,7 @@
   [
     "Barranco de la Madera",
     {
+      "coordinates": "28.7181620, -17.8135658",
       "areas": ["east"],
       "province": "Santa Cruz de la Palma",
       "parking": "None",
@@ -634,6 +672,7 @@
   [
     "Las Nieves",
     {
+      "coordinates": "28.694292, -17.781861",
       "areas": ["east"],
       "province": "Santa Cruz de la Palma",
       "parking": "Two car parks.",
@@ -648,6 +687,7 @@
   [
     "Las Fuentes de Las Breñas",
     {
+      "coordinates": "28.6580886, -17.8020645",
       "areas": ["east"],
       "province": "Breña Alta",
       "notes": "Access by foot only"
@@ -656,6 +696,7 @@
   [
     "Plaza la Alameda",
     {
+      "coordinates": "28.688079, -17.761130",
       "areas": ["east"],
       "province": "Santa Cruz de La Palma",
       "parking": "Along the Avenida de las Nieves opposite.",
@@ -682,6 +723,7 @@
   [
     "Mirador de la Concepción",
     {
+      "coordinates": "28.6735724, -17.7783187",
       "areas": ["east"],
       "province": "Santa Cruz de La Palma",
       "parking": "Some parking at the viewpoint.",
@@ -698,6 +740,7 @@
   [
     "Los Molinos",
     {
+      "coordinates": "28.688428, -17.772009",
       "areas": ["east"],
       "province": "Santa Cruz de La Palma",
       "parking": "None",
