@@ -209,9 +209,14 @@ function filterRoutes() {
     let variantMatchDiv = document.getElementById("variant-match" + route.id);
 
     // show routes that match and flag up those that only match variants
-    if (included.route || included.variants) {
+    if (included.route) {
       routeDiv.style.display = initialRouteDisplaySetting;
-      variantMatchDiv.style.display = !included.route && included.variants ? "block" : "none";
+      variantMatchDiv.style.display = "none";
+      selectedRoutes.set(route.id, "in");
+      ++matched;
+    } else if (included.variants) {
+      routeDiv.style.display = initialRouteDisplaySetting;
+      variantMatchDiv.style.display = "block";
       selectedRoutes.set(route.id, "in");
       ++matched;
     }
@@ -650,6 +655,8 @@ class Location extends Filter {
   /*** Filtering ***/
 
   apply(route) {
+    console.log("route " + route.id);
+    console.log("  start: " + route.start + ", end: " + route.end);
     return this.isInSelectedAreas(route.start) || this.isInSelectedAreas(route.end);
   }
 
@@ -657,7 +664,7 @@ class Location extends Filter {
   isInSelectedAreas(location) {
     let included = false;
     for (let area of this.#locationAreas.values()) {
-      if (!area.toggle.state.isOff) {
+      if (!area.toggle.isOff) {
         included = area.locations.has(location);
         if (included) break; // no need to look any further
       }
@@ -889,12 +896,12 @@ class FilterSet {
     });
 
     // if there is no match on the main filters there's no match on the variants 
-    // either so we don't need to check
+    // either so we don't need to check them
     if (!matchesMainFilters) {
       return {route: false, variants: false}; 
     }
 
-    // if the main route matches completely, no need to check variants
+    // if the main route matches completely, there is no need to check the variants
     if (matchesMainFilters && matchesVariantFilters) {
       return {route: true, variants: undefined}; 
     }
@@ -902,12 +909,12 @@ class FilterSet {
     // matched on the main filters but not the variant filters - 
     // see if one or more variants match
 
-    // no match if there are no variants
+    // there is no match if there are no variants
     if (!route.hasVariants) {
       return {route: true, variants: false}; 
     }
 
-    // check the variants, if any matches then there is no need to check the others
+    // if any variant matches then there is no need to check the others
     let matchingVariantFound = false;
     for (let i = 0; i < route.variants.length; i++) {
       let included = true;
