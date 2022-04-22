@@ -655,8 +655,6 @@ class Location extends Filter {
   /*** Filtering ***/
 
   apply(route) {
-    console.log("route " + route.id);
-    console.log("  start: " + route.start + ", end: " + route.end);
     return this.isInSelectedAreas(route.start) || this.isInSelectedAreas(route.end);
   }
 
@@ -1039,22 +1037,16 @@ class FilterSet {
   // Changing the area selection automatically turns the filter on
   // Invalid selections (all areas or no areas) turn it off
   updateLocationFilter() {
-    let filterChanged = false;
     let filterId = this.#locationFilter.index.toString(); // active filter list uses string keys
 
     if (this.#locationFilter.isOff && this.#locationFilter.hasValidAreasSelection) {
       this.#locationFilter.toggle(STATE_ON);
       this.#activeFilterList.add(filterId); 
-      filterChanged = true;
     }
     if (!this.#locationFilter.isOff && !this.#locationFilter.hasValidAreasSelection) {
       this.#locationFilter.toggle(STATE_OFF);
       this.#activeFilterList.delete(filterId);
-      filterChanged = true;
     }
-    if (filterChanged) {
-      this.updateGrids();
-    }
-    this.updateLocationMessage();
+    this.updateGrids();
   }
 }
