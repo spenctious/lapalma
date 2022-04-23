@@ -118,8 +118,8 @@ function populateBasics() {
     </div>`;
   basicsContent += getMetricsHtml(route.effortAttributes);
   basicsContent += `<div class="item-description"><h4>Effort</h4>${route.effortAttributes.description}</div>`;
-  basicsContent += getFeatureHtml(route.walkTypeAttributes);
-  basicsContent += getFeatureHtml(route.refreshmentsAttributes);
+  basicsContent += getBasicFeatureHtml(route.walkTypeAttributes, route.walkTypeAttributes.description);
+  basicsContent += getBasicFeatureHtml(route.refreshmentsAttributes, route.refreshments);
   document.getElementById("basics-grid").innerHTML = basicsContent;
 
   // access
@@ -172,7 +172,8 @@ function populateFeaturesAndWarnings() {
   document.getElementById("features-and-warnings-summary").innerHTML = summaryContent;
 
   // features
-  let featuresContent = "";
+  let featuresContent = route.interest.size == 0 ? 
+  `<div></div><div class="iten-description">No singificant features</div>` : "";
   route.interest.forEach((featureAttributes, featureName) => {
     // handle special cases with additional content
     let additionalContent = "";
@@ -190,7 +191,8 @@ function populateFeaturesAndWarnings() {
   document.getElementById("features-grid").innerHTML = featuresContent;
 
   // warnings
-  let warningsContent = "";
+  let warningsContent = route.warnings.size == 0 ? 
+    `<div></div><div class="iten-description">No reported warnings</div>` : "";
   route.warnings.forEach(warning => {
     warningsContent += getFeatureHtml(warning);
   });
@@ -378,6 +380,20 @@ function getFeatureHtml(feature, additionalContent = "") {
       </h4>
       ${feature.noteModifiedDescription}
       ${additionalContent}
+    </div>`;
+}
+
+// feature description for basic items that are not metrics (walk type, refreshments)
+function getBasicFeatureHtml(feature, description) {
+  return `
+    <div class="icon">
+      <img src="/img/icons/${feature.icon}" class="icon-img" alt="" />
+    </div>
+    <div class="item-description">
+      <h4>
+        ${feature.text}
+      </h4>
+      ${description}
     </div>`;
 }
 
