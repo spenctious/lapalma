@@ -3,40 +3,40 @@
 
 #collection-nav {
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 2rem 1fr 2rem;
   background-color: var(--colour1);
-  font-size: 1rem;
-  text-align: center;
   color: white;
-  padding: 0.5rem;
-  margin-top: 0.2rem;
-  margin-bottom: 10px;
-  width: 100%;
-  height: 3rem; /* delete this - for testing only */
-  grid-column: 1 / 13;
+  font-size: 1rem;
+  grid-column: 1;
+  padding:  0.5rem;
 }
 
-#collection-nav > span:nth-child(1) {
-  text-align: left;
-  width: 100%;
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-#collection-nav > span:nth-child(2) {
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 1.2rem;
+.arrow {
+  filter: invert(100%);
+  cursor: pointer;
 }
 
-#collection-nav > span:nth-child(3) {
-  text-align: right;
-  width: 100%;
+.arrow img { 
+  height: 1.5rem;
 }
 
-.nav-button {
-  width: 2rem;
-  border: 1px solid white;
-  padding: 0.5rem;
-  font-size: 1.2rem;
+.center {
+  align-items: center;
+}
+
+.left {
+  align-items: left;
+}
+
+.right {
+  align-items: center;
 }
 
 /*************************  ************************/
