@@ -248,9 +248,8 @@ function populateRouteDatail() {
 
   // main body of detail
   let bodyContent = `
-    <div>${getDownloadButtons(route.routeFile)}</div>
-    <h2>Description</h2>
     <p>${route.description}</p>
+    <div>${getDownloadButtons(route.routeFile)}</div>
     ${variantsContent}`;
 
   document.getElementById("detail-body").innerHTML = bodyContent;
@@ -286,12 +285,13 @@ function getVariantContent(variant) {
   let downloadContent = variant.hasRouteFile ? `<div class="downloads">${getDownloadButtons(variant.routeFile)}</div>` : "";
 
   // directions - expand format to HTML
+  // square braces enclose route ids, normal brackets enclose waypoint information
   let directions = "";
   if (variant.hasRouteDirections) {
-    directions = "<p>" + variant.routeDirections + "</p>";
-    directions = directions.replaceAll("[", `Route <span class="route-id">`);
-    directions = directions.replaceAll("]", ` </span>`);
-    directions = directions.replaceAll("(", `waypoint <span class="route-waypoints">`);
+    directions = `<p class="directions">` + variant.routeDirections + `</p>`;
+    directions = directions.replaceAll("[", `<span class="route-id">Route `);
+    directions = directions.replaceAll("]", `</span>`);
+    directions = directions.replaceAll("(", `<span class="route-waypoints">waypoints `);
     directions = directions.replaceAll(")", `</span>`);
   }
 
@@ -299,9 +299,9 @@ function getVariantContent(variant) {
     <div class="variant">
       ${title}
       <div class="icon-summary">${variantSummary}</div>
+      <p>${variant.description}</p>
       ${downloadContent}
       ${directions}
-      <p>${variant.description}</p>
     </div> `;
 }
 
