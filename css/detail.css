@@ -324,14 +324,27 @@ h4 {
   font-size: 0.8rem;
 }
 
+/************************* Main images ************************/
+
+.image-container {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
 .caption {
-  background-color: var(--colour0);
-  color: var(--colour3);
-  padding: 0.2rem;
+  position: absolute;
+  bottom: 0;
+  opacity: 60%;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  padding: 0.6rem;
+  width: 100%;
 }
 
 .picture {
   width: 100%;
+  display: block;
 }
 
 

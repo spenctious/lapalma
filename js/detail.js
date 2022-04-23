@@ -261,10 +261,10 @@ function populateRouteImages() {
 
   route.images.forEach(image => {
     imagesContent += `
-      <div>
+      <div class="image-container">
         <img class="picture" src="/img/route${route.id}-${image.id}-1200.jpg" alt="" />
-      </div>
-      <div class="caption">${image.caption}</div>`;
+        <div class="caption">${image.caption}</div>
+      </div>`;
   })
 
   document.getElementById("detail-images").innerHTML = imagesContent;
