@@ -1,3 +1,6 @@
+
+/*************************  ************************/
+
 #collection-nav {
   display: grid;
   grid-template-columns: 30% 40% 30%;
@@ -35,6 +38,9 @@
   padding: 0.5rem;
   font-size: 1.2rem;
 }
+
+/*************************  ************************/
+
 
 .icon-img {
   width: 100%;
@@ -75,6 +81,9 @@
   margin-bottom: 0.2rem;
 }
 
+/*************************  ************************/
+
+
 #basics-detail,
 #features-and-warnings {
   grid-column: 1;
@@ -88,6 +97,9 @@
   grid-template-rows: 2rem;
   width: 100%;
   background-color: white;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  margin-top: 0.2rem;
 }
 
 #basics-summary,
@@ -110,6 +122,16 @@
   column-gap: 0.5rem;
   row-gap: 0.5rem;
   grid-column: 1;
+}
+
+.chevron {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.chevron > img {
+  width: 2rem;
 }
 
 #basics-summary > div:nth-child(1) { grid-column: 1 / 9; grid-row: 1; } /* title */
@@ -164,10 +186,10 @@ h4 {
 }
 
 #detail-title {
-  width: 30rem;
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  grid-column: 1 / 13;
+  grid-column: 1;
 }
 
 #detail-body {
@@ -300,4 +322,89 @@ h4 {
 
 .variant > p {
   font-size: 0.8rem;
+}
+
+.caption {
+  background-color: var(--colour0);
+  color: var(--colour3);
+  padding: 0.2rem;
+}
+
+.picture {
+  width: 100%;
+}
+
+
+/************************* Media queries ************************/
+
+
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+@media (min-width: 600px) {
+
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width: 801px) {
+
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+
+}
+
+/* hi-res laptops and desktops */
+@media (min-width: 1281px) {
+  #wrapper {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  #navbar {
+    display: block;
+    grid-column: 1 / 3;
+    grid-row: 2 / 100; /* extend full depth */
+  }
+
+  .sidenav {
+    position: static;
+    transition: none;
+    transform: translateX(0) !important; /* override the value set by the nav close button */
+  }
+
+  .sidenav .closebtn {
+    display: none;
+  }
+
+  #collection-nav {
+    grid-column: 3 / -1;
+    grid-row: 2;
+  }
+
+  #detail-title {
+    grid-column: 3 / -1;
+    grid-row: 3;
+  }
+
+  #basics-summary,
+  #basics-detail,
+  #features-and-warnings-summary,
+  #features-and-warnings,
+  #detail-body {
+    grid-column: 3 / 7;
+  }
+
+  #basics-detail,
+  #features-and-warnings {
+    margin: 0rem;
+  }
+
+  #detail-images {
+    grid-column: 7 / -1;
+    grid-row: 4 / 100;
+  }
+
+  #header,
+  #footer {
+    grid-column: 1 / -1; /* span full width */
+  }
 }

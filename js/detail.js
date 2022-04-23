@@ -41,6 +41,7 @@ function initialize() {
   populateRouteDatail();
   populateFeaturesAndWarnings();
   populateBasics();
+  populateRouteImages();
 
   // add event listeners for the specified areas
   document.getElementById("wrapper").addEventListener("click", mainClickHandler);
@@ -97,7 +98,7 @@ function populateBasics() {
   // summary grid
   let summaryContent = "";
   summaryContent += `<div class="summary-heading">Basics</div>`;
-  summaryContent += `<div><img src="/img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
+  summaryContent += `<div class="chevron"><img src="/img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
   summaryContent += getMetricsHtml(route.durationAttributes);
   summaryContent += getMetricsHtml(route.effortAttributes);
   summaryContent += getSummaryIconHtml(route.walkTypeAttributes.icon);
@@ -163,7 +164,7 @@ function populateFeaturesAndWarnings() {
   // summary
   let summaryContent = `
     <div class="summary-heading">Features and Warnings</div>
-    <div>
+    <div class="chevron">
       <img src="/img/icons/chevron-down.svg" class="icon-img" alt="" />
     </div>`;
   summaryContent += getSummaryIconsContent(route.interest);
@@ -249,7 +250,22 @@ function populateRouteDatail() {
     <h2>Description</h2>
     <p>${route.description}</p>
     ${variantsContent}`;
+
   document.getElementById("detail-body").innerHTML = bodyContent;
+}
+
+function populateRouteImages() {
+  let imagesContent = "";
+
+  route.images.forEach(image => {
+    imagesContent += `
+      <div>
+        <img class="picture" src="/img/route${route.id}-${image.id}-1200.jpg" alt="" />
+      </div>
+      <div class="caption">${image.caption}</div>`;
+  })
+
+  document.getElementById("detail-images").innerHTML = imagesContent;
 }
 
 function getVariantContent(variant) {
