@@ -1,5 +1,5 @@
 
-/*************************  ************************/
+/************************* Collection navigation bar ************************/
 
 #collection-nav {
   display: grid;
@@ -27,17 +27,6 @@
   height: 1.5rem;
 }
 
-.center {
-  align-items: center;
-}
-
-.left {
-  align-items: left;
-}
-
-.right {
-  align-items: center;
-}
 
 /*************************  ************************/
 

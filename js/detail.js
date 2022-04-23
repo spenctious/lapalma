@@ -50,7 +50,7 @@ function initialize() {
 /************************* Click handlers ************************/
 
 function mainClickHandler(event) {
-  let elementId = event.target.id;
+  let elementId = event.target.closest("div").id;
   let lastIndex = collection.length - 1;
   
   if (elementId == "next") {
