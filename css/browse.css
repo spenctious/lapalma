@@ -13,7 +13,8 @@
 
 #routes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  /* grid-template-columns: repeat(auto-fill, 250px); */
+  grid-template-columns: minmax(100%, 400px);
   gap: 0.5rem;
   justify-content: center;
 }
@@ -29,7 +30,9 @@
 }
 
 .route {
+  display: flex;
   border: 1px solid lightgray;
+  flex-direction: row;
 }
 
 /************************* Grid content: pic ************************/
@@ -38,7 +41,9 @@
   flex: 1 0 50%;
   position: relative;
 }
-
+.route-pic {
+  flex: 50%;
+}
 .route-pic img {
   width: 100%;
   display: block; /* stops white space at bottom of image due to inline positioning */
@@ -96,10 +101,11 @@
 /************************* Grid content: detail ************************/
 
 .route-detail {
+  flex: 50%;
   background-color: white;
   padding: 0.5rem;
   position: relative;
-  height: 8rem;
+  height: auto;
 }
 
 .favourite {
@@ -117,7 +123,7 @@
   font-size: 0.8rem;
   line-height: 1rem;
   overflow: visible;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .route-detail .description {
@@ -140,12 +146,12 @@
 }
 
 .route-metric img {
-  height: 1rem;
+  height: 0.8rem;
 }
 
 .route-metric p {
-  font-size: 0.7rem;
-  margin-bottom: 0.2rem;
+  font-size: 0.6rem;
+  margin-bottom: 0.1rem;
 }
 
 /************************* Filters ************************/
@@ -406,12 +412,8 @@
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @media (min-width: 370px) and (max-width: 480px) {
   /* Slightly larger screens support side-by side layout */
-  html,
-  body {
-    font-size: 16px;
-  }
 
-  #routes-grid {
+  /* #routes-grid {
     grid-template-columns: minmax(100%, 400px);
   }
   
@@ -426,17 +428,29 @@
   .route-detail {
     flex: 50%;
     height: auto;
-  }
-}
+  }*/
+} 
 
 /* smartphones, Android phones, landscape iPhone */
 @media (min-width: 480px) {
   /**/
+  #routes-grid {
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+  
+  .route {
+    flex-direction: column;
+  }
 
+  .route-detail {
+    flex: 1 0 100%;
+ }
 }
 @media (min-width: 600px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+
 }
+
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
 }
@@ -496,7 +510,7 @@
   .filter-panel {
     position: static;
     transition: none;
-    /* transform: translateX(-100%) !important; override the value set by the nav close button */
+    /*transform: translateX(-100%) !important;  override the value set by the nav close button */
   }
 
 }

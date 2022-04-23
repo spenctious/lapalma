@@ -18,7 +18,7 @@
 html, body {
   /* font-family: Roboto; */
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 #container {
@@ -142,4 +142,13 @@ html, body {
   grid-template-columns: 1fr;
   column-gap: 20px;
 }
+
+@media (min-width: 600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  html, body {
+    font-size: 20px;
+  }
+}
+
+
 
