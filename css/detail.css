@@ -323,12 +323,12 @@ h4 {
 .caption {
   position: absolute;
   bottom: 0;
-  opacity: 60%;
   box-sizing: border-box;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 0.6rem;
   width: 100%;
+  font-size: 0.8rem;
 }
 
 .picture {
