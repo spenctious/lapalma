@@ -64,7 +64,7 @@ function mainClickHandler(event) {
   }
 
   if (event.target.closest("#basics-summary") != null) {
-    document.getElementById("basics-detail").style.display = "block";
+    document.getElementById("basics-detail").style.display = "grid";
     document.getElementById("basics-summary").style.display = "none";
     return;
   }
@@ -416,7 +416,7 @@ function getLocationHtml(locationName, locationAttributes, label) {
   if ("bus" in locationAttributes) {
     busHtml = `Bus stop: ${locationAttributes.bus.stop}`;
     busHtml += `<p>Routes: `;
-    locationAttributes.bus.routes.forEach(busRoute => busHtml += `<span class="bus-route">${busRoute}</span>`);
+    locationAttributes.bus.routes.forEach(busRoute => busHtml += `<span class="bus-route">${busRoute}</span> `);
     busHtml += `</p>`;
   }
   return `

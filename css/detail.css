@@ -84,7 +84,6 @@
   display: grid;
   grid-template-columns: auto 1.5rem;
   grid-template-rows: 2rem;
-  width: 100%;
   background-color: white;
   padding: 0.5rem;
   box-sizing: border-box;
