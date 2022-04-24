@@ -342,7 +342,7 @@
           "start": "Barlovento",
           "end": "Franceses",
           "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "[06](01 to 04 and back)"
         },
         {
           "id": "06b",
@@ -417,8 +417,7 @@
           "accessBus": "true",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "[06](01 to 02) then follow track down under the bridge and out the other side."
         }
       ],
 
@@ -509,7 +508,7 @@
 
       "variants": [
         {
-          "id": "9a",
+          "id": "09a",
           "name": "To Mirador Espigon Altravesado",
           "description": "A good short walk is to do just the last part of the route in reverse as far as the mirador (perhaps also a little further on as far as the fi rst bridge). It's a very worthwhile laurisilva forest walk with a good viewpoint as reward.",
           "walkType": "return",
@@ -519,8 +518,7 @@
           "accessBus": "false",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "[09](11 to 10 and back)"
         },
         {
           "id": "09b",
@@ -533,8 +531,7 @@
           "accessBus": "false",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "[09](11 to 07 and back)"
         },
         {
           "id": "09c",
@@ -547,8 +544,7 @@
           "accessBus": "false",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "Signed side trail between the taxi hut and the visitor centre"
         }
       ],
 
@@ -616,7 +612,7 @@
           "start": "Barlovento",
           "end": "Franceses",
           "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "[10](01 to 06)"
         },
         {
           "id": "10b",
@@ -630,7 +626,7 @@
           "start": "Barlovento",
           "end": "Franceses",
           "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 07) then [07b]"
+          "routeDirections": "[10](01 to 06 and back)"
         }
       ],
 
@@ -860,7 +856,7 @@
           "accessBus": "bus",
           "start": "Santo Domingo de Garafía",
           "end": "Santo Domingo de Garafía",
-          "routeDirections": "[13](End to 11 and back)"
+          "routeDirections": "[13](16 (end) to 11 and back)"
         }
       ],
 	  
@@ -1870,7 +1866,7 @@
           "start": "Playa de Taburiente",
           "end": "Playa de Taburiente",
           "routeFile": "LP26b Playa de Taburiente to Mirador Cascada de La Fondada.gpx",
-          "routeDirections": "26b"
+          "routeDirections": "[26b]"
         }
       ],
 	  
