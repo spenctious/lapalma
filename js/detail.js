@@ -248,7 +248,9 @@ function populateRouteDatail() {
 
   // main body of detail
   let bodyContent = `
+    <h3>Description</h3>
     <p>${route.description}</p>
+    <h3>Route downloads</h3>
     <div>${getDownloadButtons(route.routeFile)}</div>
     ${variantsContent}`;
 
@@ -375,10 +377,10 @@ function getFeatureHtml(feature, additionalContent = "") {
     </div>
     <div class="item-description">
       <h4>
-        ${feature.text}
         ${getStrongHtml(feature.isStrong, feature.strongTag)}
+        ${feature.text}
       </h4>
-      ${feature.noteModifiedDescription}
+      <p>${feature.noteModifiedDescription}</p>
       ${additionalContent}
     </div>`;
 }

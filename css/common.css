@@ -6,6 +6,7 @@
   --colour1: #565656;
   --colour3: #f6f5f5;
   --colour4: #D3D3D3;
+  --colour5: #F0F0F0;
   --colour-light-bkg: #fefefe;
   --included-back-colour: #00802b;
   --excluded-back-colour: #e60000;
@@ -142,9 +143,9 @@ html, body {
 #wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 20px;
-  margin-left: 64px;
-  margin-right: 64px;
+  column-gap: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 @media (min-width: 600px) {
