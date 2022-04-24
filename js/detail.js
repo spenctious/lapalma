@@ -312,11 +312,11 @@ function getVariantContent(variant) {
 function getDownloadButtons(fileName) {
   return `
     <span class="download-link primary">
-      <a href="/data/gpx/${fileName}.gpx" download>Download route GPX</a>
+      <a href="/data/gpx/${fileName}.gpx" download>&#129095; Route ${route.id} <span class="format">GPX<span></a>
     </span>
     &nbsp;
     <span class="download-link secondary">
-      <a href="/data/kml/${fileName}.kml" download>Download route KML</a>
+      <a href="/data/kml/${fileName}.kml" download>&#129095; Route ${route.id} <span class="format">KML<span></a>
     </span>`;
 }
 
