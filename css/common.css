@@ -5,6 +5,7 @@
   --colour0: #313030;
   --colour1: #565656;
   --colour3: #f6f5f5;
+  --colour4: #D3D3D3;
   --colour-light-bkg: #fefefe;
   --included-back-colour: #00802b;
   --excluded-back-colour: #e60000;
@@ -24,7 +25,7 @@ html, body {
 #container {
   margin: 0 auto;
   max-width: 1600px; /* guess - to be revised */
-  background-color: var(--colour3);
+  background-color: var(--colour-light-bkg);
 }
 
 /************************* Header and footer ************************/
@@ -75,7 +76,7 @@ html, body {
   left: 0px;
   transform: translateX(-100%);
   transition: transform 250ms ease-in-out;
-  background-color: var(--colour1);
+  background-color: var(--colour-light-bkg);
   overflow-x: hidden; /* disable horizontal scroll */
   padding-top: 0px;
   white-space: nowrap;
@@ -90,7 +91,7 @@ html, body {
   left: 100%;
   /* transform: translateX(-100%); */
   transition: transform 250ms ease-in-out;
-  background-color: var(--colour3);
+  background-color: var(--colour-light-bkg);
   overflow-x: hidden; /* disable horizontal scroll */
   padding-top: 0px;
   white-space: nowrap;
@@ -102,16 +103,17 @@ html, body {
 .sidenav a {
   padding: 16px 16px 16px 32px;
   text-decoration: none;
-  font-size: 1rem;
-  color: white;
-  background-color: var(--colour0);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--colour0);
+  background-color: var(--colour-light-bkg);
   display: block;
   margin-top: 1px;
   margin-bottom: 1px;
 }
 
 .sidenav a:hover {
-  background-color: darkcyan;
+  background-color: var(--colour4);
 }
 
 /* Position and style the close button (top right corner) */
@@ -141,6 +143,8 @@ html, body {
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 20px;
+  margin-left: 64px;
+  margin-right: 64px;
 }
 
 @media (min-width: 600px) {

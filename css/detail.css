@@ -389,9 +389,14 @@ h4 {
   }
 
   .sidenav {
-    position: static;
+    z-index: 0;
+    position: relative;
+    transform: none;
     transition: none;
-    transform: translateX(0) !important; /* override the value set by the nav close button */
+    white-space: inherit;
+    width: auto;
+    left: 0;
+    border-right: 1px solid lightgray;
   }
 
   .sidenav .closebtn {
