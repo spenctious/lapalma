@@ -287,7 +287,8 @@ h4 {
   border-radius: 6px;
   padding: 10px;
   font-size: 0.8rem;
-  display: inline-block;
+  flex: 1 1 auto;
+  text-align: center;
 }
 
 .primary {
@@ -307,6 +308,8 @@ h4 {
 .downloads {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .secondary {

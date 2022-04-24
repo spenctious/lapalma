@@ -251,7 +251,7 @@ function populateRouteDatail() {
     <h3>Description</h3>
     <p>${route.description}</p>
     <h3>Route downloads</h3>
-    <div>${getDownloadButtons(route.routeFile)}</div>
+    <div class="downloads">${getDownloadButtons(route.routeFile, route.id)}</div>
     ${variantsContent}`;
 
   document.getElementById("detail-body").innerHTML = bodyContent;
@@ -284,7 +284,7 @@ function getVariantContent(variant) {
   if (variant.isAccessibleByBus) variantSummary += getSummaryIconHtml(variant.accessBusAttributes.icon);
 
   // download content - only some variants will have additional files associated with them
-  let downloadContent = variant.hasRouteFile ? `<div class="downloads">${getDownloadButtons(variant.routeFile)}</div>` : "";
+  let downloadContent = variant.hasRouteFile ? `<div class="downloads">${getDownloadButtons(variant.routeFile, variant.id)}</div>` : "";
 
   // directions - expand format to HTML
   // square braces enclose route ids, normal brackets enclose waypoint information
@@ -309,15 +309,19 @@ function getVariantContent(variant) {
 
 /************************* HTML helper functions ************************/
 
-function getDownloadButtons(fileName) {
+function getDownloadButtons(fileName, routeId) {
   return `
-    <span class="download-link primary">
-      <a href="/data/gpx/${fileName}.gpx" download>&#129095; Route ${route.id} <span class="format">GPX<span></a>
-    </span>
+    <div class="download-link primary">
+      <a href="/data/gpx/${fileName}.gpx" download>
+        &#129095; Route ${routeId} <span class="format">GPX<span><br/>For most apps
+      </a>
+    </div>
     &nbsp;
-    <span class="download-link secondary">
-      <a href="/data/kml/${fileName}.kml" download>&#129095; Route ${route.id} <span class="format">KML<span></a>
-    </span>`;
+    <div class="download-link secondary">
+      <a href="/data/kml/${fileName}.kml" download>
+        &#129095; Route ${routeId} <span class="format">KML<span><br/>For Google Earth
+      </a>
+    </div>`;
 }
 
 // list of icons
