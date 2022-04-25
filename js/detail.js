@@ -44,7 +44,7 @@ function initialize() {
   populateRouteImages();
 
   // add event listeners for the specified areas
-  document.getElementById("wrapper").addEventListener("click", mainClickHandler);
+  document.getElementById("content-grid").addEventListener("click", mainClickHandler);
 }
 
 /************************* Click handlers ************************/

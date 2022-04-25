@@ -110,7 +110,7 @@ function routesGridClickHandler(event) {
   let elementId = event.target.id;
   let routeId = event.target.closest("#routes-grid > div").id;
   let routeIndex = routeId.replace("route", "")
-
+console.log(event.target);
   if (elementId.startsWith("favourite")) {
     // favourites icon clicked - toggle it
     if (favourites.has(routeIndex)) {

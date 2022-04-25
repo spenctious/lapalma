@@ -358,8 +358,7 @@
   font-size: 0.8rem;
 }
 
-/************************* ************************/
-
+/************************* Filter icons ************************/
 
 .icon {
   position: relative;
@@ -407,33 +406,29 @@
   width: 50%;
 }
 
+/************************* Grid areas ************************/
+
+#main-content {
+  grid-area: routes-grid;
+}
+
+#navbar {
+  grid-area: nav;
+}
+
+#filter {
+  grid-area: filter;
+}
+
+#content-grid {
+  grid-template-columns: auto;
+  grid-template-areas: "routes-grid";
+}
+
 /************************* Media queries ************************/
 
-/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-@media (min-width: 370px) and (max-width: 480px) {
-  /* Slightly larger screens support side-by side layout */
-
-  /* #routes-grid {
-    grid-template-columns: minmax(100%, 400px);
-  }
-  
-  .route {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .route-pic {
-    flex: 50%;
-  }
-  .route-detail {
-    flex: 50%;
-    height: auto;
-  }*/
-} 
-
-/* smartphones, Android phones, landscape iPhone */
-@media (min-width: 480px) {
-  /**/
+/* wide enough for two routes side-by side in vertical layout */
+@media (min-width: 560px) {
   #routes-grid {
     grid-template-columns: repeat(auto-fill, 250px);
   }
@@ -444,67 +439,22 @@
 
   .route-detail {
     flex: 1 0 100%;
- }
-}
-@media (min-width: 600px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-
+  }
 }
 
-@media (min-width: 801px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
+/* wide enough for the navbar to be included in the content */
+ @media (min-width: 1340px) {
+  #content-grid {
+    grid-template-columns: var(--nav-panel-width) auto;
+    grid-template-areas: "nav routes-grid";
+  }
 }
 
-/* big landscape tablets, laptops, and desktops */
-@media (min-width: 1025px) {
-  /* Add navigation to the page grid */
-  #wrapper {
-    grid-template-columns: 250px 1fr;
-  }
-
-  #main-content {
-    grid-column: 2;
-  }
-
-  #navbar {
-    display: block;
-    grid-column: 1;
-  }
-
-  .sidenav {
-    position: static;
-    transition: none;
-    transform: translateX(0) !important; /* override the value set by the nav close button */
-  }
-
-  .sidenav .closebtn {
-    display: none;
-  }
-
-  /* #overlay {
-    display: none;
-  } */
-
-  #header .col:nth-child(1) {
-    visibility: hidden;
-  }
-
-}
-
-@media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
-  #wrapper {
-    grid-template-columns: 250px 1fr 15.5rem;
-  }
-
-  #main-content {
-    grid-column: 2;
-  }
-
-  #filter {
-    grid-column: 3;
-    display: block;
-    width: auto;
+/* wide enough for the filter panel to be included in the main content*/
+@media (min-width: 1500px) {
+  #content-grid {
+    grid-template-columns: var(--nav-panel-width) 1fr var(--filter-panel-width);
+    grid-template-areas: "nav routes-grid filter";
   }
 
   .filter-panel {
@@ -512,5 +462,4 @@
     transition: none;
     /*transform: translateX(-100%) !important;  override the value set by the nav close button */
   }
-
 }

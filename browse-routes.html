@@ -16,21 +16,18 @@
   </head>
 
   <body>
-    <div id="overlay" onclick="closeNav()"></div>
-    <div id="container">
+    <!-- <div id="overlay" onclick="closeNav()"></div> -->
 
-      <!-- Title bar -->
-      <div id="header">
+    <!-- Title bar -->
+    <div id="header">
+      <div id="header-content" class="container">
         <div class="col clickable" onclick="openNav()">&#9776;</div>
-        <div class="col">Browse walks</div>
-        <div class="col clickable">
-          <a href="/settings.html">
-            <img src="/img/icons/gear-fill-white.svg" alt="" />
-          </a>
-        </div>
+        <div class="col">Browse routes</div>
       </div>
+    </div>
 
-      <div id="wrapper">
+    <div class="container">
+      <div id="content-grid">
         <!-- Navigation is populated in code -->
         <nav id="navbar" class="sidenav"></nav>
 
@@ -77,10 +74,11 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-      </div> <!-- wrapper-->
-
-      <div id="footer">Copyright &copy; Robert Anstey 2022</div>
+    <div id="footer">
+      <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
     </div>
   </body>
 </html>
