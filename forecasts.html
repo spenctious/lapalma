@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forecasts</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forecasts</title>
 
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/general.css" />
 
-  <script src="js/common.js"></script>
-</head>
-<body>
-  <div id="overlay" onclick="closeNav()"></div>
-  
-  <!-- Title bar -->
-  <div id="header">
-    <div id="header-content" class="container">
-      <div class="col clickable" onclick="openNav()">&#9776;</div>
-      <div class="col">Forecasts</div>
+    <script src="js/common.js"></script>
+  </head>
+  <body>
+    <div id="overlay" onclick="closeNav()"></div>
+
+    <!-- Title bar -->
+    <div id="header">
+      <div id="header-content" class="container">
+        <div class="col clickable" onclick="openNav()">&#9776;</div>
+        <div class="col">Forecasts</div>
+      </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div id="content-grid">
-      <!-- Navigation is populated in code -->
-      <nav id="navbar" class="sidenav"></nav>
+    <div class="container">
+      <div id="content-grid">
+        <!-- Navigation is populated in code -->
+        <nav id="navbar" class="sidenav"></nav>
+
+        <div>
+          <h1>Weather Forecasts</h1>
+          <p>AEMet is the Spanish national weather forecaster and the most reliable of sources. Forecasts
+            are available for a number of locations around the island. Often you will have to check out
+            more than one area to get an idea for the walk you propose.
+          </p>
+          <p><a href="http://www.aemet.es/en/portada">Severn-day and hourly forecasts</a> are also provided by AEMet.</p>
+          <h2>Three day forecasts</h2>
+          <iframe
+            name="iframe_aemet_id33044"
+            width="100%"
+            height="100%"
+            tabindex="0"
+            id="iframe_aemet_id33044"
+            src="https://www.aemet.es/en/eltiempo/prediccion/municipios/mostrarwidget/santa-cruz-de-la-palma-id38037?w=g3p01110011ohmffffffw320z243x4f86d9t95b6e9r1s8n2"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+
+          <h2>Roque de Muchachos</h2>
+          <p>Better forecasts for walks along the Caldera crest can be got from <a href="https://www.mountain-forecast.com/peaks/Roque-de-los-Muchachos/forecasts/2423">Mountain-forecast.com</a></p>
+
+          <h2>Precipitation maps</h2>
+          <p>Sometimes rain is forecast but very little falls and it's not worth cancelling a walk for.
+            AEMet also provides a <a href="http://www.aemet.es/en/eltiempo/prediccion/mapas_probabilisticos?dia=hoy&zona=can&f=probprecip">rainfall radar map</a> which gives a better idea of what to expect than the summary forecasts.
+          </p>
+
+          <h1>Other forecasts</h1>
+          <h2>Dust</h2>
+          <p><a href="https://dust.aemet.es/forecast">The Barcelona Dust Forecast Center</a> has an animated dust map that may be useful for people with respiratory problems or when the Calima is blowing.</p>
+
+          <h2>Fire risk</h2>
+          <p><a href="https://lp.hdmeteo.com/">A series of maps</a> (supposedly refreshed every 10 minutes) showing fire risk, temperature, humidity and other measures (in Spanish) is available from the council weather service.</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div id="footer">
-    <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
-  </div>
-</body>
+    <div id="footer">
+      <div id="footer-content" class="container">
+        Copyright &copy; Robert Anstey 2022
+      </div>
+    </div>
+  </body>
 </html>
