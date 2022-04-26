@@ -1,0 +1,34 @@
+h1 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 130%;
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.bullets ul {
+}
+
+.bullets li {
+  list-style-type: disc;
+  font-size: 0.8rem;
+  line-height: 130%;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
