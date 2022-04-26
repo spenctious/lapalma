@@ -22,13 +22,15 @@ strong {
   font-weight: bold;
 }
 
-.bullets ul {
-}
-
-.bullets li {
-  list-style-type: disc;
+li {
   font-size: 0.8rem;
   line-height: 130%;
   margin-bottom: 0.5rem;
   margin-left: 1rem;
+  list-style-type: none;
 }
+
+.bullets li {
+  list-style-type: disc;
+}
+
