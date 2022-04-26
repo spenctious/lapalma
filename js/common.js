@@ -25,10 +25,12 @@ function addMenuItems() {
 
   let navbar = document.getElementById("navbar");
   navbar.appendChild(closeButton);
+  navbar.appendChild(createMenuItem("Home", "index.html"));
   navbar.appendChild(createMenuItem("Browse walks", "browse-routes.html"));
-  navbar.appendChild(createMenuItem("GPS Apps", "#"));
-  navbar.appendChild(createMenuItem("The trail network", "#"));
-  navbar.appendChild(createMenuItem("Forecasts", "#"));
+  navbar.appendChild(createMenuItem("GPS Apps", "apps.html"));
+  navbar.appendChild(createMenuItem("The trail network", "trail-network.html"));
+  navbar.appendChild(createMenuItem("Forecasts", "forecasts.html"));
+  navbar.appendChild(createMenuItem("Transport", "transport.html"));
   navbar.appendChild(createMenuItem("Points of interest", "browse-poi.html"));
 }
 
