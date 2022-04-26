@@ -1,5 +1,4 @@
 /************************* Route summary grid ************************/
-
 #routes-header {
   display: grid;
   grid-template-columns: 30% 40% 30%;
@@ -31,7 +30,7 @@
 
 .route {
   display: flex;
-  border: 1px solid lightgray;
+  border: 1px solid var(--colour4);
   flex-direction: row;
 }
 
@@ -111,8 +110,8 @@
 .favourite {
   float: right;
   height: 1rem;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  margin-left: 0.8rem;
+  margin-bottom: 0.8rem;
   margin-top: 0.2rem;
   cursor: pointer;
   opacity: 0.8; /* tone down the icon */
@@ -423,6 +422,9 @@
 #content-grid {
   grid-template-columns: auto;
   grid-template-areas: "routes-grid";
+  margin-left: 0px;
+  margin-right: 0px; 
+  background-color: var(--colour5); 
 }
 
 /************************* Media queries ************************/
@@ -438,7 +440,7 @@
   }
 
   .route-detail {
-    flex: 1 0 100%;
+    flex: 1 0 6.5rem;
   }
 }
 

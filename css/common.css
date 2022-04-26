@@ -21,7 +21,7 @@
 html, body {
   /* font-family: Roboto; */
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   background-color: var(--colour-light-bkg);
 }
 
@@ -155,7 +155,7 @@ html, body {
   margin-right: 16px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 560px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   html, body {
     font-size: 20px;
