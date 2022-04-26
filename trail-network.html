@@ -4,9 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>The trail network</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/common.css" />
+
+  <script src="js/common.js"></script>
 </head>
 <body>
+  <div id="overlay" onclick="closeNav()"></div>
   
+  <!-- Title bar -->
+  <div id="header">
+    <div id="header-content" class="container">
+      <div class="col clickable" onclick="openNav()">&#9776;</div>
+      <div class="col">The trail network</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="content-grid">
+      <!-- Navigation is populated in code -->
+      <nav id="navbar" class="sidenav"></nav>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
+  </div>
 </body>
 </html>
