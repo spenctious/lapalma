@@ -73,4 +73,17 @@ li {
   background-color: green;
 }
 
+.bus-routes {
+  font-size: 0.8rem;
+}
+
+.bus-routes td {
+  padding: 0.3rem;
+}
+
+
+
+.bus-routes tr td:nth-child(1) {
+  text-align: right;
+}
 
