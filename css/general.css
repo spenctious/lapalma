@@ -96,6 +96,12 @@ li {
   grid-column: 1 / -1;
 }
 
+figcaption {
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  background-color: var(--colour4);
+}
+
 /* .content-box {
   margin: 0 auto;
   max-width: 24rem;
