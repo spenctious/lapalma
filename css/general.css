@@ -99,10 +99,14 @@ li {
 figcaption {
   font-size: 0.7rem;
   padding: 0.5rem;
-  background-color: var(--colour4);
+  background-color: var(--col);
 }
 
-/* .content-box {
+.content-box {
   margin: 0 auto;
   max-width: 24rem;
-} */
+}
+
+.content-box > img {
+  max-width: 400px;
+}
