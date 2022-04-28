@@ -76,7 +76,7 @@ function filterPoi() {
     let included = applyActiveFilters(poi);
     let poiDiv = document.getElementById("poi" + poi.id);
     if (included) {
-      poiDiv.style.display = "block";
+      poiDiv.style.display = "flex";
       // selectedRoutes.set(route.id, "in");
       ++matched;
     }
