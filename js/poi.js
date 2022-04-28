@@ -160,7 +160,10 @@ function populatePoiGrid() {
             ${poi.name}
           </h3>
           ${getTagsHtml(poi.tags)}
+          <div class="button-set">
             ${relatedRoutes}
+            <div class="grid-item-button">Details</div>
+          </div>  
           <div class="extra-detail">
             <p class="description">
               ${poi.description}
@@ -206,7 +209,7 @@ function getEntryCostHtml(entryCost) {
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-    <p class="related-routes">
+    <p class="grid-item-button">
       <a 
         class="link-button" 
         href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">

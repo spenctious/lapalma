@@ -5,35 +5,48 @@
 }
 
 .poi-category-description {
-   font-size: 0.8rem;
-   font-style: normal;
- }
+  font-size: 0.8rem;
+  font-style: normal;
+}
 
- .poi-tag {
-   font-size: 0.6rem;
-   text-transform: uppercase;
-   font-weight: bold;
-   background-color: var(--colour0);
-   color: white;
-   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
-   margin-right: 0.2rem;
-   border-radius: 0.2rem;
-   line-height: 200%;
- }
+.poi-tag {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--colour0);
+  color: white;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+  line-height: 200%;
+}
 
- .related-routes {
-   position: absolute;
-   bottom: 0;
-   padding-bottom: inherit;
-   font-size: 0.8rem;
-   font-style: bold;
-   border: 1px solid black;
-   box-sizing: border-box;
-   padding: 0.5rem;
- }
- 
- /* Customize the label (the container) */
- .container {
+.button-set {
+  display: flex;
+  position: absolute;
+  bottom: 0.5rem;
+  flex-flow: row wrap;
+  column-gap: 10px;
+  width: calc(250px - 1rem); /* width of parent - parent's padding */
+}
+
+.grid-item-button {
+  font-size: 0.8rem;
+  font-style: bold;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  flex: 1 0;
+  text-align: center;
+}
+
+.grid-item-button a {
+  text-decoration: none;
+}
+
+/* Customize the label (the container) */
+.container {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -73,7 +86,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -99,4 +112,4 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-} 
+}
