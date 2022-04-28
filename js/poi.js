@@ -209,11 +209,8 @@ function getEntryCostHtml(entryCost) {
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-    <p class="grid-item-button">
-      <a 
-        class="link-button" 
-        href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
-        ${poi.relatedWalks.length} Walk${poi.relatedWalks.length > 1 ? "s" : ""}
-      </a>
-    </p>`;
+    <a class="grid-item-button"
+      href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
+      ${poi.relatedWalks.length} Walk${poi.relatedWalks.length > 1 ? "s" : ""}
+    </a>`;
 }

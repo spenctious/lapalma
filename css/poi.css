@@ -40,9 +40,6 @@
   padding: 0.5rem;
   flex: 1 0;
   text-align: center;
-}
-
-.grid-item-button a {
   text-decoration: none;
   color: var(--colour0);
 }
