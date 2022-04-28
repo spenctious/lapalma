@@ -17,21 +17,32 @@
 
   <body>
     <div id="overlay" onclick="closeNav()"></div>
+
+    <!-- Title bar -->
+    <div id="header">
+      <div id="header-content" class="container">
+        <div class="col clickable" onclick="openNav()">&#9776;</div>
+        <div class="col">Browse routes</div>
+      </div>
+    </div>
+    
     <div id="container">
-      <div id="wrapper">
-        <!-- Title bar -->
-        <div id="header">
-          <div class="col clickable" onclick="openNav()">&#9776;</div>
-          <div class="col">Browse POI</div>
-          <div class="col clickable">
-            <a href="/settings.html">
-              <img src="/img/icons/gear-fill-white.svg" alt="" />
-            </a>
-          </div>
-        </div>
+      <div id="content-grid">
 
         <!-- Navigation is populated in code -->
         <nav id="navbar" class="sidenav"></nav>
+
+        <!-- Filtered grid of points of interest -->
+        <div id="main-content">
+          <div id="poi-header">
+            <div id="filter-count" class="no-filters">No Filters</div>
+            <div id="match-count"></div>
+            <div id="filter-button">Filter</div>
+          </div>
+          <div id="poi-grid">
+            <!-- content inserted by populatePoiGrid() -->
+          </div>
+        </div>
 
         <!-- Filter panel -->
         <div id="filter">
@@ -46,21 +57,11 @@
             </div>
           </div>
         </div>
-
-        <!-- Filtered grid of points of interest -->
-        <div id="main-content">
-          <div id="poi-header">
-            <div id="filter-count" class="no-filters">No Filters</div>
-            <div id="match-count"></div>
-            <div id="filter-button">Filter</div>
-          </div>
-          <div id="poi-grid">
-            <!-- content inserted by populatePoiGrid() -->
-          </div>
-        </div>
-
-        <div id="footer">Copyright &copy; Robert Anstey 2022</div>
       </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
     </div>
   </body>
 </html>
