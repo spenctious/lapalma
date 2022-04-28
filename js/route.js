@@ -30,7 +30,7 @@ function initialize() {
 
   // add event listeners on the routes grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
-  document.getElementById("routes-grid").addEventListener("click", routesGridClickHandler);
+  document.getElementById("browse-grid").addEventListener("click", routesGridClickHandler);
 
   // restore filter state if set
   let retrievedState = window.history.state;
@@ -108,7 +108,7 @@ function filterClickHandler(event) {
 
 function routesGridClickHandler(event) {
   let elementId = event.target.id;
-  let routeId = event.target.closest("#routes-grid > div").id;
+  let routeId = event.target.closest("#browse-grid > div").id;
   let routeIndex = routeId.replace("route", "")
 console.log(event.target);
   if (elementId.startsWith("favourite")) {
@@ -158,17 +158,17 @@ function populateRoutesGrid() {
 
     // build html content
     gridContent += `
-        <div id="route${route.id}" class="route">
-          <div class="route-pic">
+        <div id="route${route.id}" class="item">
+          <div class="item-pic">
             <img src="/img/route${route.id}-01-400x300.jpg" alt="" />
             <div class="pic-label">
-              <span class="route-id">${route.id}</span>
+              <span class="item-id">${route.id}</span>
               ${routeVarients}
             </div>
             ${starred}
             <div class="variant-match" id="variant-match${route.id}">Variation matches</div>
           </div>
-          <div class="route-detail">
+          <div class="item-detail">
             <div class="title">
               <img
                 id="favourite${route.id}"
@@ -194,7 +194,7 @@ function populateRoutesGrid() {
           </div>
         </div>`;
       })
-      document.getElementById("routes-grid").innerHTML = gridContent;
+      document.getElementById("browse-grid").innerHTML = gridContent;
 };
 
 // Hide routes that don't fit the current filters

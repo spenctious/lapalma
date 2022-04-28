@@ -1,3 +1,5 @@
+@import url("/css/browse-grid.css");
+
 /************************* Route summary grid ************************/
 #routes-header {
   display: grid;
@@ -10,14 +12,6 @@
   margin-bottom: 10px;
 }
 
-#routes-grid {
-  display: grid;
-  /* grid-template-columns: repeat(auto-fill, 250px); */
-  grid-template-columns: minmax(100%, 400px);
-  gap: 0.5rem;
-  justify-content: center;
-}
-
 .no-filters {
   color: var(--colour3);
 }
@@ -28,42 +22,7 @@
   padding: 5px;
 }
 
-.route {
-  display: flex;
-  border: 1px solid var(--colour4);
-  flex-direction: row;
-}
-
-/************************* Grid content: pic ************************/
-
-.route-pic {
-  flex: 1 0 50%;
-  position: relative;
-}
-.route-pic {
-  flex: 50%;
-}
-.route-pic img {
-  width: 100%;
-  display: block; /* stops white space at bottom of image due to inline positioning */
-}
-
-.pic-label {
-  position: absolute;
-  top: 0rem;
-  left: 0rem;
-  color: white;
-  background-color: rgb(0, 0, 0, 0.5);
-}
-
-.route-id {
-  background-color: black;
-  font-weight: bold;
-  font-size: 0.8rem;
-  display: inline-block;
-  text-align: center;
-  padding: 0.4rem;
-}
+/************************* Grid content: pic additions ************************/
 
 .route-varients {
   color: yellow;
@@ -99,14 +58,6 @@
 
 /************************* Grid content: detail ************************/
 
-.route-detail {
-  flex: 50%;
-  background-color: white;
-  padding: 0.5rem;
-  position: relative;
-  height: auto;
-}
-
 .favourite {
   float: right;
   height: 1rem;
@@ -115,21 +66,6 @@
   margin-top: 0.2rem;
   cursor: pointer;
   opacity: 0.8; /* tone down the icon */
-}
-
-.route-detail .title {
-  font-weight: bold;
-  font-size: 0.8rem;
-  line-height: 1rem;
-  overflow: visible;
-  margin-bottom: 0.3rem;
-}
-
-.route-detail .description {
-  font-size: 0.8rem;
-  line-height: 1rem;
-  height: 3rem;
-  /* clear: both; */
 }
 
 .metrics {
@@ -403,65 +339,4 @@
   top: 0;
   right: 0;
   width: 50%;
-}
-
-/************************* Grid areas ************************/
-
-#main-content {
-  grid-area: routes-grid;
-}
-
-#navbar {
-  grid-area: nav;
-}
-
-#filter {
-  grid-area: filter;
-}
-
-#content-grid {
-  grid-template-columns: auto;
-  grid-template-areas: "routes-grid";
-  margin-left: 0px;
-  margin-right: 0px; 
-  background-color: var(--colour5); 
-}
-
-/************************* Media queries ************************/
-
-/* wide enough for two routes side-by side in vertical layout */
-@media (min-width: 560px) {
-  #routes-grid {
-    grid-template-columns: repeat(auto-fill, 250px);
-  }
-  
-  .route {
-    flex-direction: column;
-  }
-
-  .route-detail {
-    flex: 1 0 6.5rem;
-  }
-}
-
-/* wide enough for the navbar to be included in the content */
- @media (min-width: 1340px) {
-  #content-grid {
-    grid-template-columns: var(--nav-panel-width) auto;
-    grid-template-areas: "nav routes-grid";
-  }
-}
-
-/* wide enough for the filter panel to be included in the main content*/
-@media (min-width: 1500px) {
-  #content-grid {
-    grid-template-columns: var(--nav-panel-width) 1fr var(--filter-panel-width);
-    grid-template-areas: "nav routes-grid filter";
-  }
-
-  .filter-panel {
-    position: static;
-    transition: none;
-    /*transform: translateX(-100%) !important;  override the value set by the nav close button */
-  }
 }
