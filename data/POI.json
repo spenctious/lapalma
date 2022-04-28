@@ -3,7 +3,8 @@
     "glasshouse",
     {
       "id": "01",
-      "name": "The 'Glass House' tourist information centre",
+      "name": "The 'Glass House'",
+      "full-name": "The 'Glass House' tourist information centre",
       "tags": ["info"],
       "description": "Located in a traffic roundabout conveniently situated near the port and bus terminal at the south end of Calle O'Daly. Lots of good information from friendly (generally) multi-lingual staff. Small bar situated right next door.",
       "entryCost": "FREE",
@@ -21,7 +22,8 @@
     "san antonio",
     {
       "id": "02",
-      "name": "Volcán San Antonio Visitor Centre",
+      "name": "Volcán San Antonio",
+      "full-name": "Volcán San Antonio Visitor Centre",
       "tags": ["museum", "info", "refreshments"],
       "description": "Good geological exhibition, cafe & toilets. Also the place to arrange camel rides.",
       "entryCost": "5€ (inc. parking)",
@@ -38,7 +40,8 @@
     "lighthouse museum",
     {
       "id": "03",
-      "name": "Centro de Interpretación de la Reserva Marina",
+      "name": "Reserva Marina",
+      "full-name": "Centro de Interpretación de la Reserva Marina",
       "tags": ["museum"],
       "description": "The old lighthouse with attached (not very good) museum.",
       "entryCost": "2€",
@@ -57,6 +60,7 @@
     {
       "id": "04",
       "name": "Salinas de Fuencaliente",
+      "full-name": "Salinas de Fuencaliente",
       "tags": ["museum", "refreshments"],
       "description": "Interesting self-guided tour around family-run salt pans. One of the island's main visitor attractions.",
       "entryCost": "FREE",
@@ -75,6 +79,7 @@
     {
       "id": "05",
       "name": "Refugio El Pilar",
+      "full-name": "Refugio El Pilar",
       "tags": ["info", "camping", "refreshments", "recreation"],
       "description": "A hub for walks in the Cumbre Vieja. Toilets, BBQ pits, play area, campsite, water and a small mobile kiosk selling drinks and snacks.",
       "location": "Refugio El Pilar"
@@ -84,7 +89,8 @@
     "Centro de Visitantes",
     {
       "id": "06",
-      "name": "Centro de Visitantes Caldera de Taburiente",
+      "name": "Centro de Visitantes",
+      "full-name": "Centro de Visitantes Caldera de Taburiente",
       "tags": ["info", "transport", "museum", "building"],
       "description": "The main visitor centre ideally situated for many walks. Has an exhibition, garden with rare plants, toilets, and a well-informed information desk.",
       "entryCost": "FREE",
@@ -102,6 +108,7 @@
     {
       "id": "07",
       "name": "The Cumbrecita",
+      "full-name": "The Cumbrecita",
       "tags": ["info", "nature", "transport"],
       "description": "A saddle pint between Pico Bejenado and the Caldera with multiple viewpoints on a short easy circuit.",
       "entryCost": "FREE",
@@ -120,7 +127,8 @@
     "Caldera campsite",
     {
       "id": "08",
-      "name": "Camping Caldera de Taburiente",
+      "name": "Camping Caldera",
+      "full-name": "Camping Caldera de Taburiente",
       "tags": ["info", "nature", "camping"],
       "description": "Basic campsite in the heart of the Caldera ideal for exploring. No facilities except toilets and water.",
       "entryCost": "FREE",
@@ -135,6 +143,7 @@
     {
       "id": "09",
       "name": "Playa de Taburiente",
+      "full-name": "Playa de Taburiente",
       "tags": ["nature"],
       "description": "Pebble beach-like area at the far end of the Caldera",
       "location": "Playa de Taburiente"
@@ -145,6 +154,7 @@
     {
       "id": "10",
       "name": "Roque de los Muchachos",
+      "full-name": "Roque de los Muchachos",
       "tags": ["nature", "info"],
       "description": "The highest point on the island at 2307.7m",
       "location": "Roque de los Muchachos"
@@ -154,7 +164,8 @@
     "observatory",
     {
       "id": "11",
-      "name": "Observatorio del Roque de los Muchachos",
+      "name": "Observatorio",
+      "full-name": "Observatorio del Roque de los Muchachos",
       "tags": ["building", "tourism"],
       "description": "Collection of some 17 telescopes. Daytime visits and stargazing tours can be arranged.",
       "location": "Roque de los Muchachos"
@@ -165,6 +176,7 @@
     {
       "id": "12",
       "name": "Refugio Punta de Los Roques",
+      "full-name": "Refugio Punta de Los Roques",
       "tags": ["camping", "nature"],
       "description": "La Palma's only functioning hiker hut sleeping 16. No toilets, probably no water.",
       "entryCost": "FREE",
@@ -180,6 +192,7 @@
     {
       "id": "13",
       "name": "Mirador El Time",
+      "full-name": "Mirador El Time",
       "tags": ["tourism"],
       "description": "Popular viewpoint with restaurant/cafe and a couple of tourist shops.",
       "location": "Mirador El Time"
@@ -190,6 +203,7 @@
     {
       "id": "14",
       "name": "Torre del Time",
+      "full-name": "Torre del Time",
       "tags": ["building"],
       "description": "Fire watch tower with viewpoint. Better views can be had further down the trail."
     }
@@ -199,6 +213,7 @@
     {
       "id": "15",
       "name": "Pirate's Bay",
+      "full-name": "Pirate's Bay",
       "tags": ["building"],
       "description": "Timy hamlet officially known as Porís de Candelaria built into a cave setting with a swimming spot.",
       "location": "Porís de Candelaria"
@@ -208,7 +223,8 @@
     "mercadillo",
     {
       "id": "16",
-      "name": "Mercadillo del Agricultor y Artensanal",
+      "name": "Puntagorda Mercadillo",
+      "full-name": "Mercadillo del Agricultor y Artensanal",
       "tags": ["tourism", "recreation", "refreshments"],
       "description": "Popular local market selling foods and handmade objects. Bar nearby.",
       "entryCost": "FREE",
@@ -226,6 +242,7 @@
     {
       "id": "17",
       "name": "Miradores flotantes Izcagua",
+      "full-name": "Miradores flotantes Izcagua",
       "tags": ["nature", "tourism"],
       "description": "Series of daringly cantilivered glass-bottomed miragors overlooking the Barranco de Izcagua.",
       "entryCost": "FREE",
@@ -237,6 +254,7 @@
     {
       "id": "18",
       "name": "Cuevas de Buracas",
+      "full-name": "Cuevas de Buracas",
       "tags": ["archeo"],
       "description": "Historic caves with one staging a recreation of how the ancient Guanches may have lived.",
       "location": ""
@@ -246,7 +264,8 @@
     "Molino de Buracas",
     {
       "id": "19",
-      "name": "Molino de Buracas y Museo de Interpretación del Gofio (MIGO)",
+      "name": "MIGO",
+      "full-name": "Molino de Buracas y Museo de Interpretación del Gofio (MIGO)",
       "tags": ["museum", "building"],
       "description": "Historic grain mill and attached museum dedicated to gofio, the local roasted grain flour.",
       "entryCost": "2.50€",
@@ -266,7 +285,8 @@
     "Los Dragos de Buracas",
     {
       "id": "20",
-      "name": "Los Dragos de Buracas",
+      "name": "Los Dragos de Burcas",
+      "full-name": "Los Dragos de Burcas",
       "tags": ["nature"],
       "description": "The most impressive dragon tree speciment on the island.",
       "location": "Los Dragos de Buracas"
@@ -277,6 +297,7 @@
     {
       "id": "21",
       "name": "Mirador de los Dragos",
+      "full-name": "Mirador de los Dragos",
       "tags": ["nature"],
       "description": "Famous leaning dragon tree and secondary miragor further on.",
       "location": "El Roque"
@@ -286,7 +307,8 @@
     "La Zarza",
     {
       "id": "22",
-      "name": "Parque Cultural La Zarza y La Zarcita",
+      "name": "La Zarza",
+      "full-name": "Parque Cultural La Zarza y La Zarcita",
       "tags": ["museum", "archeo", "info"],
       "description": "",
       "entryCost": "3€ - includes parking",
@@ -307,6 +329,7 @@
     {
       "id": "23",
       "name": "Puerto de Garafía",
+      "full-name": "Puerto de Garafía",
       "tags": ["nature", "tourism"],
       "description": "Beautiful port at the end of a rich coastal zone, a haven for birds. Ideal for watching the sun go down.",
       "location": "Puerto de Garafía"
@@ -317,6 +340,7 @@
     {
       "id": "24",
       "name": "Barranco de la Madera",
+      "full-name": "Barranco de la Madera",
       "tags": ["nature"],
       "description": "High narrow gallery path with tunnels, some in poor condition.",
       "location": "Barranco de la Madera"
@@ -327,6 +351,7 @@
     {
       "id": "25",
       "name": "Las Nieves",
+      "full-name": "Las Nieves",
       "tags": ["nature", "tourism"],
       "description": "Santuario de Nuestra Señora de Las Nieves church and bar/restaurant. Popular place.",
       "location": "Las Nieves"
@@ -337,6 +362,7 @@
     {
       "id": "26",
       "name": "Las Fuentes de Las Breñas",
+      "full-name": "Las Fuentes de Las Breñas",
       "tags": ["nature"],
       "description": "A series of natural springs (many now waterless), some decorated with small shrines.",
       "location": "Las Fuentes de Las Breñas"
@@ -347,6 +373,7 @@
     {
       "id": "27",
       "name": "Mirador de la Concepción",
+      "full-name": "Mirador de la Concepción",
       "tags": ["nature", "tourism"],
       "description": "Crater rim providing exceptional views over Santa Cruz. A slightly unsafe dirt path leads out to a radio mast and on for more views.",
       "location": "Mirador de la Concepción"
@@ -357,6 +384,7 @@
     {
       "id": "28",
       "name": "Los Molinos",
+      "full-name": "Los Molinos",
       "tags": ["building"],
       "description": "Historic water-driven sugar mills.",
       "location": "Los Molinos"
