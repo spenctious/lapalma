@@ -207,6 +207,10 @@ function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
     <p class="related-routes">
-      <a class="link-button" href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">${poi.relatedWalks.length} Related walks</a>
+      <a 
+        class="link-button" 
+        href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
+        ${poi.relatedWalks.length} Walk${poi.relatedWalks.length > 1 ? "s" : ""}
+      </a>
     </p>`;
 }
