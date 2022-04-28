@@ -13,7 +13,7 @@
   font-size: 0.6rem;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: var(--colour0);
+  background-color: var(--colour6);
   color: white;
   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
   margin-right: 0.2rem;
@@ -27,12 +27,13 @@
   bottom: 0.5rem;
   flex-flow: row wrap;
   column-gap: 10px;
-  width: calc(250px - 1rem); /* width of parent - parent's padding */
+  width: calc(100% - 1rem); /* allow for parent's padding */
 }
 
 .grid-item-button {
   font-size: 0.8rem;
   font-style: bold;
+  color: var(--colour0);
   border: 1px solid black;
   border-radius: 6px;
   box-sizing: border-box;
@@ -43,6 +44,7 @@
 
 .grid-item-button a {
   text-decoration: none;
+  color: var(--colour0);
 }
 
 /* Customize the label (the container) */
