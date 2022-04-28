@@ -1,4 +1,10 @@
- .poi-category-description {
+@import url("/css/browse-grid.css");
+
+.extra-detail {
+  display: none;
+}
+
+.poi-category-description {
    font-size: 0.8rem;
    font-style: normal;
  }
@@ -6,11 +12,24 @@
  .poi-tag {
    font-size: 0.6rem;
    text-transform: uppercase;
-   background-color: black;
+   font-weight: bold;
+   background-color: var(--colour0);
    color: white;
-   padding: 0.2rem;
+   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
    margin-right: 0.2rem;
    border-radius: 0.2rem;
+   line-height: 200%;
+ }
+
+ .related-routes {
+   position: absolute;
+   bottom: 0;
+   padding-bottom: inherit;
+   font-size: 0.8rem;
+   font-style: bold;
+   border: 1px solid black;
+   box-sizing: border-box;
+   padding: 0.5rem;
  }
  
  /* Customize the label (the container) */
