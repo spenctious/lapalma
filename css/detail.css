@@ -2,26 +2,30 @@
 /************************* Collection navigation bar ************************/
 
 #collection-nav {
-  display: grid;
-  grid-template-columns: 2rem 1fr 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   background-color: var(--colour1);
   color: white;
   font-size: 1rem;
   grid-column: 1;
   padding:  0.5rem;
   grid-area: item-nav;
+  height: 1.5rem;
 }
 
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  width: auto;
+  text-align: center;
 }
 
 .arrow {
   filter: invert(100%);
   cursor: pointer;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 5rem;
 }
 
 .arrow img { 

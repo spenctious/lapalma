@@ -34,7 +34,6 @@ function initialize() {
   if (collection.length < 2) {
     document.getElementById("prev").style.display = "none";
     document.getElementById("next").style.display = "none";
-    return;
   }
 
   // populate the various components with the current route data
