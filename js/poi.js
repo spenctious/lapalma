@@ -142,7 +142,8 @@ function populatePoiGrid() {
 
   laPalmaData.poi.forEach(poi => {
 
-    let entryCost = poi.hasEntryCost in poi ? getEntryCostHtml(poi.entryCost) : "";
+    let tel = poi.hasTel ? `<tr><td>Tel:</td><td>${poi.tel}</td></tr>` : "";
+    let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
     let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
     let relatedRoutes = poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
 
@@ -160,17 +161,22 @@ function populatePoiGrid() {
             ${poi.name}
           </h3>
           ${getTagsHtml(poi.tags)}
-          <div class="button-set">
-            ${relatedRoutes}
-            <div class="grid-item-button">Details</div>
-          </div>  
           <div class="extra-detail">
             <p class="description">
               ${poi.description}
             </p>
+            <table class="general-details">
+              <tr>
+                <td>Location:</td><td>${poi.location}</td>
+                ${tel}
+                ${entryCost}
+            </table>
             ${openingTimes}
-            ${entryCost}
           </div>
+          <div class="button-set">
+            ${relatedRoutes}
+            <div class="grid-item-button">Details</div>
+          </div>  
         </div>
       </div>`;
     })
@@ -179,6 +185,10 @@ function populatePoiGrid() {
 }
 
 /************************* Helper functions returning HTML fragments ************************/
+
+function getTelHtml(tel) {
+  return `<p><span class="item-label">Tel:</span>${tel}</p>`;
+}
 
 function getTagsHtml(tags) {
   let content = `<p class="tags">`;
@@ -190,7 +200,9 @@ function getTagsHtml(tags) {
 }
 
 function getOpeningTimesHtml(openingTimes) {
-  let content = `<table class="opening-times">`;
+  let content = `
+    <table class="opening-times">
+      <tr><th colspan="2">Opening hours:</th></tr>`;
   openingTimes.forEach(entry => {
     content += `
     <tr>
@@ -203,7 +215,7 @@ function getOpeningTimesHtml(openingTimes) {
 }
 
 function getEntryCostHtml(entryCost) {
-  return `<p class="fees">${entryCost}</p>`;
+  return `<p><span class="item-label">Cost:</span>${entryCost}</p>`;
 }
 
 function getRelatedRoutesHtml(poi) {

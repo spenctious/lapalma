@@ -1,7 +1,61 @@
 @import url("/css/browse-grid.css");
 
 .extra-detail {
-  display: none;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.opening-times,
+.general-details {
+  font-size: 0.7rem;
+  /* padding: 0.2rem; */
+  width: 100%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  line-height: 120%;
+}
+
+.general-details td:nth-child(1) {
+  padding: 0.2rem;
+}
+
+.general-details td:nth-child(1) {
+  font-weight: bold;
+}
+
+.opening-times tr {
+  border: solid 1px var(--colour4);
+  border-width: 1px 0;
+}
+
+.opening-times tr:nth-child(1) {
+  border: none;
+  border-width: 0;
+}
+
+.opening-times th {
+  text-align: left;
+  font-weight: bold;
+  padding: 0.2rem;
+  padding-bottom: 0.4rem;
+}
+
+.opening-times td {
+  padding: 0.2rem;
+}
+
+.opening-times td:nth-child(2) {
+  width: auto;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.fees {
+  font-size: 0.7rem;
+}
+
+.description {
+  font-size: 0.8rem;
 }
 
 .poi-category-description {
@@ -114,4 +168,10 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media (min-width: 560px) {
+  .item-detail {
+    flex: 1 0 20rem;
+  }
 }

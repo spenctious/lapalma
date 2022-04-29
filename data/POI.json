@@ -6,15 +6,15 @@
       "name": "The 'Glass House'",
       "full-name": "The 'Glass House' tourist information centre",
       "tags": ["info"],
-      "description": "Located in a traffic roundabout conveniently situated near the port and bus terminal at the south end of Calle O'Daly. Lots of good information from friendly (generally) multi-lingual staff. Small bar situated right next door.",
+      "description": "Lots of good information from friendly (generally) multi-lingual staff. Small bar situated right next door.",
       "entryCost": "FREE",
-      "tel": "(0034) 922.412.106",
+      "tel": "(+34) 922 412 106",
       "email": "oitaridane@lapalmacit.com",
       "location": "Plaza de la Constitución",
       "openingTimes": 
         [
           { "when": "Daily", "times": "08:30 - 19:30" },
-          { "when": "Hol", "times": "CLOSED" }
+          { "when": "Holidays", "times": "CLOSED" }
         ]
     }
   ],
@@ -51,7 +51,7 @@
       "openingTimes": 
         [
           { "when": "Tue to Sat", "times": "09:00 - 17:00" },
-          { "when": "Wed to Sun (Jul - Sep)", "times": "10:00 - 18:00" }
+          { "when": "Wed to Sun<br/>(Jul - Sep)", "times": "10:00 - 18:00" }
         ]
     }
   ],
@@ -64,7 +64,7 @@
       "tags": ["museum", "refreshments"],
       "description": "Interesting self-guided tour around family-run salt pans. One of the island's main visitor attractions.",
       "entryCost": "FREE",
-      "tel": "(+34) 922 411 523 and 922 696 002",
+      "tel": "(+34) 922 411 523<br />922 696 002",
       "email": "info@salinasdefuencaliente.com",
       "web": "https://salinasdefuencaliente.es/",
       "location": "Faro de Fuencaliente",
@@ -112,14 +112,14 @@
       "tags": ["info", "nature", "transport"],
       "description": "A saddle pint between Pico Bejenado and the Caldera with multiple viewpoints on a short easy circuit.",
       "entryCost": "FREE",
-      "tel": "(+34) 922922280",
+      "tel": "(+34) 922 922 280",
       "email": "informacion.taburiente@gobiernodecanarias.org",
       "web": {"name": "Car park booking", "link": "https://www.reservasparquesnacionales.es/real/ParquesNac/usu/html/detalle-actividad-oapn.aspx?ii=6ENG&cen=4&act=5"},
       "location": "The Cumbrecita",
       "openingTimes": 
         [
-          { "when": "Daily", "times": "08:30 - 16:00" },
-          { "when": "Free access", "times": "Other times" }
+          { "when": "Parking with reservation", "times": "08:30 - 16:00" },
+          { "when": "Parking without reservation", "times": "Other times" }
         ]
     }
   ],
@@ -132,7 +132,7 @@
       "tags": ["info", "nature", "camping"],
       "description": "Basic campsite in the heart of the Caldera ideal for exploring. No facilities except toilets and water.",
       "entryCost": "FREE",
-      "tel": "(+34) 922922280",
+      "tel": "(+34) 922 922 280",
       "email": "informacion.taburiente@gobiernodecanarias.org",
       "web": {"name": "Booking", "link": "https://www.reservasparquesnacionales.es/real/ParquesNac/usu/html/detalle-actividad-oapn.aspx?cen=4&act=2"},
       "location": "Playa de Taburiente"
@@ -285,8 +285,8 @@
     "Los Dragos de Buracas",
     {
       "id": "20",
-      "name": "Los Dragos de Burcas",
-      "full-name": "Los Dragos de Burcas",
+      "name": "Los Dragos de Buracas",
+      "full-name": "Los Dragos de Buracas",
       "tags": ["nature"],
       "description": "The most impressive dragon tree speciment on the island.",
       "location": "Los Dragos de Buracas"
@@ -310,7 +310,7 @@
       "name": "La Zarza",
       "full-name": "Parque Cultural La Zarza y La Zarcita",
       "tags": ["museum", "archeo", "info"],
-      "description": "",
+      "description": "Archeological park and museum featuring some of the best preserved petroglyphs created by the aboriginal Guanches. Toilets.",
       "entryCost": "3€ - includes parking",
       "tel": "(+34) 922 69 50 05",
       "email": "",
