@@ -213,34 +213,29 @@ function getFullPoiDetails(poiId) {
 
   // build html content
   return `
-    <div id="poi${poi.id}" class="item">
-      <div class="item-pic">
-        <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
-        <div class="pic-label">
-          <span class="item-id">${poi.id}</span>
-        </div>
+    <div class="modal-title">
+      ${poi.fullName}
+    </div>
+    <div class="item-pic">
+      <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
+    </div>
+    <div class="item-detail">
+      ${getTagsHtml(poi.tags)}
+      <div class="extra-detail">
+        <p class="description">
+          ${poi.description}
+        </p>
+        <table class="general-details">
+          <tr>
+            <td>Location:</td><td>${poi.location}</td>
+            ${tel}
+            ${entryCost}
+        </table>
+        ${openingTimes}
       </div>
-      <div class="item-detail">
-        <h3 class="title">
-          ${poi.name}
-        </h3>
-        ${getTagsHtml(poi.tags)}
-        <div class="extra-detail">
-          <p class="description">
-            ${poi.description}
-          </p>
-          <table class="general-details">
-            <tr>
-              <td>Location:</td><td>${poi.location}</td>
-              ${tel}
-              ${entryCost}
-          </table>
-          ${openingTimes}
-        </div>
-        <div class="button-set">
-          ${relatedRoutes}
-          <div id="poi-detail-${poi.id}" class="grid-item-button">Details</div>
-        </div>  
+      <div class="button-modal">
+        ${relatedRoutes}
+        <div id="modal-close" class="grid-item-button">Close</div>
       </div>
     </div>`;
 }
@@ -280,8 +275,9 @@ function getEntryCostHtml(entryCost) {
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-    <a class="grid-item-button"
-      href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
-      ${poi.relatedWalks.length} Walk${poi.relatedWalks.length > 1 ? "s" : ""}
-    </a>`;
+    <div class="grid-item-button">
+      <a href="./route-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
+        ${poi.relatedWalks.length} Walk${poi.relatedWalks.length > 1 ? "s" : ""}
+      </a>
+    </div>`;
 }
