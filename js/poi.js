@@ -1,6 +1,7 @@
 "use strict";
 
 var activeFilters;
+var detailsModal;
 
 /************************* Initialization ************************/
 
@@ -11,6 +12,7 @@ window.onload = function () {
 
 function initialize() {
   activeFilters = new Set(); // initially all filters are off
+  detailsModal = document.getElementById("full-details");
 
   populateFilterPanel();
   populatePoiGrid();
@@ -18,9 +20,20 @@ function initialize() {
   // add event listeners on the poi grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("browse-grid").addEventListener("click", poiGridClickHandler);
+  detailsModal.addEventListener("click", modalClickHandler);
 }
 
 /************************* Click handlers ************************/
+
+// close the modal if the close button is clicked or the user
+// clicks anywhere outside the content area
+function modalClickHandler(event) {
+  let id = event.target.id;
+  if (id == "modal-close" || id == "full-details") {
+    detailsModal.style.display = "none";
+    return;
+  }
+}
 
 function filterClickHandler(event) {
   let elementId = event.target.id;
@@ -46,7 +59,15 @@ function filterClickHandler(event) {
 }
 
 function poiGridClickHandler(event) {
+  let elementId = event.target.closest("div").id;
 
+  // poi detail button
+  if (elementId.startsWith("poi-detail")) {
+    let poiId = elementId.replace("poi-detail-", ""); // strip prefix to get the poi id
+    document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(poiId);
+    detailsModal.style.display = "block";
+    return;
+  }
 }
 
 
@@ -161,21 +182,9 @@ function populatePoiGrid() {
             ${poi.name}
           </h3>
           ${getTagsHtml(poi.tags)}
-          <div class="extra-detail">
-            <p class="description">
-              ${poi.description}
-            </p>
-            <table class="general-details">
-              <tr>
-                <td>Location:</td><td>${poi.location}</td>
-                ${tel}
-                ${entryCost}
-            </table>
-            ${openingTimes}
-          </div>
           <div class="button-set">
             ${relatedRoutes}
-            <div class="grid-item-button">Details</div>
+            <div id="poi-detail-${poi.id}" class="grid-item-button">Details</div>
           </div>  
         </div>
       </div>`;
@@ -185,6 +194,56 @@ function populatePoiGrid() {
 }
 
 /************************* Helper functions returning HTML fragments ************************/
+
+function getFullPoiDetails(poiId) {
+
+  let poi = undefined;
+  for (let p of laPalmaData.poi.values()) {
+    console.log(p);
+    if (p.id == poiId) {
+      poi = p;
+      break;
+    }
+  }
+
+  let tel = poi.hasTel ? `<tr><td>Tel:</td><td>${poi.tel}</td></tr>` : "";
+  let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
+  let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
+  let relatedRoutes = poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
+
+  // build html content
+  return `
+    <div id="poi${poi.id}" class="item">
+      <div class="item-pic">
+        <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
+        <div class="pic-label">
+          <span class="item-id">${poi.id}</span>
+        </div>
+      </div>
+      <div class="item-detail">
+        <h3 class="title">
+          ${poi.name}
+        </h3>
+        ${getTagsHtml(poi.tags)}
+        <div class="extra-detail">
+          <p class="description">
+            ${poi.description}
+          </p>
+          <table class="general-details">
+            <tr>
+              <td>Location:</td><td>${poi.location}</td>
+              ${tel}
+              ${entryCost}
+          </table>
+          ${openingTimes}
+        </div>
+        <div class="button-set">
+          ${relatedRoutes}
+          <div id="poi-detail-${poi.id}" class="grid-item-button">Details</div>
+        </div>  
+      </div>
+    </div>`;
+}
 
 function getTelHtml(tel) {
   return `<p><span class="item-label">Tel:</span>${tel}</p>`;
