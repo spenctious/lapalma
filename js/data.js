@@ -212,6 +212,7 @@ class Data {
     return {
       id: poi.id,
       name: poi.name,
+      fullName: poi.fullName,
       tags: poi.tags,
       description: poi.description,
 
