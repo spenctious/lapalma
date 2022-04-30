@@ -1912,7 +1912,7 @@
       "refreshments": "None",
       "start": "Centro de Visitantes",
       "end": "Centro de Visitantes",
-      "paths": ["PL LP 13.3", "PR LP 01.1", "PR LP 01"],
+      "paths": ["PR LP 13.3", "PR LP 01.1", "PR LP 01"],
       
       "images": [
         { "id": "01", "caption": "Vista Cumbre Vieja" },
