@@ -753,5 +753,22 @@
       },
       "notes": "Ascend via a staircase to the mills."
     }
+  ],
+  [
+    "El Paso",
+    {
+      "coordinates": "28.6518623, -17.8813458",
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "",
+      "bus": {
+        "notes": "",
+        "routes": [
+          "300"
+        ],
+        "stop": "El Paso"
+      },
+      "notes": ""
+    }
   ]
 ]

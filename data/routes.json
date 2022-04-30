@@ -166,7 +166,7 @@
           "accessCar": "false",
           "accessBus": "true",
           "start": "San Pedro de Breña Alta",
-          "end": "Santa Cruz de la Palma",
+          "end": "Santa Cruz de La Palma",
           "routeFile": "LP02 Mirador and waterways.gpx",
           "routeDirections": "[03] then [02]"
         }
@@ -818,7 +818,7 @@
       "province": "Garafia",
       "town": "Santo Domingo de Garafía",
       "routeFile": "LP13 Puerto de Garafia.gpx",
-      "refreshments": "",
+      "refreshments": "Bars, cafés, restaurants in Santo Domingo. Bar/cafe in Llano Negro.",
       "start": "Santo Domingo de Garafía",
       "end": "Santo Domingo de Garafía",
       "paths": ["SL VG 51", "PR LP 09", "PR LP 09.3"],
@@ -853,7 +853,7 @@
           "duration": "stroll",
           "effort": "easy",
           "accessCar": "true",
-          "accessBus": "bus",
+          "accessBus": "true",
           "start": "Santo Domingo de Garafía",
           "end": "Santo Domingo de Garafía",
           "routeDirections": "[13](16 (end) to 11 and back)"
@@ -1613,8 +1613,8 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Roque de Muchachos",
-          "end": "Roque de Muchachos",
+          "start": "Roque de los Muchachos",
+          "end": "Roque de los Muchachos",
           "routeDirections": "[24.1](01 to 05) and back"
         },
         {
@@ -2451,7 +2451,7 @@
       "accessCar": "true",
       "accessBus": "true",
       "province": "El Paso",
-      "town": "",
+      "town": "Refugio El Pilar",
       "routeFile": "LP35 Pico Birigoyo circuit.gpx",
       "refreshments": "Mobile kiosk at Refugio El Pilar serves drinks and snacks.",
       "start": "Refugio El Pilar",
@@ -2671,7 +2671,6 @@
       ],
 
       "notes": [
-        [ "waymarked", "Marked paths except for a shortcut and the obvious route up Teneguia" ],
         [ "vertigo", "Volcán Teneguía is a moderate vertigo risk and unsafe in high winds." ],
         [ "steep", "Some scrambling needed when ascending Volcán Teneguía" ],
         [ "weather", "Volcán Teneguía should be avoided in strong winds or poor visibility" ]
