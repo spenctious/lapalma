@@ -95,14 +95,14 @@
 .grid-item-button {
   font-size: 0.8rem;
   font-style: bold;
-  color: black;
+  color: var(--colour0);
   border: 1px solid var(--colour1);
   border-radius: 6px;
   box-sizing: border-box;
   padding: 0.5rem;
   flex: 1 0;
   text-align: center;
-  background-color: var(--colour4);
+  /* background-color: green; */
   cursor: pointer;
 }
 

@@ -173,9 +173,6 @@ function populatePoiGrid() {
       <div id="poi${poi.id}" class="item">
         <div class="item-pic">
           <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
-          <div class="pic-label">
-            <span class="item-id">${poi.id}</span>
-          </div>
         </div>
         <div class="item-detail">
           <h3 class="title">
