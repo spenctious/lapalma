@@ -6,6 +6,9 @@ var collectionParam;
 var collection;
 var collectionIndex;
 
+var detailsModal;
+
+
 // Wait for the page to load and the data to be read before trying to populate
 // elements of the page
 window.onload = function () {
@@ -15,6 +18,8 @@ window.onload = function () {
 /************************* Initialization ************************/
 
 function initialize() {
+  detailsModal = document.getElementById("full-details");
+
   // get the specific route matching the URL parameter
   let QueryString = window.location.search;
   let urlParams = new URLSearchParams(QueryString);
@@ -44,9 +49,20 @@ function initialize() {
 
   // add event listeners for the specified areas
   document.getElementById("content-grid").addEventListener("click", mainClickHandler);
+  detailsModal.addEventListener("click", modalClickHandler);
 }
 
 /************************* Click handlers ************************/
+
+// close the modal if the close button is clicked or the user
+// clicks anywhere outside the content area
+function modalClickHandler(event) {
+  let id = event.target.id;
+  if (id == "modal-close" || id == "full-details") {
+    detailsModal.style.display = "none";
+    return;
+  }
+}
 
 function mainClickHandler(event) {
   let elementId = event.target.closest("div").id;
@@ -84,6 +100,12 @@ function mainClickHandler(event) {
     document.getElementById("features-and-warnings").style.display = "none";
     document.getElementById("features-and-warnings-summary").style.display = "grid";
     return;
+  }
+
+  if (event.target.id.startsWith("poiLink")) {
+    let poiId = event.target.id.replace("poiLink", "");
+    document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
+    detailsModal.style.display = "block";
   }
 }
 
@@ -180,7 +202,7 @@ function populateFeaturesAndWarnings() {
       case "poi":
         if (route.hasPoi) {
           route.poi.forEach((placeOfInterest, id) => {
-            additionalContent += `<p><a href="./poi.html?poi=${id}">${placeOfInterest.name}</a></p>`;
+            additionalContent += `<p id="poiLink${id}">${placeOfInterest.name}</p>`;
           });
         }
         break;

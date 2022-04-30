@@ -1,0 +1,167 @@
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  max-width: 400px; /* Could be more or less, depending on screen size */
+  height: auto;
+  padding: 0.5rem;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 120%;
+  margin-bottom: 1rem;
+}
+
+.poi-tag {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--colour6);
+  color: white;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+  line-height: 200%;
+}
+
+.button-set {
+  display: flex;
+  position: absolute;
+  bottom: 0.5rem;
+  flex-flow: row wrap;
+  column-gap: 10px;
+  width: calc(100% - 1rem); /* allow for parent's padding */
+}
+
+.button-modal {
+  display: flex;
+  margin-top: 1rem;
+  width: 100%;
+  flex-flow: row wrap;
+  column-gap: 10px;
+}
+
+.grid-item-button {
+  font-size: 0.8rem;
+  font-style: bold;
+  color: var(--colour0);
+  border: 1px solid var(--colour1);
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  flex: 1 0;
+  text-align: center;
+  /* background-color: green; */
+  cursor: pointer;
+}
+
+.grid-item-button a {
+  text-decoration: none;
+  color: var(--colour0);
+}
+
+
+
+
+.extra-detail {
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.opening-times,
+.general-details {
+  font-size: 0.7rem;
+  /* padding: 0.2rem; */
+  width: 100%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  line-height: 120%;
+}
+
+.general-details td:nth-child(1) {
+  padding: 0.2rem;
+}
+
+.general-details td:nth-child(1) {
+  font-weight: bold;
+}
+
+.opening-times tr {
+  border: solid 1px var(--colour4);
+  border-width: 1px 0;
+}
+
+.opening-times tr:nth-child(1) {
+  border: none;
+  border-width: 0;
+}
+
+.opening-times th {
+  text-align: left;
+  font-weight: bold;
+  padding: 0.2rem;
+  padding-bottom: 0.4rem;
+}
+
+.opening-times td {
+  padding: 0.2rem;
+}
+
+.opening-times td:nth-child(2) {
+  width: auto;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.fees {
+  font-size: 0.7rem;
+}
+
+.description {
+  font-size: 0.8rem;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
