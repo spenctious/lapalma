@@ -19,9 +19,11 @@
   flex: 1 0 50%;
   position: relative;
 }
+
 .item-pic {
   flex: 50%;
 }
+
 .item-pic img {
   width: 100%;
   display: block; /* stops white space at bottom of image due to inline positioning */
@@ -105,6 +107,14 @@
 
   .item-detail {
     flex: 1 0 6.5rem;
+  }
+
+  /* in vertical format we know the picture size */
+  .item-pic img {
+    background-color: lightgray;
+    width: 250px;
+    height: 187px;
+    display: block; /* stops white space at bottom of image due to inline positioning */
   }
 }
 
