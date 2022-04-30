@@ -110,7 +110,7 @@
   }
 
   /* in vertical format we know the picture size */
-  .item-pic img {
+  .item-pic > img {
     background-color: lightgray;
     width: 250px;
     height: 187px;
