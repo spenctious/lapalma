@@ -14,7 +14,7 @@ const dataSources = [
 
 // For diagnostics and development
 var forceReload = true;
-var performIntegrityCheck = false;
+var performIntegrityCheck = true;
 
 // URL paramater names - defining here ensures consistency
 const URL_PARAM_ROUTE = "route";
@@ -359,13 +359,13 @@ class Data {
     this.requiredBoolean(route, "starred", route.starred);
 
     this.requiredNonEmptyString(route, "walkType", route.walkType);
-    console.assert(walkType.has(route.walkType), `route ${route.id}: ${route.walkType} is not a listed walkType type`);
+    console.assert(this.walkType.has(route.walkType), `route ${route.id}: ${route.walkType} is not a listed walkType type`);
 
     this.requiredNonEmptyString(route, "duration", route.duration);
-    console.assert(duration.has(route.duration), `route ${route.id}: ${route.duration} is not a listed duration type`);
+    console.assert(this.duration.has(route.duration), `route ${route.id}: ${route.duration} is not a listed duration type`);
 
     this.requiredNonEmptyString(route, "effort", route.effort);
-    console.assert(effort.has(route.effort), `route ${route.id}: ${route.effort} is not a listed effort type`);
+    console.assert(this.effort.has(route.effort), `route ${route.id}: ${route.effort} is not a listed effort type`);
 
     this.requiredNonEmptyString(route, "waymarked", route.waymarked);
     this.requiredBoolean(route, "accessBus", route.accessBus);
@@ -377,14 +377,16 @@ class Data {
     this.requiredBoolean(route, "accessBus", route.accessBus);
 
     this.requiredNonEmptyString(route, "start", route.start);
-    console.assert(locations.has(route.start), `route ${route.id}: ${route.start} is not a listed location`);
+    console.assert(this.locations.has(route.start), `route ${route.id}: ${route.start} is not a listed location`);
 
     this.requiredNonEmptyString(route, "end", route.end);
-    console.assert(locations.has(route.end), `route ${route.id}: ${route.end} is not a listed location`);
+    console.assert(this.locations.has(route.end), `route ${route.id}: ${route.end} is not a listed location`);
 
     if ("paths" in route) {
       console.assert(Array.isArray(route.paths), `route ${route.id}: paths field must be array`);
-      console.assert(route.paths.length > 0, `route ${route.id}: paths cannot be empty`);
+      route.paths.forEach(path => {
+        console.assert(this.statuses.has(path), `route ${route.id}: ${path} not found in trails`);
+      })
     }
 
     console.assert("images" in route, `route ${route.id}: images is a required field`);
@@ -401,7 +403,7 @@ class Data {
       console.assert(route.poi.length > 0, `route ${route.id}: poi cannot be empty`);
       route.poi.forEach(routePoi => {
         console.assert(routePoi != "", `route ${route.id}: poi must not be empty`);
-        console.assert(poi.has(routePoi), `route ${route.id}: ${routePoi} is not a listed POI`);
+        console.assert(this.poiMap.has(routePoi), `route ${route.id}: ${routePoi} is not a listed POI`);
       });
     }
 
@@ -411,7 +413,7 @@ class Data {
     route.terrain.forEach(routeTerrain => {
       let terrainType = routeTerrain[0];
       let terrainValue = routeTerrain[1];
-      console.assert(terrain.has(terrainType), `route ${route.id}: ${terrainType} is not a listed terrain`);
+      console.assert(this.terrain.has(terrainType), `route ${route.id}: ${terrainType} is not a listed terrain`);
       console.assert(terrainValue == "normal" || terrainValue == "strong", `route ${route.id}: ${terrainValue} is not a valid terrain value`);
     });
 
@@ -421,60 +423,65 @@ class Data {
     route.interest.forEach(routeInterest => {
       let interestType = routeInterest[0];
       let interestValue = routeInterest[1];
-      console.assert(interest.has(interestType), `route ${route.id}: ${interestType} is not a listed interest`);
+      console.assert(this.interest.has(interestType), `route ${route.id}: ${interestType} is not a listed interest`);
       console.assert(interestValue == "normal" || interestValue == "strong", `route ${route.id}: ${interestValue} is not a valid interest value`);
     });
 
     console.assert("warnings" in route, `route ${route.id}: warnings is a required field`);
     console.assert(Array.isArray(route.warnings), `route ${route.id}: warnings field must be an array`);
     console.assert(route.warnings.length > 0, `route ${route.id}: warnings cannot be empty`);
-    route.warnings.forEach(routeWarning => {
-      let warningType = routeWarning[0];
-      let warningValue = routeWarning[1];
-      console.assert(warnings.has(warningType), `route ${route.id}: ${warningType} is not a listed warning`);
-      console.assert(warningValue == "normal" || warningValue == "strong", `route ${route.id}: ${warningValue} is not a valid warning value`);
-    });
+    if (route.warnings[0].length > 0) {
+      route.warnings.forEach(routeWarning => {
+        let warningType = routeWarning[0];
+        let warningValue = routeWarning[1];
+        console.assert(this.warnings.has(warningType), `route ${route.id}: ${warningType} is not a listed warning`);
+        console.assert(warningValue == "normal" || warningValue == "strong", `route ${route.id}: ${warningValue} is not a valid warning value`);
+      });
+    }
 
     if ("notes" in route) {
       console.assert(Array.isArray(route.notes), `route ${route.id}: notes field must be an array`);
       console.assert(route.notes.length > 0, `route ${route.id}: notes cannot be empty`);
       route.notes.forEach(routeNote => {
         let noteField = routeNote[0];
+        let t = route.terrain.find(x => x[0] === noteField);
         let i = route.interest.find(x => x[0] == noteField);
         let w = route.warnings.find(x => x[0] == noteField);
-        console.assert(i !== undefined || w !== undefined, `route ${route.id}: ${noteField} does not relate to a feature or warning`);
+        console.assert(
+          t !== undefined || i !== undefined || w !== undefined, 
+          `route ${route.id}: ${noteField} does not relate to a feature or warning`);
       });
     }
 
     if ("variants" in route) {
       console.assert(Array.isArray(route.variants), `route ${route.id}: variants field must be an array`);
       route.variants.forEach(variant => {
-        this.requiredNonEmptyString(route, "id", variant.id);
-        this.requiredNonEmptyString(route, "name", variant.id);
-        this.requiredNonEmptyString(route, "description", variant.description);
+        this.requiredNonEmptyString(variant, "id", variant.id);
+        this.requiredNonEmptyString(variant, "name", variant.id);
+        this.requiredNonEmptyString(variant, "description", variant.description);
 
-        this.requiredNonEmptyString(route, "duration", variant.duration);
-        console.assert(duration.has(variant.duration), `variant ${variant.id}: ${variant.duration} is not a listed duration type`);
+        this.requiredNonEmptyString(variant, "duration", variant.duration);
+        console.assert(this.duration.has(variant.duration), `variant ${variant.id}: ${variant.duration} is not a listed duration type`);
     
-        this.requiredNonEmptyString(route, "effort", variant.effort);
-        console.assert(effort.has(variant.effort), `variant ${variant.id}: ${variant.effort} is not a listed effort type`);
+        this.requiredNonEmptyString(variant, "effort", variant.effort);
+        console.assert(this.effort.has(variant.effort), `variant ${variant.id}: ${variant.effort} is not a listed effort type`);
     
-        this.requiredNonEmptyString(route, "accessCar", variant.accessCar);
+        this.requiredNonEmptyString(variant, "accessCar", variant.accessCar);
         this.requiredBoolean(route, "accessCar", variant.accessCar);
     
-        this.requiredNonEmptyString(route, "accessBus", variant.accessBus);
-        this.requiredBoolean(route, "accessBus", variant.accessBus);
+        this.requiredNonEmptyString(variant, "accessBus", variant.accessBus);
+        this.requiredBoolean(variant, "accessBus", variant.accessBus);
     
         if ("routeFile" in variant) {
           console.assert(typeof variant.routeFile == "string", `route ${route.id}: routeFile must be a string`);
           console.assert(variant.routeFile != "", `route ${route.id}: routeFile must not be empty`);
         }
 
-        this.requiredNonEmptyString(route, "start", variant.start);
-        console.assert(locations.has(variant.start), `variant ${variant.id}: ${variant.start} is not a listed location`);
+        this.requiredNonEmptyString(variant, "start", variant.start);
+        console.assert(this.locations.has(variant.start), `variant ${variant.id}: ${variant.start} is not a listed location`);
 
-        this.requiredNonEmptyString(route, "end", variant.end);
-        console.assert(locations.has(variant.end), `variant ${variant.id}: ${variant.end} is not a listed location`);
+        this.requiredNonEmptyString(variant, "end", variant.end);
+        console.assert(this.locations.has(variant.end), `variant ${variant.id}: ${variant.end} is not a listed location`);
 
         if ("routeDirections" in variant) {
           console.assert(typeof variant.routeDirections == "string", `variant ${variant.id}: routeDirections must be a string`);
