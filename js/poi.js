@@ -190,9 +190,10 @@ function populatePoiGrid() {
 
 function getFullPoiDetails(poiId) {
 
+  // find the POI details from the id 
+  // (map is indexed by POI name, not id)
   let poi = undefined;
   for (let p of laPalmaData.poi.values()) {
-    console.log(p);
     if (p.id == poiId) {
       poi = p;
       break;
@@ -259,10 +260,6 @@ function getOpeningTimesHtml(openingTimes) {
   })
   content += `</table>`;
   return content;
-}
-
-function getEntryCostHtml(entryCost) {
-  return `<p><span class="item-label">Cost:</span>${entryCost}</p>`;
 }
 
 function getRelatedRoutesHtml(poi) {
