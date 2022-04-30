@@ -130,7 +130,7 @@ class Data {
     this.#poiCollection.forEach(poi => {
       this.#routeCollection.forEach(route => {
         if (route.hasPoi && route.poi.has(poi.id)) {
-          poi.relatedWalks.push(poi.id);
+          poi.relatedWalks.push(route.id);
           poi.hasRelatedWalks = true;
         }
       });
