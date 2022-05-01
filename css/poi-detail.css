@@ -17,13 +17,34 @@
   border: 1px solid #888;
   max-width: 400px; /* Could be more or less, depending on screen size */
   height: auto;
-  padding: 0.5rem;
+  padding: 1rem;
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
 }
 
 .modal-title {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 120%;
+  margin-bottom: 1rem;
+}
+
+.poi-detail-pic img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.tags {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -75,30 +96,43 @@
   color: var(--colour0);
 }
 
-
-
-
 .extra-detail {
   display: block;
   margin-top: 0.3rem;
 }
 
-.opening-times,
 .general-details {
   font-size: 0.7rem;
-  /* padding: 0.2rem; */
+  padding: 0.2rem;
   width: 100%;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
   line-height: 120%;
 }
 
-.general-details td:nth-child(1) {
-  padding: 0.2rem;
+.general-details td {
+  padding: 0.3rem;
 }
 
 .general-details td:nth-child(1) {
   font-weight: bold;
+  padding-right: 0.5rem;
+  width: auto;
+}
+
+.opening-times {
+  font-size: 0.7rem;
+  /* padding: 0.2rem; */
+  /* width: 100%;
+  max-width: 8rem; */
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  line-height: 120%;
+}
+
+
+.opening-times td:nth-child(1) {
+  padding-right: 1rem;
 }
 
 .opening-times tr {
@@ -134,34 +168,6 @@
 
 .description {
   font-size: 0.8rem;
+  line-height: 140%;
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}

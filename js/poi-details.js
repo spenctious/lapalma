@@ -22,38 +22,37 @@ function getFullPoiDetails(poi) {
   // build html content
   return `
     <div class="modal-title">
+      <span id="modal-close" class="close">&times;</span>
       ${poi.fullName}
     </div>
-    <div class="item-pic">
+    <div class="poi-detail-pic">
       <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
     </div>
-    <div class="item-detail">
+    <div class="tags">
       ${getTagsHtml(poi.tags)}
-      <div class="extra-detail">
-        <p class="description">
-          ${poi.description}
-        </p>
-        <table class="general-details">
-          <tr>
-            <td>Location:</td><td>${poi.location}</td>
-            ${tel}
-            ${entryCost}
-        </table>
-        ${openingTimes}
-      </div>
-      <div class="button-modal">
-        ${relatedRoutes}
-        <div id="modal-close" class="grid-item-button">Close</div>
-      </div>
+    </div>
+    <div class="extra-detail">
+      <p class="description">
+        ${poi.description}
+      </p>
+      <table class="general-details">
+        <tr>
+          <td>Location:</td><td>${poi.locationDescription}</td>
+          ${tel}
+          ${entryCost}
+      </table>
+      ${openingTimes}
+    </div>
+    <div class="button-modal">
+      ${relatedRoutes}
     </div>`;
 }
 
 function getTagsHtml(tags) {
-  let content = `<p class="tags">`;
+  let content = "";
   tags.forEach( tag => {
     content += `<span class="poi-tag">${tag} </span>`;
   })
-  content += `</p>`;
   return content;
 }
 
