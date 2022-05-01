@@ -16,7 +16,7 @@
   height: 1.5rem;
 } */
 
-.grid-header {
+#collection-nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
