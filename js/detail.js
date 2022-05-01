@@ -334,13 +334,17 @@ function getDownloadButtons(fileName, routeId) {
   return `
     <div class="download-link primary">
       <a href="/data/gpx/${fileName}.gpx" download>
-        &#129095; Route ${routeId} <span class="format">GPX<span><br/>For most apps
+        <img class="invert" src="/img/icons/download.svg" alt="" />
+        <p>Route ${routeId}</p>
+        <p class="format">GPX (most apps)</p>
       </a>
     </div>
     &nbsp;
     <div class="download-link secondary">
       <a href="/data/kml/${fileName}.kml" download>
-        &#129095; Route ${routeId} <span class="format">KML<span><br/>For Google Earth
+        <img src="/img/icons/download.svg" alt="" />
+        <p>Route ${routeId} <span class="format">KML<span></p>
+        <p class="format">KML (Google Earth)</p>
       </a>
     </div>`;
 }

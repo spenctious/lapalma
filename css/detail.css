@@ -2,7 +2,7 @@
 
 /************************* Collection navigation bar ************************/
 
-#collection-nav {
+/* #collection-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,11 +14,30 @@
   padding:  0.5rem;
   grid-area: item-nav;
   height: 1.5rem;
+} */
+
+.grid-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--colour1);
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  height: 1.5rem;
+  grid-area: item-nav;
 }
 
+
 .nav {
-  width: auto;
+  flex: 1 0 auto;
   text-align: center;
+  max-width: 5rem;
 }
 
 .arrow {
@@ -312,7 +331,17 @@ h4 {
   padding: 10px;
   font-size: 0.8rem;
   flex: 1 1 auto;
-  text-align: center;
+  text-align: left;
+}
+
+.download-link > a > img {
+  height: 1.6rem;
+  float: left;
+  padding-right: 0.5rem;
+}
+
+.invert {
+  filter: invert(100%);
 }
 
 .primary {
@@ -327,6 +356,7 @@ h4 {
 
 .format {
   font-size: 0.6rem;
+  margin-top: 0.2rem;
 }
 
 .secondary {
@@ -423,9 +453,10 @@ h4 {
   #content-grid {
     grid-template-columns: 350px auto;
     grid-template-areas: 
-      "item-nav item-nav"
       "title    title"
-      "detail   pics";
+      "detail   pics"
+      "item-nav item-nav"
+      ;
   }
 }
 
@@ -434,8 +465,9 @@ h4 {
   #content-grid {
     grid-template-columns: var(--nav-panel-width) 350px auto;
     grid-template-areas: 
-      "nav  item-nav item-nav"
       "nav  title    title"
-      "nav  detail   pics";
+      "nav  detail   pics"
+      "nav  item-nav item-nav"
+      ;
   }
 }
