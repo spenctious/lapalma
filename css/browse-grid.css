@@ -58,8 +58,8 @@
 
 .item {
   display: flex;
-  border: 1px solid var(--colour4);
   flex-direction: row;
+  box-shadow: 1px 1px 4px var(--colour4);
 }
 
 /************************* Grid content: pic ************************/
@@ -188,6 +188,7 @@
     /*transform: translateX(-100%) !important;  override the value set by the nav close button */
   }
 
+  /* hide filter button */
   #filter-button {
     visibility: hidden;
   }
