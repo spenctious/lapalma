@@ -215,6 +215,7 @@ class Data {
       fullName: poi.fullName,
       tags: poi.tags,
       description: poi.description,
+      locationDescription: poi.locationDescription,
 
       entryCost: poi.entryCost,
       hasEntryCost: "entryCost" in poi,
@@ -224,6 +225,7 @@ class Data {
 
       location: poi.location,
       locationAttributes: this.locations.get(poi.location),
+
 
       openingTimes: poi.openingTimes,
       hasOpeningTimes: "openingTimes" in poi,
