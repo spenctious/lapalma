@@ -1,26 +1,5 @@
 @import url("/css/browse-grid.css");
 
-/************************* Route summary grid ************************/
-#routes-header {
-  display: grid;
-  grid-template-columns: 30% 40% 30%;
-  background-color: var(--colour1);
-  font-size: 1rem;
-  color: white;
-  padding: 0.5rem;
-  margin-top: 0.2rem;
-  margin-bottom: 10px;
-}
-
-.no-filters {
-  color: var(--colour3);
-}
-
-.filters-applied {
-  background-color: yellow;
-  color: black;
-  padding: 5px;
-}
 
 /************************* Grid content: pic additions ************************/
 

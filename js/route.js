@@ -247,15 +247,15 @@ function filterRoutes() {
   switch (filtersCount) {
     case 0:
       filterCountText.innerHTML = "No filters";
-      filterCountText.className = "no-filters";
+      filterCountText.className = "filter-count no-filters";
       break;
     case 1:
       filterCountText.innerHTML = "1 filter";
-      filterCountText.className = "filters-applied";
+      filterCountText.className = "filter-count no-filters";
       break;
     default:
       filterCountText.innerHTML = filtersCount + " filters";
-      filterCountText.className = "filters-applied";
+      filterCountText.className = "filter-count no-filters";
       break;
   }
 }

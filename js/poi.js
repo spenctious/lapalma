@@ -98,12 +98,10 @@ function filterPoi() {
     let poiDiv = document.getElementById("poi" + poi.id);
     if (included) {
       poiDiv.style.display = "flex";
-      // selectedRoutes.set(route.id, "in");
       ++matched;
     }
     else {
       poiDiv.style.display = "none";
-      // selectedRoutes.set(route.id, "out");
     }
   });
 
@@ -127,15 +125,15 @@ function filterPoi() {
   switch (filtersCount) {
     case 0:
       filterCountText.innerHTML = "No filters";
-      filterCountText.className = "no-filters";
+      filterCountText.className = "filter-count no-filters";
       break;
     case 1:
       filterCountText.innerHTML = "1 filter";
-      filterCountText.className = "filters-applied";
+      filterCountText.className = "filter-count no-filters";
       break;
     default:
       filterCountText.innerHTML = filtersCount + " filters";
-      filterCountText.className = "filters-applied";
+      filterCountText.className = "filter-count no-filters";
       break;
   }
 }
