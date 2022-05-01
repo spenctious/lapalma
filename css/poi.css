@@ -1,7 +1,14 @@
 @import url("/css/browse-grid.css");
 @import url("/css/poi-detail.css");
 
+.filter-panel {
+  padding: 0.5rem;
+  background-color: var(--colour-light-bkg);
+  border-left: 1px solid lightgray;
+}
+
 .poi-category-description {
+  margin-top: 0.3rem;
   font-size: 0.8rem;
   font-style: normal;
 }
@@ -10,14 +17,15 @@
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
   cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  font-size: 1rem;
   user-select: none;
+}
+
+.larger {
+  font-size: 0.7rem;
 }
 
 /* Hide the browser's default checkbox */
@@ -32,7 +40,7 @@
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 0.1rem; /* align*/
   left: 0;
   height: 25px;
   width: 25px;

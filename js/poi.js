@@ -148,7 +148,8 @@ function populateFilterPanel() {
   // note: the data binding on the label stops the click event for the checkbox firing twice
   laPalmaData.categories.poiCategories.forEach(category => {
     gridContent += `
-      <label class="container" data-bind="stopBubble:parentAction">${category.label}
+      <label class="container" data-bind="stopBubble:parentAction">
+        <span class="poi-tag larger">${category.label}</span>
         <input id="poi-category-${category.id}" type="checkbox">
         <span class="checkmark"></span>
         <p class="poi-category-description">${category.description}</p>
