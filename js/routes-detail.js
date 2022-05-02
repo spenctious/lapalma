@@ -145,8 +145,8 @@ function populateBasics() {
 
   // access
   let accessContent = "";
-  if (route.isAccessibleByCar) accessContent += getAttributeHtml(route.accessCarAttributes);
-  if (route.isAccessibleByBus) accessContent += getAttributeHtml(route.accessBusAttributes);
+  if (route.isAccessibleByCar) accessContent += getSimpleAttributeHtml(route.accessCarAttributes);
+  if (route.isAccessibleByBus) accessContent += getSimpleAttributeHtml(route.accessBusAttributes);
   if (route.start == route.end) {
     accessContent += getLocationHtml(route.start, route.startAttributes, "Start /<br/>End");
   } else {
@@ -157,7 +157,14 @@ function populateBasics() {
 
   // trail status - waymarked and official trail statuses for each included path
   let trailContent = "";
-  if (route.isCompletelyWaymarked) trailContent += getAttributeHtml(route.waymarkedAttributes);
+  if (route.isCompletelyWaymarked) {
+    trailContent += getSimpleAttributeHtml(route.waymarkedAttributes);
+  } else {
+    trailContent += getAttributeHtml(
+      route.waymarkedAttributes.icon, 
+      "Not fully waymarked",
+      "Some sections of trail are not on the official footpath network.");
+  }
   let trailStatusContent = "";
   route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
   trailContent += `
@@ -169,7 +176,6 @@ function populateBasics() {
         <div class="official-trails">
           ${trailStatusContent}
         </div>
-        <p>Note: Walks may also traverse paths not part of the official trail network.</p>
       </div>`;
   document.getElementById("trail-grid").innerHTML = trailContent;
 
@@ -400,43 +406,37 @@ function getTrailStatusHtml(trailStatus, trailName) {
 // standard feature description with icon, strong tag (if present), title, description
 // and any additional content supplied
 function getFeatureHtml(feature, additionalContent = "") {
-  return `
-    <div class="icon">
-      <img src="/img/icons/${feature.icon}" class="icon-img" alt="" />
-    </div>
-    <div class="item-description">
-      <h4>
-        ${getStrongHtml(feature.isStrong, feature.strongTag)}
-        ${feature.text}
-      </h4>
-      <p>${feature.noteModifiedDescription}</p>
-      ${additionalContent}
-    </div>`;
+  return getAttributeHtml(
+    feature.icon, 
+    feature.text, 
+    feature.noteModifiedDescription, 
+    getStrongHtml(feature.isStrong, feature.strongTag),
+    additionalContent);
 }
 
 // feature description for basic items that are not metrics (walk type, refreshments)
 function getBasicFeatureHtml(feature, description) {
-  return `
-    <div class="icon">
-      <img src="/img/icons/${feature.icon}" class="icon-img" alt="" />
-    </div>
-    <div class="item-description">
-      <h4>
-        ${feature.text}
-      </h4>
-      ${description}
-    </div>`;
+  return getAttributeHtml(feature.icon, feature.text, description);
 }
 
 // feature description without title or strong tag (used by eg. dangers list)
-function getAttributeHtml(attributes) {
+function getSimpleAttributeHtml(attributes) {
+  return getAttributeHtml(attributes.icon, attributes.text, attributes.description);
+}
+
+// generic html for attributes
+function getAttributeHtml(icon, text, description, strong = "", additionalContent = "") {
   return `
     <div class="icon">
-      <img src="/img/icons/${attributes.icon}" class="icon-img" alt="" />
+      <img src="/img/icons/${icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
-      <h4>${attributes.text}</h4>
-      ${attributes.description}
+      <h4>
+        ${strong}
+        ${text}
+      </h4>
+      <p>${description}</p>
+      ${additionalContent}
     </div>`;
 }
 
