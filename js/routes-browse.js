@@ -132,7 +132,7 @@ console.log(event.target);
       window.history.replaceState({}, "");
     }
 
-    window.location.href = `./route-detail.html${getDetailPageQueryString(routeIndex)}`;
+    window.location.href = `./routes-detail.html${getDetailPageQueryString(routeIndex)}`;
   }
 }
 
