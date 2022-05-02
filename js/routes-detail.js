@@ -148,7 +148,7 @@ function populateBasics() {
   if (route.isAccessibleByCar) accessContent += getSimpleAttributeHtml(route.accessCarAttributes);
   if (route.isAccessibleByBus) accessContent += getSimpleAttributeHtml(route.accessBusAttributes);
   if (route.start == route.end) {
-    accessContent += getLocationHtml(route.start, route.startAttributes, "Start /<br/>End");
+    accessContent += getLocationHtml(route.start, route.startAttributes, "Start<br/>& End");
   } else {
     accessContent += getLocationHtml(route.start, route.startAttributes, "Start");
     accessContent += getLocationHtml(route.end, route.endAttributes, "End");
@@ -311,7 +311,8 @@ function getVariantContent(variant) {
   if (variant.isAccessibleByBus) variantSummary += getSummaryIconHtml(variant.accessBusAttributes.icon);
 
   // download content - only some variants will have additional files associated with them
-  let downloadContent = variant.hasRouteFile ? `<div class="downloads">${getDownloadButtons(variant.routeFile, variant.id)}</div>` : "";
+  let downloadContent = variant.hasRouteFile ? 
+    `<div class="downloads">${getDownloadButtons(variant.routeFile, variant.id)}</div>` : "";
 
   // directions - expand format to HTML
   // square braces enclose route ids, normal brackets enclose waypoint information
@@ -329,6 +330,7 @@ function getVariantContent(variant) {
       ${title}
       <div class="icon-summary">${variantSummary}</div>
       <p>${variant.description}</p>
+      <h3>Downloads and directions<h3>
       ${downloadContent}
       ${directions}
     </div> `;
@@ -445,21 +447,21 @@ function getLocationHtml(locationName, locationAttributes, label) {
   let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
   let busHtml = "Inaccessible by bus";
   if ("bus" in locationAttributes) {
-    busHtml = `Stop: ${locationAttributes.bus.stop}`;
-    busHtml += `<p class="sub-content">Routes: `;
+    let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
+    busHtml = `
+      <a href="/transport.html">
+        Bus stop <span class="bus-route">${locationAttributes.bus.stop}</span> on route${plural} `;
     locationAttributes.bus.routes.forEach(busRoute => busHtml += `<span class="bus-route">${busRoute}</span>, `);
     busHtml = busHtml.slice(0, -2); // remove trailing comma and space
-    busHtml += `</p>`;
+    busHtml += `</a>`;
   }
   return `
     <div>
-      <h4>${label}</h4>
+      <p class="details-grid-attribute">${label}</p>
     </div>
     <div class="item-description">
       <h4>${locationName}</h4>
-      <p class="sub-head">Parking</p>
-      <p class="sub-content">${carHtml}</p>
-      <p class="sub-head">Bus</p>
-      <p class="sub-content">${busHtml}</p>
+      ${carHtml}
+      <p class="text-button">${busHtml}</p>
     </div>`;
 }
