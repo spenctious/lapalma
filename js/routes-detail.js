@@ -343,7 +343,7 @@ function getDownloadButtons(fileName, routeId) {
     <div class="download-link secondary">
       <a href="/data/kml/${fileName}.kml" download>
         <img src="/img/icons/download.svg" alt="" />
-        <p>Route ${routeId} <span class="format">KML<span></p>
+        <p>Route ${routeId}</p>
         <p class="format">KML (Google Earth)</p>
       </a>
     </div>`;
