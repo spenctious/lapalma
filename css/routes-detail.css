@@ -284,7 +284,7 @@ h4 {
   text-transform: uppercase;
   display: inline-block;
   font-weight: bold;
-  margin-right: 0.3rem;
+  margin-right: 0.2rem;
 }
 
 /************************* Title ************************/
@@ -365,20 +365,26 @@ h4 {
   margin-bottom: 1rem;
   display: flex;
   flex-flow: row wrap;
+  gap: 0.3rem;
 }
 
 .download-link {
   border-radius: 6px;
   padding: 10px;
   font-size: 0.8rem;
-  flex: 1 1 auto;
+  flex: 1 0 40%;
   text-align: left;
 }
 
 .download-link > a > img {
   height: 1.6rem;
   float: left;
-  padding-right: 0.5rem;
+  padding-right: 0.3rem;
+}
+
+.format {
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
 }
 
 .invert {
@@ -395,13 +401,9 @@ h4 {
   font-weight: bold;
 }
 
-.format {
-  font-size: 0.6rem;
-  margin-top: 0.2rem;
-}
-
 .secondary {
   border: 1px solid var(--colour1);
+  background-color: white;
 }
 
 .secondary a { 
@@ -413,9 +415,11 @@ h4 {
 /************************* Variants ************************/
 
 .variant {
-  border-top: 1px solid lightgray;
   margin-top: 1rem;
   padding-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+  background-color: var(--colour5);
 }
 
 .variant > p {
@@ -452,7 +456,9 @@ h4 {
 .directions {
   font-size: 0.8rem;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
+  font-weight: normal;
+  line-height: 1.2rem;
 }
 
 .route-id {
@@ -461,7 +467,6 @@ h4 {
 
 .route-waypoints {
   font-style: italic;
-  padding: 0.2rem;
 }
 
 /************************* Grid areas ************************/

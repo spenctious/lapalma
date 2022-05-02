@@ -282,6 +282,7 @@ function populateRouteDatail() {
     <p>${route.description}</p>
     <h3>Route downloads</h3>
     <div class="downloads">${getDownloadButtons(route.routeFile, route.id)}</div>
+    <h3>Variations</h3>
     ${variantsContent}`;
 
   document.getElementById("detail-body").innerHTML = bodyContent;
@@ -333,7 +334,7 @@ function getVariantContent(variant) {
       ${title}
       <div class="icon-summary">${variantSummary}</div>
       <p>${variant.description}</p>
-      <h3>Downloads and directions<h3>
+      <h3>Downloads and directions</h3>
       ${downloadContent}
       ${directions}
     </div> `;
@@ -346,16 +347,15 @@ function getDownloadButtons(fileName, routeId) {
     <div class="download-link primary">
       <a href="/data/gpx/${fileName}.gpx" download>
         <img class="invert" src="/img/icons/download.svg" alt="" />
-        <p>Route ${routeId}</p>
-        <p class="format">GPX (most apps)</p>
+        <p>Route ${routeId} <span class="format">GPX</span></p>
+        <p class="format">(most apps)</p>
       </a>
     </div>
-    &nbsp;
     <div class="download-link secondary">
       <a href="/data/kml/${fileName}.kml" download>
         <img src="/img/icons/download.svg" alt="" />
-        <p>Route ${routeId}</p>
-        <p class="format">KML (Google Earth)</p>
+        <p>Route ${routeId} <span class="format">KML</span></p>
+        <p class="format">(Google Earth)</p>
       </a>
     </div>`;
 }
