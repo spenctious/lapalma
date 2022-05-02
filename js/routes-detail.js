@@ -196,6 +196,9 @@ function populateFeaturesAndWarnings() {
     </div>`;
   summaryContent += getSummaryIconsContent(route.interest);
   summaryContent += getSummaryIconsContent(route.warnings);
+  if (route.hasDangers) {
+    summaryContent += getSummaryIconHtml(laPalmaData.categories.danger.icon);
+  }
   document.getElementById("features-and-warnings-summary").innerHTML = summaryContent;
 
   // features
@@ -321,7 +324,7 @@ function getVariantContent(variant) {
     directions = `<p class="directions">` + variant.routeDirections + `</p>`;
     directions = directions.replaceAll("[", `<span class="route-id">Route `);
     directions = directions.replaceAll("]", `</span>`);
-    directions = directions.replaceAll("(", `<span class="route-waypoints">waypoints `);
+    directions = directions.replaceAll("(", `<span class="route-waypoints"> waypoints `);
     directions = directions.replaceAll(")", `</span>`);
   }
 
