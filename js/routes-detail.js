@@ -43,6 +43,7 @@ function initialize() {
 
   // populate the various components with the current route data
   populateRouteDatail();
+  populateVariations();
   populateFeaturesAndWarnings();
   populateBasics();
   populateRouteImages();
@@ -169,7 +170,7 @@ function populateBasics() {
   route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
   trailContent += `
       <div>
-        <h4>Status</h4>
+        <p class="details-grid-attribute">Status</p>
       </div>
       <div class="item-description">
         <h4>Official trails</h4>
@@ -270,30 +271,34 @@ function populateRouteDatail() {
     `;
   document.getElementById("detail-title").innerHTML = titleContent;
 
-  // variants (if any)
-  let variantsContent = "";
-  if (route.hasVariants) {
-    route.variants.forEach(variant => variantsContent += getVariantContent(variant));
-  }
-
   // main body of detail
   let bodyContent = `
     <h3>Description</h3>
     <p>${route.description}</p>
     <h3>Route downloads</h3>
-    <div class="downloads">${getDownloadButtons(route.routeFile, route.id)}</div>
-    <h3>Variations</h3>
-    ${variantsContent}`;
+    <div class="downloads">${getDownloadButtons(route.routeFile, route.id)}</div>`;
 
   document.getElementById("detail-body").innerHTML = bodyContent;
 }
 
+function populateVariations() {
+  // variants (if any)
+  let variantsContent = `<h3 id="col-head-variants">Walk variations</h3>`;
+  if (route.hasVariants) {
+    route.variants.forEach(variant => variantsContent += getVariantContent(variant));
+  } else {
+    variantsContent += `<p>None for this walk.</p>`;
+  }
+
+  document.getElementById("variations").innerHTML = variantsContent;
+}
+
 function populateRouteImages() {
-  let imagesContent = "";
+  let imagesContent = `<h3 id="col-head-pics">Trail photos</h3>`;
 
   route.images.forEach(image => {
     imagesContent += `
-      <div class="image-container">
+    <div class="image-container">
         <img class="picture" src="/img/route${route.id}-${image.id}-1200.jpg" alt="" />
         <div class="caption">${image.caption}</div>
       </div>`;
@@ -304,7 +309,11 @@ function populateRouteImages() {
 
 function getVariantContent(variant) {
   // title
-  let title = `<h2><span class="variant-title-id">${variant.id}</span>${variant.name}</h2>`;
+  let title = `
+    <div class="variant-title">
+      <div><span class="variant-title-id">${variant.id}</span></div>
+      <div>${variant.name}</div>
+    </div>`;
 
   // summary
   let variantSummary = "";
@@ -335,8 +344,8 @@ function getVariantContent(variant) {
       <div class="icon-summary">${variantSummary}</div>
       <p>${variant.description}</p>
       <h3>Downloads and directions</h3>
-      ${downloadContent}
       ${directions}
+      ${downloadContent}
     </div> `;
 }
 
