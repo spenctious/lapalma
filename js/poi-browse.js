@@ -59,11 +59,14 @@ function filterClickHandler(event) {
 }
 
 function poiGridClickHandler(event) {
-  let elementId = event.target.closest("div").id;
+  let elementId = event.target.closest("#browse-grid > div").id;
+
+  // link button so ignore and exit as we don't want to show details
+  if (event.target.className == "grid-item-button") return;
 
   // poi detail button
-  if (elementId.startsWith("poi-detail")) {
-    let poiId = elementId.replace("poi-detail-", ""); // strip prefix to get the poi id
+  if (elementId.startsWith("poi")) {
+    let poiId = elementId.replace("poi", ""); // strip prefix to get the poi id
     document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
     detailsModal.style.display = "block";
     return;
@@ -176,7 +179,6 @@ function populatePoiGrid() {
           ${getTagsHtml(poi.tags)}
           <div class="button-set">
             ${relatedRoutes}
-            <div id="poi-detail-${poi.id}" class="grid-item-button">Details</div>
           </div>  
         </div>
       </div>`;

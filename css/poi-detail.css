@@ -87,11 +87,7 @@
   padding: 0.5rem;
   flex: 1 0;
   text-align: center;
-  /* background-color: green; */
   cursor: pointer;
-}
-
-.grid-item-button a {
   text-decoration: none;
   color: var(--colour0);
 }
