@@ -107,7 +107,7 @@
 }
 
 .general-details td {
-  padding: 0.3rem;
+  padding: 0.3rem 0.3rem 0.3rem 0;
 }
 
 .general-details td:nth-child(1) {
@@ -118,9 +118,6 @@
 
 .opening-times {
   font-size: 0.7rem;
-  /* padding: 0.2rem; */
-  /* width: 100%;
-  max-width: 8rem; */
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
   line-height: 120%;
@@ -128,7 +125,12 @@
 
 
 .opening-times td:nth-child(1) {
-  padding-right: 1rem;
+  margin-right: 1rem;
+  padding: 0.2rem 0.2rem 0.2rem 0;
+}
+
+.opening-times td:nth-child(2) {
+  padding: 0.2rem 0 0.2rem 0.2rem;
 }
 
 .opening-times tr {
@@ -144,12 +146,7 @@
 .opening-times th {
   text-align: left;
   font-weight: bold;
-  padding: 0.2rem;
-  padding-bottom: 0.4rem;
-}
-
-.opening-times td {
-  padding: 0.2rem;
+  padding: 0.2rem 0.2rem 0.3rem 0;
 }
 
 .opening-times td:nth-child(2) {
