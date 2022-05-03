@@ -184,11 +184,14 @@
 
 .text-button {
   margin-top: 0.3rem;
+  color:darkblue;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .text-button a {
-  color:darkblue;
   text-decoration: none;
+  color:darkblue;
 }
 
 
@@ -310,17 +313,13 @@ h4 {
   height: 0.7rem;
 }
 
-.bus-route {
-  font-weight: bold;
-}
-
 /************************* Trail status ************************/
 
 .trail-open,
 .trail-closed,
 .trail-unknown {
   color: white;
-  padding: 4px 4px 2px 4px;
+  padding: 4px 4px 1px 4px;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
 }

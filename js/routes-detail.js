@@ -212,7 +212,7 @@ function populateFeaturesAndWarnings() {
       case "poi":
         if (route.hasPoi) {
           route.poi.forEach((placeOfInterest, id) => {
-            additionalContent += `<p id="poiLink${id}">${placeOfInterest.name}</p>`;
+            additionalContent += `<p class="text-button" id="poiLink${id}">${placeOfInterest.name}</p>`;
           });
         }
         break;
@@ -462,8 +462,8 @@ function getLocationHtml(locationName, locationAttributes, label) {
     let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
     busHtml = `
       <a href="/transport.html">
-        Bus stop <span class="bus-route">${locationAttributes.bus.stop}</span> on route${plural} `;
-    locationAttributes.bus.routes.forEach(busRoute => busHtml += `<span class="bus-route">${busRoute}</span>, `);
+        Bus stop ${locationAttributes.bus.stop}, route${plural} `;
+    locationAttributes.bus.routes.forEach(busRoute => busHtml += `${busRoute}, `);
     busHtml = busHtml.slice(0, -2); // remove trailing comma and space
     busHtml += `</a>`;
   }
