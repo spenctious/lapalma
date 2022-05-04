@@ -1,7 +1,6 @@
 "use strict";
 
 var activeFilters;
-var detailsModal;
 
 /************************* Initialization ************************/
 
@@ -14,6 +13,10 @@ function initialize() {
   activeFilters = new Set(); // initially all filters are off
   detailsModal = document.getElementById("full-details");
 
+  let allPoi = new Array();
+  laPalmaData.poi.forEach( poi => allPoi.push(poi.id));
+  initializePoiModal(allPoi);
+
   populateFilterPanel();
   populatePoiGrid();
 
@@ -25,12 +28,24 @@ function initialize() {
 
 /************************* Click handlers ************************/
 
-// close the modal if the close button is clicked or the user
-// clicks anywhere outside the content area
 function modalClickHandler(event) {
   let id = event.target.id;
+
+// close the modal if the close button is clicked or the user
+// clicks anywhere outside the content area
   if (id == "modal-close" || id == "full-details") {
-    detailsModal.style.display = "none";
+    closeModal();
+    return;
+  }
+
+  let elementId = event.target.closest("div").id;
+  if (elementId == "poi-next") {
+    moveNext();
+    return;
+  }
+
+  if (elementId == "poi-prev") {
+    movePrevious();
     return;
   }
 }
@@ -67,8 +82,7 @@ function poiGridClickHandler(event) {
   // poi detail button
   if (elementId.startsWith("poi")) {
     let poiId = elementId.replace("poi", ""); // strip prefix to get the poi id
-    document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
-    detailsModal.style.display = "block";
+    openModal(poiId);
     return;
   }
 }
@@ -94,6 +108,7 @@ function applyActiveFilters(poi) {
 // Update the filter count and number of matches
 function filterPoi() {
   let matched = 0;
+  poiCollection = new Array();
 
   // hide filtered out routes and update count of how many are matched
   laPalmaData.poi.forEach(poi => {
@@ -101,6 +116,7 @@ function filterPoi() {
     let poiDiv = document.getElementById("poi" + poi.id);
     if (included) {
       poiDiv.style.display = "flex";
+      poiCollection.push(poi.id);
       ++matched;
     }
     else {

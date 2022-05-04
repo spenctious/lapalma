@@ -1,5 +1,48 @@
 "use strict";
 
+var poiCollection;
+var poiCollectionIndex;
+var detailsModal;
+var detailsModalContent;
+var detailsModalCurrent;
+
+function initializePoiModal(initialPoiCollection) {
+  poiCollection = initialPoiCollection;
+  poiCollectionIndex = 0;
+  detailsModal = document.getElementById("full-details");
+  detailsModalContent = document.getElementById("poi-full-details");
+}
+
+function openModal(poiId) {
+  poiCollectionIndex = poiCollection.findIndex(item => item == poiId);
+  updateCurrent();
+  detailsModal.style.display = "block";
+}
+
+// need to wait for details to be populated before accessing contents
+function updateCurrent() {
+  detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]));
+  detailsModalCurrent = document.getElementById("poi-current");
+  detailsModalCurrent.innerHTML = `${poiCollectionIndex + 1} of ${poiCollection.length}`;
+  if (poiCollection.length < 2) {
+    document.getElementById("poi-collection-nav").style.display = "none";
+  }
+}
+
+function closeModal() {
+  detailsModal.style.display = "none";
+}
+
+function moveNext() {
+  if (++poiCollectionIndex >= poiCollection.length) poiCollectionIndex = 0;
+  updateCurrent();
+}
+
+function movePrevious() {
+  if (--poiCollectionIndex <= 0) poiCollectionIndex = poiCollection.length - 1;
+  updateCurrent();
+}
+
 // find the POI details from the id 
 // (map is indexed by POI name, not id)
 function getPoi(poiId) {
@@ -21,6 +64,15 @@ function getFullPoiDetails(poi) {
 
   // build html content
   return `
+    <div id="poi-collection-nav">
+      <div id="poi-prev" class="nav arrow">
+        <img src="/img/icons/chevron-left.svg" alt="" />
+      </div>
+      <div id="poi-current" class="nav">0 of n</div>
+      <div id="poi-next" class="nav arrow">
+        <img src="/img/icons/chevron-right.svg" alt="" />
+      </div>
+    </div>
     <div class="modal-title">
       <span id="modal-close" class="close">&times;</span>
       ${poi.fullName}
@@ -36,16 +88,16 @@ function getFullPoiDetails(poi) {
         ${poi.description}
       </p>
       <table class="general-details">
-        <tr>
-          <td>Location:</td><td>${poi.locationDescription}</td>
-          ${tel}
-          ${entryCost}
+        <tr><td>Location:</td><td>${poi.locationDescription}</td></tr>
+        ${tel}
+        ${entryCost}
       </table>
       ${openingTimes}
     </div>
     <div class="button-modal">
       ${relatedRoutes}
-    </div>`;
+    </div>
+    `;
 }
 
 function getTagsHtml(tags) {

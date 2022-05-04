@@ -164,3 +164,44 @@
   line-height: 140%;
 }
 
+/************************* Collection navigation bar ************************/
+/* copied from routes-detail */
+#poi-collection-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--colour1);
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0; /* changed*/
+  z-index: 1;
+  height: 1.5rem;
+  grid-area: item-nav;
+  margin-bottom: 1rem; /* new */
+}
+
+
+.nav {
+  flex: 1 0 auto;
+  text-align: center;
+  max-width: 5rem;
+}
+
+.arrow {
+  filter: invert(100%);
+  cursor: pointer;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+.arrow img { 
+  height: 1.5rem;
+}
+
+
+

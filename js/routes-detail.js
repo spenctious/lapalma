@@ -6,9 +6,6 @@ var collectionParam;
 var collection;
 var collectionIndex;
 
-var detailsModal;
-
-
 // Wait for the page to load and the data to be read before trying to populate
 // elements of the page
 window.onload = function () {
@@ -41,6 +38,11 @@ function initialize() {
     document.getElementById("next").style.display = "none";
   }
 
+  // initialize POI detail modal
+  let allPoi = new Array();
+  route.poi.forEach( poi => allPoi.push(poi.id));
+  initializePoiModal(allPoi);
+
   // populate the various components with the current route data
   populateRouteDatail();
   populateVariations();
@@ -60,7 +62,18 @@ function initialize() {
 function modalClickHandler(event) {
   let id = event.target.id;
   if (id == "modal-close" || id == "full-details") {
-    detailsModal.style.display = "none";
+    closeModal();
+    return;
+  }
+
+  let elementId = event.target.closest("div").id;
+  if (elementId == "poi-next") {
+    moveNext();
+    return;
+  }
+
+  if (elementId == "poi-prev") {
+    movePrevious();
     return;
   }
 }
@@ -105,8 +118,9 @@ function mainClickHandler(event) {
 
   if (event.target.id.startsWith("poiLink")) {
     let poiId = event.target.id.replace("poiLink", "");
-    document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
-    detailsModal.style.display = "block";
+    // document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
+    // detailsModal.style.display = "block";
+    openModal(poiId);
   }
 }
 
