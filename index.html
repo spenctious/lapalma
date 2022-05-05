@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/general.css" />
 
     <script src="js/common.js"></script>
   </head>
@@ -26,11 +27,125 @@
       <div id="content-grid">
         <!-- Navigation is populated in code -->
         <nav id="navbar" class="sidenav"></nav>
+    <div class="hero">
+      <div class="alerts">
+        <ul>
+          <li>
+            <strong>Covid 19:</strong> Restrictions may still be in force.
+          </li>
+          <li>
+            <strong>Cumbre Vieja eruption:</strong> Significant disruption to
+            roads, accommunication, services and walking routes.
+          </li>
+        </ul>
+      </div>
+      <picture>
+        <!-- portrait -->
+        <source media="(max-width : 600px) and (orientation: portrait)"
+          srcset="/img/hero-v-480.jpg" />
+
+        <source media="(min-width : 768px) and (orientation: portrait)"
+          srcset="/img/hero-v-768.jpg" />
+
+        <source media="(min-width : 992px) and (orientation: portrait)"
+          srcset="/img/hero-v-1024.jpg" />
+
+        <!-- landscape -->
+        <source media="(max-width : 600px) and (orientation: landscape)"
+          srcset="/img/hero-h-600.jpg" />
+
+        <source media="(min-width : 768px) and (orientation: landscape)"
+          srcset="/img/hero-h-1024.jpg" />
+
+        <source media="(min-width : 992px) and (orientation: landscape)"
+          srcset="/img/hero-h-1600.jpg" />
+
+        <img src="/img/hero-v.jpg" alt="" />
+      </picture>
+
+      <div class="title">
+        La Palma<span class="sub-title">for walkers</span>
+      </div>
+
+      <div class="quick-links">
+        <a href="/routes-browse.html">Browse routes</a>
+        <a href="/poi-browse.html">Browse places</a>
+        <a href="/apps.html">Get an offline GPS app</a>
+        <a href="/forecasts.html">Check the weather</a>
+
+        <div class="scroll-invite">
+          <p>Learn more about La Palma</p>
+          <img class="bounce" src="/img/icons/chevron-down.svg" alt="" />
+        </div>
+      </div>
+    </div>
+
+        <div class="content-container">
+          <div class="content-box">
+            <h2>Where is La Palma?</h2>
+            <p>
+              La Palma is the western-most of the Spanish Canary Islands, part
+              of Macronesia which includes the Azores and Madeira to the north
+              and Cape Verde to the south. The nearest land south Morocco about
+              445km away. Direct flights take about four and a half hours.
+            </p>
+          </div>
+          <div class="content-box">
+            <img src="/img/Spain_Canary_Islands_location_map.svg" alt="" />
+            <figcaption>La Palma is in the top left</figcaption>
+          </div>
+        </div>
+        <div class="content-container tinted">
+          <div class="content-box">
+            <h2>What's so good about it?</h2>
+            <p>
+              Not for nothing is La Palma is known as &lsquo;La Isla
+              Bonita&rsquo; - the beautiful island. The greenest of the Canary
+              Islands is only half the size of it's better known neighbour
+              Tenerife but it has everything a nature-loving walker could ask
+              for without any of the mass-tourism that the bigger islands have.
+              La palma can boast:
+            </p>
+            <ul>
+              <li>
+                A thousand kilometers of supported and maintained waymarked
+                trails
+              </li>
+              <li>One of the world's largest erosion craters</li>
+              <li>
+                The last remnants of ancient laurel forest dating from the
+                tertiary period
+              </li>
+              <li>A unique string of volcanos along its spine</li>
+              <li>
+                Dramatic deep-cut ravines with their own microclimates and
+                vegetation
+              </li>
+              <li>
+                Miles of pristine coastline with surprising beachside
+                communities
+              </li>
+            </ul>
+          </div>
+          <div class="content-box">
+            <img src="/img/caldera1.jpg" alt="" />
+            <figcaption>The Caldera</figcaption>
+          </div>
+        </div>
+        <div class="content-container">
+          <div class="content-box">
+          </div>
+        </div>
+        <div class="content-container">
+          <div class="content-box"></div>
+        </div>
       </div>
     </div>
 
     <div id="footer">
-      <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
+      <div id="footer-content" class="container">
+        Copyright &copy; Robert Anstey 2022
+      </div>
     </div>
   </body>
 </html>
