@@ -2,15 +2,27 @@ h1 {
   font-weight: bold;
   font-size: 1.2rem;
   margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  text-align: center;
 }
 
-h2 {
+.content-box h2 {
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
+.sub-head {
+  grid-column: 1 / -1;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid lightgray;
+  padding-top: 1rem;
+}
 p {
   font-size: 0.8rem;
   line-height: 130%;
@@ -20,82 +32,6 @@ p {
 strong {
   font-weight: bold;
 }
-
-/* li {
-  font-size: 0.8rem;
-  line-height: 130%;
-  margin-bottom: 0.5rem;
-  margin-left: 1rem;
-  list-style-type: none;
-} */
-
-.bullets li {
-  list-style-type: disc;
-}
-
-.trail-marker {
-  float: left;
-  overflow: hidden;
-}
-
-.bullet-style {
-  display: grid;
-  grid-template-columns: auto auto;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.bullet-style-text {
-  font-size: 0.9rem;
-  line-height: 130%;
-  margin-bottom: 0.5rem;
-}
-
-.blaze {
-  background-color: white;
-  border: 1px solid black;
-  height: 0.4rem;
-  width: 1.6rem;
-  padding: 4px;
-  margin-bottom: 0.2rem;
-}
-
-.gr {
-  background-color: red;
-}
-
-.pr {
-  background-color: yellow;
-}
-
-.sl {
-  background-color: green;
-}
-
-.bus-routes {
-  font-size: 0.8rem;
-}
-
-.bus-routes td {
-  padding: 0.3rem;
-}
-
-
-
-.bus-routes tr td:nth-child(1) {
-  text-align: right;
-}
-
-/* #content-grid {
-  grid-template-columns: repeat(2, fit-content(24rem));
-  row-gap: 2rem;
-  column-gap: 2rem;
-} */
-
-/* .span2 {
-  grid-column: 1 / -1;
-} */
 
 figcaption {
   font-size: 0.7rem;
@@ -109,34 +45,27 @@ figcaption {
 }
 
 .content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-  /* padding: 1rem 0 1rem 0; */
+  display: grid;
+  grid-template-columns: minmax(auto, 30rem);
+  column-gap: 2rem;
   padding: 1rem;
-  /* border-top: 1px solid lightgray; */
+  margin-bottom: 1rem;
 }
 
 .tinted {
   background-color: var(--colour3);
 }
 
-.content-box {
-  flex-grow: 1;
-  max-width: 24rem;
-  /* width: 24rem; */
-  /* border: 1px solid red; */
-}
-
 .content-box > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 50%; */
   max-width: 100%;
+  margin-top: 1rem;
+}
+
+.content-box > img:first-child {
+  margin-top: 1rem;
 }
 
 .content-box > p {
@@ -157,135 +86,10 @@ figcaption {
 }
 
 .heading {
-  width: 100%;
   font-size: 2rem;
-}
-
-/*************************** Hero image  ***************************/
-
-
-.hero {
-  position: relative;
-  /* display: flex; */
-}
-.hero img {
-  width: 100%;
-  /* position: absolute;
-  top: 0; */
-  display: block;
-}
-
-/*************************** Alerts  ***************************/
-
-.alerts {
-  background-color: darkorange;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  color: white;
-  /* max-width: 800px; */
-}
-
-.alerts li {
-  list-style: none;
-  position: relative;
-  padding-left: 1.5rem;
-  margin-left: 0;
-  margin-bottom:0;
-  line-height: 1.5rem;
-}
-
-.alerts li::before {
-  content: '';
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
-  margin-top: 0.25rem;
-  background-image: url("/img/icons/warning.svg");
-  filter: invert(100%);
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-strong {
-  font-style: bold;
-}
-
-/*************************** Quick Links  ***************************/
-
-.quick-links {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-  /* display: flex;
-  flex-direction: row; */
-}
-
-.quick-links a {
-  width: 15rem;
-  padding: 1rem;
-  font-weight: 1rem;
-  font-style: bold;
-  background-color: rgb(0, 0, 0, 0.5);
-  color: white;
-  display: block;
-  border-radius: 10px;
-  /* flex: 1 1 auto; */
-  justify-content: center;
-  margin-top: 0.5rem;
-  text-decoration: none;
-}
-
-/*************************** Scroll down  ***************************/
-
-
-.scroll-invite {
-  margin-top: 8rem;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  filter: drop-shadow(2px 2px 1px black);
-}
-
-.scroll-invite img {
-  width: 2rem;
-  filter: invert(100%);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bounce {
-  animation: bounce 1s ease infinite;
-}
-
-/*************************** Titling  ***************************/
-
-.title {
-  font-size: 6rem;
-  color: white;
-  filter: drop-shadow(2px 2px 5px black);
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-  width: 100%;
-  text-align: center;
-}
-
-.sub-title {
-  text-transform: uppercase;
-  font-size: 2rem;
-  display: block;
-  text-align: center;
-  margin-top: 0.5rem;
-  font-weight: bold;
+  grid-column: 1;
+  margin-top: 0;
+  line-height: 130%;
 }
 
 /*************************** Media queries  ***************************/
@@ -295,19 +99,20 @@ strong {
     column-gap: 0;
   }
 
-
-@keyframes bounce {
-	0% {transform: translateY(0);}
-	50% {transform: translateY(-5px);}
-	100% {transform: translateY(0px);}
-}
-
-
-
 /* wide enough for two columns */
-@media (min-width: 560px) {
+@media (min-width: 66rem) {
   .content-container {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 24rem);
+
+  }
+
+  .heading {
+    grid-column: 1 / -1;
+  }
+
+  /* images at the top of a content box don't want a top pargin */
+  .content-box > img:first-child {
+    margin-top: 0;
   }
 }
 
@@ -319,31 +124,5 @@ strong {
     column-gap: 20px;
     margin-left: 64px;
     margin-right: 64px;  
-  }
-
-  /* no need for these if navigation is showing */
-  .quick-links {
-    display: none;
-  }
-
-  .alerts {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 25rem;
-    box-shadow: 2px 2px 5px var(--colour1);
-  }
-
-  .hero img {
-    max-height: 30rem;
-    object-fit: cover;
-    object-position: 100% 0;
-    overflow: hidden;
-  }
-
-  .title {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }
