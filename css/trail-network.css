@@ -1,0 +1,43 @@
+.bullets li {
+  list-style-type: disc;
+}
+
+.trail-marker {
+  float: left;
+  overflow: hidden;
+}
+
+.bullet-style {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.bullet-style-text {
+  font-size: 0.9rem;
+  line-height: 130%;
+  margin-bottom: 0.5rem;
+}
+
+.blaze {
+  background-color: white;
+  border: 1px solid black;
+  height: 0.4rem;
+  width: 1.6rem;
+  padding: 4px;
+  margin-bottom: 0.2rem;
+}
+
+.gr {
+  background-color: red;
+}
+
+.pr {
+  background-color: yellow;
+}
+
+.sl {
+  background-color: green;
+}
