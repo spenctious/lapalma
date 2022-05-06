@@ -1,12 +1,6 @@
-.bullets li {
-  list-style-type: disc;
-}
+/*************************** Blazes  ***************************/
 
-.trail-marker {
-  float: left;
-  overflow: hidden;
-}
-
+/* column for blaze and another for the text */
 .bullet-style {
   display: grid;
   grid-template-columns: auto auto;
@@ -21,8 +15,14 @@
   margin-bottom: 0.5rem;
 }
 
+/*************************** Blazes  ***************************/
+
+.trail-marker {
+  float: left;
+  overflow: hidden;
+}
+
 .blaze {
-  background-color: white;
   border: 1px solid black;
   height: 0.4rem;
   width: 1.6rem;
@@ -30,14 +30,18 @@
   margin-bottom: 0.2rem;
 }
 
-.gr {
+.common-stripe {
+  background-color: white;
+}
+
+.gr-stripe {
   background-color: red;
 }
 
-.pr {
+.pr-stripe {
   background-color: yellow;
 }
 
-.sl {
+.sl-stripe {
   background-color: green;
 }
