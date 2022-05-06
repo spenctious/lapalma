@@ -23,6 +23,7 @@ h1 {
   border-top: 1px solid lightgray;
   padding-top: 1rem;
 }
+
 p {
   font-size: 0.8rem;
   line-height: 130%;
@@ -103,14 +104,14 @@ figcaption {
 @media (min-width: 66rem) {
   .content-container {
     grid-template-columns: repeat(2, 24rem);
-
   }
 
+  /* headings spann full width */
   .heading {
     grid-column: 1 / -1;
   }
 
-  /* images at the top of a content box don't want a top pargin */
+  /* images at the top of a content box don't want a top margin */
   .content-box > img:first-child {
     margin-top: 0;
   }

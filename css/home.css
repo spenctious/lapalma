@@ -1,31 +1,73 @@
 /*************************** Hero image  ***************************/
 
+/* n.b. alerts are a block component on smaller screens before
+   the hero image but on larger displays are positioned over the
+   hero image and need a containing relative position element for that 
+*/
 .hero-container {
   position: relative;
 }
 
 .hero {
   position: relative;
-  /* display: flex; */
 }
 
 .hero img {
   width: 100%;
-  /* position: absolute;
-  top: 0; */
   display: block;
 }
 
+/*************************** Alerts  ***************************/
+
+/* full width component before image on smaller screens */
+.alerts {
+  background-color: darkorange;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.alerts li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-left: 0;
+  margin-bottom:0;
+  line-height: 1.5rem;
+}
+
+/* white icon warning as bullet */
+.alerts li::before {
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-top: 0.25rem;
+  background-image: url("/img/icons/warning.svg");
+  filter: invert(100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+strong {
+  font-style: bold;
+}
+
+/*************************** Display block  ***************************/
+
+/* container for title, links block and scroll prompt 
+   n.b. max-height is determined by the visible part of the image
+   allowing for any alert block (which we can only guess at the height of
+   and ensuring scroll prompt is not overlaid by bits of the browser */
 .display-block {
   position: absolute;
-  /* left: 50%; */
   top: 0;
-  /* transform: translate(-50%, 0); */
   width: 100%;
-  /* border: 1px solid yellow; */
   display: flex;
   flex-direction: column;
-  /* align-content:center; */
   height: 100%;
   max-height: calc(100vh - 12rem);
   justify-content: center;
@@ -52,52 +94,12 @@
   font-weight: bold;
 }
 
-/*************************** Scroll down  ***************************/
-
-
-.scroll-invite {
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.8rem;
-  /* margin-bottom: 1rem; */
-  padding: 0.5rem;
-  filter: drop-shadow(2px 2px 1px black);
-  flex: 0 0 auto;
-  width: 100%;
-  margin-top: auto;
-  /* border: 1px solid red; */
-}
-
-.scroll-invite img {
-  width: 2rem;
-  filter: invert(100%);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bounce {
-  animation: bounce 1s ease infinite;
-}
-
-@keyframes bounce {
-	0% {transform: translateY(0);}
-	50% {transform: translateY(-5px);}
-	100% {transform: translateY(0px);}
-}
-
 /*************************** Quick Links  ***************************/
 
 .quick-links {
-  /* margin-top: 1rem;
-  margin-bottom: 1rem; */
   width: 100%;
   text-align: center;
   flex: 0 0 auto;
-  /* justify-content: center; */
-  /* border: 1px solid blue; */
-  /* align-items: center; */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -117,44 +119,42 @@
   text-align: left;
 }
 
-/*************************** Alerts  ***************************/
+/*************************** Scroll prompt  ***************************/
 
-.alerts {
-  background-color: darkorange;
-  padding: 0.5rem;
-  font-size: 0.8rem;
+/* position at the bottom */
+.scroll-invite {
   color: white;
-  /* max-width: 800px; */
-  /* height: 3rem; */
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  filter: drop-shadow(2px 2px 1px black);
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: auto;
 }
 
-.alerts li {
-  list-style: none;
-  position: relative;
-  padding-left: 1.5rem;
-  margin-left: 0;
-  margin-bottom:0;
-  line-height: 1.5rem;
-}
-
-.alerts li::before {
-  content: '';
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
-  margin-top: 0.25rem;
-  background-image: url("/img/icons/warning.svg");
+.scroll-invite img {
+  width: 2rem;
   filter: invert(100%);
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-strong {
-  font-style: bold;
+/* bouncy down chevron to draw attention to content
+   below the fold which might not be obvious otherwise */
+.bounce {
+  animation: bounce 1s ease infinite;
 }
+
+@keyframes bounce {
+	0% {transform: translateY(0);}
+	50% {transform: translateY(-5px);}
+	100% {transform: translateY(0px);}
+}
+
+/*************************** Media queries  ***************************/
 
 /* wide enough for navigation to be included as a sidebar */
 @media (min-width: 1340px) {
@@ -163,6 +163,7 @@ strong {
   .quick-links {
     display: none;
   }
+
   .scroll-invite {
     display: none;
   }
@@ -176,6 +177,7 @@ strong {
     z-index: 100;
   }
 
+  /* limited height image */
   .hero img {
     max-height: 30rem;
     object-fit: cover;
@@ -183,8 +185,13 @@ strong {
     overflow: hidden;
   }
   
+  /* larger title */
   .title {
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: auto;
+  }
+
+  .sub-title {
+    font-size: 2rem;
   }
 }
