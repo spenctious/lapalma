@@ -2,12 +2,21 @@
   font-size: 0.8rem;
 }
 
+.bus-routes th,
 .bus-routes td {
-  padding: 0.3rem;
+    padding: 0.3rem;
 }
 
+.bus-routes tr {
+  border-bottom: 1px solid lightgray;
+}
 
-
+.bus-routes th td:nth-child(1),
 .bus-routes tr td:nth-child(1) {
-  text-align: right;
+    text-align: right;
+}
+
+.bus-routes th {
+  font-weight: bold;
+  text-align: left;
 }
