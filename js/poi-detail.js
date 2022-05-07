@@ -13,15 +13,15 @@ function initializePoiModal(initialPoiCollection) {
   detailsModalContent = document.getElementById("poi-full-details");
 }
 
-function openModal(poiId) {
+function openModal(poiId, showRelatedWalks = true) {
   poiCollectionIndex = poiCollection.findIndex(item => item == poiId);
-  updateCurrent();
+  updateCurrent(showRelatedWalks);
   detailsModal.style.display = "block";
 }
 
 // need to wait for details to be populated before accessing contents
-function updateCurrent() {
-  detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]));
+function updateCurrent(showRelatedWalks) {
+  detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]), showRelatedWalks);
   detailsModalCurrent = document.getElementById("poi-current");
   detailsModalCurrent.innerHTML = `${poiCollectionIndex + 1} of ${poiCollection.length}`;
   if (poiCollection.length < 2) {
@@ -56,11 +56,11 @@ function getPoi(poiId) {
   return poi;
 }
 
-function getFullPoiDetails(poi) {
+function getFullPoiDetails(poi, showRelatedWalks) {
   let tel = poi.hasTel ? `<tr><td>Tel:</td><td>${poi.tel}</td></tr>` : "";
   let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
   let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
-  let relatedRoutes = poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
+  let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
 
   // build html content
   return `
@@ -85,9 +85,7 @@ function getFullPoiDetails(poi) {
       </table>
       ${openingTimes}
     </div>
-    <div class="button-modal">
-      ${relatedRoutes}
-    </div>
+    ${relatedRoutes}
     <div id="poi-collection-nav">
       <div id="poi-prev" class="nav arrow">
         <img src="/img/icons/chevron-left.svg" alt="" />
@@ -126,7 +124,10 @@ function getOpeningTimesHtml(openingTimes) {
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-    <a class="grid-item-button" href="./routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
+  <div class="button-modal">
+    <a class="grid-item-button" 
+      href="./routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
       ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
-    </a>`;
+    </a>
+  </div>`;
 }
