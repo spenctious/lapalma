@@ -34,18 +34,18 @@
     [
       "circular",
       {
-        "text": "Circular",
+        "text": "Circular route",
         "hoverText": "",
         "filterIncludeText": "Circular walks",
         "filterExcludeText": "",
-        "description": "Start and end are the same.",
+        "description": "",
         "icon": "circular.svg"
       }
     ],
     [
       "linear",
       {
-        "text": "Point-to-point",
+        "text": "Point-to-point route",
         "hoverText": "",
         "filterIncludeText": "Point-to-point walks",
         "filterExcludeText": "",
@@ -56,11 +56,11 @@
     [
       "return",
       {
-        "text": "There-and-back",
+        "text": "There-and-back route",
         "hoverText": "",
         "filterIncludeText": "There-and-back walks",
         "filterExcludeText": "",
-        "description": "Route that follows the same path on the return.",
+        "description": "",
         "icon": "return.svg"
       }
     ]
@@ -137,7 +137,7 @@
         "text": "Strenuous",
         "filterIncludeText": "Strenuous walks",
         "filterExcludeText": "",
-        "description": "Fairly tiring walk that includes extended steep passages and/or is quite long.",
+        "description": "A fairly tiring walk that includes extended steep passages and/or is quite long.",
         "icon": "effort3.svg"
       }
     ],
@@ -180,7 +180,7 @@
         "text": "Waymarked",
         "filterIncludeText": "On waymarked trails",
         "filterExcludeText": "",
-        "description": "The route stays entirely (or very nearly) on waymarked trails.",
+        "description": "The route stays entirely on waymarked trails.",
         "icon": "signpost.svg"
       }
     ],
@@ -211,20 +211,20 @@
     [
       "accessCar",
       {
-        "text": "Car",
+        "text": "Fully accessible by car",
         "filterIncludeText": "Fully accessible by car",
         "filterExcludeText": "",
-        "description": "Accessible by car.",
+        "description": "",
         "icon": "car.svg"
       }
     ],
     [
       "accessBus",
       {
-        "text": "Bus",
+        "text": "Fully accessible by bus",
         "filterIncludeText": "Fully accessible by bus",
         "filterExcludeText": "",
-        "description": "Accessible by bus.",
+        "description": "",
         "icon": "bus.svg"
       }
     ]
@@ -257,10 +257,10 @@
       "poi",
       {
         "text": "Points of Interest",
-        "filterIncludeText": "With points of interest",
+        "filterIncludeText": "With places to visit",
         "filterExcludeText": "",
-        "description": "Walk passes points of interest.",
-        "strong": "Special interest",
+        "description": "The walk passes:",
+        "strong": "Special",
         "icon": "pin.svg"
       }
     ],
