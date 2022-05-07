@@ -321,6 +321,11 @@ function populateRouteImages() {
   document.getElementById("detail-images").innerHTML = imagesContent;
 }
 
+// Assumes route files are named LP<2 digits><optional letter><space><name>
+function getRouteId(routeName) {
+  return routeName.slice(2,5).trim();
+}
+
 function getVariantContent(variant) {
   // title
   let title = `
@@ -339,7 +344,7 @@ function getVariantContent(variant) {
 
   // download content - only some variants will have additional files associated with them
   let downloadContent = variant.hasRouteFile ? 
-    `<div class="downloads">${getDownloadButtons(variant.routeFile, variant.id)}</div>` : "";
+    `<div class="downloads">${getDownloadButtons(variant.routeFile, getRouteId(variant.routeFile))}</div>` : "";
 
   // directions - expand format to HTML
   // square braces enclose route ids, normal brackets enclose waypoint information
