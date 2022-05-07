@@ -17,7 +17,7 @@
       "accessBus": "true",
       "province": "Santa Cruz de La Palma",
       "town": "Santa Cruz de La Palma",
-      "routeFile": "LP01 Sugar mills of Santa Cruz.gpx",
+      "routeFile": "LP01 Sugar mills of Santa Cruz",
       "refreshments": "Bar/Restaurants along LP-101 and at Las Nieves.",
       "start": "Plaza de España",
       "end": "Plaza de España",
@@ -41,8 +41,8 @@
           "accessBus": "true",
           "start": "Plaza de España",
           "end": "Plaza de España",
-          "routeFile": "LP01a Santa Cruz highlights.gpx",
-          "routeDirections": "[01a]"
+          "routeFile": "LP01a Santa Cruz highlights",
+          "routeDirections": "[01a] all the way"
         }
       ],
 
@@ -167,7 +167,7 @@
           "accessBus": "true",
           "start": "San Pedro de Breña Alta",
           "end": "Santa Cruz de La Palma",
-          "routeFile": "LP02 Mirador and waterways.gpx",
+          "routeFile": "LP02 Mirador and waterways",
           "routeDirections": "[03] then [02]"
         }
       ],
@@ -416,7 +416,7 @@
           "accessBus": "true",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeDirections": "[06](01 to 02) then follow track down under the bridge and out the other side."
+          "routeDirections": "[06](01 to 02) then follow the track down under the bridge and out the other side."
         }
       ],
 
@@ -509,7 +509,7 @@
         {
           "id": "09a",
           "name": "To Mirador Espigon Altravesado",
-          "description": "A good short walk is to do just the last part of the route in reverse as far as the mirador (perhaps also a little further on as far as the fi rst bridge). It's a very worthwhile laurisilva forest walk with a good viewpoint as reward.",
+          "description": "A good short walk is to do just the last part of the route in reverse as far as the mirador (perhaps also a little further on as far as the first bridge). It's a very worthwhile laurisilva forest walk with a good viewpoint as reward.",
           "walkType": "return",
           "duration": "half",
           "effort": "moderate",
@@ -517,12 +517,12 @@
           "accessBus": "false",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeDirections": "[09](11 to 10 and back)"
+          "routeDirections": "[09](11 to 10) and back"
         },
         {
           "id": "09b",
           "name": "To the Springs",
-          "description": "Fit walkers can do the walk in reverse up to the springs and then come back the same way saving the taxi fare. It's really a very long climb up though. The full walk to Casa del Monte and down again will be too much for all but the fi ttest.",
+          "description": "Fit walkers can do the walk in reverse up to the springs and then come back the same way saving the taxi fare. It's really a very long climb up though. The full walk to Casa del Monte and down again will be too much for all but the fittest.",
           "walkType": "return",
           "duration": "full",
           "effort": "strenuous",
@@ -530,7 +530,7 @@
           "accessBus": "false",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeDirections": "[09](11 to 07 and back)"
+          "routeDirections": "[09](11 to 07) and back"
         },
         {
           "id": "09c",
@@ -543,7 +543,7 @@
           "accessBus": "false",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeDirections": "Signed side trail between the taxi hut and the visitor centre"
+          "routeDirections": "Take the signed side trail between the taxi hut and the visitor centre"
         }
       ],
 
@@ -586,7 +586,7 @@
       "accessBus": "false",
       "province": "Barlovento",
       "town": "Barlovento",
-      "routeFile": "LP10 Barlovento to Franceses.gpx",
+      "routeFile": "LP10 Barlovento to Franceses",
       "refreshments": "Bars, cafés, restaurants in Barlovento. Bar/shop and bar in Gallegos.",
       "start": "Barlovento",
       "end": "Franceses",
@@ -610,7 +610,6 @@
           "accessBus": "true",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
           "routeDirections": "[10](01 to 06)"
         },
         {
@@ -624,8 +623,7 @@
           "accessBus": "true",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[10](01 to 06 and back)"
+          "routeDirections": "[10](01 to 06) and back"
         }
       ],
 
@@ -666,7 +664,7 @@
       "accessBus": "true",
       "province": "Garafia",
       "town": "Franceses",
-      "routeFile": "LP11 Franceses to Santo Domingo.gpx",
+      "routeFile": "LP11 Franceses to Santo Domingo",
       "refreshments": "Bar in El Tablado. Bars, cafés and restaurants in Santo Domingo.",
       "start": "Franceses",
       "end": "Santo Domingo de Garafía",
@@ -682,7 +680,7 @@
         {
           "id": "11a",
           "name": "Only as far as Don Pedro",
-          "description": "If the whole walk seems too long you could call it a day early and get a taxi from don Pedro",
+          "description": "If the whole walk seems too long you could call it a day early and get a taxi from Don Pedro",
           "walkType": "linear",
           "duration": "half",
           "effort": "moderate",
@@ -703,7 +701,7 @@
           "accessBus": "false",
           "start": "El Tablado",
           "end": "El Tablado",
-          "routeDirections": "[11](05 to 01 and back) or [11](05 to 07 and back)"
+          "routeDirections": "[11](05 to 01) and back or [11](05 to 07) and back"
         }
       ],
 	  
@@ -745,7 +743,7 @@
       "accessBus": "true",
       "province": "Garafia",
       "town": "Santo Domingo de Garafía",
-      "routeFile": "LP12 Big northern loop.gpx",
+      "routeFile": "LP12 Big northern loop",
       "refreshments": "Bars, cafés, restaurants in Santo Domingo. Restaurant in La Mata.",
       "start": "Santo Domingo de Garafía",
       "end": "Santo Domingo de Garafía",
@@ -769,7 +767,7 @@
           "accessBus": "true",
           "start": "La Zarza",
           "end": "Santo Domingo de Garafía",
-          "routeDirections": "[12](11 to the end)"
+          "routeDirections": "[12](11 to 27)"
         }
       ],
 	  
@@ -816,7 +814,7 @@
       "accessBus": "true",
       "province": "Garafia",
       "town": "Santo Domingo de Garafía",
-      "routeFile": "LP13 Puerto de Garafia.gpx",
+      "routeFile": "LP13 Puerto de Garafia",
       "refreshments": "Bars, cafés, restaurants in Santo Domingo. Bar/cafe in Llano Negro.",
       "start": "Santo Domingo de Garafía",
       "end": "Santo Domingo de Garafía",
@@ -842,7 +840,7 @@
           "accessBus": "true",
           "start": "Llano Negro",
           "end": "Santo Domingo de Garafía",
-          "routeDirections": "[13](06 to the end)"
+          "routeDirections": "[13](06 to 15)"
         },
         {
           "id": "13b",
@@ -855,7 +853,7 @@
           "accessBus": "true",
           "start": "Santo Domingo de Garafía",
           "end": "Santo Domingo de Garafía",
-          "routeDirections": "[13](16 (end) to 11 and back)"
+          "routeDirections": "[13](15 to 11) and back"
         }
       ],
 	  
@@ -900,7 +898,7 @@
       "accessBus": "true",
       "province": "Garafia",
       "town": "Santo Domingo de Garafía",
-      "routeFile": "LP14 Bosque Dragos El Palmar.gpx",
+      "routeFile": "LP14 Bosque Dragos El Palmar",
       "refreshments": "Bars/cafés/restaurants in Santo Domingo.",
       "start": "Santo Domingo de Garafía",
       "end": "Santo Domingo de Garafía",
@@ -944,7 +942,7 @@
       "accessBus": "true",
       "province": "Garafia",
       "town": "La Zarza",
-      "routeFile": "LP15 Caldera de Agua.gpx",
+      "routeFile": "LP15 Caldera de Agua",
       "refreshments": "Restaurant at La Mata. Bar/café in Llano Negro bus station. Picnic/BBQ facilities at San Antonio del Monte recreational area.",
       "start": "La Zarza",
       "end": "La Zarza",
@@ -994,7 +992,7 @@
       "accessBus": "true",
       "province": "Garafia",
       "town": "La Zarza",
-      "routeFile": "LP16 Larisilva forest loop.gpx",
+      "routeFile": "LP16 Larisilva forest loop",
       "refreshments": "Restaurant at La Mata. Bar/cafe in Llano Negro bus station.",
       "start": "La Zarza",
       "end": "La Zarza",
@@ -1018,7 +1016,7 @@
           "accessBus": "true",
           "start": "La Zarza",
           "end": "La Zarza",
-          "routeDirections": "[16](01 to 10) then short signed shortcut, then [16](20 to the end)"
+          "routeDirections": "[16](01 to 10) then signed shortcut, then [16](20 to 22)"
         },
         {
           "id": "16b",
@@ -1031,7 +1029,7 @@
           "accessBus": "true",
           "start": "La Zarza",
           "end": "Franceses",
-          "routeFile": "LP11 Franceses to Santo Domingo.gpx",
+          "routeFile": "LP11 Franceses to Santo Domingo",
           "routeDirections": "[16](01 to 15) then [11](08 to 01)"
         }
       ],
@@ -1077,7 +1075,7 @@
       "accessBus": "true",
       "province": "Puntagorda",
       "town": "Puntagorda",
-      "routeFile": "LP17 Around Puntagorda.gpx",
+      "routeFile": "LP17 Around Puntagorda",
       "refreshments": "Bars, cafés, restaurants in Puntagorda.",
       "start": "Puntagorda tourist information centre",
       "end": "Puntagorda tourist information centre",
@@ -1140,7 +1138,7 @@
       "accessBus": "true",
       "province": "Puntagorda",
       "town": "Puntagorda",
-      "routeFile": "LP18 Puerto de Puntagorda.gpx",
+      "routeFile": "LP18 Puerto de Puntagorda",
       "refreshments": "Bars, cafes, restaurants in Puntagorda.",
       "start": "Puntagorda tourist information centre",
       "end": "Puntagorda tourist information centre",
@@ -1186,7 +1184,7 @@
       "accessBus": "true",
       "province": "Puntagorda",
       "town": "El Pinar",
-      "routeFile": "LP19 El Pinar to Cuevas de Buraca.gpx",
+      "routeFile": "LP19 El Pinar to Cuevas de Buraca",
       "refreshments": "Bar and market at the start on weekends. Bars, restaurants, cafe, shops in El Pinar. Restaurant in Las Tricias. Cafe near the caves.",
       "start": "Area Recreativa El Fayal",
       "end": "Area Recreativa El Fayal",
@@ -1212,7 +1210,7 @@
           "accessBus": "true",
           "start": "Las Tricias",
           "end": "Las Tricias",
-          "routeFile": "LP19a Las Tricias to Cuevas de Buraca.gpx",
+          "routeFile": "LP19a Las Tricias to Cuevas de Buraca",
           "routeDirections": "[19a]"
         },
         {
@@ -1226,7 +1224,7 @@
           "accessBus": "true",
           "start": "Area Recreativa El Fayal",
           "end": "Area Recreativa El Fayal",
-          "routeFile": "LP19b Barranco de Izcegua.gpx",
+          "routeFile": "LP19b Barranco de Izcegua",
           "routeDirections": "[19b]"
         }
       ],
@@ -1277,7 +1275,7 @@
       "accessBus": "true",
       "province": "Tinizara",
       "town": "Tijarafe",
-      "routeFile": "LP20 Tinizara to Tijarafe.gpx",
+      "routeFile": "LP20 Tinizara to Tijarafe",
       "refreshments": "Bar/café in Tinizara. Bars, cafés, restaurants, shops in Tijarafe. Bar/café in El Jesús.",
       "start": "Tinizara",
       "end": "Tijarafe",
@@ -1338,7 +1336,7 @@
       "accessBus": "true",
       "province": "Tijarafe",
       "town": "Tijarafe",
-      "routeFile": "LP21 Pirates Bay.gpx",
+      "routeFile": "LP21 Pirates Bay",
       "refreshments": "Bars, cafés, restaurants in Tijirafe.",
       "start": "Tijarafe",
       "end": "Tijarafe",
@@ -1364,7 +1362,7 @@
           "accessBus": "true",
           "start": "Tinizara",
           "end": "Tijarafe",
-          "routeFile": "LP20 Tinizara to Tijarafe.gpx",
+          "routeFile": "LP20 Tinizara to Tijarafe",
           "routeDirections": "[20](01 to 08) then [21](03 to 13)"
         },
         {
@@ -1424,7 +1422,7 @@
       "accessBus": "true",
       "province": "Tijarafe",
       "town": "El Jesús",
-      "routeFile": "LP22b Torre del Time to Mirador El Time.gpx",
+      "routeFile": "LP22b Torre del Time to Mirador El Time",
       "refreshments": "Cervecería Isla Verde",
       "start": "Fuente del Toro",
       "end": "Fuente del Toro",
@@ -1447,7 +1445,7 @@
           "accessBus": "false",
           "start": "El Pinar parking spot",
           "end": "El Pinar parking spot",
-          "routeDirections": "[22](07 to loop)"
+          "routeDirections": "[22](07 to 07) loop"
         },
         {
           "id": "22b",
@@ -1460,7 +1458,7 @@
           "accessBus": "true",
           "start": "Fuente del Toro",
           "end": "Mirador El Time",
-          "routeFile": "LP22b Torre del Time to Mirador El Time.gpx",
+          "routeFile": "LP22b Torre del Time to Mirador El Time",
           "routeDirections": "[22](01 to 11) then [22b]"
         }
       ],
@@ -1506,7 +1504,7 @@
       "accessBus": "true",
       "province": "Los Llanos",
       "town": "Los Llanos",
-      "routeFile": "LP23 Mirador El Time.gpx",
+      "routeFile": "LP23 Mirador El Time",
       "refreshments": "Restaurant at Argual Abajo. Bar/café at Mirador El Time. Multiple bars, restaurants, cafés, shop in Puerto de Tazacorte.",
       "start": "Argual Abajo",
       "end": "Puerto de Tazacorte",
@@ -1524,7 +1522,7 @@
         {
           "id": "23a",
           "name": "Puerto de Tazacorte to the cliff top",
-          "description": "You can easily make the climb to the viewing platform at the top from the beach – people do it in fl ip-fl ops – and it's a nice leg-stretcher if you're having a lazy beach day",
+          "description": "You can easily make the climb to the viewing platform at the top from the beach – people do it in flip-flops – and it's a nice leg-stretcher if you're having a lazy beach day",
           "walkType": "return",
           "duration": "stroll",
           "effort": "easy",
@@ -1588,7 +1586,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP24.1 Roque de Muchachos to Refugio.gpx",
+      "routeFile": "LP24.1 Roque de Muchachos to Refugio",
       "refreshments": "None",
       "start": "Roque de los Muchachos",
       "end": "Punta de Los Roques",
@@ -1619,7 +1617,7 @@
         {
           "id": "24b",
           "name": "From Pico de la Cruz",
-          "description": "Short walks to Pico de la Nieve or Mirador de los Andenes",
+          "description": "Short walks to Pico de la Nieve or Mirador de los Andenes.",
           "walkType": "return",
           "duration": "half",
           "effort": "moderate",
@@ -1627,12 +1625,12 @@
           "accessBus": "false",
           "start": "Pico de La Cruz access",
           "end": "Pico de La Cruz access",
-          "routeDirections": "To Pico de la Nieve: [24.1](08 to 11) and back, to Mirador de los Andenes [24.1](08 to 02) and back"
+          "routeDirections": "To Pico de la Nieve: [24.1](08 to 11) and back<br />To Mirador de los Andenes [24.1](08 to 02) and back"
         },
         {
           "id": "24c",
           "name": "Climb to Pico de la Nieve",
-          "description": "Spectacular peak that can be climbed ",
+          "description": "Spectacular peak that can be climbed.",
           "walkType": "circular",
           "duration": "half",
           "effort": "moderate",
@@ -1640,7 +1638,7 @@
           "accessBus": "false",
           "start": "Pico de la Nieve access",
           "end": "Pico de la Nieve access",
-          "routeFile": "LP24c Pico de la Nieve.gpx",
+          "routeFile": "LP24c Pico de la Nieve",
           "routeDirections": "[24c]"
         },
         {
@@ -1654,7 +1652,7 @@
           "accessBus": "false",
           "start": "Pico de la Nieve access",
           "end": "Centro de Visitantes",
-          "routeDirections": "[24c](01 to 09) then [24.1](016 to the Refugio) then [24.2]"
+          "routeDirections": "[24c](01 to 09),<br />then [24.1](16 to 21)<br />then [24.2]"
         }
       ],
 	  
@@ -1695,8 +1693,8 @@
       "lengthKm": "10.2",
       "lengthMiles": "6.3",
       "walkingTime": "03:30",
-      "shortDescription": "Day 2 of the best walk on the island.",
-      "description": "Second half of a spectacular 2 day hike along the Caldera rim. An easy and very beautiful descent along the Cumbre Nueva gradually changing from pine forest to laurisilva jungle as the clouds are entered. A steep descent then from the ridge followed by gentle country lanes",
+      "shortDescription": "Day two of the best walk on the island.",
+      "description": "Second half of a spectacular wo day hike along the Caldera rim. An easy and very beautiful descent along the Cumbre Nueva gradually changing from pine forest to laurisilva jungle as the clouds are entered. A steep descent then from the ridge followed by gentle country lanes",
       "starred": "true",
       "walkType": "linear",
       "duration": "full",
@@ -1706,7 +1704,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP24.2 Refugio to Centro de Visitantes.gpx",
+      "routeFile": "LP24.2 Refugio to Centro de Visitantes",
       "refreshments": "None",
       "start": "Punta de Los Roques",
       "end": "Centro de Visitantes",
@@ -1765,7 +1763,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP25 Roque de los Muchachos to Roque Palmero.gpx",
+      "routeFile": "LP25 Roque de los Muchachos to Roque Palmero",
       "refreshments": "None",
       "start": "Roque de los Muchachos",
       "end": "Roque Palmero",
@@ -1824,7 +1822,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "Los Llanos",
-      "routeFile": "LP26 Barranco de las Angustias.gpx",
+      "routeFile": "LP26 Barranco de las Angustias",
       "refreshments": "None",
       "start": "Los Brecitos",
       "end": "La Viña car park",
@@ -1864,7 +1862,7 @@
           "accessBus": "false",
           "start": "Playa de Taburiente",
           "end": "Playa de Taburiente",
-          "routeFile": "LP26b Playa de Taburiente to Mirador Cascada de La Fondada.gpx",
+          "routeFile": "LP26b Playa de Taburiente to Mirador Cascada de La Fondada",
           "routeDirections": "[26b]"
         }
       ],
@@ -1907,7 +1905,7 @@
       "accessBus": "true",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP27 La Cumbrecita.gpx",
+      "routeFile": "LP27 La Cumbrecita",
       "refreshments": "None",
       "start": "Centro de Visitantes",
       "end": "Centro de Visitantes",
@@ -1922,7 +1920,7 @@
         {
           "id": "27a",
           "name": "Just the La Cumbrecita viewpoints by car",
-          "description": "good option if you're having a day off 'proper' walking but still want to stretch your legs. You need to book your parking slot in advance or arrive out of hours.",
+          "description": "A good option if you're having a day off 'proper' walking but still want to stretch your legs. You need to book your parking slot in advance or arrive out of hours.",
           "walkType": "circular",
           "duration": "stroll",
           "effort": "easy",
@@ -1956,7 +1954,7 @@
           "accessBus": "false",
           "start": "The Cumbrecita",
           "end": "The Cumbrecita",
-          "routeFile": "LP27d To Pico Bejenado and return to the visitor centre.gpx",
+          "routeFile": "LP27d To Pico Bejenado and return to the visitor centre",
           "routeDirections": "[27d](01 to 11 then back to 07)"
         },
         {
@@ -1970,7 +1968,7 @@
           "accessBus": "false",
           "start": "The Cumbrecita",
           "end": "Centro de Visitantes",
-          "routeFile": "LP27d To Pico Bejenado and return to the visitor centre.gpx",
+          "routeFile": "LP27d To Pico Bejenado and return to the visitor centre",
           "routeDirections": "[27d] all the way"
         }
       ],
@@ -2009,7 +2007,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP28 Pico Bejenado circuit.gpx",
+      "routeFile": "LP28 Pico Bejenado circuit",
       "refreshments": "None",
       "start": "Pista de Valencia",
       "end": "Pista de Valencia",
@@ -2034,7 +2032,7 @@
           "accessBus": "false",
           "start": "Pista de Valencia",
           "end": "Centro de Visitantes",
-          "routeFile": "LP28a Pista de Valencia to Centro de Visitantes.gpx",
+          "routeFile": "LP28a Pista de Valencia to Centro de Visitantes",
           "routeDirections": "[28] then [28a]"
         },
         {
@@ -2048,7 +2046,7 @@
           "accessBus": "false",
           "start": "Pista de Valencia",
           "end": "El Paso",
-          "routeFile": "LP28b Pista de Valencia to El Paso.gpx",
+          "routeFile": "LP28b Pista de Valencia to El Paso",
           "routeDirections": "[28] then [28b]"
         }
       ],
@@ -2089,7 +2087,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP29 Llano de Jable.gpx",
+      "routeFile": "LP29 Llano de Jable",
       "refreshments": "None",
       "start": "Tacande",
       "end": "Tacande",
@@ -2137,7 +2135,7 @@
       "accessBus": "true",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP30 Trans Cumbre.gpx",
+      "routeFile": "LP30 Trans Cumbre",
       "refreshments": "Bars, restaurants, cafés, shops in Breña Alta",
       "start": "Centro de Visitantes",
       "end": "San Pedro de Breña Alta",
@@ -2185,7 +2183,7 @@
       "accessBus": "true",
       "province": "El Paso",
       "town": "El Paso",
-      "routeFile": "LP31 Cumbre Nueva loop.gpx",
+      "routeFile": "LP31 Cumbre Nueva loop",
       "refreshments": "Possible snack from kiosk at Refugio El Pilar",
       "start": "Centro de Visitantes",
       "end": "Centro de Visitantes",
@@ -2250,7 +2248,7 @@
       "accessBus": "true",
       "province": "El Paso",
       "town": "San Nicolás",
-      "routeFile": "LP32 Lavas de San Juan.gpx",
+      "routeFile": "LP32 Lavas de San Juan",
       "refreshments": "Bars/cafés in San Nicholas.",
       "start": "San Nicolás",
       "end": "San Nicolás",
@@ -2300,7 +2298,7 @@
       "accessBus": "true",
       "province": "El Paso",
       "town": "Jedy",
-      "routeFile": "LP33 Montana Marcos.gpx",
+      "routeFile": "LP33 Montana Marcos",
       "refreshments": "Bar/café, pizza parlour, and a small shop in Jedy",
       "start": "Jedy",
       "end": "Jedy",
@@ -2316,7 +2314,7 @@
         {
           "id": "33a",
           "name": "Link with walk 32 to make a big loop",
-          "description": "To combine the walks without doing them individually you can use a short linking section of track that cuts out the less interesting descent from Montaña Marcos and joins the San Nicholas walk somewhere near hoyo Grande. To complete the circuit a short easy section of the GR 130 is followed linking San Nicholas to Jedy.",
+          "description": "To combine the walks without doing them individually you can use a short linking section of track that cuts out the less interesting descent from Montaña Marcos and joins the San Nicholas walk somewhere near Hoyo Grande. To complete the circuit a short easy section of the GR 130 is followed linking San Nicholas to Jedy.",
           "walkType": "circular",
           "duration": "long",
           "effort": "strenuous",
@@ -2324,8 +2322,8 @@
           "accessBus": "true",
           "start": "Jedy",
           "end": "Jedy",
-          "routeFile": "LP32 Lavas de San Juan.gpx",
-          "routeDirections": "[33](01 to 14), short linking track to [32](04 to end) then GR 130 back to Jedy"
+          "routeFile": "LP32 Lavas de San Juan",
+          "routeDirections": "[33](01 to 14), then<br/>short linking track to [32], then<br/>[32](04 to 11) then<br/>GR 130 back to Jedy"
         }
       ],
 	  
@@ -2369,7 +2367,7 @@
       "accessBus": "false",
       "province": "El Paso",
       "town": "Refugio El Pilar",
-      "routeFile": "LP34 The Volcano Route.gpx",
+      "routeFile": "LP34 The Volcano Route",
       "refreshments": "Mobile kiosk at the start. Bars, cafés, restaurants and shops in Los Canarios.",
       "start": "Refugio El Pilar",
       "end": "Los Canarios",
@@ -2387,7 +2385,7 @@
         {
           "id": "34a",
           "name": "To Pico Nambroque and back",
-          "description": "After Pico Nambroque it's probably not much more effort to complete the whole walk rather than return to refugio El Pilar. If you are just looking to avoid an expensive taxi ride back then you can go as far as deseada before returning",
+          "description": "After Pico Nambroque it's probably not much more effort to complete the whole walk rather than return to Refugio El Pilar. If you are just looking to avoid an expensive taxi ride back then you can go as far as Deseada before returning.",
           "walkType": "linear",
           "duration": "full",
           "effort": "strenuous",
@@ -2408,7 +2406,7 @@
           "accessBus": "false",
           "start": "Refugio El Pilar",
           "end": "Faro de Fuencaliente",
-          "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
+          "routeFile": "LP38 Volcan Teneguia to the lighthouses",
           "routeDirections": "[34] then [38]"
         }
       ],
@@ -2451,7 +2449,7 @@
       "accessBus": "true",
       "province": "El Paso",
       "town": "Refugio El Pilar",
-      "routeFile": "LP35 Pico Birigoyo circuit.gpx",
+      "routeFile": "LP35 Pico Birigoyo circuit",
       "refreshments": "Mobile kiosk at Refugio El Pilar serves drinks and snacks.",
       "start": "Refugio El Pilar",
       "end": "Refugio El Pilar",
@@ -2504,7 +2502,7 @@
       "accessBus": "false",
       "province": "Fuencaliente",
       "town": "Los Canarios",
-      "routeFile": "LP36 Volcan Martin.gpx",
+      "routeFile": "LP36 Volcan Martin",
       "refreshments": "Bars, cafés and restaurants in Los Canarios",
       "start": "Área Recreativa Fuente Los Roques",
       "end": "Área Recreativa Fuente Los Roques",
@@ -2528,8 +2526,8 @@
           "accessBus": "true",
           "start": "Los Canarios",
           "end": "Los Canarios",
-          "routeFile": "LP34 The Volcano Route.gpx",
-          "routeDirections": "[34](22 to 18) then [36](02 loop)"
+          "routeFile": "LP34 The Volcano Route",
+          "routeDirections": "[34](22 to 18), then<br/>[36](02 to 02) loop, then <br/>[34](18 to 22)"
         }
       ],
 	  
@@ -2569,7 +2567,7 @@
       "accessBus": "true",
       "province": "Fuencaliente",
       "town": "Los Canarios",
-      "routeFile": "LP37 Volcan San Antonio.gpx",
+      "routeFile": "LP37 Volcan San Antonio",
       "refreshments": "Café in the visitor centre and a restaurant near the access road.",
       "start": "Volcán San Antonio",
       "end": "Volcán San Antonio",
@@ -2592,8 +2590,8 @@
           "accessBus": "true",
           "start": "Volcán San Antonio",
           "end": "Volcán San Antonio",
-          "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
-          "routeDirections": "At [37](06) side trip [38](09 to 12 and back)"
+          "routeFile": "LP38 Volcan Teneguia to the lighthouses",
+          "routeDirections": "[37](01 to 06), then<br/>[38](09 to 12) and back, then<br/>[37](06 to 12)"
         }
       ],
 	  
@@ -2636,7 +2634,7 @@
       "accessBus": "true",
       "province": "Fuencaliente",
       "town": "Los Canarios",
-      "routeFile": "LP38 Volcan Teneguia to the lighthouses.gpx",
+      "routeFile": "LP38 Volcan Teneguia to the lighthouses",
       "refreshments": "Bars/cafés/restaurants and shops in Los Canarios. Café in the visitor centre, restaurant near the access road. Restaurant by the salt pans in Faro de Fuencaliente.",
       "start": "Los Canarios",
       "end": "Faro de Fuencaliente",
