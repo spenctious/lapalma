@@ -171,15 +171,7 @@ function populateBasics() {
   document.getElementById("access-grid").innerHTML = accessContent;
 
   // trail status - waymarked and official trail statuses for each included path
-  let trailContent = "";
-  if (route.isCompletelyWaymarked) {
-    trailContent += getSimpleAttributeHtml(route.waymarkedAttributes);
-  } else {
-    trailContent += getAttributeHtml(
-      route.waymarkedAttributes.icon, 
-      "Not fully waymarked",
-      "Some sections of trail are not on the official footpath network.");
-  }
+  let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(route.waymarkedAttributes) : "";
   let trailStatusContent = "";
   route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
   trailContent += `
@@ -189,9 +181,10 @@ function populateBasics() {
       <div class="item-description">
         <h4>Official trails</h4>
         <div class="official-trails">
-          ${trailStatusContent}
+          ${trailStatusContent == "" ? "None" : trailStatusContent}
         </div>
-      </div>`;
+      </div>
+      `;
   document.getElementById("trail-grid").innerHTML = trailContent;
 
   // terrain
@@ -458,7 +451,7 @@ function getSimpleAttributeHtml(attributes) {
 }
 
 // generic html for attributes
-function getAttributeHtml(icon, text, description, strong = "", additionalContent = "") {
+function getAttributeHtml(icon, text, description, strong = "", additionalContent = "", iconClass = "") {
   return `
     <div class="icon">
       <img src="/img/icons/${icon}" class="icon-img" alt="" />
