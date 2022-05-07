@@ -64,15 +64,6 @@ function getFullPoiDetails(poi) {
 
   // build html content
   return `
-    <div id="poi-collection-nav">
-      <div id="poi-prev" class="nav arrow">
-        <img src="/img/icons/chevron-left.svg" alt="" />
-      </div>
-      <div id="poi-current" class="nav">0 of n</div>
-      <div id="poi-next" class="nav arrow">
-        <img src="/img/icons/chevron-right.svg" alt="" />
-      </div>
-    </div>
     <div class="modal-title">
       <span id="modal-close" class="close">&times;</span>
       ${poi.fullName}
@@ -96,6 +87,15 @@ function getFullPoiDetails(poi) {
     </div>
     <div class="button-modal">
       ${relatedRoutes}
+    </div>
+    <div id="poi-collection-nav">
+      <div id="poi-prev" class="nav arrow">
+        <img src="/img/icons/chevron-left.svg" alt="" />
+      </div>
+      <div id="poi-current" class="nav">0 of n</div>
+      <div id="poi-next" class="nav arrow">
+        <img src="/img/icons/chevron-right.svg" alt="" />
+      </div>
     </div>
     `;
 }
@@ -127,6 +127,6 @@ function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
     <a class="grid-item-button" href="./routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
-      ${poi.relatedWalks.length} Walk${poi.relatedWalks.length > 1 ? "s" : ""}
+      ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
     </a>`;
 }
