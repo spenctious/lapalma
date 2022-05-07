@@ -120,7 +120,7 @@ function mainClickHandler(event) {
     let poiId = event.target.id.replace("poiLink", "");
     // document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
     // detailsModal.style.display = "block";
-    openModal(poiId);
+    openModal(poiId, false);
   }
 }
 
