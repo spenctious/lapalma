@@ -306,7 +306,7 @@
       "lengthMiles": "4.6",
       "walkingTime": "02:05",
       "shortDescription": "Popular walk through laurisilva forest with a nature trail for kids.",
-      "description": "An easily accessed circuit through laurisilva jungle of high quality. The first part along easier tracks is a self-guided walk for which a free guide is available at the start and is suitable for children.",
+      "description": "An easily accessed circuit through laurisilva jungle of high quality. Nearby restaurants and extension loops mean you can tailor your day easily.",
       "starred": "false",
       "walkType": "circular",
       "duration": "half",
@@ -333,7 +333,7 @@
         {
           "id": "06a",
           "name": "Self-guided tour",
-          "description": "The first road and track part of the walk can be done as an easy self-guided tour (free leafl et from the information offi ce) suitable for children. The leafl et text is linked to numbered points along the trail.",
+          "description": "The first road and track part of the walk can be done as an easy self-guided tour (free leaflet from the information office) suitable for children. The leaflet text is linked to numbered points along the trail.",
           "walkType": "return",
           "duration": "stroll",
           "effort": "easy",
@@ -341,8 +341,7 @@
           "accessBus": "true",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
-          "routeDirections": "[06](01 to 04 and back)"
+          "routeDirections": "[06](01 to 04) and back"
         },
         {
           "id": "06b",
@@ -355,7 +354,7 @@
           "accessBus": "true",
           "start": "Barlovento",
           "end": "Franceses",
-          "routeFile": "LP01a Santa Cruz highlights",
+          "routeFile": "LP06b Cubo La Galga coastal extension",
           "routeDirections": "[06](01 to 07) then [07b]"
         }
       ],
