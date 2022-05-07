@@ -357,7 +357,7 @@ function getVariantContent(variant) {
       ${title}
       <div class="icon-summary">${variantSummary}</div>
       <p>${variant.description}</p>
-      <h3>Downloads and directions</h3>
+      <h3>Directions and additional downloads</h3>
       ${directions}
       ${downloadContent}
     </div> `;
