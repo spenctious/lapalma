@@ -84,12 +84,12 @@ function mainClickHandler(event) {
   
   if (elementId == "next") {
     routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
-    window.location.href = `./route-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
   }
 
   if (elementId == "prev") {
     routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
-    window.location.href = `./route-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
   }
 
   if (event.target.closest("#basics-summary") != null) {
