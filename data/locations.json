@@ -52,8 +52,7 @@
         "notes": "",
         "routes": ["120"],
         "stop": "Franceses"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -67,8 +66,7 @@
         "notes": "",
         "routes": ["100"],
         "stop": "Los Sauces"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -77,9 +75,9 @@
       "coordinates": "28.7728393, -17.8119770",
       "areas": ["east"],
       "province": "San Andrés y Sauces",
-      "parking": "None",
+      "parking": "Very limited.",
       "taxi": "4WD taxis carrying 8 passengers run from the taxi hut near the finish to Casa del Monte. Book in advance.",
-      "notes": ""
+      "notes": "Access is up a very steep, very rough dirt track for 4WD vehicles only."
     }
   ],
   [
@@ -89,7 +87,7 @@
       "areas": ["east"],
       "province": "San Andrés y Sauces",
       "parking": "Some parking by the hut, more up the road.",
-      "notes": ""
+      "notes": "Los Tilos visitor center is just up the road."
     }
   ],
   [
@@ -145,8 +143,7 @@
         "notes": "Route 23 stops at Hotel Princess and Volcan San Antonio (request).",
         "routes": ["210", "201", "200", "23"],
         "stop": "Faro de Fuencaliente"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -376,7 +373,7 @@
         "routes": ["5", "8", "24", "27", "300", "110"],
         "stop": "Los Llanos"
       },
-      "notes": ""
+      "notes": "Bus interchange."
     }
   ],
   [
@@ -390,8 +387,7 @@
         "notes": "",
         "routes": ["110"],
         "stop": "Mirador El Time"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -405,8 +401,7 @@
         "notes": "",
         "routes": ["27", "110"],
         "stop": "Mirador El Time"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -420,8 +415,7 @@
         "notes": "",
         "routes": ["110"],
         "stop": "El Jesús"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -445,8 +439,7 @@
       "coordinates": "28.7050387, -17.9317414",
       "areas": ["west"],
       "province": "Tijarafe",
-      "parking": "Layby by the wall with space for several cars",
-      "notes": ""
+      "parking": "Layby by the wall with space for several cars"
     }
   ],
   [
@@ -475,8 +468,7 @@
         "notes": "",
         "routes": ["110"],
         "stop": "Tijarafe"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -530,8 +522,7 @@
         "notes": "Bus interchange is at El Pinar, one stop further on.",
         "routes": ["110"],
         "stop": "Puntagorda"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -610,8 +601,7 @@
         "notes": "",
         "routes": ["120"],
         "stop": "Santo Domingo"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -680,8 +670,7 @@
         "notes": "Bus stop almost directly in front of the church.",
         "routes": ["33"],
         "stop": "Santuario de Las Nieves"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -733,8 +722,7 @@
           "35"
         ],
         "stop": "Mirador Concepción"
-      },
-      "notes": ""
+      }
     }
   ],
   [
@@ -767,8 +755,7 @@
           "300"
         ],
         "stop": "El Paso"
-      },
-      "notes": ""
+      }
     }
   ]
 ]
