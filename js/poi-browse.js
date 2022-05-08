@@ -186,7 +186,7 @@ function populatePoiGrid() {
     gridContent += `
       <div id="poi${poi.id}" class="item">
         <div class="item-pic">
-          <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
+          <img src="/img/poi${poi.id}-250x187.webp" alt="" />
         </div>
         <div class="item-detail">
           <h3 class="title">
