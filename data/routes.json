@@ -493,8 +493,8 @@
       "town": "Los Sauces",
       "routeFile": "LP09 Marcos y Cordero Springs",
       "refreshments": "Bar, café, restaurant Los Tilos Visitor Centre.",
-      "start": "Barlovento",
-      "end": "Franceses",
+      "start": "Casa del Monte",
+      "end": "Los Tilos Taxi Hut",
       "paths": ["PR LP 06"],
 
       "images": [
@@ -515,8 +515,8 @@
           "effort": "moderate",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Barlovento",
-          "end": "Franceses",
+          "start": "Los Tilos Taxi Hut",
+          "end": "Los Tilos Taxi Hut",
           "routeDirections": "[09](11 to 10) and back"
         },
         {
@@ -528,8 +528,8 @@
           "effort": "strenuous",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Barlovento",
-          "end": "Franceses",
+          "start": "Los Tilos Taxi Hut",
+          "end": "Los Tilos Taxi Hut",
           "routeDirections": "[09](11 to 07) and back"
         },
         {
@@ -541,8 +541,8 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Barlovento",
-          "end": "Franceses",
+          "start": "Los Tilos Taxi Hut",
+          "end": "Los Tilos Taxi Hut",
           "routeDirections": "Take the signed side trail between the taxi hut and the visitor centre"
         }
       ],
