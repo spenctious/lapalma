@@ -273,7 +273,7 @@
       "id": "18",
       "name": "Cuevas de Buracas",
       "fullName": "Cuevas de Buracas",
-      "tags": ["archeo"],
+      "tags": ["archeology"],
       "description": "Historic caves with one staging a recreation of how the ancient Guanches may have lived.",
       "location": "",
       "locationDescription": "North-west of Las Tricias along the GR 130 (variant) path."
@@ -331,7 +331,7 @@
       "id": "22",
       "name": "La Zarza",
       "fullName": "Parque Cultural La Zarza y La Zarcita",
-      "tags": ["museum", "archeo", "info"],
+      "tags": ["museum", "archeology", "info"],
       "description": "Archeological park and museum featuring some of the best preserved petroglyphs created by the aboriginal Guanches. Toilets.",
       "entryCost": "3€ - includes parking",
       "tel": "(+34) 922 69 50 05",
