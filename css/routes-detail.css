@@ -67,6 +67,10 @@
   margin-bottom: 0.2rem;
 }
 
+.item-description strong {
+  font-weight: bold;
+}
+
 /*************************  ************************/
 
 #basics-detail,

@@ -468,16 +468,18 @@ function getAttributeHtml(icon, text, description, strong = "", additionalConten
 
 // location details
 function getLocationHtml(locationName, locationAttributes, label) {
+  let notesHtml = "notes" in locationAttributes ? `<p><strong>Notes:</strong> ${locationAttributes.notes}</p>`: ""
   let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
-  let busHtml = "Inaccessible by bus";
+  let busHtml = `<p>Inaccessible by bus</p>`;
+  let taxiHtml = "taxi" in locationAttributes ? `<p><strong>Taxi</strong>: ${locationAttributes.taxi}</p>` : "";
   if ("bus" in locationAttributes) {
     let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
     busHtml = `
-      <a href="/transport.html">
+      <p class="text-button"><a href="/transport.html">
         Bus stop ${locationAttributes.bus.stop}, route${plural} `;
     locationAttributes.bus.routes.forEach(busRoute => busHtml += `${busRoute}, `);
     busHtml = busHtml.slice(0, -2); // remove trailing comma and space
-    busHtml += `</a>`;
+    busHtml += `</a></p>`;
   }
   return `
     <div>
@@ -485,7 +487,9 @@ function getLocationHtml(locationName, locationAttributes, label) {
     </div>
     <div class="item-description">
       <h4>${locationName}</h4>
-      ${carHtml}
-      <p class="text-button">${busHtml}</p>
+      ${notesHtml}
+      <p><strong>Parking:</strong> ${carHtml}</p>
+      ${taxiHtml}
+      ${busHtml}
     </div>`;
 }
