@@ -69,7 +69,7 @@ function getFullPoiDetails(poi, showRelatedWalks) {
       ${poi.fullName}
     </div>
     <div class="poi-detail-pic">
-      <img src="/img/poi${poi.id}-400x300.jpg" alt="" />
+      <img src="/img/poi${poi.id}-400x300.webp" alt="" />
     </div>
     <div class="tags">
       ${getTagsHtml(poi.tags)}
