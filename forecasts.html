@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/general.css" />
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,6 +19,7 @@
     <meta name="theme-color" content="#006633">
     
     <script src="js/common.js"></script>
+    <script src="js/forecasts.js"></script>
   </head>
   <body>
     <div id="overlay" onclick="closeNav()"></div>
@@ -54,6 +56,25 @@
               </p>
             </div>
             <div class="content-box">
+              <div class="custom-select">
+                <select id="forecast-locations">
+                  <option value="0">Select location...</option>
+                  <option value="1">Barlovento</option>
+                  <option value="2">San Pedro</option>
+                  <option value="3">Breña Baja</option>
+                  <option value="4">Fuencaliente</option>
+                  <option value="5">Santo Domingo de Garafía</option>
+                  <option value="6">Los Llanos de Aridane</option>
+                  <option value="7">Puntagorda</option>
+                  <option value="8">Puntallana</option>
+                  <option value="9">San Andrés y Sauces</option>
+                  <option value="10">Santa Cruz de La Palma</option>
+                  <option value="11">Tazacorte</option>
+                  <option value="12">Tijarafe</option>
+                  <option value="13">Villa de Mazo</option>
+                </select>
+              </div>
+
               <iframe
                 name="iframe_aemet_id33044"
                 width="100%"
