@@ -92,13 +92,13 @@ figcaption {
   margin-top: 0;
   line-height: 130%;
 }
+
 /*************************** DDL ***************************/
 
 .custom-select {
   display: block;
   margin: 0 auto;
   margin-bottom: 1rem;
-  padding-top: 0.5rem;
   width: 100%;
 }
 
