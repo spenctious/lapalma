@@ -1,7 +1,6 @@
 "use strict";
 
 var favourites;
-var routeFormat;
 var laPalmaData;
 
 const dataSources = [
@@ -67,13 +66,6 @@ async function loadDataThen(afterDataIsLoaded) {
     favourites = new Set(JSON.parse(storedFavourites));
   }
 
-  // retrieve preferred route download format or set default
-  routeFormat = localStorage.getItem("routeFormat");
-  if (forceReload || routeFormat === null) {
-    routeFormat = "gpx";
-    localStorage.setItem("routeFormat", routeFormat);
-  }
-
   // execute whatever initialization/setup needs to wait until the data is loaded
   afterDataIsLoaded();
 }
@@ -82,10 +74,6 @@ async function loadDataThen(afterDataIsLoaded) {
 function updateFavourites() {
   console.log(JSON.stringify(Array.from(favourites)));
   localStorage.setItem("favourites", JSON.stringify(Array.from(favourites)));
-}
-
-function updateRouteFormat() {
-  localStorage.setItem("routeFormat", routeFormat);
 }
 
 /************************************* Wrapper for raw data *******************************/
