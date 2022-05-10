@@ -204,6 +204,7 @@
 h1 {
   font-size: 1.5rem;
   font-weight: bold;
+  line-height: 130%;
 }
 
 h2 {
@@ -227,14 +228,6 @@ h4 {
 .sub-head {
   font-style: italic;
   margin-top: 0.3rem;
-}
-
-#detail-title {
-  width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-  grid-column: 1;
-  grid-area: title;
 }
 
 #detail-body {
@@ -268,12 +261,38 @@ h4 {
 
 /************************* Title ************************/
 
+#detail-title {
+  display: grid;
+  grid-template-columns: 3rem auto 3rem;
+  column-gap: 0.5rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  grid-column: 1;
+  grid-area: title;
+}
+
+.favourite {
+  margin-left: auto;
+  margin-top: 0.3rem;
+}
+
+.starred img,
+.favourite img {
+  height: 1.2rem;
+}
+
 .title-id {
   background-color: black;
   color: white;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
-  margin-right: 0.3rem;
+  padding: 0.3rem;
+  height: 2.1rem;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  /* margin-top: 0.3rem; */
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .variant-title {
@@ -293,14 +312,6 @@ h4 {
   padding-right: 0.3rem;
 }
 
-.starred img,
-.favourite img {
-  height: 1.2rem;
-}
-
-.favourite {
-  float: right;
-}
 
 /************************* Metrics ************************/
 

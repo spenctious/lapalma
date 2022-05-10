@@ -278,11 +278,10 @@ function populateRouteDatail() {
     `<span class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
   let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" :  "heart-empty.svg";
   let titleContent = `
-    <h1>
-      <span class="title-id">${route.id}</span>
-      ${route.name}
-      ${starredIcon}
-      <span id="favourite" class="favourite"><img src="/img/icons/${favouriteIcon}" alt="" /></span>
+    <div class="title-id">${route.id}</div>
+    <div><h1>${route.name}${starredIcon}</h1></div>
+    <div class="favourite">
+      <img src="/img/icons/${favouriteIcon}" alt="" />
     </div>
     `;
   document.getElementById("detail-title").innerHTML = titleContent;
