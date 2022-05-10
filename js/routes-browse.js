@@ -790,8 +790,8 @@ class FilterSet {
     let locationFilterGridContent = this.#locationFilterHtml;
     locationFilterGridContent += `
     <div id="location-message">${this.locationFilterMessage}</div>
-    <div id="all-locations" class="filter-button">Select All</div>
-    <div id="no-locations" class="filter-button">Select None</div>
+    <div id="all-locations" class="text-button left-bottom">Select All</div>
+    <div id="no-locations" class="text-button left-bottom">Select None</div>
     <div id="area-map">
       <svg width="272" height="402" viewbox="0 0 272 402" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path id="west" class="area-deselected" d="M150 241.5V276L1 321V89L69.5 104.5L80 137.5L105.5 156.5L90 212.5L103.5 241.5H150Z" stroke="#838383" stroke-width="1"/>

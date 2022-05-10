@@ -171,9 +171,9 @@
 .text-button {
   font-weight: bold;
   color:darkblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   text-align: center;
 }
 
@@ -203,7 +203,7 @@
 #location-filter-grid {
   display: grid;
   grid-template-columns: repeat(5, 2.5rem);
-  grid-template-rows: auto;
+  grid-template-rows: auto 2.5rem 2.5rem auto;
   column-gap: 0.5rem;
   row-gap: 0.5rem;
   justify-items: center;
@@ -229,24 +229,15 @@
   text-align: center;
 }
 
-.filter-button {
-  border: 1px solid lightgray;
-  border-radius: 6px;
-  width: 100%;
-  color: var(--colour0);
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  background-color: white;
-  user-select: none;
-  height: 2rem;
-}
-
 .text-button {
   font-size: 0.8rem;
   cursor: pointer;
+}
+
+.left-bottom {
+  text-align: left;
+  margin-right: auto;
+  margin-top: auto;
 }
 
 #area-map {
