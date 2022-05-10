@@ -8,9 +8,6 @@ var filterSet;
 // selection status - values will be "in" or "out"
 var selectedRoutes;
 
-// CSS setting
-var initialRouteDisplaySetting;
-
 /************************* Initialization ************************/
 
 // Wait for everything to finish loading before trying to populate grid
@@ -38,10 +35,6 @@ function initialize() {
   if (retrievedState != undefined && retrievedState != null && JSON.stringify(retrievedState) != '{}') {
     filterSet.restoreState(retrievedState);
   }
-
-  // sample the initial route's display setting so we can use it to restore
-  // visibility after hiding elements without hard-coding the CSS property
-  initialRouteDisplaySetting = document.getElementById("route01").style.display;
 }
 
 /************************* URL parameter handling ************************/
@@ -210,12 +203,12 @@ function filterRoutes() {
 
     // show routes that match and flag up those that only match variants
     if (included.route) {
-      routeDiv.style.display = initialRouteDisplaySetting;
+      routeDiv.style.display = "flex";
       variantMatchDiv.style.display = "none";
       selectedRoutes.set(route.id, "in");
       ++matched;
     } else if (included.variants) {
-      routeDiv.style.display = initialRouteDisplaySetting;
+      routeDiv.style.display = "flex";
       variantMatchDiv.style.display = "block";
       selectedRoutes.set(route.id, "in");
       ++matched;
