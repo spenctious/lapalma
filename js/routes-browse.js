@@ -103,7 +103,7 @@ function routesGridClickHandler(event) {
   let elementId = event.target.id;
   let routeId = event.target.closest("#browse-grid > div").id;
   let routeIndex = routeId.replace("route", "")
-console.log(event.target);
+
   if (elementId.startsWith("favourite")) {
     // favourites icon clicked - toggle it
     if (favourites.has(routeIndex)) {
@@ -149,6 +149,9 @@ function populateRoutesGrid() {
       starred = `<div class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></div>`;
     }
 
+    // favourite
+    let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" :  "heart-empty.svg";
+
     // build html content
     gridContent += `
         <div id="route${route.id}" class="item">
@@ -166,7 +169,7 @@ function populateRoutesGrid() {
               <img
                 id="favourite${route.id}"
                 class="favourite"
-                src="/img/icons/heart-empty.svg"
+                src="/img/icons/${favouriteIcon}"
                 alt=""
               />
               ${route.name}
@@ -997,6 +1000,7 @@ class FilterSet {
       document.getElementById("favourite" + route.id).src = "/img/icons/heart-empty.svg";
     })
     this.updateGrids();
+    updateFavourites();
   }
 
   /*** Respond to location area click events ***/

@@ -81,6 +81,17 @@ function modalClickHandler(event) {
 function mainClickHandler(event) {
   let elementId = event.target.closest("div").id;
   let lastIndex = collection.length - 1;
+
+  if (elementId = "favourite") {
+    if (favourites.has(routeId)) {
+      favourites.delete(routeId);
+      event.target.src = "/img/icons/heart-empty.svg";
+    } else {
+      favourites.add(routeId);
+      event.target.src = "/img/icons/heart-full-black.svg";
+    }
+    updateFavourites();
+  }
   
   if (elementId == "next") {
     routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
@@ -265,15 +276,13 @@ function populateRouteDatail() {
   let starredIcon = "";
   if (route.isStarred) starredIcon =
     `<span class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
-  let favouriteIcon = "";
-  if (favourites.size > 0 && favourites.has(route.id)) favouriteIcon =
-    `<span class="favourite"><img src="/img/icons/heart-empty.svg" alt="" /></span>`;
+  let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" :  "heart-empty.svg";
   let titleContent = `
     <h1>
       <span class="title-id">${route.id}</span>
       ${route.name}
       ${starredIcon}
-      ${favouriteIcon}
+      <span id="favourite" class="favourite"><img src="/img/icons/${favouriteIcon}" alt="" /></span>
     </div>
     `;
   document.getElementById("detail-title").innerHTML = titleContent;

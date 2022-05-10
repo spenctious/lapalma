@@ -14,6 +14,7 @@ const dataSources = [
 
 // For diagnostics and development
 var forceReload = true;
+var forceReloadFavourites = false;
 var performIntegrityCheck = true;
 
 // URL paramater names - defining here ensures consistency
@@ -60,11 +61,10 @@ async function loadDataThen(afterDataIsLoaded) {
 
   // retrieve favourites or create them new if missing
   let storedFavourites = localStorage.getItem("favourites");
-  if (forceReload || storedFavourites === null) {
+  if (forceReloadFavourites || storedFavourites === null) {
     favourites = new Set();
-    localStorage.setItem("favourites", JSON.stringify(favourites));
   } else {
-    favourites = JSON.parse(storedFavourites);
+    favourites = new Set(JSON.parse(storedFavourites));
   }
 
   // retrieve preferred route download format or set default
@@ -78,8 +78,10 @@ async function loadDataThen(afterDataIsLoaded) {
   afterDataIsLoaded();
 }
 
+// save favourites as an array (can't directly stringify a set)
 function updateFavourites() {
-  localStorage.setItem("favourites", JSON.stringify(favourites));
+  console.log(JSON.stringify(Array.from(favourites)));
+  localStorage.setItem("favourites", JSON.stringify(Array.from(favourites)));
 }
 
 function updateRouteFormat() {
