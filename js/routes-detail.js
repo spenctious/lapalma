@@ -82,7 +82,7 @@ function mainClickHandler(event) {
   let elementId = event.target.closest("div").id;
   let lastIndex = collection.length - 1;
 
-  if (elementId = "favourite") {
+  if (elementId == "favourite") {
     if (favourites.has(routeId)) {
       favourites.delete(routeId);
       event.target.src = "/img/icons/heart-empty.svg";
@@ -91,6 +91,7 @@ function mainClickHandler(event) {
       event.target.src = "/img/icons/heart-full-black.svg";
     }
     updateFavourites();
+    return;
   }
   
   if (elementId == "next") {
@@ -280,7 +281,7 @@ function populateRouteDatail() {
   let titleContent = `
     <div class="title-id">${route.id}</div>
     <div><h1>${route.name}${starredIcon}</h1></div>
-    <div class="favourite">
+    <div id="favourite" class="favourite">
       <img src="/img/icons/${favouriteIcon}" alt="" />
     </div>
     `;

@@ -275,9 +275,16 @@ h4 {
 .favourite {
   margin-left: auto;
   margin-top: 0.3rem;
+  cursor: pointer;
+  opacity: 0.8; /* tone down the icon */
 }
 
-.starred img,
+.starred img {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  margin-top: 0.3rem;
+}
+
 .favourite img {
   height: 1.2rem;
 }
