@@ -294,7 +294,7 @@ function populateVariations() {
   if (route.hasVariants) {
     route.variants.forEach(variant => variantsContent += getVariantContent(variant));
   } else {
-    variantsContent += `<p>None for this walk.</p>`;
+    variantsContent += `<p class="empty-state">None for this walk.</p>`;
   }
 
   document.getElementById("variations").innerHTML = variantsContent;

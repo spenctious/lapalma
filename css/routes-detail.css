@@ -422,7 +422,7 @@ h4 {
   margin-bottom: 1rem;
 }
 
-#variations p {
+.empty-state {
   font-size: 0.9rem;
 }
 
