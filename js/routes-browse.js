@@ -31,6 +31,7 @@ function initialize() {
   // add event listeners on the routes grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("browse-grid").addEventListener("click", routesGridClickHandler);
+  document.getElementById("area-map").addEventListener("click", locationGridClickHandler);
 
   // restore filter state if set
   let retrievedState = window.history.state;
@@ -98,12 +99,11 @@ function filterClickHandler(event) {
     filterSet.toggle(elementId);
     return;
   }
+}
 
-  // buttons to toggle selected areas for the location filter
-  if (elementId.startsWith("location")) {
-    filterSet.toggleLocationSelector(elementId, event.target);
-    return;
-  }
+function locationGridClickHandler(event) {
+  let elementId = event.target.id;
+  filterSet.toggleLocationSelector(elementId);
 }
 
 function routesGridClickHandler(event) {
@@ -398,12 +398,10 @@ class Filter {
           break;
 
         case ONLY:
-          // icon.classList.add("included");
           icon.className = "icon included";
           break;
 
         case NO:
-          // icon.classList.add("excluded");
           icon.className = "icon excluded";
           break;
       }
@@ -591,16 +589,6 @@ class Location extends Filter {
     return super.name;
   }
 
-  // Returns the HTML for the area selector buttons
-  get locationSelectorsHtml() {
-    let locationSelectorsHtml = "";
-    for (let [areaName, area] of this.#locationAreas) {
-      locationSelectorsHtml += `
-        <div id="location-${areaName}" class="filter-button">${area.buttonName}</div>`;
-    }
-    return locationSelectorsHtml;
-  }
-
   // Returns false if all areas are selected or no areas selected, true otherwise
   // In other words, true only if the selection makes sense as a filter
   get hasValidAreasSelection() {
@@ -624,8 +612,7 @@ class Location extends Filter {
 
   // Update location selector appearance and toggle state
   toggleLocationSelector(elementId) {
-    let locationKey = elementId.replace("location-", ""); // strip prefix to get the filter key
-    this.setLocationSelector(locationKey);
+    this.setLocationSelector(elementId);
   }
 
   selectAllLocations() {
@@ -640,15 +627,18 @@ class Location extends Filter {
     }
   }
 
-  // Helper method to set the area to the specified state and update the button state accordingly
+  // Helper method to set the area to the specified state and update the map accordingly
   setLocationSelector(areaKey, targetState) {
     let area = this.#locationAreas.get(areaKey);
-    let locationButton = document.getElementById("location-" + areaKey);
     area.toggle.toggle(targetState);
+
+    // className for an SVG path is an SVGAnimatedString so we need to use the 
+    // SetAttribute method instead of assigning a string as we would with HTML
+    let locationMapArea = document.getElementById(areaKey);
     if (area.toggle.isOff) {
-      locationButton.className = "filter-button"
+      locationMapArea.setAttribute("class", "area-deselected");
     } else {
-      locationButton.className = "filter-button-on"
+      locationMapArea.setAttribute("class", "area-selected");
     }
   }
 
@@ -800,11 +790,16 @@ class FilterSet {
     let locationFilterGridContent = this.#locationFilterHtml;
     locationFilterGridContent += `
     <div id="location-message">${this.locationFilterMessage}</div>
-    <div id="location-area-grid">`;
-    locationFilterGridContent += this.#locationFilter.locationSelectorsHtml;
-    locationFilterGridContent += `
-    <div id="all-locations" class="text-button">Select All</div>
-    <div id="no-locations" class="text-button">Select None</div>
+    <div id="all-locations" class="filter-button">Select All</div>
+    <div id="no-locations" class="filter-button">Select None</div>
+    <div id="area-map">
+      <svg width="272" height="402" viewbox="0 0 272 402" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="west" class="area-deselected" d="M150 241.5V276L1 321V89L69.5 104.5L80 137.5L105.5 156.5L90 212.5L103.5 241.5H150Z" stroke="#838383" stroke-width="1"/>
+        <path id="central" class="area-deselected" d="M105.5 156.5L80 137.5L69.5 104.5L85.5 79L117.5 74L157 77L195.5 104.5L189 142.5L181.5 163L187.5 200L181.5 241.5H103.5L90 212.5L105.5 156.5Z"  stroke="#838383" stroke-width="1"/>
+        <path id="north" class="area-deselected" d="M117 74L85.5 79L69.5 104.5L1 89V1H221V21L174 89L157 77L117 74Z" stroke="#838383" stroke-width="1"/>
+        <path id="east" class="area-deselected" d="M221 1H271V241.5H181.5L187.5 200L181.5 163L189 142.5L195.5 104.5L174 89L221 21V1Z" stroke="#838383" stroke-width="1"/>
+        <path id="south" class="area-deselected" d="M150 276L1 321V401H271V241.5H150V276Z" stroke="#838383" stroke-width="1"/>
+      </svg>
     </div>`;
     document.getElementById("location-filter-grid").innerHTML = locationFilterGridContent;
   }
@@ -816,8 +811,8 @@ class FilterSet {
   }
 
   get locationFilterMessage() {
-    if (this.#locationFilter.allAreasSelected) return "Remove one or more areas<br/> to enable filter.";
-    if (this.#locationFilter.noAreasSelected) return "Add one or more areas<br/> to enable filter.";
+    if (this.#locationFilter.allAreasSelected) return "Remove areas to enable filter.";
+    if (this.#locationFilter.noAreasSelected) return "Add areas to enable filter.";
     return "";
   }
 
@@ -833,10 +828,10 @@ class FilterSet {
   updateLocationMessage() {
     let message = "";
     if (this.#locationFilter.allAreasSelected) {
-      message = "Remove one or more areas<br/> to enable filter.";
+      message = "Remove areas to enable filter.";
       this.#locationFilter.enabled = false;
     } else if (this.#locationFilter.noAreasSelected) {
-      message = "Add one or more areas<br/> to enable filter.";
+      message = "Add areas to enable filter.";
       this.#locationFilter.enabled = false;
     } else {
       this.#locationFilter.enabled = true;

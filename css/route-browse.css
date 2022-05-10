@@ -203,9 +203,9 @@
 #location-filter-grid {
   display: grid;
   grid-template-columns: repeat(5, 2.5rem);
-  grid-template-rows: 2.5rem auto;
+  grid-template-rows: auto;
   column-gap: 0.5rem;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
   justify-items: center;
 }
 
@@ -213,23 +213,12 @@
   cursor: pointer;
 }
 
-#location-filter-grid > div:nth-child(1) { grid-column: 1; grid-row: 1; } /* filter icon */
-#location-filter-grid > div:nth-child(2) { grid-column: 2 / 6; grid-row: 1; } /* instructions */
-#location-filter-grid > div:nth-child(3) { grid-column: 1 / 6; grid-row: 2; } /* area buttons grid */
-
-#location-area-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, 2rem) 2rem;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
-  justify-content: center;
-  justify-items: center;
-}
-
-#location-area-grid > div {
-  cursor: pointer;
-}
+/* explicit position of elements on the grid */
+#location-filter-grid > div:nth-child(1) { grid-column: 4; grid-row: 1; } /* filter icon */
+#location-filter-grid > div:nth-child(2) { grid-column: 1 / 6; grid-row: 5; } /* instructions */
+#location-filter-grid > div:nth-child(3) { grid-column: 4 / 6; grid-row: 2; } /* select all */
+#location-filter-grid > div:nth-child(4) { grid-column: 4 / 6; grid-row: 3; } /* select none */
+#location-filter-grid > div:nth-child(5) { grid-column: 1 / 4; grid-row: 1 / 5; } /* map */
 
 #location-message {
   display: flex;
@@ -240,17 +229,7 @@
   text-align: center;
 }
 
-/* explicit positioning of area selection buttons */
-#location-area-grid > div:nth-child(1) { grid-column: 2; grid-row: 1; } /* north */
-#location-area-grid > div:nth-child(2) { grid-column: 1; grid-row: 2; } /* west */
-#location-area-grid > div:nth-child(3) { grid-column: 2; grid-row: 2; } /* central */
-#location-area-grid > div:nth-child(4) { grid-column: 3; grid-row: 2; } /* east */
-#location-area-grid > div:nth-child(5) { grid-column: 2; grid-row: 3; } /* south */
-#location-area-grid > div:nth-child(6) { grid-column: 1; grid-row: 4; } /* select all */
-#location-area-grid > div:nth-child(7) { grid-column: 3; grid-row: 4; } /* select none */
-
-.filter-button,
-.filter-button-on {
+.filter-button {
   border: 1px solid lightgray;
   border-radius: 6px;
   width: 100%;
@@ -262,15 +241,36 @@
   box-sizing: border-box;
   background-color: white;
   user-select: none;
-}
-
-.filter-button-on {
-  background-color: var(--colour1);
-  color: var(--colour3);
+  height: 2rem;
 }
 
 .text-button {
   font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#area-map {
+  width: 100%;
+  background-image: url("/img/location-map.png");
+  background-size: cover;
+}
+
+#area-map {
+  margin: 0 auto;
+}
+
+#area-map svg {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+#area-map .area-selected {
+  fill: rgba(0, 100, 0, 0.5);
+}
+
+#area-map .area-deselected {
+  fill: rgba(133, 114, 78, 0.03);
 }
 
 /************************* Filter icons ************************/
