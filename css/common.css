@@ -36,6 +36,9 @@ html, body {
 #header {
   color: white;
   background-color: var(--colour0);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 #header-content {
