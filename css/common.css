@@ -149,6 +149,61 @@ html, body {
   display: none;
 }
 
+/************************* Collection navigation bar ************************/
+
+.collection-nav {
+  display: grid;
+  grid-template-columns: 4rem auto 4rem;
+  column-gap: 0.5rem;
+  background-color: var(--colour-light-bkg);
+  font-size: 1rem;
+  color: var(--colour0);
+  padding: 0.5rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  height: 1.5rem;
+  border-top: 1px solid lightgray;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.left {
+  margin-right: auto;
+  padding-right: 1rem;
+}
+
+.centre {
+  margin: 0 auto;
+}
+
+.right {
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
+.arrow img { 
+  height: 1.5rem;
+}
+
+/* dark theme */
+.dark {
+  background-color: var(--colour1);
+  border-top: none;
+  color: white;
+}
+
+.dark img {
+  filter: invert(100%);
+}
+
 /************************* Page grid ************************/
 
 #content-grid {

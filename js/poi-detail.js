@@ -64,34 +64,36 @@ function getFullPoiDetails(poi, showRelatedWalks) {
 
   // build html content
   return `
-    <div class="modal-title">
-      <span id="modal-close" class="close">&times;</span>
-      ${poi.fullName}
+    <div class="modal-content-wrapper">
+      <div class="modal-title">
+        <span id="modal-close" class="close">&times;</span>
+        ${poi.fullName}
+      </div>
+      <div class="poi-detail-pic">
+        <img src="/img/poi${poi.id}-400x300.webp" alt="" />
+      </div>
+      <div class="tags">
+        ${getTagsHtml(poi.tags)}
+      </div>
+      <div class="extra-detail">
+        <p class="description">
+          ${poi.description}
+        </p>
+        <table class="general-details">
+          <tr><td>Location:</td><td>${poi.locationDescription}</td></tr>
+          ${tel}
+          ${entryCost}
+        </table>
+        ${openingTimes}
+      </div>
+      ${relatedRoutes}
     </div>
-    <div class="poi-detail-pic">
-      <img src="/img/poi${poi.id}-400x300.webp" alt="" />
-    </div>
-    <div class="tags">
-      ${getTagsHtml(poi.tags)}
-    </div>
-    <div class="extra-detail">
-      <p class="description">
-        ${poi.description}
-      </p>
-      <table class="general-details">
-        <tr><td>Location:</td><td>${poi.locationDescription}</td></tr>
-        ${tel}
-        ${entryCost}
-      </table>
-      ${openingTimes}
-    </div>
-    ${relatedRoutes}
-    <div id="poi-collection-nav">
-      <div id="poi-prev" class="nav arrow">
+    <div id="poi-collection-nav" class="collection-nav">
+      <div id="poi-prev" class="nav arrow left">
         <img src="/img/icons/chevron-left.svg" alt="" />
       </div>
-      <div id="poi-current" class="nav">0 of n</div>
-      <div id="poi-next" class="nav arrow">
+      <div id="poi-current" class="nav centre">0 of n</div>
+      <div id="poi-next" class="nav arrow right">
         <img src="/img/icons/chevron-right.svg" alt="" />
       </div>
     </div>

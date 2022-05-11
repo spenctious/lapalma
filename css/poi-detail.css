@@ -1,40 +1,31 @@
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 2;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* enable scroll if needed */
+  background-color: rgb(0,0,0); /* fallback color */
+  background-color: rgba(0,0,0,0.7);
 }
 
-/* .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  border: 1px solid #888;
-  max-width: 400px;
-  height: auto;
+.modal-content-wrapper {
   padding: 1rem;
-} */
+}
 
 .modal-content {
   background-color: #fefefe;
   margin: 0 auto;
-  border: 1px solid #888;
   max-width: 400px;
   height: auto;
-  padding: 1rem;
 }
 
-/* The Close Button */
 .close {
   color: black;
   float: right;
   font-size: 2.5rem;
-  /* font-weight: bold; */
   padding-left: 1rem;
   padding-bottom: 1rem;
   cursor: pointer;
@@ -173,55 +164,14 @@
   line-height: 140%;
 }
 
-/************************* Collection navigation bar ************************/
-/* copied from routes-detail */
-#poi-collection-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--colour1);
-  font-size: 1rem;
-  color: white;
-  padding: 0.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: 1.5rem;
-  grid-area: item-nav;
-  margin-top: 1rem;
-}
 
-
-.nav {
-  flex: 1 0 auto;
-  text-align: center;
-  max-width: 5rem;
-}
-
-.arrow {
-  filter: invert(100%);
-  cursor: pointer;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 2rem;
-}
-
-.arrow img { 
-  height: 1.5rem;
-}
-
-@media (min-width: 560px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+/* @media (min-width: 560px) {
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    border: 1px solid #888;
-    max-width: 400px; /* Could be more or less, depending on screen size */
+    margin: 15% auto;
+    max-width: 400px;
     height: auto;
-    padding: 1rem;
   }
 }
-
+ */
 

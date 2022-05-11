@@ -52,6 +52,7 @@ function initialize() {
 
   // add event listeners for the specified areas
   document.getElementById("content-grid").addEventListener("click", mainClickHandler);
+  document.getElementById("routes-collection-nav").addEventListener("click", collectionClickHandler);
   detailsModal.addEventListener("click", modalClickHandler);
 }
 
@@ -78,9 +79,23 @@ function modalClickHandler(event) {
   }
 }
 
-function mainClickHandler(event) {
+function collectionClickHandler(event) {
   let elementId = event.target.closest("div").id;
   let lastIndex = collection.length - 1;
+
+  if (elementId == "next") {
+    routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
+    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+  }
+
+  if (elementId == "prev") {
+    routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
+    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+  }
+}
+
+function mainClickHandler(event) {
+  let elementId = event.target.closest("div").id;
 
   if (elementId == "favourite") {
     if (favourites.has(routeId)) {
@@ -94,16 +109,6 @@ function mainClickHandler(event) {
     return;
   }
   
-  if (elementId == "next") {
-    routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
-    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
-  }
-
-  if (elementId == "prev") {
-    routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
-    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
-  }
-
   if (event.target.closest("#basics-summary") != null) {
     document.getElementById("basics-detail").style.display = "grid";
     document.getElementById("basics-summary").style.display = "none";

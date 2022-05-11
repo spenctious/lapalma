@@ -1,43 +1,5 @@
 @import url("/css/poi-detail.css");
 
-/************************* Collection navigation bar ************************/
-
-#collection-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--colour1);
-  font-size: 1rem;
-  color: white;
-  padding: 0.5rem;
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-  height: 1.5rem;
-  grid-area: item-nav;
-}
-
-
-.nav {
-  flex: 1 0 auto;
-  text-align: center;
-  max-width: 5rem;
-}
-
-.arrow {
-  filter: invert(100%);
-  cursor: pointer;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 5rem;
-}
-
-.arrow img { 
-  height: 1.5rem;
-}
-
 /*************************  ************************/
 
 .icon-img {
@@ -490,7 +452,7 @@ h4 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  column-gap: 20px;
+  /* column-gap: 20px; */
   grid-area: detail;
 }
 
@@ -506,13 +468,18 @@ h4 {
   grid-area: nav;
 }
 
+#routes-collection-nav {
+  grid-area: item-nav;
+}
+
 #content-grid {
   grid-template-columns: auto;
   grid-template-areas: 
-    "item-nav"
     "title"
     "detail"
-    "pics";
+    "pics"
+    "item-nav"
+    ;
 }
 
 /************************* Media queries ************************/
