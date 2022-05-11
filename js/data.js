@@ -72,7 +72,6 @@ async function loadDataThen(afterDataIsLoaded) {
 
 // save favourites as an array (can't directly stringify a set)
 function updateFavourites() {
-  console.log(JSON.stringify(Array.from(favourites)));
   localStorage.setItem("favourites", JSON.stringify(Array.from(favourites)));
 }
 
