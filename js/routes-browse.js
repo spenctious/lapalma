@@ -562,6 +562,15 @@ class Location extends Filter {
     if (!this.#allAreasOff && !this.#allAreasOn) super.enableInactive(setEnabled);
   }
 
+  // checks for invalid selection states
+  checkAreasAreValid() {
+    this.#allAreasOff = true;
+    this.#allAreasOn = true;
+    this.#locationAreas.forEach(area => {
+      area.toggle.isOff ? this.#allAreasOn = false : this.#allAreasOff = false;
+    });
+  }
+
   /*** Accessors ***/
 
   get activeLocationAreas() { 
@@ -588,11 +597,8 @@ class Location extends Filter {
   // Returns false if all areas are selected or no areas selected, true otherwise
   // In other words, true only if the selection makes sense as a filter
   get hasValidAreasSelection() {
-    this.#allAreasOff = true;
-    this.#allAreasOn = true;
-    this.#locationAreas.forEach(area => {
-      area.toggle.isOff ? this.#allAreasOn = false : this.#allAreasOff = false;
-    });
+    this.checkAreasAreValid();
+
     return !this.#allAreasOff && !this.#allAreasOn;
   }
 
@@ -806,6 +812,10 @@ class FilterSet {
     return this.#activeFilterList.size;
   }
 
+  get filterLimitReached() { 
+    return this.#activeFilterList.size == MAX_FILTERS; 
+  }
+
   get locationFilterMessage() {
     if (this.#locationFilter.allAreasSelected) return "Remove areas to enable filter.";
     if (this.#locationFilter.noAreasSelected) return "Add areas to enable filter.";
@@ -823,6 +833,7 @@ class FilterSet {
 
   updateLocationMessage() {
     let message = "";
+    this.#locationFilter.checkAreasAreValid();
     if (this.#locationFilter.allAreasSelected) {
       message = "Remove areas to enable filter.";
       this.#locationFilter.enabled = false;
@@ -858,9 +869,8 @@ class FilterSet {
 
   // disables unused filter icons if the maximum number of filters is already set
   updateFilterIcons() {
-    let limitReached = this.#activeFilterList.size == MAX_FILTERS;
     this.#allFilters.forEach(filter => {
-      filter.enableInactive(!limitReached);
+      filter.enableInactive(!this.filterLimitReached);
     })
   }
 
