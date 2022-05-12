@@ -28,33 +28,23 @@
 
     <!-- Title bar -->
     <div id="header">
-      <div id="header-content" class="container">
+      <div id="header-content" class="h-container">
         <div class="col clickable" onclick="openNav()">&#9776;</div>
         <div id="title" class="col">Walk details</div>
       </div>
     </div>
 
-    <div class="container">
-      <div id="content-grid">
-        <!-- Navigation is populated in code -->
-        <nav id="navbar" class="sidenav"></nav>
+    <div id="content-grid">
+      <!-- Navigation is populated in code -->
+      <nav id="navbar" class="sidenav"></nav>
 
-        <div id="routes-collection-nav" class="collection-nav dark">
-          <div id="prev" class="nav arrow left">
-            <img src="/img/icons/chevron-left.svg" alt="" />
+      <div id="main-content">
+        <div id="detail-grid">
+
+          <div id="detail-title">
+            <!-- content inserted by populateRouteDatail() -->
           </div>
-          <div id="current" class="nav centre">Walk 0</div>
-          <div id="next" class="nav arrow right">
-            <img src="/img/icons/chevron-right.svg" alt="" />
-          </div>
-        </div>
-
-        <div id="detail-title">
-          <!-- content inserted by populateRouteDatail() -->
-        </div>
-
-        <div id="detail-wrapper">
-          <div class="content-block">
+          <div id="detail-wrapper">
             <h3 id="col-head-detail">Route detail</h3>
             <div id="basics-summary">
               <!-- content inserted by populateBasicsGrid() -->
@@ -109,16 +99,26 @@
           <div id="variations" class="content-block">
             <!-- content inserted by populateVariations() -->
           </div>
+          <div id="detail-images">
+            <!-- content inserted by populateRouteImages() -->
+          </div>
         </div>
 
-        <div id="detail-images">
-          <!-- content inserted by populateRouteImages() -->
+        <div id="routes-collection-nav" class="collection-nav dark">
+          <div id="prev" class="nav arrow left">
+            <img src="/img/icons/chevron-left.svg" alt="" />
+          </div>
+          <div id="current" class="nav centre">Walk 0</div>
+          <div id="next" class="nav arrow right">
+            <img src="/img/icons/chevron-right.svg" alt="" />
+          </div>
         </div>
+
       </div>
     </div>
 
     <div id="footer">
-      <div id="footer-content" class="container">
+      <div id="footer-content" class="h-container">
         Copyright &copy; Robert Anstey 2022
       </div>
     </div>

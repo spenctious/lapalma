@@ -26,7 +26,7 @@ html, body {
   background-color: var(--colour-light-bkg);
 }
 
-.container {
+.h-container {
   margin: 0 auto;
   max-width: var(--max-content-width);
 }
@@ -209,9 +209,9 @@ html, body {
 #content-grid {
   display: grid;
   grid-template-columns: auto;
-  column-gap: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
+  /* column-gap: 16px; */
+  /* margin-left: 16px;
+  margin-right: 16px; */
 }
 
 @media (min-width: 560px) {
@@ -225,9 +225,9 @@ html, body {
 @media (min-width: 1340px) {
   #content-grid {
     grid-template-columns: var(--nav-panel-width) auto;
-    column-gap: 20px;
-    margin-left: 64px;
-    margin-right: 64px;  
+    /* column-gap: 20px; */
+    /* margin-left: 64px;
+    margin-right: 64px;   */
   }
 
   #navbar {

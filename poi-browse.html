@@ -28,48 +28,46 @@
 
     <!-- Title bar -->
     <div id="header">
-      <div id="header-content" class="container">
+      <div id="header-content" class="h-container">
         <div class="col clickable" onclick="openNav()">&#9776;</div>
         <div class="col">Browse places</div>
       </div>
     </div>
     
-    <div id="container">
-      <div id="content-grid">
+    <div id="content-grid">
 
-        <!-- Navigation is populated in code -->
-        <nav id="navbar" class="sidenav"></nav>
+      <!-- Navigation is populated in code -->
+      <nav id="navbar" class="sidenav"></nav>
 
-        <!-- Filtered grid of points of interest -->
-        <div id="main-content">
-          <div id="browse-grid">
-            <!-- content inserted by populatePoiGrid() -->
-          </div>
-          <div id="routes-header" class="grid-header">
-            <div id="filter-count" class="filter-count">No Filters</div>
-            <div id="match-count"></div>
-            <div id="filter-button" onclick="openFilterPanel()">Filters</div>
-          </div>
+      <!-- Filtered grid of points of interest -->
+      <div id="main-content">
+        <div id="browse-grid">
+          <!-- content inserted by populatePoiGrid() -->
         </div>
+        <div id="routes-header" class="grid-header">
+          <div id="filter-count" class="filter-count">No Filters</div>
+          <div id="match-count"></div>
+          <div id="filter-button" onclick="openFilterPanel()">Filters</div>
+        </div>
+      </div>
 
-        <!-- Filter panel -->
-        <div id="filter" class="filter-panel">
-          <div id="filter-header">
-            <div id="clear-all-filters" class="clearButton">Clear All</div>
-            <div class="close-cross">&times;</div>
-          </div>
-          <div id="active-filter-box">
-            <h3>Filter by tags</h3>
-            <div id="active-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
-            </div>
+      <!-- Filter panel -->
+      <div id="filter" class="filter-panel">
+        <div id="filter-header">
+          <div id="clear-all-filters" class="clearButton">Clear All</div>
+          <div class="close-cross">&times;</div>
+        </div>
+        <div id="active-filter-box">
+          <h3>Filter by tags</h3>
+          <div id="active-filter-grid">
+            <!-- content inserted by populateFilterPanel() -->
           </div>
         </div>
       </div>
     </div>
 
     <div id="footer">
-      <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
+      <div id="footer-content" class="h-container">Copyright &copy; Robert Anstey 2022</div>
     </div>
     
     <div id="full-details" class="modal">

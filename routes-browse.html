@@ -27,65 +27,63 @@
 
     <!-- Title bar -->
     <div id="header">
-      <div id="header-content" class="container">
+      <div id="header-content" class="h-container">
         <div class="col clickable" onclick="openNav()">&#9776;</div>
         <div class="col">Browse routes</div>
       </div>
     </div>
 
-    <div class="container">
-      <div id="content-grid">
-        <!-- Navigation is populated in code -->
-        <nav id="navbar" class="sidenav"></nav>
+    <div id="content-grid">
+      <!-- Navigation is populated in code -->
+      <nav id="navbar" class="sidenav"></nav>
 
-        <!-- Filtered grid of walks -->
-        <div id="main-content">
-          <div id="browse-grid">
-            <!-- content inserted by populateRoutesGrid() -->
-          </div>
-          <div id="routes-header" class="grid-header">
-            <div id="filter-count" class="filter-count">No Filters</div>
-            <div id="match-count"></div>
-            <div id="filter-button" onclick="openFilterPanel()">Filters</div>
+      <!-- Filtered grid of walks -->
+      <div id="main-content">
+        <div id="browse-grid">
+          <!-- content inserted by populateRoutesGrid() -->
+        </div>
+        <div id="routes-header" class="grid-header">
+          <div id="filter-count" class="filter-count">No Filters</div>
+          <div id="match-count"></div>
+          <div id="filter-button" onclick="openFilterPanel()">Filters</div>
+        </div>
+      </div>
+
+      <!-- Filter panel -->
+      <div id="filter" class="filter-panel">
+        <div id="filter-header">
+          <div id="clear-all-filters" class="clearButton">Clear All</div>
+          <div class="close-cross" onclick="closeFilterPanel()">&times;</div>
+        </div>
+        <div id="active-filter-box">
+          <h3>Current filters</h3>
+          <div id="active-filter-grid">
+            <!-- content inserted by populateFilterPanel() -->
           </div>
         </div>
-
-        <!-- Filter panel -->
-        <div id="filter" class="filter-panel">
-          <div id="filter-header">
-            <div id="clear-all-filters" class="clearButton">Clear All</div>
-            <div class="close-cross" onclick="closeFilterPanel()">&times;</div>
+        <div id="general-filters" class="filter-section">
+          <h3>Favourites & Starred</h3>
+          <div id="general-filter-grid">
+            <!-- content inserted by populateFilterPanel() -->
           </div>
-          <div id="active-filter-box">
-            <h3>Current filters</h3>
-            <div id="active-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
-            </div>
+        </div>
+        <div id="category-filters" class="filter-section">
+          <h3>Features & Warnings</h3>
+          <div id="category-filter-grid">
+            <!-- content inserted by populateFilterPanel() -->
           </div>
-          <div id="general-filters" class="filter-section">
-            <h3>Favourites & Starred</h3>
-            <div id="general-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
-            </div>
-          </div>
-          <div id="category-filters" class="filter-section">
-            <h3>Features & Warnings</h3>
-            <div id="category-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
-            </div>
-          </div>
-          <div id="location-filters" class="filter-section">
-            <h3>Locations</h3>
-            <div id="location-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
-            </div>
+        </div>
+        <div id="location-filters" class="filter-section">
+          <h3>Locations</h3>
+          <div id="location-filter-grid">
+            <!-- content inserted by populateFilterPanel() -->
           </div>
         </div>
       </div>
     </div>
 
     <div id="footer">
-      <div id="footer-content" class="container">Copyright &copy; Robert Anstey 2022</div>
+      <div id="footer-content" class="h-container">Copyright &copy; Robert Anstey 2022</div>
     </div>
   </body>
 </html>

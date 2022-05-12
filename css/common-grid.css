@@ -54,6 +54,8 @@
   grid-template-columns: minmax(100%, 400px);
   gap: 0.5rem;
   justify-content: center;
+  margin: 0.5rem;
+
 }
 
 .item {
@@ -178,13 +180,14 @@
 /* wide enough for the filter panel to be included in the main content*/
 @media (min-width: 1500px) {
   #content-grid {
-    grid-template-columns: var(--nav-panel-width) 1fr var(--filter-panel-width);
+    grid-template-columns: var(--nav-panel-width) 1fr auto;
     grid-template-areas: "nav browse-grid filter";
   }
 
   .filter-panel {
     position: static;
     transition: none;
+    height: 100%;
     /*transform: translateX(-100%) !important;  override the value set by the nav close button */
   }
 
