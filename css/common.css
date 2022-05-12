@@ -95,9 +95,9 @@ html, body {
 }
 
 .filter-panel {
-  height: 100%;
-  width: var(--filter-panel-width);
-  position: fixed;
+  /* height: 100%; */
+  /* width: var(--filter-panel-width); */
+  /* position: static; */
   z-index: 2; /* position over background-dimming overlay */
   top: 0;
   left: 100%;
@@ -233,7 +233,7 @@ html, body {
   #navbar {
     display: block;
     grid-column: 1;
-    grid-row: 1 / 100; /* extend full depth */
+    grid-row: 1 / -1; /* extend full depth */
   }
 
   .sidenav {
