@@ -8,7 +8,7 @@
 }
 
 .poi-category-description {
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   font-size: 0.8rem;
   font-style: normal;
 }
@@ -18,14 +18,10 @@
   display: block;
   position: relative;
   padding-left: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
   user-select: none;
-}
-
-.larger {
-  font-size: 0.7rem;
 }
 
 /* Hide the browser's default checkbox */
@@ -55,7 +51,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196f3;
+  background-color: var(--colour6);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

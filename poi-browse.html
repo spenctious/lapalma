@@ -53,12 +53,12 @@
 
       <!-- Filter panel -->
       <div id="filter" class="filter-panel">
-        <div id="filter-header">
-          <div id="clear-all-filters" class="clearButton">Clear All</div>
-          <div class="close-cross">&times;</div>
+        <div id="filter-header" class="filter-head">
+          <div id="clear-all-filters" class="clear-button">Clear</div>
+          <div id="close-filter" class="close-cross" onclick="closeFilterPanel()">&times;</div>
         </div>
         <div id="active-filter-box">
-          <h3>Filter by tags</h3>
+          <h3 class="filter-sub-head">Filter by tags</h3>
           <div id="active-filter-grid">
             <!-- content inserted by populateFilterPanel() -->
           </div>

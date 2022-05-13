@@ -70,18 +70,18 @@
 
 /************************* Filters ************************/
 
-#filter-header {
+/* #filter-header {
   background-color: var(--colour1);
   color: white;
   display: grid;
   grid-template-columns: auto 2rem;
   padding: 0.5rem;
-}
+} */
 
-.clearButton {
+/* .clearButton {
   text-align: left;
   font-weight: bold;
-}
+} */
 
 .filter-panel {
   padding: 0.5rem;
@@ -142,14 +142,6 @@
 }
 
 /************************* ************************/
-
-.filter-sub-head {
-  font-weight: bold;
-  font-size: 0.8rem;
-  color: black;
-  margin-top: 1rem;
-  margin-bottom: 0.8rem;
-}
 
 .tabbed {
   display: none;

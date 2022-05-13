@@ -166,7 +166,7 @@ function populateFilterPanel() {
   laPalmaData.categories.poiCategories.forEach(category => {
     gridContent += `
       <label class="container" data-bind="stopBubble:parentAction">
-        <span class="poi-tag larger">${category.id}</span>
+        <span class="poi-tag">${category.id}</span>
         <input id="poi-category-${category.id}" type="checkbox">
         <span class="checkmark"></span>
         <p class="poi-category-description">${category.description}</p>

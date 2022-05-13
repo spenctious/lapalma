@@ -121,6 +121,45 @@
   /* clear: both; */
 }
 
+/************************* Filter header ************************/
+
+.filter-sub-head {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.filter-head {
+  background-color: var(--colour1);
+  color: white;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.clear-button {
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.close-cross {
+  flex: 0 0 3rem;
+  font-size: 1.5rem;
+  text-align: right;
+  cursor: pointer;
+  user-select: none;
+}
+
 /************************* Grid areas ************************/
 
 /* #main-content {
@@ -196,5 +235,9 @@
   /* hide filter button */
   #filter-button {
     visibility: hidden;
+  }
+
+  #filter .close-cross {
+    display: none;
   }
 }
