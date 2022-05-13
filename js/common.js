@@ -46,10 +46,10 @@ function closeNav() {
 
 function openFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(-100%)";
-  // document.getElementById("overlay").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
 }
 
 function closeFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(0)";
-  // document.getElementById("overlay").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 }

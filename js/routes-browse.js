@@ -57,6 +57,22 @@ function getDetailPageQueryString(selectedRouteIndex) {
 function filterClickHandler(event) {
   let elementId = event.target.closest("div").id;
 
+  // handle switching of tab panels for category and location filters
+  // note: on deep viewports the filer panels are stacked and there are no tabs
+  if (elementId == "tab1") {
+    document.getElementById("category-filters").style.display = "block";
+    document.getElementById("location-filters").style.display = "none";
+    document.getElementById("tab1").classList.add("tab-selected");
+    document.getElementById("tab2").classList.remove("tab-selected");
+  }
+
+  if (elementId == "tab2") {
+    document.getElementById("category-filters").style.display = "none";
+    document.getElementById("location-filters").style.display = "block";
+    document.getElementById("tab1").classList.remove("tab-selected");
+    document.getElementById("tab2").classList.add("tab-selected");
+  }
+
   // text button to clear all filters
   if (elementId == "clear-all-filters") {
     filterSet.clearAllFilters();
