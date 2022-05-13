@@ -143,10 +143,6 @@
 
 /************************* ************************/
 
-.filter-section {
-  /* margin-bottom: 2rem; */
-}
-
 .filter-sub-head {
   font-weight: bold;
   font-size: 0.8rem;
@@ -169,15 +165,22 @@
 }
 
 .tab {
-  flex: 0 0 content;
+  flex: 1 0 content;
   padding: 0.5rem;
   font-size: 0.8rem;
+  font-weight: bold;
+  color: grey;
   text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  border-bottom: 1px solid lightgray;
 }
 
 .tab-selected {
-  border-bottom: 2px solid var(--colour0);
-  font-weight: bold;
+  border: 1px solid lightgray;
+  border-bottom: none;
+  color: black;
 }
 
 #category-filters {
