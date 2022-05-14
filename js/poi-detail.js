@@ -35,12 +35,12 @@ function closeModal() {
 
 function moveNext() {
   if (++poiCollectionIndex >= poiCollection.length) poiCollectionIndex = 0;
-  updateCurrent();
+  updateCurrent(true);
 }
 
 function movePrevious() {
   if (--poiCollectionIndex <= 0) poiCollectionIndex = poiCollection.length - 1;
-  updateCurrent();
+  updateCurrent(true);
 }
 
 // find the POI details from the id 
@@ -85,8 +85,10 @@ function getFullPoiDetails(poi, showRelatedWalks) {
           ${entryCost}
         </table>
         ${openingTimes}
+        <div class="button-box last-element">
+          ${relatedRoutes}
+        </div>
       </div>
-      ${relatedRoutes}
     </div>
     <div id="poi-collection-nav" class="collection-nav">
       <div id="poi-prev" class="nav arrow left">
@@ -126,8 +128,8 @@ function getOpeningTimesHtml(openingTimes) {
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-  <div class="button-modal">
-    <a class="grid-item-button" 
+  <div class="button primary">
+    <a 
       href="./routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
       ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
     </a>
