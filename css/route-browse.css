@@ -94,7 +94,7 @@
 #active-filter-grid {
   font-size: 0.8rem;
   font-weight: bold;
-  height: 6rem;
+  height: 5rem;
   text-align: center;
   background-color: var(--colour3);
 }
@@ -109,7 +109,7 @@
 }
 
 .active-filter {
-  padding: 6px;
+  padding: 0.1rem;
   display: grid;
   grid-template-columns: 3rem auto 2rem;
   margin: 3px;
@@ -121,6 +121,10 @@
   display: flex;
   justify-content: left;
   align-items: center;
+}
+
+.active-filter > div:nth-child(1) {
+  padding-left: 0.2rem;
 }
 
 /* active filter close button */
