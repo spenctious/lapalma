@@ -51,12 +51,9 @@
 
       <!-- Filter panel -->
       <div id="filter" class="filter-panel">
-        <div id="filter-header" class="filter-head">
-          <div id="clear-all-filters" class="clear-button">Clear</div>
-          <div class="close-cross" onclick="closeFilterPanel()">&times;</div>
-        </div>
+        <div class="filter-title">Route filters</div>
         <div id="active-filter-box">
-          <h3 class="filter-sub-head">Current filters</h3>
+          <!-- <h3 class="filter-sub-head">Current filters</h3> -->
           <div id="active-filter-grid">
             <!-- content inserted by populateFilterPanel() -->
           </div>
@@ -82,6 +79,10 @@
           <div id="location-filter-grid">
             <!-- content inserted by populateFilterPanel() -->
           </div>
+        </div>
+        <div class="button-box">
+          <div id="clear-all-filters" class="button primary">Clear all</div>
+          <div id="close-filter" class="button primary">Close</div>
         </div>
       </div>
     </div>
