@@ -297,7 +297,7 @@ function populateRouteDatail() {
     <h3>Description</h3>
     <p>${route.description}</p>
     <h3>Route downloads</h3>
-    <div class="downloads">${getDownloadButtons(route.routeFile, route.id)}</div>`;
+    <div class="button-box">${getDownloadButtons(route.routeFile, route.id)}</div>`;
 
   document.getElementById("detail-body").innerHTML = bodyContent;
 }
@@ -351,7 +351,7 @@ function getVariantContent(variant) {
 
   // download content - only some variants will have additional files associated with them
   let downloadContent = variant.hasRouteFile ? 
-    `<div class="downloads">${getDownloadButtons(variant.routeFile, getRouteId(variant.routeFile))}</div>` : "";
+    `<div class="button-box">${getDownloadButtons(variant.routeFile, getRouteId(variant.routeFile))}</div>` : "";
 
   // directions - expand format to HTML
   // square braces enclose route ids, normal brackets enclose waypoint information
@@ -379,17 +379,17 @@ function getVariantContent(variant) {
 
 function getDownloadButtons(fileName, routeId) {
   return `
-    <div class="download-link primary">
+    <div class="button primary">
       <a href="/data/gpx/${fileName}.gpx" download>
-        <img class="invert" src="/img/icons/download.svg" alt="" />
-        <p>Route ${routeId} <span class="format">GPX</span></p>
+        <img src="/img/icons/download.svg" alt="" />
+        <p>${routeId} <span class="format">GPX</span></p>
         <p class="format">(most apps)</p>
       </a>
     </div>
-    <div class="download-link secondary">
+    <div class="button secondary">
       <a href="/data/kml/${fileName}.kml" download>
         <img src="/img/icons/download.svg" alt="" />
-        <p>Route ${routeId} <span class="format">KML</span></p>
+        <p>${routeId} <span class="format">KML</span></p>
         <p class="format">(Google Earth)</p>
       </a>
     </div>`;

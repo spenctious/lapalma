@@ -13,6 +13,7 @@
   --excluded-back-colour: #e60000;
   --highlight-back-colour: #ffff00;
   --highlight-colour: black;
+  --button-colour-bkg: #dddddd;
 
   --nav-panel-width: 200px;
   --filter-panel-width: 310px;
@@ -29,6 +30,64 @@ html, body {
 .h-container {
   margin: 0 auto;
   max-width: var(--max-content-width);
+}
+
+/************************* Button sytling ************************/
+
+.button-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  gap: 0.3rem;
+  box-sizing: border-box;
+}
+
+.button-box > .button {
+  flex: 1 0;
+  width: auto;
+}
+
+.last-element {
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.button {
+  border: 1px solid var(--colour4);
+  border-radius: 6px;
+  color: var(--colour0);
+  background-color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+}
+
+.primary {
+  background-color: var(--button-colour-bkg);
+  color: var(--colour0);
+}
+
+.button > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button > a > img {
+  height: 1.6rem;
+  float: left;
+  padding-right: 0.3rem;
+}
+
+.format {
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
 }
 
 /************************* Header and footer ************************/

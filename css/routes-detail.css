@@ -325,59 +325,6 @@ h4 {
   float: right;
 }
 
-/************************* Download links ************************/
-
-.downloads {
-  margin-top: 1rem;
-  display: flex;
-  flex-flow: row wrap;
-  gap: 0.3rem;
-}
-
-.download-link {
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 0.8rem;
-  flex: 1 0 40%;
-  text-align: left;
-}
-
-.download-link > a > img {
-  height: 1.6rem;
-  float: left;
-  padding-right: 0.3rem;
-}
-
-.format {
-  font-size: 0.6rem;
-  margin-top: 0.2rem;
-}
-
-.invert {
-  filter: invert(100%);
-}
-
-.primary {
-  background-color: var(--colour1);
-}
-
-.primary a { 
-  color: white; 
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.secondary {
-  border: 1px solid var(--colour1);
-  background-color: white;
-}
-
-.secondary a { 
-  color: var(--colour1); 
-  text-decoration: none;
-  font-weight: bold;
-}
-
 /************************* Variants ************************/
 
 .variant {
