@@ -73,6 +73,10 @@ function filterClickHandler(event) {
     document.getElementById("tab2").classList.add("tab-selected");
   }
 
+  if (elementId == "close-filter") {
+    closeFilterPanel();
+  }
+
   // text button to clear all filters
   if (elementId == "clear-all-filters") {
     filterSet.clearAllFilters();
