@@ -123,6 +123,16 @@
 
 /************************* Filter header ************************/
 
+.filter-title {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--colour1);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+}
+
 .filter-sub-head {
   font-weight: bold;
   font-size: 0.8rem;
@@ -131,34 +141,20 @@
   margin-bottom: 0.8rem;
 }
 
-.filter-head {
+/* .filter-head {
   background-color: var(--colour1);
   color: white;
   padding: 0.5rem;
-
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-}
+} */
 
-.clear-button {
-  flex: 0 0 auto;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-}
-
-.close-cross {
-  flex: 0 0 3rem;
-  font-size: 1.5rem;
-  text-align: right;
-  cursor: pointer;
-  user-select: none;
-}
 
 /************************* Grid areas ************************/
 
@@ -237,7 +233,7 @@
     visibility: hidden;
   }
 
-  #filter .close-cross {
+  #close-filter {
     display: none;
   }
 }
