@@ -53,12 +53,8 @@ function modalClickHandler(event) {
 function filterClickHandler(event) {
   let elementId = event.target.id;
 
-  if (elementId.startsWith("poi-category")) {
-    let category = elementId.replace("poi-category-", ""); // strip prefix to get the caregory name
-    event.target.checked ? activeFilters.add(category) : activeFilters.delete(category);
-    // console.log(category +" = " + activeFilters.get(category));
-    filterPoi();
-    return;
+  if (elementId == "close-filter") {
+    closeFilterPanel();
   }
 
   // text button to clear all filters
@@ -71,6 +67,25 @@ function filterClickHandler(event) {
     filterPoi();
     return;
   }
+
+  if (elementId.startsWith("poi-category")) {
+    let category = elementId.replace("poi-category-", ""); // strip prefix to get the caregory name
+    event.target.checked ? activeFilters.add(category) : activeFilters.delete(category);
+    // console.log(category +" = " + activeFilters.get(category));
+    filterPoi();
+    return;
+  }
+
+  // // text button to clear all filters
+  // if (elementId == "clear-all-filters") {
+  //   activeFilters.clear();
+  //   laPalmaData.categories.poiCategories.forEach(category => {
+  //     document.getElementById("poi-category-" + category.id).checked = false;
+  //   })
+  //   // console.log(activeFilters);
+  //   filterPoi();
+  //   return;
+  // }
 }
 
 function poiGridClickHandler(event) {
