@@ -1,14 +1,13 @@
-// Wait for page to load before trying to add the menu
+/************************* Menu ************************/
+
+//  Menu items are added in code because there's no server-side to cope with
+//  HTML includes or partials and this prevents repetition
+
+
+// wait for page to load before trying to add the menu
 document.addEventListener('DOMContentLoaded', function () {
   addMenuItems();
 }, false);
-
-//
-// Navigation
-//  Menu items are added in code because there's no server-side to cope with
-//  HTML includes or partials and this prevents repetition
-//
-
 
 function createMenuItem(name, target) {
   let menuItem = document.createElement("a");
@@ -47,15 +46,5 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("navbar").style.transform = "translateX(-100%)";
-  document.getElementById("overlay").style.display = "none";
-}
-
-function openFilterPanel() {
-  document.getElementById("filter").style.transform = "translateX(-100%)";
-  document.getElementById("overlay").style.display = "block";
-}
-
-function closeFilterPanel() {
-  document.getElementById("filter").style.transform = "translateX(0)";
   document.getElementById("overlay").style.display = "none";
 }

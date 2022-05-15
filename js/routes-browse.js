@@ -27,6 +27,7 @@ function initialize() {
 
   // add event listeners on the routes grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
+  document.getElementById("overlay").addEventListener("click", closeFilterPanel);
   document.getElementById("browse-grid").addEventListener("click", routesGridClickHandler);
   document.getElementById("area-map").addEventListener("click", locationGridClickHandler);
   document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
@@ -57,9 +58,20 @@ function getDetailPageQueryString(selectedRouteIndex) {
 
 /************************* Click handlers ************************/
 
+function openFilterPanel() {
+  document.getElementById("filter").style.transform = "translateX(-100%)";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("filter-button").style.display = "none";
+}
+
+function closeFilterPanel() {
+  document.getElementById("filter").style.transform = "translateX(0)";
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("filter-button").style.display = "block";
+}
+
 function filterButtonClickHandler(event) {
   openFilterPanel();
-  document.getElementById("filter-button").style.display = "none";
 }
 
 function filterClickHandler(event) {
@@ -83,7 +95,6 @@ function filterClickHandler(event) {
 
   if (elementId == "close-filter") {
     closeFilterPanel();
-    document.getElementById("filter-button").style.display = "block";
   }
 
   // text button to clear all filters

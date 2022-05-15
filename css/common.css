@@ -95,15 +95,15 @@ html, body {
 
 .float-action-button {
   position: fixed;
-  background-color: rgb(42,117,231);
-  width: 1.5rem;
-  height: 1.5rem;
+  background-color: rgb(35, 207, 255);
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   bottom: 10%;
   right: 10%;
   box-shadow: 0 6px 10px 0 #666;
   z-index: 10000;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .float-action-button:hover {
@@ -113,6 +113,7 @@ html, body {
 
 .float-action-button > img {
   width: 100%;
+  margin-top: 0.2rem;
   /* filter: invert(100%); */
 }
 
@@ -341,7 +342,7 @@ html, body {
   margin-right: 16px; */
 }
 
-@media (min-width: 560px) {
+@media (min-width: 500px) {
   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
   html, body {
     font-size: 20px;
