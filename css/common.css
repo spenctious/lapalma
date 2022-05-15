@@ -90,7 +90,56 @@ html, body {
   margin-top: 0.2rem;
 }
 
+
+.float-action-button {
+  position: fixed;
+  background-color: rgb(42,117,231);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  bottom: 10%;
+  right: 10%;
+  box-shadow: 0 6px 10px 0 #666;
+  z-index: 10000;
+  padding: 1rem;
+}
+
+.float-action-button:hover {
+  box-shadow: 0 6px 14px 0 #666;
+  transform: scale(1.05);
+}
+
+.float-action-button > img {
+  width: 100%;
+  /* filter: invert(100%); */
+}
+
 /************************* Header and footer ************************/
+
+.active-filters {
+  color: black;
+  background-color: white;
+  border-radius: 6px;
+  margin-left: 1rem;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+.active-filters img {
+  vertical-align: top;
+}
+
+.none {
+  background-color: inherit;
+  color: grey;
+}
+
+.none > img {
+  filter: invert(50%);
+}
 
 #header {
   color: white;

@@ -29,11 +29,14 @@ function initialize() {
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("browse-grid").addEventListener("click", routesGridClickHandler);
   document.getElementById("area-map").addEventListener("click", locationGridClickHandler);
+  document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
 
   // restore filter state if set
   let retrievedState = window.history.state;
   if (retrievedState != undefined && retrievedState != null && JSON.stringify(retrievedState) != '{}') {
     filterSet.restoreState(retrievedState);
+  } else {
+    filterRoutes();
   }
 }
 
@@ -53,6 +56,11 @@ function getDetailPageQueryString(selectedRouteIndex) {
 }
 
 /************************* Click handlers ************************/
+
+function filterButtonClickHandler(event) {
+  openFilterPanel();
+  document.getElementById("filter-button").style.display = "none";
+}
 
 function filterClickHandler(event) {
   let elementId = event.target.closest("div").id;
@@ -75,6 +83,7 @@ function filterClickHandler(event) {
 
   if (elementId == "close-filter") {
     closeFilterPanel();
+    document.getElementById("filter-button").style.display = "block";
   }
 
   // text button to clear all filters
@@ -243,37 +252,35 @@ function filterRoutes() {
     }
   });
 
-  // update match count
-  let matchCountText = document.getElementById("match-count");
+  
+
+  // update route count
+  let routeCount = "";
   switch (matched) {
     case 0:
-      matchCountText.innerHTML = "No matches";
+      routeCount = "No Routes";
       break;
     case 1:
-      matchCountText.innerHTML = "1 match";
+      routeCount = "1 Route";
       break;
     default:
-      matchCountText.innerHTML = matched + " matches";
+      routeCount = matched + " Routes";
       break;
   }
 
-  // update filter count
-  let filtersCount = filterSet.activeFilterCount;
-  let filterCountText = document.getElementById("filter-count");
-  switch (filtersCount) {
-    case 0:
-      filterCountText.innerHTML = "No filters";
-      filterCountText.className = "filter-count no-filters";
-      break;
-    case 1:
-      filterCountText.innerHTML = "1 filter";
-      filterCountText.className = "filter-count no-filters";
-      break;
-    default:
-      filterCountText.innerHTML = filtersCount + " filters";
-      filterCountText.className = "filter-count no-filters";
-      break;
+  let filterCount = filterSet.activeFilterCount.toString();
+  let filterClass = "active-filters";
+  if (filterSet.activeFilterCount == 0) {
+    filterCount = "OFF";
+    filterClass = "active-filters none";
   }
+
+  document.getElementById("header-title").innerHTML = `
+    ${routeCount}
+    <span class="${filterClass}">
+      <img src="/img/icons/funnel-fill.svg" alt=""> ${filterCount}
+    </span>
+    `;
 }
 
 /************************* Filter classes ************************/

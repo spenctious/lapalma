@@ -23,16 +23,24 @@ function initialize() {
   // add event listeners on the poi grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("browse-grid").addEventListener("click", poiGridClickHandler);
+  document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
   detailsModal.addEventListener("click", modalClickHandler);
+  
+  filterPoi();
 }
 
 /************************* Click handlers ************************/
 
+function filterButtonClickHandler(event) {
+  openFilterPanel();
+  document.getElementById("filter-button").style.display = "none";
+}
+
 function modalClickHandler(event) {
   let id = event.target.id;
 
-// close the modal if the close button is clicked or the user
-// clicks anywhere outside the content area
+  // close the modal if the close button is clicked or the user
+  // clicks anywhere outside the content area
   if (id == "modal-close" || id == "full-details") {
     closeModal();
     return;
@@ -55,6 +63,7 @@ function filterClickHandler(event) {
 
   if (elementId == "close-filter") {
     closeFilterPanel();
+    document.getElementById("filter-button").style.display = "block";
   }
 
   // text button to clear all filters
@@ -68,24 +77,13 @@ function filterClickHandler(event) {
     return;
   }
 
+  // filter category
   if (elementId.startsWith("poi-category")) {
     let category = elementId.replace("poi-category-", ""); // strip prefix to get the caregory name
     event.target.checked ? activeFilters.add(category) : activeFilters.delete(category);
-    // console.log(category +" = " + activeFilters.get(category));
     filterPoi();
     return;
   }
-
-  // // text button to clear all filters
-  // if (elementId == "clear-all-filters") {
-  //   activeFilters.clear();
-  //   laPalmaData.categories.poiCategories.forEach(category => {
-  //     document.getElementById("poi-category-" + category.id).checked = false;
-  //   })
-  //   // console.log(activeFilters);
-  //   filterPoi();
-  //   return;
-  // }
 }
 
 function poiGridClickHandler(event) {
@@ -139,37 +137,34 @@ function filterPoi() {
     }
   });
 
-  // update match count
-  let matchCountText = document.getElementById("match-count");
+  // update matched poi count
+  let poiCount = "";
   switch (matched) {
     case 0:
-      matchCountText.innerHTML = "No matches";
+      poiCount = "No Places";
       break;
     case 1:
-      matchCountText.innerHTML = "1 match";
+      poiCount = "1 Place";
       break;
     default:
-      matchCountText.innerHTML = matched + " matches";
+      poiCount = matched + " Places";
       break;
   }
 
-  // update filter count
-  let filtersCount = activeFilters.size;
-  let filterCountText = document.getElementById("filter-count");
-  switch (filtersCount) {
-    case 0:
-      filterCountText.innerHTML = "No filters";
-      filterCountText.className = "filter-count no-filters";
-      break;
-    case 1:
-      filterCountText.innerHTML = "1 filter";
-      filterCountText.className = "filter-count no-filters";
-      break;
-    default:
-      filterCountText.innerHTML = filtersCount + " filters";
-      filterCountText.className = "filter-count no-filters";
-      break;
+  // update header with filter count
+  let filterCount = activeFilters.size.toString();
+  let filterClass = "active-filters";
+  if (activeFilters.size == 0) {
+    filterCount = "OFF";
+    filterClass = "active-filters none";
   }
+
+  document.getElementById("header-title").innerHTML = `
+    ${poiCount}
+    <span class="${filterClass}">
+      <img src="/img/icons/funnel-fill.svg" alt=""> ${filterCount}
+    </span>
+    `;
 }
 
 /************************* Content population ************************/

@@ -1,11 +1,8 @@
 /************************* Grid header ************************/
 
-.grid-header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+/* .grid-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   background-color: var(--colour1);
   font-size: 1rem;
   color: white;
@@ -14,24 +11,35 @@
   bottom: 0;
   z-index: 1;
   height: 1.5rem;
-}
+} */
+
+/* .grid-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: var(--colour1);
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  height: 1.5rem;
+} */
+
 
 /* filter count */
-.filter-count {
-  flex: 1 0 auto;
-  text-align: center;
+/* .filter-count {
+  text-align: left;
   max-width: 5rem;
-  color: var(--colour4);
-}
+} */
 
 /* match count */
-.grid-header div:nth-child(2) {
-  flex: 1 0 auto;
+/* .grid-header div:nth-child(2) {
   text-align: center;
-}
+} */
 
 /* filter button */
-.grid-header div:nth-child(3) {
+/* .grid-header div:nth-child(3) {
   flex: 1 0 auto;
   text-align: center;
   padding: 0.2rem;
@@ -39,13 +47,13 @@
   font-weight: bold;
   max-width: 5rem;
   border: 1px solid white;
-}
+} */
 
-.filters-applied {
+/* .filters-applied {
   background-color: yellow;
   color: black;
   padding: 5px;
-}
+} */
 
 /************************* Item summary grid ************************/
 
@@ -228,12 +236,16 @@
     transform: translateX(-100%) !important;
   }
 
-  /* hide filter button */
-  #filter-button {
+  /* #filter-button {
     visibility: hidden;
   }
-
+ */
   #close-filter {
+    display: none;
+  }
+
+  /* hide filter button */
+  .float-action-button {
     display: none;
   }
 }

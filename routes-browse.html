@@ -29,7 +29,7 @@
     <div id="header">
       <div id="header-content" class="h-container">
         <div class="col clickable" onclick="openNav()">&#9776;</div>
-        <div class="col">Browse routes</div>
+        <div id="header-title" class="col">Browse routes</div>
       </div>
     </div>
 
@@ -42,10 +42,8 @@
         <div id="browse-grid">
           <!-- content inserted by populateRoutesGrid() -->
         </div>
-        <div id="routes-header" class="grid-header">
-          <div id="filter-count" class="filter-count">No Filters</div>
-          <div id="match-count"></div>
-          <div id="filter-button" onclick="openFilterPanel()">Filters</div>
+        <div id="filter-button" class="float-action-button">
+          <img src="/img/icons/funnel-fill.svg" alt="">
         </div>
       </div>
 
