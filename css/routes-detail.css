@@ -358,6 +358,8 @@ h4 {
 .image-container {
   position: relative;
   margin-bottom: 0.5rem;
+  max-width: 700px;
+  display: inline-block;
 }
 
 .caption {
@@ -458,13 +460,13 @@ h4 {
   }
   
   #detail-grid {
-    grid-template-columns: 350px auto 350px;
+    grid-template-columns: 350px 350px auto;
     column-gap: 24px;
     margin-left: 64px;
     margin-right: 64px;  
     grid-template-areas: 
     "title    title title"
-    "detail   pics  variants"
+    "detail   variants  pics"
     ;
 }
 
