@@ -45,7 +45,6 @@ function initialize() {
 
   // populate the various components with the current route data
   populateRouteDatail();
-  populateVariations();
   populateFeaturesAndWarnings();
   populateBasics();
   populateRouteImages();
@@ -299,31 +298,32 @@ function populateRouteDatail() {
     <h3>Route downloads</h3>
     <div class="button-box">${getDownloadButtons(route.routeFile, route.id)}</div>`;
 
-  document.getElementById("detail-body").innerHTML = bodyContent;
-}
-
-function populateVariations() {
   // variants (if any)
-  let variantsContent = `<h3 id="col-head-variants">Walk variations</h3>`;
+  let variantsContent = `<h3>Walk variations</h3>`;
   if (route.hasVariants) {
     route.variants.forEach(variant => variantsContent += getVariantContent(variant));
   } else {
     variantsContent += `<p class="empty-state">None for this walk.</p>`;
   }
+  bodyContent += variantsContent;
 
-  document.getElementById("variations").innerHTML = variantsContent;
+  document.getElementById("detail-body").innerHTML = bodyContent;
 }
 
 function populateRouteImages() {
-  let imagesContent = `<h3 id="col-head-pics">Trail photos</h3>`;
+  let imagesContent = `
+    <h3 id="col-head-pics">Trail photos</h3>
+    <div class="trail-images">`;
 
   route.images.forEach(image => {
     imagesContent += `
     <div class="image-container">
-        <img class="picture" src="/img/route${route.id}-${image.id}-1200.jpg" alt="" />
+        <img class="picture" src="/img/route${route.id}-${image.id}-h525.webp" alt="" />
         <div class="caption">${image.caption}</div>
       </div>`;
-  })
+  });
+
+  imagesContent += `</div>`;
 
   document.getElementById("detail-images").innerHTML = imagesContent;
 }

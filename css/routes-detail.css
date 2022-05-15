@@ -355,11 +355,18 @@ h4 {
 
 /************************* Main images ************************/
 
+.trail-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 16px;
+  column-gap: 16px;
+}
+
 .image-container {
   position: relative;
-  margin-bottom: 0.5rem;
-  max-width: 700px;
-  display: inline-block;
+  flex: 0 1 auto;
 }
 
 .caption {
@@ -369,11 +376,12 @@ h4 {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 0.4rem;
-  width: 100%;
+  /* width: 100%; */
   font-size: 0.7rem;
 }
 
 .picture {
+  /* width: 100%; */
   width: 100%;
   display: block;
 }
@@ -422,10 +430,6 @@ h4 {
   grid-area: pics;
 }
 
-#variations {
-  grid-area: variants;
-}
-
 #routes-collection-nav {
   grid-area: item-nav;
 }
@@ -448,29 +452,6 @@ h4 {
   }
 
   #col-head-pics {
-    margin-top: 0;
-  }
-}
-
-/* wide enough width to let variants flow into their own column */
-@media (min-width: 1690px) {
-
-  #detail-wrapper {
-    flex-direction: row;
-  }
-  
-  #detail-grid {
-    grid-template-columns: 350px 350px auto;
-    column-gap: 24px;
-    margin-left: 64px;
-    margin-right: 64px;  
-    grid-template-areas: 
-    "title    title title"
-    "detail   variants  pics"
-    ;
-}
-
-  #col-head-variants {
     margin-top: 0;
   }
 }
