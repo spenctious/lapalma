@@ -372,6 +372,7 @@ h4 {
 .caption {
   position: absolute;
   bottom: 0;
+  right: 0;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
