@@ -1,4 +1,4 @@
-
+// Wait for page to load before trying to add the menu
 document.addEventListener('DOMContentLoaded', function () {
   addMenuItems();
 }, false);
@@ -9,8 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
 //  HTML includes or partials and this prevents repetition
 //
 
+
 function createMenuItem(name, target) {
   let menuItem = document.createElement("a");
+  if (target == window.location.pathname) {
+    menuItem.classList.add("current");
+  }
   let menuItemText = document.createTextNode(name);
   menuItem.setAttribute("href", target);
   menuItem.appendChild(menuItemText);
@@ -25,13 +29,15 @@ function addMenuItems() {
 
   let navbar = document.getElementById("navbar");
   navbar.appendChild(closeButton);
-  navbar.appendChild(createMenuItem("Home", "index.html"));
-  navbar.appendChild(createMenuItem("Browse walks", "routes-browse.html"));
-  navbar.appendChild(createMenuItem("GPS Apps", "apps.html"));
-  navbar.appendChild(createMenuItem("The trail network", "trail-network.html"));
-  navbar.appendChild(createMenuItem("Forecasts", "forecasts.html"));
-  navbar.appendChild(createMenuItem("Transport", "transport.html"));
-  navbar.appendChild(createMenuItem("Points of interest", "poi-browse.html"));
+
+  // Add and arrange menu items here
+  navbar.appendChild(createMenuItem("Home", "/index.html"));
+  navbar.appendChild(createMenuItem("Browse walks", "/routes-browse.html"));
+  navbar.appendChild(createMenuItem("Browse places", "/poi-browse.html"));
+  navbar.appendChild(createMenuItem("Forecasts", "/forecasts.html"));
+  navbar.appendChild(createMenuItem("GPS Apps", "/apps.html"));
+  navbar.appendChild(createMenuItem("The trail network", "/trail-network.html"));
+  navbar.appendChild(createMenuItem("Transport", "/transport.html"));
 }
 
 function openNav() {
