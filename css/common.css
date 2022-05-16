@@ -92,29 +92,45 @@ html, body {
   margin-top: 0.2rem;
 }
 
+/************************* Action button ************************/
 
-.float-action-button {
+/* positioning and styling - these can also be used with collection-nav */
+.floating {
   position: fixed;
-  background-color: rgb(35, 207, 255);
+  z-index: 10000;
+  box-shadow: 0 6px 10px 0 #666;
+  background-color: darkgreen;
+  color: white;
+}
+
+.bottom-right {
+  bottom: 1rem;
+  right: 2rem;
+}
+
+.bottom-middle {
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* the button: round with icon */
+.action-button {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  bottom: 1rem;
-  right: 2rem;
-  box-shadow: 0 6px 10px 0 #666;
-  z-index: 10000;
   padding: 0.5rem;
 }
 
-.float-action-button:hover {
+.action-button:hover {
   box-shadow: 0 6px 14px 0 #666;
   transform: scale(1.05);
 }
 
-.float-action-button > img {
+.action-button > img {
   width: 100%;
   margin-top: 0.2rem;
-  /* filter: invert(100%); */
+  filter: invert(100%);
 }
 
 /************************* Header and footer ************************/
@@ -269,41 +285,19 @@ html, body {
 
 /************************* Collection navigation bar ************************/
 
+/* can be used with floating and bottom-middle classes for route detail nav */
 .collection-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   column-gap: 1rem;
-
   font-size: 1rem;
   font-weight: bold;
-  color: var(--colour0);
-
   padding: 0.5rem;
   height: 1.5rem;
-}
-
-.floating-bottom-middle {
-  position: fixed;
-  width: 10rem;
-  bottom: 3rem;
-  left: calc(50vw - 5rem);
-  z-index: 10000;
-
   border-radius: 1.25rem;
-  background-color: rgb(35, 207, 255);
-  box-shadow: 0 6px 10px 0 #666;
-}
-
-.fixed-bottom {
-  background-color: var(--colour-light-bkg);
-  color: var(--colour0);
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-  height: 1.5rem;
-  border-top: 1px solid lightgray;
+  width: 10rem;
 }
 
 .collection-nav > .arrow {
@@ -316,12 +310,29 @@ html, body {
   width: 1.5rem;
 }
 
-.collection-nav > .leftImg {
+.collection-nav.floating > .arrow {
+  filter: invert(100%);
+}
+
+.collection-nav > .previous {
   background-image: url("/img/icons/chevron-left.svg");
 }
 
-.collection-nav > .rightImg {
+.collection-nav > .next {
   background-image: url("/img/icons/chevron-right.svg");
+}
+
+/* full-width light coloured fixed to bottom - used for POI detail navigation */
+.fixed-bottom {
+  background-color: var(--colour-light-bkg);
+  color: var(--colour0);
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  height: 1.5rem;
+  border-top: 1px solid lightgray;
+  border-radius: 0;
+  width: auto;
 }
 
 /************************* Page grid ************************/

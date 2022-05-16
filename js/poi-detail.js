@@ -91,9 +91,9 @@ function getFullPoiDetails(poi, showRelatedWalks) {
       </div>
     </div>
     <div id="poi-collection-nav" class="collection-nav fixed-bottom">
-      <div id="poi-prev" class="arrow leftImg"></div>
+      <div id="poi-prev" class="arrow previous"></div>
       <div id="poi-current">0 of n</div>
-      <div id="poi-next" class="arrow rightImg"></div>
+      <div id="poi-next" class="arrow next"></div>
     </div>
     `;
 }
