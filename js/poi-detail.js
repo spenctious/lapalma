@@ -90,14 +90,10 @@ function getFullPoiDetails(poi, showRelatedWalks) {
         </div>
       </div>
     </div>
-    <div id="poi-collection-nav" class="collection-nav">
-      <div id="poi-prev" class="nav arrow left">
-        <img src="/img/icons/chevron-left.svg" alt="" />
-      </div>
-      <div id="poi-current" class="nav centre">0 of n</div>
-      <div id="poi-next" class="nav arrow right">
-        <img src="/img/icons/chevron-right.svg" alt="" />
-      </div>
+    <div id="poi-collection-nav" class="collection-nav fixed-bottom">
+      <div id="poi-prev" class="arrow leftImg"></div>
+      <div id="poi-current">0 of n</div>
+      <div id="poi-next" class="arrow rightImg"></div>
     </div>
     `;
 }

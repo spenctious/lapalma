@@ -99,8 +99,8 @@ html, body {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  bottom: 10%;
-  right: 10%;
+  bottom: 1rem;
+  right: 2rem;
   box-shadow: 0 6px 10px 0 #666;
   z-index: 10000;
   padding: 0.5rem;
@@ -270,13 +270,35 @@ html, body {
 /************************* Collection navigation bar ************************/
 
 .collection-nav {
-  display: grid;
-  grid-template-columns: 4rem auto 4rem;
-  column-gap: 0.5rem;
-  background-color: var(--colour-light-bkg);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+
   font-size: 1rem;
+  font-weight: bold;
   color: var(--colour0);
+
   padding: 0.5rem;
+  height: 1.5rem;
+}
+
+.floating-bottom-middle {
+  position: fixed;
+  width: 10rem;
+  bottom: 3rem;
+  left: calc(50vw - 5rem);
+  z-index: 10000;
+
+  border-radius: 1.25rem;
+  background-color: rgb(35, 207, 255);
+  box-shadow: 0 6px 10px 0 #666;
+}
+
+.fixed-bottom {
+  background-color: var(--colour-light-bkg);
+  color: var(--colour0);
   position: sticky;
   bottom: 0;
   z-index: 1;
@@ -284,42 +306,22 @@ html, body {
   border-top: 1px solid lightgray;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.arrow {
+.collection-nav > .arrow {
   cursor: pointer;
-}
-
-.left {
-  margin-right: auto;
-  padding-right: 1rem;
-}
-
-.centre {
-  margin: 0 auto;
-}
-
-.right {
-  margin-left: auto;
-  padding-left: 1rem;
-}
-
-.arrow img { 
+  user-select: none;
+  flex: 0 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
   height: 1.5rem;
+  width: 1.5rem;
 }
 
-/* dark theme */
-.dark {
-  background-color: var(--colour1);
-  border-top: none;
-  color: white;
+.collection-nav > .leftImg {
+  background-image: url("/img/icons/chevron-left.svg");
 }
 
-.dark img {
-  filter: invert(100%);
+.collection-nav > .rightImg {
+  background-image: url("/img/icons/chevron-right.svg");
 }
 
 /************************* Page grid ************************/
