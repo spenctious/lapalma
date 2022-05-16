@@ -75,6 +75,7 @@ function filterClickHandler(event) {
 
   if (elementId == "close-filter") {
     closeFilterPanel();
+    return;
   }
 
   // text button to clear all filters
@@ -100,8 +101,8 @@ function filterClickHandler(event) {
 function poiGridClickHandler(event) {
   let elementId = event.target.closest("#browse-grid > div").id;
 
-  // link button so ignore and exit as we don't want to show details
-  if (event.target.className == "grid-item-button") return;
+  // don't react to clicks on links - let them do their stuff
+  if (event.target.tagName == "A" ) return;
 
   // poi detail button
   if (elementId.startsWith("poi")) {

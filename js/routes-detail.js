@@ -85,11 +85,13 @@ function collectionClickHandler(event) {
   if (elementId == "next") {
     routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
     window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+    return;
   }
 
   if (elementId == "prev") {
     routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
     window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+    return;
   }
 }
 
@@ -137,6 +139,7 @@ function mainClickHandler(event) {
     // document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
     // detailsModal.style.display = "block";
     openModal(poiId, false);
+    return;
   }
 }
 
