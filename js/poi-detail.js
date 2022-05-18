@@ -124,7 +124,7 @@ function getOpeningTimesHtml(openingTimes) {
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
-  <div class="button primary">
+  <div class="button">
     <a 
       href="./routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
       ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
