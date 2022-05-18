@@ -58,9 +58,12 @@ html, body {
 }
 
 .button {
-  border: 1px solid var(--colour4);
+  /* border: 1px solid var(--colour4); */
+  border: 1px solid var(--colour0);
   border-radius: 6px;
-  color: var(--colour0);
+  /* color: var(--colour0);
+  background-color: white; */
+  color: darkgreen;
   background-color: white;
   font-weight: bold;
   font-size: 0.8rem;
@@ -72,8 +75,14 @@ html, body {
 }
 
 .primary {
-  background-color: var(--button-colour-bkg);
-  color: var(--colour0);
+  /* background-color: var(--button-colour-bkg); */
+  background-color: darkgreen;
+  /* color: var(--colour0); */
+  color: white;
+}
+
+.button.primary img {
+  filter: invert(100%);
 }
 
 .button > a {
@@ -97,7 +106,7 @@ html, body {
 /* positioning and styling - these can also be used with collection-nav */
 .floating {
   position: fixed;
-  z-index: 10000;
+  z-index: 4;
   box-shadow: 0 6px 10px 0 #666;
   background-color: darkgreen;
   color: white;
@@ -274,7 +283,7 @@ html, body {
 
 /* Dim background content and provide an alternative click zone for closing the nav */
 #overlay {
-  z-index: 1;
+  z-index: 4;
   background-color: rgb(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;

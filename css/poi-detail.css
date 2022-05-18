@@ -1,7 +1,7 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   left: 0;
   top: 0;
   width: 100%;
@@ -52,7 +52,8 @@
   font-size: 0.6rem;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: var(--colour6);
+  /* background-color: var(--colour6); */
+  background-color: var(--colour1);
   color: white;
   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
   margin-right: 0.2rem;
