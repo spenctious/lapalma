@@ -52,13 +52,13 @@
           <picture>
             <!-- portrait -->
             <source media="(max-width : 600px) and (orientation: portrait)" srcset="/img/hero-v-480.jpg" />
-            <source media="(min-width : 768px) and (orientation: portrait)" srcset="/img/hero-v-768.jpg" />
-            <source media="(min-width : 992px) and (orientation: portrait)" srcset="/img/hero-v-1024.jpg"/>
+            <!-- <source media="(min-width : 768px) and (orientation: portrait)" srcset="/img/hero-v-768.jpg" /> -->
+            <!-- <source media="(min-width : 992px) and (orientation: portrait)" srcset="/img/hero-v-1024.jpg"/> -->
 
             <!-- landscape -->
             <source media="(max-width : 600px) and (orientation: landscape)" srcset="/img/hero-h-600.jpg" />
-            <source media="(min-width : 768px) and (orientation: landscape)" srcset="/img/hero-h-1024.jpg" />
-            <source media="(min-width : 992px) and (orientation: landscape)" srcset="/img/hero-h-1600.jpg" />
+            <source media="(min-width : 768px)" srcset="/img/hero-h-1024.jpg" />
+            <source media="(min-width : 992px)" srcset="/img/hero-h-1600.jpg" />
 
             <img src="/img/hero-v.jpg" alt="" />
           </picture>
@@ -82,13 +82,15 @@
           </div>
         </div>
       </div>
+      </div>
 
+      <div id="main-content" class="centering-container">
         <div class="content-container">
-          <h1 class="heading">About La Palma</h1>
-          <h2 class="sub-head">Where is La Palma?</h2>
+          <h1>About La Palma</h1>
+          <h2>Where is it?</h2>
           <div class="content-box">
             <p>
-              La Palma is the western-most of the Spanish Canary Islands, part
+              La Palma is one of the western-most of the Spanish Canary Islands, part
               of Macronesia which includes the Azores and Madeira to the north
               and Cape Verde to the south. The nearest land south Morocco
               about 445km away. Direct flights take about four and a half
@@ -96,10 +98,12 @@
             </p>
           </div>
           <div class="content-box">
-            <img src="/img/Spain_Canary_Islands_location_map.svg" alt="" />
-            <figcaption>La Palma is in the top left</figcaption>
+            <figure>
+              <img src="/img/Spain_Canary_Islands_location_map.svg" alt="" />
+              <figcaption>La Palma is in the north-east</figcaption>
+            </figure>
           </div>
-          <h2 class="sub-head">What's so good about it?</h2>
+          <h2>What's so good about it?</h2>
           <div class="content-box">
             <p>
               Not for nothing is La Palma is known as &lsquo;La Isla
@@ -131,15 +135,11 @@
             </ul>
           </div>
           <div class="content-box">
-            <img src="/img/caldera1.jpg" alt="" />
-            <figcaption>The Caldera</figcaption>
+            <figure>
+              <img src="/img/caldera1.jpg" alt="" />
+              <figcaption>The Caldera</figcaption>
+            </figure>
           </div>
-        </div>
-        <div class="content-container">
-          <div class="content-box"></div>
-        </div>
-        <div class="content-container">
-          <div class="content-box"></div>
         </div>
       </div>
     </div>

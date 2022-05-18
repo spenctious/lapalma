@@ -6,6 +6,7 @@
 */
 .hero-container {
   position: relative;
+  grid-area: hero;
 }
 
 .hero {
@@ -81,7 +82,6 @@ strong {
   filter: drop-shadow(2px 2px 5px black);
   text-align: center;
   flex: 0 0 auto;
-  /* border: 1px solid red; */
   margin-top: auto;
 }
 
@@ -116,7 +116,7 @@ strong {
   margin: 0 auto;
   margin-top: 0.5rem;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
 }
 
 /*************************** Scroll prompt  ***************************/
@@ -154,7 +154,28 @@ strong {
 	100% {transform: translateY(0px);}
 }
 
+/*************************** Grid positioning ***************************/
+
+#main-content {
+  grid-area: main;
+}
+
+#content-grid {
+  grid-template-areas: 
+    "hero"
+    "main";
+}
+
 /*************************** Media queries  ***************************/
+
+@media (min-width: 66rem) {
+  .hero-container {
+    margin-top: 0.5rem;
+    width: 50rem;
+  }
+
+
+}
 
 /* wide enough for navigation to be included as a sidebar */
 @media (min-width: 1340px) {
@@ -194,4 +215,15 @@ strong {
   .sub-title {
     font-size: 2rem;
   }
+}
+
+/* wide enough for the navbar */
+@media (min-width: 1340px) {
+  #content-grid {
+    grid-template-areas: 
+      "nav hero"
+      "nav main";
+  }
+
+
 }

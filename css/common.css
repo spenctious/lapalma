@@ -375,8 +375,6 @@ html, body {
   #navbar {
     display: block;
     z-index: 0;
-    /* grid-column: 1;
-    grid-row: 1 / -1; */
   }
 
   .sidenav {
