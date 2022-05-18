@@ -1,27 +1,38 @@
+/************************* Text ************************/
+
 h1 {
   font-weight: bold;
   font-size: 1.2rem;
-  margin-top: 1.2rem;
+  /* margin-top: 1.2rem; */
   margin-bottom: 2rem;
   padding-top: 1rem;
   text-align: center;
+  font-size: 2rem;
+  /* grid-column: 1; */
+  margin-top: 0;
+  line-height: 130%;
 }
 
-.content-box h2 {
+/* .content-box h2 {
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
-}
+} */
 
-.sub-head {
+h2 {
   grid-column: 1 / -1;
-  font-weight: bold;
-  font-size: 1rem;
+  /* font-weight: bold; */
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
-  border-top: 1px solid lightgray;
+  /* border-top: 1rem solid var(--colour5); */
   padding-top: 1rem;
+}
+
+.content-box h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 p {
@@ -34,12 +45,42 @@ strong {
   font-weight: bold;
 }
 
-figcaption {
-  font-size: 0.7rem;
-  padding: 0.5rem;
-  background-color: var(--col);
-  text-align: center;
+/************************* Images and captions ************************/
+
+figure {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
+
+/* remove the spacing margin for the first image */
+.content-box figure:first-child {
+  margin-top: 0rem;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  /* background-color: var(--colour5); */
+  /* color: white; */
+  text-align: center;
+  line-height: 130%;
+}
+
+figure > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  /* margin-top: 1rem; */
+  max-width: 100%;
+}
+
+/************************* Containers ************************/
 
 .centering-container {
   margin: 0 auto;
@@ -57,15 +98,7 @@ figcaption {
   background-color: var(--colour3);
 }
 
-.content-box > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  margin-top: 1rem;
-}
-
-.content-box > img:first-child {
+.content-box img:first-child {
   margin-top: 1rem;
 }
 
@@ -86,12 +119,6 @@ figcaption {
   margin-bottom: 0.5rem;
 }
 
-.heading {
-  font-size: 2rem;
-  grid-column: 1;
-  margin-top: 0;
-  line-height: 130%;
-}
 
 /*************************** DDL ***************************/
 
@@ -137,8 +164,8 @@ iframe {
     grid-template-columns: repeat(2, 24rem);
   }
 
-  /* headings spann full width */
-  .heading {
+  /* top-level headings spann full width */
+  h1 {
     grid-column: 1 / -1;
   }
 
@@ -146,6 +173,15 @@ iframe {
   .content-box > img:first-child {
     margin-top: 0;
   }
+
+  .tinted {
+    border-radius: 1rem;
+  }
+
+  .content-box img:first-child {
+    margin-top: 0rem;
+  }
+
 }
 
 /* wide enough for navigation to be included as a sidebar */
