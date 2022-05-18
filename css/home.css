@@ -6,7 +6,7 @@
 */
 .hero-container {
   position: relative;
-  grid-area: hero;
+  width: 100%;
 }
 
 .hero {
@@ -16,6 +16,10 @@
 .hero img {
   width: 100%;
   display: block;
+}
+
+.centering-container.hero-content {
+  margin: 0;
 }
 
 /*************************** Alerts  ***************************/
@@ -156,6 +160,10 @@ strong {
 
 /*************************** Grid positioning ***************************/
 
+.hero-content {
+  grid-area: hero;
+}
+
 #main-content {
   grid-area: main;
 }
@@ -168,17 +176,24 @@ strong {
 
 /*************************** Media queries  ***************************/
 
-@media (min-width: 66rem) {
+/* wide enough for navigation to be included as a sidebar */
+@media (min-width: 1340px) {
+
+  #content-grid {
+    grid-template-areas: 
+      "nav hero"
+      "nav main";
+  }
+
+  /* hero image no longer full width but in a constrained area */
+  .centering-container.hero-content {
+    margin: 0 auto;
+  }
+
   .hero-container {
     margin-top: 0.5rem;
     width: 50rem;
   }
-
-
-}
-
-/* wide enough for navigation to be included as a sidebar */
-@media (min-width: 1340px) {
 
   /* no need for these if navigation is showing */
   .quick-links {
@@ -219,11 +234,7 @@ strong {
 
 /* wide enough for the navbar */
 @media (min-width: 1340px) {
-  #content-grid {
-    grid-template-areas: 
-      "nav hero"
-      "nav main";
-  }
+
 
 
 }
