@@ -245,7 +245,7 @@
   }
 
   /* hide filter button */
-  .float-action-button {
+  #filter-button {
     display: none;
   }
 }
