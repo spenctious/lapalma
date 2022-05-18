@@ -5,38 +5,35 @@
 
 
 // wait for page to load before trying to add the menu
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   addMenuItems();
 }, false);
 
-function createMenuItem(name, target) {
-  let menuItem = document.createElement("a");
+function getMenuItem(name, icon, target) {
+  // if the page is the same as the link style it differently
+  let menuLinkClass = "menu-link";
   if (target == window.location.pathname) {
-    menuItem.classList.add("current");
+    menuLinkClass += " current";
   }
-  let menuItemText = document.createTextNode(name);
-  menuItem.setAttribute("href", target);
-  menuItem.appendChild(menuItemText);
-  return menuItem;
+  return `
+    <a href=${target} class="${menuLinkClass}">
+      <img src="${icon}" class="menu-icon">
+      <span class="menu-item-name">${name}</span>
+    </a>`;
 }
 
 function addMenuItems() {
-  let closeButton = document.createElement("a");
-  closeButton.setAttribute("onclick", "closeNav()");
-  closeButton.setAttribute("class", "closebtn");
-  closeButton.innerHTML = "&times;";
+  let navbarContent = `<a href="#" class="close-button" onclick="closeNav()">&times;</a>`;
 
-  let navbar = document.getElementById("navbar");
-  navbar.appendChild(closeButton);
+  navbarContent += getMenuItem("Home", "/img/icons/house-door.svg", "/index.html");
+  navbarContent += getMenuItem("Walks", "/img/icons/hiker.svg", "/routes-browse.html");
+  navbarContent += getMenuItem("Places", "/img/icons/geo-alt.svg", "/poi-browse.html");
+  navbarContent += getMenuItem("Forecasts", "/img/icons/weather.svg", "/forecasts.html");
+  navbarContent += getMenuItem("Apps", "/img/icons/download.svg", "/apps.html");
+  navbarContent += getMenuItem("Trails", "/img/icons/signpost.svg", "/trail-network.html");
+  navbarContent += getMenuItem("Transport", "/img/icons/bus.svg", "/transport.html");
 
-  // Add and arrange menu items here
-  navbar.appendChild(createMenuItem("Home", "/index.html"));
-  navbar.appendChild(createMenuItem("Browse walks", "/routes-browse.html"));
-  navbar.appendChild(createMenuItem("Browse places", "/poi-browse.html"));
-  navbar.appendChild(createMenuItem("Forecasts", "/forecasts.html"));
-  navbar.appendChild(createMenuItem("GPS Apps", "/apps.html"));
-  navbar.appendChild(createMenuItem("The trail network", "/trail-network.html"));
-  navbar.appendChild(createMenuItem("Transport", "/transport.html"));
+  document.getElementById("navbar").innerHTML = navbarContent;
 }
 
 function openNav() {

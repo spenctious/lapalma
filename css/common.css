@@ -106,7 +106,7 @@ html, body {
 /* positioning and styling - these can also be used with collection-nav */
 .floating {
   position: fixed;
-  z-index: 4;
+  z-index: 1;
   box-shadow: 0 6px 10px 0 #666;
   background-color: darkgreen;
   color: white;
@@ -218,10 +218,10 @@ html, body {
 
 .sidenav {
   height: 100%;
-  width: var(--nav-width);
+  width: var(--nav-panel-width);
   position: fixed;
   font-weight: 300;
-  z-index: 2; /* position over background-dimming overlay */
+  z-index: 6; /* position over background-dimming overlay */
   top: 0;
   left: 0px;
   transform: translateX(-100%);
@@ -250,20 +250,28 @@ html, body {
 
 
 /* Menu links */
-.sidenav a {
-  padding: 16px 16px 16px 32px;
+.menu-link {
+  padding: 16px 32px 16px 32px;
   text-decoration: none;
+  background-color: var(--colour-light-bkg);
+  display: block;
+}
+
+.menu-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.menu-item-name {
   font-size: 0.8rem;
   font-weight: bold;
   color: var(--colour0);
-  background-color: var(--colour-light-bkg);
-  display: block;
-  margin-top: 1px;
-  margin-bottom: 1px;
 }
 
 .sidenav .current {
-  border-right: 4pt solid red;
+  border-right: 8pt solid darkgreen;
 }
 
 .sidenav a:hover {
@@ -271,9 +279,13 @@ html, body {
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.sidenav .close-button {
   font-size: 36px;
-  padding-right: 32px;
+  font-weight: bold;
+  padding: 16px 32px 16px 32px;
+  text-decoration: none;
+  text-align: right;
+  display: block;
 }
 
 /* Turn cursor into hand over clickable elements */
