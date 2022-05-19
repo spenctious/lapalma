@@ -1,0 +1,43 @@
+/*************************** Drop-down list ***************************/
+
+.custom-select {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  /* margin-top: 1rem; */
+  width: 100%;
+}
+
+select, option {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  background-color: white;
+  border: 1px solid var(--colour0);
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  width: 320px;
+}
+
+ option {
+  padding: 0.4rem;
+  font-size: 0.8rem;
+}
+
+/*************************** Forecast iFrame ***************************/
+
+iframe {
+  display: block;
+  margin-left: 0;
+}
+
+#aemet-forecasts {
+  position: relative;
+}
+
+#aemet-forecasts > #spinner img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
