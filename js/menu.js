@@ -23,15 +23,21 @@ function getMenuItem(name, icon, target) {
 }
 
 function addMenuItems() {
-  let navbarContent = `<a href="#" class="close-button" onclick="closeNav()">&times;</a>`;
+  let navbarContent = `<p id="menu-header" class="close-button" onclick="closeNav()">&times;</p>`;
 
   navbarContent += getMenuItem("Home", "/img/icons/house-door.svg", "/index.html");
+
+  navbarContent += `<p class="menu-section">Discover</p>`;
   navbarContent += getMenuItem("Walks", "/img/icons/hiker.svg", "/routes-browse.html");
   navbarContent += getMenuItem("Places", "/img/icons/geo-alt.svg", "/poi-browse.html");
+
+  navbarContent += `<p class="menu-section">Check</p>`;
   navbarContent += getMenuItem("Forecasts", "/img/icons/weather.svg", "/forecasts.html");
-  navbarContent += getMenuItem("Apps", "/img/icons/download.svg", "/apps.html");
   navbarContent += getMenuItem("Trails", "/img/icons/signpost.svg", "/trail-network.html");
   navbarContent += getMenuItem("Transport", "/img/icons/bus.svg", "/transport.html");
+
+  navbarContent += `<p class="menu-section">Learn about</p>`;
+  navbarContent += getMenuItem("Apps", "/img/icons/download.svg", "/apps.html");
 
   document.getElementById("navbar").innerHTML = navbarContent;
 }
