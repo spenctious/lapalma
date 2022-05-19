@@ -31,11 +31,11 @@ function initialize() {
   collection = collectionParam.split(',');
   collectionIndex = collection.findIndex(item => item == routeId);
 
-  // update the navigation bar - no need for nav buttons for single route collections
-  document.getElementById("current").innerHTML = `${collectionIndex + 1} of ${collection.length}`;
+  // update the navigation bar or hide it altogether if there's only 1 route in the collection
   if (collection.length < 2) {
-    document.getElementById("prev").style.display = "none";
-    document.getElementById("next").style.display = "none";
+    document.getElementById("routes-collection-nav").style.display = "none";
+  } else {
+    document.getElementById("current").innerHTML = `${collectionIndex + 1} of ${collection.length}`;
   }
 
   // initialize POI detail modal
