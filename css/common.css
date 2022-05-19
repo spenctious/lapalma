@@ -1,7 +1,7 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
 :root {
+  /* colours */
   --colour0: #313030;
   --colour1: #565656;
   --colour3: #f6f5f5;
@@ -15,6 +15,14 @@
   --highlight-colour: black;
   --button-colour-bkg: #dddddd;
 
+  /* z-order for components */
+  --z-float: 1;
+  --z-modal: 2;
+  --z-overlay: 3;
+  --z-filter: 4;
+  --z-menu: 5;
+
+  /* sizes */
   --nav-panel-width: 200px;
   --filter-panel-width: 310px;
   --max-content-width: 1800px; /* guess - to be revised */
@@ -23,7 +31,6 @@
 }
 
 html, body {
-  /* font-family: Roboto; */
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   background-color: var(--colour-light-bkg);
@@ -58,11 +65,8 @@ html, body {
 }
 
 .button {
-  /* border: 1px solid var(--colour4); */
   border: 1px solid var(--colour0);
   border-radius: 6px;
-  /* color: var(--colour0);
-  background-color: white; */
   color: darkgreen;
   background-color: white;
   font-weight: bold;
@@ -75,9 +79,7 @@ html, body {
 }
 
 .primary {
-  /* background-color: var(--button-colour-bkg); */
   background-color: darkgreen;
-  /* color: var(--colour0); */
   color: white;
 }
 
@@ -106,7 +108,7 @@ html, body {
 /* positioning and styling - these can also be used with collection-nav */
 .floating {
   position: fixed;
-  z-index: 1;
+  z-index: var(--z-float);
   box-shadow: 0 6px 10px 0 #666;
   background-color: darkgreen;
   color: white;
@@ -221,7 +223,7 @@ html, body {
   width: var(--nav-panel-width);
   position: fixed;
   font-weight: 300;
-  z-index: 6; /* position over background-dimming overlay */
+  z-index: var(--z-menu); /* position over background-dimming overlay */
   top: 0;
   left: 0px;
   transform: translateX(-100%);
@@ -236,7 +238,7 @@ html, body {
   height: 100vh;
   /* width: var(--filter-panel-width); */
   position: fixed;
-  z-index: 2; /* position over background-dimming overlay */
+  z-index: var(--z-filter); /* position over background-dimming overlay */
   top: 0;
   left: 100%;
   /* transform: translateX(-100%); */
@@ -295,7 +297,7 @@ html, body {
 
 /* Dim background content and provide an alternative click zone for closing the nav */
 #overlay {
-  z-index: 4;
+  z-index: var(--z-overlay);
   background-color: rgb(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
