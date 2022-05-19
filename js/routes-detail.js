@@ -492,7 +492,7 @@ function getLocationHtml(locationName, locationAttributes, label) {
   if ("bus" in locationAttributes) {
     let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
     busHtml = `
-      <p class="text-button"><a href="/transport.html">
+      <p class="text-button"><a href="/transport.html#routes">
         Bus stop ${locationAttributes.bus.stop}, route${plural} `;
     locationAttributes.bus.routes.forEach(busRoute => busHtml += `${busRoute}, `);
     busHtml = busHtml.slice(0, -2); // remove trailing comma and space
