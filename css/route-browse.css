@@ -200,15 +200,6 @@
   cursor: pointer;
 }
 
-.text-button {
-  font-weight: bold;
-  color:darkblue;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  text-align: center;
-}
-
 /************************* Category filters ************************/
 
 .filter-row {
@@ -261,15 +252,15 @@
   text-align: center;
 }
 
-.text-button {
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
 .left-bottom {
   text-align: left;
   margin-right: auto;
   margin-top: auto;
+}
+
+.middle {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #area-map {

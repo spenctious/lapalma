@@ -140,6 +140,7 @@ figure > img {
 
 .page-nav .section {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* position anchor point down from static header */
@@ -214,6 +215,11 @@ iframe {
 
   .page-nav a:not(:last-child) {
     border-right: 2px solid var(--colour4);
+  }
+
+  .page-nav .section {
+    font-weight: bold;
+    border-left: 0.5rem solid var(--colour4);
   }
 
   /* images at the top of a content box don't want a top margin */

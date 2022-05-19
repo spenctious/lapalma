@@ -14,6 +14,7 @@
   --highlight-back-colour: #ffff00;
   --highlight-colour: black;
   --button-colour-bkg: #dddddd;
+  --link-colour: rgb(36, 81, 171);
 
   /* z-order for components */
   --z-float: 1;
@@ -44,6 +45,16 @@ html, body {
 
 /************************* Button sytling ************************/
 
+a {
+  text-decoration: none;
+  color: var(--link-colour);
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .button-box {
   display: flex;
   flex-direction: row;
@@ -66,9 +77,11 @@ html, body {
 }
 
 .button {
-  border: 1px solid var(--colour0);
+  /* border: 1px solid var(--colour0); */
+  border: 1px solid var(--link-colour);
   border-radius: 6px;
-  color: darkgreen;
+  /* color: darkgreen; */
+  color: var(--link-colour);
   background-color: white;
   font-weight: bold;
   font-size: 0.8rem;
@@ -80,7 +93,8 @@ html, body {
 }
 
 .primary {
-  background-color: darkgreen;
+  /* background-color: darkgreen; */
+  background-color: var(--link-colour);
   color: white;
 }
 
@@ -104,6 +118,13 @@ html, body {
   margin-top: 0.2rem;
 }
 
+.text-button {
+  font-size: 0.8rem;
+  cursor: pointer;  font-weight: bold;
+  color: var(--link-colour);
+  text-align: center;
+}
+
 /************************* Action button ************************/
 
 /* positioning and styling - these can also be used with collection-nav */
@@ -111,7 +132,8 @@ html, body {
   position: fixed;
   z-index: var(--z-float);
   box-shadow: 0 6px 10px 0 #666;
-  background-color: darkgreen;
+  /* background-color: darkgreen; */
+  background-color: var(--link-colour);
   color: white;
 }
 
@@ -291,21 +313,29 @@ html, body {
 }
 
 .sidenav .current {
-  color: black;
-  background-color: var(--colour4);
+  background-color: var(--link-colour);
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 6px;
   padding-left: 1rem;
 }
 
-.menu-link:hover {
+.current .menu-item-name {
+  color: white;
+}
+
+.current img {
+  filter: invert(100%);
+}
+
+.menu-link:not(.current):hover  {
   color: black;
   background-color: var(--colour5);
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 6px;
   padding-left: 1rem;
+  text-decoration: none;
 }
 
 /* Position and style the close button (top right corner) */

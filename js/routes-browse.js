@@ -820,7 +820,7 @@ class FilterSet {
   populateFilterPanel() {
     // general filters
     let generalFilterGridContent = this.#generalFiltersHtml;
-    generalFilterGridContent += `<div id="clear-favourites" class="text-button">Clear favourites</div>`;
+    generalFilterGridContent += `<div id="clear-favourites" class="text-button middle">Clear favourites</div>`;
     document.getElementById("general-filter-grid").innerHTML = generalFilterGridContent;
 
     // category filters

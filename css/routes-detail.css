@@ -150,15 +150,15 @@
 
 .text-button {
   margin-top: 0.3rem;
-  color:darkblue;
+  color: var(--link-colour);
   font-weight: bold;
   cursor: pointer;
 }
 
-.text-button a {
+/* .text-button a {
   text-decoration: none;
   color:darkblue;
-}
+} */
 
 
 /************************* Text ************************/
