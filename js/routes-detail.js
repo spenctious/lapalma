@@ -232,26 +232,15 @@ function populateFeaturesAndWarnings() {
   let featuresContent = route.interest.size == 0 ? 
   `<div></div><div class="iten-description">No singificant features</div>` : "";
   route.interest.forEach((featureAttributes, featureName) => {
-    // handle special cases with additional content
-    let additionalContent = "";
-    switch (featureName) {
-      case "poi":
-        if (route.hasPoi) {
-          route.poi.forEach((placeOfInterest, id) => {
-            additionalContent += `<p class="text-button" id="poiLink${id}">${placeOfInterest.name}</p>`;
-          });
-        }
-        break;
-    }
-    featuresContent += getFeatureHtml(featureAttributes, additionalContent);
+    featuresContent += getFeatureHtml(featureAttributes, getAdditionalContent(featureName));
   });
   document.getElementById("features-grid").innerHTML = featuresContent;
 
   // warnings
   let warningsContent = route.warnings.size == 0 ? 
     `<div></div><div class="iten-description">No reported warnings</div>` : "";
-  route.warnings.forEach(warning => {
-    warningsContent += getFeatureHtml(warning);
+  route.warnings.forEach((warningAttributes, warningName) => {
+    warningsContent += getFeatureHtml(warningAttributes, getAdditionalContent(warningName));
   });
   document.getElementById("warnings-grid").innerHTML = warningsContent;
 
@@ -455,6 +444,27 @@ function getFeatureHtml(feature, additionalContent = "") {
     feature.noteModifiedDescription, 
     getStrongHtml(feature.isStrong, feature.strongTag),
     additionalContent);
+}
+
+// gets the additional content for specific features and warnings
+function getAdditionalContent(featureName) {
+  let additionalContent = "";
+  switch (featureName) {
+    // list of links that open up a modal for the POI
+    case "poi":
+      if (route.hasPoi) {
+        route.poi.forEach((placeOfInterest, id) => {
+          additionalContent += `<p class="text-button" id="poiLink${id}">${placeOfInterest.name}</p>`;
+        });
+      }
+      break;
+      
+    // link to the forecasts page
+    case "weather":
+      additionalContent += `<a href="forecasts.html">Check the weather</a>`;
+      break;
+  }
+  return additionalContent;
 }
 
 // feature description for basic items that are not metrics (walk type, refreshments)
