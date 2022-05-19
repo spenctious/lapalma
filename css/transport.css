@@ -2,11 +2,28 @@
 
 .bus-routes {
   font-size: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+}
+
+tr.suspended {
+  color: red;
+}
+
+.suspended::after {
+  content: "*";
 }
 
 .bus-routes th,
 .bus-routes td {
-    padding: 0.3rem;
+    padding: 0.5rem;
 }
 
 .bus-routes tr {
