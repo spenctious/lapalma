@@ -123,7 +123,7 @@ a:hover {
   font-size: 0.8rem;
   cursor: pointer;  font-weight: bold;
   color: var(--link-colour);
-  text-align: center;
+  text-align: left;
 }
 
 /************************* Action button ************************/
