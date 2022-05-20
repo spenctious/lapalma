@@ -22,6 +22,7 @@
   --z-overlay: 3;
   --z-filter: 4;
   --z-menu: 5;
+  --z-header: 6;
 
   /* sizes */
   --nav-panel-width: 240px;
@@ -137,13 +138,13 @@ a:hover {
   color: white;
 }
 
-.bottom-right {
+.filter-position {
   bottom: 1rem;
   right: 2rem;
 }
 
-.bottom-middle {
-  bottom: 3rem;
+.coll-nav-position {
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -199,7 +200,7 @@ a:hover {
   background-color: var(--colour0);
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: var(--z-header);
   height: var(--header-height);
 }
 
