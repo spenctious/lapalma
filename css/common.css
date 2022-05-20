@@ -19,10 +19,10 @@
   /* z-order for components */
   --z-float: 1;
   --z-modal: 2;
-  --z-overlay: 3;
-  --z-filter: 4;
-  --z-menu: 5;
-  --z-header: 6;
+  --z-header: 3;
+  --z-overlay: 4;
+  --z-filter: 5;
+  --z-menu: 6;
 
   /* sizes */
   --nav-panel-width: 240px;
