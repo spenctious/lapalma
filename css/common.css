@@ -14,7 +14,7 @@
   --highlight-back-colour: #ffff00;
   --highlight-colour: black;
   --button-colour-bkg: #dddddd;
-  --link-colour: rgb(36, 81, 171);
+  --link-colour: #2451ab;
 
   /* z-order for components */
   --z-float: 1;
@@ -101,6 +101,11 @@ a:hover {
 
 .button.primary img {
   filter: invert(100%);
+}
+
+.button img {
+  /* https://codepen.io/sosuke/pen/Pjoqqp to convert black to current link colour */
+  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg) brightness(74%) contrast(86%);
 }
 
 .button > a {
