@@ -18,8 +18,8 @@
 
   /* z-order for components */
   --z-float: 1;
-  --z-modal: 2;
-  --z-header: 3;
+  --z-header: 2;
+  --z-modal: 3;
   --z-overlay: 4;
   --z-filter: 5;
   --z-menu: 6;
@@ -411,9 +411,9 @@ a:hover {
 .fixed-bottom {
   background-color: var(--colour-light-bkg);
   color: var(--colour0);
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
+  /* position: sticky; */
+  /* bottom: 0;
+  z-index: 1; */
   height: 1.5rem;
   border-top: 1px solid lightgray;
   border-radius: 0;

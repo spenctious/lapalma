@@ -64,11 +64,12 @@ function getFullPoiDetails(poi, showRelatedWalks) {
 
   // build html content
   return `
+    <div class="modal-title">
+      <span id="modal-close" class="close">&times;</span>
+      Location Detail
+    </div>
     <div class="modal-content-wrapper">
-      <div class="modal-title">
-        <span id="modal-close" class="close">&times;</span>
-        ${poi.fullName}
-      </div>
+      <div class="poi-title">${poi.fullName}</div>
       <div class="poi-detail-pic">
         <img src="/img/poi${poi.id}-400x300.webp" alt="" />
       </div>
