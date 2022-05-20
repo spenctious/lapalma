@@ -56,6 +56,30 @@ a:hover {
   text-decoration: underline;
 }
 
+/* indicate external links
+    from: https://stackoverflow.com/questions/5379752/css-style-external-links 
+    with amendments to use an SVG image coloured same as the link
+*/
+a[href]:not(:where(
+  /* exclude hash only links */
+  [href^="#"],
+  /* exclude relative but not double slash only links */
+  [href^="/"]:not([href^="//"]),
+  /* domains to exclude */
+  /* [href*="//stackoverflow.com"], */
+  /* subdomains to exclude */
+  /* [href*="//meta.stackoverflow.com"], */
+)):after {
+  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg) brightness(74%) contrast(86%);
+  content: "";
+  background: url('/img/icons/box-arrow-up-right.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-left: 0.2rem; /* spacing*/
+  padding-right: 0.75rem; /* sizing */
+}
+
 .button-box {
   display: flex;
   flex-direction: row;
