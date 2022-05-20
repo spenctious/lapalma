@@ -145,7 +145,7 @@
   background-color: var(--excluded-back-colour);
 }
 
-/************************* ************************/
+/************************* Tabbed filters ************************/
 
 .tabbed {
   display: none;
