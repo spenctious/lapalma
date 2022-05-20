@@ -56,6 +56,14 @@ a:hover {
   text-decoration: underline;
 }
 
+.map-links {
+  font-size: 0.7rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.3rem;
+  line-height: 150%;
+  text-align: right;
+}
+
 /* indicate external links
     from: https://stackoverflow.com/questions/5379752/css-style-external-links 
     with amendments to use an SVG image coloured same as the link

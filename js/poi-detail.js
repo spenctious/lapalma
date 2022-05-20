@@ -61,6 +61,7 @@ function getFullPoiDetails(poi, showRelatedWalks) {
   let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
   let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
   let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
+  let osmCoords = poi.locationAttributes.coordinates.replace(", ", "/");
 
   // build html content
   return `
@@ -81,7 +82,16 @@ function getFullPoiDetails(poi, showRelatedWalks) {
           ${poi.description}
         </p>
         <table class="general-details">
-          <tr><td>Location:</td><td>${poi.locationDescription}</td></tr>
+          <tr>
+            <td>Location:</td>
+            <td>
+              ${poi.locationDescription}
+              <p class="map-links">
+                <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${poi.locationAttributes.coordinates}&zoom=18&basemap=satellite">Google Maps</a>&ensp;
+                <a href="https://www.openstreetmap.org/#map=18/${osmCoords}">OSM</a>      
+              </p>
+            </td>
+          </tr>
           ${tel}
           ${entryCost}
         </table>
@@ -127,7 +137,7 @@ function getRelatedRoutesHtml(poi) {
   return `
   <div class="button">
     <a 
-      href="./routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
+      href="/routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
       ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
     </a>
   </div>`;

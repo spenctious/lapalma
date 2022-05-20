@@ -508,12 +508,19 @@ function getLocationHtml(locationName, locationAttributes, label) {
     busHtml = busHtml.slice(0, -2); // remove trailing comma and space
     busHtml += `</a></p>`;
   }
+  let osmCoords = locationAttributes.coordinates.replace(", ", "/");
   return `
     <div>
-      <p class="details-grid-attribute">${label}</p>
+      <p class="details-grid-attribute">
+        ${label}
+      </p>
     </div>
     <div class="item-description">
       <h4>${locationName}</h4>
+      <p class="map-links">
+        <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${locationAttributes.coordinates}&zoom=16&basemap=satellite">Google Maps</a>&ensp;
+        <a href="https://www.openstreetmap.org/#map=16/${osmCoords}">OSM</a>
+      </p>
       ${notesHtml}
       <p><strong>Parking:</strong> ${carHtml}</p>
       ${taxiHtml}
