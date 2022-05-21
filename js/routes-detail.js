@@ -26,7 +26,7 @@ function initialize() {
   // get the data for the specific route
   routeId = urlParams.get(URL_PARAM_ROUTE);
   route = laPalmaData.routes.get(routeId);
-  document.getElementById("title").innerHTML = "Walk " + routeId;
+  document.getElementById("header-title").innerHTML = "Walk " + routeId;
 
   // get the list of routes selected by the current filters (if any)
   collectionParam = urlParams.get(URL_PARAM_COLLECTION);

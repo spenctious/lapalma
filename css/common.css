@@ -236,48 +236,47 @@ a[href]:not(:where(
   top: 0;
   z-index: var(--z-header);
   height: var(--header-height);
-}
 
-#header-content {
   display: grid;
   grid-template-columns: 6rem auto 6rem;
   grid-template-rows: 3rem;
   column-gap: 1rem;
   font-size: 1.2rem;
-  text-align: center;
 }
 
-#header .col {
+#header > div {
   font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#back-nav {
-  align-items:flex-start;
-  text-align: left;
-  cursor: pointer;
-  user-select: none;
-  margin-right: auto;
-}
-
-
-#back-nav img,
-#open-menu img {
+#back-nav > img,
+#open-menu > img {
   filter: invert(100%);
   height: 1.6rem;
   width: 1.6rem;
   display: inline-block;
-  padding-right: 0.5rem;
+}
+
+#back-nav {
+  text-align: left;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+#header-title {
+  text-align: center;
 }
 
 #open-menu {
-  margin-left: auto;
-}
-
-#header .col:nth-child(3) {
   text-align: right;
+  margin-left: auto;
+  padding-right: 0.5rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 #footer {
@@ -519,8 +518,7 @@ a[href]:not(:where(
     display: none;
   }
 
-  /* hide menu button in header */
-  #header .col:nth-child(3) {
+  #open-menu {
     visibility: hidden;
   }
 }
