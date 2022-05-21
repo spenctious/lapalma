@@ -15,11 +15,15 @@
   display: grid;
   grid-template-rows: 2.3rem auto 3.5rem;
   height: 100%;
+  overflow: hidden;
 }
 
 /* header and buttons remain fixed while the central filter section scrolls */
 .filter-panel > div:nth-child(2) {
-  overflow-y: auto;
+  /* hide scrollbar - 50px is max scrollbar width */
+  margin-right: -50px;
+  padding-right: 50px;
+  overflow-y: scroll;
 }
 
 .routes-filters {
