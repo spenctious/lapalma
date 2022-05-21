@@ -86,10 +86,7 @@ function getFullPoiDetails(poi, showRelatedWalks) {
             <td>Location:</td>
             <td>
               ${poi.locationDescription}
-              <p class="map-links">
-                <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${poi.locationAttributes.coordinates}&zoom=18&basemap=satellite">Google Maps</a>&ensp;
-                <a href="https://www.openstreetmap.org/#map=18/${osmCoords}">OSM</a>      
-              </p>
+              ${getLocationLinks(poi.locationAttributes.coordinates)}
             </td>
           </tr>
           ${tel}
@@ -106,6 +103,19 @@ function getFullPoiDetails(poi, showRelatedWalks) {
       <div id="poi-current">0 of n</div>
       <div id="poi-next" class="arrow next"></div>
     </div>
+    `;
+}
+
+function getLocationLinks(coords) {
+  let osmCoords = coords.replace(", ", "/");
+  const ZOOM_LEVEL = 16;
+
+  return `
+    <p class="map-links">
+      <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${coords}&zoom=${ZOOM_LEVEL}&basemap=satellite" target="_blank">Google Maps</a>
+      &ensp;
+      <a href="https://www.openstreetmap.org/#map=${ZOOM_LEVEL}/${osmCoords}" target="_blank">OSM</a>      
+    </p>
     `;
 }
 
