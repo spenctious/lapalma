@@ -257,8 +257,8 @@ a[href]:not(:where(
   align-items: center;
 }
 
-#back-nav > img,
-#open-menu > img {
+#back-nav img,
+#open-menu img {
   filter: invert(100%);
   height: 1.6rem;
   width: 1.6rem;
