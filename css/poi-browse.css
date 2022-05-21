@@ -1,11 +1,14 @@
 @import url("/css/common-grid.css");
 @import url("/css/poi-detail.css");
 
-.filter-panel {
+/* .filter-panel {
   padding: 0.5rem;
   background-color: var(--colour-light-bkg);
   border-left: 1px solid lightgray;
-}
+  display: grid;
+  grid-template-rows: auto 3.5rem;
+  height: 100%;
+} */
 
 .poi-category-description {
   margin-top: 0.2rem;
@@ -50,7 +53,7 @@
 }
 
 .container input:checked ~ .checkmark {
-  background-color: var(--colour6);
+  background-color: var(--colour1);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

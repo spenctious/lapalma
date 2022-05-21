@@ -48,36 +48,41 @@
       </div>
 
       <!-- Filter panel -->
-      <div id="filter" class="filter-panel">
-        <div class="filter-title">Route filters</div>
-        <div id="active-filter-box">
-          <!-- <h3 class="filter-sub-head">Current filters</h3> -->
-          <div id="active-filter-grid">
-            <!-- content inserted by populateFilterPanel() -->
+      <div id="filter" class="filter-panel routes-filters">
+        <div>
+          <div class="filter-title">Route filters</div>
+          <div id="active-filter-box">
+            <!-- <h3 class="filter-sub-head">Current filters</h3> -->
+            <div id="active-filter-grid">
+              <!-- content inserted by populateFilterPanel() -->
+            </div>
           </div>
         </div>
-        <div id="general-filters" class="filter-section">
-          <h3 class="filter-sub-head">Favourites & Starred</h3>
-          <div id="general-filter-grid">
-            <!-- content inserted by populateFilterPanel() -->
+        <div>
+          <div id="general-filters" class="filter-section">
+            <h3 class="filter-sub-head">Favourites & Starred</h3>
+            <div id="general-filter-grid">
+              <!-- content inserted by populateFilterPanel() -->
+            </div>
+          </div>
+          <div id="feature-location-tabs" class="tab-strip">
+            <div id="tab1" class="tab tab-selected">Features</div>
+            <div id="tab2" class="tab">Locations</div>
+          </div>
+          <div id="category-filters" class="filter-section">
+            <h3 class="filter-sub-head tabbed">Features & Warnings</h3>
+            <div id="category-filter-grid">
+              <!-- content inserted by populateFilterPanel() -->
+            </div>
+          </div>
+          <div id="location-filters" class="filter-section">
+            <h3 class="filter-sub-head tabbed">Locations</h3>
+            <div id="location-filter-grid">
+              <!-- content inserted by populateFilterPanel() -->
+            </div>
           </div>
         </div>
-        <div id="feature-location-tabs" class="tab-strip">
-          <div id="tab1" class="tab tab-selected">Features</div>
-          <div id="tab2" class="tab">Locations</div>
-        </div>
-        <div id="category-filters" class="filter-section">
-          <h3 class="filter-sub-head tabbed">Features & Warnings</h3>
-          <div id="category-filter-grid">
-            <!-- content inserted by populateFilterPanel() -->
-          </div>
-        </div>
-        <div id="location-filters" class="filter-section">
-          <h3 class="filter-sub-head tabbed">Locations</h3>
-          <div id="location-filter-grid">
-            <!-- content inserted by populateFilterPanel() -->
-          </div>
-        </div>
+
         <div class="button-box last-element">
           <div id="clear-all-filters" class="button">Clear all</div>
           <div id="close-filter" class="button primary">Close</div>

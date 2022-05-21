@@ -27,8 +27,9 @@
   /* sizes */
   --nav-panel-width: 240px;
   --nav-panel-width-sml: 200px;
-  --filter-panel-width: 310px;
-  --max-content-width: 1800px; /* guess - to be revised */
+  --routes-filter-panel-width: 14.5rem;
+  --poi-filter-panel-width: 14rem;
+  --max-content-width: 1800px;
   --header-height: 3rem;
   --footer-height: 2rem;
 }
@@ -84,8 +85,8 @@ a[href]:not(:where(
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-left: 0.2rem; /* spacing*/
-  padding-right: 0.75rem; /* sizing */
+  margin-left: 0.2rem;
+  padding-right: 0.75rem;
 }
 
 .button-box {
@@ -105,15 +106,13 @@ a[href]:not(:where(
 }
 
 .last-element {
-  margin-bottom: 0;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 1.8rem;
 }
 
 .button {
-  /* border: 1px solid var(--colour0); */
   border: 1px solid var(--link-colour);
   border-radius: 6px;
-  /* color: darkgreen; */
   color: var(--link-colour);
   background-color: white;
   font-weight: bold;
@@ -126,7 +125,6 @@ a[href]:not(:where(
 }
 
 .primary {
-  /* background-color: darkgreen; */
   background-color: var(--link-colour);
   color: white;
 }
@@ -170,7 +168,6 @@ a[href]:not(:where(
   position: fixed;
   z-index: var(--z-float);
   box-shadow: 0 6px 10px 0 #666;
-  /* background-color: darkgreen; */
   background-color: var(--link-colour);
   color: white;
 }
@@ -283,33 +280,16 @@ a[href]:not(:where(
   height: 100%;
   width: var(--nav-panel-width-sml);
   position: fixed;
-  z-index: var(--z-menu); /* position over background-dimming overlay */
+  z-index: var(--z-menu);
   top: 0;
   left: 0;
   transform: translateX(-100%);
   transition: transform 250ms ease-in-out;
   background-color: var(--colour-light-bkg);
-  overflow-x: hidden; /* disable horizontal scroll */
+  overflow-x: hidden;
   padding-top: 0px;
   white-space: nowrap;
 }
-
-.filter-panel {
-  height: 100vh;
-  /* width: var(--filter-panel-width); */
-  position: fixed;
-  z-index: var(--z-filter); /* position over background-dimming overlay */
-  top: 0;
-  left: 100%;
-  /* transform: translateX(-100%); */
-  transition: transform 250ms ease-in-out;
-  background-color: var(--colour-light-bkg);
-  overflow-x: hidden; /* disable horizontal scroll */
-  padding-top: 0px;
-  white-space: nowrap;
-  background-color: white;
-}
-
 
 /* Menu links */
 
@@ -448,9 +428,6 @@ a[href]:not(:where(
 .fixed-bottom {
   background-color: var(--colour-light-bkg);
   color: var(--colour0);
-  /* position: sticky; */
-  /* bottom: 0;
-  z-index: 1; */
   height: 1.5rem;
   border-top: 1px solid lightgray;
   border-radius: 0;

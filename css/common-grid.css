@@ -1,65 +1,59 @@
-/************************* Grid header ************************/
+/************************* Filter panel ************************/
 
-/* .grid-header {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  background-color: var(--colour1);
-  font-size: 1rem;
-  color: white;
+/* assumes 3 divs: header, main filter section, and buttons */
+.filter-panel {
+  position: fixed;
+  z-index: var(--z-filter);
+  top: 0;
+  left: 100%;
+  transition: transform 250ms ease-in-out;
+  padding-top: 0px;
+  white-space: nowrap;
   padding: 0.5rem;
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-  height: 1.5rem;
-} */
-
-/* .grid-header {
+  background-color: var(--colour-light-bkg);
+  border-left: 1px solid lightgray;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  background-color: var(--colour1);
-  font-size: 1rem;
-  color: white;
-  padding: 0.5rem;
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-  height: 1.5rem;
-} */
+  grid-template-rows: 2.3rem auto 3.5rem;
+  height: 100%;
+}
 
+/* header and buttons remain fixed while the central filter section scrolls */
+.filter-panel > div:nth-child(2) {
+  overflow-y: auto;
+}
 
-/* filter count */
-/* .filter-count {
-  text-align: left;
-  max-width: 5rem;
-} */
+.routes-filters {
+  width: var(--routes-filter-panel-width);
+  grid-template-rows: 7.5rem auto 3.5rem;
+}
 
-/* match count */
-/* .grid-header div:nth-child(2) {
-  text-align: center;
-} */
+.poi-filters {
+  width: var(--poi-filter-panel-width);
+}
 
-/* filter button */
-/* .grid-header div:nth-child(3) {
-  flex: 1 0 auto;
-  text-align: center;
-  padding: 0.2rem;
-  border-radius: 6px;
+.filter-title {
   font-weight: bold;
-  max-width: 5rem;
-  border: 1px solid white;
-} */
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--colour1);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+}
 
-/* .filters-applied {
-  background-color: yellow;
+.filter-sub-head {
+  font-weight: bold;
+  font-size: 0.8rem;
   color: black;
-  padding: 5px;
-} */
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
 
 /************************* Item summary grid ************************/
 
 #browse-grid {
   display: grid;
-  grid-template-columns: minmax(100%, 400px);
+  grid-template-columns: minmax(100%, 400px); /* limit width to pic size */
   gap: 0.5rem;
   justify-content: center;
   margin: 0.5rem;
@@ -85,7 +79,7 @@
 
 .item-pic img {
   width: 100%;
-  display: block; /* stops white space at bottom of image due to inline positioning */
+  display: block;
 }
 
 .pic-label {
@@ -126,64 +120,15 @@
 .item-detail .description {
   font-size: 0.8rem;
   line-height: 1rem;
-  /* height: 3rem; */
-  /* clear: both; */
 }
-
-/************************* Filter header ************************/
-
-.filter-title {
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-  background-color: var(--colour1);
-  color: white;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-.filter-sub-head {
-  font-weight: bold;
-  font-size: 0.8rem;
-  color: black;
-  margin-top: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-/* .filter-head {
-  background-color: var(--colour1);
-  color: white;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-} */
-
 
 /************************* Grid areas ************************/
-
-/* #main-content {
-  grid-area: browse-grid;
-}
-
-#navbar {
-  grid-area: nav;
-} */
 
 #filter {
   grid-area: filter;
 }
 
 #content-grid {
-  /* grid-template-columns: 100%;
-  grid-template-areas: "main";
-  margin-left: 0px;
-  margin-right: 0px;  */
   background-color: var(--colour5); 
 }
 
@@ -208,7 +153,7 @@
     background-color: lightgray;
     width: 250px;
     height: 187px;
-    display: block; /* stops white space at bottom of image due to inline positioning */
+    display: block;
   }
 }
 
@@ -228,7 +173,6 @@
   }
 
   .filter-panel {
-    /* position: static; */
     height: auto;
     z-index: 0;
     position: relative;
@@ -237,10 +181,6 @@
     transform: translateX(-100%) !important;
   }
 
-  /* #filter-button {
-    visibility: hidden;
-  }
- */
   #close-filter {
     display: none;
   }

@@ -68,27 +68,6 @@
   margin-bottom: 0.1rem;
 }
 
-/************************* Filters ************************/
-
-/* #filter-header {
-  background-color: var(--colour1);
-  color: white;
-  display: grid;
-  grid-template-columns: auto 2rem;
-  padding: 0.5rem;
-} */
-
-/* .clearButton {
-  text-align: left;
-  font-weight: bold;
-} */
-
-.filter-panel {
-  padding: 0.5rem;
-  background-color: var(--colour-light-bkg);
-  border-left: 1px solid lightgray;
-}
-
 /************************* Active filter box ************************/
 
 #active-filter-grid {
