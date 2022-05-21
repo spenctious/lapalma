@@ -137,24 +137,25 @@
   justify-content: space-around;
   margin-top: 1rem;
   margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--colour5);
 }
 
 .tab {
   flex: 1 0 content;
-  padding: 0.5rem;
+  padding: 0.3rem;
   font-size: 0.8rem;
   font-weight: bold;
   color: grey;
   text-align: center;
   cursor: pointer;
   user-select: none;
-  border: none;
-  border-bottom: 1px solid lightgray;
 }
 
 .tab-selected {
-  border: 1px solid lightgray;
-  border-bottom: none;
+  /* border: 1px solid lightgray;
+  border-bottom: none; */
+  /* border-bottom: 4px solid var(--link-colour); */
+  background-color: var(--colour5);
   color: black;
 }
 
