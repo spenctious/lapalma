@@ -118,7 +118,7 @@ a[href]:not(:where(
   background-color: white;
   font-weight: bold;
   font-size: 0.8rem;
-  padding: 0.5rem;
+  padding: 0.4rem;
   text-align: center;
   cursor: pointer;
   user-select: none;
