@@ -392,11 +392,6 @@ a[href]:not(:where(
   user-select: none;
 }
 
-/* Turn cursor into hand over clickable elements */
-#header .clickable {
-  cursor: pointer;
-}
-
 /* Dim background content and provide an alternative click zone for closing the nav */
 #overlay {
   z-index: var(--z-overlay);
