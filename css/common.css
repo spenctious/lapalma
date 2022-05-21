@@ -240,7 +240,7 @@ a[href]:not(:where(
 
 #header-content {
   display: grid;
-  grid-template-columns: 3rem auto 3rem;
+  grid-template-columns: 6rem auto 6rem;
   grid-template-rows: 3rem;
   column-gap: 1rem;
   font-size: 1.2rem;
@@ -254,8 +254,26 @@ a[href]:not(:where(
   align-items: center;
 }
 
-#header .col:nth-child(1) {
+#back-nav {
+  align-items:flex-start;
   text-align: left;
+  cursor: pointer;
+  user-select: none;
+  margin-right: auto;
+}
+
+
+#back-nav img,
+#open-menu img {
+  filter: invert(100%);
+  height: 1.6rem;
+  width: 1.6rem;
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+
+#open-menu {
+  margin-left: auto;
 }
 
 #header .col:nth-child(3) {
@@ -502,7 +520,7 @@ a[href]:not(:where(
   }
 
   /* hide menu button in header */
-  #header .col:nth-child(1) {
+  #header .col:nth-child(3) {
     visibility: hidden;
   }
 }

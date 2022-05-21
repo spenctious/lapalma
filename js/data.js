@@ -19,6 +19,7 @@ var performIntegrityCheck = true;
 // URL paramater names - defining here ensures consistency
 const URL_PARAM_ROUTE = "route";
 const URL_PARAM_COLLECTION = "collection";
+const URL_PARAM_STEPS = "steps";
 
 /************************* Data loading setup ************************/
 
@@ -214,7 +215,6 @@ class Data {
 
       location: poi.location,
       locationAttributes: this.locations.get(poi.location),
-
 
       openingTimes: poi.openingTimes,
       hasOpeningTimes: "openingTimes" in poi,

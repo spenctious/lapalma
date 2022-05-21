@@ -5,6 +5,8 @@ var routeId;
 var collectionParam;
 var collection;
 var collectionIndex;
+var routesBrowseBack;
+var stepsBack;
 
 // Wait for the page to load and the data to be read before trying to populate
 // elements of the page
@@ -31,6 +33,9 @@ function initialize() {
   collection = collectionParam.split(',');
   collectionIndex = collection.findIndex(item => item == routeId);
 
+  // get the number of steps to go back to return to the routes browse screen
+  stepsBack = Number.parseInt(urlParams.get(URL_PARAM_STEPS));
+
   // update the navigation bar or hide it altogether if there's only 1 route in the collection
   if (collection.length < 2) {
     document.getElementById("routes-collection-nav").style.display = "none";
@@ -50,6 +55,7 @@ function initialize() {
   populateRouteImages();
 
   // add event listeners for the specified areas
+  // document.getElementById("header").addEventListener("click", headerClickHandler);
   document.getElementById("content-grid").addEventListener("click", mainClickHandler);
   document.getElementById("routes-collection-nav").addEventListener("click", collectionClickHandler);
   detailsModal.addEventListener("click", modalClickHandler);
@@ -78,19 +84,24 @@ function modalClickHandler(event) {
   }
 }
 
+function goBackToBrowse()
+{
+  window.history.go(stepsBack);
+}
+
 function collectionClickHandler(event) {
   let elementId = event.target.closest("div").id;
   let lastIndex = collection.length - 1;
 
   if (elementId == "next") {
     routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
-    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+    window.location.href = `/routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}&${URL_PARAM_STEPS}=${--stepsBack}`;
     return;
   }
 
   if (elementId == "prev") {
     routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
-    window.location.href = `./routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}`;
+    window.location.href = `/routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}&${URL_PARAM_STEPS}=${--stepsBack}`;
     return;
   }
 }

@@ -53,7 +53,7 @@ function getDetailPageQueryString(selectedRouteIndex) {
   });
   if (collection.endsWith(',')) collection = collection.slice(0, -1); // strip trailing comma
 
-  return `?${URL_PARAM_ROUTE}=${selectedRouteIndex}&${URL_PARAM_COLLECTION}=${collection}`;
+  return `?${URL_PARAM_ROUTE}=${selectedRouteIndex}&${URL_PARAM_COLLECTION}=${collection}&${URL_PARAM_STEPS}=-1`;
 }
 
 /************************* Click handlers ************************/
