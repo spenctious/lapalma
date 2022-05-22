@@ -268,7 +268,7 @@
       "peaks",
       {
         "text": "Mountain peaks",
-        "filterIncludeText": "With mountain/volcano peaks",
+        "filterIncludeText": "With mountain peaks",
         "filterExcludeText": "",
         "description": "Passes near or over volcanic or mointain peaks.",
         "strong": "Great",
@@ -279,7 +279,7 @@
       "archeological",
       {
         "text": "Archeological",
-        "filterIncludeText": "With archeological interest",
+        "filterIncludeText": "With historic interest",
         "filterExcludeText": "",
         "description": "Passes sites of archeological interest, mostly rock carvings.",
         "strong": "Good examples",
@@ -290,7 +290,7 @@
       "scenic",
       {
         "text": "Scenic",
-        "filterIncludeText": "Particularly scenic routes",
+        "filterIncludeText": "Particularly scenic",
         "filterExcludeText": "",
         "description": "Contains photogenic scenery or areas of particular beauty.",
         "strong": "Spectacular",
@@ -315,7 +315,7 @@
       "pine",
       {
         "text": "Pine forest",
-        "filterIncludeText": "Only walks with pine forest",
+        "filterIncludeText": "Only with pine forest",
         "filterExcludeText": "Pine forest routes",
         "description": "Passes through significant Canary Pine forest.",
         "strong": "Good example",
@@ -429,7 +429,7 @@
       {
         "text": "Weather dependent",
         "filterIncludeText": "",
-        "filterExcludeText": "Highly weather dependent",
+        "filterExcludeText": "Needs good weather",
         "description": "Requires favourable weather conditions: check the forecasts.",
         "strong": "Highly",
         "icon": "weather.svg"
