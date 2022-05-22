@@ -2,6 +2,7 @@
 
 var favourites;
 var laPalmaData;
+var dataVersion;
 
 const dataSources = [
   "/data/categories.json",
@@ -12,7 +13,7 @@ const dataSources = [
 ];
 
 // For diagnostics and development
-var forceReload = true;
+var forceReload = false;
 var forceReloadFavourites = false;
 var performIntegrityCheck = true;
 
@@ -22,6 +23,27 @@ const URL_PARAM_COLLECTION = "collection";
 const URL_PARAM_STEPS = "steps";
 
 /************************* Data loading setup ************************/
+
+// returns true iff:
+//  a) there is no previously stored version number (first time program run)
+//  b) the file version number on the server is larger than the retrieved version
+//
+// Note: comparing versions is non-trivial so version numbers are simple integers
+function isLaterVersion(currentVersionFromFile, retrievedVersionFromData) {
+  if (retrievedVersionFromData === null) return true;
+
+  return Number.parseInt(currentVersionFromFile) > Number.parseInt(retrievedVersionFromData);
+}
+
+// reads a tiny file containing just the current data version number (an integer)
+async function getDataVersion() {
+  let response = await fetch('/data-version.txt');
+
+  if (response.status === 200) {
+    dataVersion = await response.text();
+    console.log("Data version " + dataVersion);
+  }
+}
 
 // Reads the data from the various JSON data sources in parallel
 async function getAllUrls(dataSources) {
@@ -41,10 +63,15 @@ async function getAllUrls(dataSources) {
 // Unpacks data into usable elements
 // Once the data is loaded the callback function is called
 async function loadDataThen(afterDataIsLoaded) {
-  if (forceReload || localStorage.getItem("lapalmaData") === null) {
+  let retrievedVersion = localStorage.getItem("dataVersion");
+  await getDataVersion();
+  let dataNotCurrent = isLaterVersion(dataVersion, retrievedVersion);
+
+  if (forceReload || dataNotCurrent) {
     // wait for all the data to come back then store it for later
     var responses = await getAllUrls(dataSources);
     localStorage.setItem("lapalmaData", JSON.stringify(responses));
+    localStorage.setItem("dataVersion", dataVersion);
   } else {
     // retrieve from local storage
     responses = JSON.parse(localStorage.lapalmaData);
