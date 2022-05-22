@@ -176,6 +176,7 @@
     grid-template-areas: "nav main filter";
   }
 
+  /* no longer a grid so components just position themselves naturally */
   .filter-panel {
     height: auto;
     z-index: 0;
