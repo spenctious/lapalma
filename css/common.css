@@ -194,6 +194,8 @@ a[href]:not(:where(
   /* text-transform: uppercase; */
   /* padding: 1rem; */
   text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .action-button:hover {
@@ -244,7 +246,7 @@ a[href]:not(:where(
   height: var(--header-height);
 
   display: grid;
-  grid-template-columns: 2rem auto 2rem;
+  grid-template-columns: 2.2rem auto 2.2rem;
   grid-template-rows: 3rem;
   column-gap: 1rem;
   font-size: 1.2rem;
