@@ -418,6 +418,16 @@
       "location": "Los Molinos",
       "locationDescription": "Up the hill in Santa Cruz near Estadio Sylvestre Carrillo."
     }
+  ],
+  [
+    "Cascada de Los Colores",
+    {
+      "id": "29",
+      "name": "Cascada de Los Colores",
+      "tags": ["nature"],
+      "description": "Man-made waterfall interestingly coloured by minerals and vegetation.",
+      "location": "Cascada de Los Colores",
+      "locationDescription": "Off a signed side path on the PR LP 13 path in the heart of the Caldera."
+    }
   ]
-
 ]

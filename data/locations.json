@@ -810,5 +810,15 @@
       "parking": "None",
       "notes": "Accessible down well-paved path"
     }
+  ],
+  [
+    "Cascada de Los Colores",
+    {
+	  "coordinates": "28.7098682, -17.8768097",
+      "areas": ["central"],
+      "province": "El Paso",
+      "parking": "None",
+      "notes": ""
+    }
   ]
 ]

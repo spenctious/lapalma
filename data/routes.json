@@ -1867,7 +1867,7 @@
         }
       ],
 	  
-      "poi": ["Caldera campsite", "Playa de Taburiente"],
+      "poi": ["Caldera campsite", "Playa de Taburiente", "Cascada de Los Colores"],
 
       "terrain": [
         [ "pine", "normal" ],
