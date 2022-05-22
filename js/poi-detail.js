@@ -5,6 +5,7 @@ var poiCollectionIndex;
 var detailsModal;
 var detailsModalContent;
 var detailsModalCurrent;
+var showRelatedWalks;
 
 function initializePoiModal(initialPoiCollection) {
   poiCollection = initialPoiCollection;
@@ -13,15 +14,16 @@ function initializePoiModal(initialPoiCollection) {
   detailsModalContent = document.getElementById("poi-full-details");
 }
 
-function openModal(poiId, showRelatedWalks = true) {
+function openModal(poiId, overlayOnPoiGrid = true) {
+  showRelatedWalks = overlayOnPoiGrid;
   poiCollectionIndex = poiCollection.findIndex(item => item == poiId);
-  updateCurrent(showRelatedWalks);
+  updateCurrent();
   detailsModal.style.display = "block";
 }
 
 // need to wait for details to be populated before accessing contents
-function updateCurrent(showRelatedWalks) {
-  detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]), showRelatedWalks);
+function updateCurrent() {
+  detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]));
   detailsModalCurrent = document.getElementById("poi-current");
   detailsModalCurrent.innerHTML = `${poiCollectionIndex + 1} of ${poiCollection.length}`;
   if (poiCollection.length < 2) {
@@ -35,12 +37,12 @@ function closeModal() {
 
 function moveNext() {
   if (++poiCollectionIndex >= poiCollection.length) poiCollectionIndex = 0;
-  updateCurrent(true);
+  updateCurrent();
 }
 
 function movePrevious() {
   if (--poiCollectionIndex <= 0) poiCollectionIndex = poiCollection.length - 1;
-  updateCurrent(true);
+  updateCurrent();
 }
 
 // find the POI details from the id 
@@ -56,7 +58,7 @@ function getPoi(poiId) {
   return poi;
 }
 
-function getFullPoiDetails(poi, showRelatedWalks) {
+function getFullPoiDetails(poi) {
   let tel = poi.hasTel ? `<tr><td>Tel:</td><td>${poi.tel}</td></tr>` : "";
   let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
   let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
