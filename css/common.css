@@ -40,11 +40,6 @@ html, body {
   background-color: var(--colour-light-bkg);
 }
 
-.h-container {
-  margin: 0 auto;
-  max-width: var(--max-content-width);
-}
-
 /************************* Button sytling ************************/
 
 a {
