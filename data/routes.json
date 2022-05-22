@@ -1374,8 +1374,8 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "false",
-          "start": "Porís de Candelaria parking",
-          "end": "Porís de Candelaria parking",
+          "start": "Porís de Candelaria",
+          "end": "Porís de Candelaria",
           "routeDirections": "[21](09 to 06) and back"
         }
       ],
