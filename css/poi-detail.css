@@ -116,6 +116,10 @@
   margin-top: 0.3rem;
 }
 
+#full-details .button-box {
+  margin: 0;
+}
+
 .general-details {
   font-size: 0.7rem;
   padding: 0.2rem;

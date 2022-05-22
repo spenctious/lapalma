@@ -26,9 +26,6 @@ function updateCurrent() {
   detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]));
   detailsModalCurrent = document.getElementById("poi-current");
   detailsModalCurrent.innerHTML = `${poiCollectionIndex + 1} of ${poiCollection.length}`;
-  if (poiCollection.length < 2) {
-    document.getElementById("poi-collection-nav").style.display = "none";
-  }
 }
 
 function closeModal() {
@@ -95,7 +92,7 @@ function getFullPoiDetails(poi) {
           ${entryCost}
         </table>
         ${openingTimes}
-        <div class="button-box last-element">
+        <div class="button-box">
           ${relatedRoutes}
         </div>
       </div>
