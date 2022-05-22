@@ -13,7 +13,7 @@ const dataSources = [
 ];
 
 // For diagnostics and development
-var forceReload = false;
+var forceReload = true;
 var forceReloadFavourites = false;
 var performIntegrityCheck = true;
 
