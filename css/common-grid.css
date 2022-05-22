@@ -105,6 +105,20 @@
 
 /************************* Grid content: detail ************************/
 
+#zero-matches {
+  display: none;
+  text-align: center;
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  min-height: 80vh;
+  align-items: center;
+}
+
 .item-detail {
   flex: 50%;
   background-color: white;

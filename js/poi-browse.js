@@ -149,6 +149,10 @@ function filterPoi() {
     }
   });
 
+  // update empty state
+  document.getElementById("zero-matches").style.display = 
+    matched > 0 ? "none" : "flex";
+
   // update matched poi count
   let poiCount = "";
   switch (matched) {
@@ -199,7 +203,10 @@ function populateFilterPanel() {
 }
 
 function populatePoiGrid() {
-  let gridContent = "";
+  let gridContent = `
+    <div id="zero-matches">
+      Sorry, nothing matches. Try different changing or deleting filters.
+    </div>`;
 
   laPalmaData.poi.forEach(poi => {
     let relatedRoutes = poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";

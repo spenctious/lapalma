@@ -172,7 +172,12 @@ function routesGridClickHandler(event) {
 /************************* Routes grid ************************/
 
 function populateRoutesGrid() {
-  let gridContent = "";
+  // Empty state content - hidden by default;
+  let gridContent = `
+    <div id="zero-matches">
+      Sorry, nothing matches. Try different changing or deleting filters.
+    </div>`;
+  
 
   laPalmaData.routes.forEach( route => {
     // number of route varients, if any
@@ -244,26 +249,30 @@ function filterRoutes() {
     let routeDiv = document.getElementById("route" + route.id);
     let variantMatchDiv = document.getElementById("variant-match" + route.id);
 
-    // show routes that match and flag up those that only match variants
     if (included.route) {
+      // show routes that match
       routeDiv.style.display = "flex";
       variantMatchDiv.style.display = "none";
       selectedRoutes.set(route.id, "in");
       ++matched;
     } else if (included.variants) {
+      // flag up those that only match variants
       routeDiv.style.display = "flex";
       variantMatchDiv.style.display = "block";
       selectedRoutes.set(route.id, "in");
       ++matched;
     }
     else {
+      // hide those that don' match
       routeDiv.style.display = "none";
       variantMatchDiv.style.display = "none";
       selectedRoutes.set(route.id, "out");
     }
   });
 
-  
+  // update empty state
+  document.getElementById("zero-matches").style.display = 
+    matched > 0 ? "none" : "flex";
 
   // update route count
   let routeCount = "";
