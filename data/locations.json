@@ -472,7 +472,7 @@
     }
   ],
   [
-    "Porís de Candelaria parking",
+    "Porís de Candelaria",
     {
       "coordinates": "28.703121, -17.972400",
       "areas": ["west"],
@@ -756,6 +756,59 @@
         ],
         "stop": "El Paso"
       }
+    }
+  ],
+  [
+    "MIGO",
+    {
+	  "coordinates": "28.789152513921785, -17.97617603308815",
+      "areas": ["west", "north"],
+      "province": "Puntagorda",
+      "parking": "Some spaces at the museum",
+      "notes": "Incorporates the windmill"
+    }
+  ],
+  [
+    "Plaza de la Constitución",
+    {
+	  "coordinates": "28.680843, -17.766658",
+      "areas": ["east"],
+      "province": "Santa Cruz",
+      "parking": "Avenida Marítima or the port carpark",
+      "bus": {
+        "notes": "Main bus interchange along Avenida de Los Indianos",
+        "routes": [
+          "500",
+          "300",
+          "201",
+          "200",
+          "100",
+          "35",
+          "33"
+        ],
+        "stop": "Santa Cruz"
+      },
+      "notes": "Traffic island"
+    }
+  ],
+  [
+    "Torre del Time",
+    {
+	  "coordinates": "28.6927348, -17.9244506",
+      "areas": ["west", "central"],
+      "province": "Tijarafe",
+      "parking": "A few spaces near the tower.",
+      "notes": "Access down a dirt track."
+    }
+  ],
+  [
+    "Cuevas de Buracas",
+    {
+	  "coordinates": "28.7930821, -17.9756636",
+      "areas": ["north", "west"],
+      "province": "Garafia",
+      "parking": "None",
+      "notes": "Accessible down well-paved path"
     }
   ]
 ]

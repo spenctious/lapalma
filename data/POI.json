@@ -219,7 +219,7 @@
       "fullName": "Torre del Time",
       "tags": ["building"],
       "description": "Fire watch tower with viewpoint. Better views can be had further down the trail.",
-      "location": "",
+      "location": "Torre del Time",
       "locationDescription": "West of El Jesus along the barranco edge. A track leads there."
     }
   ],
@@ -275,7 +275,7 @@
       "fullName": "Cuevas de Buracas",
       "tags": ["archeology"],
       "description": "Historic caves with one staging a recreation of how the ancient Guanches may have lived.",
-      "location": "",
+      "location": "Cuevas de Buracas",
       "locationDescription": "North-west of Las Tricias along the GR 130 (variant) path."
     }
   ],
@@ -291,7 +291,7 @@
       "tel": "(+34) 922 400 277 - 695 350 395",
       "email": "migo@garafia.org",
       "web": { "name": "", "link": "http://www.garafia.es/museo-de-interpretacion-del-gofio/"},
-      "location": "",
+      "location": "MIGO",
       "locationDescription": "North-west of Las tricias along the barranco edge down a drivable track.",
       "openingTimes": 
         [
