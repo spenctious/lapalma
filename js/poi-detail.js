@@ -33,12 +33,12 @@ function closeModal() {
 }
 
 function moveNext() {
-  if (++poiCollectionIndex >= poiCollection.length) poiCollectionIndex = 0;
+  if (++poiCollectionIndex == poiCollection.length) poiCollectionIndex = 0;
   updateCurrent();
 }
 
 function movePrevious() {
-  if (--poiCollectionIndex <= 0) poiCollectionIndex = poiCollection.length - 1;
+  if (--poiCollectionIndex < 0) poiCollectionIndex = poiCollection.length - 1;
   updateCurrent();
 }
 
