@@ -825,7 +825,7 @@
     "El Cubo de La Galga",
     {
 	  "coordinates": "28.7668874, -17.7699647",
-      "areas": [""],
+      "areas": ["east"],
       "province": "Puntallana",
       "parking": "Small car park that gets full pretty quickly.",
       "bus": {
@@ -836,6 +836,23 @@
         "stop": "Cubo de la Galga"
       },
       "notes": "Information kisosk in the car park."
+    }
+  ],
+  [
+    "Puente de Los Tilos",
+    {
+	  "coordinates": "28.798625206934137, -17.77121090996752",
+      "areas": ["east"],
+      "province": "Los Sauces",
+      "parking": "Some parking spots at either end of the bridge.",
+      "bus": {
+        "notes": "There is an unnamed stop by the bridge which is closer.",
+        "routes": [
+          "100"
+        ],
+        "stop": "Los Sauces"
+      },
+      "notes": ""
     }
   ]
 ]

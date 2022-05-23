@@ -424,10 +424,23 @@
     {
       "id": "29",
       "name": "Cascada de Los Colores",
+      "fullName": "Cascada de Los Colores",	  
       "tags": ["nature"],
       "description": "Man-made waterfall interestingly coloured by minerals and vegetation.",
       "location": "Cascada de Los Colores",
       "locationDescription": "Off a signed side path on the PR LP 13 path in the heart of the Caldera."
+    }
+  ],
+  [
+    "Puente de Los Tilos",
+    {
+      "id": "30",
+      "name": "Puente de Los Tilos",
+      "fullName": "Puente de Los Tilos",	  
+      "tags": ["building"],
+      "description": "Famous bridge which was at one time the highest in Spain.",
+      "location": "Puente de Los Tilos",
+      "locationDescription": "At the LP-1/LP-105 junction. Within easy walking distance from Los Tilos."
     }
   ]
 ]

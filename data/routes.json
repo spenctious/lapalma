@@ -395,14 +395,16 @@
       "town": "Los Sauces",
       "routeFile": "LP07 Los Tilos Bridge",
       "refreshments": "Bars, cafés, restaurants in Los Sauces.",
-      "start": "Barlovento",
-      "end": "Franceses",
+      "start": "Puente de Los Tilos",
+      "end": "Puente de Los Tilos",
       "paths": [],
 
       "images": [
         { "id": "01", "caption": "Los Tilos Bridge" },
         { "id": "02", "caption": "Nuestra Senora de Montserrat (church), Los Sauces" }
       ],
+
+      "poi": ["Puente de Los Tilos"],
 
       "variants": [
         {
@@ -414,8 +416,8 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Barlovento",
-          "end": "Franceses",
+          "start": "Puente de Los Tilos",
+          "end": "Puente de Los Tilos",
           "routeDirections": "[06](01 to 02) then follow the track down under the bridge and out the other side."
         }
       ],
@@ -425,7 +427,8 @@
       ],
 
       "interest": [
-        [ "views", "strong" ]
+        [ "views", "strong" ],
+        [ "poi", "strong" ]
       ],
 
       "warnings": [
