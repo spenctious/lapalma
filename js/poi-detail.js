@@ -60,13 +60,13 @@ function getFullPoiDetails(poi) {
   let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
   let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
   let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
-  let osmCoords = poi.locationAttributes.coordinates.replace(", ", "/");
+  let disableNavClass = poiCollection.length == 1 ? "disable-nav" : "";
 
   // build html content
   return `
     <div class="modal-title">
       <span id="modal-close" class="close">&times;</span>
-      Location Detail
+      Point of interest
     </div>
     <div class="modal-content-wrapper">
       <div class="poi-title">${poi.fullName}</div>
@@ -98,9 +98,9 @@ function getFullPoiDetails(poi) {
       </div>
     </div>
     <div id="poi-collection-nav" class="collection-nav fixed-bottom">
-      <div id="poi-prev" class="arrow previous"></div>
+      <div id="poi-prev" class="arrow previous ${disableNavClass}"></div>
       <div id="poi-current">0 of n</div>
-      <div id="poi-next" class="arrow next"></div>
+      <div id="poi-next" class="arrow next ${disableNavClass}"></div>
     </div>
     `;
 }

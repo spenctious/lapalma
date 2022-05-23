@@ -439,6 +439,11 @@ a[href]:not(:where(
   background-image: url("/img/icons/chevron-right.svg");
 }
 
+.collection-nav > .disable-nav {
+  cursor: default;
+  filter: invert(70%);
+}
+
 /* full-width light coloured fixed to bottom - used for POI detail navigation */
 .fixed-bottom {
   background-color: var(--colour-light-bkg);
