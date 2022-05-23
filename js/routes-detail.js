@@ -513,7 +513,7 @@ function getAttributeHtml(icon, text, description, strong = "", additionalConten
 function getLocationHtml(locationName, locationAttributes, label) {
   let notesHtml = "notes" in locationAttributes ? `<p>${locationAttributes.notes}</p>`: ""
   let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
-  let busHtml = `<p>Inaccessible by bus</p>`;
+  let busHtml = `Inaccessible by bus`;
   let busNotes = "bus" in locationAttributes ? locationAttributes.bus.notes : "";
   let taxiHtml = "taxi" in locationAttributes ? `<p><strong>Taxi</strong>: ${locationAttributes.taxi}</p>` : "";
   if ("bus" in locationAttributes) {
