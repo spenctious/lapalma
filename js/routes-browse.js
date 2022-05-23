@@ -243,9 +243,10 @@ function populateRoutesGrid() {
 function filterRoutes() {
   let matched = 0;
 
-  // hide filtered out routes and update count of how many are matched
   laPalmaData.routes.forEach(route => {
+    // check both the route and variants for a match
     let included = filterSet.applyActiveFilters(route);
+
     let routeDiv = document.getElementById("route" + route.id);
     let variantMatchDiv = document.getElementById("variant-match" + route.id);
 
@@ -263,7 +264,7 @@ function filterRoutes() {
       ++matched;
     }
     else {
-      // hide those that don' match
+      // hide those that don't match
       routeDiv.style.display = "none";
       variantMatchDiv.style.display = "none";
       selectedRoutes.set(route.id, "out");
