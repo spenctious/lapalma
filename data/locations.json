@@ -177,8 +177,9 @@
       "coordinates": "28.6141510, -17.8364938",
       "areas": ["central"],
       "province": "El Paso",
+      "taxi": "13€ from Centro de Visitantes",
       "parking": "Multiple nearby parking spots.",
-      "notes": "Taxis run from Centro de Visitante."
+      "notes": "Central recreational area where the Cumbre Nueva and Cumbre Vieja meet."
     }
   ],
   [
@@ -257,6 +258,7 @@
       "coordinates": "28.6779783, -17.8542550",
       "areas": ["central"],
       "province": "El Paso",
+      "taxi": "15€ from the visitor centre.",
       "parking": "A couple of spaces where the tarmac ends, more at the notice board further up the track.",
       "notes": "Taxi from Centro de Visitantes to the end of the tarmac."
     }
@@ -288,7 +290,7 @@
       "areas": ["central"],
       "province": "El Paso",
       "parking": "Ample spaces unless it's the holidays",
-      "notes": "Shared taxis from La Viña car park run from 8:00 to 13:00 (12:00 autumn/winter) and charge 51€ per car seating 4 people"
+      "notes": "Shared taxis from La Viña car park run from 8:00 to 13:00 (12:00 autumn/winter) and charge 51€ per car seating 4 people to Los Brecitos."
     }
   ],
   [
@@ -306,6 +308,7 @@
       "coordinates": "28.7542290, -17.8848850",
       "areas": ["central"],
       "province": "El Paso",
+      "taxi": "Taxis are 35€ from Garafia and 55€ from Santa Cruz. Tour buses may let you do a one way trip but at the cost of a later start.",
       "parking": "Fairly small and busy car park.",
       "notes": "Three viewpoints can be accessed from a path leading from the car park."
     }

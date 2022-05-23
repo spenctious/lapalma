@@ -1578,7 +1578,7 @@
       "lengthKm": "14.3",
       "lengthMiles": "8.9",
       "walkingTime": "04:00",
-      "shortDescription": "Day 1, a spectacular hike along the Caldera rim.",
+      "shortDescription": "A spectacular two day hike along the Caldera rim.",
       "description": "First half of a spectacular 2 day hike along the Caldera rim ending in a very basic but wonderfully sited refuge. Wonderful views all along with a few peaks (some rather windy) but none a difficult climb.",
       "starred": "true",
       "walkType": "linear",
@@ -2128,7 +2128,7 @@
       "lengthMiles": "6.8",
       "walkingTime": "03:20",
       "shortDescription": "Historic route over the Cumbre with views of both sides from the top.",
-      "description": "A transverse crossing of the Cumbre Nueva passing from country lanes to pine forest, clouds (probably), then dark and mossy cobbles and paths to a more open wooded final stretch.",
+      "description": "A transverse crossing of the Cumbre Nueva passing from country lanes to pine forest, clouds (probably), then dark and mossy cobbles and paths and finally to a more open wooded final stretch.",
       "starred": "false",
       "walkType": "linear",
       "duration": "half",
@@ -2349,9 +2349,13 @@
 
       "notes": [
         [ "slippery", "Scree slope to negotiate, more had work than falling risk" ],
-        [ "weather", "Careful on the peak in high winds or poor visibility" ],
-        [ "gps", "Much of the route is off marked trails so GPS will be need. Signal strength is generally good though." ]
+        [ "weather", "Careful on the peak in high winds or poor visibility" ]
+      ],
+
+      "dangers": [
+        { "name": "Losing the path", "description": "Much of the route is off marked trails so GPS may have to be relied upon.", "strength": "normal" }
       ]
+
     },
     {
       "id": "34",
