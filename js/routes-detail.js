@@ -514,6 +514,7 @@ function getLocationHtml(locationName, locationAttributes, label) {
   let notesHtml = "notes" in locationAttributes ? `<p>${locationAttributes.notes}</p>`: ""
   let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
   let busHtml = `<p>Inaccessible by bus</p>`;
+  let busNotes = "bus" in locationAttributes ? locationAttributes.bus.notes : "";
   let taxiHtml = "taxi" in locationAttributes ? `<p><strong>Taxi</strong>: ${locationAttributes.taxi}</p>` : "";
   if ("bus" in locationAttributes) {
     let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
@@ -537,6 +538,6 @@ function getLocationHtml(locationName, locationAttributes, label) {
       <p><strong>Parking:</strong> ${carHtml}</p>
       ${taxiHtml}
       <p><strong>Bus:</strong> ${busHtml}</p>
-      ${locationAttributes.bus.notes}
+      ${busNotes}
     </div>`;
 }
