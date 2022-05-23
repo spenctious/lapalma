@@ -301,7 +301,7 @@
     },
     {
       "id": "06",
-      "name": "Cubo de la Galga",
+      "name": "El Cubo de La Galga",
       "lengthKm": "7.4",
       "lengthMiles": "4.6",
       "walkingTime": "02:05",
@@ -318,8 +318,8 @@
       "town": "La Galga",
       "routeFile": "LP06 Cubo de la Galga",
       "refreshments": "None en route. Restaurant on PR LP 5 intersection with LP-1 road (walk 6b).",
-      "start": "Barlovento",
-      "end": "Franceses",
+      "start": "El Cubo de La Galga",
+      "end": "El Cubo de La Galga",
       "paths": ["PR LP 05", "PR LP 05.1"],
 
       "images": [
@@ -339,8 +339,8 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Barlovento",
-          "end": "Franceses",
+          "start": "El Cubo de La Galga",
+          "end": "El Cubo de La Galga",
           "routeDirections": "[06](01 to 04) and back"
         },
         {
@@ -352,8 +352,8 @@
           "effort": "easy",
           "accessCar": "true",
           "accessBus": "true",
-          "start": "Barlovento",
-          "end": "Franceses",
+          "start": "El Cubo de La Galga",
+          "end": "El Cubo de La Galga",
           "routeFile": "LP06b Cubo La Galga coastal extension",
           "routeDirections": "[06](01 to 07) then [07b]"
         }

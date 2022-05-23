@@ -820,5 +820,22 @@
       "parking": "None",
       "notes": ""
     }
+  ],
+  [
+    "El Cubo de La Galga",
+    {
+	  "coordinates": "28.7668874, -17.7699647",
+      "areas": [""],
+      "province": "Puntallana",
+      "parking": "Small car park that gets full pretty quickly.",
+      "bus": {
+        "notes": "The bus stop is in a brief gap between tunnels.",
+        "routes": [
+          "100"
+        ],
+        "stop": "Cubo de la Galga"
+      },
+      "notes": "Information kisosk in the car park."
+    }
   ]
 ]
