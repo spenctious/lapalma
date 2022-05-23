@@ -175,7 +175,7 @@ function populateRoutesGrid() {
   // Empty state content - hidden by default;
   let gridContent = `
     <div id="zero-matches">
-      Sorry, nothing matches. Try different changing or deleting filters.
+      Sorry, nothing matches.<br />Try changing or deleting filters.
     </div>`;
   
 

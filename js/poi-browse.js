@@ -205,7 +205,7 @@ function populateFilterPanel() {
 function populatePoiGrid() {
   let gridContent = `
     <div id="zero-matches">
-      Sorry, nothing matches. Try different changing or deleting filters.
+      Sorry, nothing matches.<br />Try changing or deleting filters.
     </div>`;
 
   laPalmaData.poi.forEach(poi => {
