@@ -15,7 +15,7 @@ const dataSources = [
 // For diagnostics and development
 var forceReload = true;
 var forceReloadFavourites = false;
-var performIntegrityCheck = true;
+var performIntegrityCheck = false;
 
 // URL paramater names - defining here ensures consistency
 const URL_PARAM_ROUTE = "route";
