@@ -60,6 +60,13 @@ a:hover {
   text-align: right;
 }
 
+/* ensure long links don't bust out of their container */
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 /* indicate external links
     from: https://stackoverflow.com/questions/5379752/css-style-external-links 
     with amendments to use an SVG image coloured same as the link
