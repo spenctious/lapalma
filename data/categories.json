@@ -1,7 +1,6 @@
 {
   "walkLocations": {
     "text": "Locations",
-    "hoverText": "",
     "filterIncludeText": "Specified locations",
     "filterExcludeText": "Specified locations",
     "description": "Areas",
