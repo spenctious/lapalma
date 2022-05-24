@@ -15,7 +15,7 @@ const dataSources = [
 // For diagnostics and development
 var forceReload = true;
 var forceReloadFavourites = false;
-var performIntegrityCheck = true;
+var performIntegrityCheck = false;
 
 // URL paramater names - defining here ensures consistency
 const URL_PARAM_ROUTE = "route";
@@ -129,6 +129,7 @@ class Data {
     // extracted maps from other sources
     this.statuses = new Map(trailStatuses);
     this.poiMap = new Map(pointsOfInterest);
+    this.checkCategories(routes);
 
     // map of POI created from raw data
     this.#poiCollection = new Map();
@@ -152,6 +153,445 @@ class Data {
         }
       });
     })
+  }
+
+  checkCategories(routes) {
+    // walk type
+    try {
+      this.walkType.forEach((property, propertyName) => {
+        console.log(`Checking walkType ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isNonEmptyString("filterIncludeText", property.filterIncludeText);
+        this.isDefined("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`WalkType checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // duration
+    try {
+      this.duration.forEach((property, propertyName) => {
+        console.log(`Checking walkType ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isNonEmptyString("filterIncludeText", property.filterIncludeText);
+        this.isDefined("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`Duration checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // effort
+    try {
+      this.effort.forEach((property, propertyName) => {
+        console.log(`Checking effort ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isNonEmptyString("filterIncludeText", property.filterIncludeText);
+        this.isDefined("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`Effort checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // basics
+    try {
+      this.basics.forEach((property, propertyName) => {
+        console.log(`Checking basics ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isNonEmptyString("filterIncludeText", property.filterIncludeText);
+        this.isDefined("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`Basics checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    try {
+      this.interest.forEach((property, propertyName) => {
+        console.log(`Checking interest ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isNonEmptyString("filterIncludeText", property.filterIncludeText);
+        this.isDefined("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isNonEmptyString("strong", property.strong);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`Interests checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // terrain
+    try {
+      this.terrain.forEach((property, propertyName) => {
+        console.log(`Checking terrain ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isNonEmptyString("filterIncludeText", property.filterIncludeText);
+        this.isDefined("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isNonEmptyString("strong", property.strong);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`Terrain checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // warnings    
+    try {
+      this.warnings.forEach((property, propertyName) => {
+        console.log(`Checking warnings ${propertyName}:`);
+
+        // mandatory field checks
+        this.isNonEmptyString("text", property.text);
+        this.isDefined("filterIncludeText", property.filterIncludeText);
+        this.isNonEmptyString("filterExcludeText", property.filterExcludeText);
+        this.isDefined("description", property.description);
+        this.isNonEmptyString("strong", property.strong);
+        this.isSVG("icon", property.icon);
+      })
+    }
+    catch (error) {
+      console.log(`Warnings checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // statuses
+    try {
+      this.statuses.forEach((trailStatus, trailName) => {
+        console.log(`Checking trail statuses`);
+
+        // mandatory field checks
+        this.isValidTrailName("trailName", trailName);
+        this.isValidTrailStatus("trailStatus", trailStatus);
+      })
+    }
+    catch (error) {
+      console.log(`Trail status checking error:\n${error}`);
+      console.log(error.stack);
+    }  
+
+    // locations
+    try {
+      this.locations.forEach((location, locatioName) => {
+        console.log(`Checking location ${locatioName}:`);
+
+        // mandatory fields
+        this.areValidCoordinates("coordinates", location.coordinates);
+        this.areValidAreas("areas", location.areas);
+        this.isNonEmptyArray("areas", location.areas);
+        this.isNonEmptyString("province", location.province);
+
+        // optional fields 
+        if ("notes" in location) { this.isNonEmptyString("notes", location.notes); }
+        if ("parking" in location) { this.isNonEmptyString("parking", location.parking); }
+        if ("taxi" in location) { this.isNonEmptyString("taxi", location.taxi); }
+        if ("bus" in location) {
+          if ("notes" in location.bus) { this.isNonEmptyString("bus.notes", location.bus.notes); }
+          this.areValidRouteNumbers("bus.routes", location.bus.routes);
+        }
+      })
+    }
+    catch (error) {
+      console.log(`Location checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // POI
+    try {
+      this.poiMap.forEach((poi, poiName) => {
+        console.log(`Checking POI ${poiName}:`);
+
+        // mandatory fields
+        this.isNumber("id", poi.id);
+        this.isNonEmptyString("name", poi.name);
+        this.isNonEmptyString("fullName", poi.fullName);
+        this.areValidPoiTags("tags", poi.tags);
+        this.isNonEmptyString("description", poi.description);
+        this.isNonEmptyString("location", poi.location);
+        this.isNonEmptyString("locationDescription", poi.locationDescription);
+        
+        // optional fields
+        if ("entryCost" in poi) { this.isNonEmptyString("entryCost", poi.entryCost); }
+
+        // NB. not testing correct format of these, only that they exist
+        if ("tel" in poi) { this.isNonEmptyString("tel", poi.tel); }
+        if ("email" in poi) { this.isNonEmptyString("email", poi.email); }
+        if ("web" in poi) { 
+          this.isNonEmptyString("web.name", poi.web.name); 
+          this.isNonEmptyString("web.link", poi.web.link); 
+        }
+
+        if ("openingTimes" in poi) {
+          this.isNonEmptyArray("openingTimes", poi.openingTimes);
+          poi.openingTimes.forEach(entry => {
+            this.isNonEmptyString("when", entry.when);
+            this.isNonEmptyString("times", entry.times);
+          })
+        }
+      })
+    }
+    catch (error) {
+      console.log(`POI checking error:\n${error}`);
+      console.log(error.stack);
+    }
+
+    // routes
+    try {
+      routes.routes.forEach(route => {
+        console.log(`Checking Route ${route.id}:`);
+
+        // mandatory fields
+        this.isNumber("id", route.id);
+        this.isNonEmptyString("name", route.name);
+        this.isNumber("lengthKm", route.lengthKm);
+        this.isNumber("lengthMiles", route.lengthMiles);
+        this.isNonEmptyString("walkingTime", route.walkingTime);
+        this.isNonEmptyString("shortDescription", route.shortDescription);
+        this.isNonEmptyString("description", route.description);
+        this.isBoolean("starred", route.starred);
+        this.isValidLookup("walkType", route.walkType, this.walkType, "walkType");
+        this.isValidLookup("duration", route.duration, this.duration, "duration");
+        this.isValidLookup("effort", route.effort, this.effort, "effort");
+        this.isBoolean("waymarked", route.waymarked);
+        this.isBoolean("accessCar", route.accessCar);
+        this.isBoolean("accessBus", route.accessBus);
+        this.isNonEmptyString("province", route.province);
+        this.isNonEmptyString("town", route.town);
+        this.isNonEmptyString("routeFile", route.routeFile);
+        this.isNonEmptyString("refreshments", route.refreshments);
+        this.isValidLookup("start", route.start, this.locations, "locations");
+        this.isValidLookup("end", route.end, this.locations, "locations");
+
+        this.isNonEmptyArray("images", route.images);
+        route.images.forEach(image => {
+          this.isNumber("image.id", image.id);
+          this.isNonEmptyString("image.caption", image.caption);
+        })
+
+        this.isArray("terrain", route.terrain);
+        route.terrain.forEach(t => {
+          this.isValidLookup(t[0], t[0], this.terrain, "terrain");
+        })
+
+        this.isArray("interest", route.interest);
+        route.interest.forEach(i => {
+          this.isValidLookup(i[0], i[0], this.interest, "interest");
+        })
+
+        this.isArray("warnings", route.warnings);
+        route.warnings.forEach(w => {
+          this.isValidLookup(w[0], w[0], this.warnings, "warning");
+        })
+
+        // optional fields 
+        if ("variants" in route) {
+          this.isNonEmptyArray("pvariantsoi", route.variants);
+          route.variants.forEach(v => {
+            // mandatory fields
+            this.isNonEmptyString("variant.id", v.id);
+            this.isNonEmptyString("variant.name", v.name);
+            this.isNonEmptyString("variant.description", v.description);
+            this.isValidLookup("variant.walkType", v.walkType, this.walkType, "walkType");
+            this.isValidLookup("variant.duration", v.duration, this.duration, "duration");
+            this.isValidLookup("variant.effort", v.effort, this.effort, "effort");
+            this.isBoolean("variant.accessCar", v.accessCar);
+            this.isBoolean("variant.accessBus", v.accessBus);
+            this.isNonEmptyString("variant.start", v.start, this.locations, "locations");
+            this.isNonEmptyString("variant.end", v.end, this.locations, "locations");
+            this.isNonEmptyString("variant.routeDirections", v.routeDirections);
+
+            // optional fields
+            if ("routeFile" in v) {
+              this.isNonEmptyString("variant.routeFile", v.routeFile);
+            }
+          })
+        }
+
+        if ("paths" in route) {
+          this.isNonEmptyArray("paths", route.paths);
+          route.paths.forEach(path => {
+            this.isValidLookup(path, path, this.statuses, "path");
+          })
+        }
+
+        if ("poi" in route) {
+          this.isNonEmptyArray("poi", route.poi);
+          route.poi.forEach(poi => {
+            this.isValidLookup("variant.poi", poi, this.poiMap, "POI");
+          })
+        }
+
+        // Notes refer to interests or warnings
+        if ("notes" in route) {
+          this.isNonEmptyArray("notes", route.notes);
+          route.notes.forEach(n => {
+            let foundInInterest = route.interest.find(i => n[0] == i[0]) != undefined;
+            let foundInWarnings = route.warnings.find(w => n[0] == w[0]) != undefined;
+            let foundInTerrain = route.terrain.find(t => n[0] == t[0]) != undefined;
+            console.assert(foundInInterest || foundInWarnings || foundInTerrain, 
+              `${n} is not a valid interest, warning or terrain reference`);
+          })
+        }
+
+        if ("dangers" in route) {
+          this.isNonEmptyArray("dangers", route.dangers);
+          route.dangers.forEach(danger => {
+            this.isNonEmptyString("danger.name", danger.name);
+            this.isNonEmptyString("danger.description", danger.description);
+          })
+        }
+      })
+    }
+    catch (error) {
+      console.log(`Location checking error:\n${error}`);
+      console.log(error.stack);
+    }
+  }
+
+  isValidLookup(propertyName, property, category, categoryName) {
+    console.assert(category.has(property), `${propertyName} is not a valid ${categoryName}`);
+  }
+
+  isDefined(propertyName, property) {
+    console.assert(property != undefined, `${propertyName} is a required property`);
+    return property != undefined;
+  }
+
+  isNonEmptyString(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      console.assert(property.length > 0, `${propertyName} must not be empty string`);
+    }
+  }
+
+  isBoolean(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      console.assert(property === "true" || property === "false", `${propertyName} must be boolean`);
+    }
+  }
+
+  isNumber(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      // Note: number check can be fooled
+      console.assert(!isNaN(property), `${propertyName} '${property}' is not a number`);
+    }
+  }
+
+  isSVG(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      this.isNonEmptyString(propertyName, property);
+      console.assert(property.endsWith(".svg"), `${propertyName} must be SVG type`);
+    }
+  }
+
+  isArray(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      console.assert(Array.isArray(property), `${propertyName} is not an Array`);
+    }
+  }
+
+  isNonEmptyArray(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      this.isArray(propertyName, property);
+      console.assert(property.length > 0, `${propertyName} must not be empty`);
+    }
+  }
+
+  isValidTrailName(propertyName, trailName) {
+    let nameParts = trailName.split(' ');
+    const validRouteTypes = ["GR", "PR", "SL"];
+    const validAreaTypes = ["LP", "BB", "BL", "EP", "FU", "PL", "SC", "TJ", "VG", "VM", "PG"];
+    const gr130Stages = ["1", "2", "3", "4", "5", "6", "7", "8"];
+    const gr131Stages = ["1", "2", "3"];
+    if (nameParts[0] == "GR") {
+      console.assert(nameParts[1] == "130" || nameParts[1] == "131", `${trailName} is not a valid GR route`);
+      console.assert(nameParts[2] == "Etapa", `${trailName} missing Etapa designation`);
+      if (nameParts[1] == "130") {
+        console.assert(gr130Stages.includes(nameParts[3]), `${trailName} is not a valid GR stage`);
+      } else {
+        console.assert(gr131Stages.includes(nameParts[3]), `${trailName} is not a valid GR stage`);
+      }
+    } else {
+      console.assert(validRouteTypes.includes(nameParts[0]), `${trailName} has invalid route type`);
+      console.assert(validAreaTypes.includes(nameParts[1]), `${trailName} has invalid area type`);
+      // Note: number check can be fooled
+      console.assert(!isNaN(nameParts[2]), `${trailName} has invalid trail number`);
+    }
+  }
+
+  isValidTrailStatus(propertyName, trailStatus) {
+    const validStatuses = ["open", "closed", "unknown"];
+    console.assert(validStatuses.includes(trailStatus), `${trailStatus} is not a valid trail status`);
+  }
+
+
+  areValidAreas(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      this.isNonEmptyArray(propertyName, property);
+      const validAreas = ["north", "west", "south", "east", "central"];
+      property.forEach(area => {
+        console.assert(validAreas.includes(area), `'${area}' is not a valid location area`);
+      })
+    }
+  }
+
+  areValidRouteNumbers(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      this.isNonEmptyArray(propertyName, property);
+      property.forEach(route => {
+        this.isNumber(propertyName, route);
+      })
+    }
+  }
+
+  areValidPoiTags(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      this.isNonEmptyArray(propertyName, property);
+      let tags = this.categories.poiCategories;
+      property.forEach(tag => {
+        let found = tags.find(t => t.id == tag) != undefined;
+        console.assert(found, `${tag} is not a valid POI tag`);
+      })
+    }
+  }
+
+  areValidCoordinates(propertyName, property) {
+    if (this.isDefined(propertyName, property)) {
+      let coords = property.split(",");
+      console.assert(coords.length > 0, `${property.name} does not have two values`);
+      let lat = Number.parseFloat(coords[0].trim());
+      let long = Number.parseFloat(coords[1].trim());
+      console.assert(lat != NaN, "Latitude is not a number");
+      console.assert(long != NaN, "Longitude is not a number");
+    }
   }
 
   get routes() { return this.#routeCollection; }
@@ -237,8 +677,14 @@ class Data {
       entryCost: poi.entryCost,
       hasEntryCost: "entryCost" in poi,
       
-      tel: poi.tel,
+      tel: "tel" in poi ? poi.tel : "",
       hasTel: "tel" in poi,
+
+      email: "email" in poi ? poi.email : "",
+      hasEmail: "email" in poi,
+
+      web: "web" in poi ? poi.web : "",
+      hasWeb: "web" in poi,
 
       location: poi.location,
       locationAttributes: this.locations.get(poi.location),
@@ -349,6 +795,7 @@ class Data {
   }
 
   /*************** raw data integrity checking  ****************************/
+
 
   // checks the incoming route data for missing fields, wrong types and (in some cases) wrong values
   integrityCheck(route) {

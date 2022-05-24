@@ -397,7 +397,6 @@
       "refreshments": "Bars, cafés, restaurants in Los Sauces.",
       "start": "Puente de Los Tilos",
       "end": "Puente de Los Tilos",
-      "paths": [],
 
       "images": [
         { "id": "01", "caption": "Los Tilos Bridge" },
@@ -432,7 +431,6 @@
       ],
 
       "warnings": [
-        []
       ]
     },
     {
@@ -1121,7 +1119,6 @@
       ],
 
       "warnings": [
-        []
       ]
     },
     {

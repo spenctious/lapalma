@@ -35,7 +35,6 @@
       "circular",
       {
         "text": "Circular route",
-        "hoverText": "",
         "filterIncludeText": "Circular walks",
         "filterExcludeText": "",
         "description": "",
@@ -46,7 +45,6 @@
       "linear",
       {
         "text": "Point-to-point route",
-        "hoverText": "",
         "filterIncludeText": "Point-to-point walks",
         "filterExcludeText": "",
         "description": "Requires a bus or taxi ride to complete the loop.",
@@ -57,7 +55,6 @@
       "return",
       {
         "text": "There-and-back route",
-        "hoverText": "",
         "filterIncludeText": "There-and-back walks",
         "filterExcludeText": "",
         "description": "",

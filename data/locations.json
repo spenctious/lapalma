@@ -34,7 +34,6 @@
       "province": "Barlovento",
       "parking": "Plenty of street parking in Barlovento. Car park near tourist information office.",
       "bus": {
-        "notes": "",
         "routes": ["100", "120"],
         "stop": "Barlovento"
       },
@@ -49,7 +48,6 @@
       "province": "Garafia",
       "parking": "Very restricted narrow streets with practically no parking options.",
       "bus": {
-        "notes": "",
         "routes": ["120"],
         "stop": "Franceses"
       }
@@ -63,7 +61,6 @@
       "province": "San Andrés y Sauces",
       "parking": "Multiple small places, try Calle Vicente San Juan round the back of the big church.",
       "bus": {
-        "notes": "",
         "routes": ["100"],
         "stop": "Los Sauces"
       }
@@ -98,7 +95,6 @@
       "province": "Santa Cruz de La Palma",
       "parking": "Park near Barco de la Virgen or on Avenida Marítima and walk to the start.",
       "bus": {
-        "notes": "",
         "routes": [
           "500",
           "300",
@@ -220,7 +216,6 @@
       "province": "El Paso",
       "parking": "Large car park at the rear, some parking in the front.",
       "bus": {
-        "notes": "",
         "routes": ["300"],
         "stop": "Centro de Visitantes"
       },
@@ -235,7 +230,6 @@
       "province": "Breña Alta",
       "parking": "Car park at the rear of Plaza de Bujaz",
       "bus": {
-        "notes": "",
         "routes": ["35"],
         "stop": "San Pedro"
       },
@@ -357,7 +351,6 @@
       "province": "Los Llanos de Aridane",
       "parking": "Plentiful parking but gets busy on market days.",
       "bus": {
-        "notes": "",
         "routes": ["200"],
         "stop": "Argual Abajo"
       },
@@ -387,7 +380,6 @@
       "province": "Los Llanos de Aridane",
       "parking": "Limited parking for restaurant patrons only",
       "bus": {
-        "notes": "",
         "routes": ["110"],
         "stop": "Mirador El Time"
       }
@@ -401,7 +393,6 @@
       "province": "Los Llanos de Aridane",
       "parking": "Beachfront places fill up fast but there's a carpark further up Calle Taburiente.",
       "bus": {
-        "notes": "",
         "routes": ["27", "110"],
         "stop": "Mirador El Time"
       }
@@ -415,7 +406,6 @@
       "province": "Tijarafe",
       "parking": "Cervecería Isla Verde bar carpark.",
       "bus": {
-        "notes": "",
         "routes": ["110"],
         "stop": "El Jesús"
       }
@@ -429,7 +419,6 @@
       "province": "Tijarafe",
       "parking": "A couple of places directly in front and a car park opposite.",
       "bus": {
-        "notes": "",
         "routes": ["110"],
         "stop": "Fuente del Toro"
       },
@@ -453,7 +442,6 @@
       "province": "Tijarafe",
       "parking": "Street parking, more by the sports stadium.",
       "bus": {
-        "notes": "",
         "routes": ["110"],
         "stop": "Tijarafe"
       },
@@ -468,7 +456,6 @@
       "province": "Tijarafe",
       "parking": "Next to Bar Garome.",
       "bus": {
-        "notes": "",
         "routes": ["110"],
         "stop": "Tijarafe"
       }
@@ -536,7 +523,6 @@
       "province": "Puntagorda",
       "parking": "Small parking spot by a noticeboard.",
       "bus": {
-        "notes": "",
         "routes": ["110"],
         "stop": "El Roque"
       },
@@ -561,7 +547,6 @@
       "province": "Puntagorda",
       "parking": "A couple of small car parks.",
       "bus": {
-        "notes": "",
         "routes": ["120"],
         "stop": "Las Tricias"
       },
@@ -601,7 +586,6 @@
       "province": "Garafia",
       "parking": "By the stadium or along Calle Nueva.",
       "bus": {
-        "notes": "",
         "routes": ["120"],
         "stop": "Santo Domingo"
       }
@@ -648,8 +632,7 @@
       "coordinates": "28.8334823, -17.8773042",
       "areas": ["north"],
       "province": "Garafia",
-      "parking": "Small, limited street parking on very narrow roads",
-      "notes": ""
+      "parking": "Small, limited street parking on very narrow roads"
     }
   ],
   [
@@ -736,7 +719,6 @@
       "province": "Santa Cruz de La Palma",
       "parking": "None",
       "bus": {
-        "notes": "",
         "routes": [
           "201"
         ],
@@ -751,9 +733,8 @@
       "coordinates": "28.6518623, -17.8813458",
       "areas": ["central"],
       "province": "El Paso",
-      "parking": "",
+      "parking": "Plenty of street parking along Avenida Islas Canarias and elsewhere.",
       "bus": {
-        "notes": "",
         "routes": [
           "300"
         ],
@@ -820,8 +801,7 @@
 	  "coordinates": "28.7098682, -17.8768097",
       "areas": ["central"],
       "province": "El Paso",
-      "parking": "None",
-      "notes": ""
+      "parking": "None"
     }
   ],
   [
@@ -854,8 +834,7 @@
           "100"
         ],
         "stop": "Los Sauces"
-      },
-      "notes": ""
+      }
     }
   ]
 ]

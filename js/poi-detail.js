@@ -57,6 +57,16 @@ function getPoi(poiId) {
 
 function getFullPoiDetails(poi) {
   let tel = poi.hasTel ? `<tr><td>Tel:</td><td>${poi.tel}</td></tr>` : "";
+  let email = poi.hasEmail ? 
+    `<tr><td>Email:</td><td>
+    <a href="mailto:${poi.email}" target="_blank">${poi.email}</a>
+    </td></tr>` 
+    : "";
+  let web = poi.hasWeb ? 
+    `<tr><td>Web:</td><td>
+    <a href="${poi.web.link}" target="_blank">${poi.web.name}</a>
+    </td></tr>` 
+    : "";
   let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
   let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
   let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
@@ -89,6 +99,8 @@ function getFullPoiDetails(poi) {
             </td>
           </tr>
           ${tel}
+          ${email}
+          ${web}
           ${entryCost}
         </table>
         ${openingTimes}

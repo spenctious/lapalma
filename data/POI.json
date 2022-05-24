@@ -69,7 +69,7 @@
       "entryCost": "FREE",
       "tel": "(+34) 922 411 523<br />922 696 002",
       "email": "info@salinasdefuencaliente.com",
-      "web": "https://salinasdefuencaliente.es/",
+      "web": {"name": "Offical site", "link": "https://salinasdefuencaliente.es/"},
       "location": "Faro de Fuencaliente",
       "locationDescription": "Next to the lighthouses in the far south.",
       "openingTimes": 
@@ -141,7 +141,7 @@
       "entryCost": "FREE",
       "tel": "(+34) 922 922 280",
       "email": "informacion.taburiente@gobiernodecanarias.org",
-      "web": {"name": "Booking", "link": "https://www.reservasparquesnacionales.es/real/ParquesNac/usu/html/detalle-actividad-oapn.aspx?cen=4&act=2"},
+      "web": {"name": "Bookings", "link": "https://www.reservasparquesnacionales.es/real/ParquesNac/usu/html/detalle-actividad-oapn.aspx?cen=4&act=2"},
       "location": "Playa de Taburiente",
       "locationDescription": "In the heart of the Caldera at the point the PR LP 13 route loops back."
     }
@@ -290,7 +290,7 @@
       "entryCost": "2.50€",
       "tel": "(+34) 922 400 277 - 695 350 395",
       "email": "migo@garafia.org",
-      "web": { "name": "", "link": "http://www.garafia.es/museo-de-interpretacion-del-gofio/"},
+      "web": { "name": "Local council site", "link": "http://www.garafia.es/museo-de-interpretacion-del-gofio/"},
       "location": "MIGO",
       "locationDescription": "North-west of Las tricias along the barranco edge down a drivable track.",
       "openingTimes": 
@@ -335,7 +335,7 @@
       "description": "Archeological park and museum featuring some of the best preserved petroglyphs created by the aboriginal Guanches. Toilets.",
       "entryCost": "3€ - includes parking",
       "tel": "(+34) 922 69 50 05",
-      "email": "",
+      "email": "test@foo.com",
       "web": { "name": "Official site", "link": "https://garafialonatural.com/item/parque-cultural-la-zarza/"},
       "location": "La Zarza",
       "locationDescription": "East of Llano Negro, Garafia.",

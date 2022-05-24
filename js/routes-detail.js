@@ -203,7 +203,15 @@ function populateBasics() {
   // trail status - waymarked and official trail statuses for each included path
   let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(route.waymarkedAttributes) : "";
   let trailStatusContent = "";
-  route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
+  if (route.hasPaths) {
+    route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
+    trailStatusContent += `
+        <p class="text-button">
+          <a href="https://www.senderosdelapalma.es/en/footpaths/situation-of-the-footpaths/" target="_blank">
+            Details
+          </a>
+        </p>`;
+  }
   trailContent += `
       <div>
         <p class="details-grid-attribute">Status</p>
@@ -213,11 +221,6 @@ function populateBasics() {
         <div class="official-trails">
           ${trailStatusContent == "" ? "None" : trailStatusContent}
         </div>
-        <p class="text-button">
-          <a href="https://www.senderosdelapalma.es/en/footpaths/situation-of-the-footpaths/" target="_blank">
-            Details
-          </a>
-        </p>
       </div>
       `;
   document.getElementById("trail-grid").innerHTML = trailContent;
@@ -514,9 +517,13 @@ function getLocationHtml(locationName, locationAttributes, label) {
   let notesHtml = "notes" in locationAttributes ? `<p>${locationAttributes.notes}</p>`: ""
   let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
   let busHtml = `Inaccessible by bus`;
-  let busNotes = "bus" in locationAttributes ? locationAttributes.bus.notes : "";
+  let busNotes = "";
   let taxiHtml = "taxi" in locationAttributes ? `<p><strong>Taxi</strong>: ${locationAttributes.taxi}</p>` : "";
   if ("bus" in locationAttributes) {
+    if ("notes" in locationAttributes.bus) {
+      busNotes = locationAttributes.bus.notes;
+    }
+
     let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
     busHtml = `
       <span class="text-button"><a href="/transport.html#routes">
