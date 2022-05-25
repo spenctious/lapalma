@@ -21,19 +21,37 @@ function initialize() {
   let queryString = window.location.search;
   let urlParams = new URLSearchParams(queryString);
 
+  // check URL for all required parameters
+  let paramRoute = urlParams.get(URL_PARAM_ROUTE);
+  let paramCollection = urlParams.get(URL_PARAM_COLLECTION);
+  let papramSteps = urlParams.get(URL_PARAM_STEPS);
+
+  // if parameters are missing, supply default data
+  if (paramRoute == null || paramCollection == null) {
+    paramRoute = "01";
+    paramCollection = Array.from(laPalmaData.routes.keys()).toString();
+    urlParams.set(URL_PARAM_ROUTE, paramRoute);
+    urlParams.set(URL_PARAM_COLLECTION, paramCollection);
+  }
+  if (papramSteps == null) {
+    papramSteps = "-1";
+    urlParams.set(URL_PARAM_STEPS, papramSteps);
+  }
+
   // get the data for the specific route and update the header
-  routeId = urlParams.get(URL_PARAM_ROUTE);
+  routeId = paramRoute;
   route = laPalmaData.routes.get(routeId);
   document.getElementById("header-title").innerHTML = "Walk " + routeId;
 
-  // get the list of routes selected by the current filters (if any)
-  collectionParam = urlParams.get(URL_PARAM_COLLECTION);
+  // get the list of routes selected by the current filters and
+  // find our current position in it
+  collectionParam = paramCollection;
   collection = collectionParam.split(',');
   collectionIndex = collection.findIndex(item => item == routeId);
 
   // get the number of steps to go back to the last page visited before the details page
   // NB: this number is updated as the user moves through the collection and is used by the on-page back button
-  stepsBack = Number.parseInt(urlParams.get(URL_PARAM_STEPS));
+  stepsBack = Number.parseInt(papramSteps);  
 
   // update the navigation bar or hide it altogether if there's only 1 route in the collection
   if (collection.length < 2) {
