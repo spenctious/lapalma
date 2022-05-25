@@ -2,21 +2,26 @@
 
 var activeFilters;
 
+
 /************************* Initialization ************************/
 
-// Wait for everything to finish loading before trying to populate grid
+
+// wait for everything to finish loading before trying to populate grid
 window.onload = function () {
   loadDataThen(initialize);
 };
 
+
+// initial set-up
 function initialize() {
   activeFilters = new Set(); // initially all filters are off
-  detailsModal = document.getElementById("full-details");
 
+  // set-up the details modal with all routes initially in the collection
   let allPoi = new Array();
   laPalmaData.poi.forEach( poi => allPoi.push(poi.id));
   initializePoiModal(allPoi);
 
+  // populate the filters and grid
   populateFilterPanel();
   populatePoiGrid();
 
@@ -25,12 +30,14 @@ function initialize() {
   document.getElementById("overlay").addEventListener("click", closeFilterPanel);
   document.getElementById("browse-grid").addEventListener("click", poiGridClickHandler);
   document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
-  detailsModal.addEventListener("click", modalClickHandler);
-  
+  document.getElementById("full-details").addEventListener("click", modalClickHandler);
+
   filterPoi();
 }
 
-/************************* Click handlers ************************/
+
+/************************* Filter panel open/close ************************/
+
 
 function openFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(-100%)";
@@ -44,10 +51,17 @@ function closeFilterPanel() {
   document.getElementById("filter-button").style.display = "block";
 }
 
+
+/************************* Click handlers ************************/
+
+
+// handler for floating filter button
 function filterButtonClickHandler(event) {
   openFilterPanel();
 }
 
+
+// POI details modal click handler
 function modalClickHandler(event) {
   let id = event.target.id;
 
@@ -70,6 +84,8 @@ function modalClickHandler(event) {
   }
 }
 
+
+// handle filter panel clicks
 function filterClickHandler(event) {
   let elementId = event.target.id;
 
@@ -84,7 +100,6 @@ function filterClickHandler(event) {
     laPalmaData.categories.poiCategories.forEach(category => {
       document.getElementById("poi-category-" + category.id).checked = false;
     })
-    // console.log(activeFilters);
     filterPoi();
     return;
   }
@@ -98,6 +113,8 @@ function filterClickHandler(event) {
   }
 }
 
+
+// handle clicks for the POI grid
 function poiGridClickHandler(event) {
   let elementId = event.target.closest("#browse-grid > div").id;
 
@@ -113,10 +130,11 @@ function poiGridClickHandler(event) {
 }
 
 
+
 /************************* Filtering ************************/
 
 
-// Returns true if the poi is included by the current filters or if no filters are set
+// returns true if the poi is included by the current filters or if no filters are set
 function applyActiveFilters(poi) {
   // no filters - all POI are included
   if (activeFilters.size == 0) return true;
@@ -129,8 +147,8 @@ function applyActiveFilters(poi) {
   return included;
 }
 
-// Hide POI entries that do not match the current filtering
-// Update the filter count and number of matches
+// hide POI entries that do not match the current filtering
+// update the filter count and number of matches
 function filterPoi() {
   let matched = 0;
   poiCollection = new Array();
@@ -183,8 +201,14 @@ function filterPoi() {
     `;
 }
 
+
+
 /************************* Content population ************************/
 
+// populates the filter panel with:
+// - checkbox tag filters
+// - clear all filters and close buttons
+//
 function populateFilterPanel() {
   let gridContent = "";
 
@@ -202,6 +226,14 @@ function populateFilterPanel() {
   document.getElementById("active-filter-grid").innerHTML = gridContent;
 }
 
+
+// populates the POI grid with:
+// - Default content (usually hidden) for when there are no matched routes
+// - Grid of POI, each of which consists of:
+//  - image
+//  - tags
+//  - related walks buttom
+//
 function populatePoiGrid() {
   let gridContent = `
     <div id="zero-matches">

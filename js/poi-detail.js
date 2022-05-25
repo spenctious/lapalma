@@ -1,14 +1,28 @@
 "use strict";
 
-// N.B Assumes data.js has been loaded as the URL params come from there
+//
+// common content to display a modal screen for POI detail content
+// used by poi-browse and routes-detail
+//
+// N.B assumes data.js has been loaded as the URL params come from there
+//
 
+// the list of POI the modal can page through and a pointer to the current
+// POI in that collection
 var poiCollection;
 var poiCollectionIndex;
+
+// content elements in the modal that get updated
 var detailsModal;
 var detailsModalContent;
 var detailsModalCurrent;
+
+// boolean that determines if the related walks button is displayed in the modal or not
+// when the modal is used on the routes-detail screen the button is hidden
 var showRelatedWalks;
 
+
+// initial set-up
 function initializePoiModal(initialPoiCollection) {
   poiCollection = initialPoiCollection;
   poiCollectionIndex = 0;
@@ -16,6 +30,8 @@ function initializePoiModal(initialPoiCollection) {
   detailsModalContent = document.getElementById("poi-full-details");
 }
 
+
+// opens the modal over the tinted overlay
 function openModal(poiId, overlayOnPoiGrid = true) {
   showRelatedWalks = overlayOnPoiGrid;
   poiCollectionIndex = poiCollection.findIndex(item => item == poiId);
@@ -23,29 +39,36 @@ function openModal(poiId, overlayOnPoiGrid = true) {
   detailsModal.style.display = "block";
 }
 
-// need to wait for details to be populated before accessing contents
+
+// update the modal to the POI indicated by poiCollectionIndex
 function updateCurrent() {
   detailsModalContent.innerHTML = getFullPoiDetails(getPoi(poiCollection[poiCollectionIndex]));
   detailsModalCurrent = document.getElementById("poi-current");
   detailsModalCurrent.innerHTML = `${poiCollectionIndex + 1} of ${poiCollection.length}`;
 }
 
+
+// close the POI details modal
 function closeModal() {
   detailsModal.style.display = "none";
 }
 
+
+// move to the next POI in the collection or the first if at the last
 function moveNext() {
   if (++poiCollectionIndex == poiCollection.length) poiCollectionIndex = 0;
   updateCurrent();
 }
 
+
+// move to the previous POI in the collection or the last POI if at the first
 function movePrevious() {
   if (--poiCollectionIndex < 0) poiCollectionIndex = poiCollection.length - 1;
   updateCurrent();
 }
 
 // find the POI details from the id 
-// (map is indexed by POI name, not id)
+// (the JS map is indexed by POI name, not id)
 function getPoi(poiId) {
   let poi = undefined;
   for (let p of laPalmaData.poi.values()) {
@@ -57,6 +80,21 @@ function getPoi(poiId) {
   return poi;
 }
 
+
+// builds the POI detail content:
+// - title
+// - image
+// - tags
+// - description
+// - location description and links to maps
+// - telephone number (if relevant)
+// - email link (if relevant)
+// - website link (if relevant)
+// - entry cost (if relevant)
+// - opening hours (if relevant)
+// - button link to related walks (if required)
+// - navigation bar to page through the filtered POI collection
+//
 function getFullPoiDetails(poi) {
   let tel = poi.hasTel ? `<tr><td>Tel:</td><td>${poi.tel}</td></tr>` : "";
   let email = poi.hasEmail ? 
@@ -119,6 +157,13 @@ function getFullPoiDetails(poi) {
     `;
 }
 
+
+
+/************************* helper functions ************************/
+
+
+// creates external links to Google satellite view and Open StreetMap standard views
+// both links open in a new tab
 function getLocationLinks(coords) {
   let osmCoords = coords.replace(", ", "/");
   const ZOOM_LEVEL = 16;
@@ -132,6 +177,8 @@ function getLocationLinks(coords) {
     `;
 }
 
+
+// returns set of category tags associated with the POI
 function getTagsHtml(tags) {
   let content = "";
   tags.forEach( tag => {
@@ -140,6 +187,8 @@ function getTagsHtml(tags) {
   return content;
 }
 
+
+// returns a table of opening hours
 function getOpeningTimesHtml(openingTimes) {
   let content = `
     <table class="opening-times">
@@ -155,6 +204,9 @@ function getOpeningTimesHtml(openingTimes) {
   return content;
 }
 
+
+// returns a button with a link to the route-details page with all the walks
+// that include the POI in the collection
 function getRelatedRoutesHtml(poi) {
   let collectionUrlParameter = `${URL_PARAM_COLLECTION}=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
