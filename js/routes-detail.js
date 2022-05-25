@@ -1,12 +1,12 @@
 "use strict";
 
+// page globals set up in initialize()
 var route;
 var routeId;
 var collectionParam;
 var collection;
 var collectionIndex;
-var routesBrowseBack;
-var stepsBack;
+var stepsBack = -1;
 
 // Wait for the page to load and the data to be read before trying to populate
 // elements of the page
@@ -17,13 +17,11 @@ window.onload = function () {
 /************************* Initialization ************************/
 
 function initialize() {
-  detailsModal = document.getElementById("full-details");
-
   // get the specific route matching the URL parameter
-  let QueryString = window.location.search;
-  let urlParams = new URLSearchParams(QueryString);
+  let queryString = window.location.search;
+  let urlParams = new URLSearchParams(queryString);
 
-  // get the data for the specific route
+  // get the data for the specific route and update the header
   routeId = urlParams.get(URL_PARAM_ROUTE);
   route = laPalmaData.routes.get(routeId);
   document.getElementById("header-title").innerHTML = "Walk " + routeId;
@@ -33,7 +31,8 @@ function initialize() {
   collection = collectionParam.split(',');
   collectionIndex = collection.findIndex(item => item == routeId);
 
-  // get the number of steps to go back to return to the routes browse screen
+  // get the number of steps to go back to the last page visited before the details page
+  // NB: this number is updated as the user moves through the collection and is used by the on-page back button
   stepsBack = Number.parseInt(urlParams.get(URL_PARAM_STEPS));
 
   // update the navigation bar or hide it altogether if there's only 1 route in the collection
@@ -54,19 +53,23 @@ function initialize() {
   populateBasics();
   populateRouteImages();
 
-  // add event listeners for the specified areas
-  // document.getElementById("header").addEventListener("click", headerClickHandler);
+  // add event listeners
   document.getElementById("content-grid").addEventListener("click", mainClickHandler);
   document.getElementById("routes-collection-nav").addEventListener("click", collectionClickHandler);
-  detailsModal.addEventListener("click", modalClickHandler);
+  document.getElementById("full-details").addEventListener("click", modalClickHandler);
 }
+
+
 
 /************************* Click handlers ************************/
 
-// close the modal if the close button is clicked or the user
-// clicks anywhere outside the content area
+
+// handles clicks for the POI details modal
 function modalClickHandler(event) {
   let id = event.target.id;
+
+  // close the modal if the close button is clicked or the user
+  // clicks anywhere outside the content area
   if (id == "modal-close" || id == "full-details") {
     closeModal();
     return;
@@ -84,11 +87,16 @@ function modalClickHandler(event) {
   }
 }
 
-function goBackToBrowse()
+
+// handles the back arrow button in the header
+function goBackToOrigin()
 {
+  // navigate back to the last non-details page visited
   window.history.go(stepsBack);
 }
 
+
+// handles clicks for the collection navigation bar
 function collectionClickHandler(event) {
   let elementId = event.target.closest("div").id;
   let lastIndex = collection.length - 1;
@@ -106,9 +114,12 @@ function collectionClickHandler(event) {
   }
 }
 
+
+// handles clicks for the main content area
 function mainClickHandler(event) {
   let elementId = event.target.closest("div").id;
 
+  // toggle favourites
   if (elementId == "favourite") {
     if (favourites.has(routeId)) {
       favourites.delete(routeId);
@@ -121,45 +132,57 @@ function mainClickHandler(event) {
     return;
   }
   
+  // replace basics summary with full details (expand)
   if (event.target.closest("#basics-summary") != null) {
     document.getElementById("basics-detail").style.display = "grid";
     document.getElementById("basics-summary").style.display = "none";
     return;
   }
 
+  // replace basics full details with summary (collapse)
   if (event.target.closest("#basics-title")) {
     document.getElementById("basics-detail").style.display = "none";
     document.getElementById("basics-summary").style.display = "grid";
     return;
   }
 
+  // replace features summary with full details (expand)
   if (event.target.closest("#features-and-warnings-summary") != null) {
     document.getElementById("features-and-warnings").style.display = "grid";
     document.getElementById("features-and-warnings-summary").style.display = "none";
     return;
   }
 
+  // replace features full details with summary (collapse)
   if (event.target.closest("#features-title")) {
     document.getElementById("features-and-warnings").style.display = "none";
     document.getElementById("features-and-warnings-summary").style.display = "grid";
     return;
   }
 
+  // clicking a POI link opens the POI details modal
   if (event.target.id.startsWith("poiLink")) {
     let poiId = event.target.id.replace("poiLink", "");
-    // document.getElementById("poi-full-details").innerHTML = getFullPoiDetails(getPoi(poiId));
-    // detailsModal.style.display = "block";
     openModal(poiId, false);
     return;
   }
 }
 
+
+
 /************************* Grid populating functions ************************/
 
-// N.B. The looping algorithms used ensure the order of entries is ddefined in the 
-// category data to save having to ensure consistency through route data which would 
+// N.B. The looping algorithms used ensure the order of entries is defined in the 
+// category data. This saves having to ensure consistency through route data which would 
 // be harder to maintain and reorder if required.
 
+// builds the content for the basic route data:
+// - summary icon grid
+// - basic route stats
+// - route access info
+// - trail status info for the official waymarked trails the route uses
+// - route terrain info
+//
 function populateBasics() {
   // summary grid
   let summaryContent = "";
@@ -233,6 +256,13 @@ function populateBasics() {
   document.getElementById("terrain-grid").innerHTML = terrainContent;
 }
 
+
+// builds the content for the route features and warnings:
+// - summary icon block
+// - list of features or alternative text if none
+// - list of warnings or alternative text if none
+// - list of dangers or alternative text if none
+//
 function populateFeaturesAndWarnings() {
   // summary
   let summaryContent = `
@@ -287,12 +317,17 @@ function populateFeaturesAndWarnings() {
   document.getElementById("dangers-grid").innerHTML = dangersContent;
 }
 
+// builds the content for the route description and variants
+// - title
+// - icons for starred content and favourites
+// - content for walk variations (if any)
+//
 function populateRouteDatail() {
   // route title with starred and favourite icons
   let starredIcon = "";
   if (route.isStarred) starredIcon =
     `<span class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
-  let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" :  "heart-empty.svg";
+  let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" : "heart-empty.svg";
   let titleContent = `
     <div class="title-id">${route.id}</div>
     <div><h1>${route.name}${starredIcon}</h1></div>
@@ -321,6 +356,8 @@ function populateRouteDatail() {
   document.getElementById("detail-body").innerHTML = bodyContent;
 }
 
+
+// builds the content for the route images (with captions)
 function populateRouteImages() {
   let imagesContent = `
     <h3 id="col-head-pics">Trail photos</h3>
@@ -339,11 +376,13 @@ function populateRouteImages() {
   document.getElementById("detail-images").innerHTML = imagesContent;
 }
 
-// Assumes route files are named LP<2 digits><optional letter><space><name>
-function getRouteId(routeName) {
-  return routeName.slice(2,5).trim();
-}
 
+// builds the content for variant walks:
+// - title
+// - summary icon block for basic attributes
+// - download content (if present)
+// - route directions
+//
 function getVariantContent(variant) {
   // title
   let title = `
@@ -361,8 +400,10 @@ function getVariantContent(variant) {
   if (variant.isAccessibleByBus) variantSummary += getSummaryIconHtml(variant.accessBusAttributes.icon);
 
   // download content - only some variants will have additional files associated with them
+  // assumes route files are named LP<2 digits><optional letter><space><name> 
+  let routeId = variant.routeFile.slice(2,5).trim();
   let downloadContent = variant.hasRouteFile ? 
-    `<div class="button-box">${getDownloadButtons(variant.routeFile, getRouteId(variant.routeFile))}</div>` : "";
+    `<div class="button-box">${getDownloadButtons(variant.routeFile, routeId)}</div>` : "";
 
   // directions - expand format to HTML
   // square braces enclose route ids, normal brackets enclose waypoint information
@@ -386,8 +427,11 @@ function getVariantContent(variant) {
     </div> `;
 }
 
+
+
 /************************* HTML helper functions ************************/
 
+// builds a button group for GPX and KML route type download buttons with icons
 function getDownloadButtons(fileName, routeId) {
   return `
     <div class="button primary">
@@ -406,6 +450,7 @@ function getDownloadButtons(fileName, routeId) {
     </div>`;
 }
 
+
 // list of icons
 function getSummaryIconsContent(itemsMap) {
   let iconsContent = "";
@@ -413,10 +458,12 @@ function getSummaryIconsContent(itemsMap) {
   return iconsContent;
 }
 
+
 // tags where some property is marked as strong
 function getStrongHtml(isStrong, strongText) {
   return isStrong ? `<span class="strong-indicator">${strongText}</span>` : "";
 }
+
 
 // duration or effort icons with text label
 function getMetricsHtml(metric) {
@@ -427,6 +474,7 @@ function getMetricsHtml(metric) {
     </div>`;
 }
 
+
 // duration or effort icon without lext label
 function getMetricIconHtml(icon) {
   return `
@@ -435,6 +483,7 @@ function getMetricIconHtml(icon) {
     </div>`;
 }
 
+
 // individual icon in summary block
 function getSummaryIconHtml(icon) {
   return `
@@ -442,6 +491,7 @@ function getSummaryIconHtml(icon) {
       <img src="/img/icons/${icon}" class="icon-img" alt="" />
     </div>`;
 }
+
 
 // trail status lines
 function getTrailStatusHtml(trailStatus, trailName) {
@@ -454,6 +504,7 @@ function getTrailStatusHtml(trailStatus, trailName) {
     </div>`;
 }
 
+
 // standard feature description with icon, strong tag (if present), title, description
 // and any additional content supplied
 function getFeatureHtml(feature, additionalContent = "") {
@@ -465,7 +516,11 @@ function getFeatureHtml(feature, additionalContent = "") {
     additionalContent);
 }
 
+
 // gets the additional content for specific features and warnings
+// - POI links that open up the POI detail modal
+// - Links to the weather forecast page
+//
 function getAdditionalContent(featureName) {
   let additionalContent = "";
   switch (featureName) {
@@ -486,17 +541,25 @@ function getAdditionalContent(featureName) {
   return additionalContent;
 }
 
+
 // feature description for basic items that are not metrics (walk type, refreshments)
 function getBasicFeatureHtml(feature, description) {
   return getAttributeHtml(feature.icon, feature.text, description);
 }
+
 
 // feature description without title or strong tag (used by eg. dangers list)
 function getSimpleAttributeHtml(attributes) {
   return getAttributeHtml(attributes.icon, attributes.text, attributes.description);
 }
 
-// generic html for attributes
+
+// generic html for attributes:
+// - icon for attribute type
+// - description
+// - tag if the content is marked up as being particularly strong
+// - any additional content
+//
 function getAttributeHtml(icon, text, description, strong = "", additionalContent = "", iconClass = "") {
   return `
     <div class="icon">
@@ -512,7 +575,14 @@ function getAttributeHtml(icon, text, description, strong = "", additionalConten
     </div>`;
 }
 
-// location details
+
+// location details:
+// - notes (if present)
+// - parking info or a note that the location is inaccessible by car
+// - bus routes and stop as a link to the bus section of the transport page
+//    or note that the location is not accessible by bus
+// - taxi info (if present)
+// 
 function getLocationHtml(locationName, locationAttributes, label) {
   let notesHtml = "notes" in locationAttributes ? `<p>${locationAttributes.notes}</p>`: ""
   let carHtml = "parking" in locationAttributes ? locationAttributes.parking : "Inaccessible by car";
