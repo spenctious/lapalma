@@ -9,10 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
   addMenuItems();
 }, false);
 
-function getMenuItem(name, icon, target) {
+
+// returns html content for a menu item
+// highlights the menu item that matches the current page or its alias
+function getMenuItem(name, icon, target, altTarget = "") {
   // if the page is the same as the link style it differently
   let menuLinkClass = "menu-link";
-  if (target == window.location.pathname) {
+  if (target == window.location.pathname || altTarget == window.location.pathname) {
     menuLinkClass += " current";
   }
   return `
@@ -22,13 +25,15 @@ function getMenuItem(name, icon, target) {
     </a>`;
 }
 
+
+// load the menu with headings and link content
 function addMenuItems() {
   let navbarContent = `<p id="menu-header" class="close-button" onclick="closeNav()">&times;</p>`;
 
   navbarContent += getMenuItem("Home", "/img/icons/house-door.svg", "/index.html");
 
   navbarContent += `<p class="menu-section">Discover</p>`;
-  navbarContent += getMenuItem("Walks", "/img/icons/hiker.svg", "/routes-browse.html");
+  navbarContent += getMenuItem("Walks", "/img/icons/hiker.svg", "/routes-browse.html", "/routes-detail.html");
   navbarContent += getMenuItem("Places", "/img/icons/geo-alt.svg", "/poi-browse.html");
 
   navbarContent += `<p class="menu-section">Check</p>`;
@@ -42,11 +47,15 @@ function addMenuItems() {
   document.getElementById("navbar").innerHTML = navbarContent;
 }
 
+
+// open the menu
 function openNav() {
   document.getElementById("navbar").style.transform = "translateX(0)";
   document.getElementById("overlay").style.display = "block";
 }
 
+
+// close the menu
 function closeNav() {
   document.getElementById("navbar").style.transform = "translateX(-100%)";
   document.getElementById("overlay").style.display = "none";
