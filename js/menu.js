@@ -15,13 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function getMenuItem(name, icon, target, altTarget = "") {
   // if the page is the same as the link style it differently
   let menuLinkClass = "menu-link";
+  let gridIcon = "";
   if (target == window.location.pathname || altTarget == window.location.pathname) {
     menuLinkClass += " current";
+  }
+  if (altTarget == window.location.pathname) {
+    menuLinkClass += " current";
+    gridIcon = `<span><img src="/img/icons/info-circle.svg" class="menu-decorator"></span>`;
   }
   return `
     <a href=${target} class="${menuLinkClass}">
       <img src="${icon}" class="menu-icon">
-      <span class="menu-item-name">${name}</span>
+      <span class="menu-item-name">${name}${gridIcon}</span>
     </a>`;
 }
 

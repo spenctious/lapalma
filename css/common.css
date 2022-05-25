@@ -331,7 +331,7 @@ a[href]:not(:where(
 
 .menu-link {
   padding: 0.4rem 1rem 0.4rem 2rem;
-  text-decoration: none;
+  text-decoration: none !important;
   background-color: var(--colour-light-bkg);
   color: var(--colour0);
   display: block;
@@ -349,6 +349,12 @@ a[href]:not(:where(
   height: 1.5rem;
   padding-right: 0.5rem;
   vertical-align: middle;
+}
+
+.menu-decorator {
+  float: right;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .menu-item-name {
