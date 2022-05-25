@@ -1,7 +1,10 @@
+"use strict";
+
 var locationList;
 var locationSelector;
 var forecastFrame;
 
+// setup the forecast drop-down list and listen for changes
 window.onload = function () {
   populateLocationList();
 
@@ -11,6 +14,7 @@ window.onload = function () {
   locationSelector.addEventListener("change", locationChange);
 };
 
+
 // update the forecast iframe with the selected location URL
 function locationChange() {
   let selectedValue = locationSelector.options[locationSelector.selectedIndex].value;
@@ -18,7 +22,9 @@ function locationChange() {
   forecastFrame.src = `https://www.aemet.es/en/eltiempo/prediccion/municipios/mostrarwidget/${locationUrlFragment}?w=g3p01110011ohmffffffw320z243x4f86d9t95b6e9r1s8n2`;
 }
 
+
 // map DDL selections to URL fragments defining each location
+// location URL fragments extracted from AEMET widget page for each location
 function populateLocationList() {
   locationList = new Map();
   locationList.set("0", "santa-cruz-de-la-palma-id38037"); // default
