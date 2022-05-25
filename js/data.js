@@ -357,7 +357,7 @@ class Data {
     return listMap;
   }
 
-  /*************** raw data integrity checking  ****************************/
+  /*************** Raw data integrity checking  ****************************/
 
   // A schema would be better but wouldn't do the refferential integrity checking
   // The following is not definitive but does catch the vast majority of errors
@@ -373,7 +373,6 @@ class Data {
       this.isNonEmptyString("filterIncludeText", this.categories.walkLocations.filterIncludeText);
       this.isDefined("filterExcludeText", this.categories.walkLocations.filterExcludeText);
       this.isDefined("description", this.categories.walkLocations.description);
-      this.isSVG("icon", this.categories.walkLocations.icon);
     }
     catch (error) {
       console.log(`walkLocations checking error:\n${error}`);
@@ -439,6 +438,11 @@ class Data {
         this.isDefined("filterExcludeText", property.filterExcludeText);
         this.isDefined("description", property.description);
         this.isSVG("icon", property.icon);
+
+        // optional fields
+        if ("filterIcon" in property) {
+          this.isSVG("icon", this.property.filterIcon);
+        }
       })
     }
     catch (error) {
