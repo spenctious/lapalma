@@ -5,27 +5,30 @@ const MAX_FILTERS = 3;
 // object handling filter panel and filters within
 var filterSet;
 
-// selection status - values will be "in" or "out"
+// route selection status - values will be "in" or "out"
 var selectedRoutes;
 
 /************************* Initialization ************************/
 
-// Wait for everything to finish loading before trying to populate grid
+// wait for everything to finish loading before trying to populate grid
 window.onload = function () {
   loadDataThen(initialize);
 };
 
+
+// initial setup
 function initialize() {
 
   // initially all routes are included (in numeric order)
   selectedRoutes = new Map();
   laPalmaData.routes.forEach(route => selectedRoutes.set(route.id, "in"));
   
+  // create the filters and populate the routes grid
   filterSet = new FilterSet();
   filterSet.populateFilterPanel();
   populateRoutesGrid();
 
-  // add event listeners on the routes grid and filters panel
+  // add event listeners
   document.getElementById("filter").addEventListener("click", filterClickHandler);
   document.getElementById("overlay").addEventListener("click", closeFilterPanel);
   document.getElementById("browse-grid").addEventListener("click", routesGridClickHandler);
@@ -33,6 +36,7 @@ function initialize() {
   document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
 
   // restore filter state if set
+  // ensures navigating back after looking at a route's detail does not lose the set filters
   let retrievedState = window.history.state;
   if (retrievedState != undefined && retrievedState != null && JSON.stringify(retrievedState) != '{}') {
     filterSet.restoreState(retrievedState);
@@ -41,22 +45,28 @@ function initialize() {
   }
 }
 
+
+
 /************************* URL parameter handling ************************/
+
 
 // note: should not be possible to call this method unless there is at least one route 
 // not filtered out 
 function getDetailPageQueryString(selectedRouteIndex) {
   // get route ids for all routes not filtered out
   let collection = "";
-  selectedRoutes.forEach((value, key) => {
-    if (value == "in") collection += key + ",";
+  selectedRoutes.forEach((state, id) => {
+    if (state == "in") collection += id + ",";
   });
   if (collection.endsWith(',')) collection = collection.slice(0, -1); // strip trailing comma
 
   return `?${URL_PARAM_ROUTE}=${selectedRouteIndex}&${URL_PARAM_COLLECTION}=${collection}&${URL_PARAM_STEPS}=-1`;
 }
 
-/************************* Click handlers ************************/
+
+
+/************************* Filter panel open/close ************************/
+
 
 function openFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(-100%)";
@@ -64,16 +74,23 @@ function openFilterPanel() {
   document.getElementById("filter-button").style.display = "none";
 }
 
+
 function closeFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(0)";
   document.getElementById("overlay").style.display = "none";
   document.getElementById("filter-button").style.display = "block";
 }
 
+
+/************************* Click handlers ************************/
+
+// handler for floating filter button
 function filterButtonClickHandler(event) {
   openFilterPanel();
 }
 
+
+// handle filter panel clicks
 function filterClickHandler(event) {
   let elementId = event.target.closest("div").id;
 
@@ -134,11 +151,15 @@ function filterClickHandler(event) {
   }
 }
 
+
+// handle clicks on the location image map
 function locationGridClickHandler(event) {
   let elementId = event.target.id;
   filterSet.toggleLocationSelector(elementId);
 }
 
+
+// handle clicks for the routes grid
 function routesGridClickHandler(event) {
   let elementId = event.target.id;
   let routeId = event.target.closest("#browse-grid > div").id;
@@ -169,8 +190,23 @@ function routesGridClickHandler(event) {
   }
 }
 
+
+
 /************************* Routes grid ************************/
 
+
+// populate the main grid:
+// - Default content (usually hidden) for when there are no matched routes
+// - Grid of routes, each of which contains:
+//  - image with overlays for:
+//    - route id
+//    - number of variations (if any)
+//    - star for highly recommended routes
+//    - banner (usually hidden) to indicate a vairation matches
+//  - description
+//  - favourite icon selector
+//  - basic stats icons and text for route duration and effort
+//
 function populateRoutesGrid() {
   // Empty state content - hidden by default;
   let gridContent = `
@@ -178,7 +214,6 @@ function populateRoutesGrid() {
       Sorry, nothing matches.<br />Try changing or deleting filters.
     </div>`;
   
-
   laPalmaData.routes.forEach( route => {
     // number of route varients, if any
     let routeVarients = "";
@@ -238,6 +273,7 @@ function populateRoutesGrid() {
       document.getElementById("browse-grid").innerHTML = gridContent;
 };
 
+
 // Hide routes that don't fit the current filters
 // Update count of filters and matches
 function filterRoutes() {
@@ -247,6 +283,7 @@ function filterRoutes() {
     // check both the route and variants for a match
     let included = filterSet.applyActiveFilters(route);
 
+    // elements to update
     let routeDiv = document.getElementById("route" + route.id);
     let variantMatchDiv = document.getElementById("variant-match" + route.id);
 
@@ -289,6 +326,7 @@ function filterRoutes() {
       break;
   }
 
+  // update filter count
   let filterCount = filterSet.activeFilterCount.toString();
   let filterClass = "active-filters";
   if (filterSet.activeFilterCount == 0) {
@@ -296,6 +334,7 @@ function filterRoutes() {
     filterClass = "active-filters none";
   }
 
+  // update header with matches and filter count
   document.getElementById("header-title").innerHTML = `
     ${routeCount}
     <span class="${filterClass}">
@@ -304,69 +343,72 @@ function filterRoutes() {
     `;
 }
 
+
+
 /************************* Filter classes ************************/
 
-// Toggle states
+
+// toggle states
 const OFF = "OFF";
 const ONLY = "ONLY";
 const NO = "NO";
 const ON = "ON";
 
-// Indexes for explicitly setting a toggle state
+// indexes for explicitly setting a toggle state
 const STATE_OFF = 0;
 const STATE_ON = 1;
 
-// Possible toggle state cycles
+// possible toggle state cycles
 const INCLUDE = ["OFF", "ONLY"]; // positive attributes to be ruled in
 const EXCLUDE = ["OFF", "NO"];  // undesirable attributes to be ruled out
 const OFF_ON = ["OFF", "ON"];
 
-//
-// Handles filter state of walk attributes
-// Allows for tri-state toggling if needed in the future (e.g. off-only-on or off-only-only:strong)
+// handles filter state of walk attributes
+// allows for tri-state toggling if needed in the future 
+// (e.g. off-only-on or off-only-only:strong)
 //
 class Toggle {
   #currentState;
   #states;
 
-  // Takes an array of states
+  // takes an array of states as defined in one of the above constants
   constructor(states) {
     this.#states = states;
     this.#currentState = 0;
   }
 
-  // If targetState is specified move to that state, otherwise
+
+  // if targetState is specified move to that state, otherwise
   // move to the next toggle state which 'wraps around' back to 0
   toggle(targetState) {
     if (typeof targetState == 'undefined') {
       this.#currentState = ++this.#currentState % this.#states.length;
     }
     else {
-      console.assert(
-        !isNaN(targetState) && 
-        targetState >= 0 && 
-        targetState < this.#states.length, 
-        `invalid targetState: ${targetState}`);
       this.#currentState = targetState;
     }
   }
 
-  // Returns the actual state value
+
+  // returns the actual state value
   get state() {
     return this.#states[this.#currentState];
   }
 
-  // Off should be the first state of any sequence
+
+  // OFF should be the first state of any sequence
   get isOff() {
     return this.#currentState == 0;
   }
 }
 
+
+
 /******************************* Filter classes *******************************/
 
-//
-// Base filter class - handles basic toggling and drawing of the filter
-// Derrived classes must supply an apply() method for filtering
+
+// base filter class - handles basic toggling and drawing of the filter
+// derrived classes must supply an apply() method for filtering
 //
 class Filter {
 
@@ -374,8 +416,8 @@ class Filter {
   #category;
   #toggleControl;
   #name;
+  #isVariantDefined; // true if the filter is explicitly defined by variant walks, flase otherwise
   isEnabled;
-  #isVariantDefined;
 
   constructor(name, category, toggle, isVariantDefined = false) {
     this.#name = name;
@@ -385,40 +427,83 @@ class Filter {
     this.#isVariantDefined = isVariantDefined;
   }
 
+
   toggle(targetState) {
     this.#toggleControl.toggle(targetState);
     this.#updateScreenStatus();
   }
+
 
   reset() {
     this.#toggleControl.toggle(STATE_OFF);
     this.#updateScreenStatus();
   }
 
+
+  //
+  // public methods
+  //
+
+
   get isOff() {
     return this.#toggleControl.isOff;
   }
 
-  get isVariantDefined() { return this.#isVariantDefined; }
 
-  // getters and setters
+  get isVariantDefined() { 
+    return this.#isVariantDefined; 
+  }
+
+
   set enabled(state) {
     this.isEnabled = state;
     this.#updateScreenStatus();
   }
-  get enabled() { return this.isEnabled; }
 
-  get name() { return this.#name; }
-  set index(index) { this.#index = index; }
-  get index() { return this.#index; }
-  get id() { return "filter" + this.#index; }
-  get icon() { return "filterIcon" in this.#category ? this.#category.filterIcon : this.#category.icon; }
-  get state() { return this.#toggleControl.state; }
+
+  get enabled() { 
+    return this.isEnabled; 
+  }
+
+
+  get name() { 
+    return this.#name; 
+  }
+
+
+  set index(index) { 
+    this.#index = index; 
+  }
+
+
+  get index() { 
+    return this.#index; 
+  }
+
+
+  get id() { 
+    return "filter" + this.#index; 
+  }
+
+
+  // the default category icon may not be suitable for using as a filter icon so 
+  // if a specific filter icon is defined, use that in preference
+  get icon() { 
+    return "filterIcon" in this.#category ? this.#category.filterIcon : this.#category.icon; 
+  }
+
+
+  get state() { 
+    return this.#toggleControl.state; 
+  }
+
 
   get text() {
     return this.state == ONLY ? this.#category.filterIncludeText : this.#category.filterExcludeText;
   }
 
+  
+  // filter icons have unique ids and may be disabled
   get html() {
     let filterHtml =
     `<div id="${this.id}" class="icon ${this.enabled ? '' : ' disabled'}">
@@ -427,11 +512,18 @@ class Filter {
     return filterHtml;
   }
 
+
+  // turn on filter that was previously off
   enableInactive(setEnabled) {
     if (this.state == OFF) {
       this.enabled = setEnabled;
     }
   }
+
+
+  //
+  // private methods
+  //
 
   #updateScreenStatus() {
     let icon = document.getElementById(this.id);
@@ -455,67 +547,89 @@ class Filter {
   }
 }
 
-/**** Derived filter classes - actual filters ****/
+
+
+/******************************* Derived filter classes - actual filters *******************************/
+
+// derrived filter classes must:
+// - initialize the base class with
+//  - name
+//  - category object (from which icon etc. can be read)
+//  - toggle values (include or exclude)
+//  - whether or not the category is defined by variant walks or not (default false)
+// - define an apply() method to do the actual filtering
 
 class Starred extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("starred"), new Toggle(INCLUDE))
   }
 
+
   apply(route) {
     return route.isStarred;
   }
 }
+
 
 class Favourite extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("favourite"), new Toggle(INCLUDE))
   }
 
+
   apply(route) {
     return favourites.has(route.id);
   }
 }
+
 
 class ShortWalk extends Filter {
   constructor(name) {
     super(name, laPalmaData.duration.get("half"), new Toggle(INCLUDE), true);
   }
 
+
   apply(route) {
     return route.isShort;
   }
 }
+
 
 class AccessCar extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("accessCar"), new Toggle(INCLUDE), true);
   }
 
+
   apply(route) {
     return route.isAccessibleByCar;
   }
 }
+
 
 class AccessBus extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("accessBus"), new Toggle(INCLUDE), true);
   }
 
+
   apply(route) {
     return route.isAccessibleByBus;
   }
 }
+
 
 class Waymarked extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("waymarked"), new Toggle(INCLUDE));
   }
 
+
   apply(route) {
     return route.isCompletelyWaymarked;
   }
 }
+
 
 class WalkType extends Filter {
   #specificType;
@@ -525,10 +639,12 @@ class WalkType extends Filter {
     this.#specificType = specificType;
   }
 
+
   apply(route) {
     return route.walkType == this.#specificType;
   }
 }
+
 
 class Interest extends Filter {
   #specificInterest;
@@ -538,10 +654,12 @@ class Interest extends Filter {
     this.#specificInterest = specificInterest;
   }
 
+
   apply(route) {
     return route.interest.has(this.#specificInterest);
   }
 }
+
 
 class Terrain extends Filter {
   #specificTerrain;
@@ -550,10 +668,12 @@ class Terrain extends Filter {
     this.#specificTerrain = specificTerrain;
   }
 
+  
   apply(route) {
     return route.terrain.has(this.#specificTerrain);
   }
 }
+
 
 class Warning extends Filter {
   #specificWarning;
@@ -563,19 +683,18 @@ class Warning extends Filter {
     this.#specificWarning = specificWarning;
   }
 
+
   apply(route) {
     return route.warnings.has(this.#specificWarning) ? route.warnings.get(this.#specificWarning).isStrong : false;
   }
 }
 
-//
-// Handles the linked location selector grid as well as the location filter
-//
+
+// handles the associated location selector grid as well as the location filter
 class Location extends Filter {
   #locationAreas;
   #allAreasOff;
   #allAreasOn;
-  #areas;
 
   constructor(name) {
     super(name, laPalmaData.categories.walkLocations, new Toggle(INCLUDE));
@@ -587,11 +706,11 @@ class Location extends Filter {
     // create and populate location area sets
     this.#locationAreas = new Map(
       [
-        ["north", { buttonName: "North", toggle: new Toggle(OFF_ON), locations: new Set() }],
-        ["west", { buttonName: "West", toggle: new Toggle(OFF_ON), locations: new Set() }],
-        ["central", { buttonName: "Central", toggle: new Toggle(OFF_ON), locations: new Set() }],
-        ["east", { buttonName: "East", toggle: new Toggle(OFF_ON), locations: new Set() }],
-        ["south", { buttonName: "South", toggle: new Toggle(OFF_ON), locations: new Set() }],
+        ["north", { toggle: new Toggle(OFF_ON), locations: new Set() }],
+        ["west", { toggle: new Toggle(OFF_ON), locations: new Set() }],
+        ["central", { toggle: new Toggle(OFF_ON), locations: new Set() }],
+        ["east", { toggle: new Toggle(OFF_ON), locations: new Set() }],
+        ["south", { toggle: new Toggle(OFF_ON), locations: new Set() }],
       ]
     );
 
@@ -605,12 +724,15 @@ class Location extends Filter {
     });
   }
 
-  // only enable if valid
+
+  // only enable filter if valid areas have been selected
   enableInactive(setEnabled) {
     if (!this.#allAreasOff && !this.#allAreasOn) super.enableInactive(setEnabled);
   }
 
+
   // checks for invalid selection states
+  // all areas selected or no areas selected are invalid filter states
   checkAreasAreValid() {
     this.#allAreasOff = true;
     this.#allAreasOn = true;
@@ -619,7 +741,11 @@ class Location extends Filter {
     });
   }
 
-  /*** Accessors ***/
+
+  //
+  // Accessors
+  //
+
 
   get activeLocationAreas() { 
     // return this.#locationAreas;
@@ -632,38 +758,45 @@ class Location extends Filter {
     return activeAreas;
   }
 
+
   set activeLocationAreas(restoredActiveAreas) {
     restoredActiveAreas.forEach(areaName => {
       this.setLocationSelector(areaName, STATE_ON)
     });
   }
 
+
   get name() {
     return super.name;
   }
 
-  // Returns false if all areas are selected or no areas selected, true otherwise
-  // In other words, true only if the selection makes sense as a filter
+
   get hasValidAreasSelection() {
     this.checkAreasAreValid();
-
     return !this.#allAreasOff && !this.#allAreasOn;
   }
+
 
   get allAreasSelected() {
     return this.#allAreasOn;
   }
 
+
   get noAreasSelected() {
     return this.#allAreasOff;
   }
 
-  /*** Area button click handlers ***/
 
-  // Update location selector appearance and toggle state
+  //
+  // area button click handlers
+  //
+
+
+  // update location selector appearance and toggle state
   toggleLocationSelector(elementId) {
     this.setLocationSelector(elementId);
   }
+
 
   selectAllLocations() {
     for (let areaName of this.#locationAreas.keys()) {
@@ -671,13 +804,15 @@ class Location extends Filter {
     }
   }
 
+
   clearAllLocations() {
     for (let areaName of this.#locationAreas.keys()) {
       this.setLocationSelector(areaName, STATE_OFF);
     }
   }
 
-  // Helper method to set the area to the specified state and update the map accordingly
+
+  // helper method to set the area to the specified state and update the map accordingly
   setLocationSelector(areaKey, targetState) {
     let area = this.#locationAreas.get(areaKey);
     area.toggle.toggle(targetState);
@@ -692,13 +827,18 @@ class Location extends Filter {
     }
   }
 
-  /*** Filtering ***/
+
+  //
+  // filtering
+  //
+
 
   apply(route) {
     return this.isInSelectedAreas(route.start) || this.isInSelectedAreas(route.end);
   }
 
-  // Returns true only if specified location is in the selected areas
+
+  // returns true only if specified location is in the selected areas
   isInSelectedAreas(location) {
     let included = false;
     for (let area of this.#locationAreas.values()) {
@@ -711,9 +851,12 @@ class Location extends Filter {
   }
 }
 
-/************************* FilterSet ************************/
 
-// Handles the filter panel as a whole updating the active filter panel, locations grid,
+
+/******************************* FilterSet *******************************/
+
+
+// handles the filter panel as a whole updating the active filter panel, locations grid,
 // favourites and routes grid according to the user selections
 class FilterSet {
   #allFilters;
@@ -729,7 +872,7 @@ class FilterSet {
     this.#categoryFiltersHtml = "";
     this.#locationFilterHtml = "";
 
-    // Filters added in order they are laid out in HTML
+    // filters are added in order they are laid out in HTML
     this.#allFilters = new Array();
     this.#filterIndex = 0;
     this.addGeneralFilter(new Starred("starred"));
@@ -774,7 +917,11 @@ class FilterSet {
     this.updateActiveFilterGrid();
   }
 
-  /*** Initialization ***/
+
+  //
+  // initialization
+  //
+
 
   // return the current state of the filters
   getState() {
@@ -783,6 +930,7 @@ class FilterSet {
       locationAreas: this.#locationFilter.activeLocationAreas
     }
   }
+
 
   // return filters to their previous state
   restoreState(state) {
@@ -794,14 +942,19 @@ class FilterSet {
     this.updateGrids();
   }
 
-  // Add a filter to the collection and assign the collection index as the id
-  // Add the filter to the list to be applied to variants if so indicated
+
+  // add a filter to the collection and assign the collection index as the id
   addFilter(filter) {
     filter.index = this.#filterIndex++;
     this.#allFilters.push(filter);
   }
 
-  // Specific add methods build up HTML for injection into respective grids
+
+  //
+  // specific add methods build up HTML for injection into respective grids
+  //
+
+
   addGeneralFilter(filter) {
     this.addFilter(filter);
     this.#generalFiltersHtml += filter.html;
@@ -812,21 +965,41 @@ class FilterSet {
     this.#categoryFiltersHtml += filter.html;
   }
 
-  startCategory(label) {
-    this.#categoryFiltersHtml += `<div class="feature-heading">${label}</div><div class="filter-row">`;
-  }
-
-  endCategory() {
-    this.#categoryFiltersHtml += `</div>`;
-  }
-
   addLocationFilter(filter) {
     this.addFilter(filter);
     this.#locationFilterHtml = filter.html;
     this.#locationFilter = filter;
   }
 
-  // Add grid content to the filter panel
+
+  //
+  // filter headings
+  //
+
+
+  startCategory(label) {
+    this.#categoryFiltersHtml += `<div class="feature-heading">${label}</div><div class="filter-row">`;
+  }
+
+
+  endCategory() {
+    this.#categoryFiltersHtml += `</div>`;
+  }
+
+
+  //
+  // populate
+  //
+
+  // add grid content to the filter panel:
+  // - general filters for starred and favourites
+  // - category filters
+  // - location filter with SVG image map of areas
+  //
+  // N.B.
+  //  - image map background is set as a background image on the element in CSS
+  //  - image map derived from Figma file in assets folder (modified)
+  //
   populateFilterPanel() {
     // general filters
     let generalFilterGridContent = this.#generalFiltersHtml;
@@ -854,15 +1027,20 @@ class FilterSet {
     document.getElementById("location-filter-grid").innerHTML = locationFilterGridContent;
   }
 
-  /*** Accessors ***/
+
+  //
+  // accessors
+  //
 
   get activeFilterCount() {
     return this.#activeFilterList.size;
   }
 
+
   get filterLimitReached() { 
     return this.#activeFilterList.size == MAX_FILTERS; 
   }
+
 
   get locationFilterMessage() {
     if (this.#locationFilter.allAreasSelected) return "Remove areas to enable filter.";
@@ -870,16 +1048,22 @@ class FilterSet {
     return "";
   }
 
-  /*** Update methods ***/
+
+  //
+  // update methods
+  //
+
 
   updateGrids() {
     this.updateActiveFilterGrid();
-    this.updateLocationMessage();
+    this.updateLocationStatus();
     this.updateFilterIcons();
     filterRoutes();
   }
 
-  updateLocationMessage() {
+
+  // updates the location filter to reflect the area selection status
+  updateLocationStatus() {
     let message = "";
     this.#locationFilter.checkAreasAreValid();
     if (this.#locationFilter.allAreasSelected) {
@@ -894,7 +1078,8 @@ class FilterSet {
     document.getElementById("location-message").innerHTML = message;
   }
 
-  // Redraws active filter grid replacing old contents
+
+  // redraws active filter grid replacing old contents
   updateActiveFilterGrid() {
     let activeFilterGridContents = "";
     if (this.#activeFilterList.size == 0) {
@@ -915,6 +1100,7 @@ class FilterSet {
     document.getElementById("active-filter-grid").innerHTML = activeFilterGridContents;
   }
 
+
   // disables unused filter icons if the maximum number of filters is already set
   updateFilterIcons() {
     this.#allFilters.forEach(filter => {
@@ -922,45 +1108,51 @@ class FilterSet {
     })
   }
 
-  /*** Filter application ***/
+
+  //
+  // filtering
+  //
+
 
   // variant filters are assumed to inherit their parent walk's attributes
+  // unless the filter is explicitly defined by a variant
+  // returns match status for both the main route and the variants
   applyActiveFilters(route) {
-    let matchesMainFilters = true;
+    let matchesCommonFilters = true;
     let matchesVariantFilters = true;
 
     // check the route to see if its filtered out or not
     this.#activeFilterList.forEach(filterId => {
       let filter = this.#allFilters[filterId];
-      // record whether the route failed matching main or variant filters
+      // record point of failure: common filters or ones shared with variants
       if (!this.routeIsIncluded(filter, route)) {
         if (filter.isVariantDefined) {
           matchesVariantFilters = false;
         } else {
-          matchesMainFilters = false;
+          matchesCommonFilters = false;
         }
       }
     });
 
-    // if there is no match on the main filters there's no match on the variants 
-    // either so we don't need to check them
-    if (!matchesMainFilters) {
+    // if there is no match on the common filters then the route doesn't match period 
+    // and there's no need to check the variants
+    if (!matchesCommonFilters) {
       return {route: false, variants: false}; 
     }
 
-    // if the main route matches completely, there is no need to check the variants
-    if (matchesMainFilters && matchesVariantFilters) {
+    // if the main route matches completely, there is also no need to check the variants
+    // as we don't care - we have a match already
+    if (matchesCommonFilters && matchesVariantFilters) {
       return {route: true, variants: undefined}; 
     }
 
-    // matched on the main filters but not the variant filters - 
-    // see if one or more variants match
-
-    // there is no match if there are no variants
+    // matched on the main filters but not the variant filters
+    // but if there are no variants there's no match
     if (!route.hasVariants) {
-      return {route: true, variants: false}; 
+      return {route: false, variants: false}; 
     }
 
+    // matched on the main filters so see if one of them matches the variant filters
     // if any variant matches then there is no need to check the others
     let matchingVariantFound = false;
     for (let i = 0; i < route.variants.length; i++) {
@@ -980,6 +1172,7 @@ class FilterSet {
     return {route: false, variants: matchingVariantFound}; 
   }
 
+
   // check if a route is filtered out by the given filter or not
   routeIsIncluded(filter, route) {
     let included = true;
@@ -994,20 +1187,13 @@ class FilterSet {
     return included;
   }
 
-  // If any variant matches the route is included
-  checkVariants(route) {
-    let included = false;
-    if (route.hasVariants) {
-      route.variants.every(variant => {
-        if (this.applyActiveFilters(variant, true)) included = true;
-        return included;
-      })
-    }
-  }
 
-  /*** Respond to click events ***/
+  //
+  // responses to click events
+  //
 
-  // Returns true if the filter limit has not been reached or the filter is already selected
+
+  // returns true if the filter limit has not been reached or the filter is already selected
   filterIsSelectable(filter) {
     let activeFilterClicked = this.#activeFilterList.has(filter.index.toString());
     let limitReached = this.#activeFilterList.size == MAX_FILTERS;
@@ -1015,7 +1201,8 @@ class FilterSet {
     return !limitReached || activeFilterClicked;
   }
 
-  // Deletion cross on an active filter clicked - remove filter
+
+  // deletion cross on an active filter clicked - remove filter
   deleteActiveFilter(elementId) {
     let activeFilterId = elementId.replace("active-filter", "");
     let activeFilter = this.#allFilters[activeFilterId];
@@ -1026,7 +1213,8 @@ class FilterSet {
     this.updateGrids();
   }
 
-  // Filter icon clicked - toggle its state
+
+  // filter icon clicked - toggle its state
   toggle(elementId) {
     let filterId = elementId.replace("filter", ""); // strip prefix to get the filter name
     let selectedFilter = this.#allFilters[filterId];
@@ -1042,7 +1230,8 @@ class FilterSet {
     }
   }
 
-  // Turn everything off and empty active filter list
+
+  // turn everything off and empty active filter list
   clearAllFilters() {
     this.#allFilters.forEach(filter => {
       filter.toggle(STATE_OFF);
@@ -1051,7 +1240,8 @@ class FilterSet {
     this.updateGrids();
   }
 
-  // Deletes favourites and updates the routes grid accordingly before refreshing filter result
+
+  // deletes favourites and updates the routes grid accordingly before refreshing filter result
   clearFavourites() {
     favourites.clear();
     laPalmaData.routes.forEach(route => {
@@ -1061,7 +1251,11 @@ class FilterSet {
     updateFavourites();
   }
 
-  /*** Respond to location area click events ***/
+
+  //
+  // Respond to location area click events
+  //
+
 
   selectAllLocations() {
     if (this.filterIsSelectable(this.#locationFilter)) {
@@ -1070,12 +1264,14 @@ class FilterSet {
     }
   }
 
+
   clearAllLocations() {
     if (this.filterIsSelectable(this.#locationFilter)) {
       this.#locationFilter.clearAllLocations();
       this.updateLocationFilter();
     }
   }
+
 
   toggleLocationSelector(elementId) {
     if (this.filterIsSelectable(this.#locationFilter)) {
@@ -1084,8 +1280,9 @@ class FilterSet {
     }
   }
 
-  // Changing the area selection automatically turns the filter on
-  // Invalid selections (all areas or no areas) turn it off
+
+  // changing the area selection automatically turns the filter on
+  // invalid selections (all areas or no areas) turn it off
   updateLocationFilter() {
     let filterId = this.#locationFilter.index.toString(); // active filter list uses string keys
 
