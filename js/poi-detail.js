@@ -1,5 +1,7 @@
 "use strict";
 
+// N.B Assumes data.js has been loaded as the URL params come from there
+
 var poiCollection;
 var poiCollectionIndex;
 var detailsModal;
@@ -154,11 +156,11 @@ function getOpeningTimesHtml(openingTimes) {
 }
 
 function getRelatedRoutesHtml(poi) {
-  let collectionUrlParameter = `collection=${poi.relatedWalks}`; // comma-seperated list of ids
+  let collectionUrlParameter = `${URL_PARAM_COLLECTION}=${poi.relatedWalks}`; // comma-seperated list of ids
   return `
   <div class="button">
     <a 
-      href="/routes-detail.html?route=${poi.relatedWalks[0]}&${collectionUrlParameter}">
+      href="/routes-detail.html?${URL_PARAM_ROUTE}=${poi.relatedWalks[0]}&${collectionUrlParameter}&${URL_PARAM_STEPS}=-1">
       ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
     </a>
   </div>`;
