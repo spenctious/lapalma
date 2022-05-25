@@ -37,6 +37,9 @@ function openModal(poiId, overlayOnPoiGrid = true) {
   poiCollectionIndex = poiCollection.findIndex(item => item == poiId);
   updateCurrent();
   detailsModal.style.display = "block";
+
+  // prevent body scrolling while modal is open - mainly for mobile
+  document.body.classList.add("body-stop-scroll");
 }
 
 
@@ -51,6 +54,9 @@ function updateCurrent() {
 // close the POI details modal
 function closeModal() {
   detailsModal.style.display = "none";
+
+  // allow body scrolling again
+  document.body.classList.remove("body-stop-scroll");
 }
 
 
