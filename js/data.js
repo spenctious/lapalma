@@ -641,7 +641,7 @@ class Data {
         this.isBoolean("accessBus", route.accessBus);
         this.isNonEmptyString("province", route.province);
         this.isNonEmptyString("town", route.town);
-        this.isNonEmptyString("routeFile", route.routeFile);
+        this.isValidRouteFile("routeFile", route.routeFile);
         this.isNonEmptyString("refreshments", route.refreshments);
         this.isValidLookup("start", route.start, this.locations, "locations");
         this.isValidLookup("end", route.end, this.locations, "locations");
@@ -686,7 +686,7 @@ class Data {
 
             // optional fields
             if ("routeFile" in v) {
-              this.isNonEmptyString("variant.routeFile", v.routeFile);
+              this.isValidRouteFile("variant.routeFile", v.routeFile);
             }
           })
         }
@@ -809,6 +809,14 @@ class Data {
     console.assert(validStatuses.includes(trailStatus), `${trailStatus} is not a valid trail status`);
   }
 
+  isValidRouteFile(propertyName, property) {
+    this.isNonEmptyString(propertyName, property);
+    // Route file names are:
+    // LP<2 digits><optional lower case letter><space><name>
+    // LP24.1 and LP24.2 are exceptions
+    const regex = /^LP(\d\d[a-z]?|24.1|24.2)\s.+/;
+    console.assert(regex.test(property), `${propertyName} does not have a valid route file format`);
+  }
 
   areValidAreas(propertyName, property) {
     if (this.isDefined(propertyName, property)) {
