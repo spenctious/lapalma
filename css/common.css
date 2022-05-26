@@ -519,7 +519,7 @@ a[href]:not(:where(
 }
 
 /* wide enough for the navbar to be included in the main content */
-@media (min-width: 1380px) {
+@media (min-width: 1340px) {
   #content-grid {
     grid-template-columns: var(--nav-panel-width) auto;
     grid-template-areas: "nav main";
