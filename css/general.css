@@ -1,4 +1,7 @@
-/* Common classes for general information pages */
+/* 
+ * Common classes for general information pages 
+ */
+
 
 /************************* Text ************************/
 
@@ -47,6 +50,7 @@ strong {
   font-weight: bold;
 }
 
+
 /************************* Images and captions ************************/
 
 figure {
@@ -78,6 +82,7 @@ figure > img {
   max-width: 100%;
   max-width: 100%;
 }
+
 
 /************************* Containers ************************/
 
@@ -118,6 +123,7 @@ figure > img {
   margin-bottom: 0.5rem;
 }
 
+
 /*************************** Internal page navigation menu ***************************/
 
 .page-nav {
@@ -140,6 +146,19 @@ figure > img {
   margin-bottom: 0.5rem;
 }
 
+/* decorate links with an arrow */
+.page-nav a::before {
+  content: '';
+  display: inline-block;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 0.25rem;
+  background-image: url("/img/icons/caret-right-fill.svg");
+  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg) brightness(74%) contrast(86%);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 /* position anchor point down from static header */
 a.anchor {
   display: block;
@@ -147,6 +166,7 @@ a.anchor {
   top: -3rem;
   visibility: hidden;
 }
+
 
 /*************************** Media queries  ***************************/
 
@@ -162,6 +182,7 @@ a.anchor {
     grid-template-columns: repeat(2, 24rem);
   }
 
+  /* page nav links switch to horizontal format seperated by a bar */
   .page-nav {
     flex-direction: row;
   }
@@ -169,6 +190,11 @@ a.anchor {
   .page-nav a:not(:last-child) {
     border-right: 2px solid var(--colour3);
   }
+
+  .page-nav a::before {
+    display: none;
+  }
+  
 
   /* images at the top of a content box don't want a top margin */
   .content-box > img:first-child {
