@@ -208,4 +208,10 @@ a.anchor {
   .content-box img:first-child {
     margin-top: 0rem;
   }
+
+  /* on 2 columns it's better to have the iframe on the right */
+  #weather-forecast { 
+    grid-column: 2; 
+    grid-row: 4; 
+  }
 }
