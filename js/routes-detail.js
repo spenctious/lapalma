@@ -66,7 +66,7 @@ function initialize() {
   initializePoiModal(allPoi);
 
   // populate the various components with the current route data
-  populateRouteDatail();
+  populateRouteDetail();
   populateFeaturesAndWarnings();
   populateBasics();
   populateRouteImages();
@@ -340,7 +340,7 @@ function populateFeaturesAndWarnings() {
 // - icons for starred content and favourites
 // - content for walk variations (if any)
 //
-function populateRouteDatail() {
+function populateRouteDetail() {
   // route title with starred and favourite icons
   let starredIcon = "";
   if (route.isStarred) starredIcon =
