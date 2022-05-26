@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/home.css" />
+
+    <!-- favicon: https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -23,7 +25,7 @@
   <body>
     <div id="overlay" onclick="closeNav()"></div>
 
-    <!-- Title bar -->
+    <!-- title bar -->
     <div id="header">
       <div id="back-nav">
         <a href="/index.html">
@@ -37,7 +39,7 @@
     </div>
 
     <div id="content-grid">
-      <!-- Navigation is populated in code -->
+      <!-- navigation is populated in code -->
       <nav id="navbar" class="sidenav"></nav>
 
       <div class="centering-container hero-content">
@@ -53,18 +55,23 @@
             </li>
           </ul>
         </div>
+
         <div class="hero">
           <picture>
-            <!-- portrait -->
-            <source media="(max-width : 600px) and (orientation: portrait)" srcset="/img/hero-v-480.webp" />
-            <!-- <source media="(min-width : 768px) and (orientation: portrait)" srcset="/img/hero-v-768.webp" /> -->
-            <!-- <source media="(min-width : 992px) and (orientation: portrait)" srcset="/img/hero-v-1024.webp"/> -->
-
+            <!-- portrait: once there is enough space, switch to a landscape image -->
+            <source 
+              srcset="/img/hero-v-480.webp 480w, /img/hero-v-768.webp 768w, /img/hero-v-1024.webp 1024w" 
+              media="screen and (orientation: portrait) and (max-width: 800px)" 
+            />
+            <source 
+              srcset="/img/hero-h-1024.webp 1024w, /img/hero-h-1600.webp 1600w" 
+              media="screen and (orientation: portrait) and (min-width: 800px)" 
+            />
             <!-- landscape -->
-            <source media="(max-width : 600px) and (orientation: landscape)" srcset="/img/hero-h-600.webp" />
-            <source media="(min-width : 768px)" srcset="/img/hero-h-1024.webp" />
-            <source media="(min-width : 992px)" srcset="/img/hero-h-1600.webp" />
-
+            <source 
+              srcset="/img/hero-h-600.webp 600w, /img/hero-h-1024.webp 1024w, /img/hero-h-1600.webp 1600w" 
+              media="screen and (orientation: landscape)" 
+            />
             <img src="/img/hero-v.webp" alt="" />
           </picture>
 
@@ -92,6 +99,7 @@
       <div id="main-content" class="centering-container">
         <div class="content-container">
           <h1>About La Palma</h1>
+
           <h2>Where is it?</h2>
           <div class="content-box">
             <p>
@@ -108,6 +116,7 @@
               <figcaption>La Palma is in the north-east</figcaption>
             </figure>
           </div>
+
           <h2>What's so good about it?</h2>
           <div class="content-box">
             <p>
@@ -145,6 +154,7 @@
               <figcaption>The Caldera</figcaption>
             </figure>
           </div>
+
           <h2>What's it like?</h2>
           <div class="content-box">
             <p>
@@ -174,7 +184,7 @@
     </div>
 
     <div id="footer">
-      <div id="footer-content" class="h-container">
+      <div id="footer-content">
         Copyright &copy; Robert Anstey 2022
       </div>
     </div>
