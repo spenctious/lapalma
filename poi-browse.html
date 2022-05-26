@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/poi-browse.css" />
+
+    <!-- favicon: https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -26,7 +28,7 @@
   <body>
     <div id="overlay" onclick="closeNav()"></div>
 
-    <!-- Title bar -->
+    <!-- title bar -->
     <div id="header">
       <div id="back-nav">
         <a href="/index.html">
@@ -40,11 +42,10 @@
     </div>
     
     <div id="content-grid">
-
-      <!-- Navigation is populated in code -->
+      <!-- navigation is populated in code -->
       <nav id="navbar" class="sidenav"></nav>
 
-      <!-- Filtered grid of points of interest -->
+      <!-- filtered grid of points of interest -->
       <div id="main-content">
         <div id="browse-grid">
           <!-- content inserted by populatePoiGrid() -->
@@ -54,7 +55,7 @@
         </div>
       </div>
 
-      <!-- Filter panel -->
+      <!-- filter panel -->
       <div id="filter" class="filter-panel poi-filters">
         <div class="filter-title">Filter by tags</div>
         <div>
@@ -64,6 +65,7 @@
             </div>
           </div>
         </div>
+
         <div class="button-box last-element">
           <div id="clear-all-filters" class="button">Clear all</div>
           <div id="close-filter" class="button primary">Close</div>
@@ -75,6 +77,7 @@
       <div id="footer-content">Copyright &copy; Robert Anstey 2022</div>
     </div>
     
+    <!-- pop-up modal for POI details -->
     <div id="full-details" class="modal">
       <div id="poi-full-details" class="modal-content">
           <!-- content populated in code -->

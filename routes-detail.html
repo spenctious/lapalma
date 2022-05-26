@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/routes-detail.css" />
+
+    <!-- favicon: https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,7 +40,7 @@
     </div>
 
     <div id="content-grid">
-      <!-- Navigation is populated in code -->
+      <!-- navigation is populated in code -->
       <nav id="navbar" class="sidenav"></nav>
 
       <div id="main-content">
@@ -50,7 +52,7 @@
           <div id="detail-wrapper">
             <h3 id="col-head-detail">Route detail</h3>
             <div id="basics-summary">
-              <!-- content inserted by populateBasicsGrid() -->
+              <!-- content inserted by populateBasics() -->
             </div>
             <div id="basics-detail">
               <div id="basics-title" class="details-expanded">
@@ -59,23 +61,23 @@
               </div>
               <h3>Basics</h3>
               <div id="basics-grid" class="details-grid">
-                <!-- content inserted by populateBasicsGrid() -->
+                <!-- content inserted by populateBasics() -->
               </div>
               <h3>Access</h3>
               <div id="access-grid" class="details-grid">
-                <!-- content inserted by populateAccessGrid() -->
+                <!-- content inserted by populateBasics() -->
               </div>
               <h3>Terrain</h3>
               <div id="terrain-grid" class="details-grid">
-                <!-- content inserted by populateTrailGrid() -->
+                <!-- content inserted by populateBasics() -->
               </div>
               <h3>Trails</h3>
               <div id="trail-grid" class="details-grid">
-                <!-- content inserted by populateTrailGrid() -->
+                <!-- content inserted by populateBasics() -->
               </div>
             </div>
             <div id="features-and-warnings-summary">
-              <!-- content inserted by populateFeaturesGrid() -->
+              <!-- content inserted by populateFeaturesAndWarnings() -->
             </div>
             <div id="features-and-warnings">
               <div id="features-title" class="details-expanded">
@@ -84,29 +86,30 @@
               </div>
               <h3>Features</h3>
               <div id="features-grid" class="details-grid">
-                <!-- content inserted by populateFeaturesGrid() -->
+                <!-- content inserted by populateFeaturesAndWarnings() -->
               </div>
               <h3>Warnings</h3>
               <div id="warnings-grid" class="details-grid">
-                <!-- content inserted by populateWarningsGrid() -->
+                <!-- content inserted by populateFeaturesAndWarnings() -->
               </div>
               <h3>Dangers</h3>
               <div id="dangers-grid" class="details-grid">
-                <!-- content inserted by populateWarningsGrid() -->
+                <!-- content inserted by populateFeaturesAndWarnings() -->
               </div>
             </div>
             <div id="detail-body">
-              <!-- content inserted by populateRouteDatail() -->
+              <!-- content inserted by populateRouteDetail() -->
             </div>
           </div>
           <div id="variations" class="content-block">
-            <!-- content inserted by populateVariations() -->
+            <!-- content inserted by populateRouteDetail() -->
           </div>
           <div id="detail-images">
             <!-- content inserted by populateRouteImages() -->
           </div>
         </div>
 
+        <!-- route collection navigation controls -->
         <div id="routes-collection-nav" class="collection-nav floating coll-nav-position">
           <div id="prev" class="arrow previous"></div>
           <div id="current">Walk 0</div>
@@ -122,6 +125,7 @@
       </div>
     </div>
     
+    <!-- pop-up modal for POI details -->
     <div id="full-details" class="modal">
       <div id="poi-full-details" class="modal-content">
           <!-- content populated in code -->

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/forecasts.css" />
 
+    <!-- favicon: https://realfavicongenerator.net/ -->    
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -25,7 +26,7 @@
   <body>
     <div id="overlay" onclick="closeNav()"></div>
 
-    <!-- Title bar -->
+    <!-- title bar -->
     <div id="header">
       <div id="back-nav">
         <a href="/index.html">
@@ -39,54 +40,64 @@
     </div>
 
     <div id="content-grid">
-      <!-- Navigation is populated in code -->
+      <!-- navigation is populated in code -->
       <nav id="navbar" class="sidenav"></nav>
 
       <div class="centering-container">
-
         <div class="content-container">
         <h1>Weather Forecasts</h1>
+
+        <!-- page navigation -->        
         <div class="page-nav">
           <a class="section" href="#other-forecasts">Other forecasts</a>
         </div>
 
-          <h2>AEMet forecasts</h2>
-          <div id="weather-forecast" class="content-box">
-            <div class="custom-select">
-              <select id="forecast-locations">
-                <option value="0">Select location...</option>
-                <option value="1">Barlovento</option>
-                <option value="2">San Pedro</option>
-                <option value="3">Breña Baja</option>
-                <option value="4">Fuencaliente</option>
-                <option value="5">Santo Domingo de Garafía</option>
-                <option value="6">Los Llanos de Aridane</option>
-                <option value="7">Puntagorda</option>
-                <option value="8">Puntallana</option>
-                <option value="9">San Andrés y Sauces</option>
-                <option value="10">Santa Cruz de La Palma</option>
-                <option value="11">Tazacorte</option>
-                <option value="12">Tijarafe</option>
-                <option value="13">Villa de Mazo</option>
-              </select>
-            </div>
+        <h2>AEMet forecasts</h2>
+        <!-- drop-down-list of forecast locations -->
+        <div id="weather-forecast" class="content-box">
+          <div class="custom-select">
+            <select id="forecast-locations">
+              <option value="0">Select location...</option>
+              <option value="1">Barlovento</option>
+              <option value="2">San Pedro</option>
+              <option value="3">Breña Baja</option>
+              <option value="4">Fuencaliente</option>
+              <option value="5">Santo Domingo de Garafía</option>
+              <option value="6">Los Llanos de Aridane</option>
+              <option value="7">Puntagorda</option>
+              <option value="8">Puntallana</option>
+              <option value="9">San Andrés y Sauces</option>
+              <option value="10">Santa Cruz de La Palma</option>
+              <option value="11">Tazacorte</option>
+              <option value="12">Tijarafe</option>
+              <option value="13">Villa de Mazo</option>
+            </select>
+          </div>
 
-            <div id="aemet-forecasts">
-              <div id="spinner">
-                <img src="/img/icons/loading.gif" alt="">
-              </div>
-              <iframe
-                name="iframe_aemet_id33044"
-                width="100%"
-                height="280px"
-                tabindex="0"
-                id="iframe_aemet_id33044"
-                src="https://www.aemet.es/en/eltiempo/prediccion/municipios/mostrarwidget/santa-cruz-de-la-palma-id38037?w=g3p01110011ohmffffffw320z243x4f86d9t95b6e9r1s8n2"
-                frameborder="0"
-                scrolling="no"
-                onload="document.getElementById('spinner').style.display='none';"
-              ></iframe>
+          <!-- 
+            forecast widget from: http://www.aemet.es/en/eltiempo/widgets/municipios
+              - URL modified in code for different forecast locations
+              - background loading spinner added to iframe
+              - id added so the location of the content box can be positioed:
+                  - first on mobile to guarantee it fits on the page without scrolling
+                  - second on 2 column layouts to align with other content
+           -->
+          <div id="aemet-forecasts">
+            <div id="spinner">
+              <img src="/img/icons/loading.gif" alt="">
             </div>
+            <iframe
+              name="iframe_aemet_id33044"
+              width="100%"
+              height="280px"
+              tabindex="0"
+              id="iframe_aemet_id33044"
+              src="https://www.aemet.es/en/eltiempo/prediccion/municipios/mostrarwidget/santa-cruz-de-la-palma-id38037?w=g3p01110011ohmffffffw320z243x4f86d9t95b6e9r1s8n2"
+              frameborder="0"
+              scrolling="no"
+              onload="document.getElementById('spinner').style.display='none';"
+            ></iframe>
+          </div>
           </div>
           <div class="content-box">
             <p>AEMet is the Spanish national weather forecaster and the most reliable of weather sources. Forecasts
@@ -102,9 +113,6 @@
             </p>
           </div>
         </div>
-
-        <!-- <div class="content-container"> -->
-        <!-- </div> -->
 
         <div class="content-container tinted">
           <a name="other-forecasts" class="anchor"></a>

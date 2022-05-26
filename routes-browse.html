@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/route-browse.css" />
+
+    <!-- favicon: https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -25,7 +27,7 @@
   <body>
     <div id="overlay" onclick="closeNav()"></div>
 
-    <!-- Title bar -->
+    <!-- title bar -->
     <div id="header">
       <div id="back-nav">
         <a href="/index.html">
@@ -39,29 +41,28 @@
     </div>
     
     <div id="content-grid">
-      <!-- Navigation is populated in code -->
+      <!-- navigation is populated in code -->
       <nav id="navbar" class="sidenav"></nav>
 
-      <!-- Filtered grid of walks -->
+      <!-- filtered grid of walks -->
       <div id="main-content">
         <div id="browse-grid">
           <!-- content inserted by populateRoutesGrid() -->
         </div>
 
-        <!-- Filter button -->
+        <!-- filter button -->
         <div id="filter-button" class="floating action-button filter-position">
           <img src="/img/icons/funnel-fill.svg" alt=""> Filter
         </div>
       </div>
 
-      <!-- Filter panel -->
+      <!-- filter panel -->
       <div id="filter" class="filter-panel routes-filters">
         <div>
           <div class="filter-title">Route filters</div>
           <div id="active-filter-box">
-            <!-- <h3 class="filter-sub-head">Current filters</h3> -->
             <div id="active-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
+              <!-- content inserted by FilterSet:populateFilterPanel() -->
             </div>
           </div>
         </div>
@@ -69,7 +70,7 @@
           <div id="general-filters" class="filter-section">
             <h3 class="filter-sub-head">Favourites & Starred</h3>
             <div id="general-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
+              <!-- content inserted by FilterSet:populateFilterPanel() -->
             </div>
           </div>
           <div id="feature-location-tabs" class="tab-strip">
@@ -79,13 +80,13 @@
           <div id="category-filters" class="filter-section">
             <h3 class="filter-sub-head tabbed">Features & Warnings</h3>
             <div id="category-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
+              <!-- content inserted by FilterSet:populateFilterPanel() -->
             </div>
           </div>
           <div id="location-filters" class="filter-section">
             <h3 class="filter-sub-head tabbed">Locations</h3>
             <div id="location-filter-grid">
-              <!-- content inserted by populateFilterPanel() -->
+              <!-- content inserted by FilterSet:populateFilterPanel() -->
             </div>
           </div>
         </div>
@@ -98,7 +99,7 @@
     </div>
 
     <div id="footer">
-      <div id="footer-content" class="h-container">
+      <div id="footer-content">
         Copyright &copy; Robert Anstey 2022
       </div>
     </div>
