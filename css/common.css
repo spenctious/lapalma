@@ -1,20 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+/*
+ * Common styles and definitions including:
+ * - links
+ * - buttons (regular and floating action)
+ * - header and footer
+ * - navigation menu
+ * - collection navigation
+ * - page grid (extended and modified in other css files as needed
+ * - basic media queries for changing sliding navigation in as fixed element in the grid
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap");
 
 :root {
-  /* colours */
+  /* shades of increasing lightness */
   --colour0: #313030;
   --colour1: #565656;
-  --colour3: #f6f5f5;
-  --colour4: #D3D3D3;
-  --colour5: #F0F0F0;
-  --colour6: #86592d;
+  --colour2: #c0c0c0;
+  --colour3: #d3d3d3;
+  --colour4: #f0f0f0;
+  --colour5: #f6f5f5;
+
   --colour-light-bkg: #fefefe;
+  --link-colour: #2451ab;
+  --button-colour: #2451ab;
+
+  /* colours for active filter selections */
   --included-back-colour: #00802b;
   --excluded-back-colour: #e60000;
-  --highlight-back-colour: #ffff00;
-  --highlight-colour: black;
-  --button-colour-bkg: #dddddd;
-  --link-colour: #2451ab;
 
   /* z-order for components */
   --z-float: 1;
@@ -25,27 +37,35 @@
   --z-menu: 6;
 
   /* sizes */
-  --nav-panel-width: 240px;
-  --nav-panel-width-sml: 200px;
+  --nav-panel-width: 11rem;
   --routes-filter-panel-width: 14.5rem;
   --poi-filter-panel-width: 14rem;
-  --max-content-width: 1800px;
   --header-height: 3rem;
   --footer-height: 2rem;
 }
 
-html, body {
-  font-family: 'Open Sans', sans-serif;
+html,
+body {
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   background-color: var(--colour-light-bkg);
 }
 
-/************************* Button sytling ************************/
+/************************* Link sytling ************************/
 
+/* 
+ * colour links but don't automatically underline them
+ * stop long links breaking out of their container by breaking them
+ * - there is a better but more involved solution here:
+ * https://css-tricks.com/better-line-breaks-for-long-urls/
+ */
 a {
   text-decoration: none;
   color: var(--link-colour);
   font-weight: bold;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 a:hover {
@@ -58,13 +78,6 @@ a:hover {
   padding-bottom: 0.3rem;
   line-height: 150%;
   text-align: right;
-}
-
-/* ensure long links don't bust out of their container */
-a {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 /* indicate external links
@@ -81,9 +94,10 @@ a[href]:not(:where(
   /* subdomains to exclude */
   /* [href*="//meta.stackoverflow.com"], */
 )):after {
-  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg) brightness(74%) contrast(86%);
+  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg)
+    brightness(74%) contrast(86%);
   content: "";
-  background: url('/img/icons/box-arrow-up-right.svg');
+  background: url("/img/icons/box-arrow-up-right.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -91,6 +105,12 @@ a[href]:not(:where(
   padding-right: 0.75rem;
 }
 
+/************************* Button sytling ************************/
+
+/* 
+ * a button box is a container for buttons 
+ * two buttons can sit side-by-side, a single button will take up the whole width
+ */
 .button-box {
   display: flex;
   flex-direction: row;
@@ -113,9 +133,9 @@ a[href]:not(:where(
 }
 
 .button {
-  border: 1px solid var(--link-colour);
+  border: 1px solid var(--button-colour);
   border-radius: 6px;
-  color: var(--link-colour);
+  color: var(--button-colour);
   background-color: white;
   font-weight: bold;
   font-size: 0.8rem;
@@ -127,7 +147,7 @@ a[href]:not(:where(
 }
 
 .primary {
-  background-color: var(--link-colour);
+  background-color: var(--button-colour);
   color: white;
 }
 
@@ -137,7 +157,8 @@ a[href]:not(:where(
 
 .button img {
   /* https://codepen.io/sosuke/pen/Pjoqqp to convert black to current link colour */
-  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg) brightness(74%) contrast(86%);
+  filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg)
+    brightness(74%) contrast(86%);
 }
 
 .button > a {
@@ -151,6 +172,7 @@ a[href]:not(:where(
   padding-right: 0.3rem;
 }
 
+/* for route download format information */
 .format {
   font-size: 0.6rem;
   margin-top: 0.2rem;
@@ -158,19 +180,22 @@ a[href]:not(:where(
 
 .text-button {
   font-size: 0.8rem;
-  cursor: pointer;  font-weight: bold;
-  color: var(--link-colour);
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--button-colour);
   text-align: left;
 }
 
 /************************* Action button ************************/
+
+/* material design style floating primary action button */
 
 /* positioning and styling - these can also be used with collection-nav */
 .floating {
   position: fixed;
   z-index: var(--z-float);
   box-shadow: 0 6px 10px 0 #666;
-  background-color: var(--link-colour);
+  background-color: var(--button-colour);
   color: white;
 }
 
@@ -185,59 +210,22 @@ a[href]:not(:where(
   transform: translateX(-50%);
 }
 
-/* the button: round with icon */
 .action-button {
   width: 6rem;
-  /* height: 2rem; */
   border-radius: 1rem;
   padding: 0.5rem;
   font-size: 1.2rem;
-  /* font-weight: bold; */
-  /* text-transform: uppercase; */
-  /* padding: 1rem; */
   text-align: center;
   cursor: pointer;
   user-select: none;
 }
 
-.action-button:hover {
-  box-shadow: 0 6px 14px 0 #666;
-  transform: scale(1.05);
-}
-
+/* depends on action-button background colour - wants to be contrasting */
 .action-button > img {
-  /* width: 100%; */
-  
-  /* margin-top: 0.2rem; */
   filter: invert(100%);
 }
 
-/************************* Header and footer ************************/
-
-.active-filters {
-  color: black;
-  background-color: white;
-  border-radius: 6px;
-  margin-left: 1rem;
-  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-top: 0.2rem;
-}
-
-.active-filters img {
-  vertical-align: top;
-}
-
-.none {
-  background-color: inherit;
-  color: grey;
-}
-
-.none > img {
-  filter: invert(50%);
-}
+/************************* Header ************************/
 
 #header {
   color: white;
@@ -289,6 +277,35 @@ a[href]:not(:where(
   user-select: none;
 }
 
+/* count of how many filters are currently applied */
+
+.active-filters {
+  color: black;
+  background-color: white;
+  border-radius: 6px;
+  margin-left: 1rem;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+.active-filters img {
+  vertical-align: top;
+}
+
+.none {
+  background-color: inherit;
+  color: grey;
+}
+
+.none > img {
+  filter: invert(50%);
+}
+
+/************************* Footer ************************/
+
 #footer {
   color: white;
   background-color: var(--colour0);
@@ -301,11 +318,13 @@ a[href]:not(:where(
   padding: 0.5rem;
 }
 
+
 /************************* Nav menu ************************/
 
+/* slide-out panel */
 .sidenav {
   height: 100%;
-  width: var(--nav-panel-width-sml);
+  width: var(--nav-panel-width);
   position: fixed;
   z-index: var(--z-menu);
   top: 0;
@@ -364,7 +383,7 @@ a[href]:not(:where(
 }
 
 .sidenav .current {
-  background-color: var(--link-colour);
+  background-color: var(--button-colour);
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 6px;
@@ -379,9 +398,10 @@ a[href]:not(:where(
   filter: invert(100%);
 }
 
-.menu-link:not(.current):hover  {
+/* highlight all but the currently selected menu option (it's already highlighted) */
+.menu-link:not(.current):hover {
   color: black;
-  background-color: var(--colour5);
+  background-color: var(--colour4);
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 6px;
@@ -389,7 +409,6 @@ a[href]:not(:where(
   text-decoration: none;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .close-button {
   font-size: 36px;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -402,7 +421,7 @@ a[href]:not(:where(
   user-select: none;
 }
 
-/* Dim background content and provide an alternative click zone for closing the nav */
+/* dim background content and provide an alternative click zone for closing the nav */
 #overlay {
   z-index: var(--z-overlay);
   background-color: rgb(0, 0, 0, 0.5);
@@ -412,6 +431,7 @@ a[href]:not(:where(
   display: none;
   overflow: hidden;
 }
+
 
 /************************* Collection navigation bar ************************/
 
@@ -452,6 +472,7 @@ a[href]:not(:where(
   background-image: url("/img/icons/chevron-right.svg");
 }
 
+/* grey-out nav components when disabled */
 .collection-nav > .disable-nav {
   cursor: default;
   filter: invert(70%);
@@ -467,8 +488,10 @@ a[href]:not(:where(
   width: auto;
 }
 
+
 /************************* Page grid ************************/
 
+/* grid height ensures the page doesn't collapse vertically when a filter reduces the content */
 #main-content {
   grid-area: main;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -482,19 +505,16 @@ a[href]:not(:where(
   display: grid;
   grid-template-columns: 100%;
   grid-template-areas: "main";
-  /* column-gap: 16px; */
-  /* margin-left: 16px;
-  margin-right: 16px; */
 }
 
-@media (min-width: 500px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-  html, body {
-    font-size: 20px;
-  }
 
-  .sidenav {
-    width: var(--nav-panel-width);
+/************************* Media queries ************************/
+
+/* increase the base font size when there is enough space */
+@media (min-width: 500px) {
+  html,
+  body {
+    font-size: 20px;
   }
 }
 
@@ -503,9 +523,6 @@ a[href]:not(:where(
   #content-grid {
     grid-template-columns: var(--nav-panel-width) auto;
     grid-template-areas: "nav main";
-  /* column-gap: 20px; */
-    /* margin-left: 64px;
-    margin-right: 64px;   */
   }
 
   #navbar {
@@ -514,7 +531,6 @@ a[href]:not(:where(
   }
 
   .sidenav {
-    /* width: var(--nav-panel-width); */
     z-index: 0;
     position: relative;
     transform: none;
@@ -523,7 +539,6 @@ a[href]:not(:where(
     width: auto;
     left: 0;
     border-right: 1px solid lightgray;
-    /* transform: translateX(100%) !important; */
   }
 
   #menu-header {
@@ -538,7 +553,3 @@ a[href]:not(:where(
     visibility: hidden;
   }
 }
-
-
-
-

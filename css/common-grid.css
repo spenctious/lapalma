@@ -1,6 +1,14 @@
+/*
+ * Styles for both routes and POI grids
+ *  Filter panels are common to both grids so their styles are also included
+ */
+
 /************************* Filter panel ************************/
 
-/* assumes 3 divs: header, main filter section, and buttons */
+/* 
+ * assumes 3 divs: header, main filter section, and buttons 
+ * on mobile this is a slide-in panel coming from the right
+ */
 .filter-panel {
   position: fixed;
   z-index: var(--z-filter);
@@ -18,14 +26,15 @@
   overflow: hidden;
 }
 
-/* header and buttons remain fixed while the central filter section scrolls */
+/* header and buttons remain fixed while the central filter section (2nd div) scrolls */
+/* hide scrollbar - 50px is max scrollbar width */
 .filter-panel > div:nth-child(2) {
-  /* hide scrollbar - 50px is max scrollbar width */
   margin-right: -50px;
   padding-right: 50px;
   overflow-y: scroll;
 }
 
+/* different widths depending on which panel is being set */
 .routes-filters {
   width: var(--routes-filter-panel-width);
   grid-template-rows: 7.5rem auto 3.5rem;
@@ -66,7 +75,7 @@
 .item {
   display: flex;
   flex-direction: row;
-  box-shadow: 1px 1px 4px var(--colour4);
+  box-shadow: 1px 1px 4px var(--colour3);
   cursor: pointer;
 }
 
@@ -105,6 +114,7 @@
 
 /************************* Grid content: detail ************************/
 
+/* the default content for when the grid is otherwise empty */
 #zero-matches {
   display: none;
   text-align: center;
@@ -141,14 +151,16 @@
   line-height: 1rem;
 }
 
-/************************* Grid areas ************************/
+/************************* Content grid modifications ************************/
+
+/* #content-grid is defined in common.css */
 
 #filter {
   grid-area: filter;
 }
 
 #content-grid {
-  background-color: var(--colour5); 
+  background-color: var(--colour4);
 }
 
 /************************* Media queries ************************/
@@ -158,7 +170,7 @@
   #browse-grid {
     grid-template-columns: repeat(auto-fill, 250px);
   }
-  
+
   .item {
     flex-direction: column;
   }
@@ -177,7 +189,7 @@
 }
 
 /* wide enough for the navbar to be included in the content */
- @media (min-width: 1340px) {
+@media (min-width: 1340px) {
   #content-grid {
     grid-template-columns: var(--nav-panel-width) 1fr;
     grid-template-areas: "nav main";

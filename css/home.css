@@ -37,8 +37,12 @@
   position: relative;
   padding-left: 1.5rem;
   margin-left: 0;
-  margin-bottom:0;
-  line-height: 1.5rem;
+  margin-bottom: 0.3rem;
+  line-height: 140%;
+}
+
+.alerts li:last-of-type {
+  margin-bottom: 0;
 }
 
 /* white icon warning as bullet */
@@ -63,10 +67,12 @@ strong {
 
 /*************************** Display block  ***************************/
 
-/* container for title, links block and scroll prompt 
-   n.b. max-height is determined by the visible part of the image
-   allowing for any alert block (which we can only guess at the height of
-   and ensuring scroll prompt is not overlaid by bits of the browser */
+/* 
+ * container for title, links block and scroll prompt 
+ * n.b. max-height is determined by the visible part of the image
+ * allowing for any alert block (which we can only guess at the height of)
+ * and ensuring scroll prompt is not overlaid by bits of the browser 
+ */
 .display-block {
   position: absolute;
   top: 0;
@@ -77,6 +83,7 @@ strong {
   max-height: calc(100vh - 12rem);
   justify-content: center;
 }
+
 
 /*************************** Titling  ***************************/
 
@@ -97,6 +104,7 @@ strong {
   margin-top: 0.5rem;
   font-weight: bold;
 }
+
 
 /*************************** Quick Links  ***************************/
 
@@ -123,6 +131,7 @@ strong {
   text-align: center;
 }
 
+
 /*************************** Scroll prompt  ***************************/
 
 /* position at the bottom */
@@ -146,8 +155,10 @@ strong {
   margin-right: auto;
 }
 
-/* down chevron to draw attention to content
-   below the fold which might not be obvious otherwise */
+/* 
+ * animated down chevron to draw attention to content
+ * below the fold which might not be obvious otherwise 
+ */
 .bounce {
   animation: ca3_fade_move_down 2s ease-in-out infinite;
 }
@@ -157,6 +168,7 @@ strong {
   50%  { opacity: 1;  }
   100% { transform:translate(0,10px); opacity: 0; }
 }
+
 
 /*************************** Grid positioning ***************************/
 
@@ -173,6 +185,7 @@ strong {
     "hero"
     "main";
 }
+
 
 /*************************** Media queries  ***************************/
 
@@ -230,11 +243,4 @@ strong {
   .sub-title {
     font-size: 2rem;
   }
-}
-
-/* wide enough for the navbar */
-@media (min-width: 1340px) {
-
-
-
 }

@@ -1,4 +1,4 @@
-/*************************** Blazes  ***************************/
+/*************************** Trail blazes ***************************/
 
 /* column for blaze and another for the text */
 .bullet-style {
@@ -20,6 +20,7 @@
   overflow: hidden;
 }
 
+/* blazes are made up of two parallel stripes coloured by trail type */
 .blaze {
   border: 1px solid black;
   height: 0.4rem;

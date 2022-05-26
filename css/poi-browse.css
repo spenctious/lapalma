@@ -1,14 +1,8 @@
 @import url("/css/common-grid.css");
 @import url("/css/poi-detail.css");
 
-/* .filter-panel {
-  padding: 0.5rem;
-  background-color: var(--colour-light-bkg);
-  border-left: 1px solid lightgray;
-  display: grid;
-  grid-template-rows: auto 3.5rem;
-  height: 100%;
-} */
+
+/************************* Filter styles ************************/
 
 .poi-category-description {
   margin-top: 0.2rem;
@@ -16,7 +10,10 @@
   font-style: normal;
 }
 
-/* Customize the label (the container) */
+
+/************************* Custom checkbox ************************/
+
+/* checkbox label */
 .container {
   display: block;
   position: relative;
@@ -27,7 +24,7 @@
   user-select: none;
 }
 
-/* Hide the browser's default checkbox */
+/* hide the browser's default checkbox */
 .container input {
   position: absolute;
   opacity: 0;
@@ -36,39 +33,39 @@
   width: 0;
 }
 
-/* Create a custom checkbox */
+/* create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 0.1rem; /* align*/
+  top: 0.1rem; /* nudge the checkbox down to align the top with the poi tag */
   left: 0;
   height: 25px;
   width: 25px;
   background-color: white;
-  border: 1px solid grey;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
+  border: 1px solid var(--colour1);
 }
 
 .container input:checked ~ .checkmark {
   background-color: var(--colour1);
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
+/* highlight the checkbox when moused over */
+.container:hover input ~ .checkmark {
+  background-color: var(--colour2);
+}
+
+/* create the checkmark but hide when not checked */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
+/* show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
+/* create a tick by creating a box with 2 adjacent unequal borders and rotating it */
 .container .checkmark:after {
   left: 9px;
   top: 5px;
@@ -76,7 +73,5 @@
   height: 10px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }

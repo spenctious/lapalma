@@ -1,3 +1,7 @@
+/* 
+ * full size modal for mobile with fixed header, bottom nav, 
+ * and scrollable middle 
+ */
 .modal {
   display: none;
   position: fixed;
@@ -7,10 +11,15 @@
   width: 100%;
   height: 100%;
   overflow: auto; /* enable scroll if needed */
-  background-color: rgb(0,0,0); /* fallback color */
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* class purely to prevent scrolling of body when showing a modal */
+.body-stop-scroll {
+  overflow-y: hidden;
+}
+
+/* scrollable modal body */
 .modal-content-wrapper {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -36,16 +45,14 @@
   float: right;
   font-size: 2.5rem;
   padding-left: 1rem;
-  /* padding-bottom: 1rem; */
   cursor: pointer;
 }
 
 .modal-title {
   font-size: 1rem;
-  /* font-weight: bold; */
   line-height: 120%;
   padding: 1rem 1rem 0 1rem;
-  border-bottom: 1px solid var(--colour4);
+  border-bottom: 1px solid var(--colour3);
 }
 
 .poi-title {
@@ -70,7 +77,6 @@
   font-size: 0.6rem;
   text-transform: uppercase;
   font-weight: bold;
-  /* background-color: var(--colour6); */
   background-color: var(--colour1);
   color: white;
   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
@@ -120,6 +126,8 @@
   margin: 0;
 }
 
+/************************* general details ************************/
+
 .general-details {
   font-size: 0.7rem;
   padding: 0.2rem;
@@ -139,13 +147,18 @@
   width: auto;
 }
 
+.fees {
+  font-size: 0.7rem;
+}
+
+/************************* opening times ************************/
+
 .opening-times {
   font-size: 0.7rem;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
   line-height: 120%;
 }
-
 
 .opening-times td:nth-child(1) {
   margin-right: 1rem;
@@ -157,7 +170,7 @@
 }
 
 .opening-times tr {
-  border: solid 1px var(--colour4);
+  border: solid 1px var(--colour3);
   border-width: 1px 0;
 }
 
@@ -178,16 +191,17 @@
   text-align: right;
 }
 
-.fees {
-  font-size: 0.7rem;
-}
-
 .description {
   font-size: 0.8rem;
   line-height: 140%;
 }
 
+/************************* media queries ************************/
 
+/*
+ * when there's enough space (not on mobile anymore) change to a
+ * fixed width modal in the middle of the screen
+ */
 @media (min-width: 560px) {
   .modal-content {
     position: absolute;
@@ -201,5 +215,3 @@
     height: auto;
   }
 }
-
-

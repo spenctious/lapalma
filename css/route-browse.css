@@ -1,6 +1,5 @@
 @import url("/css/common-grid.css");
 
-
 /************************* Grid content: pic additions ************************/
 
 .route-varients {
@@ -68,7 +67,6 @@
   margin-bottom: 0.1rem;
 }
 
-
 /************************* Active filter box ************************/
 
 #active-filter-grid {
@@ -76,7 +74,7 @@
   font-weight: bold;
   height: 5rem;
   text-align: center;
-  background-color: var(--colour3);
+  background-color: var(--colour5);
 }
 
 .emptyStateText {
@@ -139,7 +137,7 @@
   justify-content: space-around;
   margin-top: 1rem;
   margin-bottom: 0.8rem;
-  border-bottom: 1px solid var(--colour5);
+  border-bottom: 1px solid var(--colour4);
 }
 
 .tab {
@@ -157,7 +155,7 @@
   /* border: 1px solid lightgray;
   border-bottom: none; */
   /* border-bottom: 4px solid var(--link-colour); */
-  background-color: var(--colour5);
+  background-color: var(--colour4);
   color: black;
 }
 
@@ -173,7 +171,7 @@
 
 #general-filter-grid {
   display: grid;
-  grid-template-columns: repeat(2, 2.5rem) 8.5rem ;
+  grid-template-columns: repeat(2, 2.5rem) 8.5rem;
   column-gap: 0.5rem;
   justify-items: center;
 }
@@ -219,11 +217,26 @@
 }
 
 /* explicit position of elements on the grid */
-#location-filter-grid > div:nth-child(1) { grid-column: 4; grid-row: 1; } /* filter icon */
-#location-filter-grid > div:nth-child(2) { grid-column: 1 / 6; grid-row: 5; } /* instructions */
-#location-filter-grid > div:nth-child(3) { grid-column: 4 / 6; grid-row: 2; } /* select all */
-#location-filter-grid > div:nth-child(4) { grid-column: 4 / 6; grid-row: 3; } /* select none */
-#location-filter-grid > div:nth-child(5) { grid-column: 1 / 4; grid-row: 1 / 5; } /* map */
+#location-filter-grid > div:nth-child(1) {
+  grid-column: 4;
+  grid-row: 1;
+} /* filter icon */
+#location-filter-grid > div:nth-child(2) {
+  grid-column: 1 / 6;
+  grid-row: 5;
+} /* instructions */
+#location-filter-grid > div:nth-child(3) {
+  grid-column: 4 / 6;
+  grid-row: 2;
+} /* select all */
+#location-filter-grid > div:nth-child(4) {
+  grid-column: 4 / 6;
+  grid-row: 3;
+} /* select none */
+#location-filter-grid > div:nth-child(5) {
+  grid-column: 1 / 4;
+  grid-row: 1 / 5;
+} /* map */
 
 #location-message {
   display: flex;
@@ -293,7 +306,7 @@
 
 .icon-img {
   width: 100%;
-  height:100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -332,4 +345,3 @@
     display: none;
   }
 }
-

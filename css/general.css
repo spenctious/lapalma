@@ -94,7 +94,7 @@ figure > img {
 }
 
 .tinted {
-  background-color: var(--colour3);
+  background-color: var(--colour5);
 }
 
 .content-box img:first-child {
@@ -150,11 +150,11 @@ a.anchor {
 
 /*************************** Media queries  ***************************/
 
-  #content-grid {
-    margin-left: 0px;
-    margin-right: 0px;
-    column-gap: 0;
-  }
+#content-grid {
+  margin-left: 0px;
+  margin-right: 0px;
+  column-gap: 0;
+}
 
 /* wide enough for two columns */
 @media (min-width: 66rem) {
@@ -167,7 +167,7 @@ a.anchor {
   }
 
   .page-nav a:not(:last-child) {
-    border-right: 2px solid var(--colour4);
+    border-right: 2px solid var(--colour3);
   }
 
   /* images at the top of a content box don't want a top margin */
