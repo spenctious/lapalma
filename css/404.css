@@ -24,10 +24,13 @@
 
 /*************************** 404 message ***************************/
 
-/* positioning is in the middle of the image or */
+/* 
+ * positioning is in the middle of the image or middle of the portion
+ * of the image actually visible
+ */
 .centering-block {
   position: absolute;
-  top: min(calc(50vh - var(--header-height)/2), 50%);
+  top: min(calc(50vh - var(--header-height) / 2), 50%);
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
