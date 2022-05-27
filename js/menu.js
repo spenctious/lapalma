@@ -42,7 +42,7 @@ function addMenuItems() {
   navbarContent += getMenuItem("Places", "img/icons/geo-alt.svg", "poi-browse.html");
 
   navbarContent += `<p class="menu-section">Check</p>`;
-  navbarContent += getMenuItem("Forecasts", "img/icons/weather.svg", "forecasts.html");
+  navbarContent += getMenuItem("Forecasts", "../img/icons/weather.svg", "forecasts.html");
   navbarContent += getMenuItem("Transport", "img/icons/bus.svg", "transport.html");
 
   navbarContent += `<p class="menu-section">Learn about</p>`;
