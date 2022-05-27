@@ -97,7 +97,7 @@ a[href]:not(:where(
   filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg)
     brightness(74%) contrast(86%);
   content: "";
-  background: url("/img/icons/box-arrow-up-right.svg");
+  background: url("img/icons/box-arrow-up-right.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -465,11 +465,11 @@ a[href]:not(:where(
 }
 
 .collection-nav > .previous {
-  background-image: url("/img/icons/chevron-left.svg");
+  background-image: url("img/icons/chevron-left.svg");
 }
 
 .collection-nav > .next {
-  background-image: url("/img/icons/chevron-right.svg");
+  background-image: url("img/icons/chevron-right.svg");
 }
 
 /* grey-out nav components when disabled */
