@@ -133,6 +133,11 @@
   text-align: center;
 }
 
+.signpost-block a:hover {
+  text-decoration: none;
+  color: red;
+}
+
 .signpost-post {
   background-color: white;
   height: 8rem;
