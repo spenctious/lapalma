@@ -1,4 +1,4 @@
-@import url("/css/common-grid.css");
+@import url("common-grid.css");
 
 /************************* Grid content: pic additions ************************/
 
@@ -260,7 +260,7 @@
 
 #area-map {
   width: 100%;
-  background-image: url("img/location-map.png");
+  background-image: url("../img/location-map.png");
   background-size: cover;
 }
 

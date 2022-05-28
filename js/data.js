@@ -14,11 +14,11 @@ var favourites;   // global object for storing user route bookmarks
 var laPalmaData;  // global object that packages the data in convenient formats
 
 const dataSources = [
-  "data/categories.json",
-  "data/locations.json",
-  "data/routes.json",
-  "data/trail-statuses.json",
-  "data/POI.json",
+  "/data/categories.json",
+  "/data/locations.json",
+  "/data/routes.json",
+  "/data/trail-statuses.json",
+  "/data/POI.json",
 ];
 
 // For diagnostics and development
