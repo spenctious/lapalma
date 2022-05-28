@@ -27,6 +27,7 @@
   /* colours for active filter selections */
   --included-back-colour: #00802b;
   --excluded-back-colour: #e60000;
+  --highlight-back-colour: yellow;
 
   /* z-order for components */
   --z-float: 1;
