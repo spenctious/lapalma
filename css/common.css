@@ -84,17 +84,8 @@ a:hover {
     from: https://stackoverflow.com/questions/5379752/css-style-external-links 
     with amendments to use an SVG image coloured same as the link
 */
-a[href]:not(:where(
-  /* exclude hash only and relative links */
-  [href^="#"],
-  [href^="."],
-  /* exclude relative but not double slash only links */
-  [href^="/"]:not([href^="//"]),
-  /* domains to exclude */
-  /* [href*="//stackoverflow.com"], */  
-  /* subdomains to exclude */
-  /* [href*="//meta.stackoverflow.com"], */
-)):after {
+a[href^="http://"]:not([href*="stackoverflow.com"]):after,
+a[href^="https://"]:not([href*="stackoverflow.com"]):after {
   filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg)
     brightness(74%) contrast(86%);
   content: "";

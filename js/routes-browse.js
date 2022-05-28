@@ -169,10 +169,10 @@ function routesGridClickHandler(event) {
     // favourites icon clicked - toggle it
     if (favourites.has(routeIndex)) {
       favourites.delete(routeIndex);
-      event.target.src = "/img/icons/heart-empty.svg";
+      event.target.src = "img/icons/heart-empty.svg";
     } else {
       favourites.add(routeIndex);
-      event.target.src = "/img/icons/heart-full-black.svg";
+      event.target.src = "img/icons/heart-full-black.svg";
     }
     updateFavourites();
   }
@@ -186,7 +186,7 @@ function routesGridClickHandler(event) {
       window.history.replaceState({}, "");
     }
 
-    window.location.href = `/routes-detail.html${getDetailPageQueryString(routeIndex)}`;
+    window.location.href = `routes-detail.html${getDetailPageQueryString(routeIndex)}`;
   }
 }
 
@@ -226,7 +226,7 @@ function populateRoutesGrid() {
     // starred
     let starred = "";
     if (route.isStarred) {
-      starred = `<div class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></div>`;
+      starred = `<div class="starred"><img src="img/icons/${route.starredAttributes.icon}" alt="" /></div>`;
     }
 
     // favourite
@@ -249,7 +249,7 @@ function populateRoutesGrid() {
               <img
                 id="favourite${route.id}"
                 class="favourite"
-                src="/img/icons/${favouriteIcon}"
+                src="img/icons/${favouriteIcon}"
                 alt=""
               />
               ${route.name}
@@ -260,11 +260,11 @@ function populateRoutesGrid() {
             <div class="metrics">
               <div class="route-metric">
                 <p>${route.durationAttributes.text}</p>
-                <img src="/img/icons/${route.durationAttributes.icon}" alt="" />
+                <img src="img/icons/${route.durationAttributes.icon}" alt="" />
               </div>
               <div class="route-metric">
                 <p>${route.effortAttributes.text}</p>
-                <img src="/img/icons/${route.effortAttributes.icon}" alt="" />
+                <img src="img/icons/${route.effortAttributes.icon}" alt="" />
               </div>
             </div>
           </div>
@@ -338,7 +338,7 @@ function filterRoutes() {
   document.getElementById("header-title").innerHTML = `
     ${routeCount}
     <span class="${filterClass}">
-      <img src="/img/icons/funnel-fill.svg" alt=""> ${filterCount}
+      <img src="img/icons/funnel-fill.svg" alt=""> ${filterCount}
     </span>
     `;
 }
@@ -507,7 +507,7 @@ class Filter {
   get html() {
     let filterHtml =
     `<div id="${this.id}" class="icon ${this.enabled ? '' : ' disabled'}">
-      <img src="/img/icons/${this.icon}" class="icon-img" alt="" />
+      <img src="img/icons/${this.icon}" class="icon-img" alt="" />
     </div>`;
     return filterHtml;
   }
@@ -1245,7 +1245,7 @@ class FilterSet {
   clearFavourites() {
     favourites.clear();
     laPalmaData.routes.forEach(route => {
-      document.getElementById("favourite" + route.id).src = "/img/icons/heart-empty.svg";
+      document.getElementById("favourite" + route.id).src = "img/icons/heart-empty.svg";
     })
     this.updateGrids();
     updateFavourites();

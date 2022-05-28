@@ -14,11 +14,11 @@ var favourites;   // global object for storing user route bookmarks
 var laPalmaData;  // global object that packages the data in convenient formats
 
 const dataSources = [
-  "/data/categories.json",
-  "/data/locations.json",
-  "/data/routes.json",
-  "/data/trail-statuses.json",
-  "/data/POI.json",
+  "data/categories.json",
+  "data/locations.json",
+  "data/routes.json",
+  "data/trail-statuses.json",
+  "data/POI.json",
 ];
 
 // For diagnostics and development
@@ -51,7 +51,7 @@ function isLaterVersion(currentVersionFromFile, retrievedVersionFromData) {
 
 // reads a tiny file containing just the current data version number (an integer)
 async function getDataVersion() {
-  let response = await fetch('/data-version.txt');
+  let response = await fetch('data-version.txt');
 
   if (response.status === 200) {
     dataVersion = await response.text();

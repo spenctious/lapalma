@@ -121,13 +121,13 @@ function collectionClickHandler(event) {
 
   if (elementId == "next") {
     routeId = collectionIndex == lastIndex ? collection[0] : collection[collectionIndex + 1];
-    window.location.href = `/routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}&${URL_PARAM_STEPS}=${--stepsBack}`;
+    window.location.href = `routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}&${URL_PARAM_STEPS}=${--stepsBack}`;
     return;
   }
 
   if (elementId == "prev") {
     routeId = collectionIndex == 0 ? collection[lastIndex] : collection[collectionIndex - 1];
-    window.location.href = `/routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}&${URL_PARAM_STEPS}=${--stepsBack}`;
+    window.location.href = `routes-detail.html?${URL_PARAM_ROUTE}=${routeId}&${URL_PARAM_COLLECTION}=${collectionParam}&${URL_PARAM_STEPS}=${--stepsBack}`;
     return;
   }
 }
@@ -141,10 +141,10 @@ function mainClickHandler(event) {
   if (elementId == "favourite") {
     if (favourites.has(routeId)) {
       favourites.delete(routeId);
-      event.target.src = "/img/icons/heart-empty.svg";
+      event.target.src = "img/icons/heart-empty.svg";
     } else {
       favourites.add(routeId);
-      event.target.src = "/img/icons/heart-full-black.svg";
+      event.target.src = "img/icons/heart-full-black.svg";
     }
     updateFavourites();
     return;
@@ -205,7 +205,7 @@ function populateBasics() {
   // summary grid
   let summaryContent = "";
   summaryContent += `<div class="summary-heading">Basics</div>`;
-  summaryContent += `<div class="chevron"><img src="/img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
+  summaryContent += `<div class="chevron"><img src="img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
   summaryContent += getMetricsHtml(route.durationAttributes);
   summaryContent += getMetricsHtml(route.effortAttributes);
   summaryContent += getSummaryIconHtml(route.walkTypeAttributes.icon);
@@ -286,7 +286,7 @@ function populateFeaturesAndWarnings() {
   let summaryContent = `
     <div class="summary-heading">Features and Warnings</div>
     <div class="chevron">
-      <img src="/img/icons/chevron-down.svg" class="icon-img" alt="" />
+      <img src="img/icons/chevron-down.svg" class="icon-img" alt="" />
     </div>`;
   summaryContent += getSummaryIconsContent(route.interest);
   summaryContent += getSummaryIconsContent(route.warnings);
@@ -327,7 +327,7 @@ function populateFeaturesAndWarnings() {
   }
   dangersContent += `
     <div class="icon">
-      <img src="/img/icons/${laPalmaData.categories.danger.icon}" class="icon-img" alt="" />
+      <img src="img/icons/${laPalmaData.categories.danger.icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
       ${dangersList}
@@ -344,13 +344,13 @@ function populateRouteDetail() {
   // route title with starred and favourite icons
   let starredIcon = "";
   if (route.isStarred) starredIcon =
-    `<span class="starred"><img src="/img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
+    `<span class="starred"><img src="img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
   let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" : "heart-empty.svg";
   let titleContent = `
     <div class="title-id">${route.id}</div>
     <div><h1>${route.name}${starredIcon}</h1></div>
     <div id="favourite" class="favourite">
-      <img src="/img/icons/${favouriteIcon}" alt="" />
+      <img src="img/icons/${favouriteIcon}" alt="" />
     </div>
     `;
   document.getElementById("detail-title").innerHTML = titleContent;
@@ -384,7 +384,7 @@ function populateRouteImages() {
   route.images.forEach(image => {
     imagesContent += `
     <div class="image-container">
-        <img class="picture" src="/img/route${route.id}-${image.id}-h525.webp" alt="" />
+        <img class="picture" src="img/route${route.id}-${image.id}-h525.webp" alt="" />
         <div class="caption">${image.caption}</div>
       </div>`;
   });
@@ -454,14 +454,14 @@ function getDownloadButtons(fileName, routeId) {
   return `
     <div class="button primary">
       <a href="data/gpx/${fileName}.gpx" download>
-        <img src="/img/icons/download.svg" alt="" />
+        <img src="img/icons/download.svg" alt="" />
         <p>Route ${routeId} <span class="format">GPX</span></p>
         <p class="format">(most apps)</p>
       </a>
     </div>
     <div class="button secondary">
       <a href="data/kml/${fileName}.kml" download>
-        <img src="/img/icons/download.svg" alt="" />
+        <img src="img/icons/download.svg" alt="" />
         <p>Route ${routeId} <span class="format">KML</span></p>
         <p class="format">(Google Earth)</p>
       </a>
@@ -488,7 +488,7 @@ function getMetricsHtml(metric) {
   return `
     <div class="route-metric">
       <p>${metric.text}</p>
-      <img src="/img/icons/${metric.icon}" alt="" />
+      <img src="img/icons/${metric.icon}" alt="" />
     </div>`;
 }
 
@@ -497,7 +497,7 @@ function getMetricsHtml(metric) {
 function getMetricIconHtml(icon) {
   return `
     <div class="route-metric">
-      <img src="/img/icons/${icon}" alt="" />
+      <img src="img/icons/${icon}" alt="" />
     </div>`;
 }
 
@@ -506,7 +506,7 @@ function getMetricIconHtml(icon) {
 function getSummaryIconHtml(icon) {
   return `
     <div class="summary-icon">
-      <img src="/img/icons/${icon}" class="icon-img" alt="" />
+      <img src="img/icons/${icon}" class="icon-img" alt="" />
     </div>`;
 }
 
@@ -581,7 +581,7 @@ function getSimpleAttributeHtml(attributes) {
 function getAttributeHtml(icon, text, description, strong = "", additionalContent = "", iconClass = "") {
   return `
     <div class="icon">
-      <img src="/img/icons/${icon}" class="icon-img" alt="" />
+      <img src="img/icons/${icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
       <h4>
