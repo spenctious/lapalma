@@ -4,19 +4,17 @@
 
 .route-varients {
   color: yellow;
-  display: inline-block;
-  padding-right: 0.4rem;
+  padding: 0.4rem;
   font-size: 0.8rem;
-}
-
-.starred {
-  position: absolute;
-  top: 0.2rem;
-  right: 0.2rem;
+  background-color: rgb(0, 0, 0, 0.5);
+  white-space: nowrap;
 }
 
 .starred img {
   height: 1.5rem;
+  width: 1.5rem;
+  padding-top: 0.1rem;
+  padding-right: 0.1rem;
 }
 
 .variant-match {

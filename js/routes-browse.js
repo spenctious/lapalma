@@ -219,14 +219,23 @@ function populateRoutesGrid() {
     let routeVarients = "";
     let routeVarientCount = route.variants.length;
     if (routeVarientCount > 0) {
-      routeVarients = `<span class="route-varients">
-        ${routeVarientCount} variation${routeVarientCount > 1 ? "s" : ""}</span>`;
+      routeVarients = `
+        <div class="route-varients">
+          ${routeVarientCount} variation${routeVarientCount > 1 ? "s" : ""}
+        </div>`;
+    } else {
+      routeVarients = `<div></div>`;
     }
 
     // starred
     let starred = "";
     if (route.isStarred) {
-      starred = `<div class="starred"><img src="img/icons/${route.starredAttributes.icon}" alt="" /></div>`;
+      starred = `
+        <div class="starred">
+          <img src="img/icons/${route.starredAttributes.icon}" alt="" />
+        </div>`;
+    } else {
+      starred = `<div></div>`;
     }
 
     // favourite
@@ -238,10 +247,10 @@ function populateRoutesGrid() {
           <div class="item-pic">
             <img src="img/route${route.id}-01-250x187.webp" alt="" />
             <div class="pic-label">
-              <span class="item-id">${route.id}</span>
+              <div class="item-id">${route.id}</div>
               ${routeVarients}
+              ${starred}
             </div>
-            ${starred}
             <div class="variant-match" id="variant-match${route.id}">Variation matches</div>
           </div>
           <div class="item-detail">

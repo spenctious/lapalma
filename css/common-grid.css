@@ -93,6 +93,7 @@
 .item-pic img {
   width: 100%;
   display: block;
+  margin-left: auto;
 }
 
 .pic-label {
@@ -100,14 +101,16 @@
   top: 0rem;
   left: 0rem;
   color: white;
-  background-color: rgb(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: min-content min-content auto;
+  grid-template-rows: 1.6rem;
+  width: 100%;
 }
 
 .item-id {
   background-color: black;
   font-weight: bold;
   font-size: 0.8rem;
-  display: inline-block;
   text-align: center;
   padding: 0.4rem;
 }
