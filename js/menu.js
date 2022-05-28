@@ -21,7 +21,7 @@ function getMenuItem(name, icon, target, altTarget = "") {
   }
   if (altTarget == window.location.pathname) {
     menuLinkClass += " current";
-    gridIcon = `<span><img src="/img/icons/info-circle.svg" class="menu-decorator"></span>`;
+    gridIcon = `<span><img src="./img/icons/info-circle.svg" class="menu-decorator"></span>`;
   }
   return `
     <a href=${target} class="${menuLinkClass}">
@@ -35,19 +35,19 @@ function getMenuItem(name, icon, target, altTarget = "") {
 function addMenuItems() {
   let navbarContent = `<p id="menu-header" class="close-button" onclick="closeNav()">&times;</p>`;
 
-  navbarContent += getMenuItem("Home", "/img/icons/house-door.svg", "/index.html");
+  navbarContent += getMenuItem("Home", "./img/icons/house-door.svg", "./index.html");
 
   navbarContent += `<p class="menu-section">Discover</p>`;
-  navbarContent += getMenuItem("Walks", "/img/icons/hiker.svg", "/routes-browse.html", "/routes-detail.html");
-  navbarContent += getMenuItem("Places", "/img/icons/geo-alt.svg", "/poi-browse.html");
+  navbarContent += getMenuItem("Walks", "./img/icons/hiker.svg", "./routes-browse.html", "./routes-detail.html");
+  navbarContent += getMenuItem("Places", "./img/icons/geo-alt.svg", "./poi-browse.html");
 
   navbarContent += `<p class="menu-section">Check</p>`;
-  navbarContent += getMenuItem("Forecasts", "/img/icons/weather.svg", "/forecasts.html");
-  navbarContent += getMenuItem("Transport", "/img/icons/bus.svg", "/transport.html");
+  navbarContent += getMenuItem("Forecasts", "./img/icons/weather.svg", "./forecasts.html");
+  navbarContent += getMenuItem("Transport", "./img/icons/bus.svg", "./transport.html");
 
   navbarContent += `<p class="menu-section">Learn about</p>`;
-  navbarContent += getMenuItem("Trails", "/img/icons/signpost.svg", "/trail-network.html");
-  navbarContent += getMenuItem("Apps", "/img/icons/download.svg", "/apps.html");
+  navbarContent += getMenuItem("Trails", "./img/icons/signpost.svg", "./trail-network.html");
+  navbarContent += getMenuItem("Apps", "./img/icons/download.svg", "./apps.html");
 
   document.getElementById("navbar").innerHTML = navbarContent;
 }
