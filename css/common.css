@@ -90,7 +90,7 @@ a[href]:not(:where(
   /* exclude relative but not double slash only links */
   [href^="/"]:not([href^="//"]),
   /* domains to exclude */
-  /* [href*="//stackoverflow.com"], */
+  /* [href*="//stackoverflow.com"], */  
   /* subdomains to exclude */
   /* [href*="//meta.stackoverflow.com"], */
 )):after {
@@ -465,11 +465,11 @@ a[href]:not(:where(
 }
 
 .collection-nav > .previous {
-  background-image: url("img/icons/chevron-left.svg");
+  background-image: url("../img/icons/chevron-left.svg");
 }
 
 .collection-nav > .next {
-  background-image: url("img/icons/chevron-right.svg");
+  background-image: url("../img/icons/chevron-right.svg");
 }
 
 /* grey-out nav components when disabled */

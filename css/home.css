@@ -52,7 +52,7 @@
   height: 1rem;
   width: 1rem;
   margin-top: 0.25rem;
-  background-image: url("img/icons/warning.svg");
+  background-image: url("../img/icons/warning.svg");
   filter: invert(100%);
   background-size: contain;
   background-repeat: no-repeat;
