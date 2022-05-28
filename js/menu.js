@@ -47,7 +47,7 @@ function addMenuItems() {
 
   navbarContent += `<p class="menu-section">Learn about</p>`;
   navbarContent += getMenuItem("Trails", "img/icons/signpost.svg", "trail-network.html");
-  navbarContent += getMenuItem("Apps", "img/icons/download.svg", "apps.html");
+  navbarContent += getMenuItem("Apps", "/img/icons/download.svg", "/apps.html");
 
   document.getElementById("navbar").innerHTML = navbarContent;
 }
