@@ -80,7 +80,7 @@ strong {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: calc(100vh - 12rem);
+  max-height: calc(100vh - 8rem);
   justify-content: center;
 }
 
@@ -188,6 +188,14 @@ strong {
 
 
 /*************************** Media queries  ***************************/
+
+/* remove quick links when there isn't room for them */
+@media (max-height: 650px) {
+  .quick-links {
+    display: none;
+  }
+}
+
 
 /* wide enough for navigation to be included as a sidebar */
 @media (min-width: 1340px) {
