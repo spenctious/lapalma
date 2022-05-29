@@ -174,6 +174,7 @@ function routesGridClickHandler(event) {
       favourites.add(routeIndex);
       event.target.src = "img/icons/heart-full-black.svg";
     }
+    filterSet.updateFavourites();
     updateFavourites();
   }
   else {
@@ -449,6 +450,12 @@ class Filter {
   }
 
 
+  enable(enableStatus) {
+    this.isEnabled = enableStatus;
+    this.#updateScreenStatus();
+  }
+
+
   //
   // public methods
   //
@@ -582,12 +589,33 @@ class Starred extends Filter {
 
 class Favourite extends Filter {
   constructor(name) {
-    super(name, laPalmaData.basics.get("favourite"), new Toggle(INCLUDE))
+    super(name, laPalmaData.basics.get("favourite"), new Toggle(INCLUDE));
+    super.isEnabled = this.hasFavourites;
   }
 
 
   apply(route) {
     return favourites.has(route.id);
+  }
+
+
+  // ensure filter is turned off when disabled
+  updateEnabled() {
+    if (this.isOff) {
+      super.enable(this.hasFavourites);
+    } else {
+      this.reset();
+    }
+  }
+
+
+  // override of the base class - only re-enable if there are favourites
+  enableInactive(setEnabled) {
+    super.enableInactive(setEnabled && this.hasFavourites);
+  }
+
+  get hasFavourites() {
+    return favourites.size > 0;
   }
 }
 
@@ -871,6 +899,7 @@ class FilterSet {
   #allFilters;
   #filterIndex;
   #locationFilter;
+  #favouritesFilter;
   #activeFilterList;
   #generalFiltersHtml;
   #categoryFiltersHtml;
@@ -885,7 +914,7 @@ class FilterSet {
     this.#allFilters = new Array();
     this.#filterIndex = 0;
     this.addGeneralFilter(new Starred("starred"));
-    this.addGeneralFilter(new Favourite("favourites"));
+    this.addFavouriteslFilter(new Favourite("favourites"));
 
     this.startCategory("Basic");
     this.addCategoryFilter(new WalkType("circular"));
@@ -963,16 +992,23 @@ class FilterSet {
   // specific add methods build up HTML for injection into respective grids
   //
 
+  addFavouriteslFilter(filter) {
+    this.#favouritesFilter = filter;
+    this.addGeneralFilter(filter);
+  }
+
 
   addGeneralFilter(filter) {
     this.addFilter(filter);
     this.#generalFiltersHtml += filter.html;
   }
 
+
   addCategoryFilter(filter) {
     this.addFilter(filter);
     this.#categoryFiltersHtml += filter.html;
   }
+
 
   addLocationFilter(filter) {
     this.addFilter(filter);
@@ -1062,6 +1098,10 @@ class FilterSet {
   // update methods
   //
 
+
+  updateFavourites() {
+    this.#favouritesFilter.updateEnabled();
+  }
 
   updateGrids() {
     this.updateActiveFilterGrid();
@@ -1256,8 +1296,9 @@ class FilterSet {
     laPalmaData.routes.forEach(route => {
       document.getElementById("favourite" + route.id).src = "img/icons/heart-empty.svg";
     })
-    this.updateGrids();
     updateFavourites();
+    this.updateFavourites();
+    this.updateGrids();
   }
 
 
