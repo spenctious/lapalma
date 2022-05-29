@@ -233,7 +233,7 @@
         "text": "Viewpoints",
         "filterIncludeText": "With viewpoints",
         "filterExcludeText": "",
-        "description": "Has viewpoints (miradors) along the way.",
+        "description": "Dedicated viewing platforms (miradors) along the way.",
         "strong": "Spectacular",
         "icon": "viewpoint.svg"
       }
@@ -244,7 +244,7 @@
         "text": "Port",
         "filterIncludeText": "With a port",
         "filterExcludeText": "",
-        "description": "Visits a small port or harbour on the way.",
+        "description": "Small harbour with fishing shacks or more substantial homes.",
         "strong": "Special interest",
         "icon": "anchor.svg"
       }
@@ -266,7 +266,7 @@
         "text": "Mountain peaks",
         "filterIncludeText": "With mountain peaks",
         "filterExcludeText": "",
-        "description": "Passes near or over volcanic or mointain peaks.",
+        "description": "Passes near or over mointain peaks.",
         "strong": "Great",
         "icon": "peak.svg"
       }
@@ -277,7 +277,7 @@
         "text": "Archeological",
         "filterIncludeText": "With historic interest",
         "filterExcludeText": "",
-        "description": "Passes sites of archeological interest, mostly rock carvings.",
+        "description": "Passes sites of archeological interest, mostly petroglyphs.",
         "strong": "Good examples",
         "icon": "ancient.svg"
       }
@@ -288,7 +288,7 @@
         "text": "Scenic",
         "filterIncludeText": "Particularly scenic",
         "filterExcludeText": "",
-        "description": "Contains photogenic scenery or areas of particular beauty.",
+        "description": "Contains particularly photogenic sections.",
         "strong": "Spectacular",
         "icon": "camera.svg"
       }
