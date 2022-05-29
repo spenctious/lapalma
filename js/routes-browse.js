@@ -587,6 +587,8 @@ class Starred extends Filter {
 }
 
 
+/******************************* Favourite *******************************/
+
 class Favourite extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("favourite"), new Toggle(INCLUDE));
@@ -599,13 +601,8 @@ class Favourite extends Filter {
   }
 
 
-  // ensure filter is turned off when disabled
   updateEnabled() {
-    if (this.isOff) {
-      super.enable(this.hasFavourites);
-    } else {
-      this.reset();
-    }
+    super.enable(this.hasFavourites);
   }
 
 
@@ -614,11 +611,14 @@ class Favourite extends Filter {
     super.enableInactive(setEnabled && this.hasFavourites);
   }
 
+
   get hasFavourites() {
     return favourites.size > 0;
   }
 }
 
+
+/******************************* ShortWalk *******************************/
 
 class ShortWalk extends Filter {
   constructor(name) {
@@ -632,6 +632,8 @@ class ShortWalk extends Filter {
 }
 
 
+/******************************* AccessCar *******************************/
+
 class AccessCar extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("accessCar"), new Toggle(INCLUDE), true);
@@ -643,6 +645,8 @@ class AccessCar extends Filter {
   }
 }
 
+
+/******************************* AccessBus *******************************/
 
 class AccessBus extends Filter {
   constructor(name) {
@@ -656,6 +660,8 @@ class AccessBus extends Filter {
 }
 
 
+/******************************* Waymarked *******************************/
+
 class Waymarked extends Filter {
   constructor(name) {
     super(name, laPalmaData.basics.get("waymarked"), new Toggle(INCLUDE));
@@ -667,6 +673,8 @@ class Waymarked extends Filter {
   }
 }
 
+
+/******************************* WalkType *******************************/
 
 class WalkType extends Filter {
   #specificType;
@@ -683,6 +691,8 @@ class WalkType extends Filter {
 }
 
 
+/******************************* Interest *******************************/
+
 class Interest extends Filter {
   #specificInterest;
 
@@ -698,6 +708,8 @@ class Interest extends Filter {
 }
 
 
+/******************************* Terrain *******************************/
+
 class Terrain extends Filter {
   #specificTerrain;
   constructor(specificTerrain) {
@@ -711,6 +723,8 @@ class Terrain extends Filter {
   }
 }
 
+
+/******************************* Warning *******************************/
 
 class Warning extends Filter {
   #specificWarning;
@@ -726,6 +740,8 @@ class Warning extends Filter {
   }
 }
 
+
+/******************************* Location *******************************/
 
 // handles the associated location selector grid as well as the location filter
 class Location extends Filter {
@@ -1100,7 +1116,12 @@ class FilterSet {
 
 
   updateFavourites() {
-    this.#favouritesFilter.updateEnabled();
+    if (!this.#favouritesFilter.isOff) {
+      this.toggle(this.#favouritesFilter.id);
+    }
+    if (!this.filterLimitReached) {
+      this.#favouritesFilter.updateEnabled();
+    }
   }
 
   updateGrids() {
