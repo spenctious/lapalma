@@ -415,7 +415,7 @@
         "text": "Vertigo risk",
         "filterIncludeText": "",
         "filterExcludeText": "High vertigo risk",
-        "description": "Vertigo risk: exposed peaks or paths near steep drops.",
+        "description": "Exposed peaks or paths near steep drops.",
         "strong": "High",
         "icon": "dizzy.svg"
       }

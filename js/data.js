@@ -41,11 +41,18 @@ const URL_PARAM_STEPS = "steps";
 //  a) there is no previously stored version number (first time program run)
 //  b) the file version number on the server is larger than the retrieved version
 //
+// Note: assumes dataVersion has already been read from file
 // Note: comparing versions is non-trivial so version numbers are simple integers
-function isLaterVersion(currentVersionFromFile, retrievedVersionFromData) {
-  if (retrievedVersionFromData === null) return true;
+function isLaterVersion() {
+  let previousVersion = localStorage.getItem("dataVersion");
 
-  return Number.parseInt(currentVersionFromFile) > Number.parseInt(retrievedVersionFromData);
+  if (previousVersion == null) {
+    console.log("First time data load");
+    return true;
+  }
+
+  console.log(`File data version ${dataVersion}, retrieved data version: ${previousVersion}`);
+  return Number.parseInt(dataVersion) > Number.parseInt(previousVersion);;
 }
 
 
@@ -55,7 +62,6 @@ async function getDataVersion() {
 
   if (response.status === 200) {
     dataVersion = await response.text();
-    console.log("Data version " + dataVersion);
   }
 }
 
@@ -80,18 +86,20 @@ async function getAllUrls(dataSources) {
 // once the data is loaded the callback function is called
 async function loadDataThen(afterDataIsLoaded) {
   // determine if the stored data is current or not
-  let retrievedVersion = localStorage.getItem("dataVersion");
   await getDataVersion();
-  let dataNotCurrent = isLaterVersion(dataVersion, retrievedVersion);
 
-  if (forceReload || dataNotCurrent) {
+  if (forceReload || isLaterVersion()) {
     // wait for all the data to come back then store it for later
     var responses = await getAllUrls(dataSources);
     localStorage.setItem("lapalmaData", JSON.stringify(responses));
+
+    // update the data version with the new varion read from file
     localStorage.setItem("dataVersion", dataVersion);
+    console.log("Refreshing data from server");
   } else {
     // retrieve from local storage
     responses = JSON.parse(localStorage.lapalmaData);
+    console.log("Retrieving data from local storage");
   }
 
   // distribute the returned data
