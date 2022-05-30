@@ -253,6 +253,7 @@ strong {
   /* larger title */
   .title {
     font-size: 6rem;
+    margin-top: auto;
     margin-bottom: auto;
   }
 
