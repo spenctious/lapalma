@@ -67,33 +67,30 @@ strong {
 
 /*************************** Display block  ***************************/
 
-/* 
- * container for title, links block and scroll prompt 
- * n.b. max-height is determined by the visible part of the image
- * allowing for any alert block (which we can only guess at the height of)
- * and ensuring scroll prompt is not overlaid by bits of the browser 
- */
+/* container for title, links block and scroll prompt */
 .display-block {
   position: absolute;
   top: 0;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: calc(100vh - 8rem);
   justify-content: center;
+  align-content: center;
+  margin: 0 auto;
 }
 
 
 /*************************** Titling  ***************************/
 
 .title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: white;
   filter: drop-shadow(2px 2px 5px black);
   text-align: center;
   flex: 0 0 auto;
-  margin-top: auto;
+  margin-top: 1.5rem;
 }
 
 .sub-title {
@@ -112,13 +109,23 @@ strong {
   width: 100%;
   text-align: center;
   flex: 0 0 auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.4rem;
+  justify-content: center;
+}
+
+.link-block {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 .quick-links a {
   width: 12rem;
-  padding: 1rem;
+  padding: 0.8rem;
   font-weight: 1rem;
   font-style: bold;
   background-color: rgb(0, 0, 0, 0.5);
@@ -126,7 +133,7 @@ strong {
   display: block;
   border-radius: 2rem;
   margin: 0 auto;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   text-decoration: none;
   text-align: center;
 }
@@ -143,8 +150,8 @@ strong {
   padding: 0.5rem;
   filter: drop-shadow(2px 2px 1px black);
   flex: 0 0 auto;
-  width: 100%;
-  margin-top: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .scroll-invite img {
@@ -153,6 +160,8 @@ strong {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  flex: 0 0 auto;
+
 }
 
 /* 
@@ -189,13 +198,12 @@ strong {
 
 /*************************** Media queries  ***************************/
 
-/* remove quick links when there isn't room for them */
-@media (max-height: 650px) {
+/* when the screen is wide enough switch to 2 columns for quick links */
+@media (min-width: 38rem) { 
   .quick-links {
-    display: none;
+    flex-direction: row;
   }
 }
-
 
 /* wide enough for navigation to be included as a sidebar */
 @media (min-width: 1340px) {
