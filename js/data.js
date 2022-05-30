@@ -46,13 +46,14 @@ const URL_PARAM_STEPS = "steps";
 function isLaterVersion() {
   let previousVersion = localStorage.getItem("dataVersion");
 
-  if (previousVersion == null) {
+  // ensure retrieved version is actually a valid number
+  if (previousVersion == null || previousVersion == undefined || !/^\+?(0|[1-9]\d*)$/.test(previousVersion)) {
     console.log("First time data load");
     return true;
   }
 
   console.log(`File data version ${dataVersion}, retrieved data version: ${previousVersion}`);
-  return Number.parseInt(dataVersion) > Number.parseInt(previousVersion);;
+  return Number.parseInt(dataVersion) > Number.parseInt(previousVersion);
 }
 
 
