@@ -60,19 +60,25 @@
           <picture>
             <!-- portrait: once there is enough space, switch to a landscape image -->
             <source 
+              width="100"
+              height="150"
               srcset="img/hero-v-480.webp 480w, img/hero-v-768.webp 768w, img/hero-v-1024.webp 1024w" 
               media="screen and (orientation: portrait) and (max-width: 800px)" 
             />
             <source 
+              width="150"
+              height="100"
               srcset="img/hero-h-1024.webp 1024w, img/hero-h-1600.webp 1600w" 
               media="screen and (orientation: portrait) and (min-width: 800px)" 
             />
             <!-- landscape -->
             <source 
+              width="150"
+              height="100"
               srcset="img/hero-h-600.webp 600w, img/hero-h-1024.webp 1024w, img/hero-h-1600.webp 1600w" 
               media="screen and (orientation: landscape)" 
             />
-            <img src="img/hero-v.webp" alt="" />
+            <img src="img/hero.webp" width="100" height="100" alt="" />
           </picture>
 
           <div class="display-block">

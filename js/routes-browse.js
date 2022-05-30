@@ -246,7 +246,7 @@ function populateRoutesGrid() {
     gridContent += `
         <div id="route${route.id}" class="item">
           <div class="item-pic">
-            <img src="img/route${route.id}-01-250x187.webp" alt="" />
+            <img src="img/route${route.id}-01-250x187.webp" width="250" height="187" alt="" />
             <div class="pic-label">
               <div class="item-id">${route.id}</div>
               ${routeVarients}

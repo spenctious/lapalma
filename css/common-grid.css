@@ -94,6 +94,7 @@
   width: 100%;
   display: block;
   margin-left: auto;
+  height: auto;
 }
 
 .pic-label {

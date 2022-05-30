@@ -15,6 +15,7 @@
 
 .hero img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -244,7 +245,6 @@ strong {
 
   /* limited height image */
   .hero img {
-    max-height: 30rem;
     object-fit: cover;
     object-position: 100% 0;
     overflow: hidden;
