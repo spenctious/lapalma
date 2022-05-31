@@ -12,25 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // returns html content for a menu item
 // highlights the menu item that matches the current page or its alias
-function getMenuItem(name, icon, target, altName1 = "", altName2 = "") {
+function getMenuItem(name, icon, target, altName1, altName2) {
   // if the page is the same as the link style it differently
   let menuLinkClass = "menu-link";
   let gridIcon = "";
-  switch (window.location.pathname) {
-    case "/" + target:
-      menuLinkClass += " current";
-      break;
-    
-    case "/" + altName1:
-      menuLinkClass += " current";
-      gridIcon = `<span><img src="img/icons/info-circle.svg" class="menu-decorator"></span>`;
-      break;
-  
-    case "/" + altName2:
-      menuLinkClass += " current";
-      gridIcon = `<span><img src="img/icons/map.svg" class="menu-decorator"></span>`;
-      break;
+
+  if (window.location.pathname.endsWith(target)) {
+    menuLinkClass += " current";
+  } else if (altName1 != undefined && window.location.pathname.endsWith(altName1)) {
+    menuLinkClass += " current";
+    gridIcon = `<span><img src="img/icons/info-circle.svg" class="menu-decorator"></span>`;
+  } else if (altName2 != undefined && window.location.pathname.endsWith(altName2)) {
+    menuLinkClass += " current";
+    gridIcon = `<span><img src="img/icons/map.svg" class="menu-decorator"></span>`;
   }
+
   return `
     <a href=${target} class="${menuLinkClass}">
       <img src="${icon}" class="menu-icon">
