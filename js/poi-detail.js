@@ -171,14 +171,18 @@ function getFullPoiDetails(poi) {
 // creates external links to Google satellite view and Open StreetMap standard views
 // both links open in a new tab
 function getLocationLinks(coords) {
-  let osmCoords = coords.replace(", ", "/");
+  // extract lat & long from comma-seperated data
+  let location = coords.split(', ');
+  let lat = location[0];
+  let long = location[1];
+
   const ZOOM_LEVEL = 16;
 
   return `
     <p class="map-links">
-      <a href="https://www.google.com/maps/@?api=1&map_action=map&center=${coords}&zoom=${ZOOM_LEVEL}&basemap=satellite" target="_blank">Google Maps</a>
+      <a href="https://www.google.com/maps/place/${lat},${long}/@${lat},${long}/data=!3m1!1e3" target="_blank">Satellite</a>
       &ensp;
-      <a href="https://www.openstreetmap.org/#map=${ZOOM_LEVEL}/${osmCoords}" target="_blank">OSM</a>      
+      <a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${long}#map=${ZOOM_LEVEL}/${lat}/${long}" target="_blank">Map</a>      
     </p>
     `;
 }
