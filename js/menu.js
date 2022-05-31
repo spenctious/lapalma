@@ -16,10 +16,10 @@ function getMenuItem(name, icon, target, altTarget = "") {
   // if the page is the same as the link style it differently
   let menuLinkClass = "menu-link";
   let gridIcon = "";
-  if (target == window.location.pathname) {
+  if ("/" + target == window.location.pathname) {
     menuLinkClass += " current";
   }
-  if (altTarget == window.location.pathname) {
+  if ("/" + altTarget == window.location.pathname) {
     menuLinkClass += " current";
     gridIcon = `<span><img src="img/icons/info-circle.svg" class="menu-decorator"></span>`;
   }
