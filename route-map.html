@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Route map | La Palma for walkers</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/general.css" />
+
+    <!-- favicon: https://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#006633">
+    <meta name="msapplication-TileColor" content="#006633">
+    <meta name="theme-color" content="#006633">
+    
+    <script src="js/menu.js"></script>
+    <script src="js/route-map.js"></script>
+  </head>
+  <body>
+    <div id="overlay" onclick="closeNav()"></div>
+
+    <!-- title bar -->
+    <div id="header">
+      <div id="back-nav">
+        <a href="index.html">
+          <img src="img/icons/hiker.svg" alt="" />
+        </a>
+      </div>
+      <div id="header-title">Route Map</div>
+      <div id="open-menu" onclick="openNav()">
+        <img src="img/icons/list.svg" alt="" />
+      </div>
+    </div>
+
+    <div id="content-grid">
+      <!-- navigation is populated in code -->
+      <nav id="navbar" class="sidenav"></nav>
+        <div class="map-container">
+          <div id="spinner">
+            <img src="img/icons/loading.gif" alt="">
+          </div>
+
+          <iframe
+          name="iframe_map"
+          width="100%"
+          height="100%"
+          tabindex="0"
+          id="iframe_map"
+          src="about:blank"
+          frameborder="0"
+          scrolling="yes"
+          onload="document.getElementById('spinner').style.display='none';"
+          ></iframe>
+        </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-content">
+        Copyright &copy; Robert Anstey 2022
+      </div>
+    </div>
+  </body>
+</html>

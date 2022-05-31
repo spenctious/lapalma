@@ -123,6 +123,19 @@ figure > img {
 }
 
 
+/*************************** Map styles ***************************/
+
+/* size the map to the max but limit the size */
+.map-container {
+  width: 100%;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  margin: 0 auto;
+  max-width: 1024px;
+  max-height: 1024px;
+  background-color: var(--colour3);
+}
+
+
 /*************************** Internal page navigation menu ***************************/
 
 .page-nav {
@@ -184,7 +197,7 @@ a.anchor {
   .content-container {
     grid-template-columns: repeat(2, 24rem);
     margin-bottom: 1rem;
-}
+  }
 
   /* page nav links switch to horizontal format seperated by a bar */
   .page-nav {
@@ -199,7 +212,6 @@ a.anchor {
     display: none;
   }
   
-
   /* images at the top of a content box don't want a top margin */
   .content-box > img:first-child {
     margin-top: 0;
@@ -211,5 +223,14 @@ a.anchor {
 
   .content-box img:first-child {
     margin-top: 0rem;
+  }
+}
+
+/* large enough for navbar */
+@media (min-width: 1340px) {
+  /* stop the map from bumping hard against the header and footer */
+  .map-container {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }

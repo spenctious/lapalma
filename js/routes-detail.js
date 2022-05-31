@@ -204,7 +204,7 @@ function mainClickHandler(event) {
 function populateBasics() {
   // summary grid
   let summaryContent = "";
-  summaryContent += `<div class="summary-heading">Basics</div>`;
+  summaryContent += `<div class="summary-heading">Basics and map</div>`;
   summaryContent += `<div class="chevron"><img src="img/icons/chevron-down.svg" class="icon-img" alt="" /></div>`;
   summaryContent += getMetricsHtml(route.durationAttributes);
   summaryContent += getMetricsHtml(route.effortAttributes);
@@ -212,6 +212,19 @@ function populateBasics() {
   if (route.isAccessibleByCar) summaryContent += getSummaryIconHtml(route.accessCarAttributes.icon);
   if (route.isAccessibleByBus) summaryContent += getSummaryIconHtml(route.accessBusAttributes.icon);
   document.getElementById("basics-summary").innerHTML = summaryContent;
+
+  // map
+  let mapContent = "";
+  mapContent += `
+    <div class="icon">
+      <img src="img/icons/map.svg" class="icon-img" alt="" />
+    </div>
+    <div class="item-description">
+      <p class="text-button">
+        <a href="route-map.html?map=${route.id}">View the walk on a map</a>
+      </p>
+    </div>`;
+    document.getElementById("map-grid").innerHTML = mapContent;
 
   // basic stats
   let basicsContent = "";
