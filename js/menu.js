@@ -12,16 +12,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // returns html content for a menu item
 // highlights the menu item that matches the current page or its alias
-function getMenuItem(name, icon, target, altTarget = "") {
+function getMenuItem(name, icon, target, altName1 = "", altName2 = "") {
   // if the page is the same as the link style it differently
   let menuLinkClass = "menu-link";
   let gridIcon = "";
-  if ("/" + target == window.location.pathname) {
-    menuLinkClass += " current";
-  }
-  if ("/" + altTarget == window.location.pathname) {
-    menuLinkClass += " current";
-    gridIcon = `<span><img src="img/icons/info-circle.svg" class="menu-decorator"></span>`;
+  switch (window.location.pathname) {
+    case "/" + target:
+      menuLinkClass += " current";
+      break;
+    
+    case "/" + altName1:
+      menuLinkClass += " current";
+      gridIcon = `<span><img src="img/icons/info-circle.svg" class="menu-decorator"></span>`;
+      break;
+  
+    case "/" + altName2:
+      menuLinkClass += " current";
+      gridIcon = `<span><img src="img/icons/map.svg" class="menu-decorator"></span>`;
+      break;
   }
   return `
     <a href=${target} class="${menuLinkClass}">
@@ -38,7 +46,7 @@ function addMenuItems() {
   navbarContent += getMenuItem("Home", "img/icons/house-door.svg", "index.html");
 
   navbarContent += `<p class="menu-section">Discover</p>`;
-  navbarContent += getMenuItem("Walks", "img/icons/hiker.svg", "routes-browse.html", "routes-detail.html");
+  navbarContent += getMenuItem("Walks", "img/icons/hiker.svg", "routes-browse.html", "routes-detail.html", "route-map.html");
   navbarContent += getMenuItem("Places", "img/icons/geo-alt.svg", "poi-browse.html");
 
   navbarContent += `<p class="menu-section">Check</p>`;

@@ -387,8 +387,15 @@ a[href^="https://"]:not([href*="stackoverflow.com"]):after {
   color: white;
 }
 
-.current img {
+.current > img {
   filter: invert(100%);
+}
+
+.menu-decorator {
+  filter: invert(100%);
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-top: 0.175rem;
 }
 
 /* highlight all but the currently selected menu option (it's already highlighted) */
