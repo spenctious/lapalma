@@ -41,9 +41,9 @@ function initialize() {
   let retrievedState = window.history.state;
   if (retrievedState != undefined && retrievedState != null && JSON.stringify(retrievedState) != '{}') {
     filterSet.restoreState(retrievedState);
-  } else {
-    filterRoutes();
   }
+
+  filterRoutes();
 }
 
 
@@ -996,7 +996,7 @@ class FilterSet {
     })
 
     // users may change favourites in details page so check if the favourites
-    // filter was no but is no longer applicable and if so remove it
+    // filter was on but is no longer applicable and if so remove it
     if (!this.#favouritesFilter.isOff && favourites.size == 0) {
       this.#favouritesFilter.toggle();
       this.#activeFilterList.delete(this.#favouritesFilter.index.toString());
