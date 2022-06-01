@@ -422,7 +422,7 @@ a[href^="https://"]:not([href*="stackoverflow.com"]):after {
 }
 
 /* dim background content and provide an alternative click zone for closing the nav */
-#overlay {
+.overlay {
   z-index: var(--z-overlay);
   background-color: rgb(0, 0, 0, 0.5);
   height: 100%;

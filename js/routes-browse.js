@@ -30,7 +30,8 @@ function initialize() {
 
   // add event listeners
   document.getElementById("filter").addEventListener("click", filterClickHandler);
-  document.getElementById("overlay").addEventListener("click", closeFilterPanel);
+  document.getElementById("filter-overlay").addEventListener("click", closeFilterPanel);
+  
   document.getElementById("browse-grid").addEventListener("click", routesGridClickHandler);
   document.getElementById("area-map").addEventListener("click", locationGridClickHandler);
   document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
@@ -70,14 +71,14 @@ function getDetailPageQueryString(selectedRouteIndex) {
 
 function openFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(-100%)";
-  document.getElementById("overlay").style.display = "block";
+  document.getElementById("filter-overlay").style.display = "block";
   document.getElementById("filter-button").style.display = "none";
 }
 
 
 function closeFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(0)";
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("filter-overlay").style.display = "none";
   document.getElementById("filter-button").style.display = "block";
 }
 

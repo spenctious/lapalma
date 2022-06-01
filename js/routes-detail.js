@@ -75,6 +75,7 @@ function initialize() {
   document.getElementById("content-grid").addEventListener("click", mainClickHandler);
   document.getElementById("routes-collection-nav").addEventListener("click", collectionClickHandler);
   document.getElementById("full-details").addEventListener("click", modalClickHandler);
+  document.getElementById("back-nav").addEventListener("click", goBackToOrigin);
 }
 
 

@@ -27,7 +27,8 @@ function initialize() {
 
   // add event listeners on the poi grid and filters panel
   document.getElementById("filter").addEventListener("click", filterClickHandler);
-  document.getElementById("overlay").addEventListener("click", closeFilterPanel);
+  document.getElementById("filter-overlay").addEventListener("click", closeFilterPanel);
+
   document.getElementById("browse-grid").addEventListener("click", poiGridClickHandler);
   document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
   document.getElementById("full-details").addEventListener("click", modalClickHandler);
@@ -41,13 +42,13 @@ function initialize() {
 
 function openFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(-100%)";
-  document.getElementById("overlay").style.display = "block";
+  document.getElementById("filter-overlay").style.display = "block";
   document.getElementById("filter-button").style.display = "none";
 }
 
 function closeFilterPanel() {
   document.getElementById("filter").style.transform = "translateX(0)";
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("filter-overlay").style.display = "none";
   document.getElementById("filter-button").style.display = "block";
 }
 

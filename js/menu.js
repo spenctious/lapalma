@@ -7,6 +7,8 @@
 // wait for page to load before trying to add the menu
 document.addEventListener('DOMContentLoaded', function() {
   addMenuItems();
+  document.getElementById("nav-overlay").addEventListener("click", closeNav);
+  document.getElementById("open-menu").addEventListener("click", openNav);
 }, false);
 
 
@@ -60,12 +62,12 @@ function addMenuItems() {
 // open the menu
 function openNav() {
   document.getElementById("navbar").style.transform = "translateX(0)";
-  document.getElementById("overlay").style.display = "block";
+  document.getElementById("nav-overlay").style.display = "block";
 }
 
 
 // close the menu
 function closeNav() {
   document.getElementById("navbar").style.transform = "translateX(-100%)";
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("nav-overlay").style.display = "none";
 }
