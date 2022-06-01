@@ -993,6 +993,14 @@ class FilterSet {
     this.#activeFilterList.forEach(filter => {
       this.#allFilters[filter].toggle();
     })
+
+    // users may change favourites in details page so check if the favourites
+    // filter was no but is no longer applicable and if so remove it
+    if (!this.#favouritesFilter.isOff && favourites.size == 0) {
+      this.#favouritesFilter.toggle();
+      this.#activeFilterList.delete(this.#favouritesFilter.index.toString());
+    }
+
     this.updateGrids();
   }
 
