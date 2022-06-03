@@ -115,7 +115,8 @@ function getFullPoiDetails(poi) {
     : "";
   let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
   let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
-  let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? getRelatedRoutesHtml(poi) : "";
+  let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? 
+    `<div class="button-box">${getRelatedRoutesHtml(poi)}</div>` : "";
   let disableNavClass = poiCollection.length == 1 ? "disable-nav" : "";
 
   // build html content
@@ -150,9 +151,7 @@ function getFullPoiDetails(poi) {
           ${entryCost}
         </table>
         ${openingTimes}
-        <div class="button-box">
-          ${relatedRoutes}
-        </div>
+        ${relatedRoutes}
       </div>
     </div>
     <div id="poi-collection-nav" class="collection-nav fixed-bottom">
