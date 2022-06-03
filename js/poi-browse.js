@@ -33,6 +33,13 @@ function initialize() {
   document.getElementById("filter-button").addEventListener("click", filterButtonClickHandler);
   document.getElementById("full-details").addEventListener("click", modalClickHandler);
 
+  // restore filter state if set
+  // ensures navigating back after looking at a related route detail does not lose the set filters
+  let retrievedState = window.history.state;
+  if (retrievedState != undefined && retrievedState != null && JSON.stringify(retrievedState) != '{}') {
+    restoreState(retrievedState);
+  }
+
   filterPoi();
 }
 
@@ -65,6 +72,13 @@ function filterButtonClickHandler(event) {
 // POI details modal click handler
 function modalClickHandler(event) {
   let id = event.target.id;
+
+  // links to related walks preserve the filter state
+  // otherwise ignore the click
+  if (event.target.tagName == "A" ) {
+    saveStateForRelatedWalks(event.target.id);
+    return;
+  }  
 
   // close the modal if the close button is clicked or the user
   // clicks anywhere outside the content area
@@ -119,14 +133,51 @@ function filterClickHandler(event) {
 function poiGridClickHandler(event) {
   let elementId = event.target.closest("#browse-grid > div").id;
 
-  // don't react to clicks on links - let them do their stuff
-  if (event.target.tagName == "A" ) return;
+  // links to related walks preserve the filter state
+  // otherwise ignore the click
+  if (event.target.tagName == "A" ) {
+    saveStateForRelatedWalks(event.target.id);
+    return;
+  }
 
   // poi detail button
   if (elementId.startsWith("poi")) {
     let poiId = elementId.replace("poi", ""); // strip prefix to get the poi id
     openModal(poiId);
     return;
+  }
+}
+
+
+
+/************************* State ************************/
+
+
+function getState() {
+  return {
+    filters: activeFilters
+  }
+}
+
+
+function restoreState(state) {
+  activeFilters = state.filters;
+
+  // tick the active filters
+  activeFilters.forEach(categoryId => {
+    document.getElementById(`poi-category-${categoryId}`).checked = true;
+  })
+}
+
+
+function saveStateForRelatedWalks(linkId) {
+  // if a link to related walks is clicked save the current filter state, otherwise ignore
+  if (linkId.startsWith("related")) {
+    if (activeFilters.size > 0) {
+      window.history.replaceState(getState(), "");
+    } else {
+      window.history.replaceState({}, "");
+    }    
   }
 }
 
