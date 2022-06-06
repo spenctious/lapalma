@@ -702,6 +702,8 @@ class Data {
         this.#isNonEmptyArray("images", route.images);
         route.images.forEach(image => {
           this.#isNumber("image.id", image.id);
+          this.#isNumber("image.width", image.width);
+          this.#isNumber("image.height", image.height);
           this.#isNonEmptyString("image.caption", image.caption);
         })
 

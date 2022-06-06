@@ -402,6 +402,7 @@ h4 {
 .picture {
   width: 100%;
   display: block;
+  background-color: var(--colour2);
 }
 
 /************************* Directions ************************/

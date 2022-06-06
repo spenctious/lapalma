@@ -24,9 +24,9 @@
       "paths": ["PR LP 01", "PR LP 02.2"],
       
       "images": [
-        { "id": "01", "caption": "Sugar mills near Santa Cruz" },
-        { "id": "02", "caption": "Iglesia de El Salvador, Plaza de España" },
-        { "id": "03", "caption": "Steep climb past colourful houses" }
+        { "id": "01", "width": "576", "height": "525", "caption": "Sugar mills near Santa Cruz" },
+        { "id": "02", "width": "865", "height": "525", "caption": "Iglesia de El Salvador, Plaza de España" },
+        { "id": "03", "width": "666", "height": "525", "caption": "Steep climb past colourful houses" }
       ],
 
       "variants": [
@@ -96,11 +96,11 @@
       "poi": ["Mirador de la Concepción"],
 
       "images": [
-        { "id": "01", "caption": "View over Santa Cruz from Mirador de la Concepción" },
-        { "id": "02", "caption": "Canal de Breña, covered waterway" },
-        { "id": "03", "caption": "Barranco de las Nieves (dried river bed)" },
-        { "id": "04", "caption": "Castillo de La Virgen, at the walk finish" },
-        { "id": "05", "caption": "Museo Naval (ship museum), at the walk finish" }
+        { "id": "01", "width": "788", "height": "525", "caption": "View over Santa Cruz from Mirador de la Concepción" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Canal de Breña, covered waterway" },
+        { "id": "03", "width": "394", "height": "525", "caption": "Barranco de las Nieves (dried river bed)" },
+        { "id": "04", "width": "788", "height": "525", "caption": "Castillo de La Virgen, at the walk finish" },
+        { "id": "05", "width": "772", "height": "525", "caption": "Museo Naval (ship museum), at the walk finish" }
       ],
 
       "terrain": [
@@ -149,9 +149,9 @@
       "paths": ["PR LP 19"],
 
       "images": [
-        { "id": "01", "caption": "One of the small shrines along the Camino de las Fuentes" },
-        { "id": "02", "caption": "Ancient washing basins near the walk start" },
-        { "id": "03", "caption": "Chestnut forest with many other species mixed in" }
+        { "id": "01", "width": "699", "height": "525", "caption": "One of the small shrines along the Camino de las Fuentes" },
+        { "id": "02", "width": "394", "height": "525", "caption": "Ancient washing basins near the walk start" },
+        { "id": "03", "width": "788", "height": "525", "caption": "Chestnut forest with many other species mixed in" }
       ],
 
       "variants": [
@@ -217,10 +217,10 @@
       "poi": ["Las Nieves", "Barranco de la Madera"],
 
       "images": [
-        { "id": "01", "caption": "Gallery tunnel" },
-        { "id": "02", "caption": "The gallery path has partial protection from the steep drops" },
-        { "id": "03", "caption": "View into the valley from up high" },
-        { "id": "04", "caption": "View over Santa Cruz on the descent" }
+        { "id": "01", "width": "525", "height": "525", "caption": "Gallery tunnel" },
+        { "id": "02", "width": "699", "height": "525", "caption": "The gallery path has partial protection from the steep drops" },
+        { "id": "03", "width": "394", "height": "525", "caption": "View into the valley from up high" },
+        { "id": "04", "width": "788", "height": "525", "caption": "View over Santa Cruz on the descent" }
       ],
 
       "terrain": [
@@ -277,9 +277,9 @@
       "paths": ["GR 130 Etapa 1"],
 
       "images": [
-        { "id": "01", "caption": "Cliff view along the GR130" },
-        { "id": "02", "caption": "Jacaranda tree at the Fuente de San Juan" },
-        { "id": "03", "caption": "The only place where the GR130 actually meets the sea" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Cliff view along the GR130" },
+        { "id": "02", "width": "515", "height": "525", "caption": "Jacaranda tree at the Fuente de San Juan" },
+        { "id": "03", "width": "699", "height": "525", "caption": "The only place where the GR130 actually meets the sea" }
       ],
 
       "terrain": [
@@ -323,10 +323,10 @@
       "paths": ["PR LP 05", "PR LP 05.1"],
 
       "images": [
-        { "id": "01", "caption": "Small viaduct in the laurisilva forest." },
-        { "id": "02", "caption": "Deep in the laurisilva forest" },
-        { "id": "03", "caption": "Mirador Somada Alta" },
-        { "id": "04", "caption": "Caves along the PR LP 5 variant route" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Small viaduct in the laurisilva forest." },
+        { "id": "02", "width": "614", "height": "525", "caption": "Deep in the laurisilva forest" },
+        { "id": "03", "width": "512", "height": "525", "caption": "Mirador Somada Alta" },
+        { "id": "04", "width": "862", "height": "525", "caption": "Caves along the PR LP 5 variant route" }
       ],
 
       "variants": [
@@ -399,8 +399,8 @@
       "end": "Puente de Los Tilos",
 
       "images": [
-        { "id": "01", "caption": "Los Tilos Bridge" },
-        { "id": "02", "caption": "Nuestra Senora de Montserrat (church), Los Sauces" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Los Tilos Bridge" },
+        { "id": "02", "width": "788", "height": "525", "caption": "Nuestra Senora de Montserrat (church), Los Sauces" }
       ],
 
       "poi": ["Puente de Los Tilos"],
@@ -457,9 +457,9 @@
       "paths": ["PR LP 07", "PR LP 07.1", "GR 130 Etapa 2"],
 
       "images": [
-        { "id": "01", "caption": "Sunny glade in the laurisilva forest." },
-        { "id": "02", "caption": "Mirador de las Barandas" },
-        { "id": "03", "caption": "Looking up the Los Tilos valley" }
+        { "id": "01", "width": "626", "height": "525", "caption": "Sunny glade in the laurisilva forest." },
+        { "id": "02", "width": "394", "height": "525",  "caption": "Mirador de las Barandas" },
+        { "id": "03", "width": "350", "height": "525",  "caption": "Looking up the Los Tilos valley" }
       ],
 
       "terrain": [
@@ -499,11 +499,11 @@
       "paths": ["PR LP 06"],
 
       "images": [
-        { "id": "01", "caption": "Marcos y Cordero Springs" },
-        { "id": "02", "caption": "Narrow gallery path approaching the tunnels" },
-        { "id": "03", "caption": "Springs after the tunnels" },
-        { "id": "04", "caption": "Cascada De Los Tilos (walk 9c)" },
-        { "id": "05", "caption": "Some big boulders to negotiate on the descent" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Marcos y Cordero Springs" },
+        { "id": "02", "width": "556", "height": "525", "caption": "Narrow gallery path approaching the tunnels" },
+        { "id": "03", "width": "394", "height": "525",  "caption": "Springs after the tunnels" },
+        { "id": "04", "width": "350", "height": "525",  "caption": "Cascada De Los Tilos (walk 9c)" },
+        { "id": "05", "width": "699", "height": "525", "caption": "Some big boulders to negotiate on the descent" }
       ],
 
       "variants": [
@@ -594,9 +594,10 @@
       "paths": ["SL BL 41", "GR 130 Etapa 3"],
 
       "images": [
-        { "id": "01", "caption": "La Tosca has a small dragon tree grove" },
-        { "id": "02", "caption": "The approach to Gallegos" },
-        { "id": "03", "caption": "Branch route leading to the sea" }
+        { "id": "01", "width": "763", "height": "525", "caption": "La Tosca has a small dragon tree grove" },
+        { "id": "02", "width": "788", "height": "525", "caption": "The approach to Gallegos" },
+        { "id": "03", "width": "766", "height": "525", "caption": "Branch route leading to the sea" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Side branch descent to a beach" }
       ],
 
       "variants": [
@@ -672,9 +673,9 @@
       "paths": ["GR 130 Etapa 3"],
       
       "images": [
-        { "id": "01", "caption": "Unspoilt coastal scenery east of Garafia" },
-        { "id": "02", "caption": "Barranco de los Hombres, approaching El Tablado" },
-        { "id": "03", "caption": "Wind turbines near Juan Adalid" }
+        { "id": "01", "width": "1280", "height": "525", "caption": "Unspoilt coastal scenery east of Garafia" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Barranco de los Hombres, approaching El Tablado" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Wind turbines near Juan Adalid" }
       ],
 
       "variants": [
@@ -751,9 +752,9 @@
       "paths": ["GR 130 Etapa 3", "PR LP 09.2", "PR LP 09"],
       
       "images": [
-        { "id": "01", "caption": "Mirador on the path heading up to La Zarza" },
-        { "id": "02", "caption": "Great dragon tree on path PL LP 9.3 approaching Garafia" },
-        { "id": "03", "caption": "A seeming dead-end in the Barranco de Fagundo" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Mirador on the path heading up to La Zarza" },
+        { "id": "02", "width": "788", "height": "525", "caption": "Great dragon tree on path PL LP 9.3 approaching Garafia" },
+        { "id": "03", "width": "699", "height": "525", "caption": "A seeming dead-end in the Barranco de Fagundo" }
       ],
 
       "variants": [
@@ -822,11 +823,11 @@
       "paths": ["SL VG 51", "PR LP 09", "PR LP 09.3"],
       
       "images": [
-        { "id": "01", "caption": "Puerto de Garafia" },
-        { "id": "02", "caption": "Geodesic dome dwelling just off the path to the port" },
-        { "id": "03", "caption": "Fisherman shacks at the port" },
-        { "id": "04", "caption": "Ancient Guanches petroglyphs between the port and Garafia" },
-        { "id": "05", "caption": "Farmland on the approach to Llano Negro" }
+        { "id": "01", "width": "420", "height": "525",  "caption": "Puerto de Garafia" },
+        { "id": "02", "width": "700", "height": "525", "caption": "Geodesic dome dwelling just off the path to the port" },
+        { "id": "03", "width": "394", "height": "525",  "caption": "Fisherman shacks at the port" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Ancient Guanches petroglyphs between the port and Garafia" },
+        { "id": "05", "width": "525", "height": "525", "caption": "Farmland on the approach to Llano Negro" }
       ],
 
       "variants": [
@@ -906,7 +907,7 @@
       "paths": ["PR LP 09.3", "PR LP 09"],
       
       "images": [
-        { "id": "01", "caption": "Isolated house in a dragon tree grove" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Isolated house in a dragon tree grove" }
       ],
 
       "terrain": [
@@ -950,9 +951,9 @@
       "paths": ["PR LP 09.2", "PR LP 09"],
       
       "images": [
-        { "id": "01", "caption": "Dried-up waterfall" },
-        { "id": "02", "caption": "Descending to the riverbed" },
-        { "id": "03", "caption": "Fuente de la Caldera del Agua" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Dried-up waterfall" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Descending to the riverbed" },
+        { "id": "03", "width": "394", "height": "525",  "caption": "Fuente de la Caldera del Agua" }
       ],
 
       "poi": ["La Zarza"],
@@ -1000,9 +1001,9 @@
       "paths": ["PR LP 09.2"],
       
       "images": [
-        { "id": "01", "caption": "Ascending from the Mirador de la Calzada" },
-        { "id": "02", "caption": "Last of the barranco views before heading into the forest" },
-        { "id": "03", "caption": "Entering the laurisilva forest" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Ascending from the Mirador de la Calzada" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Last of the barranco views before heading into the forest" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Entering the laurisilva forest" }
       ],
 
       "variants": [
@@ -1083,10 +1084,10 @@
       "paths": ["GR 130 Etapa 4", "PR LP 11.1"],
       
       "images": [
-        { "id": "01", "caption": "Iglesia San Mauro de Abad" },
-        { "id": "02", "caption": "Looking across the lower reaches of Puntagorda" },
-        { "id": "03", "caption": "PR LP 11.1 near El Roque" },
-        { "id": "04", "caption": "Mirador de los Dragos" }
+        { "id": "01", "width": "787", "height": "525", "caption": "Iglesia San Mauro de Abad" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Looking across the lower reaches of Puntagorda" },
+        { "id": "03", "width": "394", "height": "525",  "caption": "PR LP 11.1 near El Roque" },
+        { "id": "04", "width": "700", "height": "525", "caption": "Mirador de los Dragos" }
       ],
 
       "variants": [
@@ -1145,10 +1146,10 @@
       "paths": ["PR LP 11.2"],
       
       "images": [
-        { "id": "01", "caption": "Puerto de Puntagorda" },
-        { "id": "02", "caption": "Approaching the port along PR LP 11.2" },
-        { "id": "03", "caption": "Descending to the slipway" },
-        { "id": "04", "caption": "Cave house in the cliffs" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Puerto de Puntagorda" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Approaching the port along PR LP 11.2" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Descending to the slipway" },
+        { "id": "04", "width": "788", "height": "525", "caption": "Cave house in the cliffs" }
       ],
 
       "terrain": [
@@ -1191,11 +1192,11 @@
       "paths": ["PR LP 11.1", "GR 130 Etapa 4"],
       
       "images": [
-        { "id": "01", "caption": "Approaching Las Tricias" },
-        { "id": "02", "caption": "One of the best dragon trees on the island - on the GR130 path" },
-        { "id": "03", "caption": "Free-range chickens along the GR130" },
-        { "id": "04", "caption": "Cuevas de Buracas" },
-        { "id": "05", "caption": "Barranco de Izcegua" }
+        { "id": "01", "width": "787", "height": "525", "caption": "Approaching Las Tricias" },
+        { "id": "02", "width": "350", "height": "525", "caption": "One of the best dragon trees on the island - on the GR130 path" },
+        { "id": "03", "width": "347", "height": "525", "caption": "Free-range chickens along the GR130" },
+        { "id": "04", "width": "700", "height": "525", "caption": "Cuevas de Buracas" },
+        { "id": "05", "width": "639", "height": "525", "caption": "Barranco de Izcegua" }
       ],
 
       "variants": [
@@ -1282,8 +1283,8 @@
       "paths": ["GR 130 Etapa 5"],
       
       "images": [
-        { "id": "01", "caption": "Open views along the west coast" },
-        { "id": "02", "caption": "Cobbled camino section of the GR130" }
+        { "id": "01", "width": "753", "height": "525", "caption": "Open views along the west coast" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Cobbled camino section of the GR130" }
       ],
 
       "variants": [
@@ -1343,11 +1344,11 @@
       "paths": ["PR LP 12.2"],
       
       "images": [
-        { "id": "01", "caption": "Small community in the 'Pirates' Bay" },
-        { "id": "02", "caption": "Sheltered pool suitable for swimming" },
-        { "id": "03", "caption": "Tricky descent to the beach" },
-        { "id": "04", "caption": "Playa del Jorado" },
-        { "id": "05", "caption": "Inside the small self-contained community" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Small community in the 'Pirates' Bay" },
+        { "id": "02", "width": "818", "height": "525", "caption": "Sheltered pool suitable for swimming" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Tricky descent to the beach" },
+        { "id": "04", "width": "350", "height": "525",  "caption": "Playa del Jorado" },
+        { "id": "05", "width": "699", "height": "525", "caption": "Inside the small self-contained community" }
       ],
 
       "variants": [
@@ -1429,8 +1430,8 @@
       "paths": ["SL TJ 71", "PR LP 10", "GR 131 Etapa 1", "GR 130 Etapa 5"],
       
       "images": [
-        { "id": "01", "caption": "Barranco de las Angustias" },
-        { "id": "02", "caption": "Terraced vines on the north side of the barranco Angustias" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Barranco de las Angustias" },
+        { "id": "02", "width": "788", "height": "525", "caption": "Terraced vines on the north side of the barranco Angustias" }
       ],
 
       "variants": [
@@ -1511,11 +1512,11 @@
       "paths": ["GR 130 Etapa 6", "GR 131 Etapa 1"],
       
       "images": [
-        { "id": "01", "caption": "Los Llanos as seen from Miradoe El Time" },
-        { "id": "02", "caption": "Puerto de Tazacorte from Miradoe de la Punta" },
-        { "id": "03", "caption": "Los Llanos from Argual Abajo" },
-        { "id": "04", "caption": "Where the GR130 and GR131 cross over" },
-        { "id": "05", "caption": "Barranco de las Angustias from near the GR131 cross-over point" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Los Llanos as seen from Miradoe El Time" },
+        { "id": "02", "width": "394", "height": "525",  "caption": "Puerto de Tazacorte from Miradoe de la Punta" },
+        { "id": "03", "width": "936", "height": "525", "caption": "Los Llanos from Argual Abajo" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Where the GR130 and GR131 cross over" },
+        { "id": "05", "width": "699", "height": "525", "caption": "Barranco de las Angustias from near the GR131 cross-over point" }
       ],
 
       "variants": [
@@ -1593,11 +1594,11 @@
       "paths": ["GR 131 Etapa 2"],
       
       "images": [
-        { "id": "01", "caption": "Sunset over the clouds from Refugio Punta de los Roques" },
-        { "id": "02", "caption": "Lobelia growing near Roque de Muchachos" },
-        { "id": "03", "caption": "Pico de la Nieves" },
-        { "id": "04", "caption": "North side of the crest nearing the refugio" },
-        { "id": "05", "caption": "Late afternoon sun above the clouds on the GR131" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Sunset over the clouds from Refugio Punta de los Roques" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Lobelia growing near Roque de Muchachos" },
+        { "id": "03", "width": "788", "height": "525", "caption": "Pico de la Nieves" },
+        { "id": "04", "width": "699", "height": "525", "caption": "North side of the crest nearing the refugio" },
+        { "id": "05", "width": "788", "height": "525", "caption": "Late afternoon sun above the clouds on the GR131" }
       ],
 
       "variants": [
@@ -1711,8 +1712,8 @@
       "paths": ["GR 131 Etapa 2", "PR LP 01", "PR LP 01.1", "PR LP 13.3"],
       
       "images": [
-        { "id": "01", "caption": "The Cumbre Nueva under cloud with Pico Birigoyo peaking through" },
-        { "id": "02", "caption": "Dawn with El Tiede on Tenerife poking above the clouds" }
+        { "id": "01", "width": "788", "height": "525", "caption": "The Cumbre Nueva under cloud with Pico Birigoyo peaking through" },
+        { "id": "02", "width": "1001", "height": "525", "caption": "Dawn with El Tiede on Tenerife poking above the clouds" }
       ],
 
       "poi": ["refugio", "Centro de Visitantes"],
@@ -1770,10 +1771,10 @@
       "paths": ["GR 131 Etapa 1"],
       
       "images": [
-        { "id": "01", "caption": "One of the many telescopes at the summit" },
-        { "id": "02", "caption": "Telescope cluster as seen from the GR131 path" },
-        { "id": "03", "caption": "The GR131 heading towards Puerto de Tazacorte" },
-        { "id": "04", "caption": "View from Roque Palmero" }
+        { "id": "01", "width": "706", "height": "525", "caption": "One of the many telescopes at the summit" },
+        { "id": "02", "width": "1137", "height": "525", "caption": "Telescope cluster as seen from the GR131 path" },
+        { "id": "03", "width": "699", "height": "525", "caption": "The GR131 heading towards Puerto de Tazacorte" },
+        { "id": "04", "width": "716", "height": "525", "caption": "View from Roque Palmero" }
       ],
 
       "poi": ["muchachos", "observatory"],
@@ -1829,12 +1830,12 @@
       "paths": ["PR LP 13"],
       
       "images": [
-        { "id": "01", "caption": "Looking north-east from Playa de Taburiente" },
-        { "id": "02", "caption": "View from Mirador Los Brecitos" },
-        { "id": "03", "caption": "Descending to the riverbed" },
-        { "id": "04", "caption": "Path soon after the campsite" },
-        { "id": "05", "caption": "Cascada de Colores" },
-        { "id": "06", "caption": "Near Dos Agua" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Looking north-east from Playa de Taburiente" },
+        { "id": "02", "width": "699", "height": "525", "caption": "View from Mirador Los Brecitos" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Descending to the riverbed" },
+        { "id": "04", "width": "357", "height": "525", "caption": "Path soon after the campsite" },
+        { "id": "05", "width": "711", "height": "525", "caption": "Cascada de Colores" },
+        { "id": "06", "width": "394", "height": "525",  "caption": "Near Dos Agua" }
       ],
 
       "variants": [
@@ -1912,8 +1913,8 @@
       "paths": ["PR LP 13.3", "PR LP 01.1", "PR LP 01"],
       
       "images": [
-        { "id": "01", "caption": "Vista Cumbre Vieja" },
-        { "id": "02", "caption": "Path connecting the Cumbrecita to Pico Bejenado" }
+        { "id": "01", "width": "1396", "height": "525", "caption": "Vista Cumbre Vieja" },
+        { "id": "02", "width": "394", "height": "525", "caption": "Path connecting the Cumbrecita to Pico Bejenado" }
       ],
 
       "variants": [
@@ -2014,10 +2015,10 @@
       "paths": ["PR LP 13.3"],
       
       "images": [
-        { "id": "01", "caption": "view from Pico Bejenado looking towards Puerto Tazacorte" },
-        { "id": "02", "caption": "Caldera de Taburiente" },
-        { "id": "03", "caption": "Climbing to Pico Bejenado" },
-        { "id": "04", "caption": "Descending from Roque de Los Cuervos" }
+        { "id": "01", "width": "788", "height": "525", "caption": "view from Pico Bejenado looking towards Puerto Tazacorte" },
+        { "id": "02", "width": "1299", "height": "525", "caption": "Caldera de Taburiente" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Climbing to Pico Bejenado" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Descending from Roque de Los Cuervos" }
       ],
 
       "variants": [
@@ -2094,10 +2095,10 @@
       "paths": ["SL EP 101", "PR LP 14"],
       
       "images": [
-        { "id": "01", "caption": "In the plains south of El Paso" },
-        { "id": "02", "caption": "Llanos de Jable" },
-        { "id": "03", "caption": "Crossing a lava field on PR LP 14" },
-        { "id": "04", "caption": "Bikers at the foot of Montaña Quemada (Volcán Tacande)" }
+        { "id": "01", "width": "788", "height": "525", "caption": "In the plains south of El Paso" },
+        { "id": "02", "width": "788", "height": "525", "caption": "Llanos de Jable" },
+        { "id": "03", "width": "413", "height": "525",  "caption": "Crossing a lava field on PR LP 14" },
+        { "id": "04", "width": "788", "height": "525", "caption": "Bikers at the foot of Montaña Quemada (Volcán Tacande)" }
       ],
 
       "terrain": [
@@ -2142,9 +2143,9 @@
       "paths": ["PR LP 01"],
 
       "images": [
-        { "id": "01", "caption": "Where PR LP1 and the GR131 meet on the Cumbre Nueva" },
-        { "id": "02", "caption": "Small shrine in the forest on PR LP 1" },
-        { "id": "03", "caption": "Ermita de la Virgen del Pino" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Where PR LP1 and the GR131 meet on the Cumbre Nueva" },
+        { "id": "02", "width": "394", "height": "525", "caption": "Small shrine in the forest on PR LP 1" },
+        { "id": "03", "width": "700", "height": "525", "caption": "Ermita de la Virgen del Pino" }
       ],
 
       "terrain": [
@@ -2190,10 +2191,10 @@
       "paths": ["PR LP 13.3", "PR LP 01.1", "PR LP 01", "GR 131 Etapa 2", "PR LP 14" ],
       
       "images": [
-        { "id": "01", "caption": "Fayal-brezal (myrtl-heather) on the Cumbre Nueva" },
-        { "id": "02", "caption": "Radio mast along the GR131" },
-        { "id": "03", "caption": "View of the Caldera from the Cumbre Nueva" },
-        { "id": "04", "caption": "Country lane around Tacande" }
+        { "id": "01", "width": "878", "height": "525", "caption": "Fayal-brezal (myrtl-heather) on the Cumbre Nueva" },
+        { "id": "02", "width": "394", "height": "525", "caption": "Radio mast along the GR131" },
+        { "id": "03", "width": "881", "height": "525", "caption": "View of the Caldera from the Cumbre Nueva" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Country lane around Tacande" }
       ],
 
       "variants": [
@@ -2255,9 +2256,9 @@
       "paths": ["PR LP 14.1", "SL EP 107"],
       
       "images": [
-        { "id": "01", "caption": "Lavas de San Juan" },
-        { "id": "02", "caption": "Looking to the Cumbre Vieja from PR LP 14.1" },
-        { "id": "03", "caption": "Poppy lined PR LP 14.1 path" }
+        { "id": "01", "width": "788", "height": "525", "caption": "Lavas de San Juan" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Looking to the Cumbre Vieja from PR LP 14.1" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Poppy lined PR LP 14.1 path" }
       ],
 
       "terrain": [
@@ -2305,9 +2306,9 @@
       "paths": ["PR LP 15"],
       
       "images": [
-        { "id": "01", "caption": "Unsigned but cairned path across the forest slope" },
-        { "id": "02", "caption": "View from Montaña Marcos" },
-        { "id": "03", "caption": "Montaña Marcos from near Jedy" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Unsigned but cairned path across the forest slope" },
+        { "id": "02", "width": "699", "height": "525", "caption": "View from Montaña Marcos" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Montaña Marcos from near Jedy" }
       ],
 
       "variants": [
@@ -2378,11 +2379,11 @@
       "paths": ["GR 131 Etapa 3"],
       
       "images": [
-        { "id": "01", "caption": "View of the Caldera over the Aridane plain" },
-        { "id": "02", "caption": "Skirting Pico Birigoyo" },
-        { "id": "03", "caption": "The Malforda lava field and Volcán El Duraznero" },
-        { "id": "04", "caption": "Hoyo Negro" },
-        { "id": "05", "caption": "View of Tenerife from near Volcán de Martín" }
+        { "id": "01", "width": "912", "height": "525", "caption": "View of the Caldera over the Aridane plain" },
+        { "id": "02", "width": "394", "height": "525", "caption": "Skirting Pico Birigoyo" },
+        { "id": "03", "width": "1130", "height": "525", "caption": "The Malforda lava field and Volcán El Duraznero" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Hoyo Negro" },
+        { "id": "05", "width": "788", "height": "525", "caption": "View of Tenerife from near Volcán de Martín" }
       ],
 
       "variants": [
@@ -2460,10 +2461,10 @@
       "paths": ["GR 131 Etapa 3", "SL VM 125", "PR LP 16"],
       
       "images": [
-        { "id": "01", "caption": "Approaching the peak of Volcan Birigoyo" },
-        { "id": "02", "caption": "Montaña la Barquita" },
-        { "id": "03", "caption": "Towards Montaña la Barquita" },
-        { "id": "04", "caption": "Near Pico Nambroque" }
+        { "id": "01", "width": "699", "height": "525", "caption": "Approaching the peak of Volcan Birigoyo" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Montaña la Barquita" },
+        { "id": "03", "width": "537", "height": "525", "caption": "Towards Montaña la Barquita" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Near Pico Nambroque" }
       ],
 
       "poi": ["Refugio El Pilar"],
@@ -2513,10 +2514,10 @@
       "paths": ["GR 131 Etapa 3", "SL FU 110", "SL FU 111"],
       
       "images": [
-        { "id": "01", "caption": "Ascending Volcán de Martín" },
-        { "id": "02", "caption": "View from Volcán de Martín" },
-        { "id": "03", "caption": "Picon (black pea-gravel) path at the base of Volcán de Martín" },
-        { "id": "04", "caption": "Natural Bugloss rockery on SL FU 110" }      ],
+        { "id": "01", "width": "699", "height": "525", "caption": "Ascending Volcán de Martín" },
+        { "id": "02", "width": "788", "height": "525", "caption": "View from Volcán de Martín" },
+        { "id": "03", "width": "699", "height": "525", "caption": "Picon (black pea-gravel) path at the base of Volcán de Martín" },
+        { "id": "04", "width": "394", "height": "525", "caption": "Natural Bugloss rockery on SL FU 110" }      ],
 
       "variants": [
         {
@@ -2578,9 +2579,9 @@
       "paths": ["GR 131 Etapa 3"],
       
       "images": [
-        { "id": "01", "caption": "Centro de Visitantes del San Antonio" },
-        { "id": "02", "caption": "Volcán de San Antonio" },
-        { "id": "03", "caption": "Path round crest of Volcán de San Antonio" }      ],
+        { "id": "01", "width": "788", "height": "525", "caption": "Centro de Visitantes del San Antonio" },
+        { "id": "02", "width": "700", "height": "525", "caption": "Volcán de San Antonio" },
+        { "id": "03", "width": "788", "height": "525", "caption": "Path round crest of Volcán de San Antonio" }      ],
 
       "variants": [
         {
@@ -2645,11 +2646,11 @@
       "paths": ["GR 131 Etapa 3"],
       
       "images": [
-        { "id": "01", "caption": "New Faro de Fuencaliente with the old lighthouse (now a museum) behind" },
-        { "id": "02", "caption": "Climbing Volcán de Teneguía" },
-        { "id": "03", "caption": "Final crater rim walk to summit of Volcán de Teneguía" },
-        { "id": "04", "caption": "Descending from Volcán de Teneguía to the lighthouses" },
-        { "id": "05", "caption": "Salt pans next to the lighthouse" }
+        { "id": "01", "width": "699", "height": "525", "caption": "New Faro de Fuencaliente with the old lighthouse (now a museum) behind" },
+        { "id": "02", "width": "699", "height": "525", "caption": "Climbing Volcán de Teneguía" },
+        { "id": "03", "width": "814", "height": "525", "caption": "Final crater rim walk to summit of Volcán de Teneguía" },
+        { "id": "04", "width": "699", "height": "525", "caption": "Descending from Volcán de Teneguía to the lighthouses" },
+        { "id": "05", "width": "350", "height": "525", "caption": "Salt pans next to the lighthouse" }
       ],
 
       "poi": ["san antonio", "lighthouse museum", "salinas"],

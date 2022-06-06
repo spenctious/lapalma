@@ -398,7 +398,7 @@ function populateRouteImages() {
   route.images.forEach(image => {
     imagesContent += `
     <div class="image-container">
-        <img class="picture" src="img/route${route.id}-${image.id}-h525.webp" alt="" />
+        <img class="picture" src="img/route${route.id}-${image.id}-h525.webp" width="${image.width}" height="${image.height}" alt="" />
         <div class="caption">${image.caption}</div>
       </div>`;
   });
