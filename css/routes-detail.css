@@ -403,6 +403,8 @@ h4 {
   width: 100%;
   display: block;
   background-color: var(--colour2);
+  object-fit: cover;
+  height: auto;
 }
 
 /************************* Directions ************************/
