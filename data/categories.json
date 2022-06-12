@@ -311,7 +311,7 @@
       "pine",
       {
         "text": "Pine forest",
-        "filterIncludeText": "Only with pine forest",
+        "filterIncludeText": "With pine forest",
         "filterExcludeText": "Pine forest routes",
         "description": "Passes through significant Canary Pine forest.",
         "strong": "Good example",
