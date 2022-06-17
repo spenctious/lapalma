@@ -734,7 +734,7 @@
       "lengthKm": "22.2",
       "lengthMiles": "13.8",
       "walkingTime": "06:20",
-      "shortDescription": "Sone of the best coastal scenery and laurasilva forest.",
+      "shortDescription": "Some of the best coastal scenery and laurasilva forest.",
       "description": "A long and very rewarding walk that needs an early start in the winter. The first section is a steep climb up to the La Zarza museum. You then descend into fabulous laurisilva forest before emerging on the coast for the final very scenic leg.",
       "starred": "false",
       "walkType": "circular",
@@ -1389,7 +1389,8 @@
 
       "interest": [
         [ "views", "normal" ],
-        [ "port", "strong" ]
+        [ "port", "strong" ],
+        [ "poi", "strong" ]
       ],
 
       "warnings": [
