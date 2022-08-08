@@ -24,8 +24,8 @@ function initialize() {
   laPalmaData.routes.forEach(route => selectedRoutes.set(route.id, "in"));
   
   // create the filters and populate the routes grid
-  filterSet = new FilterSet();
-  filterSet.populateFilterPanel();
+  // filterSet = new FilterSet();
+  // filterSet.populateFilterPanel();
   populateRoutesGrid();
 
   // add event listeners
@@ -219,11 +219,10 @@ function populateRoutesGrid() {
   laPalmaData.routes.forEach( route => {
     // number of route varients, if any
     let routeVarients = "";
-    let routeVarientCount = route.variants.length;
-    if (routeVarientCount > 0) {
+    if (route.hasVariants) {
       routeVarients = `
         <div class="route-varients">
-          ${routeVarientCount} variation${routeVarientCount > 1 ? "s" : ""}
+          ${route.variantsCount} variation${route.variantsCount > 1 ? "s" : ""}
         </div>`;
     } else {
       routeVarients = `<div></div>`;
@@ -234,7 +233,7 @@ function populateRoutesGrid() {
     if (route.isStarred) {
       starred = `
         <div class="starred">
-          <img src="img/icons/${route.starredAttributes.icon}" alt="" />
+          <img src="img/icons/${route.starredIcon}" alt="" />
         </div>`;
     } else {
       starred = `<div></div>`;
@@ -266,16 +265,16 @@ function populateRoutesGrid() {
               ${route.name}
             </div>
             <div class="description">
-              ${route.shortDescription}
+              ${route.short_description}
             </div>
             <div class="metrics">
               <div class="route-metric">
-                <p>${route.durationAttributes.text}</p>
-                <img src="img/icons/${route.durationAttributes.icon}" alt="" />
+                <p>${route.duration.label}</p>
+                <img src="img/icons/${route.duration.icon}" alt="" />
               </div>
               <div class="route-metric">
-                <p>${route.effortAttributes.text}</p>
-                <img src="img/icons/${route.effortAttributes.icon}" alt="" />
+                <p>${route.effort.label}</p>
+                <img src="img/icons/${route.effort.icon}" alt="" />
               </div>
             </div>
           </div>
