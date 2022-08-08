@@ -60,11 +60,10 @@ async function getAllUrls(dataSources) {
 // once the data is loaded the callback function is called
 async function loadDataThen(afterDataIsLoaded) {
   // see if we need to reload data or can use stored version
-  let previousVersionDate = localStorage.getItem("dataVersionDate");
+  let previousVersionDate = new Date(localStorage.getItem("dataVersionDate"));
   let currentVersionDate = new Date();
   let dataOutOfDate = 
-    previousVersionDate == null || 
-    previousVersionDate == undefined || 
+    previousVersionDate == NaN ||
     !datesAreOnSameDay(previousVersionDate, currentVersionDate);
 
   if (forceReload || dataOutOfDate) {
@@ -76,7 +75,7 @@ async function loadDataThen(afterDataIsLoaded) {
     trailStatuses = await responses[1];
 
     // augment the raw data with lookups & derrived data then save it locally
-    AugmentData();
+    augmentData();
     localStorage.setItem("laPalmaData", JSON.stringify(laPalmaData));
     localStorage.setItem("dataVersionDate", currentVersionDate.toDateString());
     localStorage.setItem("trailStatuses", JSON.stringify(trailStatuses));
@@ -107,13 +106,15 @@ function updateFavourites() {
 
 // perform lookups and checks and add these as additional
 // fields to route elements make working with the data easier
-function AugmentData()
+function augmentData()
 {
   laPalmaData.routes.forEach(r => {
     r.hasVariants = "variants" in r;
     r.variantsCount = r.hasVariants ? r.variants.length : 0;
 
-    r.isStarred = r.attributes.find(a => a.feature_name == "starred") == true;
+    r.isStarred = r.attributes.find(elt => elt.feature_name == "starred");
+    r.starredIcon = laPalmaData.categories.find(elt =>
+        elt.name == "starred").icon;
 
     let d = r.attributes.find(elt => elt.type == "duration");
     r.duration = laPalmaData.categories.find(elt => 
