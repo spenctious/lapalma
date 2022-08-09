@@ -40,11 +40,11 @@ try
 	$Cmd.Parameters.Add($OutParameter) | Out-Null
 
 	# Execute the procedure
-	$Result = $Cmd.ExecuteNonQuery()
+	$Cmd.ExecuteNonQuery()
 	$LaPalmaData = $Cmd.Parameters[$OutputParameter]
 	
 	# Check there is actually data returned before overwriting the output JSON file
-	if ($LaPalmaData.Value -eq $null)
+	if ($null -eq $LaPalmaData.Value)
 	{
 		throw 'No data returned!'
 	}
