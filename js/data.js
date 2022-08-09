@@ -108,29 +108,56 @@ function updateFavourites() {
 // fields to route elements make working with the data easier
 function augmentData()
 {
+  // locations
+  const ZOOM_LEVEL = 16;
+  laPalmaData.locations.forEach(l => {
+    l.google_map_link = 
+      `https://www.google.com/maps/place/${l.lat},${l.long}/@${l.lat},${l.long}/data=!3m1!1e3`;
+    l.osm_map_link = 
+      `https://www.openstreetmap.org/?mlat=${l.lat}&mlon=${l.long}#map=${ZOOM_LEVEL}/${l.lat}/${l.long}`;
+  });
+
+  // routes
   laPalmaData.routes.forEach(r => {
+    // variants
     r.hasVariants = "variants" in r;
     r.variantsCount = r.hasVariants ? r.variants.length : 0;
 
+    // starred
     r.isStarred = r.attributes.find(elt => elt.feature_name == "starred");
     r.starredIcon = laPalmaData.categories.find(elt =>
         elt.name == "starred").icon;
 
+    // transport accessibility
+    r.isAccessibleByBus = r.attributes.find(elt => elt.type == "accessBus");
+    r.accessBus = laPalmaData.categories.find(elt => elt.name = "accessBus");
+    r.isAccessibleByCar = r.attributes.find(elt => elt.type == "accessCar");
+    r.accessCar = laPalmaData.categories.find(elt => elt.name = "accesscar");
+
+    // duration
     let d = r.attributes.find(elt => elt.type == "duration");
     r.duration = laPalmaData.categories.find(elt => 
       elt.type == "duration" && 
       elt.name == d.feature_name);
 
+    // effort
     let e = r.attributes.find(elt => elt.type == "effort");
     r.effort = laPalmaData.categories.find(elt => 
       elt.type == "effort" &&
       elt.name == e.feature_name);
 
+    // locations
     r.start = laPalmaData.locations.find(elt => elt.name == r.start_name);
-    r.finish = laPalmaData.locations.find(elt => elt.name == r.finish_name);
+    r.finish = laPalmaData.locations.find(elt =>  elt.name == r.finish_name);
 
+    // tests for optional content
     r.hasPoi = r.poi_names[0] != "";
-
+    r.hasVariants = "variants" in r;
     r.hasDangers = "dangers" in r;
+
+    // attribute categories (arrays)
+    r.warnings = r.attributes.filter(elt => elt.type = "warning");
+    r.terrains = r.attributes.filter(elt => elt.type = "terrain");
+    r.interests = r.attributes.filter(elt => elt.type = "interest");
   });
 }
