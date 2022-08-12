@@ -20,7 +20,7 @@ const dataSources = [
 ];
 
 // For diagnostics and development
-var forceReload = false;
+var forceReload = true;
 var forceReloadFavourites = false;
 
 // URL paramater names - defining here ensures consistency
@@ -108,12 +108,31 @@ function updateFavourites() {
 // fields to route elements make working with the data easier
 function augmentData()
 {
+  // global attributes
+  laPalmaData.dangerAttributes = laPalmaData.categories.find(elt => elt.name == "danger");
+  laPalmaData.accessBusAttributes = laPalmaData.categories.find(elt => elt.name == "accessBus");
+  laPalmaData.accessCarAttributes = laPalmaData.categories.find(elt => elt.name == "accessCar");
+  laPalmaData.waymarkedAttributes = laPalmaData.categories.find(elt => elt.name == "waymarked");
+  laPalmaData.refreshmentsAttributes = laPalmaData.categories.find(elt => elt.name == "refreshments");
+
+  // poi
+  laPalmaData.poi.forEach(p => {
+    p.hasRelatedWalks = p.related_walks[0] != "";
+    p.hasTel = "tel" in p;
+    p.hasEmail = "email" in p;
+    p.hasWeb = ("web_name" in p) && ("web_address" in p);
+    p.hasEntryCost = "entry_cost" in p;
+    p.hasOpeningTimes = "opening_times" in p;
+
+    p.locationAttributes = laPalmaData.locations.find(elt => elt.name == p.location);
+  })
+
   // locations
   const ZOOM_LEVEL = 16;
   laPalmaData.locations.forEach(l => {
-    l.google_map_link = 
+    l.googleMapLink = 
       `https://www.google.com/maps/place/${l.lat},${l.long}/@${l.lat},${l.long}/data=!3m1!1e3`;
-    l.osm_map_link = 
+    l.osmMapLink = 
       `https://www.openstreetmap.org/?mlat=${l.lat}&mlon=${l.long}#map=${ZOOM_LEVEL}/${l.lat}/${l.long}`;
   });
 
@@ -124,40 +143,74 @@ function augmentData()
     r.variantsCount = r.hasVariants ? r.variants.length : 0;
 
     // starred
-    r.isStarred = r.attributes.find(elt => elt.feature_name == "starred");
+    r.isStarred = r.attributes.find(elt => elt.feature_name == "starred") != undefined;
     r.starredIcon = laPalmaData.categories.find(elt =>
         elt.name == "starred").icon;
 
-    // transport accessibility
-    r.isAccessibleByBus = r.attributes.find(elt => elt.type == "accessBus");
-    r.accessBus = laPalmaData.categories.find(elt => elt.name = "accessBus");
-    r.isAccessibleByCar = r.attributes.find(elt => elt.type == "accessCar");
-    r.accessCar = laPalmaData.categories.find(elt => elt.name = "accesscar");
+    // waymarked
+    r.isCompletelyWaymarked = r.attributes.find(elt => elt.feature_name == "waymarked") != undefined;
 
-    // duration
+    // transport accessibility
+    r.isAccessibleByBus = r.attributes.find(elt => elt.feature_name == "accessBus") != undefined;
+    r.isAccessibleByCar = r.attributes.find(elt => elt.feature_name == "accessCar") != undefined;
+
+    // walk type attributes
+    let w = r.attributes.find(elt => elt.type == "walkType");
+    r.walkTypeAttributes = laPalmaData.categories.find(elt => 
+      elt.type == "walkType" && 
+      elt.name == w.feature_name);
+
+    // duration attributes
     let d = r.attributes.find(elt => elt.type == "duration");
-    r.duration = laPalmaData.categories.find(elt => 
+    r.durationAttributes = laPalmaData.categories.find(elt => 
       elt.type == "duration" && 
       elt.name == d.feature_name);
 
-    // effort
+    // effort attributes
     let e = r.attributes.find(elt => elt.type == "effort");
-    r.effort = laPalmaData.categories.find(elt => 
+    r.effortAttributes = laPalmaData.categories.find(elt => 
       elt.type == "effort" &&
       elt.name == e.feature_name);
-
+  
     // locations
-    r.start = laPalmaData.locations.find(elt => elt.name == r.start_name);
-    r.finish = laPalmaData.locations.find(elt =>  elt.name == r.finish_name);
+    r.startAttributes = laPalmaData.locations.find(elt => elt.name == r.start_name);
+    r.finishAttributes = laPalmaData.locations.find(elt =>  elt.name == r.finish_name);
 
     // tests for optional content
-    r.hasPoi = r.poi_names[0] != "";
+    r.hasPoi = "poi" in r;
     r.hasVariants = "variants" in r;
     r.hasDangers = "dangers" in r;
 
     // attribute categories (arrays)
-    r.warnings = r.attributes.filter(elt => elt.type = "warning");
-    r.terrains = r.attributes.filter(elt => elt.type = "terrain");
-    r.interests = r.attributes.filter(elt => elt.type = "interest");
+    r.warnings = r.attributes.filter(elt => elt.type == "warning");
+    r.terrains = r.attributes.filter(elt => elt.type == "terrain");
+    r.interests = r.attributes.filter(elt => elt.type == "interest");
+
+    // variants
+    if (r.hasVariants) {
+      r.variants.forEach( v => {
+        // tests for optional content
+        v.hasRouteFile = "route_file" in v;
+
+        // transport accessibility attributes
+        v.accessBusAttributes = laPalmaData.categories.find(elt => elt.name == "accessBus") != undefined;
+        v.accessCarAttributes = laPalmaData.categories.find(elt => elt.name == "accessCar") != undefined;
+
+        // walk type attributes
+        v.walkTypeAttributes = laPalmaData.categories.find(elt => 
+          elt.type == "walkType" && 
+          elt.name == v.walk_type);
+        
+        // duration attributes
+        v.durationAttributes = laPalmaData.categories.find(elt => 
+          elt.type == "duration" && 
+          elt.name == v.duration);
+
+        // effort attributes
+        v.effortAttributes = laPalmaData.categories.find(elt => 
+          elt.type == "effort" &&
+          elt.name == v.effort);
+          })
+    }
   });
 }
