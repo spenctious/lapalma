@@ -265,13 +265,13 @@ function populateFilterPanel() {
   let gridContent = "";
 
   // note: the data binding on the label stops the click event for the checkbox firing twice
-  laPalmaData.categories.poiCategories.forEach(category => {
+  laPalmaData.tags.forEach(tag => {
     gridContent += `
       <label class="container" data-bind="stopBubble:parentAction">
-        <span class="poi-tag">${category.id}</span>
-        <input id="poi-category-${category.id}" type="checkbox">
+        <span class="poi-tag">${tag.tag}</span>
+        <input id="poi-category-${tag.tag}" type="checkbox">
         <span class="checkmark"></span>
-        <p class="poi-category-description">${category.description}</p>
+        <p class="poi-category-description">${tag.description}</p>
       </label>`;
   });
 
@@ -299,11 +299,11 @@ function populatePoiGrid() {
     gridContent += `
       <div id="poi${poi.id}" class="item">
         <div class="item-pic">
-          <img src="img/poi${poi.id}-250x187.webp" width="250" height="187" alt="" />
+          <img src="img/${poi.thumbnail.file_name}.webp" width=${poi.thumbnail.width} height=${poi.thumbnail.height} alt="" />
         </div>
         <div class="item-detail">
           <h3 class="title">
-            ${poi.name}
+            ${poi.short_name}
           </h3>
           ${getTagsHtml(poi.tags)}
           <div class="button-set">

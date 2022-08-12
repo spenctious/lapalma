@@ -40,7 +40,7 @@ function initialize() {
 
   // get the data for the specific route and update the header
   routeId = paramRoute;
-  route = laPalmaData.routes.get(routeId);
+  route = laPalmaData.routes.find(r => r.id == routeId);
   document.getElementById("header-title").innerHTML = "Walk " + routeId;
 
   // get the list of routes selected by the current filters and
@@ -210,8 +210,8 @@ function populateBasics() {
   summaryContent += getMetricsHtml(route.durationAttributes);
   summaryContent += getMetricsHtml(route.effortAttributes);
   summaryContent += getSummaryIconHtml(route.walkTypeAttributes.icon);
-  if (route.isAccessibleByCar) summaryContent += getSummaryIconHtml(route.accessCarAttributes.icon);
-  if (route.isAccessibleByBus) summaryContent += getSummaryIconHtml(route.accessBusAttributes.icon);
+  if (route.isAccessibleByCar) summaryContent += getSummaryIconHtml(laPalmaData.accessCarAttributes.icon);
+  if (route.isAccessibleByBus) summaryContent += getSummaryIconHtml(laPalmaData.accessBusAttributes.icon);
   document.getElementById("basics-summary").innerHTML = summaryContent;
 
   // map
@@ -240,23 +240,23 @@ function populateBasics() {
   basicsContent += getMetricsHtml(route.effortAttributes);
   basicsContent += `<div class="item-description"><h4>Effort</h4>${route.effortAttributes.description}</div>`;
   basicsContent += getBasicFeatureHtml(route.walkTypeAttributes, route.walkTypeAttributes.description);
-  basicsContent += getBasicFeatureHtml(route.refreshmentsAttributes, route.refreshments);
+  basicsContent += getBasicFeatureHtml(laPalmaData.refreshmentsAttributes, route.refreshments);
   document.getElementById("basics-grid").innerHTML = basicsContent;
 
   // access
   let accessContent = "";
-  if (route.isAccessibleByCar) accessContent += getSimpleAttributeHtml(route.accessCarAttributes);
-  if (route.isAccessibleByBus) accessContent += getSimpleAttributeHtml(route.accessBusAttributes);
-  if (route.start == route.end) {
-    accessContent += getLocationHtml(route.start, route.startAttributes, "Start<br/>& End");
+  if (route.isAccessibleByCar) accessContent += getSimpleAttributeHtml(laPalmaData.accessCarAttributes);
+  if (route.isAccessibleByBus) accessContent += getSimpleAttributeHtml(laPalmaData.accessBusAttributes);
+  if (route.start_name == route.finish_name) {
+    accessContent += getLocationHtml(route.start_name, route.startAttributes, "Start<br/>& End");
   } else {
-    accessContent += getLocationHtml(route.start, route.startAttributes, "Start");
-    accessContent += getLocationHtml(route.end, route.endAttributes, "End");
+    accessContent += getLocationHtml(route.start_name, route.startAttributes, "Start");
+    accessContent += getLocationHtml(route.finish_name, route.finishAttributes, "End");
   }
   document.getElementById("access-grid").innerHTML = accessContent;
 
   // trail status - waymarked and official trail statuses for each included path
-  let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(route.waymarkedAttributes) : "";
+  let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(laPalmaData.waymarkedAttributes) : "";
   let trailStatusContent = "";
   if (route.hasPaths) {
     route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
@@ -282,7 +282,7 @@ function populateBasics() {
 
   // terrain
   let terrainContent = "";
-  route.terrain.forEach(attributes => {
+  route.terrains.forEach(attributes => {
     terrainContent += getFeatureHtml(attributes);
   })
   document.getElementById("terrain-grid").innerHTML = terrainContent;
@@ -302,26 +302,26 @@ function populateFeaturesAndWarnings() {
     <div class="chevron">
       <img src="img/icons/chevron-down.svg" class="icon-img" alt="" />
     </div>`;
-  summaryContent += getSummaryIconsContent(route.interest);
+  summaryContent += getSummaryIconsContent(route.interests);
   summaryContent += getSummaryIconsContent(route.warnings);
   if (route.hasDangers) {
-    summaryContent += getSummaryIconHtml(laPalmaData.categories.danger.icon);
+    summaryContent += getSummaryIconHtml(laPalmaData.dangerAttributes.icon);
   }
   document.getElementById("features-and-warnings-summary").innerHTML = summaryContent;
 
   // features
-  let featuresContent = route.interest.size == 0 ? 
+  let featuresContent = route.interests.size == 0 ? 
   `<div></div><div class="item-description">No singificant features</div>` : "";
-  route.interest.forEach((featureAttributes, featureName) => {
-    featuresContent += getFeatureHtml(featureAttributes, getAdditionalContent(featureName));
-  });
+  route.interests.forEach(interest => {
+    featuresContent += getFeatureHtml(interest, getAdditionalContent(interest.feature_name));
+  })
   document.getElementById("features-grid").innerHTML = featuresContent;
 
   // warnings
   let warningsContent = route.warnings.size == 0 ? 
     `<div></div><div class="item-description">No reported warnings</div>` : "";
-  route.warnings.forEach((warningAttributes, warningName) => {
-    warningsContent += getFeatureHtml(warningAttributes, getAdditionalContent(warningName));
+  route.warnings.forEach(warning => {
+    warningsContent += getFeatureHtml(warning, getAdditionalContent(warning.feature_name));
   });
   document.getElementById("warnings-grid").innerHTML = warningsContent;
 
@@ -331,9 +331,9 @@ function populateFeaturesAndWarnings() {
   if (route.hasDangers) {
     route.dangers.forEach(danger => {
       dangersList += `
-        <p>${getStrongHtml(danger.strength == "strong", laPalmaData.categories.danger.strong)}</p>
-        <h4>${danger.name}</h4>
-        <p>${danger.description}</p>`;
+        <p>${getStrongHtml(danger.is_strong, laPalmaData.dangerAttributes.strong_tag)}</p>
+        <h4>${danger.danger}</h4>
+        <p>${danger.details}</p>`;
     });
   }
   else {
@@ -341,7 +341,7 @@ function populateFeaturesAndWarnings() {
   }
   dangersContent += `
     <div class="icon">
-      <img src="img/icons/${laPalmaData.categories.danger.icon}" class="icon-img" alt="" />
+      <img src="img/icons/${laPalmaData.dangerAttributes.icon}" class="icon-img" alt="" />
     </div>
     <div class="item-description">
       ${dangersList}
@@ -358,7 +358,7 @@ function populateRouteDetail() {
   // route title with starred and favourite icons
   let starredIcon = "";
   if (route.isStarred) starredIcon =
-    `<span class="starred"><img src="img/icons/${route.starredAttributes.icon}" alt="" /></span>`;
+    `<span class="starred"><img src="img/icons/${route.starredIcon}" alt="" /></span>`;
   let favouriteIcon = favourites.has(route.id) ? "heart-full-black.svg" : "heart-empty.svg";
   let titleContent = `
     <div class="title-id">${route.id}</div>
@@ -374,7 +374,7 @@ function populateRouteDetail() {
     <h3>Description</h3>
     <p>${route.description}</p>
     <h3>Route downloads</h3>
-    <div class="button-box">${getDownloadButtons(route.routeFile, route.id)}</div>`;
+    <div class="button-box">${getDownloadButtons(route.route_file, route.id)}</div>`;
 
   // variants (if any)
   let variantsContent = `<h3>Walk variations</h3>`;
@@ -398,7 +398,7 @@ function populateRouteImages() {
   route.images.forEach(image => {
     imagesContent += `
     <div class="image-container">
-        <img class="picture" src="img/route${route.id}-${image.id}-h525.webp" width="${image.width}" height="${image.height}" alt="" />
+        <img class="picture" src="img/${image.file_name}.webp" width="${image.width}" height="${image.height}" alt="" />
         <div class="caption">${image.caption}</div>
       </div>`;
   });
@@ -433,20 +433,21 @@ function getVariantContent(variant) {
 
   // download content - only some variants will have additional files associated with them
   // assumes route files are named LP<2 digits><optional letter><space><name> 
-  let routeId = variant.routeFile.slice(2,5).trim();
-  let downloadContent = variant.hasRouteFile ? 
-    `<div class="button-box">${getDownloadButtons(variant.routeFile, routeId)}</div>` : "";
+  let downloadContent = "";
+  if (variant.hasRouteFile) {
+    let routeId = variant.route_file.slice(2,5).trim();
+    downloadContent = `<div class="button-box">${getDownloadButtons(variant.route_file, routeId)}</div>`;
+  }
 
   // directions - expand format to HTML
   // square braces enclose route ids, normal brackets enclose waypoint information
   let directions = "";
-  if (variant.hasRouteDirections) {
-    directions = `<p class="directions">` + variant.routeDirections + `</p>`;
-    directions = directions.replaceAll("[", `<span class="route-id">Route `);
-    directions = directions.replaceAll("]", `</span>`);
-    directions = directions.replaceAll("(", `<span class="route-waypoints"> waypoints `);
-    directions = directions.replaceAll(")", `</span>`);
-  }
+  directions = `<p class="directions">` + variant.directions + `</p>`;
+  directions = directions.replaceAll("[", `<span class="route-id">Route `);
+  directions = directions.replaceAll("]", `</span>`);
+  directions = directions.replaceAll("(", `<span class="route-waypoints"> waypoints `);
+  directions = directions.replaceAll(")", `</span>`);
+  directions = directions.replaceAll("#", `<br/>`);
 
   return `
     <div class="variant">
@@ -484,9 +485,13 @@ function getDownloadButtons(fileName, routeId) {
 
 
 // list of icons
-function getSummaryIconsContent(itemsMap) {
+function getSummaryIconsContent(itemsArray) {
   let iconsContent = "";
-  itemsMap.forEach(attributes => iconsContent += getSummaryIconHtml(attributes.icon));
+  itemsArray.forEach(item => {
+    let category = laPalmaData.categories.find(c => c.name == item.feature_name);
+    iconsContent += getSummaryIconHtml(category.icon);
+  });
+
   return iconsContent;
 }
 
@@ -542,9 +547,9 @@ function getTrailStatusHtml(trailStatus, trailName) {
 function getFeatureHtml(feature, additionalContent = "") {
   return getAttributeHtml(
     feature.icon, 
-    feature.text, 
-    feature.noteModifiedDescription, 
-    getStrongHtml(feature.isStrong, feature.strongTag),
+    feature.label, 
+    feature.description, 
+    getStrongHtml(feature.is_strong, feature.strong_tag),
     additionalContent);
 }
 
@@ -559,8 +564,8 @@ function getAdditionalContent(featureName) {
     // list of links that open up a modal for the POI
     case "poi":
       if (route.hasPoi) {
-        route.poi.forEach((placeOfInterest, id) => {
-          additionalContent += `<p class="text-button" id="poiLink${id}">${placeOfInterest.name}</p>`;
+        route.poi.forEach(poi => {
+          additionalContent += `<p class="text-button" id="poiLink${poi.id}">${poi.short_name}</p>`;
         });
       }
       break;
@@ -626,13 +631,12 @@ function getLocationHtml(locationName, locationAttributes, label) {
       busNotes = locationAttributes.bus.notes;
     }
 
-    let plural = locationAttributes.bus.routes.length > 1 ? "s" : "";
+    let plural = locationAttributes.bus.routes.includes(',') ? "s" : "";
     busHtml = `
-      <span class="text-button"><a href="transport.html#routes">
-        ${locationAttributes.bus.stop}, route${plural} `;
-    locationAttributes.bus.routes.forEach(busRoute => busHtml += `${busRoute}, `);
-    busHtml = busHtml.slice(0, -2); // remove trailing comma and space
-    busHtml += `</a></span>`;
+      <span class="text-button">
+        <a href="transport.html#routes">
+        ${locationAttributes.bus.stop}, route${plural} ${locationAttributes.bus.routes}
+      </a></span>`;
   }
   return `
     <div>
@@ -643,7 +647,11 @@ function getLocationHtml(locationName, locationAttributes, label) {
     <div class="item-description">
       <h4>${locationName}</h4>
       ${notesHtml}
-      ${getLocationLinks(locationAttributes.coordinates)}
+      <p class="map-links">
+        <a href=${locationAttributes.googleMapLink} target="_blank">Satellite</a>
+        &ensp;
+        <a href=${locationAttributes.osmMapLink} target="_blank">Map</a>      
+      </p>
       <p><strong>Parking:</strong> ${carHtml}</p>
       ${taxiHtml}
       <p><strong>Bus:</strong> ${busHtml}</p>

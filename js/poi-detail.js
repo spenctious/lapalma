@@ -110,14 +110,14 @@ function getFullPoiDetails(poi) {
     : "";
   let web = poi.hasWeb ? 
     `<tr><td>Web:</td><td>
-    <a href="${poi.web.link}" target="_blank">${poi.web.name}</a>
+    <a href="${poi.web_address}" target="_blank">${poi.web_name}</a>
     </td></tr>` 
     : "";
-  let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entryCost}</td></tr>` : "";
-  let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.openingTimes) : "";
+  let entryCost = poi.hasEntryCost ? `<tr><td>Cost:</td><td>${poi.entry_cost}</td></tr>` : "";
+  let openingTimes = poi.hasOpeningTimes ? getOpeningTimesHtml(poi.opening_times) : "";
   let relatedRoutes = showRelatedWalks && poi.hasRelatedWalks ? 
     `<div class="button-box">${getRelatedRoutesHtml(poi)}</div>` : "";
-  let disableNavClass = poiCollection.length == 1 ? "disable-nav" : "";
+  let disableNavClass = poi.length == 1 ? "disable-nav" : "";
 
   // build html content
   return `
@@ -126,9 +126,9 @@ function getFullPoiDetails(poi) {
       Point of interest
     </div>
     <div class="modal-content-wrapper">
-      <div class="poi-title">${poi.fullName}</div>
+      <div class="poi-title">${poi.full_name}</div>
       <div class="poi-detail-pic">
-        <img src="img/poi${poi.id}-400x300.webp" width="400" height="300" alt="" />
+        <img src="img/${poi.main_image.file_name}.webp" width=${poi.main_image.width} height=${poi.main_image.height} alt="" />
       </div>
       <div class="tags">
         ${getTagsHtml(poi.tags)}
@@ -141,8 +141,12 @@ function getFullPoiDetails(poi) {
           <tr>
             <td>Location:</td>
             <td>
-              ${poi.locationDescription}
-              ${getLocationLinks(poi.locationAttributes.coordinates)}
+              ${poi.location_description}
+              <p class="map-links">
+                <a href=${poi.locationAttributes.googleMapLink} target="_blank">Satellite</a>
+                &ensp;
+                <a href=${poi.locationAttributes.osmMapLink} target="_blank">Map</a>      
+              </p>
             </td>
           </tr>
           ${tel}
@@ -167,26 +171,6 @@ function getFullPoiDetails(poi) {
 /************************* helper functions ************************/
 
 
-// creates external links to Google satellite view and Open StreetMap standard views
-// both links open in a new tab
-function getLocationLinks(coords) {
-  // extract lat & long from comma-seperated data
-  let location = coords.split(', ');
-  let lat = location[0];
-  let long = location[1];
-
-  const ZOOM_LEVEL = 16;
-
-  return `
-    <p class="map-links">
-      <a href="https://www.google.com/maps/place/${lat},${long}/@${lat},${long}/data=!3m1!1e3" target="_blank">Satellite</a>
-      &ensp;
-      <a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${long}#map=${ZOOM_LEVEL}/${lat}/${long}" target="_blank">Map</a>      
-    </p>
-    `;
-}
-
-
 // returns set of category tags associated with the POI
 function getTagsHtml(tags) {
   let content = "";
@@ -205,8 +189,8 @@ function getOpeningTimesHtml(openingTimes) {
   openingTimes.forEach(entry => {
     content += `
     <tr>
-      <td>${entry.when}</td>
-      <td>${entry.times}</td>
+      <td>${entry.time_period}</td>
+      <td>${entry.hours}</td>
     </tr>`;
   })
   content += `</table>`;
@@ -217,12 +201,12 @@ function getOpeningTimesHtml(openingTimes) {
 // returns a button with a link to the route-details page with all the walks
 // that include the POI in the collection
 function getRelatedRoutesHtml(poi) {
-  let collectionUrlParameter = `${URL_PARAM_COLLECTION}=${poi.relatedWalks}`; // comma-seperated list of ids
+  let collectionUrlParameter = `${URL_PARAM_COLLECTION}=${poi.related_walks}`; // comma-seperated list of ids
   return `
   <div class="button">
     <a id="related${poi.id}"
-      href="routes-detail.html?${URL_PARAM_ROUTE}=${poi.relatedWalks[0]}&${collectionUrlParameter}&${URL_PARAM_STEPS}=-1">
-      ${poi.relatedWalks.length} Related walk${poi.relatedWalks.length > 1 ? "s" : ""}
+      href="routes-detail.html?${URL_PARAM_ROUTE}=${poi.related_walks[0]}&${collectionUrlParameter}&${URL_PARAM_STEPS}=-1">
+      ${poi.related_walks.length} Related walk${poi.related_walks.length > 1 ? "s" : ""}
     </a>
   </div>`;
 }
