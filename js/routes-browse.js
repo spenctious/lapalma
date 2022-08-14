@@ -532,11 +532,11 @@ class IncludeFilter extends Filter {
 
 class ExcludeFilter extends Filter {
 
-  #anyStrength;
+  #excludeOnlyStrong;
 
-  constructor(name, anyStrength) {
+  constructor(name, excludeOnlyStrong) {
     super(name, "excluded");
-    this.#anyStrength = anyStrength;
+    this.#excludeOnlyStrong = excludeOnlyStrong;
   }
 
 
@@ -556,7 +556,10 @@ class ExcludeFilter extends Filter {
   // - the specified attribute is present but not the specified strength
   apply(route) {
     let category = route.attributes.find(c => c.feature_name == this.category.name);
-    return !(category != undefined && (this.#anyStrength || category.isStrong));
+
+    if (category == undefined) return true;
+    if (this.#excludeOnlyStrong) return !category.is_strong;
+    return false;
   }
 }
 
@@ -766,11 +769,11 @@ class FilterSet {
     this.#endCategory();
 
     this.#startCategory("Warnings");
-    this.#addCategoryFilter(new ExcludeFilter("gps", true));       // any
-    this.#addCategoryFilter(new ExcludeFilter("steep", false));    // only strong
-    this.#addCategoryFilter(new ExcludeFilter("slippery", false)); // only strong
-    this.#addCategoryFilter(new ExcludeFilter("vertigo", false));  // only strong
-    this.#addCategoryFilter(new ExcludeFilter("weather", true));   // any
+    this.#addCategoryFilter(new ExcludeFilter("gps", false));     // any
+    this.#addCategoryFilter(new ExcludeFilter("steep", true));    // only strong
+    this.#addCategoryFilter(new ExcludeFilter("slippery", true)); // only strong
+    this.#addCategoryFilter(new ExcludeFilter("vertigo", true));  // only strong
+    this.#addCategoryFilter(new ExcludeFilter("weather", false)); // any
 
     this.#addLocationFilter(new LocationFilter());
     this.#endCategory();
