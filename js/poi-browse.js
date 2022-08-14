@@ -112,8 +112,8 @@ function filterClickHandler(event) {
   // text button to clear all filters
   if (elementId == "clear-all-filters") {
     activeFilters.clear();
-    laPalmaData.categories.poiCategories.forEach(category => {
-      document.getElementById("poi-category-" + category.id).checked = false;
+    laPalmaData.tags.forEach(category => {
+      document.getElementById("poi-category-" + category.tag).checked = false;
     })
     filterPoi();
     return;
