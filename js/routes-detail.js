@@ -62,7 +62,7 @@ function initialize() {
 
   // initialize POI detail modal
   let allPoi = new Array();
-  route.poi.forEach( poi => allPoi.push(poi.id));
+  if (route.hasPoi) route.poi.forEach(poi => allPoi.push(poi.id));
   initializePoiModal(allPoi);
 
   // populate the various components with the current route data
