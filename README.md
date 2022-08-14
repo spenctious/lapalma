@@ -1,4 +1,4 @@
-# lapalma
+# La Palma for Walkers - database version
 A walking guide to the Canary Island of La Palma
 
 ## Database integration
