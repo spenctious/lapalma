@@ -1,84 +1,332 @@
-[
-  [ "GR 130 Etapa 1", "open" ],
-  [ "GR 130 Etapa 2", "open" ],
-  [ "GR 130 Etapa 3", "open" ],
-  [ "GR 130 Etapa 4", "open" ],
-  [ "GR 130 Etapa 5", "open" ],
-  [ "GR 130 Etapa 6", "closed" ],
-  [ "GR 130 Etapa 7", "open" ],
-  [ "GR 130 Etapa 8", "open" ],
-  [ "GR 131 Etapa 1", "open" ],
-  [ "GR 131 Etapa 2", "unknown" ],
-  [ "GR 131 Etapa 3", "unknown" ],
-  [ "PR LP 01", "open" ],
-  [ "PR LP 01.1", "unknown" ],
-  [ "PR LP 02", "open" ],
-  [ "PR LP 02.1", "closed" ],
-  [ "PR LP 02.2", "open" ],
-  [ "PR LP 02.3", "closed" ],
-  [ "PR LP 03", "open" ],
-  [ "PR LP 03.1", "open" ],
-  [ "PR LP 03.2", "open" ],
-  [ "PR LP 04", "open" ],
-  [ "PR LP 04.1", "open" ],
-  [ "PR LP 05", "open" ],
-  [ "PR LP 05.1", "open" ],
-  [ "PR LP 06", "unknown" ],
-  [ "PR LP 07", "open" ],
-  [ "PR LP 07.1", "open" ],
-  [ "PR LP 08", "open" ],
-  [ "PR LP 09", "open" ],
-  [ "PR LP 09.1", "open" ],
-  [ "PR LP 09.2", "open" ],
-  [ "PR LP 09.3", "open" ],
-  [ "PR LP 10", "open" ],
-  [ "PR LP 11", "open" ],
-  [ "PR LP 11.1", "open" ],
-  [ "PR LP 11.2", "open" ],
-  [ "PR LP 12", "open" ],
-  [ "PR LP 12.1", "open" ],
-  [ "PR LP 12.2", "open" ],
-  [ "PR LP 13", "closed" ],
-  [ "PR LP 13.1", "closed" ],
-  [ "PR LP 13.3", "open" ],
-  [ "PR LP 14", "closed" ],
-  [ "PR LP 14.1", "closed" ],
-  [ "PR LP 15", "closed" ],
-  [ "PR LP 16", "closed" ],
-  [ "PR LP 16.1", "open" ],
-  [ "PR LP 17", "closed" ],
-  [ "PR LP 18", "closed" ],
-  [ "PR LP 18.1", "open" ],
-  [ "PR LP 18.2", "open" ],
-  [ "PR LP 19", "open" ],
-  [ "PR LP 20", "unknown" ],
-  [ "SL BB 131", "open" ],
-  [ "SL BB 132", "closed" ],
-  [ "SL BL 40", "open" ],
-  [ "SL BL 41", "open" ],
-  [ "SL EP 100", "closed" ],
-  [ "SL EP 101", "closed" ],
-  [ "SL EP 103", "closed" ],
-  [ "SL EP 104", "closed" ],
-  [ "SL EP 105", "closed" ],
-  [ "SL EP 107", "closed" ],
-  [ "SL FU 110", "closed" ],
-  [ "SL FU 111", "closed" ],
-  [ "SL FU 112", "open" ],
-  [ "SL PL 20", "open" ],
-  [ "SL SC 14", "open" ],
-  [ "SL TJ 70", "open" ],
-  [ "SL TJ 71", "open" ],
-  [ "SL VG 51", "open" ],
-  [ "SL VG 55", "open" ],
-  [ "SL VM 122", "closed" ],
-  [ "SL VM 123", "open" ],
-  [ "SL VM 124", "open" ],
-  [ "SL VM 125", "closed" ],
-  [ "SL VM 126", "open" ],
-  [ "SL PG 60", "open" ],
-  [ "SL PG 61", "open" ],
-  [ "SL PG 62", "open" ],
-  [ "SL PG 63", "open" ],
-  [ "SL PG 64", "open" ]  
-]
+{
+  "lastScraped": "2022-08-17T21:43:49.0930547+01:00",
+  "trails": [
+    {
+      "name": "GR 130 Etapa 1",
+      "status": "Open"
+    },
+    {
+      "name": "GR 130 Etapa 2",
+      "status": "Open"
+    },
+    {
+      "name": "GR 130 Etapa 3",
+      "status": "Open"
+    },
+    {
+      "name": "GR 130 Etapa 4",
+      "status": "Open"
+    },
+    {
+      "name": "GR 130 Etapa 5",
+      "status": "Open"
+    },
+    {
+      "name": "GR 130 Etapa 6",
+      "status": "Partly open"
+    },
+    {
+      "name": "GR 130 Etapa 7",
+      "status": "Open"
+    },
+    {
+      "name": "GR 130 Etapa 8",
+      "status": "Open"
+    },
+    {
+      "name": "GR 131 Etapa 1",
+      "status": "Open"
+    },
+    {
+      "name": "GR 131 Etapa 2",
+      "status": "Open"
+    },
+    {
+      "name": "GR 131 Etapa 3",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 01",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 02",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 02.1",
+      "status": "Closed"
+    },
+    {
+      "name": "PR LP 02.2",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 02.3",
+      "status": "Closed"
+    },
+    {
+      "name": "PR LP 03",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 03.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 03.2",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 04",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 04.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 05",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 05.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 06",
+      "status": "Partly open"
+    },
+    {
+      "name": "PR LP 07",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 07.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 08",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 09",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 09.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 09.2",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 10",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 11",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 11.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 11.2",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 12",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 12.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 12.2",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 13",
+      "status": "Partly open"
+    },
+    {
+      "name": "PR LP 13.1",
+      "status": "Closed"
+    },
+    {
+      "name": "PR LP 13.3",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 14",
+      "status": "Partly open"
+    },
+    {
+      "name": "PR LP 14.1",
+      "status": "Closed"
+    },
+    {
+      "name": "PR LP 15",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 16",
+      "status": "Partly open"
+    },
+    {
+      "name": "PR LP 16.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 17",
+      "status": "Partly open"
+    },
+    {
+      "name": "PR LP 18",
+      "status": "Partly open"
+    },
+    {
+      "name": "PR LP 18.1",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 18.2",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 19",
+      "status": "Open"
+    },
+    {
+      "name": "PR LP 20",
+      "status": "Unknown"
+    },
+    {
+      "name": "SL BB 131",
+      "status": "Open"
+    },
+    {
+      "name": "SL BB 132",
+      "status": "Open"
+    },
+    {
+      "name": "SL BL 40",
+      "status": "Open"
+    },
+    {
+      "name": "SL BL 41",
+      "status": "Open"
+    },
+    {
+      "name": "SL EP 100",
+      "status": "Open"
+    },
+    {
+      "name": "SL EP 101",
+      "status": "Closed"
+    },
+    {
+      "name": "SL EP 103",
+      "status": "Closed"
+    },
+    {
+      "name": "SL EP 104",
+      "status": "Closed"
+    },
+    {
+      "name": "SL EP 105",
+      "status": "Closed"
+    },
+    {
+      "name": "SL EP 107",
+      "status": "Closed"
+    },
+    {
+      "name": "SL FU 110",
+      "status": "Open"
+    },
+    {
+      "name": "SL FU 111",
+      "status": "Open"
+    },
+    {
+      "name": "SL FU 112",
+      "status": "Open"
+    },
+    {
+      "name": "SL PL 20",
+      "status": "Open"
+    },
+    {
+      "name": "SL SC 14",
+      "status": "Open"
+    },
+    {
+      "name": "SL TJ 70",
+      "status": "Open"
+    },
+    {
+      "name": "SL TJ 71",
+      "status": "Open"
+    },
+    {
+      "name": "SL VG 51",
+      "status": "Open"
+    },
+    {
+      "name": "SL VG 55",
+      "status": "Open"
+    },
+    {
+      "name": "SL VM 122",
+      "status": "Open"
+    },
+    {
+      "name": "SL VM 123",
+      "status": "Open"
+    },
+    {
+      "name": "SL VM 124",
+      "status": "Open"
+    },
+    {
+      "name": "SL VM 125",
+      "status": "Open"
+    },
+    {
+      "name": "SL VM 126",
+      "status": "Open"
+    },
+    {
+      "name": "SL PG 60",
+      "status": "Open"
+    },
+    {
+      "name": "SL PG 61",
+      "status": "Open"
+    },
+    {
+      "name": "SL PG 62",
+      "status": "Open"
+    },
+    {
+      "name": "SL PG 63",
+      "status": "Open"
+    },
+    {
+      "name": "SL PG 64",
+      "status": "Open"
+    }
+  ],
+  "problems": [
+    {
+      "type": "Anomaly",
+      "errorMessage": "PR LP 20",
+      "detail": "Cerrado entre Las Goteras y Briestas."
+    }
+  ]
+}
