@@ -258,8 +258,8 @@ function populateBasics() {
   // trail status - waymarked and official trail statuses for each included path
   let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(laPalmaData.waymarkedAttributes) : "";
   let trailStatusContent = "";
-  if (route.hasPaths) {
-    route.paths.forEach((status, path) => trailStatusContent += getTrailStatusHtml(status, path));
+  if (route.hasTrails) {
+    route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
     trailStatusContent += `
         <p class="text-button">
           <a href="https://www.senderosdelapalma.es/en/footpaths/situation-of-the-footpaths/" target="_blank">
@@ -531,7 +531,9 @@ function getSummaryIconHtml(icon) {
 
 
 // trail status lines
-function getTrailStatusHtml(trailStatus, trailName) {
+function getTrailStatusHtml(trailName) {
+  let matchedTrail = trailStatuses.find(t => t[0] == trailName);
+  let trailStatus = matchedTrail == undefined ? "Unknown" : matchedTrail[1];
   return `
     <div class="trail-${trailStatus}">
       <p>
