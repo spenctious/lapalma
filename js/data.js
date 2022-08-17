@@ -177,6 +177,7 @@ function augmentData()
     r.finishAttributes = laPalmaData.locations.find(elt =>  elt.name == r.finish_name);
 
     // tests for optional content
+    r.hasTrails = r.trails[0] != "";
     r.hasPoi = "poi" in r;
     r.hasVariants = "variants" in r;
     r.hasDangers = "dangers" in r;
