@@ -532,10 +532,25 @@ function getSummaryIconHtml(icon) {
 
 // trail status lines
 function getTrailStatusHtml(trailName) {
-  let matchedTrail = trailStatuses.find(t => t[0] == trailName);
-  let trailStatus = matchedTrail == undefined ? "Unknown" : matchedTrail[1];
+  // get the trail status
+  let matchedTrail = trailStatuses.trails.find(t => t.name == trailName);
+  let trailStatus = matchedTrail == undefined ? "Unknown" : matchedTrail.status;
+
+  // map status to CSS class to be used
+  const classMap = new Map([
+    ["Open", "trail-open"],
+    ["Partly open", "trail-open"],
+    ["Closed", "trail-closed"],
+    ["Unknown", "trail-unknown"],
+  ]);
+
+  // remove leading zeros and translate into English
+  trailName = trailName.replace(' 0', ' ');
+  trailName = trailName.replace("Etapa", "Stage");
+
+  // return the HTML
   return `
-    <div class="trail-${trailStatus}">
+    <div class=${classMap.get(trailStatus)}>
       <p>
         <span class="trail-name">${trailName}</span>
         <span class="trail-status">${trailStatus.toUpperCase()}</span>
