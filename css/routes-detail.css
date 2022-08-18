@@ -318,30 +318,44 @@ h4 {
 
 /************************* Trail status ************************/
 
-.trail-open,
-.trail-closed,
-.trail-unknown {
+.trail-green,
+.trail-red,
+.trail-amber{
   color: white;
   padding: 4px 4px 1px 4px;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
 }
 
-.trail-open {
+.trail-green {
   background-color: green;
 }
 
-.trail-closed {
+.trail-red {
   background-color: red;
 }
 
-.trail-unknown {
+.trail-amber {
   background-color: orange;
+}
+
+.trail-link:hover {
+  text-decoration: none;
+}
+
+.trail-link-prompt {
+  font-size: 0.7rem;
+  font-style: normal;
+}
+
+.last-scraped {
+  font-size: 0.7rem;
 }
 
 .trail-status {
   float: right;
 }
+
 
 /************************* Variants ************************/
 
