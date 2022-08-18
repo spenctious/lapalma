@@ -259,12 +259,17 @@ function populateBasics() {
   let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(laPalmaData.waymarkedAttributes) : "";
   let trailStatusContent = "";
   if (route.hasTrails) {
-    trailStatusContent += `
-        <p class="text-button">
-          <p class="last-scraped">${getLastScraped()}<br />Tap route for details:</p>
-        </p>`;
+    let errorContent = getErrorContent();
+    if (errorContent == "") {
+      trailStatusContent += `
+          <p class="text-button">
+            <p class="last-scraped">${getLastScraped()}<br />Tap route for details:</p>
+          </p>`;
 
-    route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
+      route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
+    } else {
+      trailStatusContent += errorContent;
+    }
   }
   trailContent += `
       <div>
@@ -533,6 +538,46 @@ function getSummaryIconHtml(icon) {
 }
 
 
+
+// N.B. anything not an anomaly is a fatal error of which there should be only one
+function getErrorContent() {
+  let errorContent = "";
+  let mainMessage = "";
+  let additionalMessage = "";
+
+  let fatalError = trailStatuses.problems.find(e => e.type != "Anomaly");
+
+  if (fatalError != undefined) {
+    switch (fatalError.type) {
+      case "Exception":
+        mainMessage = "Error reading website";
+        additionalMessage = "Try the main link above or refresh the page.";
+        break;
+      case "Timeout":
+        mainMessage = "Timed out";
+        additionalMessage = "Try the main link above or refresh the page.";
+        break;
+      case "DataError":
+        mainMessage = "No trail status data";
+        additionalMessage = "The trail network as a whole is probably closed. Check the 'Official trail status' link above.";
+        break;
+    }
+    console.log(
+      `Fatal error reading trails:
+        Type: ${fatalError.Type}
+        Message: ${fatalError.errorMessage}
+        Detail: ${fatalError.detail}`
+        );
+
+    errorContent = `
+    <div class="trail-error">
+      <p class="trail-red">${mainMessage}</p>
+      <p class="trail-link-prompt">${additionalMessage}</p>
+    </div>`;
+  }
+
+  return errorContent;
+}
 
 // approx elapsed time since the trail status website was checked
 function getLastScraped() {
