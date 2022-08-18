@@ -85,8 +85,8 @@ a:hover {
     from: https://stackoverflow.com/questions/5379752/css-style-external-links 
     with amendments to use an SVG image coloured same as the link
 */
-a[href^="http://"]:not([href*="stackoverflow.com"]):after,
-a[href^="https://"]:not([href*="stackoverflow.com"]):after {
+a[href^="http://"]:not(.trail-link):after,
+a[href^="https://"]:not(.trail-link):after {
   filter: invert(26%) sepia(75%) saturate(2108%) hue-rotate(210deg)
     brightness(74%) contrast(86%);
   content: "";
