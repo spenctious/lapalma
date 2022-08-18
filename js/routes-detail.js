@@ -259,20 +259,23 @@ function populateBasics() {
   let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(laPalmaData.waymarkedAttributes) : "";
   let trailStatusContent = "";
   if (route.hasTrails) {
-    route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
     trailStatusContent += `
         <p class="text-button">
-          <a href="https://www.senderosdelapalma.es/en/footpaths/situation-of-the-footpaths/" target="_blank">
-            Details
-          </a>
+          <p class="last-scraped">${getLastScraped()}<br />Tap route for details:</p>
         </p>`;
+
+    route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
   }
   trailContent += `
       <div>
         <p class="details-grid-attribute">Status</p>
       </div>
       <div class="item-description">
-        <h4>Official trails</h4>
+        <h4>
+          <a href="https://www.senderosdelapalma.es/en/footpaths/situation-of-the-footpaths/" target="_blank">
+            Official trail status
+          </a>
+        </h4>
         <div class="official-trails">
           ${trailStatusContent == "" ? "None" : trailStatusContent}
         </div>
@@ -530,32 +533,78 @@ function getSummaryIconHtml(icon) {
 }
 
 
+
+// approx elapsed time since the trail status website was checked
+function getLastScraped() {
+  const msPerHour = 60 * 60 * 1000;
+  let lastScraped = new Date(trailStatuses.lastScraped);
+  let elapsedHours = Math.abs(lastScraped - Date.now()) / msPerHour;
+
+  if (elapsedHours < 1) return "Last checked: just now";
+  return `Last checked about ${Math.round(elapsedHours).toString()}h ago.`;
+}
+
+
 // trail status lines
 function getTrailStatusHtml(trailName) {
-  // get the trail status
-  let matchedTrail = trailStatuses.trails.find(t => t.name == trailName);
-  let trailStatus = matchedTrail == undefined ? "Unknown" : matchedTrail.status;
+  // defaults
+  let trailUrl = "https://www.senderosdelapalma.es/en/footpaths/list-of-footpaths/";
+  let trailStatus = "Not found";
+  let trailClass = "trail-red";
+  let message = "";
+  let additionalInfo = "";
 
-  // map status to CSS class to be used
-  const classMap = new Map([
-    ["Open", "trail-open"],
-    ["Partly open", "trail-open"],
-    ["Closed", "trail-closed"],
-    ["Unknown", "trail-unknown"],
-  ]);
+  // look for the trail in the status return from the API
+  let matchedTrail = trailStatuses.trails.find(t => t.name == trailName);
+  if (matchedTrail != undefined) {
+    trailUrl = matchedTrail.url;
+    trailStatus = matchedTrail.status;
+  }
+
+  // set CSS class and message
+  switch (trailStatus) {
+    case "Open":
+      trailClass = "trail-green";
+      break;
+    case "Part open":
+      trailClass = "trail-amber";
+      message = "Check before starting walk";
+      break;
+    case "Closed":
+      trailClass = "trail-red";
+      break;
+    case "Unknown":
+      trailClass = "trail-amber";
+      message = "Check 'Official trails' link above";
+      break;
+    case "Not found":
+      trailClass = "trail-red";
+      message = "Trail not found";
+      break;
+    default:
+      trailClass = "trail-red";
+      message = "Internal error";
+    break;
+  }
+
+  if (message.length > 0) {
+    additionalInfo = `<br /><span class="trail-link-prompt">${message}</span>`;
+  }
 
   // remove leading zeros and translate into English
   trailName = trailName.replace(' 0', ' ');
   trailName = trailName.replace("Etapa", "Stage");
 
-  // return the HTML
   return `
-    <div class=${classMap.get(trailStatus)}>
-      <p>
-        <span class="trail-name">${trailName}</span>
-        <span class="trail-status">${trailStatus.toUpperCase()}</span>
-      </p>
-    </div>`;
+    <a href=${trailUrl} target="_blank" class="trail-link">
+      <div class="${trailClass}">
+        <p>
+          <span>${trailName}</span>
+          <span class="trail-status">${trailStatus.toUpperCase()}</span>
+          ${additionalInfo}
+        </p>
+      </div>
+    </a>`;
 }
 
 
