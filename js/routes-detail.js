@@ -545,10 +545,10 @@ function getErrorContent() {
   let mainMessage = "";
   let additionalMessage = "";
 
-  let fatalError = trailStatuses.problems.find(e => e.type != "Anomaly");
+  let resultType = trailStatuses.result.type;
 
-  if (fatalError != undefined) {
-    switch (fatalError.type) {
+  if (resultType != "Success") {
+    switch (resultType) {
       case "Exception":
         mainMessage = "Error reading website";
         additionalMessage = "Try the main link above or refresh the page.";
@@ -562,12 +562,7 @@ function getErrorContent() {
         additionalMessage = "The trail network as a whole is probably closed. Check the 'Official trail status' link above.";
         break;
     }
-    console.log(
-      `Fatal error reading trails:
-        Type: ${fatalError.Type}
-        Message: ${fatalError.errorMessage}
-        Detail: ${fatalError.detail}`
-        );
+    console.log("Status read failed: " + JSON.stringify(trailStatuses.result));
 
     errorContent = `
     <div class="trail-error">
