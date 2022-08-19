@@ -320,7 +320,8 @@ h4 {
 
 .trail-green,
 .trail-red,
-.trail-amber{
+.trail-amber,
+.trail-error {
   color: white;
   padding: 4px 4px 1px 4px;
   margin-top: 0.2rem;
@@ -337,6 +338,13 @@ h4 {
 
 .trail-amber {
   background-color: orange;
+}
+
+.trail-error {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  font-weight: bold;
 }
 
 .trail-link:hover {
