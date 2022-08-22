@@ -14,10 +14,13 @@ var favourites;   // global object for storing user route bookmarks
 var laPalmaData;  // global object that packages the data in convenient formats
 var trailStatuses;
 
-const dataSources = [
-  "data/lapalma-data.json",
-  "data/trail-statuses.json"
-];
+// data sources
+const URL_DATA = "data/lapalma-data.json";
+const URL_STATUSES = "data/trail-statuses.json";
+
+// timeouts im ms
+const TIMEOUT_DATA = 4000;
+const TIMEOUT_STATUSES = 4000; 
 
 // For diagnostics and development
 var forceReload = true;
@@ -40,61 +43,118 @@ const datesAreOnSameDay = (first, second) =>
   first.getDate() === second.getDate();
 
 
-// reads the data from the various JSON data sources in parallel
-async function getAllUrls(dataSources) {
-  try {
-    var data = await Promise.all(
-      dataSources.map(url => fetch(url)
-        .then((response) => response.json()))
-    );
-    return (data)
+// fetch doesn't have a direct timeout option so we control the behaviour
+// through an AbortController and wrap the functionality up for general reuse
+// from https://dmitripavlutin.com/timeout-fetch-request/
+async function fetchWithTimeout(resource, options = {}) {
+  const { timeout = 4000 } = options;
+  
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+  const response = await fetch(resource, {
+    ...options,
+    signal: controller.signal  
+  });
+  clearTimeout(id);
+  return response;
+}
+
+
+// returns true if:
+// - dataNameDate is not defined in local storage
+// - dataNameDate is more than a day older than the current date
+// - forecReload is true
+function isOutOfDate(dataName) {
+  let previousVersionDate = new Date(localStorage.getItem(dataName + "Date"));
+  let currentVersionDate = new Date();
+  return forceReload || previousVersionDate == NaN ||
+    !datesAreOnSameDay(previousVersionDate, currentVersionDate);
+}
+
+
+// sets trailStatuses to:
+// - the value in local storage if that value is still in date
+// - the value retrieved from a call to the API to retrieve the data from the offical website
+// - an error value otherwise
+async function getTrailStatuses() {
+    try {  
+      if (isOutOfDate("trailStatuses")) {
+        // get JSON response from API
+        const data = await fetchWithTimeout(URL_STATUSES,{ timeout: TIMEOUT_STATUSES })
+          .then(response => response.json());
+        
+        // set/update cache values
+        trailStatuses = data;
+        localStorage.setItem("trailStatuses", JSON.stringify(trailStatuses));
+        localStorage.setItem("trailStatusesDate", new Date().toString());
+        console.log("getTrailStatuses read from API");
+    } else {
+      // cached data is present and still current so use it
+      console.log("getTrailStatuses retrieved from cache");
+      trailStatuses = JSON.parse(localStorage.trailStatuses);
+    }
   } catch (error) {
-    console.log(error)
-    throw (error)
+    console.log("getTrailStatuses exception");
+    // timeouts, network failures etc - create a failure result
+    trailStatuses = {
+      result: { type: "Exception", message: error.name, detail: error.message }
+    };
   }
 }
 
 
+// sets laPalmaData to:
+// - the value in local storage if that value is still in date
+// - the value retrieved from the local file if retrieved successfully
+// throws an exception otherwise
+async function getLaPalmaData() {
+  if (isOutOfDate("laPalmaData")) {
+    // get JSON data from file
+    const data = await fetchWithTimeout(URL_DATA, { timeout: TIMEOUT_DATA })
+      .then(response => response.json());
+    
+    // set/update cache values
+    laPalmaData = data;
+    localStorage.setItem("laPalmaData", JSON.stringify(laPalmaData));
+    localStorage.setItem("laPalmaDataDate", new Date().toString());
+  } else {
+    // cached data is present and still current so use it
+    laPalmaData = JSON.parse(localStorage.laPalmaData);
+  }
+}
+
+
+
 // loads the data from local storage or gets it from URL sources
-// unpacks data into usable elements
 // once the data is loaded the callback function is called
 async function loadDataThen(afterDataIsLoaded) {
-  // see if we need to reload data or can use stored version
-  let previousVersionDate = new Date(localStorage.getItem("dataVersionDate"));
-  let currentVersionDate = new Date();
-  let dataOutOfDate = 
-    previousVersionDate == NaN ||
-    !datesAreOnSameDay(previousVersionDate, currentVersionDate);
+  try {
+    // get the data asynchronously
+    const statuses = getTrailStatuses();
+    const mainData = getLaPalmaData();
 
-  if (forceReload || dataOutOfDate) {
-    // wait for all the data to come back
-    var responses = await getAllUrls(dataSources);
+    // wait until both processes have completed
+    await Promise.all([statuses, mainData]);
 
-    // distribute returned responses
-    laPalmaData = await responses[0];
-    trailStatuses = await responses[1];
-
-    // augment the raw data with lookups & derrived data then save it locally
+    // add convenient additional attributes to laPalmaData
     augmentData();
-    localStorage.setItem("laPalmaData", JSON.stringify(laPalmaData));
-    localStorage.setItem("dataVersionDate", currentVersionDate.toDateString());
-    localStorage.setItem("trailStatuses", JSON.stringify(trailStatuses));
-  } else {
-    // retrieve from local storage
-    laPalmaData = JSON.parse(localStorage.laPalmaData);
-    trailStatuses = JSON.parse(localStorage.trailStatuses);
-  }
 
-  // retrieve favourites or create them new if missing
-  let storedFavourites = localStorage.getItem("favourites");
-  if (forceReloadFavourites || storedFavourites === null) {
-    favourites = new Set();
-  } else {
-    favourites = new Set(JSON.parse(storedFavourites));
-  }
+    // retrieve favourites or create them new if missing
+    let storedFavourites = localStorage.getItem("favourites");
+    if (forceReloadFavourites || storedFavourites === null) {
+      favourites = new Set();
+    } else {
+      favourites = new Set(JSON.parse(storedFavourites));
+    }
 
-  // execute whatever initialization/setup needs to wait until the data is loaded
-  afterDataIsLoaded();
+    // execute whatever initialization/setup needs to wait until the data is loaded
+    afterDataIsLoaded();
+  }
+  catch (error) {
+    // fatal error - could not retrieve main dataset
+    console.log(error);
+    document.getElementById("main-content").innerHTML = "Fatal error: could not read data";
+  }
 }
 
 
