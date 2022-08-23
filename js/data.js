@@ -23,7 +23,7 @@ const TIMEOUT_DATA = 4000;
 const TIMEOUT_STATUSES = 4000; 
 
 // For diagnostics and development
-var forceReload = true;
+var forceReload = false;
 var forceReloadFavourites = false;
 
 // URL paramater names - defining here ensures consistency
@@ -87,14 +87,14 @@ async function getTrailStatuses() {
         trailStatuses = data;
         localStorage.setItem("trailStatuses", JSON.stringify(trailStatuses));
         localStorage.setItem("trailStatusesDate", new Date().toString());
-        console.log("getTrailStatuses read from API");
+        console.log("trailStatuses read from API");
     } else {
       // cached data is present and still current so use it
-      console.log("getTrailStatuses retrieved from cache");
+      console.log("trailStatuses retrieved from cache");
       trailStatuses = JSON.parse(localStorage.trailStatuses);
     }
   } catch (error) {
-    console.log("getTrailStatuses exception");
+    console.log("trailStatuses exception result created");
     // timeouts, network failures etc - create a failure result
     trailStatuses = {
       result: { type: "Exception", message: error.name, detail: error.message }
@@ -117,8 +117,10 @@ async function getLaPalmaData() {
     laPalmaData = data;
     localStorage.setItem("laPalmaData", JSON.stringify(laPalmaData));
     localStorage.setItem("laPalmaDataDate", new Date().toString());
+    console.log("laPalmaData retrieved from file");
   } else {
     // cached data is present and still current so use it
+    console.log("laPalmaData retrieved from cache");
     laPalmaData = JSON.parse(localStorage.laPalmaData);
   }
 }
