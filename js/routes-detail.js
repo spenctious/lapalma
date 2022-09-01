@@ -233,9 +233,9 @@ function populateBasics() {
   basicsContent += `
     <div class="item-description">
       <h4>Distance</h4>
-      <p>${route.lengthKm}km (${route.lengthMiles} miles)</p>
+      <p>${route.length_km}km (${route.length_miles} miles)</p>
       <h4>Walking time</h4>
-      <p>${route.walkingTime}</p>
+      <p>${route.walking_time}</p>
     </div>`;
   basicsContent += getMetricsHtml(route.effortAttributes);
   basicsContent += `<div class="item-description"><h4>Effort</h4>${route.effortAttributes.description}</div>`;
@@ -687,7 +687,7 @@ function getAdditionalContent(featureName) {
 
 // feature description for basic items that are not metrics (walk type, refreshments)
 function getBasicFeatureHtml(feature, description) {
-  return getAttributeHtml(feature.icon, feature.text, description);
+  return getAttributeHtml(feature.icon, feature.label, description);
 }
 
 
