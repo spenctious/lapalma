@@ -16,7 +16,9 @@ var trailStatuses;
 
 // data sources
 const URL_DATA = "data/lapalma-data.json";
-const URL_STATUSES = "data/trail-statuses.json";
+
+// local testing: https://localhost:7033/api/TrailStatuses
+const URL_STATUSES = "https://lapalmatrailstatusapi.azurewebsites.net/api/TrailStatuses";
 
 // timeouts im ms
 const TIMEOUT_DATA = 4000;
