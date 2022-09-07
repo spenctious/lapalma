@@ -514,7 +514,7 @@ function getStrongHtml(isStrong, strongText) {
 function getMetricsHtml(metric) {
   return `
     <div class="route-metric">
-      <p>${metric.text}</p>
+      <p>${metric.label}</p>
       <img src="img/icons/${metric.icon}" alt="" />
     </div>`;
 }
