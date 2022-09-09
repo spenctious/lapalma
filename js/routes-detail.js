@@ -699,11 +699,12 @@ function getSimpleAttributeHtml(attributes) {
 
 // generic html for attributes:
 // - icon for attribute type
-// - description
+// - label
+// - description (if different from label)
 // - tag if the content is marked up as being particularly strong
 // - any additional content
 //
-function getAttributeHtml(icon, text, description, strong = "", additionalContent = "", iconClass = "") {
+function getAttributeHtml(icon, label, description, strong = "", additionalContent = "", iconClass = "") {
   return `
     <div class="icon">
       <img src="img/icons/${icon}" class="icon-img" alt="" />
@@ -711,9 +712,9 @@ function getAttributeHtml(icon, text, description, strong = "", additionalConten
     <div class="item-description">
       <h4>
         ${strong}
-        ${text}
+        ${label}
       </h4>
-      <p>${description}</p>
+      <p>${label == description ? "" : description}</p>
       ${additionalContent}
     </div>`;
 }
