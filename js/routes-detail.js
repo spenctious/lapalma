@@ -693,7 +693,7 @@ function getBasicFeatureHtml(feature, description) {
 
 // feature description without title or strong tag (used by eg. dangers list)
 function getSimpleAttributeHtml(attributes) {
-  return getAttributeHtml(attributes.icon, attributes.text, attributes.description);
+  return getAttributeHtml(attributes.icon, attributes.label, attributes.description);
 }
 
 
