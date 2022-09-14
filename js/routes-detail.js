@@ -76,6 +76,9 @@ function initialize() {
   document.getElementById("routes-collection-nav").addEventListener("click", collectionClickHandler);
   document.getElementById("full-details").addEventListener("click", modalClickHandler);
   document.getElementById("back-nav").addEventListener("click", goBackToOrigin);
+
+  // asynchronously scrape the trail status website and add the results when ready
+  populateTrailStatuses();
 }
 
 
@@ -191,6 +194,33 @@ function mainClickHandler(event) {
 
 /************************* Grid populating functions ************************/
 
+
+// updates basics with current trail status info for the route
+// - n.b. ensure updated element is in the DOM before calling
+// - will update from cache if the cache is still valid
+//
+async function populateTrailStatuses() {
+  await getTrailStatuses(); // defined in data.js
+
+  let trailStatusContent = "";
+  if (route.hasTrails) {
+    let errorContent = getErrorContent();
+    if (errorContent == "") {
+      trailStatusContent += `
+          <p class="text-button">
+            <p class="last-scraped">${getLastScraped()}<br />Tap route for details:</p>
+          </p>`;
+
+      route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
+    } else {
+      trailStatusContent += errorContent;
+    }
+
+    document.getElementById("apiStatusResults").innerHTML = trailStatusContent;
+  }
+}
+
+
 // N.B. The looping algorithms used ensure the order of entries is defined in the 
 // category data. This saves having to ensure consistency through route data which would 
 // be harder to maintain and reorder if required.
@@ -257,19 +287,14 @@ function populateBasics() {
 
   // trail status - waymarked and official trail statuses for each included path
   let trailContent = route.isCompletelyWaymarked ? getSimpleAttributeHtml(laPalmaData.waymarkedAttributes) : "";
-  let trailStatusContent = "";
+  let trailStatusContent = "None";
   if (route.hasTrails) {
-    let errorContent = getErrorContent();
-    if (errorContent == "") {
-      trailStatusContent += `
-          <p class="text-button">
-            <p class="last-scraped">${getLastScraped()}<br />Tap route for details:</p>
-          </p>`;
-
-      route.trails.forEach(trail => trailStatusContent += getTrailStatusHtml(trail));
-    } else {
-      trailStatusContent += errorContent;
-    }
+    // placeholder content to be overwritten by async populateTrailStatuses()
+    trailStatusContent = `
+      <div class="apiResultPlaceholder">
+        <img src="img/icons/loading.gif" alt="" width="20" height="20" />
+        <br />Checking...
+      </div>`;
   }
   trailContent += `
       <div>
@@ -281,8 +306,8 @@ function populateBasics() {
             Official trail status
           </a>
         </h4>
-        <div class="official-trails">
-          ${trailStatusContent == "" ? "None" : trailStatusContent}
+        <div id="apiStatusResults" class="official-trails">
+          ${trailStatusContent}
         </div>
       </div>
       `;

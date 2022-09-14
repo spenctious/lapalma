@@ -1,6 +1,6 @@
 @import url("poi-detail.css");
 
-/*************************  ************************/
+/************************* Summary content ************************/
 
 .icon-img {
   width: 100%;
@@ -33,13 +33,12 @@
   font-weight: bold;
 }
 
-/*************************  ************************/
+/************************* Summary grids ************************/
 
 #basics-detail,
 #features-and-warnings {
   grid-column: 1;
   display: none;
-  /* margin: 0.5rem; */
   border: 1px solid lightgray;
   padding: 0.5rem;
   background-color: white;
@@ -317,6 +316,15 @@ h4 {
 }
 
 /************************* Trail status ************************/
+
+.apiResultPlaceholder {
+  color: black;
+  padding: 8px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  border: 1px solid black;
+  text-align: center;
+}
 
 .trail-green,
 .trail-red,

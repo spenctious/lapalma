@@ -22,7 +22,7 @@ const URL_STATUSES = "https://lapalmatrailstatusapi.azurewebsites.net/api/TrailS
 
 // timeouts im ms
 const TIMEOUT_DATA = 4000;
-const TIMEOUT_STATUSES = 4000; 
+const TIMEOUT_STATUSES = 8000; 
 
 // For diagnostics and development
 var forceReload = false;
@@ -96,11 +96,12 @@ async function getTrailStatuses() {
       trailStatuses = JSON.parse(localStorage.trailStatuses);
     }
   } catch (error) {
-    console.log("trailStatuses exception result created");
+    console.log(error);
     // timeouts, network failures etc - create a failure result
     trailStatuses = {
       result: { type: "Exception", message: error.name, detail: error.message }
     };
+    console.log("trailStatuses exception result created");
   }
 }
 
@@ -133,14 +134,8 @@ async function getLaPalmaData() {
 // once the data is loaded the callback function is called
 async function loadDataThen(afterDataIsLoaded) {
   try {
-    // get the data asynchronously
-    const statuses = getTrailStatuses();
-    const mainData = getLaPalmaData();
-
-    // wait until both processes have completed
-    await Promise.all([statuses, mainData]);
-
-    // add convenient additional attributes to laPalmaData
+    // get the data and add convenient additional attributes to it
+    await getLaPalmaData();
     augmentData();
 
     // retrieve favourites or create them new if missing
