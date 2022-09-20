@@ -1116,7 +1116,7 @@ class FilterSet {
 
 
   selectAllLocations() {
-    if (!this.filterLimitReached) {
+    if (!this.filterLimitReached || this.#locationFilter.state == FilterState.On) {
       this.#locationFilter.selectAllLocations();
       this.updateLocationFilter();
     }
@@ -1124,7 +1124,7 @@ class FilterSet {
 
 
   clearAllLocations() {
-    if (!this.filterLimitReached) {
+    if (!this.filterLimitReached || this.#locationFilter.state == FilterState.On) {
       this.#locationFilter.clearAllLocations();
       this.updateLocationFilter();
     }
@@ -1132,7 +1132,7 @@ class FilterSet {
 
 
   toggleLocationSelector(elementId) {
-    if (!this.filterLimitReached) {
+    if (!this.filterLimitReached || this.#locationFilter.state == FilterState.On) {
       this.#locationFilter.toggleLocationSelector(elementId);
       switch (this.#locationFilter.state) {
         case FilterState.Disabled:
