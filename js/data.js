@@ -22,7 +22,7 @@ const URL_STATUSES = "https://lapalmatrailstatusapi.azurewebsites.net/api/TrailS
 
 // timeouts im ms
 const TIMEOUT_DATA = 4000;
-const TIMEOUT_STATUSES = 8000; 
+const TIMEOUT_STATUSES = 20000; 
 
 // For diagnostics and development
 var forceReload = false;
